@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "تحديد ملف المفتاح"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "تم توفير المفتاح الخاص بهذه النسخة من التطبيق بواسطة موزع الجهاز. هل ترغب في تفعيل التطبيق باستخدام هذا المفتاح؟\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "لم يتم الانتهاء من تكوين التطبيق بعد. هل تريد بالتأكيد الخروج من معالج التكوين؟"
+ErrEmptyActivationCode.caption  = "لم يتم تحديد رمز التفعيل"
+ErrEmptyActivationCode          = "الرجاء إدخال رمز التفعيل"
+ErrEmptyKeyPath.caption         = "لم يتم تحديد ملف المفتاح"
+ErrEmptyKeyPath                 = "الرجاء تحديد ملف المفتاح"
+$LicInfoKeyNumber               = "الرقم:"
+$LicInfoKeyProductName          = "اسم التطبيق:"
+$LicInfoKeyType                 = "نوع الترخيص:"
+$LicInfoExpirationDate          = "تاريخ الانتهاء:"
+$LicErrReason                   = "السبب:"
+$ActiveKey                      = "مفتاح نشط"
+$ReservedKey                    = "مفتاح إضافي"
+ConfirmFeedback                 = "هل توافق على تقديم المعلومات إلى \n<a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>؟"
+$KsnTerms                       =  "شبكة أمان Kaspersky هي بنية أساسية من خدمات الإنترنت توفر للمستخدمين أحدث المعلومات حول أمان الملفات وموارد الويب والبرامج. ويؤدي استخدام البيانات من شبكة أمان Kaspersky إلى زيادة سرعة الاستجابة للتهديدات الحديثة، وتعزيز أداء بعض مكونات الحماية والحد من خطورة الاكتشافات الإيجابية الزائفة. \nوعندما تشترك في KSN، يتم إرسال معلومات حول الإصابة بالفيروسات والمشاكل الأخرى بالإضافة إلى الإحصائيات الموسعة حول التطبيقات المحملة أو المنفذة إلى القائمة (وفقًا للقائمة في <a KsnInfo onclick(dialog (\"KsnInfo\"))>بيان تجميع بيانات الشبكة الأمان بشكل تلقائي إلى Kaspersky Lab </a>). \n\n<b>لا تقوم شبكة أمان Kaspersky بتجميع البيانات الشخصية للمستخدم أو معالجتها أو تخزينها.</b>"
+
+$ToAcquireNewLicText            = "\n\nللحصول على ترخيص جديد، برجاء الاتصال بالموزع الخاص بك أو <a Buy onclick(buy())>إدارة مبيعات Kaspersky Lab</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nالرجاء محاولة تحديث حالة الاشتراك يدويًا أو الاتصال بالدعم الفني": "\nالرجاء محاولة تفعيل التطبيق من خلال رمز التطبيق لاحقًا (خلال 1-2 ساعة) أو الاتصال بالدعم الفني") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " معالج التفعيل" : " معالج التكوين")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "معلومات عامة"
+InitBegin.Descr                       = "مرحبًا في معالج تكوين " + $ProductName_GEN +."
+CheckHosts.Name                       = "فحص توفر خوادم Kaspersky Lab"
+CheckHosts.Descr                      = "تم اكتشاف إعادة توجيه مشبته بها"
+ResetArea.Name                        = "استعادة الإعدادات"
+ResetArea.Descr                       = "تحتوي الإعدادات المدرجة أدناه على بيانات تم إدخالها بواسطة المستخدم أو تراكمت \nأثناء تشغيل التطبيق."
+ActivationBegin.Name                  = $IsSubscription ? "إدارة الاشتراك" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey? "حذف المفتاح" : "إضافة مفتاح") : "تفعيل التطبيق")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "التراخيص" : "قم بتفعيل التطبيق للمتابعة.")
+ActivationProgress.Name               = "تفعيل عبر الإنترنت"
+ActivationProgress.Descr              = "جار التفعيل، الرجاء الانتظار..."
+ActivationServerForm.Name             = "تفعيل عبر الإنترنت"
+ActivationServerForm.Descr            = "الرجاء تعبئة هذا النموذج."
+ActivationChooseKey.Name              = "التفعيل باستخدام ملف المفتاح"
+ActivationChooseKey.Descr             = "تفعيل التطبيق باستخدام ملف المفتاح."
+ActivationEnd.Name                    = "تفعيل التطبيق"
+ActivationEnd.Descr                   = "تم إكمال التفعيل."
+MigrationKeyIsFound.Name         = "يتوفر مفتاح للترخيص الحالي"
+MigrationKeyIsFound.Descr        = "هل ترغب في استخدام التطبيق المنصوص عليه بواسطة الترخيص الحالي؟"
+MigrationBegin.Name              = "التحويل إلى " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "سيتم تحويلك لاستخدام " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "البحث عن البرامج غير المتوافقة"
+MigrationSearchProgress.Descr    = "برجاء الانتظار أثناء البحث عن البرامج غير المتوافقة..."
+MigrationSafeRemoval.Name        = "تم العثور على برامج غير متوافقة"
+MigrationSafeRemoval.Descr       = "يجب إزالة البرامج غير المتوافقة للمتابعة"
+MigrationSafeProgress.Name       = "إزالة البرامج غير المتوافقة"
+MigrationSafeProgress.Descr      = "برجاء الانتظار أثناء إزالة البرامج غير المتوافقة..."
+MigrationAddRemove.Name          = "تم العثور على برامج غير متوافقة"
+MigrationAddRemove.Descr         = "برجاء إزالة البرامج غير المتوافقة"
+MigrationUnsafeRemoval.Name      = "تم العثور على برامج غير متوافقة"
+MigrationUnsafeRemoval.Descr     = "يجب إزالة البرامج غير المتوافقة للمتابعة"
+MigrationUnsafeProgress.Name     = "إزالة البرامج غير المتوافقة"
+MigrationUnsafeProgress.Descr    = "برجاء الانتظار أثناء إزالة البرامج غير المتوافقة..."
+MigrationReboot.Name             = "يجب إعادة تمهيد نظام التشغيل"
+MigrationReboot.Descr            = "يجب إعادة التمهيد لمتابعة التحويل إلى التطبيق الجديد"
+MigrationProgress.Name           = "التحويل إلى " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "برجاء الانتظار أثناء التحويل إلى التطبيق الجديد..."
+MigrationRebootApp.Name          = bMigrationDone ? "سيتم إعادة تمهيد التطبيق" : "حدث خطأ اثناء التحويل إلى التطبيق الجديد"
+MigrationRebootApp.Descr         = bMigrationDone ? "يجب إعادة تمهيد التطبيق" : "التحويل إلى " + s_MUProductTitleLong(env("ProductType")) + " فشل"
+MigrationFinish.Name             = "تحويل " + s_ProductTitleLong(env("ProductType")) + " اكتمل"
+MigrationFinish.Descr            = "تحويل " + s_ProductTitleLong(env("ProductType")) + " اكتمل"
+DNS.Name                              = "إعدادات متقدمة"
+DNS.Descr                             = $ProductName_GEN + " إعدادات التشغيل المتقدمة لـ"
+EnumExe.Name                          = "تحليل النظام"
+EnumExe.Descr                         = "الرجاء الانتظار بينما يتم تجميع المعلومات عن نظامك..."
+InitFinish.Name                       = "الرجاء الانتظار بينما يتم تجميع المعلومات عن نظامك" + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "يجب أن تقوم بإعادة تهميد الكمبيوتر الخاص بك لتتمكن من إكمال تكوين التطبيق." : "يمكنك تشغيل " + $ProductName + " الآن."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "تم اكتشاف إعادة توجيه مشتبه بها إلى خوادم Kaspersky Lab. من الممكن أن يكون السبب المحتمل وجود نشاط برمجيات خبيثة وهي تؤدي إلى فشل التحديث والتفعيل. المدخلات المشتبه بها لملف أجهزة الاستضافة:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "حذف السجلات (مستحسن)"
+Skip			= "تخطي"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&رجوع"
+Back.Descr      = "العودة إلى تحديد طريقة تفعيل التطبيق"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "إضا&فة مفتاح" : "تفعيل"
+Activate.Descr  = "تثبيت ملف المفتاح المحدد"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "إ&نهاء"
+Finish.Descr    = "إغلاق معالج التفعيل"
+Next.Name       = "الت&الي"
+Next.Descr      = "متابعة التكوين"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "يمكنك متابعة استخدام التطبيق المنصوص عليه بواسطة الترخيص الحالي. في هذه الحالة سيتم تحويل التطبيق إلى " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "هل ترغب في متابعة استخدام التطبيق المنصوص عليه بواسطة الترخيص الحالي؟"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "نوع التطبيق:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "تاريخ الانتهاء:"
+ExpirationDate.Val      = (" + f_n_days_remaining(DaysTillExpiration) + " متبقي) " + datetime(LicenseExpirationDate)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "نعم، والتحويل إلى " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "لا، وترك " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "أنت الآن وسط عملية تحويلك إلى " + s_MUProductTitleLong(env("ProductType")) + ". يمنحك مالك حقوق الملكية ترخيصًا غير حصري لاستخدام " + s_MUProductTitleLong(env("ProductType")) + " بنفس الشروط التي قبلتها سابقًا عندما قمت بتثبيت " + s_ProductTitleLong(env("ProductType"))
+Text3   = "ملاحظة: يتطلب هذا التحويل إجراءات قد ينتج عنها إعادة التمهيد."
+LicenseWarning  = "انتباه! تنتهي صلاحية الترخيص التجاري لبرنامج Kaspersky لمكافحة الفيروسات قبل الترخيص التجريبي لـ Kaspersky Internet Security. بعد انتهاء صلاحية الترخيص التجاري لبرنامج Kaspersky لمكافحة الفيروسات سيكون من المستحيل استخدام برنامج Kaspersky لمكافحة الفيروسات من الإصدار التجريبي لـ Kaspersky Internet Security. هل ترغب في متابعة التحويل إلى Kaspersky Internet Security؟"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "جار البحث عن البرامج غير المتوافقة على الكمبيوتر الخاص بك. قد يستغرق هذا الأمر بعض الوقت. برجاء الانتظار..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "سيتم إزالة البرامج التالية لتنفيذ التحويل:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "برجاء الانتظار أثناء حذف البرامج غير المتوافقة..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "يجب إزالة البرامج التالية لتنفيذ التحويل:"
+OpenAddRemove = "قم بفتح نافذة إضافة/إزالة البرامج"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "سيتم إزالة البرامج التالية لتنفيذ التحويل:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "برجاء الانتظار أثناء حذف البرامج غير المتوافقة..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "يجب أن تقوم بإعادة تمهيد الكمبيوتر الخاص بك لمتابعة التحويل. سيستمر المعالج بعد إعادة التمهيد."
+Reboot   = "إعادة التمهيد الآن"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "برجاء الانتظار بينما يتم إعادة تكوين التطبيق وسيتم تحويلك إلى " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "لإكمال التحويل إلى " + s_MUProductTitleLong(env("ProductType")) + " سيتم إعادة تمهيد التطبيق." : "التحويل إلى " + s_MUProductTitleLong(env("ProductType")) + " فشل."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "يمكنك الآن تقييم ميزات " + s_ProductTitleLong("kis") + " مثل المراقبة الأبوية ومكافحة البريد الإلكتروني غير المرغوب به وجدار الحماية والمزيد." : s_ProductTitleLong("kav") + " يوفر الحماية الأساسية للكمبيوتر الخاص بك ضد البرمجيات الخبيثة."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "يمكنك "+if($IsRefreshSubAvail,"update subscription status or ")+"حذف المفتاح." : (f_IsActiveKeyWorkingCommercial() ? "يمكنك حذف مفتاح التفعيل أو إضافة مفتاح." : "قم بتفعيل " + $ProductName + " لتمكين الوظائف الكامل للتطبيق."+ if($CorporateOnly, " يمكنك الحصول على ترخيص <a Activate onclick(url($ActivationLink))>تجاري</a> أو إصدار <a ActivateTrial onclick(url($ActivationTrialLink))>تجريبي</a> license من التطبيق."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "التفعيل لا&حقاً"
+Later.Descr                 = "تخطي التفعيل ومتابعة تكوين التطبيق"
+ChooseKey.Name              = "تفعيل باستخدام ملف الم&فتاح"
+ChooseKey.Descr             = "يلزم وجود ملف المفتاح"
+ActivateBetaKAV.Name        = "تفعيل إصدار بي&تا من برنامج Kaspersky لمكافحة الفيروسات"
+ActivateBetaKAV.Descr       = "يحتوي إصدار بيتا من برنامج Kaspersky لمكافحة الفيروسات على الوظائف الكاملة الخاصة به، ولكنه لا يعتبر منتجًا منتهيًا."
+ActivateBetaKIS.Name        = "تفعيل إصدار بي&تا من Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "يحتوي إصدار بيتا من Kaspersky Internet Security على الوظائف الكاملة له، ولكنه لا يعتبر منتجًا منتهيًا."
+ActivateTrial.Name          = "تفعيل الإصدار التجريبي"
+ActivateTrial.Descr         = "فترة صلاحية الإصدار التجريبي محددة في اتفاقية ترخيص المستخدم النهائي"
+ActivateCommercial.Name     = "تفعيل عبر الإنترنت"
+ActivateCommercial.Descr    = "يلزم توافر رمز التفعيل الذي تم الحصول عليه عند الشراء"
+RemoveKey.Name              = "$HasReserveKey? "حذف المفتاح الإ&ضافي" : "&حذف المفتاح
+RemoveKey.Descr             = "لاستبدال المفتاح، يجب عليك أولاً إزالة المفتاح النشط"
+RefreshSubscription.Name    = "ت&حديث حالة الاشتراك"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "يمكنك تحديث حالة الاشتراك يدويًا." :  "تم إنهاء التحديث التلقائي لحالة الاشتراك. يمكنك تحديث حالة الاشتراك يدويًا."
+ActivateTrialKIS            = "تفعيل الإصدار التجريبي لـ Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "يتم تحديد فترة صلاحية الإصدار التجريبي من Kaspersky Internet Security في اتفاقية الترخيص"
+RevertToCommercialKAV       = "العودة إلى الإصدار التجاري من برنامج Kaspersky لمكافحة الفيروسات"
+RevertToCommercialKAV_Desc  = "العودة إلى الإصدار التجاري من برنامج Kaspersky لمكافحة الفيروسات"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "تحديث حالة الاشتراك"
+ActivateCommercial      = "تفعيل الإصدار التجاري"
+ActivateCommercial_Desc = (LockActivationCode)? "أدخل رمز التفعيل: " : "أدخل <a onclick(url(\"" + $ActCodeHint + "\"))>رمز التفعيل</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "تم إضافة رمز التفعيل الخاص بك تلقائيًا. الرجاء النقر على الزر \"التالي\" ." : "إذا لم يكن لديك رمز تفعيل يمكنك الشراء <a onclick(buy())>عبر الإنترنت</a>"
+ActivateBetaKAV         = "تفعيل إصدار بي&تا من برنامج Kaspersky لمكافحة الفيروسات"
+ActivateBetaKIS         = "تفعيل إ&صدار بيتا من Kaspersky Internet Security"
+ActivateTrial           = "تفعيل الإصدار ال&تجريبي"
+ActivateTrial_Desc      = "تقييم إصدار كامل الوظائف من التطبيق قبل شراؤه."
+ActivateTrialKIS           = "تفعيل الإصدار التجريبي لـ Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "تقييم إصدار كامل الوظائف من Kaspersky Internet Security قبل الشراء."
+RevertToCommercialKAV      = "العودة إلى الإصدار التجاري من برنامج Kaspersky لمكافحة الفيروسات"
+RevertToCommercialKAV_Desc = "توقف عن استخدام الإصدار التجريبي لـ Kaspersky Internet Security وعد إلى استخدام الإصدار التجاري من برنامج Kaspersky لمكافحة الفيروسات."
+Later                   = "&التفعيل لاحقاً"
+Later_Desc              = "لن تكون جميع وظائف التطبيق متاحة حتى يتم تفعيله."
+RemoveKey               = "حذف ملف المفتاح"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "ملف المفتاح:"
+KeyInfo         = "معلومات الترخيص"
+ConnectingInfo.Name     = "خطأ في التفعيل: "
+ConnectingInfo.Val      = "التفاصيل"
+TryAgain                = "تفعيل"
+Descr1                  = "لإعادة محاولة التفعيل، يلزم القياد بالإجراءات التالية:"
+Descr2                  = "افحص إعدادات الاتصال بالإنترنت وأعد محاولة تفعيل التطبيق."
+Descr3                  = "انتقل إلى <a onclick(url(\"" +  $ActivationLink + "\"))> مركز التفعيل عبر الإنترنت</a> واتبع التعليمات. \nبعد استلام ملف مفتاح، حدد مكانه وانقر على زر التالي:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "تاريخ الإنشاء:"
+InstallDate.Name    = "تاريخ التفعيل:"
+ExpirationDate.Name = "تاريخ الانتهاء:"
+SubscrptnExpDate.Name = "تاريخ انتهاء صلاحية الاشتراك:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," لـ " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "خطأ في النظام: " + s_SystemError(ErrorCode)
+2       = "تتعذر إضافة \"" + KeyFile + "\" key: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "يتعذر حذف\"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "رمز الخطأ:" + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "تمت إضافة هذا المفتاح بالفعل" + $LicErrHelpLink
+0x0947901d  = "انتهت صلاحية الترخيص. تحديث قاعدة البيانات غير متوفر" + $LicErrHelpLink
+0x89479002  = "لم يتم العثور على الترخيص" + $LicErrHelpLink
+0x89479003  = "التوقيع الرقمي إما مفقود أو تالف" + $LicErrHelpLink
+0x89479004  = "البيانات تالفة" + $LicErrHelpLink
+0x89479005  = "ملف المفتاح تالف" + $LicErrHelpLink
+0x89479006  = "انتهت فترة الترخيص" + $LicErrHelpLink
+0x89479007  = "لم يتم تحديد ملف مفتاح" + $LicErrHelpLink
+0x89479008  = "ملف المفتاح غير صالح" + $LicErrHelpLink
+0x89479009  = "فشل حفظ البيانات" + $LicErrHelpLink
+0x8947900a  = "فشل قراءة البيانات" + $LicErrHelpLink
+0x8947900b  = "خطأ الإدخال/الإخراج" + $LicErrHelpLink
+0x8947900c  = "قاعدة البيانات مفقودة" + $LicErrHelpLink
+0x8947900d  = "المفتاحان النشط والإضافي مضافان بالفعل" + $LicErrHelpLink
+0x8947900e  = "لم تتم تهيئة مكتبة الترخيص" + $LicErrHelpLink
+0x8947900f  = "قواعد البيانات تالفة أو تم تحديثها يدويًا" + $LicErrHelpLink
+0x89479010  = "قواعد البيانات تالفة" + $LicErrHelpLink
+0x89479011  = "لا يمكن تسجيل ملف مفتاح منتهي الصلاحية كمفتاح إضافي" + $LicErrHelpLink
+0x89479012  = "خطأ في النظام" + $LicErrHelpLink
+0x89479013  = "القائمة السوداء للمفاتيح تالفة" + $LicErrHelpLink
+0x89479014  = "التوقيع الرقمي لا يطابق التوقيع الرقمي من Kaspersky Lab" + $LicErrHelpLink
+0x89479015  = "يتعذر تفعيل الترخيص التجاري للتطبيق باستخدام ترخيص بيتا" + $LicErrHelpLink
+0x89479016  = "يمكن فقط تفعيل إصدار بيتا من التطبيق باستخدام ترخيص بيتا" + $LicErrHelpLink
+0x89479017  = "الترخيص غير منطبق على هذا التطبيق. يتعذر تفعيل " + $ProductName + " باستخدام ترخيص خاص بتطبيق آخر. الرجاء التحقق من التطبيق المثبت الخاص بك" + $LicErrHelpLink
+0x89479018  = "تم منع المفتاح" + $LicErrHelpLink
+0x89479019  = "هذا الترخيص التجريبي استخدم بالفعل. لا يمكن استخدام نفس الترخيص التجريبي مرتين" + $LicErrHelpLink
+0x8947901a  = "ملف المفتاح تالف" + $LicErrHelpLink
+0x8947901b  = "التوقيع الرقمي مفقود أو تالف أو لا يطابق التوقيع الرقمي من Kaspersky Lab" + $LicErrHelpLink
+0x8947901c  = "تتعذر إضافة مفتاح للترخيص غير التجاري في حالة انتهاء الصلاحية" + $LicErrHelpLink
+0x8947901e  = "تاريخ إنشاء ملف المفتاح أو تسجيله غير صحيح. الرجاء التحقق من إعدادات تاريخ النظام" + $LicErrHelpLink
+0x8947901f  = "لا يمكن إضافة مفتاح لإصدار تجريبي بينما يوجد مفتاح آخر نشط لترخيص تجريبي" + $LicErrHelpLink
+0x89479020  = "القائمة السوداء للمفاتيح إما مفقودة أو تالفة" + $LicErrHelpLink
+0x89479021  = "وصف التحديث إما مفقود أو تالف" + $LicErrHelpLink
+0x89479022  = "البيانات الداخلية غير صالحة لهذا التطبيق" + $LicErrHelpLink
+0x89479023  = "لا يمكن إضافة مفتاح إضافي باستخدام رمز تفعيل غير صحيح" + $LicErrHelpLink
+0x89479024  = "خطأ في استكمال بيانات نموذج المستخدم" + $LicErrHelpLink
+0x89479025  = "خطأ في إرسال طلب خادم التفعيل.\nالأسباب المحتملة: وجود مشاكل في الاتصال بالإنترنت أو مشاكل مؤقتة على خادم التفعيل.\nحاول تفعيل الرمز لاحقًا (خلال 1-2 ساعة).\nوإذا استمرت المشكلة، فاتصل بمزود خدمة الإنترنت" + $LicErrHelpLink
+0x89479026  = "يحتوي الطلب على رمز تفعيل غير صحيح" + $LicErrHelpLink
+0x89479027  = "تعذر الحصول على حالة الاستجابة" + $LicErrHelpLink
+0x89479028  = "خطأ في حفظ الملف المؤقت" + $LicErrHelpLink
+0x89479029  = "تم إدخال رمز التفعيل بشكل غير صحيح أو أن تاريخ النظام غير صحيح. افحص إعدادات تاريخ النظام" + $LicErrHelpLink
+0x8947902a  = "رمز التفعيل غير مناسب لهذا التطبيق أو انتهت صلاحيته. من المستحيل أن يتم تفعيل " + $ProductName + " باستخدام الترخيص الخاص بتطبيق آخر. برجاء التحقق من التطبيق المثبت الخاص بك أو <a شراء onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " </a>" + $LicErrHelpLink
+0x8947902b  = "فشل استلام ملف مفتاح. تم تحديد رمز تفعيل غير صحيح" + $LicErrHelpLink
+0x8947902c  = "أرجع خادم التفعيل خطأ 400" + $OlaErrHelpLink
+0x8947902d  = "أرجع خادم التفعيل خطأ 401" + $OlaErrHelpLink
+0x8947902e  = "أرجع خادم التفعيل خطأ 403" + $OlaErrHelpLink
+0x8947902f  = "المورد اللازم غير متوافر على خادم التفعيل.\nأرجع خادم التفعيل خطأ 404.\nالرجاء التحقق من إعدادات الاتصال بالإنترنت" + $OlaErrHelpLink
+0x89479030  = "أرجع خادم التفعيل خطأ 405" + $OlaErrHelpLink
+0x89479031  = "أرجع خادم التفعيل خطأ 406" + $OlaErrHelpLink
+0x89479032  = "يلزم مصادقة الوكيل. يرجى التحقق من إعدادات شبكة LAN" + $LicErrHelpLink
+0x89479033  = "انتهت مدة الطلب" + $LicErrHelpLink
+0x89479034  = "أرجع خادم التفعيل خطأ 409" + $OlaErrHelpLink
+0x89479035  = "المورد اللازم غير متوافر على خادم التفعيل.\nأرجع خادم التفعيل خطأ 410.\nالرجاء التحقق من إعدادات الاتصال بالإنترنت" + $OlaErrHelpLink
+0x89479036  = "أرجع خادم التفعيل خطأ 411" + $OlaErrHelpLink
+0x89479037  = "أرجع خادم التفعيل خطأ 412" + $OlaErrHelpLink
+0x89479038  = "أرجع خادم التفعيل خطأ 413" + $OlaErrHelpLink
+0x89479039  = "أرجع خادم التفعيل خطأ 414" + $OlaErrHelpLink
+0x8947903a  = "أرجع خادم التفعيل خطأ 415" + $OlaErrHelpLink
+0x8947903b  = "خطأ غير معروف على العميل" + $OlaErrHelpLink
+0x8947903c  = "خطأ خادم داخلي" + $LicErrHelpLink
+0x8947903d  = "الوظيفة غير مدعمة" + $LicErrHelpLink
+0x8947903e  = "عبارة غير صالحة. تحقق من إعدادات شبكة LAN" + $LicErrHelpLink
+0x8947903f  = "المورد غير متاح مؤقتًا" + $LicErrHelpLink
+0x89479040  = "انتهت مدة انتظار الطلب. تحقق من إعدادات شبكة LAN" + $LicErrHelpLink
+0x89479041  = "البروتوكول غير مدعم من قبل الخادم" + $OlaErrHelpLink
+0x89479042  = "خطأ غير معروف على الخادم" + $OlaErrHelpLink
+0x89479043  = "خطأ http غير معروف" + $OlaErrHelpLink
+0x89479044  = "معرف مصدر غير صالح" + $LicErrHelpLink
+0x89479045  = "معلومات غير صحيحة في الحقل \"المفتاح\"" + $LicErrHelpLink
+0x89479046  = "عنوان URl غير صحيح" + $LicErrHelpLink
+0x89479047  = "مجلد وجهة غير صحيح" + $LicErrHelpLink
+0x89479048  = "خطأ في تخصيص الذاكرة" + $LicErrHelpLink
+0x89479049  = "خطأ في تحويل المعلمات إلى سلسلة ANSI (محدد موقع المعلومات، المجلد، العامل)" + $LicErrHelpLink
+0x8947904a  = "خطأ في إنشاء ترابط عمل" + $LicErrHelpLink
+0x8947904b  = "ترابط العمل قيد التشغيل بالفعل" + $LicErrHelpLink
+0x8947904c  = "ترابط العمل لا يعمل" + $LicErrHelpLink
+0x8947904d  = "لم يتم العثور على ملف المفتاح على خادم التفعيل" + $LicErrHelpLink
+0x8947904e  = "تم منع المفتاح" + $LicErrHelpLink
+0x8947904f  = "خطأ داخلي في خادم التفعيل" + $LicErrHelpLink
+0x89479050  = "بيانات غير كافية في طلب التفعيل" + $LicErrHelpLink
+0x89479051  = "هوية المستخدم أو كلمة المرور غير صحيحة" + $LicErrHelpLink
+0x89479052  = "رمز تفعيل غير صحيح" + $LicErrHelpLink
+0x89479053  = "تنتهي صلاحية الترخيصللمفتاح المحدد قبل الترخيص الحالي" + $LicErrHelpLink
+0x89479054  = "تاريخ نظام التشغيل غير صحيح. برجاء التحقق من تاريخ النظام" + $LicErrHelpLink
+0x89479055  = "انتهت صلاحية الترخيص التجريبي" + $LicErrHelpLink
+0x89479056  = "انتهت صلاحية فترة التفعيل" + $LicErrHelpLink
+0x89479057  = "<b>تجاوز رمز التفعيل المدخل حد التفعيلات المسموح بها!</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "لا يمكن إضافة مفتاح ترخيص غير تجاري كمفتاح إضافي، إذا كان الترخيص التجاري في حيز التنفيذ" + $LicErrHelpLink
+0x8947905c  = "يلزم رمز تفعيل" + $LicErrHelpLink
+0x8947905d  = "هوية العميل أو كلمة المرور غير صحيحة" + $LicErrHelpLink
+0x8947905e  = "رمز تفعيل غير صحيح" + $LicErrHelpLink
+0x89479062  = "تعذر الاتصال بخادم التفعيل" + $LicErrHelpLink
+0x89479064  = "<b>خادم التفعيل غير متوافر</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "يتعذر تفعيل المنتج في هذا الوقت. حاول تكرار محاولة التفعيل بعد تكوين التطبيق وإعادة تمهيد نظام التشغيل.", "يرجى التحقق من إعدادات الاتصال بالانترنت ومحاولة التفعيل مرةً أخرى.") + $LicErrHelpLink
+0x89479065  = "انتهت صلاحية الترخيص الخاص بك. برجاء <a شراء onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " </a>" + $LicErrHelpLink
+0x89479066  = "لا يمكن استبدال المفتاح النشط بمفتاح انتهت صلاحيته" + $LicErrHelpLink
+0x89479067  = "تتعذر إضافة مفتاح تنتهي صلاحيته قبل المفتاح النشط كمفتاح إضافي" + $LicErrHelpLink
+0x89479068  = "مفتاح الاشتراك المحدث مفقود" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "اكتمل إجراء التفعيل مع حدوث خطأ في النظام" + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "خطأ في التفعيل:" + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "خطأ في التفعيل:" + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "خطأ التفعيل: أرجع الخادم رمز HTTP" + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "فشل التفعيل " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "خطأ داخلي في خادم التفعيل. يرجى إعادة المحاولة أو الاتصال بالدعم الفني"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "رمز التفعيل غير متوافق مع هذا التطبيق. لا يمكن تفعيل “ + $ProductName + “ باستخدام رمز التفعيل الخاص بتطبيق آخر. برجاء التحقق من التطبيق المثبت"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "تم منع المفتاح"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "هوية العميل أو كلمة المرور غير صحيحة"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "رمز تفعيل خطأ"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "يلزم رمز تفعيل"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "انتهت صلاحية فترة التفعيل"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "تم تجاوز عدد محاولات التفعيل التي تستخدم هذا الرمز"
+#OLA_ERR_SRV_REGION_MISMATCH                = "رمز التفعيل غير صحيح لهذه المنطقة"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "لا يمكن استخدام رمز التفعيل لهذه اللغة من التطبيق."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "رمز التفعيل صالح لإصدار أجدد من هذا التطبيق. لاستخدام الإصدار الحالي يجب الحصول على رمز آخر. لمعرفة التفاصيل انقر فوق الارتباط الموجود أدناه."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "أرجع خادم التفعيل الخطأ 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "أرجع خادم التفعيل الخطأ 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "أرجع خادم التفعيل الخطأ 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "قام خادم التفعيل بإرجاع الخطأ 646"
+default                                     = "أرجع إجراء التفعيل الخطأ" + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "تم تفعيل الوضع غير متصل في برنامج Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "فشل الاتصال بالإنترنت"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "خادم التفعيل غير متاح"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "الخادم الوكيل غير متاح"
+#OLA_ERR_INTERNET_TIMEOUT                    = "انتهت مدة الاستجابة"
+#OLA_ERR_INTERNET_INVALID_URL                = "عنوان خادم تفعيل غير صحيح"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "بروتوكول غير صحيح"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "يتعذر إعداد الاتصال بالخادم"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "تم إلغاء العملية"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "يتعذر إعداد الاتصال بالخادم"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "تم إنهاء الاتصال بالخادم"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "تمت إعادة تعيين الاتصال بالخادم"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "استجابة غير صحيحة من الخادم"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "انتهت شهادة SSL الخاصة بالخادم. الرجاء التحقق من وقت الكمبيوتر المحلي."
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "اسم خادم شهادة SSL غير متوافق مع الخادم."
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "يتعذر تنفيذ التحقق من إلغاء الشهادة. قم بتعطيل هذا الفحص في Microsoft Internet Explorer (أدوات->خيارات إنترنت->خيارات متقدمة->التحقق من إبطال شهادة الخادم) وكرر محاولة التفعيل"
+#OLA_ERR_INTERNET_CERT_INVALID               = "شهادة SSL غير صالحة"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "تم إبطال شهادة SSL"
+#OLA_ERR_INTERNET_INVALID_CA                 = "مركز التصديق غير صحيح"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "يلزم توافر بيانات التسجيل لدى شركة Kaspersky Lab لتخطرك بالمناسبات الترويجية المتعددة، والمبيعات والعروض الخاصة."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&متابعة"
+Activate.Descr  = "إرسال البيانات إلى خادم التفعيل"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "يقوم معالج التكوين بالاتصال بخادم التفعيل الخاص بشركة Kaspersky Lab. يمكن أن يستغرق هذا الأمر بعض الوقت تبعًا لسرعة اتصالك بالإنترنت."
+ConnectingInfo.Name     = "جار الاتصال بخادم التفعيل..."
+ConnectingInfo.Val      = if(bConnected, "موافق")
+SendingCodeInfo.Name    = "جار إرسال رمز التفعيل..."
+SendingCodeInfo.Val     = if(bSentCode, "موافق")
+RetrievingKeyInfo.Name  = "في انتظار الرد من الخادم..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "موافق")
+Status                  = "تم تفعيل نسختك من " + $ProductName + " بنجاح"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "تاريخ الانتهاء:"
+ExpirationDate.Val      = (" + f_n_days_remaining(DaysTillExpiration) + " متبقي) " + datetime(LicenseExpirationDate)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "تم الانتهاء من التفعيل بنجاح." : "تم تفعيل التطبيق بالفعل على جهاز الكمبيوتر."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "الت&الي"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "المتابعة إلى تفعيل التطبيق": (((PiwFlags & #fPiwActivation) && !bSilent)?"المتابعة إلى معلومات الترخيص":"المتابعة إلى تحديد وضع الحماية")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "سوف يساعدك هذا المعالج على تكوين حماية الكمبيوتر بشكل سليم.\n\nأثناء التكوين، سيقوم المعالج بجمع المعلومات عن نظامك وكذلك التطبيقات المثبتة على الكمبيوتر. وسوف تستخدم هذه المعلومات فقط لغرض توفير الحماية المثلى للكمبيوتر.\n\nانقر فوق التالي لبدء عملية تكوين " + $ProductName_GEN  +"."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "التثبيت على وشك الانتهاء..." : ((PiwFlags & #fPiwReset) ? ("تم إكمال الإصلاح.") : ("تم إكمال التثبيت."))
+ResetDescr          = "استعاد معالج التكوين إعدادات " + $ProductName + " بنجاح."
+Reboot              = "إ&عادة تمهيد الكمبيوتر"
+StartProduct        = "بد&ء" + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("نشكرك على تثبيت " + $ProductName + ". لإتمام التثبيت، يجب إعادة تمهيد الكمبيوتر. الرجاء حفظ البيانات وإغلاق كافة التطبيقات والنقر فوق الزر \"إنهاء\".") : "الرجاء ملاحظة أن تكوين المنتج الإضافي يكتمل في أول مرة يبدأ فيها تشغيل التطبيق. قد يستغرق هذا الأمر عدة دقائق حتى ينتهي."
+
+[ConfigureWizard.EnumExe]
+Info = "أثناء تحليل النظام يتم بناء قائمة من التطبيقات الموثوقة المضمنة في نظام تشغيل Microsoft Widows. \n\n أما البرامج غير المضمنة في نظام التشغيل فيتم تحليلها على حدة عندما يتم تشغيلها لأول مرة على الكمبيوتر."
+
+[s_LicKeyType]
+#ektBeta         = "مفتاح بيتا"
+#ektTrial        = "تجريبي"
+#ektTest         = "مفتاح اختباري"
+#ektOEM          = "مفتاح OEM"
+#ektCommercial   = "تجاري"
+#ektSubscription = "تجاري مع اشتراك"
+#ektSubscriptionProtection = "تجاري مع اشتراك حماية"
+default          = "نوع غير معروف"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "خطأ غير معروف"
+#ekirValid                      = "الترخيص صالح"
+#ekirExpired                    = "انتهت فترة الترخيص"
+#ekirCorrupted                  = "الترخيص غير صالح"
+#ekirNotSigned                  = "التوقيع الرقمي إما مفقود أو تالف"
+#ekirWrongProduct               = "الترخيص لا ينطبق على هذا التطبيق. يتعذر تفعيل " + $ProductName + " باستخدام الترخيص الخاص بتطبيق آخر. الرجاء التحقق من التطبيق المثبت الخاص بك."
+#ekirBlackListed                = "تم منع المفتاح "+f_KeySerNum(KeyInfo.ID.KeySerNum)+""
+#ekirIllegalUpdate              = "تاريخ قاعدة البيانات غير متوافق مع فترة صلاحية الترخيص"
+#ekirInconsistentUpdate         = "قواعد البيانات تالفة"
+#ekirKeyCreationDateInvalid     = "تاريخ إنشاء المفتاح غير صحيح"
+#ekirTrialAlreadyInUse          = "لا يمكن إضافة مفتاح لإصدار تجريبي بينما يوجد مفتاح آخر نشط لترخيص تجريبي"
+#ekirInvalidBlacklist           = "القائمة السوداء للمفاتيح تالفة"
+#ekirCantBeUsedAsReserved       = "تعذر تسجيل الترخيص كترخيص إضافي"
+#ekirKeyInstallDateInvalid      = "تاريخ تفعيل غير صحيح"
+#ekirTrialPeriodIsOver          = "انتهت صلاحية الترخيص التجريبي"
+#ekirConflictsWithCommercial    = "ملف المفتاح الجديد يتعارض مع الترخيص التجاري الحالي"
+#ekirExpiredAsReserve           = "تنتهي صلاحية هذا الترخيص قبل الترخيص الحالي"
+#ekirGracePeriod                = "الترخيص في فترة السماح"
+#ekirSuspended                  = "الاشتراك متوقف مرحليًا"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "ينبغي إعادة تثبيت التطبيق"
+#ekirLicenseOnlyForMigration    = "قم بالتحويل إلى تطبيق آخر لتفعيل الإصدار التجاري"
+default                         = "ملف المفتاح غير صحيح"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "يتم تحديده لاحقًا"
+#edtUnlimited = "فعال"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "متوقف مؤقتـًا من " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "معلومات الترخيص"
+
+[LicenseExpirationWindow]
+@ = $ProductName + "الإخطار بالترخيص"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "انتباه!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "أنت تستخدم إصدارًا تجريبيًا من" + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "القائمة السوداء للتراخيص إما مفقودة أو تالفة. الرجاء تشغيل <a تحديث onclick(f_StartUpdater())>تحديث</a> لمتابعة التشغيل."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "ترخيصك " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". للاحتفاظ بتحديث الحماية الخاصة بك، برجاء <a شراء onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nإذا قمت بالفعل بشراء الترخيص، برجاء <a التفعيل onclick(f_Activate())>لتفعيل التطبيق</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("انتهت فترة صلاحية الاشتراك." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " تم تعطيل الحماية."))+($IsBestBuyLink? "تجديد الاشتراك غير متاح" : "أمان الكمبيوتر في خطر. \n\nلتجديد الاشتراك، الرجاء <a onclick(url($KeyProviderLinkForText))>الاتصال بموفر الاشتراك لديك</a>.")) :("أمامك " + f_n_days.remaining(LicInfo.SubscriptionInfo.ToleranceDays) + ($IsBestBuyLink? " متبقية لتجديد الاشتراك. " : (LicInfo.KeyInfo.KeyType == #ektSubscription? " متبقية على تعطيل التحديثات. " : " متبقية على تعطيل الحماية." ) ) + " لتجديد الاشتراك، الرجاء <a onclick(url($KeyProviderLinkForText))>الاتصال بموفر الاشتراك لديك</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>تم منع المفتاح النشط.\nوتم تعطيل ميزة التحديث، ويمكن أن يتعرض الكمبيوتر الخاص بك إلى خطر الإصابة.</b>\n\nإذا كنت قد اشتريت التطبيق بصورة قانونية، فالرجاء الاتصال بالدعم الفني أو الموزع.\n\nإذا كنت تستخدم نسخة غير قانونية، فالرجاء <a شراء onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>\n\nإذا كنت قد اشتريت ترخيصًا بالفعل، فالرجاء <a Activate onclick(f_Activate())>تفعيل التطبيق</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "تنتهي الصلاحية اليوم" : "تنتهي الصلاحية في " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "انتهى"
+
+[s_LicenseRenewBuyText]
+0 = "الحصول على ترخيص"
+default = "تجديد الترخيص"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "حدد الاعدادات التي سيتم استعادتها:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " معالج التكوين"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "معلومات عامة"
+InitBegin.Descr                       = "مرحبًا في معالج تكوين " + $ProductName_GEN +."
+CheckHosts.Name                       = "فحص توفر خوادم Kaspersky Lab"
+CheckHosts.Descr                      = "تم اكتشاف إعادة توجيه مشبته بها"
+ResetArea.Name                        = "استعادة الإعدادات"
+ResetArea.Descr                       = "تحتوي الإعدادات المدرجة أدناه على بيانات تم إدخالها بواسطة المستخدم أو تراكمت \nأثناء تشغيل التطبيق."
+EnumExe.Name                          = "تحليل النظام"
+EnumExe.Descr                         = "الرجاء الانتظار بينما يتم تجميع المعلومات عن نظامك..."
+ResetFinish.Name                       = "الرجاء الانتظار بينما يتم تجميع المعلومات عن نظامك " + $ProductName
+ResetFinish.Descr                      = $ProductName + " جاهز للبدء."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "اكتملت الاستعادة."
+ResetDescr          = "استعاد معالج التكوين إعدادات " + $ProductName + " بنجاح."
+
+[BestBuyUpgradeMessage]
+@ = "تبديل إلى تطبيق آخر"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="بدء استخدام Kaspersky Internet Security"
+RestartButton = "تشغيل Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "تهانينا لك!"
+Message = "لقد تمت ترقية Kaspersky Anti-Virus بنجاح إلى Kaspersky Internet Security.\nيمكنك الآن الاستمتاع بمزيد من المزايا لحماية الكمبيوتر."
+Description = "نشكرك على اختيار برامج Kaspersky Lab! ونتمنى لك الاستمتاع بالحماية الإضافية."
+
+[ForcedUpgradeMessagePage]
+Header = 'انتهى تقريبًا'
+Message = "نشكرك على اختيار برامج Kaspersky Lab! ونتمنى لك الاستمتاع بالحماية الإضافية."
+Description = "نظرًا لعدم إزالة البرنامج غير المتوافق، تم تعطيل بعض مزايا Kaspersky Internet Security الجديدة لضمان عمل التطبيقات المُثبَّتة ونظام التشغيل على نحو سليم.\n\nيمكنك إزالة البرنامج غير المتوافق يدويًا وتمكين جميع المزايا الجديدة من نافذة إعدادات Kaspersky Internet Security."
+Notification = "سيتم إعادة تشغيل التطبيق لإكمال الترقية"

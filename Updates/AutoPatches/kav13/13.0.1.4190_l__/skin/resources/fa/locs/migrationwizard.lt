@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'راهنمای گام به گام مهاجرت'
+UpgradeCaption = 'ارتقا'
+
+RebootPageCheckboxRebootText = 'کامپیوتر را دوباره راه اندازی کنید'
+OpenRemoveProgramsPanel = 'نوار ابزار را باز کنید'
+
+WizardBeginDescriptionKis = 'شما به Kaspersky Internet Security 2013 منتقل خواهید شد.\n\nدارنده کپی رایت به شما یک لایسنس غیرانحصاری داده است تا از Kaspersky Internet Security با همان شرایطی که در هنگام نصب Kaspersky Anti-Virus پذیرفته اید، استفاده کنید.\n\nنکته: این انتقال ممکن است بعد از راه اندازی مجدد سیستم انجام شود.'
+
+WizardBeginDescriptionKav = 'شما به Kaspersky Anti-Virsu 2013 منتقل خواهید شد.\n\nدارنده کپی رایت به شما یک لایسنس غیرانحصاری داده است تا از Kaspersky Anti-Virus با همان شرایطی که در هنگام نصب Kaspersky Internet Security پذیرفته اید، استفاده کنید.\n\nنکته: این انتقال ممکن است بعد از راه اندازی مجدد سیستم انجام شود.'
+
+WizardContinueDescriptionKis = 'ورود به Kaspersky Internet Security 2013 را ادامه بده.'
+WizardContinueDescriptionKav = 'ورود به Kaspersky Anti-Virus 2013 را ادامه بده.'
+
+MigrationNocomebackWarning = '\n\nتوجه! لایسنس فعلی برای آنتی ویروس Kaspersky قبل از لایسنس ایمنی اینترنتی Kaspersky منقضی می شود. پس از منقضی شدن لایسنس آنتی ویروس Kaspersky، امکان بازیابی آنتی ویروس Kaspersky وجود دارد.'
+
+PleaseWait = 'لطفاً صبر کنید'
+RemovalProgressDescription   = 'در حال حذف نرم افزار ناسازگار'
+RemovalApplicationsDescription = 'نرم افزار زیر برای اجرای جابجایی حذف می شود:'
+ManualRemovalApplicationsDescription = 'برای اجرای جابجایی باید نرم افزار ناسازگار زیر را به طور دستی حذف کنید:'
+SearchRemovalApplicationsDescription   = 'در حال جستجوی نرم افزار ناسازگار'
+RestartProductDescription = 'برای کامل شدن جابجایی برنامه مجددا شروع می شود.'
+RebootOsDescription = 'برای ادامه جابجایی باید کامپیوتر را دوباره راه اندازی کنید.\nراهنمای گام به گام پس از راه اندازی دوباره ادامه می یابد.'
+
+MigrationProgressDescriptionKis = 'در حال پیکربندی دوباره برنامه و جابجایی به Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'در حال پیکربندی دوباره برنامه و جابجایی به Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'در حال پیکربندی دوباره برنامه و جابجایی به Kaspersky Anti-Virus'
+
+MigrationKis = 'جابجایی به Kaspersky Internet Security'
+MigrationKav = 'جابجایی به Kaspersky Anti-Virus'
+MigrationUnknown = 'جابجایی'
+
+SearchRemovalApplicationsHeader = 'ارتقا به Kaspersky Internet Security'
+RemovalProgressHeader = 'در حال حذف نرم افزار ناسازگار'
+RemovalApplicationsHeader = 'نرم افزار ناسازگار یافت شد'
+RebootOsHeader = 'راه اندازی مجدد کامپیوتر ضروری است'
+RestartProductHeader = 'برنامه مجددا شروع می شود'
+
+MigrationAbortedHeader = $MigrationType + ' غیرممکن است'
+MigrationAbortedDescription = $MigrationType + ' ناموفق بود. حذف دستی نرم افزار ناسازگار و شروع مجدد راهنمای گام به گام را امتحان کنید.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus شما به Kaspersky Internet Security ارتقا می یابد.\nاکنون ویژگی های بیشتری برای محافظت از رایانه تان در اختیار دارید.'
+BestBuyGiftDescription = 'از اینکه نرم افزار محصول Kaspersky Lab را انتخاب کردید سپاسگزاریم! از ویژگی های افزوده شده برای محافظت لذت ببرید.'
+BestBuyUpgradeNotification = 'در حینارتقا، سیستم شما برای بررسی نرم افزار ناسازگار مورد تجزیه و تحلیل قرار می گیرد تا از عملکرد مناسب برنامه های نصب شده و سیستم عامل اطمینان حاصل شود.'
+BestBuyFreeUpgrade = 'جابجایی به Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'عملیات ارتقا در پس زمینه'
+BestBuyTryAbortInformation = 'عملیات ارتقا در پس زمینه ادامه خواهد داشت'
+BestBuyTryAbortDescription = 'به دلیل اینکه نرم افزار ناسازگار حذف نشده است، بعضی از ویژگی های جدید Kaspersky Internet Security غیرفعال شده اند تا از عملکرد صحیح برنامه های نصب شده و سیستم عامل اطمینان حاصل شود.\n\nنرم افزار ناسازگار را می توانید به صورت دستی حذف کنید و تمام ویژگی های جدید را در پنجره تنظیمات Kaspersky Internet Security فعال کنید.'
+BackToSubcriptionUpgradeButtonText = 'برگشت به ارتقا'
+Congratulation = 'تبریک می گوییم!'
+
+RunKisButtonText = 'اجرای Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus شما به Kaspersky Internet Security ارتقا یافت.\nاکنون ویژگی های بیشتری برای محافظت از رایانه تان در اختیار دارید.'

@@ -1,0 +1,514 @@
+﻿Caption = 'Acerca de'
+
+Copyright   = '© 2012 Kaspersky Lab ZAO. Todos los derechos reservados.'
+
+Warning2    = 'Las marcas comerciales registradas y las marcas de servicios son propiedad de sus respectivos propietarios.'
+Warning3 = 'Para comprobar la firma digital, se utiliza Crypto C versión 2.0, Copyright (C) OOO "CryptoEx" http://www.cryptoex.ru. Todos los derechos reservados.'
+
+Credits     = '
+<b style="color:gray">Administrador de proyectos:</b>
+<br>
+<br>Timur Amirkhanov
+<br>
+<br><b style="color:gray">Administrador de productos:</b>
+<br>
+<br>Vartan Minasyan
+<br>
+<br><b style="color:gray">Equipo de desarrollo:</b>
+<br>
+<br>Mikhail Alpinsky
+<br>Alexander Amrilloev
+<br>Vyacheslav Balabanov
+<br>Sergey Dobrovolsky
+<br>Alexey Drozdov
+<br>Oleg Fedko
+<br>Andrey Gerasimov
+<br>Alexey Gnevashev
+<br>Roman Gordeev
+<br>Dmitry Gotskin
+<br>Yury Kharlamov
+<br>Vitaly Kondratov
+<br>Pavel Korzh
+<br>Andrey Kostyagin
+<br>Leonid Kudryavtsev
+<br>Vitaly Kuzin
+<br>Nikolay Lebedev
+<br>Nikolay Lozhkarev
+<br>Ivan Lyukshin
+<br>Roman Meshcheryakov
+<br>Alexey Mikhaylichenko
+<br>Mikhail Modin
+<br>Mikhail Taran
+<br>Yury Pichuzhkin
+<br>Sergey Polyashov
+<br>Natalya Samsonova
+<br>Vladimir Sheval
+<br>Alexey Sidorov
+<br>Dmitry Tkachenko
+<br>Vyacheslav Volodin
+<br>Ilya Varchev
+<br>
+<br><b style="color:gray">Equipo de componente:</b>
+<br>
+<br>Roman Akishin
+<br>Evgeny Alexeev
+<br>Ilya Arzamartsev
+<br>Kirill Baranov
+<br>Alexey Bukreev
+<br>Vyacheslav Cherkasov
+<br>Andrey Chinkov
+<br>Alexey Dod
+<br>Alexander Drugakov
+<br>Alexander Enaldiev
+<br>Alexander Eremkin
+<br>Sergey Fomin
+<br>Dmitry Gerasimov
+<br>Oleg Gitsa
+<br>Ilya Godunov
+<br>Igor Gordienko
+<br>Roman Gordienko
+<br>Alexey Gorin
+<br>Roman Gudilov
+<br>Igor Gusarov
+<br>Vasiliy Isakov
+<br>Nikita Kazakov
+<br>Dmitry Khodyrev
+<br>Igor Khoroshilov
+<br>Alexander Klinov
+<br>Sergey Kogan
+<br>Petr Kolmakov
+<br>Vadim Kononenko
+<br>Eldar Kononov
+<br>Alexander Korovkin
+<br>Sergey Kozlov
+<br>Sergey Kubrin
+<br>Igor Kumagin
+<br>Alexander Ledenev
+<br>Vyacheslav Levchenko
+<br>Stanislav Lipovenko
+<br>Dmitry Malov
+<br>Daniil Maltsev
+<br>Konstantin Manurin
+<br>Maxim Martinevsky
+<br>Igor Maslov
+<br>Roman Mikhalevsky
+<br>Mikhail Modin
+<br>Sergey Ogryzkov
+<br>Pavel Polozov
+<br>Sergey Potapkin
+<br>Margarita Pridantseva
+<br>Denis Rodionov
+<br>Evgeny Roshchin
+<br>Dmitry Ryabov
+<br>Alexey Ryaskin
+<br>Vadim Rybakov
+<br>Sergey Sadovnikov
+<br>David Sarkisyan
+<br>Evgeny Sedov
+<br>Mikhail Serkin
+<br>Denis Shavrovsky
+<br>Nikolay Shelukhin
+<br>Alexander Shiryaev
+<br>Fedor Shiryaev
+<br>Sergey Sidorov
+<br>Dmitry Sinelnikov
+<br>Andrey Sobko
+<br>Andrey Solodovnikov
+<br>Alexander Stadnikov
+<br>Vasiliy Starostin
+<br>Mikhail Strelnikov
+<br>Vladimir Strogov
+<br>Alexey Subbotin
+<br>Nikolay Suboch
+<br>Anton Suvorov
+<br>Alexander Tarasenko
+<br>Maxim Tikhonov
+<br>Alexey Totmakov
+<br>Sergey Usachev
+<br>Rinat Vergazov
+<br>Kirill Zhadrin
+<br>Roman Zhiltsov
+<br>Sergey Zubrilin
+<br>Evgeny Zverev
+<br>
+<br><b style="color:gray">Analistas de sistemas:</B>
+<br>
+<br>Andrey Bolonkin
+<br>Irina Epanechnikova
+<br>Mikhail Gerber
+<br>Alexey Ivanov
+<br>Tatyana Merkushina
+<br>Ekaterina Shamsutdinova
+<br>Alexandra Zaitseva-Zotova
+<br>
+<br><b style="color:gray">Investigación contra software malicioso:</b>
+<br>
+<br>Vyacheslav Batenin
+<br>Sergey Belov
+<br>Alexander Dubinevich
+<br>Ruslan Gallyamov
+<br>Roman Gavrilchenko
+<br>Vilen Kamalov
+<br>Andrey Kirzhemanov
+<br>Alexey Monastyrsky
+<br>Yury Nesmachny
+<br>Vladislav Pintiysky
+<br>Vyacheslav Rusakov
+<br>Yuri Slobodyanuk
+<br>Sergey Ulasen
+<br>Roman Vasilenko
+<br>Dmitry Vorontsov
+<br>Oleg Zaitsev
+<br>
+<br><b style="color:gray">Investigación sobre Filtrado de Contenido:</b>
+<br>
+<br>Maria Balueva
+<br>Valery Bolshunov
+<br>Vladimir Chebotarev
+<br>Konstantin Ignatev
+<br>Evgeny Kolotinsky
+<br>Maxim Koshelev
+<br>Andrey Kostin
+<br>Mikhail Kozlov
+<br>Anna Larkina
+<br>Dmitry Momotov
+<br>Roman Rybalko
+<br>Dmitry Shiltsov
+<br>Dmitry Shvyrkov
+<br>Vladimir Skvortsov
+<br>Evgeny Smirnov
+<br>Ivan Vedernikov
+<br>Sergey Zagorsky
+<br>Victor Zhdanov
+<br>Konstantin Zykov
+<br>
+<br><b style="color:gray">Gestor de diseño:</b>
+<br>
+<br>Alexey Varochko
+<br>
+<br><b style="color:gray">Diseño:</b>
+<br>
+<br>Kirill Anikeev
+<br>Alexey Belkin
+<br>Maxim Kamzolov
+<br>Vladimir Levchenko
+<br>
+<br><b style="color:gray">Administrador de localización y documentación:</b>
+<br>
+<br>Ekaterina Zarovnaya
+<br>
+<br><b style="color:gray">Documentación y localización:</b>
+<br>
+<br>Marcel Gaßen
+<br>Nikita Ivanov
+<br>Yuliya Karaulova
+<br>Evgeniya Khort
+<br>Natalya Kochanova
+<br>Anastasiya Koshkodaeva
+<br>Ivan Kravtsov
+<br>Olga Kuzmina
+<br>Romain Lauret
+<br>Gil Luis
+<br>Gotthard Moedinger
+<br>Alexander Mikhailov
+<br>Andrey Nosik
+<br>Ekaterina Nosova
+<br>Larisa Poklad
+<br>Wei Zhao
+<br>Olga Zheleznyak
+<br>Mikhail Zolotukhin
+<br>
+<br><b style="color:gray">Administradores de control de calidad:</b>
+<br>
+<br>Egor Chekhievsky
+<br>Ivan Kulikov
+<br>Sergey Panfilenko
+<br>
+<br><b style="color:gray">Ingenieros senior de pruebas:</b>
+<br>
+<br>Elena Dranitskaya
+<br>Kirill Gonkov
+<br>Renat Imametdinov
+<br>Ekaterina Kobyzeva
+<br>Rinat Salihov
+<br>Yuliya Shetkh
+<br>Semen Shilkov
+<br>Sergey Starinsky
+<br>
+<br><b style="color:gray">Administradores de procesos empresariales:</b>
+<br>
+<br>Yasna Milkova
+<br>Vadim Savkin
+<br>Elena Trubnikova
+<br>
+<br><b style="color:gray">Ingenieros de pruebas:</b>
+<br>
+<br>Alexey Ambrozevich
+<br>Anton Atamanov
+<br>Denis Axyonov
+<br>Ayano Okada
+<br>Vasily Batishchev
+<br>Igor Belyaev
+<br>Elena Bolotova
+<br>Alexey Bukreev
+<br>Cao Wenli
+<br>Cao Xiaowei
+<br>Chiaki Matsuda
+<br>Ekaterina Dekatova
+<br>Dong Zhifang
+<br>Anton Dubinkin
+<br>Yuliya Fomenko
+<br>Olga Gigina
+<br>Vitaliy Gladilin
+<br>Denis Goryunov
+<br>Dmitry Goslavsky
+<br>Mikhail Ilin
+<br>Jie Lv
+<br>Jin Qinfang
+<br>Kirill Kalistratov
+<br>Sergey Kleev
+<br>Alexander Kolenko
+<br>Vera Korablina
+<br>Sergey Korzukhin
+<br>Dmitry Larin
+<br>Liu Zewei
+<br>Lu Yang
+<br>Lv Ruihan
+<br>Lv Youqing
+<br>Maria Malysheva
+<br>Oleg Mekekechko
+<br>Konstantin Murashko
+<br>Dmitry Myachin
+<br>Na Guo
+<br>Na Wei
+<br>Maxim Okulich
+<br>Olga Plakhotnik
+<br>Dmitry Platonov
+<br>Alexander Prokhin
+<br>Vladimir Savelyev
+<br>Alexey Sherikhov
+<br>Sergey Shklyarik
+<br>Alexander Silaev
+<br>Nikolay Slavsky
+<br>Vitaly Slobodsky
+<br>Irakly Sunguryan
+<br>Song Yunpeng
+<br>Alexey Stepanov
+<br>Maxim Stogny
+<br>Anton Tokarev
+<br>Anna Uzhinova
+<br>Wang Lili
+<br>Wang Xiaofeng
+<br>Evgenia Yuryeva
+<br>Svetlana Yushina
+<br>Yan Yang
+<br>Zhan Mei
+<br>Zhang Lei
+<br>Zhao Chunliang
+<br>Mikhail Zhitkov
+<br>Zhou Zhongjun
+<br>
+<br><b style="color:gray">Equipo de desarrollo de infraestructura:</b>
+<br>
+<br>Rinat Agishev
+<br>Sergey Alexeenko
+<br>Vadim Antipov
+<br>Alexey Antonov
+<br>Kristina Balykina
+<br>Artem Baranov
+<br>Andrey Bezborodov
+<br>Timur Biyachuev
+<br>Maxim Bobylev
+<br>Alexey Borzenkov
+<br>Andrey Cheremukhin
+<br>Alexey Domashenko
+<br>Andrey Efremov
+<br>Igor Fedurkin
+<br>Sergey Gavrilenko
+<br>Natalya Glavatskaya
+<br>Alexey Glavatsky
+<br>Roman Golovanov
+<br>Ivan Goncharuk
+<br>Igor Gorelov
+<br>Mikhail Gorshenin
+<br>Alexey Gusarov
+<br>Irina Isaenko
+<br>Vasily Ishchenko
+<br>Sergey Ivanov
+<br>Roman Ivliev
+<br>Vasily Kirichenko
+<br>Eldar Kononov
+<br>Kirill Kruglov
+<br>Artem Kulchakovsky
+<br>Nikolay Kuvyrkin
+<br>Andrey Ladikov
+<br>Anton Lapushkin
+<br>Sergey Lesko
+<br>Alexey Lokhin
+<br>Dmitry Lukasevich
+<br>Anton Malyshenok
+<br>Ivan Makhlin
+<br>Anatoly Metelkin
+<br>Stepan Milyaev
+<br>Sergey Mineev
+<br>Yury Mikheev
+<br>Ivan Moshkarin
+<br>Dilshat Mukhametyanov
+<br>Ilya Nazarov
+<br>Alexey Nikitin
+<br>Denis Parinov
+<br>Pavel Perestoronin
+<br>Ivan Pigulevsky
+<br>Sergey Prokudin
+<br>Evgeny Roginsky
+<br>Alexey Romanenko
+<br>Andrey Satarin
+<br>Evgeny Savitsky
+<br>Tatyana Sedova
+<br>Alexander Sevtsov
+<br>Artem Shamrin
+<br>Vladislav Shcherbinin
+<br>Andrey Shemanovsky
+<br>Andrey Shirokov
+<br>Andrey Shchuchkin
+<br>Dmitry Shvetsov
+<br>Valeriya Shtyryakova
+<br>Anna Snegireva
+<br>Alexey Solomin
+<br>Evgeny Starchak
+<br>Boris Storonkin
+<br>Sergey Strelkov
+<br>Andrey Sudakov
+<br>Konstantin Sviridov
+<br>Alexey Tal
+<br>Ilya Tolstikhin
+<br>Alexander Trofimov
+<br>Artem Troitsky
+<br>Alla Tsargorodskaya
+<br>Dmitry Tsibliev
+<br>Boris Tveritnev
+<br>Sergey Ulasen
+<br>Alexander Valeev
+<br>Roman Vasilenko
+<br>Vladimir Vishnevsky
+<br>Vitaly Yakutenko
+<br>Vitaly Zaitsev
+<br>Timur Zaynullin
+<br>
+<br><b style="color:gray">Gestión de productos:</b>
+<br>
+<br>Georgy Barkan
+<br>Alexey Klimenchuk
+<br>Alexander Orlov
+<br>Alexey Trushin
+<br>
+<br><b style="color:gray">Marketing del producto:</b>
+<br>
+<br>Alexandra Kalchenko
+<br>Vasily Razuvaykin
+<br>
+<br><b style="color:gray">Ventas en línea:</b>
+<br>
+<br>Maxim Frolov
+<br>Andrey Osadchuk
+<br>Maxim Simonov
+<br>
+<br><b style="color:gray">Base de conocimientos online:</b>
+<br>
+<br>Maria Bolshakova
+<br>Andrey Kluev
+<br>Yuliya Kornienko
+<br>Svetlana Kozlova
+<br>Maria Krasnoshchekova
+<br>Ivan Krasnov
+<br>Elena Liberman
+<br>Svetlana Mushta
+<br>Andrey Panaev
+<br>Artem Petukhov
+<br>Marina Sobolevskaya
+<br>Yuliya Tikhomirova
+<br>
+<br><b style="color:gray">Agradecimientos:</b>
+<br>
+<br>3x0gR13N
+<br>5443915 (Gianmarco Beato)
+<br>7Glasses (Sergey Potashov)
+<br>Agon Shala
+<br>alexs2011
+<br>AlexxSun (Leonid Kirichenko)
+<br>ares (Sergey Arsenyev)
+<br>b7music (Vladimir Linetsky)
+<br>Bobbycooper (Tony Di Stasio)
+<br>botpet (Botos Péter)
+<br>Boyfriend (M. Yasir)
+<br>Caos (Carlos Oliveros)
+<br>crematorHL
+<br>deWolf (Andrey Molyavko)
+<br>dolpsdw (Jesus Gonzalez Gomez)
+<br>DonKid (Sérgio Luís D. de Oliveira) 
+<br>Alexander Donovsky
+<br>dr Ausgemachte (Djordje Pavlovic) 
+<br>Drru (Lev Lazdan)
+<br>Evgeny Malinin
+<br>GarciaKaspersky ( Garcia Valérian ) 
+<br>gaxcon (Josué Gascón) 
+<br>Geraner (Steffen Langhammer)
+<br>grv02 (Marcin Nowiński)
+<br>hamedharry (Hamed Hajinabi)
+<br>harlan4096
+<br>JanRei
+<br>John09 (Byron Benitez)
+<br>Jowi
+<br>Yury Kalashnikov
+<br>Kaspersky Fanat
+<br>kilo2 (Dmitry Kilin)
+<br>Marko13 (Marko Kodrin)
+<br>MASolomko (Maksym Solomko)
+<br>massalama (Marco_M)
+<br>mike 1 (Zaharov Mikhail)
+<br>mollerGui61 (Guillermo Tormo)
+<br>mvs (Vitaly Meleshchenko)
+<br>Ngọc VN (Nguyễn Dương Ngọc) 
+<br>Nikiror (Nikita Nikolayevsky)
+<br>ogy
+<br>phantom (Ivan Sinelnikov)
+<br>polifonia (Roman Kozlov)
+<br>Rampastein
+<br>richbuff
+<br>rudger79
+<br>saso (Saso Badovinac)
+<br>Sass Drake (Slaviša Bakić)
+<br>Schulte
+<br>Skarbovoy (Igor Skrabovoy)
+<br>SLASH_id (Yaroslav Tarasenko)
+<br>sputnikk (Stanislav Vorontsov)
+<br>SQ (Andrey Korovin)
+<br>staff (Vasily Dushko)
+<br>Stas007 (Stanislav Afanasiev)
+<br>sullysnet
+<br>SunBlack
+<br>tigertron (Ivan Georgiev)
+<br>User_kis (Alexander Holzer)
+<br>Vicu (Filipus Imanuel) 
+<br>Visconti12 (JoseM Hernandez)
+<br>vit9696 (Vitaly Cheptsov)
+<br>Wesly.Zhang (张樑)
+<br>Whizard
+<br>БаХ (Alexandr Bahmacenco)
+<br>Революционер (Anatoly Barishnikov)
+<br>
+<br><b style="color:gray">Agradecimientos especiales:</b>
+<br>
+<br><a style="text-decoration:none;color:black" href=\"showPicture\">Eugene Kaspersky</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><b style="color:gray">Kaspersky Anti-Virus</b>
+<br><b style="color:gray">volverá en 2014</b>'

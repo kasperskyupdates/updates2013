@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x5242C562" name="kas-engine" module="kas_product">
+    <interface iid="0xB4773723" name="IKASEngine"/>
+    <interface iid="0x7D3936C0" name="ISimpleKASList"/>
+    <interface iid="0x2F0C55EF" name="IWeightBasedKASList"/>    
+  </component>
+
+  <component clsid="0x0a07021a" name="WebSiteControl" module="web_site_control"> 
+    <interface iid="0x767e2dc0" name="IWebSiteControlUrlAnalyzer"/> 
+    <interface iid="0x4434366c" name="IWebSiteControlSessionFactory"/> 
+  </component>
+
+  <component clsid="0xf8a6f064" name="IPackedIOFactory" module="packed_io">
+    <interface iid="0x5fd84aff" name="IPackedIOFactory"/>
+  </component>
+
+  <component clsid="0x36AD6FA4" name="SaxXmlParserFactory" module="sax_xml_parser">
+    <interface iid="0xD32E6718" name="IXmlParserFactory"/>
+  </component>
+  
+  <component clsid="0x8fa6ba73" name="EkaSysWatch" module="ekasyswatch">
+    <interface iid="0xa7ba56c5" name="ISystemWatcher"/>
+    <interface iid="0x90fe23df" name="sw.iEkaRoot"/>
+    <interface iid="0x302e95a4" name="ISWConstruct"/>
+    <interface iid="0x805FE934" name="ISWSettings"/>
+    <interface iid="0x84b5bc07" name="IServiceLocator"/>
+  </component>
+
+  <component clsid="0x7fdc049f" name="PraguePlugin" module="swpragueplugin">
+    <interface iid="0xbcab3f48" name="IPragueEventProvider"/>
+    <interface iid="0xA4EE2BE2" name="IPragueService"/>
+  </component>
+  
+  <component clsid="0x7e38cec9" name="format_recognizer.FormatRecognizer" module="format_recognizer">
+    <interface iid="0x326456fa" name="format_recognizer.IFormatRecognizer"/>
+  </component>
+
+  <component clsid="0x4fb7560d" name="MAPIMailer" module="mailer">
+    <interface iid="0x5488d38a" name="IMailer"/>
+  </component>
+
+  <component clsid="0x13950C5E" name="MemoryMonitor" module="memmon">
+    <interface iid="0xAB2FC8B9" name="IMemoryMonitor"/>
+  </component>
+
+  <component clsid="0x70b22aa2" name="LocalizationManager" module="localization_manager">
+    <interface iid="0x9e168f3f" name="ILocalizationManager"/>
+  </component>
+
+  <component clsid="0xbce7112a" name="CultureConverter" module="localization_manager">
+    <interface iid="0x465ebe3f" name="ICultureConverter"/>
+  </component>
+  
+  <component clsid="0x912127ec" name="SafeBanking" module="safe_banking"
+            construct_iface_id="0x69982D9E"
+            settings_iface_id="0x8B2F36A8"
+            settings_type_id="0xf30f9595"
+            tracer_prefix="sbank">
+    <interface iid="0xa47bf9af" name="app_core.task_manager.task.ITask"/>
+  </component>
+  
+  <component clsid="0x699106f6" name="safe_banking.safe_browser.Controller" module="safe_banking" tracer_prefix="sbank">
+    <interface iid="0x153cb72d" name="safe_banking.IProcessEventsSubscription"/>
+    <interface iid="0x97c68f5b" name="safe_banking.safe_browser.ISafeBrowserLauncher"/>
+  </component>
+  
+  <component clsid="0xc628fe3e" name="safe_banking.UiHostSessionManager" module="safe_banking">
+    <interface iid="0x7c35760e" name="safe_banking.detail.IUiHostSessionManager"/>
+  </component>
+
+  <component clsid="0xc066a74d" name="PlatformMetaInfoDescriptors" module="product_metainfo">
+    <interface iid="0xa53230cb" name="IStructMetaInfoRegistry"/>
+  </component>
+
+  <component clsid="0x7bdf9a39" name="PlatformMetaInfoProxyStubFactories" module="product_metainfo">
+    <interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+  </component>
+  
+  <component clsid="0x4c09eecb" name="safe_banking.meta.TaskMetaInfo" module="product_metainfo">
+    <interface iid="0xa53230cb" name="eka.IStructMetaInfoRegistry"/>
+  </component>
+
+  <component clsid="0x9a4a3644" name="safe_banking.safe_browser.meta.MetaInfo" module="product_metainfo">
+    <interface iid="0xa53230cb" name="eka.IStructMetaInfoRegistry"/>
+  </component>
+
+  <component clsid="0xfbbdad26" name="safe_banking.safe_browser.meta.ProxyStubs" module="product_metainfo">
+    <interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+  </component>
+
+  <component clsid="0x3e7a552d" name="safe_banking.TrafficInterception" module="safe_banking" trace_prefix="sbank.traffic_interception">
+    <interface iid="0xd18d0419" name="safe_banking.ITrafficInterception"/>
+  </component>
+
+  <component clsid="0x6BBEA5CA" name="persistent_queue" module="persistent_queue">
+    <interface iid="0x03ED713C" name="IQueueFactory"/>
+  </component>
+
+  <component clsid="0xeb5102dc" name="dns_client" module="dns_client">
+    <interface iid="0x7996082a" name="IDnsResolver"/>
+    <interface iid="0xC117E1D3" name="IHostResolver2"/>
+  </component>
+  
+</root>

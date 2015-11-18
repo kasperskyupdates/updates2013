@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Technische proefversie van Kaspersky Internet Security'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Technische proefversie van Kaspersky Anti-Virus'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'up-to-date' 
+Corrupted = 'beschadigd' 
+VeryOld = 'verouderd' 
+Old = 'verouderd' 
+OldInGracePeriod = 'zijn al lange tijd niet bijgewerkt'
+UpdatedAndRebootNeeded = 'bijgewerkt. De computer moet opnieuw worden opgestart' 
+UpdatedAndProductRestartNeeded = 'bijgewerkt. Het programma moet worden herstart' 
+SomeBasesNeedUpdate = 'sommige beschermingsonderdelen moeten worden bijgewerkt'
+
+Schedule_Auto    = 'automatisch' 
+Schedule_Manual  = 'handmatig' 
+Schedule_Fixed   = 'volgens planning' 
+
+Back = 'Vorige' 
+StopTask = 'Stoppen'
+
+News = 'Nieuws'
+Reports = 'Rapporten'
+Settings = 'Instellingen'
+Help = '&Help'
+OK = 'OK'
+Cancel = 'Annuleren'
+Retry = 'Nogmaals'
+
+Unknown = 'onbekend'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'vandaag, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'gisteren, %H:%M'
+
+MonthName_1  = 'januari'
+MonthName_2  = 'februari'
+MonthName_3  = 'maart'
+MonthName_4  = 'april'
+MonthName_5  = 'mei'
+MonthName_6  = 'juni'
+MonthName_7  = 'juli'
+MonthName_8  = 'augustus'
+MonthName_9  = 'september'
+MonthName_10 = 'oktober'
+MonthName_11 = 'november'
+MonthName_12 = 'december'
+ 
+DateUnknown = 'onbekend'
+
+After = 'binnen'
+Remaining = 'resterend'
+Ago = 'geleden'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'dag', 'dagen'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'uur', 'uur'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minuut', 'minuten'}
+LessMinute_After = '<1 minuut'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'dag', 'dagen'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'uur', 'uur'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minuut', 'minuten'}
+LessMinute_Remaining = '<1 minuut'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'dag', 'dagen'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'uur', 'uur'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minuut', 'minuten'}
+LessMinute_Ago = '<1 minuut'
+
+Yesterday   = 'gisteren'
+Today       = 'vandaag' 
+LessWeek    = 'minder dan een week geleden'
+LessTwoWeek = 'minder dan twee weken geleden'
+LessMonth   = 'minder dan een maand geleden'
+MoreMonth   = 'meer dan een maand geleden'
+MoreHalfYear= 'meer dan zes maanden geleden'
+MoreYear    = 'meer dan een jaar geleden'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Annuleren'
+ApplyButton = 'Toepassen'
+CloseButton = 'Sluiten'
+NextButton = 'Volgende >'
+BackButton = '< Terug'
+FinishButton = 'Voltooien'
+SaveButton = 'Opslaan'
+SkipButton = 'Overslaan'
+Continue = 'Doorgaan'
+Yes = 'Ja'
+No = 'Nee'
+
+SettingsMore = '&Instellingen...'
+
+DoNoyShowThisWindow = 'Niet tonen'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Niet-gedefinieerde fout'
+SystemError_0x8000004B = 'Niet-gedefinieerde fout'
+SystemError_0x80000041 = 'Onvoldoende geheugen'
+SystemError_0x80000042 = 'Niet ondersteund'
+SystemError_0x80000043 = 'Niet geïmplementeerd'
+SystemError_0x80000045 = 'Toegang geweigerd of object niet gevonden'
+SystemError_0x8000004C = 'Object niet gevonden'
+SystemError_0x800000C6 = 'Object niet gevonden'
+SystemError_0x800000C5 = 'Object niet gevonden'
+SystemError_0x8000004F = 'Object is geblokkeerd'
+SystemError_0x80000051 = 'Bewerking geannuleerd'
+SystemError_0x80000059 = 'Apparaatfout'
+SystemError_0x8000005A = 'Ongeldige handtekening'
+SystemError_0x8000005B = 'Ongeldige versie'
+SystemError_0x8000005F = 'Schrijfbeveiliging'
+SystemError_0x80000061 = 'Licentie ontbreekt'
+SystemError_0x80000062 = 'Onvoldoende schijfruimte'
+SystemError_0x80000063 = 'Apparaat is niet gereed'
+SystemError_0x800000C0 = 'Ongeldige indeling'
+SystemError_0x800000C1 = 'Onvoldoende rechten'
+SystemError_0x800000C2 = 'Initialisatiefout'
+SystemError_0x800000C3 = 'Initialisatiefout'
+SystemError_0x800000C7 = 'Onjuiste objectstatus'
+SystemError_0x800000C8 = 'Object is beveiligd met een wachtwoord'
+SystemError_0x800000CA = 'Leesfout'
+SystemError_0x800000CC = 'Leesfout'
+SystemError_0x800000CB = 'Schrijffout'
+SystemError_0x800000CD = 'Schrijffout'
+SystemError_0x800000D0 = 'Ongeldig object'
+SystemError_0x800000D1 = 'Object bestaat al'
+SystemError_0x800000D5 = 'Object in gebruik door een ander programma'
+SystemError_0x800000D8 = 'Databases zijn beschadigd'
+SystemError_0x800001C0 = 'Ongeldige module'
+SystemError_0x800001C2 = 'Module is niet geauthenticeerd'
+SystemError_0x800001C1 = 'Module niet gevonden'
+SystemError_0x800001C4 = 'Onderdeel kan niet worden geladen'
+SystemError_0x80000221 = 'Time-out opgetreden'
+SystemError_0x80000240 = 'Interactiefout van onderdelen'
+SystemError_0x90005000 = 'Ongeldige digitale handtekening'
+SystemError_0x90005002 = 'Niet digitaal ondertekend'
+SystemError_0x80027006 = 'De taak is gestopt'
+SystemError_0x80027007 = 'De taak is gestopt'
+SystemError_0x80380fbb = 'De taak is gestopt'
+SystemError_0x80017007 = 'Taak kan niet in Veilige modus worden gestart'
+SystemError_0x80017005 = 'Taak uitgeschakeld'
+SystemError_0x80017006 = 'Ongeldige gebruikersnaam of wachtwoord'
+SystemError_0x80017008 = 'Taak kan niet namens andere gebruikersaccount worden gestart in Veilige modus'
+SystemError_0x80017009 = 'Stuurprogramma niet gevonden'
+SystemError_0x80022005 = 'Fout bij laden van databases'
+SystemError_default    = 'Foutcode: ' + $ErrorCode
+
+LicenseManager = '&Licentiebeheer'
+SubscriptionManager = 'Abonnement beheren'
+ProblemSolution = 'Ga naar het venster Licentiebeheer om dit probleem op te lossen'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'inactief' ;refers to connection
+Stopping = 'stoppen'
+ConnectingToServer = 'verbinding maken met server'
+CreatingUpdateList = 'bestanden verwerken'
+Downloading = 'bestanden downloaden'
+Installing = 'bestanden updaten'
+RollbackRunning = 'vorige databases herstellen'
+
+FunctionalityDisabledForExpiredSubscription = 'update wordt uitgeschakeld'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'uw computerbescherming wordt uitgeschakeld'
+SubscriptionRemainingDaysCount = 'Nog ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dag.', 'dagen.'}
+SubscriptionExpiresToday = 'verloopt vandaag'
+SubscriptionActivated = 'geactiveerd'
+CheckReserveCodeManuallyHeader = 'Automatische activatie van programma met nieuwe activatiecode mislukt' ; TODO
+CheckReserveCodeManuallyText = 'Activeer het programma handmatig met behulp van de nieuwe activatiecode.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Bètaversie van het programma is geïnstalleerd'
+LicensingStatus_Trial_ShortDescription = 'Proefversie van het programma is geïnstalleerd'
+LicensingStatus_OkSubscription_ShortDescription = 'Abonnement: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Licentie verloopt binnenkort'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Licentie verloopt binnenkort'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_InvalidKey_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_Reinstall_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Zwarte lijst met licentiesleutels is beschadigd'
+LicensingStatus_CorruptedBases_ShortDescription = 'Kan overeenstemming van databases met Gebruiksrechtovereenkomst niet verifiëren'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Geldigheidsduur van licentie staat gebruik van huidige databases niet toe'
+LicensingStatus_Expired_ShortDescription = 'Licentie verlopen'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Abonnement is verlopen op ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Proeflicentie is verlopen'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Bètaversie verlopen'
+LicensingStatus_Blocked_ShortDescription = 'Licentie is geblokkeerd'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Abonnement is geblokkeerd'
+LicensingStatus_LicenseViolated_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Probleem met licentie gedetecteerd'
+LicensingStatus_Grace_ShortDescription = 'Abonnement is verlopen op ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Abonnement opgeschort vanaf ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Automatisch updaten van abonnementstatus is mislukt'
+LicensingStatus_NotActivated_ShortDescription = 'Programma is niet geactiveerd'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Programma is niet geactiveerd'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Programma is niet geactiveerd'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Programma is niet geactiveerd'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Nieuwe activatiecode'
+ReserveCodeStatus_Ok_ShortDescription = 'Nieuwe activatiecode'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Nieuwe activatiecode is ongeldig'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Nieuwe activatiecode is niet geactiveerd'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Automatische activatie verwacht'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'De bètaversie van ' + $ProductNameFull + ' beschikt over de volledige functionaliteit maar is geen afgewerkte versie en bevat mogelijk fouten. Meld eventuele problemen in de overeenkomstige secties op ons forum.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dag', 'dagen'} + ' resterend. Na deze periode wordt de functionaliteit van het programma ernstig beperkt.' 
+LicenseEndsToday = 'Dit is de laatste dag van uw licentie. De functionaliteit van het programma wordt beperkt als u de licentie niet verlengt.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Abonnement geactiveerd. Verloopdatum: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Abonnement verlengd tot ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Abonnement werd geannuleerd. Verloopdatum: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Abonnement wordt opgeschort vanaf ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Abonnement verlengd en verloopt nooit'
+StateUnlimitedSubscriptionResumedText = 'Abonnement is hervat'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'binnen ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dag', 'dagen'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'dag', 'dagen'} + ' resterend. Na deze periode wordt de functionaliteit van het programma ernstig beperkt.'
+LicensingStatus_ExpiresToday_Cause = 'Verloopt vandaag. Na het verlopen is de functionaliteit van het programma beperkt.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Onjuiste aanmaakdatum van sleutel. De systeemdatum van uw computer is gewijzigd. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Onjuiste activatiedatum. De systeemdatum op uw computer is mogelijk gewijzigd. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Integriteit van het programma is gebroken. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'U wordt aanbevolen een nieuwe zwarte lijst vanaf de server te downloaden.'
+LicensingStatus_CorruptedBases_Cause = 'Een van de mogelijke redenen is een onjuiste update. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'U hebt mogelijk een illegale kopie van het programma aangeschaft. Bescherming is gepauzeerd. Uw computer loopt risico op infectie, schade of diefstal van gegevens.'
+LicensingStatus_BlockedSubscription_Cause = 'U hebt mogelijk een illegale kopie van het programma aangeschaft. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'U hebt het maximum aantal computers overschreden waarop ' + $ProductName + ' kan worden geïnstalleerd met uw licentie. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'U hebt het maximum aantal computers overschreden waarop u ' + $ProductName + ' kunt installeren met uw abonnement. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'dag', 'dagen'} + ' nog tot ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'De tijdsduur tussen de verbindingen met de activatieservers was mogelijk te lang. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Een vooraf ingestelde activatiecode is beschikbaar. Het programma wordt geactiveerd zodra een internetverbinding beschikbaar is.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Een vooraf ingestelde activatiecode is beschikbaar. U kunt het programma activeren met deze activatiecode of de vooraf ingestelde activatiecode verwijderen.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Het programma werd niet automatisch geactiveerd met de vooraf ingestelde activatiecode. Uw assistentie is vereist.'
+
+ReserveCodeStatus_NotProvided_Cause = 'U kunt een nieuwe activatiecode invoeren. Het programma wordt geactiveerd met deze activatiecode nadat de huidige licentie verloopt.'
+ReserveCodeStatus_Ok_Cause = 'Er is een nieuwe activatiecode aanwezig op uw computer. Nadat de huidige licentie verloopt, wordt het programma automatisch geactiveerd met de nieuwe activatiecode. Uw beveiliging wordt niet onderbroken.'
+ReserveCodeStatus_Invalid_Cause = 'Na het verlopen van de huidige licentie kunt u niet meer updaten.'
+ReserveCodeStatus_ActivationProblem_Cause = 'De activatie van het programma met de nieuwe activatiecode ' + $ReserveCode + ' is mislukt. Uw assistentie is vereist.'
+ReserveCodeStatus_WaitActivation_Cause = 'Automatische activering met nieuwe activatiecode ' + $ReserveCode + ' verwacht.'
+
+ResolveProblem_BuyCommercial         = 'U wordt aanbevolen een commerciële versie van het programma aan te schaffen en te activeren.'
+ResolveProblem_CheckSystemTime		= 'Verzeker u ervan dat de systeemdatum juist is.'
+ResolveProblem_ActivateAgain        = 'Probeer de actieve licentiesleutel te verwijderen en het programma opnieuw te activeren. U kunt ook contact opnemen met de Technische Ondersteuning of de leverancier van het programma.'
+ResolveProblem_CallSupport			= 'U wordt aanbevolen contact op te nemen met de Technische Support om de reden voor de blokkering te achterhalen. Als u de functionaliteit van het programma wilt herstellen, schaft u een nieuwe licentie aan.'
+ResolveProblem_ContactSupport		= 'Neem contact op met de Technische Support.'
+ResolveProblem_ActialLicense		= 'Als u de bescherming van uw computer wilt hervatten, voert u een nieuwe activatiecode in.'
+ResolveProblem_UpdateAgain			= 'U wordt aanbevolen de databases opnieuw bij te werken.'
+ResolveProblem_BuyNewLicense		= 'Als u de bescherming van uw computer wilt hervatten, schaft u een nieuwe licentie aan.'
+ResolveProblem_CallProvider			= 'Als u het abonnement wilt hervatten, neemt u contact op met uw serviceaanbieder.'
+ResolveProblem_ProviderWebSite		= 'Als u het abonnement wilt hervatten, neemt u contact op met uw serviceaanbieder.'
+ResolveProblem_RenewalNotAvailable	= 'Verlenging van abonnement niet beschikbaar.'
+ResolveProblem_BuyLicense			= 'Als u de bescherming van uw computer wilt hervatten, moet u een commerciële licentie bij Kaspersky lab of onze leveranciers aanschaffen. De proefversie kan slechts eenmaal worden gebruikt.'
+ResolveProblem_Reinstall			= 'Installeer het programma opnieuw.'
+ResolveProblem_RenewLicense			= 'Als u de volledige functionaliteit wilt inschakelen, verlengt u de licentie.'
+ResolveProblem_RefreshSubscription	= 'Werk de abonnementstatus handmatig bij.'
+ResolveProblem_Activate				= 'Voer de activatiecode in om het programma te activeren.'
+ResolveProblem_ActivateReserveCode  = 'Probeer het programma handmatig te activeren met de nieuwe activatiecode.'
+ResolveProblem_ActivateCodeManual	= 'Activeer het programma handmatig.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Controleer de instellingen van uw internetverbinding en wacht op de automatische activering of activeer het programma handmatig.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' U moet een nieuwe activatiecode invoeren. Het programma wordt geactiveerd met deze activatiecode nadat de huidige licentie verloopt.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' U moet het programma activeren met een activatiecode voordat de proeflicentie verloopt.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Als u de volledige functionaliteit van het programma wilt hervatten, moet u een commerciële licentie aanschaffen bij Kaspersky Lab of onze leveranciers.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' U moet het programma activeren met een activatiecode voordat de proeflicentie verloopt.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' U moet een nieuwe activatiecode invoeren. Het programma wordt geactiveerd met deze activatiecode nadat de huidige licentie verloopt.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Beschermingsstatus is niet gedefinieerd. '
+ProtectionLevelNoFeaturesLong = 'Bescherming is uitgeschakeld. '
+ProtectionLevelLimitedLong = 'De functionaliteit van het programma is beperkt. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Updatestatus is niet gedefinieerd. '
+UpdaterLevelNotAllowedLong = 'Update is niet beschikbaar. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'niet gedefinieerd'
+SubscriptionStateActive = 'actief'
+SubscriptionStatePaused = 'opgeschort'
+SubscriptionStateCancelledSoft = 'opgeschort'
+SubscriptionStateCancelledHard = 'geannuleerd'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'niet gedefinieerd'
+SubscriptionStatusReasonProviderInitiated = 'geactiveerd door serviceprovider'
+SubscriptionStatusReasonCreditCardAuthFailed = 'autorisatie van creditcard geweigerd'
+SubscriptionStatusReasonCustomerInitiated = 'geactiveerd door de gebruiker'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'autorisatie van creditcard geaccepteerd'
+
+ProductStatusRelease = 'releaseversie'
+ProductStatusBeta = 'bètaversie'
+
+LegalStatusBlocked = 'licentie is geblokkeerd'
+LegalStatusLimited = 'gebruiksrechtovereenkomst geschonden'
+LegalStatusValid = 'licentie is geactiveerd'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Er is een belangrijke melding over de licentie.\n<a href="licensemanager">Details...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Abonnement verlopen. Als u het abonnement wilt verlengen, neemt u contact op met uw serviceaanbieder.'
+
+LicensingState_WarningIsAvailable = 'er is een waarschuwing'
+ProtectionState_NotificationIsAvailable = 'Melding over licentie'
+LicensingState_ProblemIsAvailable = 'er is een probleem'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Uw Kaspersky Security Software verloopt binnen ' + $LicenseDaysToExpiry + ' dagen, waarna uw pc niet langer beschermd is'
+LNCS_BBY_WillExpire_Description =	'Als u uw dekking wilt verlengen, kunt u dit online doen via The Geek Squad Renewal Center.'
+
+LNCS_BBY_AboutToExpire_Title =	    'Uw Kaspersky Security Software verloopt binnenkort'
+LNCS_BBY_AboutToExpire_Description = 'De dekking is nog slechts ' + $LicenseDaysToExpiry + ' dagen geldig, waarna uw pc niet langer beschermd is. Verleng nu door online contact op te nemen met het team van The Geek Squad voor softwareabonnementen via The Geek Squad Renewal Center.'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Uw beveiligingssoftware van Kaspersky verloopt vandaag waardoor uw pc niet langer beschermd is'
+LNCS_BBY_AboutToExpire_Today_Description = 'Verleng nu door online contact op te nemen met het team van The Geek Squad voor softwareabonnementen via The Geek Squad Renewal Center.'
+
+LNCS_BBY_LastDay_Title =	'Waarschuwing! Uw Kaspersky Security Software verloopt vandaag'
+LNCS_BBY_LastDay_Description =	'Laat uw pc niet onbeschermd. Verleng online via The Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Waarschuwing! Uw Kaspersky-beveiligingssoftware verloopt vandaag. Laat uw pc niet onbeschermd. Verleng online via <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=&lt;AdditionalInfoStrings4&gt;&ContractID=&lt;AdditionalInfoStrings3&gt;&act-serial=&lt;KeySerialNumber&gt;&lic-id=&lt;LicenseId&gt;&ppcs-id=&lt;PpcsId&gt;&act-pid=&lt;ApplicationType&gt;&act-pv=&lt;ApplicationVersion&gt;&act-local=&lt;Localization&gt;&act-lic-type=&lt;LicenseType&gt;&act-lic-status=&lt;LicenseStatusId&gt;&act-lic-lifespan=&lt;LicenseTerm&gt;&act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Waarschuwing! Uw pc is niet beschermd'
+LNCS_BBY_Grace_Description =	'Laat uw pc niet onbeschermd. Verleng online via The Geek Squad Renewal Center'
+LNCS_BBY_Grace_Description_Full =	'Laat uw pc niet onbeschermd. Verleng online via The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Waarschuwing! Uw pc is niet beschermd. Laat uw pc niet onbeschermd. Verleng online via <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=&lt;AdditionalInfoStrings4&gt;&ContractID=&lt;AdditionalInfoStrings3&gt;&act-serial=&lt;KeySerialNumber&gt;&lic-id=&lt;LicenseId&gt;&ppcs-id=&lt;PpcsId&gt;&act-pid=&lt;ApplicationType&gt;&act-pv=&lt;ApplicationVersion&gt;&act-local=&lt;Localization&gt;&act-lic-type=&lt;LicenseType&gt;&act-lic-status=&lt;LicenseStatusId&gt;&act-lic-lifespan=&lt;LicenseTerm&gt;&act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'We konden uw Kaspersky Security Software niet verlengen'
+LNCS_BBY_RenewFailure_Description = 'Verleng online via The Geek Squad Renewal Center'
+LNCS_BBY_RenewFailure_Description_Full = 'Verleng online via The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'We konden uw beveiligingssoftware van Kaspersky niet verlengen. Verleng online via <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=&lt;AdditionalInfoStrings4&gt;&ContractID=&lt;AdditionalInfoStrings3&gt;&act-serial=&lt;KeySerialNumber&gt;&lic-id=&lt;LicenseId&gt;&ppcs-id=&lt;PpcsId&gt;&act-pid=&lt;ApplicationType&gt;&act-pv=&lt;ApplicationVersion&gt;&act-local=&lt;Localization&gt;&act-lic-type=&lt;LicenseType&gt;&act-lic-status=&lt;LicenseStatusId&gt;&act-lic-lifespan=&lt;LicenseTerm&gt;&act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Uw Kaspersky Protection Plan wordt mogelijk geannuleerd omdat uw geregistreerde creditcard binnenkort verloopt'
+LNCS_BBY_CCAboutToExpire_Description =	'Verleng online via The Geek Squad Renewal Center'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Verleng online via The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Abonnement is verlopen'
+LNCS_BBY_Expired_Description =	'Verlenging van abonnement niet beschikbaar.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Haal voordeel uit een vroege verlenging van Kaspersky Anti-Virus en bespaar $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Haal voordeel uit een vroege verlenging van Kaspersky Anti-Virus en bespaar $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Haal voordeel uit een vroege verlenging van Kaspersky Anti-Virus en bespaar $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Haal voordeel uit een vroege verlenging van Kaspersky Anti-Virus en bespaar $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Haal voordeel uit een vroege verlenging van Kaspersky Internet Security en bespaar $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Haal voordeel uit een vroege verlenging van Kaspersky Internet Security en bespaar $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Haal voordeel uit een vroege verlenging van Kaspersky Internet Security en bespaar $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Haal voordeel uit een vroege verlenging van Kaspersky Internet Security en bespaar $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Nu verlengen</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Kaspersky Anti-Virus verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Kaspersky Anti-Virus verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Kaspersky Anti-Virus verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Kaspersky Anti-Virus verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Kaspersky Internet Security verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Kaspersky Internet Security verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Kaspersky Internet Security verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Kaspersky Internet Security verloopt!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik hier</a> om $5 te besparen op de prijs van uw jaarlijkse verlenging.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik hier</a> om $10 te besparen op de prijs van uw jaarlijkse verlenging.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik hier</a> om $15 te besparen op de prijs van uw jaarlijkse verlenging.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik hier</a> om $20 te besparen op de prijs van uw jaarlijkse verlenging.'
+
+LNCS_BBY_StatusUpdate = 'Het kan 24 uur duren voordat de status van het product is veranderd. Klik op "Abonnementstatus controleren" enkele uren na de verlenging bij The Geek Squad Renewal Center om het product te laten zoeken naar updates.'
+
+EndOfLicense_Header = 'Rapport over programmaprestaties'
+WelcomPageTitle = 'Welkom bij ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Versie van het besturingssysteem is veranderd sinds ' + $ProductName + ' is geinstalleerd'
+ReinstallWarningDescription = 'Installeer ' + $ProductName + ' opnieuw'
+
+IncompatibleOsVersionTitle = $ProductName + ' is gepauzeerd'
+IncompatibleOsVersionDescription = 'Voor de juiste werking van ' + $ProductName + ' na de installatie van Microsoft Windows 8 moet u enkele onderdelen van het programma opnieuw installeren. De installatie duurt slechts 2 minuten.' + '\n\nTijdens de configuratie van ' + $ProductName + ' in Microsoft Windows 8 is de bescherming van uw computer beperkt.'
+
+ReinstallWarningOkButton = 'Details'
+IncompatibleOsVersionOkButton = 'Installeren en starten'
+
+BrowserWaitingMessage = 'Even geduld...'
+
+OsUpgradedTitle = 'Update voor besturingssysteem'
+OsUpgradedDescription = 'Update voor besturingssysteem succesvol voltooid.'

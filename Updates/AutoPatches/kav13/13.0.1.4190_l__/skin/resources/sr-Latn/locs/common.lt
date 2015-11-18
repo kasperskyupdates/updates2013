@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security tehnički prikaz'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus tehnički prikaz'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'ažurne' 
+Corrupted = 'oštećeno' 
+VeryOld = 'zastarele' 
+Old = 'nisu ažurne' 
+OldInGracePeriod = 'nisu ažurirane duže vreme'
+UpdatedAndRebootNeeded = 'ažurne. Ponovno pokrenite računar' 
+UpdatedAndProductRestartNeeded = 'ažurne. Ponovno pokrenite aplikaciju' 
+SomeBasesNeedUpdate = 'ažuriranje je potrebno za neke od komponenti zaštite'
+
+Schedule_Auto    = 'automatski' 
+Schedule_Manual  = 'ručno' 
+Schedule_Fixed   = 'po planu' 
+
+Back = 'Nazad' 
+StopTask = 'Zaustavi'
+
+News = 'Novosti'
+Reports = 'Izveštaji'
+Settings = 'Postavke'
+Help = '&Pomoć'
+OK = 'U redu'
+Cancel = 'Otkaži'
+Retry = 'Ponovi'
+
+Unknown = 'nepoznato'
+
+ShortDateTimeWithSecondsFormat = '%d/%m/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%d/%m/%Y %I:%M %p'
+ShortDateFormat = '%d/%m/%Y'
+
+ShortDateTimeNewsFormat = '%d.%m.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'danas, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'juče, %H:%M'
+
+MonthName_1  = 'Januar'
+MonthName_2  = 'Februar'
+MonthName_3  = 'Mart'
+MonthName_4  = 'April'
+MonthName_5  = 'Maj'
+MonthName_6  = 'Jun'
+MonthName_7  = 'Jul'
+MonthName_8  = 'Avgust'
+MonthName_9  = 'Septembar'
+MonthName_10 = 'Oktobar'
+MonthName_11 = 'Novembar'
+MonthName_12 = 'Decembar'
+ 
+DateUnknown = 'nepoznato'
+
+After = 'za'
+Remaining = 'preostaje'
+Ago = 'pre'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'dan', 'dana', 'dana'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'čas', 'časova', 'časova'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minuta', 'minuta'}
+LessMinute_After = '<1 minuta'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'dan', 'dana', 'dana'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'čas', 'časova', 'časova'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minuta', 'minuta'}
+LessMinute_Remaining = '<1 minuta'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'dan', 'dana', 'dana'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'čas', 'časova', 'časova'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minuta', 'minuta'}
+LessMinute_Ago = '<1 minuta'
+
+Yesterday   = 'juče'
+Today       = 'danas' 
+LessWeek    = 'pre manje od nedelju dana'
+LessTwoWeek = 'pre manje od dve nedelje'
+LessMonth   = 'pre manje od mesec dana'
+MoreMonth   = 'pre više od mesec dana'
+MoreHalfYear= 'pre više od pola godine'
+MoreYear    = 'više od godinu dana'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = Remaining + ' ' + $TimePeriod
+Time_Ago       = Ago + ' ' + $TimePeriod
+
+;Buttons
+ConfirmButton    = 'U redu'
+CancelButton = 'Otkaži'
+ApplyButton = 'Primeni'
+CloseButton = 'Zatvori'
+NextButton = 'Dalje >'
+BackButton = '< Nazad'
+FinishButton = 'Završi'
+SaveButton = 'Sačuvaj'
+SkipButton = 'Preskoči'
+Continue = 'Nastavi'
+Yes = 'Da'
+No = 'Ne'
+
+SettingsMore = '&Postavke...'
+
+DoNoyShowThisWindow = 'Ne prikazuj'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Nedefinisana greška'
+SystemError_0x8000004B = 'Nedefinisana greška'
+SystemError_0x80000041 = 'Nedovoljno memorije'
+SystemError_0x80000042 = 'Nije podržano'
+SystemError_0x80000043 = 'Nije ugrađeno'
+SystemError_0x80000045 = 'Pristup je odbijen ili objekat nije pronađen'
+SystemError_0x8000004C = 'Objekat nije pronađen'
+SystemError_0x800000C6 = 'Objekat nije pronađen'
+SystemError_0x800000C5 = 'Objekat nije pronađen'
+SystemError_0x8000004F = 'Objekat je zaključan'
+SystemError_0x80000051 = 'Operacija je otkazana'
+SystemError_0x80000059 = 'Greška uređaja'
+SystemError_0x8000005A = 'Neispravan potpis'
+SystemError_0x8000005B = 'Neispravna verzija'
+SystemError_0x8000005F = 'Zaštita od upisivanja'
+SystemError_0x80000061 = 'Nedostaje licenca'
+SystemError_0x80000062 = 'Nedovoljno prostora'
+SystemError_0x80000063 = 'Uređaj nije spreman'
+SystemError_0x800000C0 = 'Neispravan format'
+SystemError_0x800000C1 = 'Nedovoljno prava'
+SystemError_0x800000C2 = 'Greška postavljanja'
+SystemError_0x800000C3 = 'Greška postavljanja'
+SystemError_0x800000C7 = 'Neispravno stanje objekta'
+SystemError_0x800000C8 = 'Objekat je zaštićen lozinkom'
+SystemError_0x800000CA = 'Greška čitanja'
+SystemError_0x800000CC = 'Greška čitanja'
+SystemError_0x800000CB = 'Greška upisivanja'
+SystemError_0x800000CD = 'Greška upisivanja'
+SystemError_0x800000D0 = 'Neispravan objekat'
+SystemError_0x800000D1 = 'Objekat već postoji'
+SystemError_0x800000D5 = 'Objekat koristi druga aplikacija'
+SystemError_0x800000D8 = 'Baze podataka su oštećene'
+SystemError_0x800001C0 = 'Neispravan je modul'
+SystemError_0x800001C2 = 'Modul nije overen'
+SystemError_0x800001C1 = 'Modul nije pronađen'
+SystemError_0x800001C4 = 'Nije moguće učitati komponentu'
+SystemError_0x80000221 = 'Vreme je isteklo'
+SystemError_0x80000240 = 'Greška uzajamnosti komponenti'
+SystemError_0x90005000 = 'Neispravan je digitalni potpis'
+SystemError_0x90005002 = 'Bez digitalnog potpisa'
+SystemError_0x80027006 = 'Zadatak je zaustavljen'
+SystemError_0x80027007 = 'Zadatak je zaustavljen'
+SystemError_0x80380fbb = 'Zadatak je zaustavljen'
+SystemError_0x80017007 = 'Zadatak nije moguće pokrenuti u bezbednom režimu'
+SystemError_0x80017005 = 'Zadatak je onemogućen'
+SystemError_0x80017006 = 'Neispravno je korisničko ime ili lozinka'
+SystemError_0x80017008 = 'Pokretanje zadatka, u ime drugog korisničkog naloga, nije moguće u bezbednom režimu'
+SystemError_0x80017009 = 'Upravljački program nije pronađen'
+SystemError_0x80022005 = 'Greška učitavanja baza podataka'
+SystemError_default    = 'Kôd greške: ' + $ErrorCode
+
+LicenseManager = '&Licenciranje'
+SubscriptionManager = 'Upravljaj pretplatom'
+ProblemSolution = 'Pođite do prozora za licenciranje i rešite problem'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'neaktivno' ;refers to connection
+Stopping = 'zaustavljanje'
+ConnectingToServer = 'povezivanje na server'
+CreatingUpdateList = 'obrada datoteka'
+Downloading = 'preuzimanje datoteka'
+Installing = 'ažuriranje datoteka'
+RollbackRunning = 'vraćanje na prethodne baze podataka'
+
+FunctionalityDisabledForExpiredSubscription = 'ažuriranje je onemogućeno'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'onemogućena je zaštita vašeg računara'
+SubscriptionRemainingDaysCount = 'preostaje ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dan', 'dana', 'dana'} + '.'
+SubscriptionExpiresToday = 'ističe danas'
+SubscriptionActivated = 'aktivirano'
+CheckReserveCodeManuallyHeader = 'Nije uspela automatska aktivacija aplikacije sa novim aktivacionim kôdom' ; TODO
+CheckReserveCodeManuallyText = 'Pokušajte ručno da aktivirate aplikaciju sa novim aktivacionim kôdom.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Instalirana je beta verzija aplikacije'
+LicensingStatus_Trial_ShortDescription = 'Instalirana je probna verzija aplikacije'
+LicensingStatus_OkSubscription_ShortDescription = 'Pretplata: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Licenca uskoro ističe'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Licenca uskoro ističe'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_InvalidKey_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_Reinstall_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Oštećena je crna lista ključeva'
+LicensingStatus_CorruptedBases_ShortDescription = 'Nije moguća verifikacija prepiske baze podataka u Ugovoru o licenciranju'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Period važenja licence ne dozvoljava da se koristi trenutna baza podataka'
+LicensingStatus_Expired_ShortDescription = 'Licenca je istekla'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Pretplata je istekla ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Probna licenca je istekla'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Beta verzija je istekla'
+LicensingStatus_Blocked_ShortDescription = 'Licenca je blokirana'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Pretplata je blokirana'
+LicensingStatus_LicenseViolated_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Otkriven je problem sa licencom'
+LicensingStatus_Grace_ShortDescription = 'Pretplata je istekla ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Pretplata je obustavljena od ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Nije uspelo automatsko ažuriranje statusa pretplate'
+LicensingStatus_NotActivated_ShortDescription = 'Aplikacija nije aktivirana'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Aplikacija nije aktivirana'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Aplikacija nije aktivirana'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Aplikacija nije aktivirana'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Novi aktivacioni kôd'
+ReserveCodeStatus_Ok_ShortDescription = 'Novi aktivacioni kôd'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Novi aktivacioni kôd nije ispravan'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Novi aktivacioni kôd nije aktiviran'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Očekuje se automatska aktivacija'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Beta verzija ' + $ProductNameFull + ' aplikacije sadrži potpunu funkcionalnost, ali nije završna verzija i može da sadrži greške i da bude nestabilna. Molimo vas da prijavite ukoliko otkrijete bilo koji problem u odgovarajuću oblast na forumu.'
+
+LicenseRemain    = 'Preostaje ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dan', 'dana', 'dana'} + '. Na kraju ovog perioda aplikacija će postati delimično dostupna.' 
+LicenseEndsToday = 'Ovo je poslednji dan vaše licence. Funkcionisanje aplikacije postaće ograničeno sve dok neobnovite licencu.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Preplata je aktivirana. Datum isteka: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Pretplata je obnovljena do ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Pretplata je otkazana. Datum isteka: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Pretplata će biti obustavljena od ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Pretplata je obnovljena i nikada ne ističe'
+StateUnlimitedSubscriptionResumedText = 'Pretplata je nastavljena'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'za ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dan', 'dana', 'dana'}
+LicensingStatus_WillBeExpired_Cause = 'Preostaje ' + $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'dan', 'dana', 'dana'} + '. Nakon ovog perioda aplikacija će postati delimično dostupna.'
+LicensingStatus_ExpiresToday_Cause = 'Ističe danas. Funkcionalnost aplikacije biće ograničena po isteku.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Neispravan je datum pravljenja ključa. Sistemski datum na vašem računaru je promenjen. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Neispravan je datum aktivacije. Sistemski datum na vašem računaru je možda promenjen. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Uništen je integritet aplikacije. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Preporučujemo vam da preuzmete novu crnu listu sa servera.'
+LicensingStatus_CorruptedBases_Cause = 'Jedan od mogućih razloga je i neispravno ažuriranje. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Moguće da ste kupili nelegalnu kopiju aplikacije. Zaštita je pauzirana. Vaš računar je izložen riziku od zaraše, oštećenja ili krađe podataka.'
+LicensingStatus_BlockedSubscription_Cause = 'Možda ste kupili nelegalnu kopiju aplikacije. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Prekoračili ste dozvoljeni broj računara na koje možete da instalirate ' + $ProductName + ' sa vašom licencom. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Prekoračili ste dozvoljeni broj računara na koje možete da instalirate ' + $ProductName + ' sa vašom pretplatom. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'dan', 'dana', 'dana'} + ' preostaje do ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Možda je predug period između dva povezivanja sa aktivacionim serverima. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Dostupan je unapred definisani aktivacioni kôd. Aplikacija će biti aktivirana čim veza sa Internetom postane dostupna.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Dostupan je unapred definisani aktivacioni kôd. Aplikaciju možete da aktivirate sa ovim aktivacionim kôdom ili da ga izbrišete.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Aplikacija nije automatski aktivirana sa unapred postavljenim aktivacionim kôdom. Potrebna je vaša pomoć.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Možete da unesete novi aktivacioni kôd. Aplikacija će biti aktivirana sa ovim aktivacionim kôdom nakon što trenutna licenca istekne.'
+ReserveCodeStatus_Ok_Cause = 'Novi aktivacioni kôd je unapred definisan na vašem računaru. Nakon što trenutna licenca istekne, aplikacija će automatski biti aktivirana sa novim aktivacionim kôdom. Neće biti prekida u vašoj zaštiti.'
+ReserveCodeStatus_Invalid_Cause = 'Nakon što trenutna licenca istekne, ažuriranje će postati nedostupno.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Nije uspelo automatsko aktiviranje aplikacije sa novim aktivacionim kôdom ' + $ReserveCode + '. Potrebna je vaša pomoć.'
+ReserveCodeStatus_WaitActivation_Cause = 'Automatska aktivacija sa novim aktivacionim kôdom ' + $ReserveCode + ' je prekoračena.'
+
+ResolveProblem_BuyCommercial         = 'Savetujemo vam da kupite i aktivirate komercijalnu verziju aplikacije.'
+ResolveProblem_CheckSystemTime		= 'Uverite se da je datum na sistemu tačan.'
+ResolveProblem_ActivateAgain        = 'Pokušajte sa brisanjem aktivnog ključa i ponovnim aktiviranjem aplikacije. Takođe možete da kontaktirate tehničku podršku ili distributera aplikacije.'
+ResolveProblem_CallSupport			= 'Savetujemo vam da kontaktirate tehničku podršku kako biste saznali razlog blokiranja. Da biste vratili funkcionalnost aplikacije, nabavite novu licencu.'
+ResolveProblem_ContactSupport		= 'Kontaktirajte tehničku podršku.'
+ResolveProblem_ActialLicense		= 'Da biste nastavili zaštitu vašeg računara, unesite novi aktivacioni kod.'
+ResolveProblem_UpdateAgain			= 'Savetujemo vam da ponovo ažurirate baze podataka.'
+ResolveProblem_BuyNewLicense		= 'Da biste nastavili zaštitu vašeg računara, nabavite novu licencu.'
+ResolveProblem_CallProvider			= 'Da biste nastavili pretplatu, kontaktirajte vašeg dobavljača usluge.'
+ResolveProblem_ProviderWebSite		= 'Da biste nastavili pretplatu, kontaktirajte vašeg dobavljača usluge.'
+ResolveProblem_RenewalNotAvailable	= 'Nije dostupno obnavljanje pretplate.'
+ResolveProblem_BuyLicense			= 'Da biste nastavili zaštitu vašeg računara, potrebno je da pribavite komercijalnu licencu iz Kaspersky Lab preduzeća ili naših distributera. Probnu licencu možete koristiti samo jednom.'
+ResolveProblem_Reinstall			= 'Ponovo instalirajte aplikaciju.'
+ResolveProblem_RenewLicense			= 'Da biste omogućili punu funkcionalnost, obnovite licencu.'
+ResolveProblem_RefreshSubscription	= 'Molimo vas da ručno ažurirate status pretplate.'
+ResolveProblem_Activate				= 'Unesite aktivacioni kod kako biste aktivirali aplikaciju.'
+ResolveProblem_ActivateReserveCode  = 'Pokušajte ručno da aktivirate aplikaciju sa novim aktivacionim kôdom.'
+ResolveProblem_ActivateCodeManual	= 'Ručno aktivirajte aplikaciju.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Prooverite postavke vaše veze sa Internetom i sačekajte automatsku aktivaciju ili ručno aktivirajte aplikaciju.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Potrebno je da unesete novi aktivacioni kôd. Aplikacija će biti aktivirana sa ovim aktivacionim kôdom nakon što trenutna licenca istekne.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Potrebno je da aktivirate aplikaciju sa aktivacionim kôdom pre nego što probna licenca istekne.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Da biste nastavili sa potpunim korišćenjem aplikacije, potrebno je da kupite komercijalnu licencu od Kaspersky Lab preduzeća ili kod naših distributera.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Potrebno je da aktivirate aplikaciju sa aktivacionim kôdom pre nego što probna licenca istekne.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Potrebno je da unesete novi aktivacioni kôd. Aplikacija će biti aktivirana sa ovim aktivacionim kôdom nakon što trenutna licenca istekne.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Nije definisan status zaštite. '
+ProtectionLevelNoFeaturesLong = 'Zaštita je onemogućena. '
+ProtectionLevelLimitedLong = 'Ograničen je rad aplikacije. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Nije definisan status ažuriranja. '
+UpdaterLevelNotAllowedLong = 'Ažuriranje nije dostupno. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'neodređeno'
+SubscriptionStateActive = 'aktivna'
+SubscriptionStatePaused = 'suspendovana'
+SubscriptionStateCancelledSoft = 'suspendovana'
+SubscriptionStateCancelledHard = 'otkazana'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'neodređeno'
+SubscriptionStatusReasonProviderInitiated = 'aktivirao provajder'
+SubscriptionStatusReasonCreditCardAuthFailed = 'odbijena je provera kreditne kartice'
+SubscriptionStatusReasonCustomerInitiated = 'aktivirao korisnik'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'prihvaćena je provera kreditne kartice'
+
+ProductStatusRelease = 'izdata verzija'
+ProductStatusBeta = 'beta verzija'
+
+LegalStatusBlocked = 'licenca je blokirana'
+LegalStatusLimited = 'prekršen je ugovor o licenciranju'
+LegalStatusValid = 'licenca je važeća'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Postoji važno obaveštenje o licenci.\n<a href="licensemanager">Opširnije...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Pretplata je istekla. Da biste obnovili pretplatu, kontaktirajte vašeg dobavljača usluge.'
+
+LicensingState_WarningIsAvailable = 'postoji upozorenje'
+ProtectionState_NotificationIsAvailable = 'Obaveštenje o licenci'
+LicensingState_ProblemIsAvailable = 'postoji problem'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Vaš Kaspersky bezbednosni softver ističe za ' + $LicenseDaysToExpiry + ' dana, ostavljajući vaš računar nezaštićenim'
+LNCS_BBY_WillExpire_Description =	'Da biste nastavili vašu zaštitu, molimo vas da obnovite na Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Title =	    'Vaš Kaspersky bezbednosni softver samo što nije istekao'
+LNCS_BBY_AboutToExpire_Description = 'Preostalo je svega ' + $LicenseDaysToExpiry + ' dana do isteka vaše zaštite, a potom će vaš računar ostati nezaštićen. Obnovite odmah tako što ćete kontaktirati Geek Squad Subscription Software Team na Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Vaš Kaspersky bezbednosni softver ističe danas, ostavljajući vaš računar nezaštićenim'
+LNCS_BBY_AboutToExpire_Today_Description = 'Odmah obnovite tako što ćete kontaktirati Geek Squad Subscription Software Team na Geek Squad Renewal Center'
+
+LNCS_BBY_LastDay_Title =	'Pažnja! Vaš Kaspersky bezbednosni softver ističe danas'
+LNCS_BBY_LastDay_Description =	'Nemojte da dozvolite da vam računar ostane nezaštićen. Obnovite na Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Pažnja! Vaš Kaspersky bezbednosni softver ističe danas. Nemojte da dozvolite da vam računar ostane nezaštićen. Obnovite na <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Pažnja! Vaš računar je nezaštićen'
+LNCS_BBY_Grace_Description =	'Nemojte da dozvolite da vam računar ostane nezaštićen. Obnovite na Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Nemojte da dozvolite da vam računar ostane nezaštićen. Obnovite na Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Pažnja! Vaš računar je nezaštićen. Ne dozvolite da tako i ostane. Obnovite na Internetu na <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Nismo mogli da obnovimo vaš Kaspersky bezbednosni softver'
+LNCS_BBY_RenewFailure_Description = 'Molimo vas da izvršite obnovu na Geek Squad Renewal Center'
+LNCS_BBY_RenewFailure_Description_Full = 'Molimo vas da izvršite obnovu na Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Nismo mogli da obnovimo vaš Kaspersky bezbednosni softver. Molimo vas da obnovite na <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Vaš Kaspersky plan o zaštiti je pod rizikom od otkazivanja iz razloga što vaša kreditna kartica uskoro ističe.'
+LNCS_BBY_CCAboutToExpire_Description =	'Molimo vas da izvršite obnovu na Geek Squad Renewal Center'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Molimo vas da izvršite obnovu na Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Pretplata je istekla'
+LNCS_BBY_Expired_Description =	'Nije dostupna obnova pretplate.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Iskoristite ranu obnovu vašeg Kaspersky Anti-Virus softvera i uštedite 5 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Iskoristite ranu obnovu vašeg Kaspersky Anti-Virus softvera i uštedite 10 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Iskoristite ranu obnovu vašeg Kaspersky Anti-Virus softvera i uštedite 15 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Iskoristite ranu obnovu vašeg Kaspersky Anti-Virus softvera i uštedite 20 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Iskoristite ranu obnovu vašeg Kaspersky Internet Security softvera i uštedite 5 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Iskoristite ranu obnovu vašeg Kaspersky Internet Security softvera i uštedite 10 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Iskoristite ranu obnovu vašeg Kaspersky Internet Security softvera i uštedite 15 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Iskoristite ranu obnovu vašeg Kaspersky Internet Security softvera i uštedite 20 dolara.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Obnovite odmah</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Vaš Kaspersky Anti-Virus softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Vaš Kaspersky Anti-Virus softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Vaš Kaspersky Anti-Virus softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Vaš Kaspersky Anti-Virus softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Vaš Kaspersky Internet Security softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Vaš Kaspersky Internet Security softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Vaš Kaspersky Internet Security softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Vaš Kaspersky Internet Security softver ističe!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kliknite ovde</a> da uštedite 5 dolara na svojoj godišnjoj ceni za obnovu.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kliknite ovde</a> da uštedite 10 dolara na svojoj godišnjoj ceni za obnovu.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kliknite ovde</a> da uštedite 10 dolara na svojoj godišnjoj ceni za obnovu.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kliknite ovde</a> da uštedite 10 dolara na svojoj godišnjoj ceni za obnovu.'
+
+LNCS_BBY_StatusUpdate = 'Do promene statusa proizvoda, može potrajati i 24 časa. Kliknite na Proveri status pretplate nekoliko časova nakon završetka postupka obnove na Geek Squad Renewal Center kako biste ubrzali ažuriranje statusa proizvoda.'
+
+EndOfLicense_Header = 'Izveštaj o radu aplikacije'
+WelcomPageTitle = 'Dobro došli u ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Verzija operativnog sistema je promenjena od kada je instaliran ' + $ProductName
+ReinstallWarningDescription = 'Molimo vas da ponovo instalirate ' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + ' je pauziran'
+IncompatibleOsVersionDescription = 'Za ispravan rad ' + $ProductName + ' nakon što se instalira Microsoft Windows 8, biće potrebno da ponovo instalirate neke komponente aplikacije. Instalacija neće trajati duže od 2 minuta.' + '\n\nTokom ' + $ProductName + ' konfiguracije na Microsoft Windows 8 sistemu, zaštita vašeg računara biće ograničena.'
+
+ReinstallWarningOkButton = 'Opširnije'
+IncompatibleOsVersionOkButton = 'Instaliraj i pokreni'
+
+BrowserWaitingMessage = 'Molimo sačekajte...'
+
+OsUpgradedTitle = 'Ažuriranje operativnog sistema'
+OsUpgradedDescription = 'Ažuriranje operativnog sistema se uspešno završilo.'

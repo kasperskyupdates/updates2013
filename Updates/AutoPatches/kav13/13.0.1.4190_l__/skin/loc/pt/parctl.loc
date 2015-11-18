@@ -1,0 +1,1268 @@
+﻿[Global]
+$ParctlEx = "Controlo Parental"
+
+;---------- Balloons ------------------
+ImContactMovedFromBlackList         = "O contacto " + p_imContactId + " foi retirado da lista bloqueada"
+ImContactMovedFromWhiteList         = "O contacto " + p_imContactId + " foi retirado da lista permitida"
+ImContactReplaced                   = "O contacto " + p_imContactId + " já estava na lista. Os dados foram alterados"
+WebContentMovedFromBlackList		= "O URL " + p_webContentId + " foi retirado da lista bloqueada."
+WebContentMovedFromWhiteList		= "O URL " + p_webContentId + " foi retirado da lista permitida."
+PersonalInfoReplaced                = "Os dados pessoais já se encontravam na lista. A data foi modificada"
+KeywordReplaced                     = "A palavra-chave " + p_keyword + " já estava na lista"
+ApplicationReplaced                 = "A aplicação " + f_AppInfo(p_appId).sImagePath + " já estava na lista. Os dados foram alterados"
+AppMovedFromBlackList               = "A aplicação " + f_AppInfo(p_appId).sImagePath + " foi retirada da lista bloqueada"
+AppMovedFromWhiteList               = "A aplicação " + f_AppInfo(p_appId).sImagePath + " foi retirada da lista permitida"
+AppNotControlled                    = "A aplicação seleccionada não pode ser controlada"
+UserAliasAlreadyInUse               = "A alcunha já existe. Insira uma nova alcunha"
+WebURLReplaced                      = "O endereço de Internet " + p_url + " já existe na lista"
+
+;---------- MainWindow_Body.ParCtl ------------------
+
+[MainWindow_Body.ParCtl]
+Descr                = "Restringe e controla o acesso ao computador e a recursos de Internet, conversações e mais."
+
+[MainWindow_Body.ParCtl.UserList.Footer]
+Text = ctl.parent.UserList.getCurPageNum() + " de " + ctl.parent.UserList.getTotalPages()
+
+[MainWindow_Body.ParCtl.Users_List_Row_Cont]
+LastViolation        = if(LastViolationDate,"Comportamento indesejado detectado: <a $LinkKLInText onclick(f_ParCtl_ShowWindow(\"Report\",ctl.parent.parent.parent.id) ) >" + f_ParCtl_LastViolationDate(LastViolationDate)+ "</a>","Não foi detectado nenhum comportamento indesejado")
+
+;---------- ParCtlMainWindow ------------------
+
+[ParCtlMainWindow]
+@ = $RemoteComputer + "Controlo Parental" + if(!$IsRelease, " Technical Preview")
+
+[ParCtlMainWindow_Navigator]
+Stat.Text  = "Relatórios"
+Stat.Desc  = "Ver relatórios sobre todos os utilizadores"
+Users.Text = "Utilizadores"
+Users.Desc = "Configurar parâmetros de controlo do utilizador"
+
+[ParCtlMainWindow_Body_Area_Stat]
+Header.Text = "Relatórios"
+Descr  = "Pode ver o relatório do Controlo Parental para cada conta registada neste computador."
+
+[ParCtlMainWindow_Body_Area_Users]
+Header.Text = "Utilizadores do Computador"
+Descr  = "Pode alterar as definições do Controlo Parental para cada conta registada neste computador."
+ParCtlStateDesc = "Controlo Parental: "
+;ParCtlState     = "включен"
+ParCtlPausePlay = state == #StateRunning ? ("Pausar...") : ("Activar")
+ParCtlStop      = "Desactivar"
+
+[ParCtlMainWindow_Body_Area_Users_ListArea_Toolbar]
+UserSetup.Label    = "Configurar"
+UserReport.Label   = "Relatório detalhado"
+UserReport2.Label   = "Aplicações do Sistema de Prevenção de Intrusões no Anfitrião (depuração)"
+
+
+Enable = "Activar &Controlo Parental"
+
+[s_ParCtlEx_Set_Enable]
+1   = "Desactivar"
+def = "Controlo"
+
+[s_ParCtlEx_Enabled]
+1   = "On"
+def = "Off"
+
+[ParCtlMainWindow_Body_Area_Stat_User]
+Label      = "Estatísticas de utilizadores: "
+Descr.Name = "Controlo de utilizadores: "
+
+[s_ParCtlEx_User_Enabled]
+1   = "On"
+def = "Off"
+
+[ParCtlMainWindow_Body_Area_Stat_Body]
+Internet.Name      = "Internet"
+Communication.Name = "Mensagens"
+Computer.Name      = "Computador"
+
+[ParCtlMainWindow_Body_Area_Stat_Body_Internet_Col1]
+Duration.Name       = "Duração: "
+DomainsBlocked.Name = "Sites bloqueados: "
+
+[ParCtlMainWindow_Body_Area_Stat_Body_Internet_Col2]
+FilesBlocked.Name  = "Ficheiros bloqueados: "
+
+[ParCtlMainWindow_Body_Area_Stat_Body_InternetEx_Col1]
+Total.Name   = "Sites visitados:"
+Other.Name   = "Outros:"
+Blocked.Name = "Sites bloqueados:"
+
+[ParCtlMainWindow_Body_Area_Stat_Body_InternetEx_Col2]
+Total.Name   = "Ficheiros transferidos:"
+Other.Name   = "Outros:"
+Blocked.Name = "Ficheiros bloqueados:"
+
+[ParCtlMainWindow_Body_Area_Stat_Body_Communication_Col1]
+PersInfo.Name   = "Dados privados detectados: "
+MsgBlocked.Name = "Mensagens bloqueadas: "
+
+[ParCtlMainWindow_Body_Area_Stat_Body_Communication_Col2]
+Keywords.Name = "Utilização de palavras detectada: "
+
+[ParCtlMainWindow_Body_Area_Stat_Body_CommunicationEx_Col1]
+Total.Name   = "Número total de mensagens: "
+Other.Name   = "Com outros contactos:"
+Blocked.Name = "Mensagens bloqueadas:"
+
+[ParCtlMainWindow_Body_Area_Stat_Body_Computer_Col1]
+Duration.Name      = "Duração: "
+
+[ParCtlMainWindow_Body_Area_Stat_Body_Computer_Col2]
+AppBlocked.Name      = "Aplicações bloqueadas: "
+
+[ParCtlMainWindow_Body_Area_Stat_Body_ComputerEx_Col1]
+Total.Name = "Utilização de aplicações"
+Total.Val  = "hora"
+Other.Name = "Outros:"
+
+[ParCtlMainWindow_Body_Area_Users_List_Row]
+UserControl = "Controlo de utilizadores: "
+
+
+;---------- ParCtlUserSettings ------------------
+
+[ParCtlUserSettings]
+@ = "Configuração - Controlo Parental para o utilizador \"" + f_UserName(UserId) + "\""
+
+[ParCtlUserSettings_BodyEx]
+Import = "Carregar configurações"
+Export = "Guardar configurações"
+;DebugWin1 = "Блок приложения"
+;DebugWin2 = "Блок компьютера"
+
+[ParCtlUserSettings_Navigator]
+InternetHdr      = "Internet"
+InternetUsage    = "Utilização da Internet"
+WebContent       = "Navegação na Internet"
+Download         = "Transferências de ficheiros"
+SafeSearch       = "Pesquisa segura"
+CommunicationHdr = "Mensagens"
+IM_Usage         = "Mensagens instantâneas"
+SN_Usage         = "Redes sociais"
+PersonalInfo     = "Dados privados"
+Keywords         = "Utilização de Palavras"
+ComputerHdr      = "Computador"
+ComputerUsage    = "Utilização do Computador"
+AppUsage         = "Utilização de Aplicações"
+AddHdr           = "Adicional"
+AddView          = "Configurações de contas"
+
+;--- ParCtlUserSettings_Navigator_WorkArea_InternetUsage --
+
+[ParCtlUserSettings_Navigator_WorkArea_InternetUsage]
+Header         = "Controlo da Utilização da Internet"
+Enable         = "&Activar controlo"
+Description    = "Controlar a frequência e duração da utilização da Internet."
+WeekLimitCheck = "Limitar utili&zação nos dias seleccionados:"
+DayLimitCheck  = "Limitar tempo de utilização &diária:"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_WebContent ----
+
+[ParCtlUserSettings_Navigator_WorkArea_WebContent]
+Header      = "Controlo da Navegação na Internet"
+Enable      = "&Activar controlo"
+Description = "Controlar os sites que podem ou não ser acedidos." 
+Header2     = "Bloquear sites"
+
+[ParCtlUserSettings_Navigator_WorkArea_WebContent_Ext]
+BlockOther  = "Bloquear o acesso a &todos os sites, com excepção dos sites permitidos na lista de exclusões"
+OtherDescription = "Se utilizar um servidor de proxy, adicione o mesmo à lista de sites permitidos"
+BlockSpecified = "Bloquear sites das seguintes &categorias:"
+Exclusions  = "&Exclusões ("+BlackWhiteList.size()+")..."
+
+[ParCtlUserSettings_Navigator_WorkArea_WebContent_SafeSeach]
+Enable      = "Activar &pesquisa segura"
+
+[ParCtlUserSettings_Navigator_WorkArea_WebContent_Tab_Categories]
+SelectAll  = "Seleccionar todos"
+ResetAll   = "Limpar todo"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_Download ----
+
+[s_DownloadCategoryState]
+#DownloadCategoryStateOff = "Bloqueados"
+#DownloadCategoryStateOn  = "Permitidos"
+
+[ParCtlUserSettings_Navigator_WorkArea_Download]
+Header         = "Controlo das Transferências de Ficheiros"
+Enable         = "&Activar controlo"
+Description    = "Controlar os ficheiros que podem ou não ser transferidos da Internet com base em categorias."
+Header2        = "Categorias de ficheiros"
+
+[FileDownloadControl_File]
+Toolbar.AllowDeny = !ctl.parent.parent.List.seldata().Enabled? "Bloquear" : "Permitir"
+
+[FileDownloadControl_FileTypesList]
+ItemName = "Categoria"
+ItemState = "Estado"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_SafeSearch ----
+
+[ParCtlUserSettings_Navigator_WorkArea_SafeSearch]
+Header         = "Controlar resultados de pesquisa"
+Enable         = "&Activar controlo"
+Description    = "Quando o controlo está activado, os resultados de procura da Internet não incluem sites pornográficos, explícitos ou que pertencem a outras categorias duvidosas."
+
+;---- ParCtlUserSettings_Navigator_WorkArea_IM_Usage ----
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage]
+Header      = "Controlo de Mensagens Instantâneas"
+Enable      = "&Activar controlo"
+Description = "Controle quais os contactos a quem podem ser enviadas mensagens e de que contactos o utilizador pode receber mensagens."
+Attention   = "Recomenda-se vivamente que active a opção \"Verificar ligações encriptadas\" na secção Rede das configurações da aplicação."
+Header2     = "Contactos"
+Other       = "&Bloquear mensagens para/de contactos que não estão na lista"
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Tab]
+WhiteList   = "Permitidos" + f_ListCountText(WhiteList.size())
+BlackList   = "Bloqueados" + f_ListCountText(BlackList.size())
+
+[s_Blocked]
+def = @? "Bloqueados": "Permitidos"
+
+[s_BlockedEx]
+def = @? "Bloqueados": "Permitidos"
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Contacts]
+Toolbar.Add = "Adicionar contacto"
+Toolbar.AllowDeny = ctl.parent.parent.List.seldata().Blocked? "Permitir" : "Bloquear"
+Toolbar.Edit = "Ver mensagens"
+
+[IMControl_History]
+@ = "Mensagens"
+
+[IMControl_Add]
+@ = "Novo contacto"
+
+[IMControl_Add_Body]
+HistoryEmpty = "Nenhuma mensagem.\nSeleccione um contacto da lista ou adicione um manualmente."
+
+[IMControl_Add_Header]
+AddContact = "Adicionar contacto:"
+
+[IMControl_Add_Type]
+FromContacts   = "da lista de contactos"
+ManualAdd      = "manualmente"
+
+[IMControl_Add_Manual]
+ContactDesc    = "Contacto: "
+NameDesc       = "Descrição: "
+
+[IMControl_Add_FromContacts_Descr]
+NameDesc       = "Descrição: "
+
+[IMControl_History_Header]
+AllowButton.Text  = "Permitir"
+DenyButton.Text   = "Bloquear"
+
+[IMControl_History_StatusDeny]
+Text = "Mensagens"
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Contacts_List]
+Name        = "Contacto"
+Action      = "Estado"
+Description = "Descrição"
+
+[Settings_IM_Usage_Contacts.menu]
+AllowDeny   = ctl.parent.parent.List.seldata().Blocked? "Permitir" : "Bloquear"
+History     = "Ver mensagens"
+Change      = "Editar"
+Delete      = "Apagar"
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Tab_WhiteList]
+Description = "Adicionar contactos para permitir as mensagens com os mesmos."
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Tab_WhiteList_List]
+Name        = "Contacto"
+Description = "Descrição"
+Date        = "Adicionado"
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Tab_BlackList]
+Description = "Adicionar contactos para bloquear as mensagens com os mesmos."
+
+[ParCtlUserSettings_Navigator_WorkArea_IM_Usage_Tab_BlackList_List]
+Name        = "Contacto"
+Description = "Descrição"
+Date        = "Adicionado"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_SN_Usage ----
+
+[ParCtlUserSettings_Navigator_WorkArea_SN_Usage]
+Header      = "Controlo de Redes Sociais"
+Description = "Controle quais os contactos a quem podem ser enviadas mensagens e de que contactos o utilizador pode receber mensagens."
+Enable      = "&Activar controlo"
+Header2     = "Contactos"
+
+[ParCtlUserSettings_Navigator_WorkArea_SN_Usage_ContactsArea]
+Other       = "&Bloquear mensagens para/de contactos que não estão na lista"
+Empty       = "Quando o controlo de redes sociais está activado, o\n" + $ProductName + " regista todas as mensagens para/do utilizador controlado.\n\nAssim que tiver sido enviado um contacto ou recebida uma mensagem para/do utilizador controlado,\npoderá bloquear futuras comunicações com esse contacto."
+
+[ParCtlUserSettings_Navigator_WorkArea_SN_Usage_Contacts]
+Toolbar.Edit      = "Ver mensagens"
+Toolbar.AllowDeny = ctl.parent.parent.List.seldata().Blocked? "Permitir" : "Bloquear"
+
+[ParCtlUserSettings_Navigator_WorkArea_SN_Usage_Contacts_List]
+Id          = "Contacto"
+Name        = "Descrição"
+Action      = "Estado"
+
+[Settings_SN_Usage_Contacts.menu]
+AllowDeny   = ctl.parent.parent.List.seldata().Blocked? "Permitir" : "Bloquear"
+History     = "Ver mensagens"
+Delete      = "Apagar"
+
+;-----------------------SNControl_Edit_History-----------------------
+
+[SNControl_Edit_History]
+@ = "Mensagens"
+
+;-----------------------SNControl_Add-----------------------
+
+[SNControl_Add]
+@ = "A adicionar contacto"
+
+[SNControl_Add_Body_Header]
+AddContact = "Adicionar contacto:"
+
+[SNControl_Add_Body_History]
+EmptyHistory = "Nenhuma mensagem.\nSeleccionar contacto da lista."
+
+[SNControl_Edit_History_Body_Header]
+AllowButton.Text  = "Permitir"
+DenyButton.Text   = "Bloquear"
+
+[SNControl_Edit_History_Status]
+Text        = "Mensagens"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_PersonalInfo ----
+
+[ParCtlUserSettings_Navigator_WorkArea_PersonalInfo]
+Header      = "Controlar Partilha de Dados Privados"
+Enable      = "&Activar controlo"
+Description = "Bloqueie a partilha de dados privados especificados, incluindo números de cartão de crédito, moradas pessoais e números de telefone."
+Header2     = "Dados privados"
+
+[ParCtlUserSettings_Navigator_WorkArea_PersonalInfo_List]
+Data        = "Dados"
+Descr       = "Descrição"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_Keywords ----
+
+[ParCtlUserSettings_Navigator_WorkArea_Keywords]
+Header      = "Controlo da Utilização de Palavras"
+Enable      = "&Activar controlo"
+Description = "Monitorize a utilização de palavras ou combinações de palavras especificadas em mensagens e formulários da Internet."
+Header2     = "Palavras-chave"
+
+;--- ParCtlUserSettings_Navigator_WorkArea_ComputerUsage --
+
+[ParCtlUserSettings_Navigator_WorkArea_ComputerUsage]
+Header         = "Controlo do tempo de funcionamento do computador"
+Enable         = "&Activar controlo"
+Description    = "Controlar a frequência e duração da utilização do computador."
+WeekLimitCheck = "Limitar utili&zação nos dias seleccionados:"
+DayLimitCheck  = "Limitar tempo de utilização &diária:"
+
+;---- ParCtlUserSettings_Navigator_WorkArea_AppUsage ----
+
+[s_AppUsageText]
+0 = s_Blocked(1)
+1 = s_Blocked(0)
+2 = "Limite de tempo"
+
+[ParCtlUserSettings_Navigator_WorkArea_AppUsage]
+Header      = "Controlo da Utilização de Aplicações"
+Enable      = "&Activar controlo"
+Description = "Controle quais as aplicações que podem ser iniciadas e a frequência da respectiva utilização. Limite a lista de aplicações permitidas conforme necessário."
+Header2     = "Aplicações"
+
+[ParCtlUserSettings_Navigator_WorkArea_AppUsage_Apps]
+Toolbar.AllowDeny = ctl.parent.List.seldata().Blocked? "Permitir" : "Bloquear"
+
+[ParCtlUserSettings_Navigator_WorkArea_AppUsage_Apps_List]
+AppName     = "Aplicação"
+Action      = "Estado"
+
+
+;---- ParCtlUserSettings_Navigator_WorkArea_AddView ----
+
+[ParCtlUserSettings_Navigator_WorkArea_AddView]
+Header           = "Configurações de contas"
+Description      = "Activar o controlo, atribuir uma alcunha à conta de utilizador e seleccionar uma imagem, que serão apresentados na interface da aplicação."
+UserAliasGroup   = "Alcunha"
+UserAvatarGroup  = "Imagem"
+Enable           = "&Activar controlo para o utilizador"
+ImportExportDesc = "Gerir definições"
+Export           = "&Guardar..."
+Import           = "&Carregar..."
+
+
+;-------------- f_AppControl_Restrictions -----------------
+
+[f_AppControl_Restrictions]
+p_Param
+ret = p_Param ? "sim" : "não"
+
+;------------- ParCtl_BWUrl_Edit ------------------
+
+[ParCtl_BWUrl_Edit_Allow]
+@         = "Site"
+
+[ParCtl_BWUrl_Edit_Body_Allow]
+Prompt    = "Permitir o acesso a:"
+
+[ParCtl_BWUrl_Edit_Body_Allow_Policy]
+AllowAll	= "Permitir o acesso a todo o recurso da Web"
+Allow		= "Permitir o acesso apenas à página da Web especificada"
+
+[ParCtl_BWUrl_Edit_Deny]
+@         = "Site"
+
+[ParCtl_BWUrl_Edit_Body_Deny]
+Prompt    = "Bloquear o acesso a:"
+
+[ParCtl_BWUrl_Edit_Body_Deny_Policy]
+BlockAll	= "Bloquear o acesso a todo o recurso da Web"
+Block		= "Bloquear o acesso apenas à página da Web especificada"
+
+
+;------------------- WebContent_Exclusions_Edit -----------------------
+
+[WebContent_Exclusions_Edit]
+@       = "Bloquear sites: exclusões"
+
+[WebContent_Exclusions_Edit_Body]
+Header      = "Exclusões"
+Description = "Adicionar determinados URLs à lista de exclusões para permitir ou bloquear o acesso a esses sites."
+WhiteList   = "URLs permitidos"
+BlackList   = "URLs bloqueados"
+
+[WebContent_Exclusions_Edit_Body_BWList_List]
+URL       = "URL"
+
+;---------------- AppUsage_Edit --------------------
+
+[AppUsage_Edit]
+@              = "Controlo da execução da aplicação"
+
+[AppUsage_Edit_Body]
+AppLabel       = "Aplicação"
+AppButton      = "&Seleccionar..."
+
+[AppUsage_Edit_Body_AllowDeny]
+Deny           = "&Bloquear a execução da aplicação"
+Allow          = "&Permitir a execução da aplicação. Pode especificar limites de tempo:"
+
+[AppUsage_Edit_Body_TimeTable]
+LogAppEvents   = "&Registar no relatório"
+WeekLimitCheck = "Limitar utili&zação nos dias seleccionados:"
+DayLimitCheck  = "Limitar tempo de utilização &diária:"
+
+
+;------------------- IMControl_Edit -----------------------
+
+[IMControl_Edit]
+@              = "Informações de contacto"
+
+[IMControl_Edit_Body]
+Description    = "Dados de contacto (número de conta ou endereço de e-mail) e descrição."
+AddressLabel   = "Dados"
+DescrLabel     = "Descrição"
+AllowDeny      = "Bloquear"
+
+;------------------- SNControl_Edit -----------------------
+[SNControl_Edit]
+@              = "Informações de contacto"
+
+[SNControl_Edit_Body]
+Description    = "Dados de contacto (ID de rede social) e descrição."
+IdLabel        = "Contacto:"
+AliasLabel     = "Descrição:"
+AllowDeny      = "Bloquear"
+
+;----------------- PersonalInfo_Edit ----------------------
+
+[PersonalInfo_Edit]
+@              = "Dados privados"
+
+[PersonalInfo_Edit_Body]
+Description    = "Introduza os dados confidenciais, cujo envio não é permitido, e uma descrição."
+AddressLabel   = "Dados:"
+DescrLabel     = "Descrição:"
+
+;----------------- Keyword_Edit ----------------------
+
+[Keyword_Edit]
+@           = "Palavra-chave"
+
+[Keyword_Edit_Body]
+Description = "Insira uma expressão para detectar nas mensagens."
+Name        = "Palavra-chave:"
+
+;---------- ParCtlUserReport ------------------
+
+[ParCtlUserReport]
+@ = "Relatório detalhado - Controlo Parental para o utilizador \"" + f_UserName(p_User) + "\""
+
+[ProductHeader_Ex]
+Descr = "Relatório detalhado para o utilizador \"" + f_UserName(p_User) + "\""
+
+[ParCtlUserReport_Navigator]
+AddView            = "Estatísticas Gerais"
+InternetUsage      = "Utilização da Internet"
+WebContent         = "Navegação na Internet"
+Download           = "Transferências de ficheiros"
+IM_Usage           = "Mensagens instantâneas"
+SN_Usage           = "Redes sociais"
+PersonalInfo       = "Dados privados"
+Keywords           = "Utilização de Palavras"
+ComputerUsage      = "Utilização do Computador"
+AppUsage           = "Utilização de Aplicações"
+
+[s_ParCtlEx_Access]
+#eParCtlEx_AccessBlocked    = "Bloqueado"
+#eParCtlEx_AccessAllowed    = "Permitido"
+#eParCtlEx_AccessTerminated = "Abortado"
+def                         = @+"-"
+
+;---------- ParCtlUserReport_Navigator_WorkArea_PageT ---------------
+
+[s_ParCtlUserReport_SeverityFilter_Text]
+Critical = "Eventos críticos"
+Warning	 = "Eventos críticos e importantes"
+def      = "Todos os eventos"
+
+[ParCtlUserReport_Navigator_WorkArea_PageT_Body_StatArea]
+Header = "Estatísticas"
+
+;---------- ParCtlUserReport_Navigator_WorkArea_TimeUsage_Stat ---------------
+[s_switchperiod]
+#ePeriodDay    = "dia"
+#ePeriodWeek   = "Semana"
+#ePeriodMonth  = "Mês"
+#ePeriodYear   = "Ano"
+
+[s_YAxisDescr]
+#ePeriodDay    = "Tempo, min."
+#ePeriodWeek   = "Tempo, min."
+#ePeriodMonth  = "Tempo, min."
+#ePeriodYear   = "Tempo, hora"
+
+[s_XAxisDescr]
+#ePeriodDay    = "Horas"
+#ePeriodWeek   = "Dias da semana"
+#ePeriodMonth  = "Dias"
+#ePeriodYear   = "Meses"
+
+;Day    = "Использование в течение суток, часы"
+;Week   = "Использование в течение недели, дни"
+;Month  = "Использование в течение месяца, дни"
+;Year   = "Использование в течение года, месяцы"
+
+[s_TTHour]
+def = "Período: " + timeshort_tz(@0) +"-" + timeshort_tz(@0+3600) +"\nDuração: " + timestamp(@1)
+
+[s_TTWeek]
+def = "Dia da semana: " + s_DayOfWeek(@0) + "\nDuração: " + timestamp(@1)
+
+[s_TTMonth]
+def = "Data: " + date(@0) + "\nDuração: " + timestamp(@1)
+
+[s_TTYear]
+def = "Mês: " + s_MonthOfYear(@0) + "\nDuração: " + timestamp(@1)
+
+[s_DayOfWeek]
+0 = "Segunda-feira"
+1 = "Terça-feira"
+2 = "Quarta-feira"
+3 = "Quinta-feira"
+4 = "Sexta-feira"
+5 = "Sábado"
+6 = "Domingo"
+
+[s_DayOfWeek_Short]
+0 = "Seg"
+1 = "Ter"
+2 = "Qua"
+3 = "Qui"
+4 = "Sex"
+5 = "Sáb"
+6 = "Dom"
+
+[s_MonthOfYear]
+0  = "Janeiro"
+1  = "Fevereiro"
+2  = "Março"
+3  = "Abril"
+4  = "Maio"
+5  = "Junho"
+6  = "Julho"
+7  = "Agosto"
+8  = "Setembro"
+9  = "Outubro"
+10 = "Novembro"
+11 = "Dezembro"
+
+[s_MonthOfYear_Short]
+0  = "Jan"
+1  = "Fev"
+2  = "Mar"
+3  = "Abr"
+4  = "Maio"
+5  = "Jun"
+6  = "Jul"
+7  = "Ago"
+8  = "Set"
+9  = "Out"
+10 = "Nov"
+11 = "Dez"
+
+[s_MonthOfYear_day]
+0  = "Janeiro " + @1
+1  = "Fevereiro " + @1
+2  = "Março " + @1
+3  = "Abril " + @1
+4  = "Maio " + @1
+5  = "Junho " + @1
+6  = "Julho " + @1
+7  = "Agosto " + @1
+8  = "Setembro " + @1
+9  = "Outubro " + @1
+10 = "Novembro " + @1
+11 = "Dezembro " + @1
+
+
+;------------------- ParCtlUserReport.InternetUsage ----------
+
+[ParCtlUserReport.InternetUsage]
+@.Stat.Header  = "Distribuição do tempo de utilização da Internet para " + s_StatRangePeriod(ctl.Stat.Period.value)
+
+[s_StatRangePeriod]
+Day    = "dia"
+Week   = "semana"
+Month  = "mês"
+Year   = "ano"
+
+[ParCtlUserReport_Navigator_WorkArea_InternetUsage_List]
+Severity       = ""
+Time           = "Início da sessão"
+TimeUsage      = "Duração"
+AccessStatus   = "Resultado"
+Reason         = "Razão"
+Requests       = "Número de pedidos"
+
+[ParCtlEx_InternetUsage_DateTime_Group]
+Date           = "Data: " + s_date(val)
+Info           = " sessões: " + count + ", duração: " + timestamp(agg.GroupRunTime + if(agg.LastOpenedTime, f_ParCtlEx_GetTimeUsage(0xFFFFFFFF, agg.LastOpenedTime)))
+
+[s_ParCtlEx_IU_Reason]
+#eParCtlEx_IU_ReasonAllowed       = "utilização da Internet é permitida"
+#eParCtlEx_IU_ReasonTimeLimit     = "Fim do tempo de utilização da Internet"
+#eParCtlEx_IU_ReasonTimeSpace     = "agendamento de utilização da Internet foi violado"
+#eParCtlEx_IU_ReasonNotControlled = "controlo da utilização da Internet está desactivado"
+#eParCtlEx_IU_ReasonShutdown      = "fim do trabalho"
+
+[s_ParCtlEx_IU_Access]
+#eParCtlEx_AccessBlocked    = "Bloqueado, " + s_ParCtlEx_IU_Reason(@1)
+#eParCtlEx_AccessAllowed    = "Permitido, " + s_ParCtlEx_IU_Reason(@1)
+#eParCtlEx_AccessTerminated = "Interrompido, " + s_ParCtlEx_IU_Reason(@1)
+def                         = capitalize(s_ParCtlEx_IU_Reason(@1))
+
+;------------- ParCtlUserReport.InternetWebContent -----------------
+
+[ParCtlUserReport_Navigator_WorkArea_InternetWebContent_List]
+Severity       = ""
+Domain         = "Site"
+URL            = "URL"
+Time           = "Hora"
+AccessStatus   = "Resultado"
+Reason         = "Razão"
+Category       = "Categorias"
+DownloadSize   = "Quantidade de dados recebidos"
+
+[s_TTInternetWebContent_Chart]
+def = "Site: "+@0.Domain + "\nVisitas: " + @0.Count
+
+[s_TTInternetDownload_Chart]
+def = "Site: "+@0.Domain + "\nTransferências: " + @0.Count
+
+[s_TTMessagingIM_Chart]
+def = "Contacto: "+@0.ContactId + "\nMensagens: " + @0.MsgCount
+
+[s_TTApplicationUsage_Chart]
+def = "Aplicação: "+ f_ParCtlEx_GetAUAppName(@1, @0.AppID) + "\nTempo de execução: " + timestamp(@0.Duration)
+
+[ParCtlEx_IWC_Domain_Group]
+Info = ", visitas: " + count + " (violações: " + agg.criticalCount + ")"
+
+[ParCtlUserReport_InternetUrls_List_Menu]
+OpenURL        = "Abrir"
+
+[ParCtlUserReport_InternetWebContent_List_Actions]
+$GetListSelDomain = (ctl.List.isNode ? ctl.List.val : ctl.List.seldata().Domain)
+AllowDeny      = if($GetListSelDomain && WebControl.BlackWhiteList.find("Name == " + toExpr($GetListSelDomain)).Blocked,"Permitir site","Bloquear site")
+
+
+[ParCtlUserReport_Navigator_WorkArea_InternetWebContent_Stat]
+Header         = "Número de visitas: " + Count
+SubHeader      = "Sites populares:"
+
+[ParCtlUserReport_Navigator_WorkArea_InternetWebContent_Stat_Top3]
+Top_1.Descr = "Número de visitas: " + Domains.at(0).Count + " (" + Domains.at(0).Count*100/Count + "% do total)"
+Top_2.Descr = "Número de visitas: " + Domains.at(1).Count + " (" + Domains.at(1).Count*100/Count + "% do total)"
+Top_3.Descr = "Número de visitas: " + Domains.at(2).Count + " (" + Domains.at(2).Count*100/Count + "% do total)"
+
+[s_ParCtlEx_IWC_Reason]
+#eParCtlEx_IWC_ReasonUndefined      = "site desconhecido"
+#eParCtlEx_IWC_ReasonWhiteList      = "site permitido"
+#eParCtlEx_IWC_ReasonBlackList      = "site bloqueado"
+#eParCtlEx_IWC_ReasonUncontrolled   = "site desconhecido, acesso recusado"
+#eParCtlEx_IWC_ReasonCategoryDeny   = "site de uma categoria bloqueada"
+#eParCtlEx_IWC_ReasonCategoryAllow  = "site de uma categoria permitida"
+#eParCtlEx_IWC_ReasonPersonaldata	= "tentativa de envio de dados privados"
+
+[s_ParCtlEx_IWC_Access]
+#eParCtlEx_AccessBlocked    = "Bloqueado" + if (@2, ": " + f_ParCtlEx_IWC_Category_Mask(@2, 0), if(@1, ": " + s_ParCtlEx_IWC_Reason(@1) ) )
+#eParCtlEx_AccessAllowed    = "Permitido" + if (@2, ": " + f_ParCtlEx_IWC_Category_Mask(@2, 0), if(@1, ": " + s_ParCtlEx_IWC_Reason(@1) ) )
+#eParCtlEx_AccessTerminated = "Interrompido" + if (@2, ": " + f_ParCtlEx_IWC_Category_Mask(@2, 0), if(@1, ": " + s_ParCtlEx_IWC_Reason(@1) ) )
+def                         = "s"
+
+
+;------------- ParCtlUserReport.InternetDownload -----------------
+
+[ParCtlUserReport_Navigator_WorkArea_InternetDownload_List]
+Severity       = ""
+File           = "Ficheiro"
+Category       = "Categoria"
+Domain         = "Site"
+Time           = "Hora"
+AccessStatus   = "Resultado"
+Reason         = "Razão"
+URL            = "URL"
+
+[ParCtlUserReport_Navigator_WorkArea_InternetDownload_List_File]
+Name           = "Nome"
+Type           = "Tipo"
+
+[ParCtlEx_FDC_Category_Group]
+Info = " - downloads: " + count + if(agg.Blocked, " (bloqueado: " + agg.Blocked + ")")
+
+[ParCtlEx_FDC_Domain_Group]
+Info = " - downloads: " + count + if(agg.Blocked, " (bloqueado: " + agg.Blocked + ")")
+
+[ParCtlUserReport_InternetDownload_List_Actions_Category]
+$GetListSelCategory = (ctl.List.groupId == "Category" ? ctl.List.val : ctl.List.seldata().Category)
+AllowDeny      = if( $GetListSelCategory && FileDownloadControl.Items.find("Name=="+toExpr($GetListSelCategory)).Enabled, "Permitir categoria", "Bloquear categoria" )
+
+[ParCtlUserReport_InternetDownload_List_Actions_Domain]
+$GetListSelDomain   = (ctl.List.groupId == "Domain" ? ctl.List.val : ctl.List.seldata().Domain)
+AllowDeny      = if($GetListSelDomain && WebControl.BlackWhiteList.find("Name == " + toExpr($GetListSelDomain)).Blocked,"Permitir site","Bloquear site")
+
+[ParCtlUserReport_Navigator_WorkArea_InternetDownload_Stat]
+Header         = "Número de transferências: " + Count
+SubHeader      = "Sites populares:"
+
+[ParCtlUserReport_Navigator_WorkArea_InternetDownload_Stat_Top3]
+Top_1.Descr = "Número de visitas: " + Domains.at(0).Count + " (" + Domains.at(0).Count*100/Count + "% do total)"
+Top_2.Descr = "Número de visitas: " + Domains.at(1).Count + " (" + Domains.at(1).Count*100/Count + "% do total)"
+Top_3.Descr = "Número de visitas: " + Domains.at(2).Count + " (" + Domains.at(2).Count*100/Count + "% do total)"
+
+[s_ParCtlEx_FileCategory]
+"%music%"        = "música"
+"%video%"        = "vídeo"
+"%applications%" = "aplicações"
+"%archives%"     = "arquivos"
+def              = @
+
+[s_ParCtlEx_FDC_Reason]
+#eParCtlEx_FDC_ReasonDenyByFileType = "a transferência de ficheiros desta categoria está bloqueada"
+
+[s_ParCtlEx_ID_Access]
+#eParCtlEx_AccessBlocked    = "Bloqueado" + if(@1, ": "+s_ParCtlEx_FileCategory(@1) )
+#eParCtlEx_AccessAllowed    = "Permitido" + if(@1, ": "+s_ParCtlEx_FileCategory(@1) )
+#eParCtlEx_AccessTerminated = "Interrompido" + if(@1, ": "+s_ParCtlEx_FileCategory(@1) )
+def                         = "s"
+
+; ------------- ParCtlUserReport.MessagingIM -----------------
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingIM_List]
+Severity       = ""
+Direction      = "Direcção"
+UserName       = "Contacto"
+MessageText    = "Mensagens"
+Time           = "Hora"
+AccessStatus   = "Resultado"
+Reason         = "Razão"
+IsPersInfo     = "Dados privados"
+IsKeywords     = "Utilização de Palavras"
+
+[Report_MessagingIM_List.Menu]
+$GetListSelContactId = (ctl.List.isNode ? ctl.List.agg.ContactId : ctl.List.seldata().ContactId)
+$GetListData = IMControl.Contacts.find("Id==" + toExpr($GetListSelContactId))
+History        = "Ver mensagens"
+AllowDeny      = if($GetListData.Blocked,"Permitir","Bloquear")
+
+[ParCtlEx_IM_ContactId_Group]
+Info = ", " + s_ParCtlEx_IM_ProtocolTypes(agg.ProtocolType) + " - mensagens: " + count + if(agg.Blocked, " (bloqueado: " + agg.Blocked + ")")
+
+[ParCtlUserReport_MessagingIM_List_Actions]
+$GetListSelContactId = (ctl.List.isNode ? ctl.List.agg.ContactId : ctl.List.seldata().ContactId)
+$GetListData = IMControl.Contacts.find("Id==" + toExpr($GetListSelContactId))
+AllowDeny      = if($GetListData.Blocked,"Permitir","Bloquear")
+Edit           = "Ver mensagens"
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingIM_Stat]
+Header    = "Número de mensagens: " + Count
+SubHeader = "Contactos populares:"
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingIM_Stat_Top3]
+Top_1.Descr = "Número de mensagens: " + Contacts.at(0).MsgCount + " (" + f_ParCtlEx_MessagingIM_Stat_TopN_Percent(Count, Contacts, 1) + "% do total)"
+Top_2.Descr = "Número de mensagens: " + Contacts.at(1).MsgCount + " (" + f_ParCtlEx_MessagingIM_Stat_TopN_Percent(Count, Contacts, 2) + "% do total)"
+Top_3.Descr = "Número de mensagens: " + Contacts.at(2).MsgCount + " (" + f_ParCtlEx_MessagingIM_Stat_TopN_Percent(Count, Contacts, 3) + "% do total)"
+
+[s_ParCtlEx_IM_Reason]
+#eParCtlEx_IM_ReasonContactInWhiteList        = "contacto permitido"
+#eParCtlEx_IM_ReasonContactInBlackList        = "contacto bloqueado"
+#eParCtlEx_IM_ReasonUnknownContactAllowed     = "contacto desconhecido, as mensagens são permitidas"
+#eParCtlEx_IM_ReasonUnknownContactSuppressed  = "contacto desconhecido, as mensagens estão bloqueadas"
+#eParCtlEx_IM_ReasonPersonalInfoSending       = "partilha de dados privados"
+
+[s_ParCtlEx_IM_ProtocolTypes]
+#eIMProtocolHTTP   = "HTTP"
+#eIMProtocolSMTP   = "SMTP"
+#eIMProtocolICQ    = "ICQ Instant Messenger"
+#eIMProtocolMSN    = "MSN Instant Messenger"
+#eIMProtocolP2P    = "Detector simples P2P (Par-a-Par)"
+#eIMProtocolJBR    = "Jabber Instant Messenger"
+#eIMProtocolIRC    = "IRC"
+#eIMProtocolMMP    = "Mail.Ru Agent Instant Messenger"
+#eIMProtocolYahoo  = "Yahoo! Instant Messenger"
+#eIMProtocolGG     = "Gadu-Gadu Instant Messenger"
+def                = "Desconhecido " + @
+
+;---------- ParCtlReportIMMessageDetails ------------------
+
+[ParCtlReportIMMessageDetails]
+@ = "Mensagens: " + f_ParCtlEx_GetIMContactName(p_data.UserName, p_data.ContactId)
+
+[ParCtlReportIMMessageDetails_Body]
+ContactId.Name   = "Contacto:"
+Group.Name       = "Categoria:"
+Proto.Name       = "Protocolo:"
+
+[ParCtlReportIMMessageDetails_Body_Group]
+WhiteList   = "Contactos permitidos"
+BlackList   = "Contactos bloqueados"
+Other       = "Contactos desconhecidos"
+
+[ParCtlReportIMMessageDetails_List]
+MessageText   = "Mensagem"
+Time          = "Hora"
+
+;------------- ParCtlReportSNControlDetails -----------------
+
+[ParCtlReportSNControlDetails]
+@ = "Mensagens: " + f_ParCtlEx_GetSNContactName(p_data.ContactId, p_data.ContactAlias)
+
+[ParCtlReportSNControlDetails_Body]
+ContactId.Name   = "Contacto:"
+
+[SNControl_History_StatusDeny]
+Text        = "Mensagens"
+
+[ParCtlReportSNControlDetails_Header]
+AllowButton.Text  = "Permitir"
+DenyButton.Text   = "Bloquear"
+
+[ParCtlReportSNControlDetails_List]
+MessageText   = "Mensagem"
+Time          = "Hora"
+
+; ------------- ParCtlUserReport.MessagingPersonalData -----------------
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingPersonalData_List]
+Severity       = ""
+PersonalInfo   = "Dados privados"
+Protocol       = "Protocolo"
+AccessStatus   = "Resultado"
+Recipient      = "Destinatário"
+Time           = "Hora"
+
+[ParCtlEx_MPD_PersonalInfo_Group]
+Info = " - tentativas de envio detectadas: " + count
+
+[ParCtlEx_MPD_Date_Group]
+Id   = "Data: " + s_date(val)
+Info = " - tentativas de envio detectadas: " + count
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingPersonalData_Stat]
+Header    = "Tentativas de envio bloqueadas: " + ctl.List.totalCount()
+
+; ------------- ParCtlUserReport.MessagingKeywords -----------------
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingKeywords_List]
+Severity       = ""
+Direction      = "Direcção"
+Keyword        = "Palavra-chave"
+Protocol       = "Protocolo"
+;AccessStatus  = "Результат"
+Recipient      = "Destinatário / Remetente"
+Time           = "Hora"
+
+[ParCtlUserReport_Navigator_WorkArea_MessagingKeywords_Stat]
+Header    = "Número total de eventos: " + ctl.List.totalCount()
+
+;------------------- ParCtlUserReport.ComputerUsage ----------
+
+[ParCtlUserReport.ComputerUsage]
+@.Stat.Header  = "Distribuição do tempo de utilização do computador para " + s_StatRangePeriod(ctl.Stat.Period.value)
+
+[ParCtlUserReport_Navigator_WorkArea_ComputerUsage_List]
+Severity       = ""
+Time           = "Início da sessão"
+TimeUsage      = "Duração"
+AccessStatus   = "Resultado"
+
+[ParCtlEx_ComputerUsage_DateTime_Group]
+Date           = "Data: " + s_date(val)
+Info           = ", sessões: " + count + ", duração: " + timestamp(agg.GroupRunTime + if(agg.LastOpenedTime, f_ParCtlEx_GetTimeUsage(0xFFFFFFFF, agg.LastOpenedTime)))
+
+[s_ParCtlEx_CU_Reason]
+#eParCtlEx_CC_TimeLimitIsOver        = "limite de tempo de utilização do computador foi excedido"
+#eParCtlEx_CC_ScheduleTimeIsViolated = "agendamento de utilização do computador foi violado"
+#eParCtlEx_CC_ControlIsTurnedOff     = "controlo de utilização do computador desactivado"
+#eParCtlEx_CC_ControlIsTurnedOn      = "controlo de utilização do computador activado"
+def                                  = "utilização do computador é permitida"
+
+[s_ParCtlEx_CU_Reason_Upper]
+#eParCtlEx_CC_TimeLimitIsOver        = "Limite de tempo de utilização do computador excedido"
+#eParCtlEx_CC_ScheduleTimeIsViolated = "Agendamento da utilização do computador violado"
+#eParCtlEx_CC_ControlIsTurnedOff     = "Controlo de utilização do computador desactivado"
+#eParCtlEx_CC_ControlIsTurnedOn      = "Controlo de utilização do computador activado"
+def                                  = "utilização do computador é permitida"
+
+[s_ParCtl_CU_GetResultDesc]
+#eParCtlEx_AccessBlocked   
+#eParCtlEx_AccessAllowed    
+#eParCtlEx_AccessTerminated = s_ParCtlEx_Access(@) + ", " + s_ParCtlEx_CU_Reason(@1)
+#eParCtlEx_AccessNone       = s_ParCtlEx_CU_Reason_Upper(@1)
+def                         = "s"
+
+;----------------- ParCtlUserReport.ApplicationUsage ----------
+
+[ParCtlUserReport_Navigator_WorkArea_ApplicationUsage_List]
+Severity       = ""
+Application    = "Aplicação"
+Time           = "Hora de execução"
+TimeUsage      = "Duração"
+AccessStatus   = "Resultado"
+Reason         = "Razão"
+
+[ParCtlEx_ApplicationUsage_Group]
+Info           = ", inicializações: " + count + ", tempo de utilização: " + timestamp(agg.GroupRunTime + if(agg.LastOpenedTime, f_ParCtlEx_GetTimeUsage(0xFFFFFFFF, agg.LastOpenedTime)))
+
+[ParCtlUserReport_ApplicationUsage_List_Actions]
+$GetListSelAppID = (ctl.List.isNode ? ctl.List.agg.AppID : ctl.List.seldata().AppID)
+AllowDeny = if( $GetListSelAppID && AppControl.Applications.find("AppID=="+toExpr($GetListSelAppID)).Blocked, "Permitir", "Bloquear")
+Settings  = "Configurar"
+
+[ParCtlUserReport_Navigator_WorkArea_ApplicationUsage_Stat]
+Header    = "Número de violações: " + CriticalCount
+SubHeader = "Aplicações populares:"
+
+[ParCtlUserReport_Navigator_WorkArea_ApplicationUsage_Stat_Top3]
+Top_1.Descr = "Tempo de utilização: " + timestamp(Apps.at(0).Duration) + " (" + Apps.at(0).Duration*100/Duration + "% do total)"
+Top_2.Descr = "Tempo de utilização: " + timestamp(Apps.at(1).Duration) + " (" + Apps.at(1).Duration*100/Duration + "% do total)"
+Top_3.Descr = "Tempo de utilização: " + timestamp(Apps.at(2).Duration) + " (" + Apps.at(2).Duration*100/Duration + "% do total)"
+
+[s_ParCtlEx_AU_Reason]
+#eParCtlEx_AU_ReasonAppInWhiteList        = "aplicação permitida"
+#eParCtlEx_AU_ReasonAppInBlackList        = "aplicação bloqueada"
+#eParCtlEx_AU_ReasonUnknownApp            = "aplicação desconhecida"
+#eParCtlEx_AU_ReasonDayLimitExhausted     = "terminou o tempo de utilização"
+#eParCtlEx_AU_ReasonTimePeriodRestriction = "agendamento de utilização da aplicação foi violado"
+#eParCtlEx_AU_ReasonControlTurnedOn       = "controlo de utilização da aplicação activado"
+#eParCtlEx_AU_ReasonControlTurnedOff      = "controlo de utilização da aplicação desactivado"
+
+[s_ParCtlEx_AU_Access]
+#eParCtlEx_AccessBlocked    = "Bloqueado, " + s_ParCtlEx_AU_Reason(@1)
+#eParCtlEx_AccessAllowed    = "Permitido, " + s_ParCtlEx_AU_Reason(@1)
+#eParCtlEx_AccessTerminated = "Interrompido, " + s_ParCtlEx_AU_Reason(@1)
+def                         = capitalize(s_ParCtlEx_AU_Reason(@1))
+
+[ParCtlEx_TerminateTimeoutWindow_Footer]
+Close = "Fechar"
+
+[ParCtlEx_AppTerminateTimeoutWindow_Footer]
+Close = "Fechar"
+
+[ParCtlEx_AppCloseTimeoutWindow_Footer]
+Close = "Fechar"
+
+;----------------- ParCtlEx_AppCloseTimeoutWindow ----------------------
+
+[ParCtlEx_AppCloseTimeoutWindow]
+@ = "Limite de tempo"
+
+[ParCtlEx_AppInfoBlock]
+AppNameDesc			= "Aplicação: "
+AppPublisherDesc	= "Fornecedor: "
+
+[ParCtlEx_CpuInfoBlock]
+CpuUsageDesc = "Tempo restante até ao fim da sessão:"
+
+[ParCtlEx_AppWarnBlock]
+Descr = "Tempo restante até ao encerramento da aplicação:"
+
+[ParCtlEx_CpuWarnBlock]
+Descr = "Atenção! Tempo restante até ao encerramento do computador:"
+
+[ParCtlEx_AppDescBlock]
+NotifyText = "Para evitar a perda de dados, por favor guarde os seus dados antes do encerramento da aplicação."
+
+;----------------- ParCtlEx_AppTerminateTimeoutWindow ----------------------
+
+[ParCtlEx_AppTerminateTimeoutWindow]
+@ = "Limite de tempo"
+
+[ParCtlEx_AppTerminateTimeoutWindow_Body]
+ClosureText = "Terminou o tempo de utilização da aplicação.\nSerá executado o encerramento seguro."
+
+;----------------- ParCtlEx_QuitAppCloseGuiWarningWindow ----------------------
+
+[ParCtlEx_QuitAppCloseGuiWarningWindow]
+@ = "Limite de tempo"
+
+[ParCtlEx_QuitAppCloseGuiWarningWindow_Body]
+ClosureText  = "Terminou o tempo de utilização da aplicação."
+ClosureText2 = "A aplicação foi encerrada."
+
+[ParCtlEx_QuitAppDescBlock]1
+NotifyText  = "O administrador pode permitir a utilização da aplicação."
+
+;----------------- ParCtlEx_InternetTerminateTimeoutWindow ----------------------
+
+[ParCtlEx_InternetTerminateTimeoutWindow]
+@ = "Limite de tempo"
+
+[ParCtlEx_InternetWarnBlock]
+Descr = "O tempo de utilização da Internet está a terminar\nTempo restante até à interrupção automática da ligação:"
+
+[ParCtlEx_InternetDescBlock]
+NotifyText = "Para evitar a perda de dados, guarde os seus dados antes de desligar."
+
+;----------------- ParCtlEx_ComputerTerminateTimeoutWindow ----------------------
+
+[ParCtlEx_ComputerTerminateTimeoutWindow]
+@ = "Limite de tempo"
+
+[ParCtlEx_ComputerTerminateTimeoutWindow_Body]
+Descr = "Atenção! O computador será desligado dentro de"
+ParCtlStop = "Desactivar controlo de utilizadores"
+
+;----------------- ProductNotify ----------------------
+
+[s_ProductNotify_ParCtlEx]
+serid("InstantMessangerControlReportEvent") 
+serid("SocialNetworkControlReportEvent")    = "A mensagem " + (Direction == #eParCtlEx_DirectionInbound ? "do contacto \"" : "para o contacto \"") + s_ProductNotify_ParCtlEx_ContactName(@) + "\" foi bloqueada. Razão: " + s_ProductNotify_ParCtlEx_Reason(@)
+serid("AppControlReportEvent")              = "A execução da aplicação \"" + s_AppName(Data.AppID) + "\" foi bloqueada. Razão: " + s_ParCtlEx_AU_Reason(Reason)
+serid("PersonalInfoControlReportEvent")     = "A tentativa de enviar dados privados foi bloqueada"
+serid("WebSiteControlReportEvent")          = "A visualização do site " + Url + " foi bloqueada. Razão: " + s_ParCtlEx_IWC_Reason(Reason)
+serid("FileDownloadControlReportEvent")     = "A transferência do ficheiro " + FileName + "." + Extension + " foi bloqueada. Razão: " + s_ParCtlEx_FDC_Reason(Reason)
+serid("InternetUsageControlReportEvent")    = "O pedido de Internet foi bloqueado. Razão: " + s_ParCtlEx_IU_Reason(Reason)
+
+[s_ProductNotify_ParCtlEx_ContactName]
+serid("InstantMessangerControlReportEvent") = f_ParCtlEx_GetIMContactName(UserName, ContactId)
+serid("SocialNetworkControlReportEvent")    = f_ParCtlEx_GetSNContactName(ContactId, ContactAlias)
+
+[s_ProductNotify_ParCtlEx_Reason]
+serid("InstantMessangerControlReportEvent") = s_ParCtlEx_IM_Reason(Reason)
+serid("SocialNetworkControlReportEvent")    = s_ParCtlEx_SN_Reason(Reason)
+
+[ImportUserSettingsDialog]
+@ = "Carregar configurações do Controlo Parental"
+
+[ImportUserSettingsDialogHeader_HdrDescr]
+ImportSettingsMsg = username(UserId,1) + " - carregar configurações"
+Description = "As actuais configurações do utilizador serão substituídas pelas configurações de origem seleccionadas."
+
+[ImportUserSettingsDialogButtonsArea]
+ImportSource = "Origem de configurações:"
+
+[ImportUserSettingsDialogButtonsAreaRadioButtons]
+ImportFromFile     = "Ficheiro de &configuração: "
+Button = "Procurar..."
+ImportFromUser     = "&Outro utilizador: "
+ImportFromTemplate = "&Modelo: "
+
+[ImportTemlates]
+0 = "Criança"
+1 = "Adolescente"
+
+; ----------------------   BrowseInstalledSoftwareDialog   ------------------------------
+
+[BrowseInstalledSoftwareDialog]
+@ = "Seleccionar aplicação"
+
+[BrowseInstalledSoftwareDialog_Desc]
+Desc = "Seleccionar aplicação na lista:"
+
+[BrowseInstalledSoftwareDialog_Object]
+Desc = "Objecto"
+
+[BrowseInstalledSoftwareDialog_List]
+ShowRunningOnly = "Mostrar execução de aplicações"
+
+[BrowseInstalledSoftwareDialog_ProgsListI]
+Program  = "Aplicação"
+Vendor   = "Fornecedor"
+FilePath = "Ficheiro"
+
+[BrowseInstalledSoftwareDialog_ToolBar]
+Add      = "Adicionar"
+
+; ----------------------  ParctlFirstStartDialog  ------------------------------
+
+[ParctlFirstStartDialog]
+@            = "Controlo Parental"
+Header.Title = "Bem-vindo"
+Header.Descr = "ao Controlo Parental"
+
+[ParctlFirstStartDialog.Body]
+Descr       = "Para começar a trabalhar, especifique uma password para gerir o Controlo Parental. Especificar uma password protege as configurações de controlo contra a alteração por parte dos utilizadores que estão a ser controlados."
+Create.Name = "Especificar password para o Controlo Parental"
+DoNotShow   = "Não apresentar esta mensagem novamente"
+
+;---------------------------------------------------------
+;---------------------------------------------------------
+;---------------------------------------------------------
+
+[ParCtlRepSettMainWindow]
+@ = "Controlo Parental"
+
+[ParCtlRepSettMainWindow_Body_Navigator]
+Settings.Cont = "Configuração"
+Report.Cont   = "Relatórios"
+
+;---------------------------------------------------------
+[ParCtlUserReport_Navigator_WorkArea_SNControl_List]
+Severity       = ""
+Contact        = "Contacto"
+Time           = "Hora"
+MessageText    = "Mensagens"
+Direction      = "Direcção"
+
+[Report_SNControl_List.Menu]
+$GetListSelContactId = (ctl.List.isNode ? ctl.List.agg.ContactId : ctl.List.seldata().ContactId)
+$GetListData = SNControl.Contacts.find("Id==" + toExpr($GetListSelContactId))
+AllowDeny      = if($GetListData.Blocked,"Permitir","Bloquear")
+History        = "Ver mensagens"
+
+[ParCtlUserReport_SNControl_List_Actions]
+$GetListSelContactId = (ctl.List.isNode ? ctl.List.agg.ContactId : ctl.List.seldata().ContactId)
+$GetListData = SNControl.Contacts.find("Id==" + toExpr($GetListSelContactId))
+AllowDeny      = if($GetListData.Blocked,"Permitir","Bloquear")
+Edit           = "Ver mensagens"
+
+[ParCtlEx_SN_ContactId_Group]
+Info = ", mensagens: " + count + if(agg.Blocked, ", bloqueado: " + agg.Blocked )
+
+[ParCtlUserReport_Navigator_WorkArea_SNControl_Stat]
+Header    = "Número de mensagens: " + Count
+SubHeader = "Contactos populares:"
+
+[ParCtlUserReport_Navigator_WorkArea_SNControl_Stat_Top3]
+Top_1.Descr = "Número de mensagens: " + Contacts.at(0).MsgCount + " (" + f_ParCtlEx_MessagingIM_Stat_TopN_Percent(Count, Contacts, 1) + "% do total)"
+Top_2.Descr = "Número de mensagens: " + Contacts.at(1).MsgCount + " (" + f_ParCtlEx_MessagingIM_Stat_TopN_Percent(Count, Contacts, 2) + "% do total)"
+Top_3.Descr = "Número de mensagens: " + Contacts.at(2).MsgCount + " (" + f_ParCtlEx_MessagingIM_Stat_TopN_Percent(Count, Contacts, 3) + "% do total)"
+
+[s_ParCtlEx_SN_Reason]
+#eParCtlEx_SN_ReasonContactInWhiteList        = "contacto permitido"
+#eParCtlEx_SN_ReasonContactInBlackList        = "contacto bloqueado"
+#eParCtlEx_SN_ReasonUnknownContactAllowed     = "contacto desconhecido, as mensagens são permitidas"
+#eParCtlEx_SN_ReasonUnknownContactSuppressed  = "contacto desconhecido, as mensagens estão bloqueadas"
+#eParCtlEx_SN_ReasonPersonalInfoSending       = "partilha de dados privados"
+
+;---------------------------------------------------------
+
+[ParCtlRepSettMainWindow.Statistics_Internet_LeftCol]
+Total.Name   = "Sites visitados: "
+Blocked.Name = "Bloqueados: "
+
+[ParCtlRepSettMainWindow.Statistics_Internet_RightCol]
+Total.Name   = "Ficheiros transferidos: "
+Blocked.Name = "Bloqueados: "
+
+[ParCtlRepSettMainWindow.Statistics_Internet]
+@.Header     = "Internet"
+@.Descr      = "(ainda não foram recolhidos dados)"
+
+[ParCtlRepSettMainWindow.Statistics_Meeting]
+@.Header     = "Mensagens"
+@.Descr      = "(ainda não foram recolhidos dados)"
+
+[ParCtlRepSettMainWindow.Statistics_Meeting_LeftCol]
+Total.Name   = "Número total de mensagens: "
+Blocked.Name = "Bloqueadas: "
+
+[ParCtlRepSettMainWindow.Statistics_Meeting_RightCol]
+PersInfo.Name= "Dados privados detectados: "
+Keywords.Name= "Utilização de palavras detectada: "
+
+[ParCtlRepSettMainWindow.Statistics_Computer]
+@.Header     = "Computador"
+@.Descr      = "(ainda não foram recolhidos dados)"
+
+[ParCtlRepSettMainWindow.Statistics_Computer_LeftCol]
+AppBlocked.Name = "Aplicações bloqueadas: "
+
+[ParCtlRepSettMainWindow.Statistics_Computer_RightCol]
+Duration.Name   = "Duração: "
+
+;---------------------------------------------------------
+
+[ParCtlRepSettMainWindow.AddView]
+@.Title = "Estatísticas Gerais do Controlo de Contas"
+
+[ParCtlRepSettMainWindow.ComputerUsage]
+@.Title = "Relatório de Utilização do Computador"
+@.Stat.SubHeader = "Distribuição do tempo de utilização do computador para " + s_switchperiod(ctl.parent.Period.PeriodType.value) + ":"
+
+[ParCtlRepSettMainWindow.AppUsage]
+@.Title = "Relatório de Utilização da Aplicação"
+
+[ParCtlRepSettMainWindow.InternetUsage]
+@.Title = "Relatório de Utilização da Internet"
+@.Stat.SubHeader = "Distribuição do tempo de utilização da Internet para " + s_switchperiod(ctl.parent.Period.PeriodType.value) + ":"
+
+[ParCtlRepSettMainWindow.WebContent]
+@.Title = "Relatório de Navegação na Internet"
+
+[ParCtlRepSettMainWindow.Download]
+@.Title = "Relatório de Transferências de Ficheiros"
+
+[ParCtlRepSettMainWindow.IM_Usage]
+@.Title = "Relatório de Mensagens Instantâneas"
+
+[ParCtlRepSettMainWindow.PersonalInfo]
+@.Title = "Relatório de Partilha de Dados Privados"
+
+[ParCtlRepSettMainWindow.Keywords]
+@.Title = "Relatório de Utilização de Palavras"
+
+[ParCtlRepSettMainWindow.SN_Usage]
+@.Title = "Relatório de Redes Sociais"
+
+;---------------------------------------------------------
+[ParCtlUserReport_Navigator_WorkArea_TimeUsage_ChartWeek]
+Val_1   = s_DayOfWeek_Short((firstdayofweek()+0)%7)
+Val_2   = s_DayOfWeek_Short((firstdayofweek()+1)%7) 
+Val_3   = s_DayOfWeek_Short((firstdayofweek()+2)%7)
+Val_4   = s_DayOfWeek_Short((firstdayofweek()+3)%7)
+Val_5   = s_DayOfWeek_Short((firstdayofweek()+4)%7)
+Val_6   = s_DayOfWeek_Short((firstdayofweek()+5)%7)
+Val_7   = s_DayOfWeek_Short((firstdayofweek()+6)%7)

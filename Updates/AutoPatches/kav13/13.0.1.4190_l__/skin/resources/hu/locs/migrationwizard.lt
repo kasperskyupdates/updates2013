@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migrációs varázsló'
+UpgradeCaption = 'Frissítés'
+
+RebootPageCheckboxRebootText = 'Számítógép újraindítása'
+OpenRemoveProgramsPanel = 'Eszköztár megnyitása'
+
+WizardBeginDescriptionKis = 'Most átvált a Kaspersky Internet Security 2013 szoftverre.\n\nA szerzői jog birtokosa nemkizárólagos licencet biztosít Önnek a Kaspersky Internet Security használatára ugyanazokkal a feltételekkel, amelyeket a Kaspersky Anti-Virus eredeti telepítésekor már elfogadott.\n\nMegjegyzés: Ez az átváltás újraindítást is eredményezhet.'
+
+WizardBeginDescriptionKav = 'Most átvált a Kaspersky Anti-Virus 2013 szoftverre.\n\nA szerzői jog birtokosa nemkizárólagos licencet biztosít Önnek a Kaspersky Anti-Virus használatára ugyanazokkal a feltételekkel, amelyeket a Kaspersky Internet Security eredeti telepítésekor már elfogadott.\n\nMegjegyzés: Ez az átváltás újraindítást is eredményezhet.'
+
+WizardContinueDescriptionKis = 'Folytatás a Kaspersky Internet Security 2013 alkalmazásra történő átváltással'
+WizardContinueDescriptionKav = 'Folytatás a Kaspersky Anti-Virus 2013 alkalmazásra történő átváltással'
+
+MigrationNocomebackWarning = '\n\nFigyelem! A Kaspersky Anti-Virus licence előbb jár le, mint a Kaspersky Internet Security alkalmazásé. A Kaspersky Anti-Virus licenc lejárta után nincs mód a programhoz való visszatérésre.'
+
+PleaseWait = 'Kérjük, várjon'
+RemovalProgressDescription   = 'Inkompatibilis szoftver(ek) törlése'
+RemovalApplicationsDescription = 'A váltáshoz az alábbi szoftver(ek) lesz(nek) eltávolítva:'
+ManualRemovalApplicationsDescription = 'A váltáshoz manuálisan kell eltávolítania a következő inkompatibilis szoftver(eke)t:'
+SearchRemovalApplicationsDescription   = 'Inkompatibilis szoftverek keresése'
+RestartProductDescription = 'A váltás befejezéséhez az alkalmazás újraindul.'
+RebootOsDescription = 'A váltás folytatásához újra kell indítani a számítógépet.\nA varázsló az újraindítás után folytatódik.'
+
+MigrationProgressDescriptionKis = 'Alkalmazás újrakonfigurálása, és átváltás a Kaspersky Internet Security-re'
+UpgradeProgressDescriptionKis   = 'Alkalmazás újrakonfigurálása, és átváltás a Kaspersky Internet Security-re'
+MigrationProgressDescriptionKav = 'Alkalmazás újrakonfigurálása, és átváltás a Kaspersky Anti-Virusra'
+
+MigrationKis = 'Átváltás a Kaspersky Internet Security alkalmazásra'
+MigrationKav = 'Átváltás a Kaspersky Anti-Virus alkalmazásra'
+MigrationUnknown = 'Váltás '
+
+SearchRemovalApplicationsHeader = 'Átváltás a Kaspersky Internet Security alkalmazásra'
+RemovalProgressHeader = 'Inkompatibilis szoftver(ek) törlése'
+RemovalApplicationsHeader = 'Inkompatibilis szoftver található'
+RebootOsHeader = 'Újra kell indítani a számítógépet'
+RestartProductHeader = 'Az alkalmazás újra lesz indítva'
+
+MigrationAbortedHeader = $MigrationType + ' – váltás nem lehetséges'
+MigrationAbortedDescription = $MigrationType + ' – váltás sikertelen. Próbálja meg manuálisan eltávolítani az inkompatibilis szoftver(eke)t, majd indítsa újra a varázslót.'
+
+BestBuyGiftInformation = 'A Kaspersky Anti-Virus a Kaspersky Internet Security alkalmazásra frissül.\nEzzel több lehetősége nyílik számítógépe védelmére.'
+BestBuyGiftDescription = 'Köszönjük, hogy a Kaspersky Lab szoftverét választotta. Kellemes használatot kívánunk a további védelemhez.'
+BestBuyUpgradeNotification = 'A frissítéskor a program ellenőrzi az inkompatibilis szoftvereket a rendszerben, hogy a telepített alkalmazások és az operációs rendszer stabilan működhessenek.'
+BestBuyFreeUpgrade = 'Átváltás a Kaspersky Internet Security alkalmazásra'
+
+BestBuyTryAbortHeader = 'Frissítés a háttérben'
+BestBuyTryAbortInformation = 'A frissítés a háttérben folytatódik'
+BestBuyTryAbortDescription = 'Mivel az inkompatibilis szoftverek nem lettek eltávolítva, a telepített alkalmazások és az operációs rendszer stabil működésének biztosításához a Kaspersky Internet Security egyes új funkciói le lettek tiltva.\n\nManuálisan eltávolíthatja az inkompatibilis alkalmazásokat, és engedélyezheti az új funkciókat a Kaspersky Internet Security beállítási ablakában.'
+BackToSubcriptionUpgradeButtonText = 'Vissza a frissítés'
+Congratulation = 'Gratulálunk!'
+
+RunKisButtonText = 'Kaspersky Internet Security indítása'
+
+ProductUpgraded = 'A Kaspersky Anti-Virus a Kaspersky Internet Security alkalmazásra frissült.\nImmár több lehetősége nyílik számítógépe védelmére.'

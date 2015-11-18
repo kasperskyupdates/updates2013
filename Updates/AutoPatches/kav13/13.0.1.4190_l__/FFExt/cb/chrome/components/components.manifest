@@ -1,0 +1,135 @@
+interfaces content_blocker_xpcom_gecko35/browser_content_controller.xpt appversion<35.*
+interfaces content_blocker_xpcom_gecko35/content_blocker_js_adapter.xpt appversion<35.*
+interfaces content_blocker_xpcom_gecko35/reload_approver.xpt appversion<35.*
+binary-component content_blocker_xpcom_gecko35/content_blocker_xpcom.dll appversion<35.*
+
+interfaces content_blocker_xpcom_gecko34/browser_content_controller.xpt appversion<34.*
+interfaces content_blocker_xpcom_gecko34/content_blocker_js_adapter.xpt appversion<34.*
+interfaces content_blocker_xpcom_gecko34/reload_approver.xpt appversion<34.*
+binary-component content_blocker_xpcom_gecko34/content_blocker_xpcom.dll appversion<34.*
+
+interfaces content_blocker_xpcom_gecko33/browser_content_controller.xpt appversion<33.*
+interfaces content_blocker_xpcom_gecko33/content_blocker_js_adapter.xpt appversion<33.*
+interfaces content_blocker_xpcom_gecko33/reload_approver.xpt appversion<33.*
+binary-component content_blocker_xpcom_gecko33/content_blocker_xpcom.dll appversion<33.*
+
+interfaces content_blocker_xpcom_gecko32/browser_content_controller.xpt appversion<32.*
+interfaces content_blocker_xpcom_gecko32/content_blocker_js_adapter.xpt appversion<32.*
+interfaces content_blocker_xpcom_gecko32/reload_approver.xpt appversion<32.*
+binary-component content_blocker_xpcom_gecko32/content_blocker_xpcom.dll appversion<32.*
+
+interfaces content_blocker_xpcom_gecko31/browser_content_controller.xpt appversion<31.*
+interfaces content_blocker_xpcom_gecko31/content_blocker_js_adapter.xpt appversion<31.*
+interfaces content_blocker_xpcom_gecko31/reload_approver.xpt appversion<31.*
+binary-component content_blocker_xpcom_gecko31/content_blocker_xpcom.dll appversion<31.*
+
+interfaces content_blocker_xpcom_gecko30/browser_content_controller.xpt appversion<30.*
+interfaces content_blocker_xpcom_gecko30/content_blocker_js_adapter.xpt appversion<30.*
+interfaces content_blocker_xpcom_gecko30/reload_approver.xpt appversion<30.*
+binary-component content_blocker_xpcom_gecko30/content_blocker_xpcom.dll appversion<30.*
+
+interfaces content_blocker_xpcom_gecko29/browser_content_controller.xpt appversion<29.*
+interfaces content_blocker_xpcom_gecko29/content_blocker_js_adapter.xpt appversion<29.*
+interfaces content_blocker_xpcom_gecko29/reload_approver.xpt appversion<29.*
+binary-component content_blocker_xpcom_gecko29/content_blocker_xpcom.dll appversion<29.*
+
+interfaces content_blocker_xpcom_gecko28/browser_content_controller.xpt appversion<28.*
+interfaces content_blocker_xpcom_gecko28/content_blocker_js_adapter.xpt appversion<28.*
+interfaces content_blocker_xpcom_gecko28/reload_approver.xpt appversion<28.*
+binary-component content_blocker_xpcom_gecko28/content_blocker_xpcom.dll appversion<28.*
+
+interfaces content_blocker_xpcom_gecko27/browser_content_controller.xpt appversion<27.*
+interfaces content_blocker_xpcom_gecko27/content_blocker_js_adapter.xpt appversion<27.*
+interfaces content_blocker_xpcom_gecko27/reload_approver.xpt appversion<27.*
+binary-component content_blocker_xpcom_gecko27/content_blocker_xpcom.dll appversion<27.*
+
+interfaces content_blocker_xpcom_gecko26/browser_content_controller.xpt appversion<26.*
+interfaces content_blocker_xpcom_gecko26/content_blocker_js_adapter.xpt appversion<26.*
+interfaces content_blocker_xpcom_gecko26/reload_approver.xpt appversion<26.*
+binary-component content_blocker_xpcom_gecko26/content_blocker_xpcom.dll appversion<26.*
+
+interfaces content_blocker_xpcom_gecko25/browser_content_controller.xpt appversion<25.*
+interfaces content_blocker_xpcom_gecko25/content_blocker_js_adapter.xpt appversion<25.*
+interfaces content_blocker_xpcom_gecko25/reload_approver.xpt appversion<25.*
+binary-component content_blocker_xpcom_gecko25/content_blocker_xpcom.dll appversion<25.*
+
+interfaces content_blocker_xpcom_gecko24/browser_content_controller.xpt appversion<24.*
+interfaces content_blocker_xpcom_gecko24/content_blocker_js_adapter.xpt appversion<24.*
+interfaces content_blocker_xpcom_gecko24/reload_approver.xpt appversion<24.*
+binary-component content_blocker_xpcom_gecko24/content_blocker_xpcom.dll appversion<24.*
+
+interfaces content_blocker_xpcom_gecko23/browser_content_controller.xpt appversion<23.*
+interfaces content_blocker_xpcom_gecko23/content_blocker_js_adapter.xpt appversion<23.*
+interfaces content_blocker_xpcom_gecko23/reload_approver.xpt appversion<23.*
+binary-component content_blocker_xpcom_gecko23/content_blocker_xpcom.dll appversion<23.*
+
+interfaces content_blocker_xpcom_gecko22/browser_content_controller.xpt appversion<22.*
+interfaces content_blocker_xpcom_gecko22/content_blocker_js_adapter.xpt appversion<22.*
+interfaces content_blocker_xpcom_gecko22/reload_approver.xpt appversion<22.*
+binary-component content_blocker_xpcom_gecko22/content_blocker_xpcom.dll appversion<22.*
+
+interfaces content_blocker_xpcom_gecko21/browser_content_controller.xpt appversion<21.*
+interfaces content_blocker_xpcom_gecko21/content_blocker_js_adapter.xpt appversion<21.*
+interfaces content_blocker_xpcom_gecko21/reload_approver.xpt appversion<21.*
+binary-component content_blocker_xpcom_gecko21/content_blocker_xpcom.dll appversion<21.*
+
+interfaces content_blocker_xpcom_gecko20/browser_content_controller.xpt appversion<20.*
+interfaces content_blocker_xpcom_gecko20/content_blocker_js_adapter.xpt appversion<20.*
+interfaces content_blocker_xpcom_gecko20/reload_approver.xpt appversion<20.*
+binary-component content_blocker_xpcom_gecko20/content_blocker_xpcom.dll appversion<20.*
+
+interfaces content_blocker_xpcom_gecko19/browser_content_controller.xpt appversion<19.*
+interfaces content_blocker_xpcom_gecko19/content_blocker_js_adapter.xpt appversion<19.*
+interfaces content_blocker_xpcom_gecko19/reload_approver.xpt appversion<19.*
+binary-component content_blocker_xpcom_gecko19/content_blocker_xpcom.dll appversion<19.*
+
+interfaces content_blocker_xpcom_gecko18/browser_content_controller.xpt appversion<18.*
+interfaces content_blocker_xpcom_gecko18/content_blocker_js_adapter.xpt appversion<18.*
+interfaces content_blocker_xpcom_gecko18/reload_approver.xpt appversion<18.*
+binary-component content_blocker_xpcom_gecko18/content_blocker_xpcom.dll appversion<18.*
+
+interfaces content_blocker_xpcom_gecko17/browser_content_controller.xpt appversion<17.*
+interfaces content_blocker_xpcom_gecko17/content_blocker_js_adapter.xpt appversion<17.*
+interfaces content_blocker_xpcom_gecko17/reload_approver.xpt appversion<17.*
+binary-component content_blocker_xpcom_gecko17/content_blocker_xpcom.dll appversion<17.*
+
+interfaces content_blocker_xpcom_gecko16/browser_content_controller.xpt appversion<16.*
+interfaces content_blocker_xpcom_gecko16/content_blocker_js_adapter.xpt appversion<16.*
+interfaces content_blocker_xpcom_gecko16/reload_approver.xpt appversion<16.*
+binary-component content_blocker_xpcom_gecko16/content_blocker_xpcom.dll appversion<16.*
+
+interfaces content_blocker_xpcom_gecko15/browser_content_controller.xpt appversion<15.*
+interfaces content_blocker_xpcom_gecko15/content_blocker_js_adapter.xpt appversion<15.*
+interfaces content_blocker_xpcom_gecko15/reload_approver.xpt appversion<15.*
+binary-component content_blocker_xpcom_gecko15/content_blocker_xpcom.dll appversion<15.*
+
+interfaces content_blocker_xpcom_gecko14/browser_content_controller.xpt appversion<14.*
+interfaces content_blocker_xpcom_gecko14/content_blocker_js_adapter.xpt appversion<14.*
+interfaces content_blocker_xpcom_gecko14/reload_approver.xpt appversion<14.*
+binary-component content_blocker_xpcom_gecko14/content_blocker_xpcom.dll appversion<14.*
+
+interfaces content_blocker_xpcom_gecko13/browser_content_controller.xpt appversion<13.*
+interfaces content_blocker_xpcom_gecko13/content_blocker_js_adapter.xpt appversion<13.*
+interfaces content_blocker_xpcom_gecko13/reload_approver.xpt appversion<13.*
+binary-component content_blocker_xpcom_gecko13/content_blocker_xpcom.dll appversion<13.*
+
+interfaces content_blocker_xpcom_gecko12/browser_content_controller.xpt appversion<12.*
+interfaces content_blocker_xpcom_gecko12/content_blocker_js_adapter.xpt appversion<12.*
+interfaces content_blocker_xpcom_gecko12/reload_approver.xpt appversion<12.*
+binary-component content_blocker_xpcom_gecko12/content_blocker_xpcom.dll appversion<12.*
+
+interfaces content_blocker_xpcom_gecko11/browser_content_controller.xpt appversion<11.*
+interfaces content_blocker_xpcom_gecko11/content_blocker_js_adapter.xpt appversion<11.*
+interfaces content_blocker_xpcom_gecko11/reload_approver.xpt appversion<11.*
+binary-component content_blocker_xpcom_gecko11/content_blocker_xpcom.dll appversion<11.*
+
+interfaces content_blocker_xpcom_gecko10/browser_content_controller.xpt appversion<10.*
+interfaces content_blocker_xpcom_gecko10/content_blocker_js_adapter.xpt appversion<10.*
+interfaces content_blocker_xpcom_gecko10/reload_approver.xpt appversion<10.*
+binary-component content_blocker_xpcom_gecko10/content_blocker_xpcom.dll appversion<10.*
+
+interfaces content_blocker_xpcom_gecko9/browser_content_controller.xpt appversion<9.*
+interfaces content_blocker_xpcom_gecko9/content_blocker_js_adapter.xpt appversion<9.*
+interfaces content_blocker_xpcom_gecko9/reload_approver.xpt appversion<9.*
+binary-component content_blocker_xpcom_gecko9/content_blocker_xpcom.dll appversion<9.*
+

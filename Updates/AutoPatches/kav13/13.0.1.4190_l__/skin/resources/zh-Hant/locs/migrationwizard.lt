@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = '轉換精靈'
+UpgradeCaption = '防護升級'
+
+RebootPageCheckboxRebootText = '重新啟動電腦'
+OpenRemoveProgramsPanel = '開啟工具列'
+
+WizardBeginDescriptionKis = '您將切換到卡巴斯基網路安全軟體 2013。\n\n版權持有人根據您最初安裝卡巴斯基防毒軟體時接受的相同條款，為您授予使用卡巴斯基網路安全軟體的非獨佔產品授權。\n\n注意：此切換操作可能會導致重新啟動。'
+
+WizardBeginDescriptionKav = '您將切換到卡巴斯基防毒軟體 2013。\n\n版權持有人根據您最初安裝卡巴斯基網路安全軟體時接受的相同條款，為您授予使用卡巴斯基防毒軟體的非獨佔產品授權。\n\n注意：此切換操作可能會導致重新啟動。'
+
+WizardContinueDescriptionKis = '繼續切換至卡巴斯基網路安全軟體 2013。'
+WizardContinueDescriptionKav = '繼續切換至卡巴斯基防毒軟體 2013。'
+
+MigrationNocomebackWarning = '\n\n注意！目前卡巴斯基防毒軟體的產品授權到期時間早於卡巴斯基網路套裝的產品授權時間，卡巴斯基防毒軟體的產品授權到期後，將無法切換回卡巴斯基防毒軟體'
+
+PleaseWait = '請稍候'
+RemovalProgressDescription   = '正在移除不相容軟體'
+RemovalApplicationsDescription = '系統將移除以下軟體以執行切換：'
+ManualRemovalApplicationsDescription = '您應手動移除以下不相容軟體才能執行切換：'
+SearchRemovalApplicationsDescription   = '正在搜尋不相容軟體'
+RestartProductDescription = '程式將重新啟動以完成切換.'
+RebootOsDescription = '您應重新啟動電腦以繼續此切換。\n重新啟動之後精靈將繼續。'
+
+MigrationProgressDescriptionKis = '重新設定程式並切換至卡巴斯基網路安全軟體'
+UpgradeProgressDescriptionKis   = '重新設定程式並切換至卡巴斯基網路安全軟體'
+MigrationProgressDescriptionKav = '重新設定程式並切換至卡巴斯基防毒軟體'
+
+MigrationKis = '切換至卡巴斯基網路安全軟體'
+MigrationKav = '切換至卡巴斯基防毒軟體'
+MigrationUnknown = '切換 '
+
+SearchRemovalApplicationsHeader = '升級至卡巴斯基網路安全軟體'
+RemovalProgressHeader = '正在移除不相容軟體'
+RemovalApplicationsHeader = '發現不相容的軟體'
+RebootOsHeader = '需要重新啟動電腦'
+RestartProductHeader = '應用程式將重新啟動'
+
+MigrationAbortedHeader = $MigrationType + ' 不可能'
+MigrationAbortedDescription = $MigrationType + ' 失敗。請嘗試手動移除不相容的軟體，然後重新啟動精靈.'
+
+BestBuyGiftInformation = '您的卡巴斯基防毒軟體將被轉換成卡巴斯基網路安全軟體。\n您將有更多的功能來防護您的電腦。'
+BestBuyGiftDescription = '感謝您選擇卡巴斯基實驗室程式！請享受新增的防護。'
+BestBuyUpgradeNotification = '更新過程中，您的系統將被分析以查找不相容軟體，以便確保已安裝應用程式和作業系統的正常執行。'
+BestBuyFreeUpgrade = '切換至卡巴斯基網路安全軟體'
+
+BestBuyTryAbortHeader = '背景升級'
+BestBuyTryAbortInformation = '升級將在背景繼續'
+BestBuyTryAbortDescription = '由於不相容軟體沒有移除，一些卡巴斯基網路安全軟體的新功能被停用，以確保已安裝應用程式和作業系統能正常執行。\n\n 您可以手動刪除不相容軟體並在卡巴斯基網路安全軟體的設定視窗啟用所有新功能。'
+BackToSubcriptionUpgradeButtonText = '返回升級'
+Congratulation = '恭喜！'
+
+RunKisButtonText = '執行卡巴斯基網路安全軟體'
+
+ProductUpgraded = '您的卡巴斯基防毒軟體已成功升級到卡巴斯基網路安全軟體。\n您已獲得更多功能防護您的電腦。'

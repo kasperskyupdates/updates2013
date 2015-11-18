@@ -1,0 +1,18 @@
+interfaces url_advisor_xpcom_gecko14/url_advisor.xpt appversion>=14
+binary-component url_advisor_xpcom_gecko14/url_advisor.dll appversion>=14
+
+interfaces url_advisor_xpcom_gecko13/url_advisor.xpt appversion>=13
+binary-component url_advisor_xpcom_gecko13/url_advisor.dll appversion>=13
+
+interfaces url_advisor_xpcom_gecko12/url_advisor.xpt appversion>=12
+binary-component url_advisor_xpcom_gecko12/url_advisor.dll appversion>=12
+
+interfaces url_advisor_xpcom_gecko11/url_advisor.xpt appversion>=11
+binary-component url_advisor_xpcom_gecko11/url_advisor.dll appversion>=11
+
+interfaces url_advisor_xpcom_gecko10/url_advisor.xpt appversion>=10
+binary-component url_advisor_xpcom_gecko10/url_advisor.dll appversion>=10
+
+interfaces url_advisor_xpcom_gecko9/url_advisor.xpt appversion>=9
+binary-component url_advisor_xpcom_gecko9/url_advisor.dll appversion>=9
+

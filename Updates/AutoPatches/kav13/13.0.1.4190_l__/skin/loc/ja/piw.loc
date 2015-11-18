@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "ライセンス情報の選択"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "供給元から提供されているライセンスがあります。このライセンスのアクティベーションを実行しますか？\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "設定が完了していません。設定ウィザードを中断しますか？"
+ErrEmptyActivationCode.caption  = "アクティベーションコードが入力されていません"
+ErrEmptyActivationCode          = "アクティベーションコードを入力してください。"
+ErrEmptyKeyPath.caption         = "ライセンス情報が選択されていません"
+ErrEmptyKeyPath                 = "ライセンス情報を選択してください。"
+$LicInfoKeyNumber               = "番号："
+$LicInfoKeyProductName          = "製品名："
+$LicInfoKeyType                 = "種類："
+$LicInfoExpirationDate          = "有効期限："
+$LicErrReason                   = "理由："
+$ActiveKey                      = "有効なライセンスの情報"
+$ReservedKey                    = "追加ライセンスの情報"
+ConfirmFeedback                 = "<a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a> への参加に同意しますか？"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) は、ファイル、Web サイト、ソフトウェアの安全性に関する最新情報を提供するオンラインサービスの情報基盤です。Kaspersky Security Network から提供される情報を使用することで、最新の脅威によりすばやく対応できます。また、いくつかの保護機能のパフォーマンスが向上し、誤検知の危険性を低減できます。Kaspersky Security Network に参加している場合は、ウイルス感染やその他の脅威、実行中のアプリケーションの詳細な統計情報が収集され、<a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network データ収集に関する声明</a>に従って、カスペルスキーに自動的に送信されます。\n\nKaspersky Security Network は、いかなる個人情報も収集または使用することはありません。"
+
+$ToAcquireNewLicText            = "\n\n引き続きご利用いただくには、<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>が必要です"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\n定額制サービスの契約状態を手動で確認するか、サポートセンターまでお問い合わせください" : "\nのちほど(1 - 2 時間後)アクティベーションを再試行するか、サポートセンターまでお問い合わせください") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? "アクティベーションウィザード" : ($IsInitMode ? $ProductNameLong : "設定ウィザード"))
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "設定ウィザードの開始"
+InitBegin.Descr                       = $ProductName_GEN + " を設定します"
+CheckHosts.Name                       = "ネットワーク設定の確認"
+CheckHosts.Descr                      = "hosts ファイルの疑わしいエントリを検知しました"
+ResetArea.Name                        = "設定の復元"
+ResetArea.Descr                       = "ユーザーまたはカスペルスキー製品の動作で変更された設定を復元します"
+ActivationBegin.Name                  = $IsSubscription ? "契約状態の確認" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "ライセンス情報の削除" : "ライセンス情報の追加") : "製品のアクティベーション")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "ライセンスの管理" : "続行するにはアクティベーションを実行します。")
+ActivationProgress.Name               = "アクティベーションの実行"
+ActivationProgress.Descr              = "アクティベーションを実行しています。しばらくお待ちください..."
+ActivationServerForm.Name             = "アクティベーションコードの入力"
+ActivationServerForm.Descr            = "アクティベーションコードを入力します"
+ActivationChooseKey.Name              = "ライセンス情報によるアクティベーション"
+ActivationChooseKey.Descr             = "ライセンス情報でアクティベーションを実行します。"
+ActivationEnd.Name                    = "アクティベーションの完了"
+ActivationEnd.Descr                   = "アクティベーションが完了しました"
+MigrationKeyIsFound.Name         = "有効なライセンスの情報が利用可能です"
+MigrationKeyIsFound.Descr        = "現在のライセンスに規定されている製品を使用しますか？"
+MigrationBegin.Name              = s_MUProductTitleLong(env("ProductType")) + "への移行"
+MigrationBegin.Descr             = s_MUProductTitleLong(env("ProductType")) + "へ移行します"
+MigrationSearchProgress.Name     = "競合するソフトウェアの検索"
+MigrationSearchProgress.Descr    = "競合するソフトウェアを検索しています。しばらくお待ちください..."
+MigrationSafeRemoval.Name        = "競合するソフトウェアの検出"
+MigrationSafeRemoval.Descr       = "続行するには、競合するソフトウェアを削除する必要があります"
+MigrationSafeProgress.Name       = "競合するソフトウェアの削除"
+MigrationSafeProgress.Descr      = "競合するソフトウェアを削除しています。しばらくお待ちください..."
+MigrationAddRemove.Name          = "競合するソフトウェアの検出"
+MigrationAddRemove.Descr         = "競合するソフトウェアを削除してください"
+MigrationUnsafeRemoval.Name      = "競合するソフトウェアの検出"
+MigrationUnsafeRemoval.Descr     = "続行するには、競合するソフトウェアを削除する必要があります"
+MigrationUnsafeProgress.Name     = "競合するソフトウェアの削除"
+MigrationUnsafeProgress.Descr    = "競合するソフトウェアを削除しています。しばらくお待ちください..."
+MigrationReboot.Name             = "コンピューターの再起動"
+MigrationReboot.Descr            = "製品の移行を続行するには、コンピューターを再起動する必要があります"
+MigrationProgress.Name           = s_MUProductTitleLong(env("ProductType")) + "への移行"
+MigrationProgress.Descr          = "製品の移行を実行しています。しばらくお待ちください..."
+MigrationRebootApp.Name          = bMigrationDone ? "製品の再起動" : "製品の移行エラー"
+MigrationRebootApp.Descr         = bMigrationDone ? "製品を再起動する必要があります" : s_MUProductTitleLong(env("ProductType")) + "への移行が失敗しました"
+MigrationFinish.Name             = s_ProductTitleLong(env("ProductType")) + "への移行の完了"
+MigrationFinish.Descr            = s_ProductTitleLong(env("ProductType")) + "への移行が完了しました"
+DNS.Name                              = "詳細設定"
+DNS.Descr                             = $ProductName_GEN + " 詳細な操作設定"
+EnumExe.Name                          = "セキュリティ診断"
+EnumExe.Descr                         = "システム情報を収集して分析しています。しばらくお待ちください..."
+InitFinish.Name                       = "設定ウィザードの終了"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "設定を適用するために、コンピューターを再起動してください" : $ProductNameLong + " を今すぐ起動できます"
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "カスペルスキーのサーバーへのネットワーク設定が変更されているため、アクティベーションとアップデートが正しく動作しない可能性があります。hosts ファイルの疑わしいエントリを削除することをお勧めします。\nhosts ファイルの疑わしいエントリ："
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "エントリを削除(推奨)"
+Skip			= "スキップ"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "戻る(&B)"
+Back.Descr      = "アクティベーションの方法を選択します"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "ライセンス情報の追加(&A)" : "アクティベーション(&A)"
+Activate.Descr  = "アクティベーションを実行します"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "終了(&F)"
+Finish.Descr    = "アクティベーションウィザードを終了します"
+Next.Name       = "進む(&N)"
+Next.Descr      = "設定ウィザードへ進みます"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "現在のライセンスに規定された製品を引き続き使用できます。この場合、アプリケーションは" + s_MUProductTitleLong(env("ProductType")) + "へ移行します。"
+Text3   = "現在のライセンスに規定されている製品を引き続き使用しますか？"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "製品種別："
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "有効期限："
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (残り" + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "はい、" + s_MUProductTitleLong(env("ProductType")) + "へ移行します。"
+NotUseFoundLicense = "いいえ、" + switch(env("ProductType"), "ProductTitleLong", "") + "を終了します。"
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "s_MUProductTitleLong(env("ProductType")) + "へ移行しています。" + s_MUProductTitleLong(env("ProductType")) + "を使用するための非独占的ライセンスが" + s_ProductTitleLong(env("ProductType")) + "のインストール時に同意した条項の下で、著作権保有者によって許諾されます。"
+Text3   = "注意： この移行に際しては、いくつかの操作を求められ、これにともなって再起動が必要になる場合があります。"
+LicenseWarning  = "注意！カスペルスキー アンチウイルスの製品版ライセンスが、カスペルスキー インターネット セキュリティの試用版ライセンスより先に有効期限切れとなります。そのため、カスペルスキー アンチウイルスの製品版ライセンスの有効期限後は、カスペルスキー インターネット セキュリティの試用版からカスペルスキー アンチウイルスに戻すことはできなくなります。本当にカスペルスキー インターネット セキュリティに移行しますか？"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "競合するソフトウェアを検索しています。これには時間がかかる場合があります。しばらくお待ちください..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "製品の移行を行うために、次のソフトウェアは削除されます："
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "競合する製品の削除が完了するまでお待ちください..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "製品の移行を実行するには次のソフトウェアを削除する必要があります："
+OpenAddRemove = "［プログラムの追加と削除］ウィンドウを開く"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "製品の移行を実行するために、次のソフトウェアは削除されます："
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "競合する製品の削除が完了するまでお待ちください..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "製品の移行を続行するには、コンピューターを再起動する必要があります。ウィザードは再起動後に再開します。"
+Reboot   = "今すぐ再起動する"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "アプリケーションモジュールを再設定し、" + s_MUProductTitleLong(env("ProductType")) + "へ移行しています。しばらくお待ちください..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "製品の再起動後に" + s_MUProductTitleLong(env("ProductType")) + "への移行が完了します。" : s_MUProductTitleLong(env("ProductType")) + "への移行が失敗しました。"
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "保護者による管理、アンチスパム、ファイアウォールをはじめとする " + s_ProductTitleLong("kis") + " の機能をご評価いただけます。" : s_ProductTitleLong("kav") + " は、悪意のあるソフトウェアに対する基本的な保護機能を備えています。"
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = '$IsSubscription ? if($IsRefreshSubAvail,"定額制サービスの契約状態の確認と") + "ライセンス情報の削除ができます。" : (f_IsActiveKeyWorkingCommercial() ? "有効なライセンスの情報の削除やライセンス情報の追加ができます。" : "製品の全機能を使用可能にするには、" + $ProductName + "のアクティベーションを実行してください。"+ if($CorporateOnly, "製品の<a Activate onclick(url($ActivationLink))>製品版</a>を入手するか、<a ActivateTrial onclick(url($ActivationTrialLink))>試用版</a>のアクティベーションを実行できます。"))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "後でアクティベーション(&L)"
+Later.Descr                 = "すべての保護機能を有効にするには、アクティベーションが必要です。"
+ChooseKey.Name              = "ライセンス情報によるアクティベーション(&K)"
+ChooseKey.Descr             = "ライセンス情報でアクティベーションを実行します。"
+ActivateBetaKAV.Name        = "ベータ版のアクティベーション(&B)"
+ActivateBetaKAV.Descr       = "ベータ版は、すべての保護機能をご利用いただけますが、製品版のバージョンではないため、正しく動作しない可能性があります。"
+ActivateBetaKIS.Name        = "ベータ版のアクティベーション(&B)"
+ActivateBetaKIS.Descr       = "ベータ版は、すべての保護機能をご利用いただけますが、製品版のバージョンではないため、正しく動作しない可能性があります。"
+ActivateTrial.Name          = "試用版のアクティベーション(&T)"
+ActivateTrial.Descr         = "ライセンスのご購入前に、すべての機能を試用版でご利用いただけます。"
+ActivateCommercial.Name     = "アクティベーションコードの入力(&A)"
+ActivateCommercial.Descr    = "アクティベーションコードとは、J-Sheet に記載またはメールで送信される 20 桁の半角英数字です。"
+RemoveKey.Name              = $HasReserveKey ? "追加ライセンスの情報の削除(&D)" : "ライセンス情報の削除(&D)"
+RemoveKey.Descr             = "有効期限が切れていない有効なライセンスの情報を削除します"
+RefreshSubscription.Name    = "定額制サービスの契約状態の確認(&R)"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "定額制サービスの契約状態を手動で確認します。" :  "定額制サービスの契約状態の自動確認を中断して、手動で確認します。"
+ActivateTrialKIS            = "カスペルスキー インターネット セキュリティの試用版のアクティベーション"
+ActivateTrialKIS_Desc       = "ライセンスのご購入前に、カスペルスキー インターネット セキュリティのすべての機能を試用版でご利用いただけます。"
+RevertToCommercialKAV       = "カスペルスキー アンチウイルスの製品版に戻す"
+RevertToCommercialKAV_Desc  = "カスペルスキー アンチウイルスの製品版に戻す"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "定額制サービスの契約状態の確認"
+ActivateCommercial      = "製品版のアクティベーション(&C)"
+ActivateCommercial_Desc = (LockActivationCode)? "アクティベーションコードの入力： " : "<a onclick(url(\"" + $ActCodeHint + "\"))>アクティベーションコード</a>の入力："
+ActivationCode_Desc     = (LockActivationCode)? "アクティベーションコードが自動的に追加されました。［進む］をクリックしてください。" : "アクティベーションコードとは、メールに記載されている 20 桁の半角英数字です。"
+ActivateBetaKAV         = "カスペルスキー アンチウイルスのベータ版のアクティベーション(&B)"
+ActivateBetaKIS         = "カスペルスキー インターネット セキュリティのベータ版のアクティベーション(&V)"
+ActivateTrial           = "試用版のアクティベーション(&T)"
+ActivateTrial_Desc      = "ライセンスのご購入前に、すべての機能をご評価いただけます。"
+ActivateTrialKIS           = "カスペルスキー インターネット セキュリティの試用版のアクティベーション"
+ActivateTrialKIS_Desc      = "ライセンスのご購入前に、カスペルスキー インターネット セキュリティのすべての機能をご評価いただけます。"
+RevertToCommercialKAV      = "カスペルスキー アンチウイルスの製品版に戻す"
+RevertToCommercialKAV_Desc = "カスペルスキー インターネット セキュリティの試用版の使用を中止し、カスペルスキー アンチウイルスの製品版に戻します。"
+Later                   = "後でアクティベーション(&A)"
+Later_Desc              = "すべての保護機能を有効にするには、アクティベーションが必要です。"
+RemoveKey               = "ライセンス情報の削除"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "ライセンス情報："
+KeyInfo         = "ライセンス情報"
+ConnectingInfo.Name     = "アクティベーションエラー"
+ConnectingInfo.Val      = "エラーの原因と解決方法"
+TryAgain                = "再試行"
+Descr1                  = "・［エラーの原因と解決方法］を確認し、［戻る］をクリックしてアクティベーションを再度実行してください。"
+Descr2                  = "インターネット接続を確認し、アクティベーションを再試行してください。"
+Descr3                  = "<a onclick(url(\"" + $ActivationLink + "\"))>オンラインアクティベーションセンター</a>にアクセスして手順に従ってください。\nライセンス情報を受け取った後、その位置を指定し、[次へ] をクリックしてください。："
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "作成日時："
+InstallDate.Name    = "アクティベーション日："
+ExpirationDate.Name = "有効期限："
+SubscrptnExpDate.Name = "有効期限："
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection,"(" + p_KeyInfo.LicenseCount + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)) + ")")
+
+[s_LicenseOperationsError]
+1       = "システムエラー： " + s_SystemError(ErrorCode)
+2       = "ライセンス情報「" + KeyFile + "」を登録できません： " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "ライセンス情報「" + KeyFile + "」を削除できません： " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "エラーコード： " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "このライセンス情報はすでに追加されています" + $LicErrHelpLink
+0x0947901d  = "ライセンスの有効期限が切れています。定義データベースをアップデートできません" + $LicErrHelpLink
+0x89479002  = "ライセンスが見つかりません"
+0x89479003  = "デジタル署名がないか、破損しています"
+0x89479004  = "ライセンス情報が破損しています"
+0x89479005  = "ライセンス情報が破損しています"
+0x89479006  = "ライセンス有効期限が切れています"
+0x89479007  = "ライセンス情報が選択されていません"
+0x89479008  = "ライセンス情報が無効です"
+0x89479009  = "ライセンス情報が保存できません"
+0x8947900a  = "ライセンス情報が読み取れません"
+0x8947900b  = "入出力エラー"
+0x8947900c  = "データベースがありません"
+0x8947900d  = "有効なライセンスの情報と追加ライセンスの情報はすでに追加されています" + $LicErrHelpLink
+0x8947900e  = "ライセンスライブラリが初期化されていません"
+0x8947900f  = "定義データベースが破損しているか、手動でアップデートされました"
+0x89479010  = "定義データベースが破損しています"
+0x89479011  = "有効期限切れのライセンス情報を追加ライセンスの情報として登録できません"
+0x89479012  = "システムエラー"
+0x89479013  = "ライセンス情報のブラックリストが破損しています" + $LicErrHelpLink
+0x89479014  = "このデジタル署名はカスペルスキーのデジタル署名と一致しません"
+0x89479015  = "ベータ版のライセンスで製品版を利用することはできません" + $LicErrHelpLink
+0x89479016  = "ベータ版はベータライセンスでのみアクティベーションを実行できます" + $LicErrHelpLink
+0x89479017  = "ライセンスは本製品に適用されません。その他の製品のライセンスでは" + $ProductNameLong + "のアクティベーションを実行できません。インストールした製品を確認してください" + $LicErrHelpLink
+0x89479018  = "ライセンス情報がブロックされています" + $LicErrHelpLink
+0x89479019  = "この試用版はすでに利用されています。試用版は再利用できません"
+0x8947901a  = "ライセンス情報が破損しています"
+0x8947901b  = "デジタル署名ないか、破損しているか、カスペルスキーのデジタル署名と一致しません"
+0x8947901c  = "ライセンスの有効期限が切れた場合、追加できるライセンスは製品版ライセンスのみです" + $LicErrHelpLink
+0x8947901e  = "ライセンス情報の作成日時またはアクティベーション日が無効です。システムの日付と時刻を確認してください"
+0x8947901f  = "試用版の有効期間中はその他の試用版のライセンス情報を追加できません" + $LicErrHelpLink
+0x89479020  = "ライセンス情報のブラックリストがないか、破損しています" + $LicErrHelpLink
+0x89479021  = "アップデート元がないか、破損しています"
+0x89479022  = "内部データが本製品で無効です"
+0x89479023  = "不正なアクティベーションコードを使用して追加ライセンスの情報を追加することはできません" + $LicErrHelpLink
+0x89479024  = "ユーザーフォームデータのコンプリートエラー"
+0x89479025  = "アクティベーションサーバー要求の送信中のエラー：インターネット接続の問題またはアクティベーションサーバーの一時的な問題です。\nのちほど(1 - 2 時間後)コードのアクティベーションを再試行してください。問題が解決しない場合、インターネットプロバイダーにお問い合わせください" + $LicErrHelpLink
+0x89479026  = "無効なアクティベーションコードを含む要求です"
+0x89479027  = "応答を取得できません"
+0x89479028  = "一時ファイルの保存エラー"
+0x89479029  = "アクティベーションコードが正しくないか、システムの日付と時刻が正しくありません。システムの日付と時刻を確認してください"
+0x8947902a  = "アクティベーションコードが本製品に適合していないか、ライセンス情報の有効期限が切れています。その他の製品のライセンスでは" + $ProductName + "のアクティベーションを実行できません。インストールした製品を確認するか、<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>が必要です" + $LicErrHelpLink
+0x8947902b  = "ライセンスを取得できません。入力したアクティベーションコードが正しくありません"
+0x8947902c  = "アクティベーションサーバーはエラー 400 を返しました" + $OlaErrHelpLink
+0x8947902d  = "アクティベーションサーバーはエラー 401 を返しました" + $OlaErrHelpLink
+0x8947902e  = "アクティベーションサーバーはエラー 403 を返しました" + $OlaErrHelpLink
+0x8947902f  = "アクティベーションサーバーで必要なリソースが利用できません。\nアクティベーションサーバーはエラー 404 を返しました。インターネット接続を確認してください" + $OlaErrHelpLink
+0x89479030  = "アクティベーションサーバーはエラー 405 を返しました" + $OlaErrHelpLink
+0x89479031  = "アクティベーションサーバーはエラー 406 を返しました" + $OlaErrHelpLink
+0x89479032  = "プロキシサーバー認証が必要です。LAN 設定を確認してください"
+0x89479033  = "要求のタイムアウト"
+0x89479034  = "アクティベーションサーバーはエラー 409 を返しました" + $OlaErrHelpLink
+0x89479035  = "アクティベーションサーバーで必要なリソースが利用できません。\nアクティベーションサーバーはエラー 410 を返しました。インターネット接続を確認してください" + $OlaErrHelpLink
+0x89479036  = "アクティベーションサーバーはエラー 411 を返しました" + $OlaErrHelpLink
+0x89479037  = "アクティベーションサーバーはエラー 412 を返しました" + $OlaErrHelpLink
+0x89479038  = "アクティベーションサーバーはエラー 413 を返しました" + $OlaErrHelpLink
+0x89479039  = "アクティベーションサーバーはエラー 414 を返しました" + $OlaErrHelpLink
+0x8947903a  = "アクティベーションサーバーはエラー 415 を返しました" + $OlaErrHelpLink
+0x8947903b  = "クライアントの不明なエラー" + $OlaErrHelpLink
+0x8947903c  = "サーバーの内部エラー" + $LicErrHelpLink
+0x8947903d  = "機能はサポートされません"
+0x8947903e  = "無効なゲートウェイの応答。LAN 設定を確認してください"
+0x8947903f  = "リソースが一時的に利用できません" + $LicErrHelpLink
+0x89479040  = "要求待機のタイムアウト。LAN 設定を確認してください"
+0x89479041  = "サーバーでサポートされないプロトコルです" + $OlaErrHelpLink
+0x89479042  = "サーバーの不明なエラー" + $OlaErrHelpLink
+0x89479043  = "不明な HTTP エラー" + $OlaErrHelpLink
+0x89479044  = "無効なリソース識別子"
+0x89479045  = "無効な「key」フィールド"
+0x89479046  = "無効な URL"
+0x89479047  = "無効なコピー先フォルダー"
+0x89479048  = "メモリ割り当てエラー"
+0x89479049  = "ANSI 文字列(url、folder、agent)への変換パラメーターエラー"
+0x8947904a  = "ワーキングスレッドの作成エラー"
+0x8947904b  = "ワーキングスレッドが実行中です"
+0x8947904c  = "ワーキングスレッドが実行されていません"
+0x8947904d  = "ライセンスがアクティベーションサーバーで見つかりません"
+0x8947904e  = "ライセンス情報がブロックされています" + $LicErrHelpLink
+0x8947904f  = "アクティベーションサーバーの内部エラー"
+0x89479050  = "アクティベーション要求のデータ不足"
+0x89479051  = "無効なユーザー ID またはパスワード"
+0x89479052  = "無効なアクティベーションコード"
+0x89479053  = "選択したライセンス情報は、現在のライセンスより先に有効期限が切れます。" + $LicErrHelpLink
+0x89479054  = "システムの日付と時刻が正しくありません。システムの日付と時刻を確認してください"
+0x89479055  = "試用版有効期限が切れています"
+0x89479056  = "アクティベーションを実行できる有効期限が切れています"
+0x89479057  = "<b>入力したアクティベーションコードは、アクティベーションを実行できる回数を超えています。</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "。" + $LicErrHelpLink2
+0x89479059  = "製品版ライセンスの有効期間中に追加できるライセンス情報は、製品版ライセンスの情報のみです" + $LicErrHelpLink
+0x8947905c  = "アクティベーションコードを入力してください" + $LicErrHelpLink
+0x8947905d  = "無効なカスタマー ID またはパスワード"
+0x8947905e  = "無効なアクティベーションコード"
+0x89479062  = "アクティベーションサーバーに接続できません"
+0x89479064  = "<b>アクティベーションサーバーが利用できません。</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "アクティベーションを実行できません。設定ウィザードの終了後、コンピューターを再起動してアクティベーションを再試行してください。", "インターネット接続を確認してアクティベーションを再試行してください")
+0x89479065  = "ライセンスの有効期限が切れました。引き続きご利用いただくには、<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>が必要です" + $LicErrHelpLink
+0x89479066  = "有効なライセンスの情報を有効期限が切れたライセンス情報で置き換えることはできません" + $LicErrHelpLink
+0x89479067  = "有効なライセンスの情報より先に有効期限の切れるライセンス情報を追加ライセンスの情報として追加することはできません" + $LicErrHelpLink
+0x89479068  = (SubscriptionStatus==#ssExpired? "定額制サービスの契約状態に変更はありません。" : "カスペルスキー製品をご利用いただけます。")
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "システムエラーによるアクティベーション処理の完了" + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "アクティベーションエラー： " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "アクティベーションエラー： " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "アクティベーションエラー： サーバーが HTTP コードを返しました" + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "アクティベーションが失敗しました" + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "アクティベーションサーバーの内部エラーです。再試行するか、テクニカルサポートまでお問い合わせください"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = $ProductName + "と互換性のない、その他の製品のアクティベーションコードを使用したアクティベーションは実行できません。使用している製品を確認してください"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "ライセンス情報がブロックされています"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "クライアント ID またはパスワードが正しくありません"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "アクティベーションコードがまちがっています"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "アクティベーションコードが必要です"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "アクティベーションの期限が切れました"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "このアクティベーションコードを使用してアクティベーションを実行できる回数を超えています"
+#OLA_ERR_SRV_REGION_MISMATCH                = "アクティベーションコードはこの地域で無効です"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "このアクティベーションコードは日本語バージョンには適用できません。"
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "このアクティベーションコードは、より新しいバージョンの製品用です。現在のバージョンの製品を使用するには、別のアクティベーションコードが必要です。詳細につきましては次のリンクをクリックしてください。"
+#OLA_ERR_SRV_SERVER_ERROR_643               = "アクティベーションサーバーはエラー 643 を返しました"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "アクティベーションサーバーはエラー 644 を返しました"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "アクティベーションサーバーはエラー 645 を返しました"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "アクティベーションサーバーはエラー 646 を返しました"
+default                                     = "アクティベーション処理はエラーを返しました" + #OLA_SERVER_ERROR + "：" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft Internet Explorer のオフラインモードが有効です"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "インターネット接続エラー"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "アクティベーションサーバーが利用できません"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "プロキシサーバーが利用できません"
+#OLA_ERR_INTERNET_TIMEOUT                    = "応答のタイムアウト"
+#OLA_ERR_INTERNET_INVALID_URL                = "無効なアクティベーションサーバーのアドレス"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "無効なプロトコル"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "サーバーへの接続を確立できません"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "操作がキャンセルされました"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "サーバーへの接続を確立できません"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "サーバー接続が切断されました"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "サーバーへの接続がリセットされました"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "無効なサーバーの応答"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "サーバーの SSL 証明書が失効しています。システムの日付と時刻を確認してください"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL 証明書のサーバー名がサーバーと一致しません"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "証明書の失効を確認できません。Microsoft Internet Explorer の［ツール］-［インターネット オプション］-［詳細設定］-［サーバーの証明書失効を確認する］をオフにして、アクティベーションを再試行してください"
+#OLA_ERR_INTERNET_CERT_INVALID               = "無効な SSL 証明書"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL 証明書を失効しました"
+#OLA_ERR_INTERNET_INVALID_CA                 = "無効な証明機関"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "ユーザー登録していただいたお客様には、製品紹介イベント、セール、キャンペーンなどの情報をお送りしています。"
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "進む(&C)"
+Activate.Descr  = "アクティベーションの実行"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "カスペルスキーのアクティベーションサーバーへ接続します。インターネット接続の状況によって時間がかかることがあります。"
+ConnectingInfo.Name     = "アクティベーションサーバーへ接続しています..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "アクティベーションコードを送信しています..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "サーバーの応答を待機しています..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "アクティベーションが完了しました"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "有効期限："
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (残り" + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "アクティベーションが完了しました。" : "このコンピューターですでにアクティブになっています。"
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "進む(&N)"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "アクティベーションウィザード": (((PiwFlags & #fPiwActivation) && !bSilent)?"ライセンス情報":"保護モードの選択")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "設定ウィザードは、コンピューターの保護を適切に設定するお手伝いをします。\n\n設定ウィザードは、オペレーティングシステムとインストールされている製品の情報を収集して分析します。\n\n収集した情報は、" + $ProductNameLong + " を設定する目的以外で使用することはありません。\n\n［進む］をクリックしてください。"
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "インストールはまもなく完了します..." : ((PiwFlags & #fPiwReset) ? ("設定を復元しました") : ("インストールを完了しました"))
+ResetDescr          = $ProductName   + "の設定を既定値に戻しました。"
+Reboot              = "コンピューターを再起動する(&R)"
+StartProduct        = $ProductNameLong + " を起動する(&A)"
+RebootPiwWarning    = $IsInstallNeedReboot ? ( $ProductNameLong + " をご利用いただきありがとうございます。\n\nインストールを完了させるために、コンピューターを再起動してください。\n\n作業中のデータを保存し、他のアプリケーションをすべて終了して［終了］をクリックしてください。") : $ProductNameLong + " をご利用いただきありがとうございます。\n\n追加の設定は、" + $ProductNameLong + " の初回起動時に完了します。時間がかかることがありますのでご注意ください。"
+
+[ConfigureWizard.EnumExe]
+Info = "オペレーティングシステムにインストールされているアプリケーションが信頼できるかどうかを分析します。\n\nオペレーティングシステムにインストールされていないプログラムは、その初回起動時に分析されます。"
+
+[s_LicKeyType]
+#ektBeta         = "ベータ版"
+#ektTrial        = "試用版"
+#ektTest         = "テスト版"
+#ektOEM          = "OEM 版"
+#ektCommercial   = "製品版"
+#ektSubscription = "定額制サービス U"
+#ektSubscriptionProtection = "定額制サービス"
+default          = "不明"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "不明なエラー"
+#ekirValid                      = "ライセンスは有効です"
+#ekirExpired                    = "ライセンスの有効期限が切れています"
+#ekirCorrupted                  = "ライセンスが無効です"
+#ekirNotSigned                  = "デジタル署名がないか、破損しています"
+#ekirWrongProduct               = "このライセンスは本製品に適用されません。その他の製品のライセンスでは" + $ProductName + "のアクティベーションを実行できません。インストールした製品を確認してください"
+#ekirBlackListed                = "ライセンス情報 "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" はブラックリストに登録されています"
+#ekirIllegalUpdate              = "ライセンスの有効期限と定義データベースの日時が一致しません"
+#ekirInconsistentUpdate         = "定義データベースが破損しています"
+#ekirKeyCreationDateInvalid     = "無効なライセンス情報の作成日時"
+#ekirTrialAlreadyInUse          = "試用版の有効期間中はその他の試用版のライセンス情報を追加できません"
+#ekirInvalidBlacklist           = "ライセンス情報のブラックリストが破損しています"
+#ekirCantBeUsedAsReserved       = "ライセンスを追加ライセンスとして登録できません"
+#ekirKeyInstallDateInvalid      = "無効なアクティベーション日。システムの日付と時刻を確認してください"
+#ekirTrialPeriodIsOver          = "試用版の有効期限が切れました"
+#ekirConflictsWithCommercial    = "新しいライセンス情報が現在の製品版ライセンスと矛盾しています"
+#ekirExpiredAsReserve           = "このライセンスは現在のライセンスより先に有効期限が切れます"
+#ekirGracePeriod                = "猶予期間中です"
+#ekirSuspended                  = "定額制サービスが中断されました"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "製品の再インストールが必要です"
+#ekirLicenseOnlyForMigration    = "製品版のアクティベーションを実行するには他の製品に移行する必要があります"
+default                         = "無効なライセンス情報"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "未定義"
+#edtUnlimited = "有効"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "中断： " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "ライセンス情報"
+
+[LicenseExpirationWindow]
+@ = $ProductName
+
+[LicenseExpirationWindow_Header]
+CaptionText = "注意！"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "試用版をご利用中です。"
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "ライセンス情報のブラックリストが見つからないか、破損しています。<a Update onclick(f_StartUpdater())>アップデート</a>を実行して操作を続行してください。"
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "現在のライセンスは" + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + "。引き続きご利用いただくには、<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>が必要です。\n\nすでにライセンスをお持ちの場合は、<a Activate onclick(f_Activate())>製品のアクティベーション</a>を実行してください。"
+1       = "定額制サービスの有効期限が切れました。" + (SubscriptionStatus==#ssExpired? (LicInfo.KeyInfo.KeyType == #ektSubscription? "定額制サービスのご契約については、定額制サービスプロバイダーまでお問い合わせください。" : "定額制サービスを解約した場合、ライセンスが有効期限切れとなり、再利用できません。ライセンスを削除してください。\n引き続きご利用いただくには、ライセンスのご購入とアクティベーションが必要です。") : ("猶予期間： " s_remains(f_numdeclension(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration)) + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + (LicInfo.KeyInfo.KeyType == #ektSubscription? "\n定額制サービスのご契約については、定額制サービスプロバイダーまでお問い合わせください。" : "\nご利用料金のお支払い手続きが完了していません。\n定額制サービスプロバイダーまでお問い合わせください。"))
+
+[s_LicenseExpiration_KeyBlocked]
+default = <b>有効なライセンスの情報がブロックされています。ライセンス情報のブラックリストのアップデートのみ実行できます。" + $ProductNameLong + " の違法コピーを利用したため、ライセンス情報がブロックされている可能性があります。ライセンス情報がブロックされている理由を確認するには、テクニカルサポートまでお問い合わせください。\n引き続きご利用いただくには、<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>と<a Activate onclick(window(\"QMLMainWindow:LicenseManager\"))>アクティベーション</a>の実行が必要です。
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "ライセンスの有効期限は今日です" : "ライセンスの有効期間は" + f_n_days_past(global.LicInfo.DaysTillExpiration) + "です。"
+default = "ライセンスの有効期限が切れました。"
+
+[s_LicenseRenewBuyText]
+0 = "ライセンスの取得"
+default = "ライセンスの更新"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "設定を既定値に戻す項目をオンにします："
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " 設定ウィザード"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "設定ウィザードの開始"
+InitBegin.Descr                       = $ProductName_GEN + " を設定します"
+CheckHosts.Name                       = "ネットワーク設定の確認"
+CheckHosts.Descr                      = "hosts ファイルの疑わしいエントリを検知しました"
+ResetArea.Name                        = "設定の復元"
+ResetArea.Descr                       = "ユーザーまたはカスペルスキー製品の動作で変更された設定を復元します"
+EnumExe.Name                          = "セキュリティ診断"
+EnumExe.Descr                         = "システム情報を収集して分析しています。しばらくお待ちください..."
+ResetFinish.Name                       = "設定ウィザードの終了"
+ResetFinish.Descr                      = $ProductName + " を開始する準備ができました"
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "設定を復元しました"
+ResetDescr          = $ProductName + "の設定を既定値に戻しました。"
+
+[BestBuyUpgradeMessage]
+@ = "他の製品への移行"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="カスペルスキー インターネット セキュリティの使用の開始"
+RestartButton = "カスペルスキー インターネット セキュリティの実行"
+
+[BestBuyUpgradeMessagePage]
+Header = "おめでとうございます！"
+Message = "カスペルスキー アンチウイルスはカスペルスキー インターネット セキュリティに正常にアップグレードされました。\nコンピューターを保護するための追加の機能を使用することができるようになりました。"
+Description = "カスペルスキー製品をお選びいただき、ありがとうございます！\n追加の保護機能が使用できるようになりました。"
+
+[ForcedUpgradeMessagePage]
+Header = "間もなく完了します"
+Message = "カスペルスキー製品をお選びいただき、ありがとうございます！追加の保護機能が使用できるようになりました。"
+Description = "競合するアプリケーションが削除されませんでした。カスペルスキー インターネット セキュリティの機能の一部を無効にしました。これはインストール済みアプリケーションやオペレーティングシステムを正常に動作させるためです。\n\nカスペルスキー インターネット セキュリティの新しい機能のすべてを有効にするには、競合するアプリケーションェアを手動で削除し、設定ウィンドウで機能を有効にしてください。"
+Notification = "製品の再起動後にアップグレードが完了します。"

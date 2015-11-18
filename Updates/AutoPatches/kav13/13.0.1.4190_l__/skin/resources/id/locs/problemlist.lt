@@ -1,0 +1,141 @@
+﻿ActiveThreatsGroupName = 'Ancaman'
+AVBasesGroupName = 'Basis data'
+ProtectionComponentsGroupName = 'Perlindungan Komponent'
+LicenseGroupName = 'Lisensi'
+RecommendationsGroupName = 'Rekomendasi'
+HiddenComponentsGroupName = 'Abaikan permasalahan'
+
+AVBasesUpdatingTitle = 'Perbarui basis data dan aplikasi (' + $Update_PercentCompleted +'%)...'
+BasesUpdateStatus = 'Status: ' + $Update_Status
+
+ManualUpdate_ProblemTitle = 'Perbarui otomatis dinonaktifkan'
+ManualUpdate_ProblemDescription = 'Kami sarankan anda untuk mengaktifkan pembaruan otomatis atau mengkonfigurasi jadwal perbarui.'
+
+AntispamNeedsTraining_ProblemTitle = 'Anti-Spam memerlukan pelatihan'
+AntispamNeedMoreSpamToTrain_ProblemDescription = 'Pelatihan ' + $AntispamTrainingSpamLettersCountRequest + ' spam ' + {$AntispamTrainingSpamLettersCountRequest: 'surat'} + ' is diperlukan.'
+AntispamNeedMoreHamToTrain_ProblemDescription = 'Pelatihan ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'surat berguna'} + ' dibutuhkan.'
+AntispamNeedMoreHamAndSpamToTrain_ProblemDescription = 'Pelatihan ' + $AntispamTrainingSpamLettersCountRequest + ' spam ' + {$AntispamTrainingSpamLettersCountRequest: 'surat'} + ' dan pada ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'surat berguna'} + ' dibutuhkan.'
+AntispamNeedsTraining_ProblemDescription = 'Kami sarankan anda menggunakan panduan pelatihan untuk mengkonfigurasi penyaringan surat.'
+
+ThreatsNeedReboot_ProblemTitle = 'Dibutuhkan penghidupkan ulang komputer untuk menyelesaikan pembersihan'
+ThreatsNeedReboot_ProblemDescription = 'Setelah komputer di hidupkan kembali pembersihan akan otomatis selesai.'
+
+ThreatsProcessing_ProblemTitle = 'Memuat...'
+ThreatsProcessing_ProblemDescription = 'Silahkan tunggu'
+
+ThreatsMalwareUntreated_ProblemTitle = $ThreatName + ' dideteksi'
+ThreatsMalwareUntreated_ProblemDescription = 'Objek: ' + $ObjectName
+
+ThreatsSuspiciousUntreated_ProblemTitle = $ObjectName
+ThreatsSuspiciousUntreated_ProblemDescription = 'Piranti lunak yang dapat menyebabkan kerusakan'
+
+ThreatsRiskwareUntreated_ProblemTitle = $ObjectName
+ThreatsRiskwareUntreated_ProblemDescription = 'Perangkat lunak sah yang dapat digunakan oleh penjahat untuk merusak komputer atau data pribadi.'
+
+BasesCorrupted_ProblemTitle = 'Basis data rusak'
+BasesCorrupted_ProblemDescription = 'Kami sarankan anda untuk memperbarui basis data lagi.'
+
+BasesVeryOld_ProblemTitle = 'Basis data telah lama'
+BasesVeryOld_ProblemDescription = 'Kami sangat sarankan anda untuk memperbarui basis data aplikasi.'
+
+BasesUpdatedAndRebootNeeded_ProblemTitle = 'Komputer memerlukan reboot'
+BasesUpdatedAndRebootNeeded_ProblemDescription = 'Untuk menyelesaikan pemasangan modul aplikasi baru, perlu menghidupkan ulang komputer.'
+
+BasesUpdatedAndRestartNeeded_ProblemTitle     = 'Aplikasi perlu direstart'
+BasesUpdatedAndRestartNeeded_ProblemDescription_KIS = ProductName_KIS + ' module aplikasi yang diperbarui. Perlu me-restart aplikasi supaya fungsinya berjalan dengan semestinya.'
+BasesUpdatedAndRestartNeeded_ProblemDescription = ProductName + ' module aplikasi yang diperbarui. Perlu me-restart aplikasi supaya fungsinya berjalan dengan semestinya.'
+
+BasesOld_ProblemTitle = 'Basis data sudah kadaluarsa'
+BasesOld_ProblemDescription = 'Kami sarankan anda untuk memperbarui basis data.'
+
+BasesOldInGracePeriod_ProblemTitle = 'Basis data membutuhkan perbaruan'
+BasesOldInGracePeriod_ProblemDescription = 'Masalah akan diselesaikan setelah proses pembaruan.'
+
+SomeBasesNeedUpdate_ProblemTitle = 'Basis data membutuhkan perbaruan'
+SomeBasesNeedUpdate_ProblemDescription = 'Basis data dari beberapa komponent perlindungan memerlukan pembaruan .'
+
+ProtectionMalfunction_ProblemTitle = 'Beberapa komponen perlindungan rusak'
+ProtectionMalfunction_ProblemDescription     = 'Kami saranakan anda untuk memasang kembali aplikasi.'
+
+HighRiskTasksDisabled_ProblemTitle = 'File Anti-Virus dinonaktifkan'
+HighRiskTasksDisabled_ProblemDescription     = 'Komputer anda berisiko terinfeksi, rusak. atau data yang dicuri. Kami sarankan anda untuk mengaktifkan File Anti-Virus.'
+HighRiskTasksDisabled_ProblemTitle_FileAV    = 'File Anti-Virus dinonaktifkan'
+
+ProtectionPaused_ProblemTitle = 'Perlindungan komputer diberhentikan sementara'
+ProtectionPaused_ProblemDescription = 'Komputer anda beresiko terinfeksi, rusak, atau data yang dicuri. Kami sarankan anda untuk mengaktifkan perlindungan.'
+
+ProtectionDisabled_ProblemTitle = 'Perlindungan komputer dinonaktifkan'
+ProtectionDisabled_ProblemDescription = 'Komputer anda beresiko terinfeksi, rusak, atau data yang dicuri. Kami sarankan anda untuk mengaktifkan perlindungan.'
+
+SelfProtectionDisabled_ProblemTitle_KIS = ProductName_KIS + ' Pembelaan diri dinonaktifkan'
+SelfProtectionDisabled_ProblemTitle = ProductName + ' Pembelaan diri dinonaktifkan'
+SelfProtectionDisabled_ProblemDescription = 'Dalam kasus serangan virus aplikasi dapat dioperasikan.Kami sarankan anda untuk mengaktifkan Pembelaan diri.'
+
+TasksDisabled_ProblemTitle_FileAV   = 'File Anti-Virus dinonaktifkan.'
+TasksDisabled_ProblemTitle_AC       = 'Kontrol Aplikasi di non aktifkan.'
+TasksDisabled_ProblemTitle_NAB      = 'Network Attack Blocker dinonaktifkan.'
+TasksDisabled_ProblemTitle_IMAV    = 'IM Anti-Virus is disabledi non aktifkan.'
+TasksDisabled_ProblemTitle_MAV      = 'Mail Anti-Virus di non aktifkan.'
+TasksDisabled_ProblemTitle_WAV      = 'Web Anti-Virus di non aktifkan.'
+TasksDisabled_ProblemTitle_Firewall = 'Firewall di non aktifkan.'
+TasksDisabled_ProblemTitle_SW       = 'System Watcher di non aktifkan.'
+
+TaskHidden_ProblemTitle_AC       = 'Kontrol Aplikasi di non aktifkan.'
+TaskHidden_ProblemTitle_NAB      = 'Network Attack Blocker dinonaktifkan.'
+TaskHidden_ProblemTitle_IMAV    = 'IM Anti-Virus di non aktifkan.'
+TaskHidden_ProblemTitle_MAV      = 'Mail Anti-Virus di non aktifkan.'
+TaskHidden_ProblemTitle_WAV      = 'Web Anti-Virus di non aktifkan.'
+TaskHidden_ProblemTitle_Firewall = 'Firewall di non aktifkan.'
+TaskHidden_ProblemTitle_SW       = 'System Watcher di non aktifkan.'
+
+TasksDisabled_ProblemDescription = 'Aplikasi tidak bisa melayani perlindungan utuh kepada komputer anda. Kami sarankan anda untuk mengaktifkan komponent perindungan.'
+TaskHidden_ProblemDescription = 'Pesan tentang komponen perlindungan terputus tersembunyi. Program ini tidak akan mampu memberikan perlindungan lengkap dari komputer Anda. Anda disarankan untuk mengaktifkan komponen perlindungan.'
+
+AutorunDisabled_ProblemTitle = 'Aplikasi autorun dinonaktifkan'
+AutorunDisabled_ProblemDescription     = 'Kami sarankan anda untuk mengaktifkan autorun aplikasi diawal sistem operasi.'
+
+ProtectionSafeMode_ProblemTitle = 'Komputer memerlukan reboot'
+ProtectionSafeMode_ProblemDescription_KIS = 'Ketika berjalan di modus aman, ' + ProductName_KIS + ' fungsionalitas dibatasi. Beberapa komponen perlindungan tidak bekerja.'
+ProtectionSafeMode_ProblemDescription = 'Ketika dijalankan dimodus aman , ' + ProductName + ' fungsionalitas dibatasi. Beberapa komponen perlindungan tidak bekerja.'
+
+FirewallBlockAll_ProblemTitle = 'Mengaktifkan blokir lalu lintas jaringan'
+FirewallBlockAll_ProblemDescription = 'Tidak ada aplikasi dikomputer anda yang bisa terhubung dengan Internet. Anda disarankan untuk menonaktifkan pemblokiran.'
+
+FirewallUnBlock_ActionLabel = 'Melumpuhkan'
+OpenSupport_ActionLabel = 'Pergi ke Situs Support'
+OpenLicenseManager_ActionLabel = 'Rinci'
+UpdateBases_ActionLabel = 'Perbarui'
+ChangeInstallProduct_ActionLabel = 'Aplikasi Dipilih/instal'
+OpenActivationWizard_ActionLabel = 'Diaktifkan'
+OpenPurchase_ActionLabel = 'Kunjungi toko online'
+OpenForum_ActionLabel = 'Pergi ke web forum'
+
+Reboot_ActionLabel = 'Menyalakan ulang'
+ThreatReport_ActionLabel = 'Tampilkan Laporan'
+ProcessThreat_ActionLabel = 'Memperbaiki'
+OpenThreatFolder_ActionLabel = 'Membuka lokasi folder asli'
+AddThreatToExclusionList_ActionLabel = 'Menambah Pengecualian'
+DiscardThreat_ActionLabel = 'Abaikan'
+OpenThreatSecureList_ActionLabel = 'Deskripsi Ancaman'
+ProcessAllThreats_ActionLabel = 'Menghapus ancaman'
+DiscardAllThreats_ActionLabel = 'Abaikan semua'
+
+UpdaterSettings_ActionLabel = 'Pengaturan Pembaruan'
+Restart_ActionLabel = 'Menghidupkan Ulang'
+StopUpdate_ActionLabel = 'Berhenti'
+UpdaterReport_ActionLabel = 'Tampilkan Laporan'
+
+MalfunctionReport_ActionLabel = 'Rinci'
+EnableComponent_ActionLabel = 'Aktifkan'
+HideComponent_ActionLabel = 'Abaikan masalah'
+ShowComponent_ActionLabel = 'Jangan abaikan permasalahan'
+ResumeProtection_ActionLabel = 'Aktifkan'
+EnableProtection_ActionLabel = 'Aktifkan'
+EnableSelfProtection_ActionLabel = 'Aktifkan'
+EnableAutoRun_ActionLabel = 'Aktifkan'
+
+EnableAutoUpdate_ActionLabel = 'Aktifkan'
+SpamTrainingWizard_ActionLabel = 'Rangkaian'
+AntiSpamSettings_ActionLabel = 'Pengaturan'
+
+RebootConfirmation = 'Anda yakin ingin menghidupkan ulang komputer anda sekarang?'

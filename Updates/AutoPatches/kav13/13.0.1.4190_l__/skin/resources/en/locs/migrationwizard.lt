@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migration Wizard'
+UpgradeCaption = 'Upgrade'
+
+RebootPageCheckboxRebootText = 'Reboot the computer'
+OpenRemoveProgramsPanel = 'Open toolbar'
+
+WizardBeginDescriptionKis = 'You will be switched to Kaspersky Internet Security 2013.\n\nThe copyright holder grants you a non-exclusive license to use Kaspersky Internet Security on the same terms that you accepted when you originally installed Kaspersky Anti-Virus.\n\nNote: This switch may result in a reboot.'
+
+WizardBeginDescriptionKav = 'You will be switched to Kaspersky Anti-Virus 2013.\n\nThe copyright holder grants you a non-exclusive license to use Kaspersky Anti-Virus on the same terms that you accepted when you originally installed Kaspersky Internet Security.\n\nNote: This switch may result in a reboot.'
+
+WizardContinueDescriptionKis = 'Continue the switch to Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Continue the switch to Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nAttention! Current license for Kaspersky Anti-Virus expires before the license for Kaspersky Internet Security. After Kaspersky Anti-Virus license expires, it will be impossible to return to Kaspersky Anti-Virus.'
+
+PleaseWait = 'Please wait'
+RemovalProgressDescription   = 'Deleting incompatible software'
+RemovalApplicationsDescription = 'The following software will be removed to perform the switch:'
+ManualRemovalApplicationsDescription = 'You should remove the following incompatible software manually to perform the switch:'
+SearchRemovalApplicationsDescription   = 'Searching for incompatible software'
+RestartProductDescription = 'The application will be restarted to complete the switch.'
+RebootOsDescription = 'You should reboot the computer to continue the switch.\nThe wizard will continue after the reboot.'
+
+MigrationProgressDescriptionKis = 'Reconfiguring the application and switching to Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Reconfiguring the application and switching to Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Reconfiguring the application and switching to Kaspersky Anti-Virus'
+
+MigrationKis = 'Switch to Kaspersky Internet Security'
+MigrationKav = 'Switch to Kaspersky Anti-Virus'
+MigrationUnknown = 'Switch '
+
+SearchRemovalApplicationsHeader = 'Upgrading to Kaspersky Internet Security'
+RemovalProgressHeader = 'Deleting incompatible software'
+RemovalApplicationsHeader = 'Incompatible software has been found'
+RebootOsHeader = 'Computer reboot is required'
+RestartProductHeader = 'Application will be restarted'
+
+MigrationAbortedHeader = $MigrationType + ' is impossible'
+MigrationAbortedDescription = $MigrationType + ' failed. Try removing the incompatible software manually and then restart the wizard.'
+
+BestBuyGiftInformation = 'Your Kaspersky Anti-Virus will be upgraded to Kaspersky Internet Security.\nNow you will have even more features to protect your computer.'
+BestBuyGiftDescription = 'Thank you for choosing Kaspersky Lab software! Please enjoy the added protection.'
+BestBuyUpgradeNotification = 'While upgrading, your system will be analyzed for incompatible software in order to ensure proper functioning of installed applications and the operating system.'
+BestBuyFreeUpgrade = 'Switch to Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Upgrade in background'
+BestBuyTryAbortInformation = 'The upgrade will continue in the background'
+BestBuyTryAbortDescription = 'As the incompatible software was not removed, some new features of Kaspersky Internet Security are disabled to ensure proper functioning of installed applications and the operating system.\n\nYou can remove the incompatible software manually and enable all the new features in the settings window of Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Back to upgrade'
+Congratulation = 'Congratulations!'
+
+RunKisButtonText = 'Start Kaspersky Internet Security'
+
+ProductUpgraded = 'Your Kaspersky Anti-Virus has been successfully upgraded to Kaspersky Internet Security.\nNow you can enjoy even more features to protect your computer.'

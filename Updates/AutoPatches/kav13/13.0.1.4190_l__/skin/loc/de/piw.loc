@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Schlüsseldatei wählen"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Der Schlüssel für dieses Programmexemplar wurde vom Hardwarehersteller mitgeliefert. Möchten Sie das Programm mit diesem Schlüssel aktivieren?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.KeyExpirationDate)
+CancelWizardWarning             = "Die Programmkonfiguration wurde noch nicht abgeschlossen. Möchten Sie den Konfigurationsassistenten wirklich beenden?"
+ErrEmptyActivationCode.caption  = "Es wurde kein Aktivierungscode eingegeben"
+ErrEmptyActivationCode          = "Bitte geben Sie hier Ihren Aktivierungscode ein:"
+ErrEmptyKeyPath.caption         = "Es wurde keine Schlüsseldatei angegeben"
+ErrEmptyKeyPath                 = "Bitte geben Sie eine Schlüsseldatei an."
+$LicInfoKeyNumber               = "Nummer:"
+$LicInfoKeyProductName          = "Programmname:"
+$LicInfoKeyType                 = "Lizenztyp:"
+$LicInfoExpirationDate          = "Ende der Gültigkeitsdauer:"
+$LicErrReason                   = "Grund:"
+$ActiveKey                      = "Aktiver Schlüssel"
+$ReservedKey                    = "Reserveschlüssel"
+ConfirmFeedback                 = "Sind Sie damit einverstanden, im Rahmen des <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a> Informationen zur Verfügung zu stellen?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) bildet eine Infrastruktur aus Online-Diensten und Services, die den Zugriff auf eine aktualisierbare Wissensdatenbank von Kaspersky Lab gewährleistet. Die Datenbank bezieht sich auf die Reputation von Dateien, Internet-Ressourcen und Software. Die Verwendung von Daten aus Kaspersky Security Network ermöglicht eine schnellere Reaktion des Programms auf neue Bedrohungsarten, steigert die Effektivität bestimmter Schutzkomponenten und reduziert das Auftreten von Fehlalarmen. \n \nBei der Teilnahme am Kaspersky Security Network werden Informationen über Infektionen und sonstige Probleme, sowie eine erweiterte Statistik über geladene und gestartete Anwendungen automatisch an Kaspersky Lab gesendet. Der Umfang der gesammelten Daten wird in der <a KsnInfo onclick(dialog(\"KsnInfo\"))>Erklärung zur Verwendung von Kaspersky Security Network</a> festgelegt. \n\n<b>Kaspersky Security Network sammelt und verarbeitet keine persönlichen Benutzerdaten.</b>"
+
+$ToAcquireNewLicText            = "\n\nWenden Sie sich an den Händler, bei dem Sie das Programm gekauft haben, oder an die <a Buy onclick(buy())>Verkaufsabteilung von Kaspersky Lab</a>, um eine neue Lizenz zu kaufen."
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nVersuchen Sie, den Abonnementstatus manuell zu aktualisieren oder wenden Sie sich an den Technischen Support" : "\nVersuchen Sie, das Programm mit dem Aktivierungscode später (in ca. 1-2 Stunden) zu aktivieren oder wenden Sie sich an den Technischen Support") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? "Aktivierungsassistent für " : "Konfigurationsassistent für ") + $ProductName_GEN
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Herzlich willkommen!"
+InitBegin.Descr                       = "Der Konfigurationsassistent für " + $ProductName_GEN + " begrüßt Sie."
+CheckHosts.Name                       = "Verfügbarkeit der Kaspersky-Lab-Server prüfen"
+CheckHosts.Descr                      = "Verdächtige Umleitung wurde erkannt"
+ResetArea.Name                        = "Einstellungen wiederherstellen"
+ResetArea.Descr                       = "Die unten aufgezählten Einstellungen enthalten Daten, die vom\nBenutzer angegeben oder während der Programmarbeit gesammelt wurden."
+ActivationBegin.Name                  = $IsSubscription ? "Abonnementverwaltung" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Schlüssel &löschen" : "Schlüssel hinzufügen") : "Programm aktivieren")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Lizenzverwaltung" : "Das Programm muss aktiviert werden, um es weiter zu nutzen.")
+ActivationProgress.Name               = "Online-Aktivierung"
+ActivationProgress.Descr              = "Bitte warten Sie. Die Aktivierung läuft..."
+ActivationServerForm.Name             = "Online-Aktivierung"
+ActivationServerForm.Descr            = "Bitte füllen Sie das Formular aus."
+ActivationChooseKey.Name              = "Aktivierung mit Hilfe einer Schlüsseldatei"
+ActivationChooseKey.Descr             = "Aktivieren Sie das Programm mit Hilfe einer Schlüsseldatei."
+ActivationEnd.Name                    = "Aktivierung des Programms"
+ActivationEnd.Descr                   = "Aktivierung abgeschlossen."
+MigrationKeyIsFound.Name         = "Es wurde ein Schlüssel für die aktuelle Lizenz gefunden"
+MigrationKeyIsFound.Descr        = "Möchten Sie das Programm verwenden, das durch die aktuelle Lizenz festgelegt wird?"
+MigrationBegin.Name              = "Umsteigen auf " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Es erfolgt ein Umstieg auf " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Inkompatible Programme suchen"
+MigrationSearchProgress.Descr    = "Bitte warten Sie. Es wird nach inkompatiblen Programmen gesucht..."
+MigrationSafeRemoval.Name        = "Inkompatible Programme gefunden"
+MigrationSafeRemoval.Descr       = "Um fortzufahren, müssen die inkompatiblen Programme gelöscht werden"
+MigrationSafeProgress.Name       = "Inkompatible Programme löschen"
+MigrationSafeProgress.Descr      = "Bitte warten Sie. Die inkompatiblen Programme werden gelöscht..."
+MigrationAddRemove.Name          = "Inkompatible Programme gefunden"
+MigrationAddRemove.Descr         = "Bitte löschen Sie die inkompatiblen Programme"
+MigrationUnsafeRemoval.Name      = "Inkompatible Programme gefunden"
+MigrationUnsafeRemoval.Descr     = "Um fortzufahren, müssen die inkompatiblen Programme gelöscht werden"
+MigrationUnsafeProgress.Name     = "Inkompatible Programme löschen"
+MigrationUnsafeProgress.Descr    = "Bitte warten Sie. Die inkompatiblen Programme werden gelöscht..."
+MigrationReboot.Name             = "Ein Neustart des Betriebssystems ist erforderlich"
+MigrationReboot.Descr            = "Ein Neustart des Computers ist erforderlich, um den Umstieg fortzusetzen"
+MigrationProgress.Name           = "Umsteigen auf " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Bitte warten Sie. Der Umstieg auf das neue Programm wird ausgeführt..."
+MigrationRebootApp.Name          = bMigrationDone ? "Das Programm wird neu gestartet" : "Fehler beim Umsteigen auf das neue Programm"
+MigrationRebootApp.Descr         = bMigrationDone ? "Ein Neustart des Programms ist erforderlich" : "Der Umstieg auf " + s_MUProductTitleLong(env("ProductType")) + " wurde fehlerhaft abgeschlossen"
+MigrationFinish.Name             = "Der Umstieg auf " + s_ProductTitleLong(env("ProductType")) + " wurde abgeschlossen"
+MigrationFinish.Descr            = "Der Umstieg auf " + s_ProductTitleLong(env("ProductType")) + " wurde abgeschlossen"
+DNS.Name                              = "Erweiterte Einstellungen"
+DNS.Descr                             = "Zusätzliche Einstellungen für die Arbeit von " + $ProductName_GEN
+EnumExe.Name                          = "Systemanalyse"
+EnumExe.Descr                         = "Bitte warten Sie. Es werden Informationen über das System gesammelt..."
+InitFinish.Name                       = "Abschluss der Programmkonfiguration"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Um die Programmkonfiguration abzuschließen, ist ein Neustart des Computers erforderlich." : $ProductName + " ist bereit zur Arbeit."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Es wurde eine verdächtige Umleitung von Adressen der Kaspersky-Lab-Server erkannt. Dies kann durch eine Aktivität von Schadprogrammen verursacht werden und kann dazu führen, dass Updates und Programmaktivierung nicht mehr möglich sind. Verdächtige Einträge der hosts-Datei:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Einträge löschen (empfohlen)"
+Skip			= "Überspringen"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Zurück"
+Back.Descr      = "Zurück zur Auswahl der Methode zur Programmaktivierung"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Schlüssel hinzufügen" : "&Aktivieren"
+Activate.Descr  = "Installation der gewählten Schlüsseldatei"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Beenden"
+Finish.Descr    = "Abschluss der Aktivierung"
+Next.Name       = "&Weiter"
+Next.Descr      = "Weiter zur Konfiguration"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Sie können das Programm weiterverwenden, das durch die aktuelle Lizenz festgelegt wird. In diesem Fall erfolgt ein Umstieg auf " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Programm weiterverwenden, das durch die aktuelle Lizenz festgelegt wird?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Programmtyp:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Gültigkeitsdauer:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " verbleibend)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Ja, zur Verwendung von " + s_MUProductTitleLong(env("ProductType")) + " wechseln."
+NotUseFoundLicense = "Nein, und bei " + switch(env("ProductType"), "ProductTitleLong", "") + " bleiben."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Es erfolgt ein Umstieg auf " + s_MUProductTitleLong(env("ProductType")) + ". Der Rechtsinhaber gewährt Ihnen eine nicht-exklusive Lizenz für die Nutzung von " + s_MUProductTitleLong(env("ProductType")) + " zu den Bedingungen, die Sie zuvor bei der Installation von " + s_ProductTitleLong(env("ProductType")) + " akzeptiert haben."
+Text3   = "Im Verlauf des Umstiegs werden notwendige Aktionen ausgeführt, die einen Neustart des Systems erforderlich machen können."
+LicenseWarning  = "Achtung! Die kommerzielle Lizenz für Kaspersky Anti-Virus läuft früher ab als die Testlizenz für Kaspersky Internet Security. Nach Ablauf einer kommerziellen Lizenz für Kaspersky Anti-Virus ist es nicht möglich, von der Testversion für Kaspersky Internet Security zu Kaspersky Anti-Virus zurückzukehren. Möchten Sie den Umstieg auf Kaspersky Internet Security wirklich fortsetzen?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Bitte warten Sie. Es wird nach inkompatibler Software gesucht..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Für den Umstieg werden folgende inkompatible Programme entfernt:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Bitte warten Sie. Es wird inkompatible Software deinstalliert..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Für den Umstieg müssen folgende inkompatible Programme entfernt werden:"
+OpenAddRemove = "Fenster \"Programme ändern und entfernen\" öffnen"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Für den Umstieg werden folgende inkompatible Programme entfernt:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Bitte warten Sie. Es wird inkompatible Software deinstalliert..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Der Computer muss neu gestartet werden, um den Umstieg fortzusetzen. Der Assistent wird nach dem Neustart fortgesetzt."
+Reboot   = "Computer jetzt neu starten"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Bitte warten Sie. Die Programm-Module werden neu konfiguriert und es erfolgt ein Umstieg auf " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Um den Umstieg auf " + s_MUProductTitleLong(env("ProductType")) + " abzuschließen, wird das Programm neu gestartet." : "Der Umstieg auf " + s_MUProductTitleLong(env("ProductType")) + " wurde fehlerhaft abgeschlossen."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Jetzt können Sie die Möglichkeiten von " + s_ProductTitleLong("kis") + " beurteilen. Dazu gehören Kindersicherung, Anti-Spam, Firewall und mehr." : s_ProductTitleLong("kav") + " bietet Ihrem Computer einen Basisschutz vor Schadprogrammen."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Sie können "+if($IsRefreshSubAvail,"den Abo-Status aktualisieren oder ")+"den Schlüssel löschen." : (f_IsActiveKeyWorkingCommercial() ? "Sie können den aktiven Schlüssel löschen oder einen Schlüssel hinzufügen." : "Aktivieren Sie " + $ProductName + ", um in den vollfunktionalen Modus zu wechseln."+ if($CorporateOnly, " Sie können eine <a Activate onclick(url($ActivationLink))>kommerzielle</a> Lizenz kaufen oder eine <a ActivateTrial onclick(url($ActivationTrialLink))>Testlizenz</a> des Programm aktivieren."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "S&päter aktivieren"
+Later.Descr                 = "Aktivierung überspringen und zum Anpassen der Programmeinstellungen wechseln"
+ChooseKey.Name              = "Mit &Schlüsseldatei aktivieren"
+ChooseKey.Descr             = "Eine Schlüsseldatei ist erforderlich"
+ActivateBetaKAV.Name        = "&Beta-Version von Kaspersky Anti-Virus aktivieren"
+ActivateBetaKAV.Descr       = "Die Beta-Version von Kaspersky Anti-Virus umfasst die volle Funktionalität, ist aber kein endgültiges Produkt."
+ActivateBetaKIS.Name        = "&Beta-Version von Kaspersky Internet Security aktivieren"
+ActivateBetaKIS.Descr       = "Die Beta-Version von Kaspersky Internet Security umfasst die volle Funktionalität, ist aber kein endgültiges Produkt."
+ActivateTrial.Name          = "&Testversion aktivieren"
+ActivateTrial.Descr         = "Die Gültigkeitsdauer der Testversion ist im Lizenzvertrag angegeben"
+ActivateCommercial.Name     = "&Online aktivieren"
+ActivateCommercial.Descr    = "Der Aktivierungscode, den Sie beim Kauf erhalten haben, ist erforderlich"
+RemoveKey.Name              = $HasReserveKey ? "Reserveschlüssel lö&schen" : "Schlüssel &löschen"
+RemoveKey.Descr             = "Löschen Sie zuerst die aktive Lizenz, um den Schlüssel zu ersetzen"
+RefreshSubscription.Name    = "&Abo-Status aktualisieren"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Sie können den Abo-Status manuell aktualisieren." : "Die automatische Aktualisierung des Abo-Status wurde abgebrochen. Sie können den Status manuell aktualisieren."
+ActivateTrialKIS            = "Testversion von Kaspersky Internet Security aktivieren"
+ActivateTrialKIS_Desc       = "Die Gültigkeitsdauer der Testversion von Kaspersky Internet Security ist im Lizenzvertrag angegeben"
+RevertToCommercialKAV       = "Zur kommerziellen Version von Kaspersky Anti-Virus zurückkehren"
+RevertToCommercialKAV_Desc  = "Zur kommerziellen Version von Kaspersky Anti-Virus zurückkehren"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Abo-Status aktualisieren"
+ActivateCommercial      = "&Kommerzielle Version aktivieren"
+ActivateCommercial_Desc = (LockActivationCode)? "Ihr Aktivierungscode: " : "Geben Sie den <a onclick(url(\"" + $ActCodeHint + "\"))>Aktivierungscode</a> ein:"
+ActivationCode_Desc     = (LockActivationCode)? "Ihr Aktivierungscode wurde automatisch hinzugefügt. Bitte klicken Sie auf \"Weiter\"." : "Wenn Sie keinen Aktivierungscode besitzen, können Sie ihn <a onclick(buy())>online</a> kaufen."
+ActivateBetaKAV         = "&Beta-Version von Kaspersky Anti-Virus aktivieren"
+ActivateBetaKIS         = "&Beta-Version von Kaspersky Internet Security aktivieren"
+ActivateTrial           = "&Testversion aktivieren"
+ActivateTrial_Desc      = "Testen Sie eine voll funktionsfähige Version des Programms, bevor Sie es kaufen."
+ActivateTrialKIS           = "Testversion von Kaspersky Internet Security aktivieren"
+ActivateTrialKIS_Desc      = "Testen Sie eine voll funktionsfähige Version von Kaspersky Internet Security, bevor Sie das Programm kaufen."
+RevertToCommercialKAV      = "Zur kommerziellen Version von Kaspersky Anti-Virus zurückkehren"
+RevertToCommercialKAV_Desc = "Verwendung der Testversion von Kaspersky Internet Security beenden und zur kommerziellen Version von Kaspersky Anti-Virus zurückkehren."
+Later                   = "S&päter aktivieren"
+Later_Desc              = "Für die volle Funktionsfähigkeit des Programms ist eine Aktivierung erforderlich."
+RemoveKey               = "Schlüsseldatei löschen"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Schlüsseldatei:"
+KeyInfo         = "Informationen zur Lizenz"
+ConnectingInfo.Name     = "Aktivierungsfehler: "
+ConnectingInfo.Val      = "Details"
+TryAgain                = "Aktivieren"
+Descr1                  = "Gehen Sie folgendermaßen vor, um die Aktivierung zu wiederholen:"
+Descr2                  = "Überprüfen Sie die Einstellungen der Internetverbindung und versuchen Sie noch einmal, das Programm zu aktivieren."
+Descr3                  = "Gehen Sie in das <a onclick(url(\"" + $ActivationLink + "\"))> Online-Aktivierungszentrum</a> und folgen Sie den Anweisungen.\nNachdem Sie eine Schlüsseldatei erhalten haben, geben Sie an, wo der Schlüssel auf dem Computer gespeichert ist, und klicken Sie auf  \"Weiter\":"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Erstellungsdatum:"
+InstallDate.Name    = "Aktivierungsdatum:"
+ExpirationDate.Name = "Gültigkeitsdauer:"
+SubscrptnExpDate.Name = "Ablaufdatum des Abonnements:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," für " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Systemfehler: " + s_SystemError(ErrorCode)
+2       = "Hinzufügen des \"" + KeyFile + "\" Schlüssels ist nicht möglich: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Das Löschen von \"" + KeyFile + "\" ist nicht möglich: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Fehlercode: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Dieser Schlüssel wurde bereits hinzugefügt" + $LicErrHelpLink
+0x0947901d  = "Die Lizenz ist abgelaufen. Das Datenbank-Update ist nicht verfügbar" + $LicErrHelpLink
+0x89479002  = "Lizenz nicht gefunden" + $LicErrHelpLink
+0x89479003  = "Die digitale Signatur ist beschädigt oder fehlt" + $LicErrHelpLink
+0x89479004  = "Es sind beschädigte Daten vorhanden" + $LicErrHelpLink
+0x89479005  = "Die Schlüsseldatei ist beschädigt" + $LicErrHelpLink
+0x89479006  = "Die Gültigkeitsdauer der Lizenz ist abgelaufen" + $LicErrHelpLink
+0x89479007  = "Es wurde keine Schlüsseldatei angegeben" + $LicErrHelpLink
+0x89479008  = "Ungültige Schlüsseldatei" + $LicErrHelpLink
+0x89479009  = "Das Speichern von Daten ist fehlgeschlagen" + $LicErrHelpLink
+0x8947900a  = "Das Lesen von Daten ist fehlgeschlagen" + $LicErrHelpLink
+0x8947900b  = "Eingabe-/Ausgabefehler" + $LicErrHelpLink
+0x8947900c  = "Die Datenbanken wurden nicht gefunden" + $LicErrHelpLink
+0x8947900d  = "Aktiver Schlüssel und Reserveschlüssel wurden bereits hinzugefügt" + $LicErrHelpLink
+0x8947900e  = "Die Lizenzierungsbibliothek wurde nicht geladen" + $LicErrHelpLink
+0x8947900f  = "Die Datenbanken sind beschädigt oder wurden manuell aktualisiert" + $LicErrHelpLink
+0x89479010  = "Die Datenbanken sind beschädigt" + $LicErrHelpLink
+0x89479011  = "Eine ungültige Schlüsseldatei kann nicht als Reserveschlüssel installiert werden" + $LicErrHelpLink
+0x89479012  = "Systemfehler" + $LicErrHelpLink
+0x89479013  = "Die schwarze Liste für Schlüssel ist beschädigt" + $LicErrHelpLink
+0x89479014  = "Die Signatur stimmt nicht mit der digitalen Signatur von Kaspersky Lab überein" + $LicErrHelpLink
+0x89479015  = "Eine kommerzielle Programmversion kann nicht mit einer Beta-Testlizenz aktiviert werden" + $LicErrHelpLink
+0x89479016  = "Eine Beta-Version des Programms kann nur mit einer Beta-Testlizenz aktiviert werden" + $LicErrHelpLink
+0x89479017  = "Die Lizenz ist nicht für dieses Programm gültig. " + $ProductName + " kann nicht mit einer Lizenz für ein anderes Programm aktiviert werden. Bitte überprüfen Sie, ob das korrekte Programm installiert ist." + $LicErrHelpLink
+0x89479018  = "Der Schlüssel wurde gesperrt" + $LicErrHelpLink
+0x89479019  = "Diese Testversion wurde bereits verwendet. Eine Testversion kann nur ein Mal verwendet werden" + $LicErrHelpLink
+0x8947901a  = "Die Schlüsseldatei ist beschädigt" + $LicErrHelpLink
+0x8947901b  = "Die digitale Signatur wurde nicht gefunden, ist beschädigt oder weicht von der Kaspersky-Lab-Signatur ab" + $LicErrHelpLink
+0x8947901c  = "Ein Schlüssel für eine nicht kommerzielle Lizenz kann nicht hinzugefügt werden, wenn seine Gültigkeitsdauer abgelaufen ist" + $LicErrHelpLink
+0x8947901e  = "Das Erstellungs- oder Aktivierungsdatum der Schlüsseldatei ist fehlerhaft. Prüfen Sie das Systemdatum" + $LicErrHelpLink
+0x8947901f  = "Ein Schlüssel für eine Testlizenz kann nicht hinzugefügt werden, während eine andere Testlizenz aktiviert ist" + $LicErrHelpLink
+0x89479020  = "Die schwarze Liste für Schlüssel ist beschädigt oder wurde nicht gefunden" + $LicErrHelpLink
+0x89479021  = "Die Updatebeschreibung ist beschädigt oder fehlt" + $LicErrHelpLink
+0x89479022  = "Die internen Daten sind inkompatibel mit dem aktuellen Programm" + $LicErrHelpLink
+0x89479023  = "Ein Reserveschlüssel kann nicht mithilfe eines fehlerhaften Aktivierungscodes hinzugefügt werden" + $LicErrHelpLink
+0x89479024  = "Fehler beim Ausfüllen des Datenformulars" + $LicErrHelpLink
+0x89479025  = "Beim Senden der Anfrage an den Aktivierungsserver ist ein Fehler aufgetreten.\nMögliche Gründe: Fehler bei der Internetverbindung oder vorübergehende Probleme auf dem Aktivierungsserver.\nVersuchen Sie, das Programm mit Hilfe des Aktivierungscodes später (in 1-2 Stunden) zu aktivieren.\nSollte sich der Fehler wiederholen, überprüfen Sie bitte Ihre Internetverbindung und wenden Sie sich bitte \nggf. an Ihren Internetprovider" + $LicErrHelpLink
+0x89479026  = "Die Anfrage enthält einen ungültigen Aktivierungscode" + $LicErrHelpLink
+0x89479027  = "Der Status der Antwort kann nicht empfangen werden" + $LicErrHelpLink
+0x89479028  = "Fehler beim Speichern einer temporären Datei" + $LicErrHelpLink
+0x89479029  = "Es wurde ein ungültiger Aktivierungscode angegeben oder das Systemdatum des Computers ist falsch eingestellt. Prüfen Sie das Systemdatum des Computers" + $LicErrHelpLink
+0x8947902a  = "Der Aktivierungscode passt nicht zu diesem Programm oder der Schlüssel ist abgelaufen. " + $ProductName + " kann nicht mit einer Lizenz für ein anderes Programm aktiviert werden. Bitte überprüfen Sie, welches Programm installiert ist, oder <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>." + $LicErrHelpLink
+0x8947902b  = "Der Download der Schlüsseldatei ist fehlgeschlagen. Es wurde ein ungültiger Aktivierungscode angegeben" + $LicErrHelpLink
+0x8947902c  = "Der Aktivierungsserver hat den Fehler 400 zurückgegeben." + $OlaErrHelpLink
+0x8947902d  = "Der Aktivierungsserver hat den Fehler 401 zurückgegeben." + $OlaErrHelpLink
+0x8947902e  = "Der Aktivierungsserver hat den Fehler 403 zurückgegeben." + $OlaErrHelpLink
+0x8947902f  = "Eine erforderliche Ressource ist nicht auf dem Aktivierungsserver verfügbar.\nDer Aktivierungsserver hat den Fehler 404 zurückgegeben.\nBitte überprüfen Sie die Einstellungen der Internetverbindung." + $OlaErrHelpLink
+0x89479030  = "Der Aktivierungsserver hat den Fehler 405 zurückgegeben." + $OlaErrHelpLink
+0x89479031  = "Der Aktivierungsserver hat den Fehler 406 zurückgegeben." + $OlaErrHelpLink
+0x89479032  = "Auf dem Proxyserver ist eine Authentifizierung erforderlich. Bitte prüfen Sie die LAN-Einstellungen" + $LicErrHelpLink
+0x89479033  = "Zeitüberschreitung der Anfrage" + $LicErrHelpLink
+0x89479034  = "Der Aktivierungsserver hat den Fehler 409 zurückgegeben." + $OlaErrHelpLink
+0x89479035  = "Eine erforderliche Ressource ist nicht auf dem Aktivierungsserver verfügbar.\nDer Aktivierungsserver hat den Fehler 410 zurückgegeben.\nBitte überprüfen Sie die Einstellungen der Internetverbindung." + $OlaErrHelpLink
+0x89479036  = "Der Aktivierungsserver hat den Fehler 411 zurückgegeben." + $OlaErrHelpLink
+0x89479037  = "Der Aktivierungsserver hat den Fehler 412 zurückgegeben." + $OlaErrHelpLink
+0x89479038  = "Der Aktivierungsserver hat den Fehler 413 zurückgegeben." + $OlaErrHelpLink
+0x89479039  = "Der Aktivierungsserver hat den Fehler 414 zurückgegeben." + $OlaErrHelpLink
+0x8947903a  = "Der Aktivierungsserver hat den Fehler 415 zurückgegeben." + $OlaErrHelpLink
+0x8947903b  = "Unbekannter Fehler auf der Client-Seite." + $OlaErrHelpLink
+0x8947903c  = "Interner Serverfehler" + $LicErrHelpLink
+0x8947903d  = "Die Funktionalität wird nicht unterstützt" + $LicErrHelpLink
+0x8947903e  = "Ungültige Antwort vom Gateway. Prüfen Sie die Netzwerkeinstellungen" + $LicErrHelpLink
+0x8947903f  = "Die Ressource ist vorübergehend nicht verfügbar" + $LicErrHelpLink
+0x89479040  = "Zeitüberschreitung der Antwort vom Gateway. Prüfen Sie die Netzwerkeinstellungen" + $LicErrHelpLink
+0x89479041  = "Das Protokoll wird nicht vom Server unterstützt." + $OlaErrHelpLink
+0x89479042  = "Unbekannter Fehler auf der Server-Seite." + $OlaErrHelpLink
+0x89479043  = "Unbekannter http-Fehler." + $OlaErrHelpLink
+0x89479044  = "Ungültige ID der Ressource" + $LicErrHelpLink
+0x89479045  = "Ungültige Daten im Feld \"Schlüssel\"" + $LicErrHelpLink
+0x89479046  = "Ungültige Adresse (URL)" + $LicErrHelpLink
+0x89479047  = "Ungültiges Zielverzeichnis" + $LicErrHelpLink
+0x89479048  = "Fehler beim Zuteilen von Arbeitsspeicher" + $LicErrHelpLink
+0x89479049  = "Fehler beim Konvertieren von Einstellungen in ANSI-Zeile (url, folder, agent)" + $LicErrHelpLink
+0x8947904a  = "Fehler beim Erstellen des Arbeits-Threads" + $LicErrHelpLink
+0x8947904b  = "Der Arbeits-Thread wurde bereits gestartet" + $LicErrHelpLink
+0x8947904c  = "Der Arbeits-Thread wurde nicht gestartet" + $LicErrHelpLink
+0x8947904d  = "Die Schlüsseldatei wurde nicht auf dem Aktivierungsserver gefunden" + $LicErrHelpLink
+0x8947904e  = "Der Schlüssel wurde gesperrt" + $LicErrHelpLink
+0x8947904f  = "Interner Fehler des Aktivierungsservers" + $LicErrHelpLink
+0x89479050  = "Unzureichende Daten in der Aktivierungsanfrage" + $LicErrHelpLink
+0x89479051  = "Ungültige Benutzer-ID oder falsches Kennwort" + $LicErrHelpLink
+0x89479052  = "Ungültiger Aktivierungscode" + $LicErrHelpLink
+0x89479053  = "Die Lizenz der ausgewählten Schlüsseldatei läuft früher ab als die aktuelle Lizenz" + $LicErrHelpLink
+0x89479054  = "Das Systemdatum des Computers ist falsch eingestellt. Prüfen Sie bitte das Systemdatum des Computers" + $LicErrHelpLink
+0x89479055  = "Die Gültigkeitsdauer der Testlizenz ist abgelaufen" + $LicErrHelpLink
+0x89479056  = "Der Aktivierungszeitraum für das Programm ist abgelaufen" + $LicErrHelpLink
+0x89479057  = "<b>Die mit diesem Aktivierungscode zulässige Anzahl der Programmaktivierungen wurde überschritten" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Ein Schlüssel für eine nicht kommerzielle Lizenz kann nicht als Reserveschlüssel hinzugefügt werden, wenn bereits eine kommerzielle Lizenz verwendet wird" + $LicErrHelpLink
+0x8947905c  = "Der Aktivierungscode ist erforderlich" + $LicErrHelpLink
+0x8947905d  = "Ungültige Kundennummer oder falsches Kennwort" + $LicErrHelpLink
+0x8947905e  = "Ungültiger Aktivierungscode" + $LicErrHelpLink
+0x89479062  = "Die Verbindung mit dem Aktivierungsserver ist fehlgeschlagen" + $LicErrHelpLink
+0x89479064  = "<b>Der Aktivierungsserver ist nicht verfügbar.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Die Aktivierung des Programms ist im Augenblick nicht möglich. Wiederholen Sie den Aktivierungsversuch, nachdem das Programm konfiguriert und das Betriebssystem neu gestartet wurde.", "Bitte prüfen Sie die Einstellungen der Internetverbindung und wiederholen Sie den Aktivierungsversuch.") + $LicErrHelpLink
+0x89479065  = "Die Lizenz ist abgelaufen. Bitte <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Ein aktiver Schlüssel kann nicht durch einen abgelaufenen Schlüssel ersetzt werden" + $LicErrHelpLink
+0x89479067  = "Ein Schlüssel, der vor dem aktiven Schlüssel abläuft, kann nicht als Reserveschlüssel hinzugefügt werden" + $LicErrHelpLink
+0x89479068  = "Es ist kein aktueller Abonnementschlüssel vorhanden"+ $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Der Aktivierungsvorgang wurde mit einem Systemfehler abgeschlossen " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktivierungsfehler: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktivierungsfehler: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktivierungsfehler: Der Server hat einen HTTP-Code zurückgegeben " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Der Aktivierungsvorgang wurde mit einem Fehler abgeschlossen " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Interner Fehler auf dem Aktivierungsserver. Probieren Sie es bitte noch einmal oder wenden Sie sich an den Technischen Support"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Der Aktivierungscode passt nicht zu diesem Programm. " + $ProductName + " kann nicht mit einer Schlüsseldatei für ein anderes Programm aktiviert werden. Bitte überprüfen Sie, ob das korrekte Programm installiert ist."
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Der Schlüssel wurde gesperrt"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Ungültige Kundennummer oder falsches Kennwort"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Ungültiger Aktivierungscode"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Ein Aktivierungscode ist erforderlich"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Der Aktivierungszeitraum ist abgelaufen"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Die zulässige Anzahl der Programmaktivierungen mit diesem Code wurde überschritten"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Der Aktivierungscode passt nicht zu dieser Länder-Region"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Dieser Aktivierungscode ist nicht für die verwendete Sprachversion des Programms vorgesehen."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Der Aktivierungscode ist für eine neue Version dieses Programms vorgesehen. Fordern Sie einen anderen Aktivierungscode an, um die vorliegende Version zu nutzen. Details finden Sie unter folgendem Link."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Der Aktivierungsserver hat Fehler 643 zurückgegeben"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Der Aktivierungsserver hat Fehler 644 zurückgegeben"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Der Aktivierungsserver hat Fehler 645 zurückgegeben"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Der Aktivierungsserver hat Fehler 642 zurückgegeben"
+default                                     = "Der Aktivierungsvorgang wurde mit dem Fehler abgeschlossen " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "In Microsoft Internet Explorer ist der Offlinebetrieb eingestellt"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Die Internetverbindung wurde getrennt"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Der Aktivierungsserver ist nicht verfügbar"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Der Proxyserver ist nicht verfügbar"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Zeitüberschreitung der Antwort"
+#OLA_ERR_INTERNET_INVALID_URL                = "Ungültige Adresse des Aktivierungsservers"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Ungültiges Protokoll"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Der Verbindungsaufbau mit dem Server war erfolglos"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operation abgebrochen"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Der Verbindungsaufbau mit dem Server war erfolglos"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Die Verbindung mit dem Server wurde getrennt"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Die Verbindung mit dem Server wurde zurückgewiesen"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Ungültige Antwort des Servers"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Das SSL-Zertifikat des Servers ist abgelaufen. Überprüfen Sie die lokalen Zeiteinstellungen des Computers"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Der Servername des SSL-Zertifikats entspricht nicht dem Server"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Das Zertifikat lässt sich nicht überprüfen. Schalten Sie diese Überprüfung in Microsoft Internet Explorer aus (\"Extras->Eigenschaften->Erweitert->Server-Zertifikat überprüfen\") und wiederholen Sie den Aktivierungsversuch"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Ungültiges SSL-Zertifikat"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Das SSL-Zertifikat wurde zurückgezogen"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Ungültige Zertifizierungsstelle"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Die Registrierungsdaten werden von Kaspersky Lab benötigt, um Sie über Aktionen und Sonderangebote zu informieren."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Fortsetzen"
+Activate.Descr  = "Senden von Daten an den Aktivierungsserver"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Der Konfigurationsassistent baut eine Verbindung mit dem Aktivierungsserver von Kaspersky Lab auf. Dies kann in Abhängigkeit von der Geschwindigkeit Ihrer Internetverbindung etwas Zeit beanspruchen."
+ConnectingInfo.Name     = "Verbindung mit dem Aktivierungsserver..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Übertragung des Aktivierungscodes..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Warten auf die Antwort des Servers..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Ihre Kopie von " + $ProductName_GEN + " wurde erfolgreich aktiviert"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Gültigkeitsdauer:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " verbleibend)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Die Lizenz wurde erfolgreich aktiviert." : "Auf Ihrem Computer ist das Programm bereits aktiviert."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Weiter"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Weiter zur Programmaktivierung": (((PiwFlags & #fPiwActivation) && !bSilent)?"Weiter zu Informationen über die Lizenz":"Weiter zur Auswahl eines Schutzmodus")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Dieser Assistent hilft Ihnen, den Schutz Ihres Computers schnell und richtig zu konfigurieren.\n\nIm Verlauf der Konfiguration werden Daten über das System und die auf dem Computer installierten Programme gesammelt. Diese Informationen dienen ausschließlich dem optimalen Schutz Ihres Computers.\n\nKlicken Sie auf \"Weiter\", um mit der Konfiguration von " + $ProductName_GEN + " zu beginnen."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Die Installation ist beinahe vollständig..." : ((PiwFlags & #fPiwReset) ? ("Die Wiederherstellung wurde abgeschlossen.") : ("Die Installation wurde abgeschlossen."))
+ResetDescr          = "Der Konfigurationsassistent für " + $ProductName_GEN + " hat seine Arbeit beendet. Die Wiederherstellung des Programms wurde erfolgreich abgeschlossen."
+Reboot              = "&Computer neu starten"
+StartProduct        = $ProductName + " &starten "
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Vielen Dank für die Installation von " + $ProductName_GEN + ". Um den Installationsvorgang fertig zu stellen, muss der Computer neu gestartet werden. Speichern Sie alle Daten, schließen Sie alle Programme und klicken Sie auf 'Beenden'.") : "Der erste Start des Programms kann längere Zeit beanspruchen, da Informationen gesammelt werden und das Programm optimal eingestellt wird.\nDie folgenden Starts erfolgen im normalen Modus."
+
+[ConfigureWizard.EnumExe]
+Info = "Im Verlauf der Analyse wird eine Liste von vertrauenswürdigen Programmen, die zum Betriebssystem Microsoft Windows gehören, angelegt. \n\nProgramme, die nicht zum Betriebssystem gehören, werden einzeln analysiert, wenn sie zum ersten Mal auf dem Computer gestartet werden."
+
+[s_LicKeyType]
+#ektBeta         = "Für Beta-Test"
+#ektTrial        = "Testlizenz"
+#ektTest         = "Für Tests"
+#ektOEM          = "Für OEM-Distributionen"
+#ektCommercial   = "Kommerziell"
+#ektSubscription = "Kommerziell mit Abonnement"
+#ektSubscriptionProtection = "Kommerziell mit Schutz-Abonnement"
+default          = "Unbekannter Typ"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Unbekannter Fehler"
+#ekirValid                      = "Gültige Lizenz"
+#ekirExpired                    = "Die Gültigkeitsdauer der Lizenz ist abgelaufen"
+#ekirCorrupted                  = "Ungültige Lizenz"
+#ekirNotSigned                  = "Die digitale Signatur ist beschädigt oder fehlt"
+#ekirWrongProduct               = "Die Lizenz ist nicht für dieses Programm gültig. " + $ProductName + " kann nicht mit einer Lizenz für ein anderes Programm aktiviert werden. Bitte überprüfen Sie, ob das richtige Programm installiert ist."
+#ekirBlackListed                = "Der Schlüssel "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" wurde gesperrt"
+#ekirIllegalUpdate              = "Das Erscheinungsdatum der Datenbanken passt nicht zur Gültigkeitsdauer der Lizenz"
+#ekirInconsistentUpdate         = "Die Datenbanken sind beschädigt"
+#ekirKeyCreationDateInvalid     = "Das Erstellungsdatum des Schlüssels ist inkorrekt"
+#ekirTrialAlreadyInUse          = "Ein Schlüssel für eine Testlizenz kann nicht hinzugefügt werden, während eine andere Testlizenz aktiviert ist"
+#ekirInvalidBlacklist           = "Die schwarze Liste für Schlüssel ist beschädigt"
+#ekirCantBeUsedAsReserved       = "Dieser Aktivierungscode kann nicht als Reservecode verwendet werden"
+#ekirKeyInstallDateInvalid      = "Das Aktivierungsdatum ist ungültig"
+#ekirTrialPeriodIsOver          = "Die Gültigkeitsdauer der Testversion ist abgelaufen"
+#ekirConflictsWithCommercial    = "Konflikt einer neuen Schlüsseldatei mit der aktuellen kommerziellen Lizenz"
+#ekirExpiredAsReserve           = "Diese Lizenz ist kürzer gültig als die aktuelle Lizenz"
+#ekirGracePeriod                = "Lizenz im Verlängerungszeitraum"
+#ekirSuspended                  = "Das Abonnement wurde angehalten"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Das Programm muss neu installiert werden"
+#ekirLicenseOnlyForMigration    = "Der Umstieg auf ein anderes Programm ist erforderlich, um eine kommerzielle Version zu aktivieren"
+default                         = "Ungültige Schlüsseldatei"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Wird später ermittelt"
+#edtUnlimited = "Aktiviert"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Angehalten ab " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Informationen zur Lizenz"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": Hinweis zur Lizenz"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Achtung!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Sie verwenden eine Testversion von " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Die schwarze Liste fehlt oder ist beschädigt. Starten Sie das <a Update onclick(f_StartUpdater())>Update</a>, um die Arbeit fortzusetzen."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Ihre Lizenz " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Bitte <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>, um den aktuellen Zustand des Schutzes zu gewährleisten.\n\nWenn Sie bereits eine Lizenz gekauft haben, <a Activate onclick(f_Activate())>aktivieren Sie das Programm</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Das Abonnement ist abgelaufen." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Der Schutz wurde deaktiviert."))+($IsBestBuyLink ? " Eine Verlängerung des Abonnements ist nicht möglich." : " Die Sicherheit Ihres Computers ist bedroht. \n\n<a onclick(url($KeyProviderLinkForText))>Wenden Sie sich an Ihren Händler</a>, um das Abonnement zu verlängern.")) :("Es verbleiben " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? ", um das Abonnement zu verlängern. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " bis das Update deaktiviert wird. " : " bis der Schutz deaktiviert wird." ) ) + " <a onclick(url($KeyProviderLinkForText))>Wenden Sie sich an Ihren Händler</a>, um das Abonnement zu verlängern.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Der aktive Schlüssel wurde gesperrt. Das Update ist nicht verfügbar. Deshalb besteht für Ihren Computer ein Infektionsrisiko.</b>\n\nWenn Sie das Programm auf legalem Weg erworben haben, wenden Sie sich an den Technischen Support oder an Ihren Händler.\n\nWenn Sie eine unlizenzierte Kopie benutzen, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nWenn Sie bereits eine Lizenz gekauft haben, <a Activate onclick(f_Activate())>aktivieren Sie das Programm</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "endet heute" : "endet in " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "ist abgelaufen"
+
+[s_LicenseRenewBuyText]
+0 = "kaufen Sie eine Lizenz"
+default = "verlängern Sie die Lizenz"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Wählen Sie die Einstellungen aus, die wiederhergestellt werden sollen:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = "Konfigurationsassistent für " + $ProductName_GEN
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Herzlich willkommen!"
+InitBegin.Descr                       = "Der Konfigurationsassistent für " + $ProductName_GEN + " begrüßt Sie."
+CheckHosts.Name                       = "Verfügbarkeit der Kaspersky-Lab-Server prüfen"
+CheckHosts.Descr                      = "Verdächtige Umleitung wurde erkannt"
+ResetArea.Name                        = "Einstellungen wiederherstellen"
+ResetArea.Descr                       = "Die unten aufgezählten Einstellungen enthalten Daten, die vom\nBenutzer angepasst oder während der Programmarbeit gesammelt wurden."
+EnumExe.Name                          = "Systemanalyse"
+EnumExe.Descr                         = "Bitte warten Sie. Es werden Informationen über das System gesammelt..."
+ResetFinish.Name                       = "Programmkonfiguration abschließen"
+ResetFinish.Descr                      = $ProductName + " ist betriebsbereit."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Die Wiederherstellung wurde abgeschlossen."
+ResetDescr          = "Der Konfigurationsassistent für " + $ProductName_GEN + " hat seine Arbeit beendet. Die Programmwiederherstellung wurde erfolgreich abgeschlossen."
+
+[BestBuyUpgradeMessage]
+@ = "Migration zu einem anderen Programm"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Nutzung von Kaspersky Internet Security beginnen"
+RestartButton = "Kaspersky Internet Security starten"
+
+[BestBuyUpgradeMessagePage]
+Header = "Glückwunsch!"
+Message = "Ein Upgrade von Kaspersky Anti-Virus zu Kaspersky Internet Security wurde ausgeführt.\nSie können jetzt weitere Funktionen für den Computerschutz nutzen."
+Description = "Vielen Dank, dass Sie sich für Kaspersky Lab entschieden haben. Wir hoffen, dass Ihnen der optimierte Schutz gefällt."
+
+[ForcedUpgradeMessagePage]
+Header = "Fast fertig"
+Message = "Vielen Dank, dass Sie sich für Kaspersky Lab entschieden haben. Wir hoffen, dass Ihnen der optimierte Schutz gefällt."
+Description = "Da die inkompatible Software nicht entfernt wurde, wurden einige Funktionen von Kaspersky Internet Security deaktiviert, um die Stabilität der installierten Programme und des Betriebssystems zu gewährleisten.\n\nSie können die inkompatiblen Programme manuell entfernen und alle neuen Funktionen im Konfigurationsfenster von Kaspersky Internet Security aktivieren."
+Notification = "Um die Migration abzuschließen, wird das Programm neu gestartet."

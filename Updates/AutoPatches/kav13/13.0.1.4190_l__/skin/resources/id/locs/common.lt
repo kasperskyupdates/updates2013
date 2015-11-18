@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Pratinjau Teknis Kaspersky Internet Security'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Pratinjau Teknik Kaspersky Anti-Virus'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'terbaru' 
+Corrupted = 'rusak' 
+VeryOld = 'lama' 
+Old = 'kadaluarsa' 
+OldInGracePeriod = 'belum diperbaharui untuk waktu yang lama'
+UpdatedAndRebootNeeded = 'terbarui. Komputer memerlukan reboot' 
+UpdatedAndProductRestartNeeded = 'terbarui. Di butuhkan restart aplikasi' 
+SomeBasesNeedUpdate = 'pembaruan di butuhkan untuk beberapa perlindungan komponen'
+
+Schedule_Auto    = 'otomatis' 
+Schedule_Manual  = 'manual' 
+Schedule_Fixed   = 'menurut jadwal' 
+
+Back = 'Kembali' 
+StopTask = 'Berhenti'
+
+News = 'Berita'
+Reports = 'Laporan'
+Settings = 'Pengaturan'
+Help = '&Bantuan'
+OK = 'Oke'
+Cancel = 'Batal'
+Retry = 'Coba kembali'
+
+Unknown = 'diketahui'
+
+ShortDateTimeWithSecondsFormat = '%d/%m/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%d/%m/%Y %I:%M %p'
+ShortDateFormat = '%d/%m/%Y'
+
+ShortDateTimeNewsFormat = '%d/%m/%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'hari ini, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'kemarin, %H:%M'
+
+MonthName_1  = 'Januari'
+MonthName_2  = 'Februari'
+MonthName_3  = 'Maret'
+MonthName_4  = 'April'
+MonthName_5  = 'Mei'
+MonthName_6  = 'Juni'
+MonthName_7  = 'Juli'
+MonthName_8  = 'Agustus'
+MonthName_9  = 'September'
+MonthName_10 = 'Oktober'
+MonthName_11 = 'November'
+MonthName_12 = 'Desember'
+ 
+DateUnknown = 'diketahui'
+
+After = 'di dalam'
+Remaining = 'tersisa'
+Ago = 'yang lalu'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'hari'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'jam'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'menit'}
+LessMinute_After = '<1 menit'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'hari'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'jam'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'menit'}
+LessMinute_Remaining = '<1 menit'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'hari'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'jam'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'menit'}
+LessMinute_Ago = '<1 menit'
+
+Yesterday   = 'kemarin'
+Today       = 'hari ini' 
+LessWeek    = 'kurang dari seminggu yang lalu'
+LessTwoWeek = 'kurang dari 2 minggu yang lalu'
+LessMonth   = 'kurang dari sebulan yang lalu'
+MoreMonth   = 'lebih dari sebulan yang lalu'
+MoreHalfYear= 'lebih dari setengah tahun yang lalu'
+MoreYear    = 'lebih dari setahun yang lalu'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'Oke'
+CancelButton = 'Batal'
+ApplyButton = 'Diterapkan'
+CloseButton = 'Tutup'
+NextButton = 'Berikutnya >'
+BackButton = '< Kembali'
+FinishButton = 'Selesai'
+SaveButton = 'Simpan'
+SkipButton = 'Lewat'
+Continue = 'Lanjutkan'
+Yes = 'Ya'
+No = 'Tidak'
+
+SettingsMore = '&Pengaturan...'
+
+DoNoyShowThisWindow = 'Jangan di tampilkan'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Kesalahan tak terdefinisi'
+SystemError_0x8000004B = 'Kesalahan tak terdefinisi'
+SystemError_0x80000041 = 'Tidak cukup memori'
+SystemError_0x80000042 = 'Tidak mendukung'
+SystemError_0x80000043 = 'Tidak terimplementasi'
+SystemError_0x80000045 = 'Akses ditolak atau objek tidak ditemukan'
+SystemError_0x8000004C = 'Objek tidak ditemukan'
+SystemError_0x800000C6 = 'Objek tidak ditemukan'
+SystemError_0x800000C5 = 'Objek tidak ditemukan'
+SystemError_0x8000004F = 'Objek terkunci'
+SystemError_0x80000051 = 'Operasi dibatalkan'
+SystemError_0x80000059 = 'Device Rusak'
+SystemError_0x8000005A = 'Signature tidak valid'
+SystemError_0x8000005B = 'Versi tidak valid'
+SystemError_0x8000005F = 'Perlindungan menulis'
+SystemError_0x80000061 = 'Lisensi hilang'
+SystemError_0x80000062 = 'Keluar dari ruang'
+SystemError_0x80000063 = 'Perangkat belum siap'
+SystemError_0x800000C0 = 'Format tidak benar'
+SystemError_0x800000C1 = 'Hak tidak cukup'
+SystemError_0x800000C2 = 'Kesalahan inisialisasi'
+SystemError_0x800000C3 = 'Kesalahan inisialisasi'
+SystemError_0x800000C7 = 'Keadaan objek salah'
+SystemError_0x800000C8 = 'Objek diproteksi oleh kata sandi'
+SystemError_0x800000CA = 'Membaca kesalahan'
+SystemError_0x800000CC = 'Membaca kesalahan'
+SystemError_0x800000CB = 'Salah menulis'
+SystemError_0x800000CD = 'Salah menulis'
+SystemError_0x800000D0 = 'Objek tidak valid'
+SystemError_0x800000D1 = 'Objek sudah ada'
+SystemError_0x800000D5 = 'Objek digunakan oleh aplikasi yang lain'
+SystemError_0x800000D8 = 'Basis data rusak'
+SystemError_0x800001C0 = 'Module tidak valid'
+SystemError_0x800001C2 = 'Module tidak di konfirmasi'
+SystemError_0x800001C1 = 'Module tidak ditemukan'
+SystemError_0x800001C4 = 'Komponen tidak dapat dimuat'
+SystemError_0x80000221 = 'Waktu habis'
+SystemError_0x80000240 = 'Kesalahan interaksi component'
+SystemError_0x90005000 = 'Tanda tangan digital salah'
+SystemError_0x90005002 = 'Tidak disetujui secara digital'
+SystemError_0x80027006 = 'Tugas dihentikan'
+SystemError_0x80027007 = 'Tugas dihentikan'
+SystemError_0x80380fbb = 'Tugas dihentikan'
+SystemError_0x80017007 = 'Tugas tidak bisa di jalankan di safe mode'
+SystemError_0x80017005 = 'Tugas dinonaktifkan'
+SystemError_0x80017006 = 'Nama User dan kata sandi tidak benar'
+SystemError_0x80017008 = 'Tugas peluncuran atas nama user account lain tidak mungkin dalam mode aman'
+SystemError_0x80017009 = 'Driver tidak di temukan'
+SystemError_0x80022005 = 'Kesalahan dalam memuat basis data'
+SystemError_default    = 'Kode kesalahan: ' + $ErrorCode
+
+LicenseManager = '&Lisensi'
+SubscriptionManager = 'Mengelola Subscription'
+ProblemSolution = 'Buka jendela lisensi untuk menyelesaikan masalah ini'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'tidak aktif' ;refers to connection
+Stopping = 'berhenti'
+ConnectingToServer = 'koneksi ke server'
+CreatingUpdateList = 'memproses berkas'
+Downloading = 'mengunduh berkas'
+Installing = 'memperbaharui berkas'
+RollbackRunning = 'kembali ke basis data sebelumnya'
+
+FunctionalityDisabledForExpiredSubscription = 'memperbarui di nonaktifkan'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'perlindungan terhadap komputer anda di nonaktifkan'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'hari'} + ' tersisa.'
+SubscriptionExpiresToday = 'hari ini masa berlaku habis'
+SubscriptionActivated = 'diaktifkan'
+CheckReserveCodeManuallyHeader = 'Gagal untuk mengaktifkan aplikasi secara otomatis dengan menggunakan kode aktivasi baru' ; TODO
+CheckReserveCodeManuallyText = 'Cobalah untuk mengaktifkan aplikasi melalui kode aktivasi baru secara manual.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Versi beta dari aplikasi telah terinstall'
+LicensingStatus_Trial_ShortDescription = 'Versi ujicoba dari aplikasi telah terinstall'
+LicensingStatus_OkSubscription_ShortDescription = 'Berlangganan: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Masa berlaku lisensi akan segera berakhir'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Masa berlaku lisensi akan segera berakhir'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_InvalidKey_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_Reinstall_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'List hitam untuk kunci rusak'
+LicensingStatus_CorruptedBases_ShortDescription = 'Tidak dapat memverifikasi korespondensi basis data dengan perjanjian lisensi pengguna akhir'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Validitas periode lisensi tidak diperbolehkan menggunakan basis data yang ada saat ini'
+LicensingStatus_Expired_ShortDescription = 'Masa berlaku lisensi berakhir'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'berlangganan telah berakhir pada ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Masa berlaku lisensi berakhir'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Versi beta sudah kadaluarsa'
+LicensingStatus_Blocked_ShortDescription = 'Lisensi di blokir'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Berlangganan diblokir'
+LicensingStatus_LicenseViolated_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Terdeteksi masalah lisensi'
+LicensingStatus_Grace_ShortDescription = 'berlangganan telah berakhir pada ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Waktu berlangganan ditanguhkan dari ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Gagal memperbarui status langganan secara otomatis'
+LicensingStatus_NotActivated_ShortDescription = 'Aplikasi tidak teraktivasi'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Aplikasi tidak teraktivasi'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Aplikasi tidak teraktivasi'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Aplikasi tidak teraktivasi'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Kode aktifasi baru'
+ReserveCodeStatus_Ok_ShortDescription = 'Kode aktifasi baru'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Kode aktifasi baru salah'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Kode aktifasi baru gagal di aktifkan'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Aktifasi otomatis diharapkan'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Versi beta dari ' + $ProductNameFull + ' berisi fungsionalitas penuh tetapi tidak versi jadi dan dapat mengandung kesalahan, kegagalan atau cacat. Silakan laporkan masalah di bagian yang sesuai dari forum kami.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'hari'} + ' tersisa. Pada akhir periode ini fungsionalitas aplikasi akan sangat terbatas.' 
+LicenseEndsToday = 'Ini adalah hari terakhir dari lisensi Anda. Fungsionalitas aplikasi akan terbatas jika Anda tidak memperbarui.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Masa berlangganan telah aktif. Berlaku sampai tanggal: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Masa berlangganan diperpanjang sampai ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Berlangganan dibatalkan. Berlaku sampai tanggal: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'berlangganan ditunda dari ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Berlangganan diperpanjang dan tiada akkhir'
+StateUnlimitedSubscriptionResumedText = 'Masa berlangganan dilanjutkan'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'dalam ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'hari', 'hari'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'hari'} + ' tersisa. Setelah ini fungsionalitas aplikasi periode akan sangat terbatas.'
+LicensingStatus_ExpiresToday_Cause = 'Hari berakhir. Fungsionalitas aplikasi akan dibatasi pada saat jatuh tempo.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Tanggal kunci penciptaan salah. Tanggal sistem pada komputer anda telah diubah. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Tanggal aktivasi salah. Tanggal sistem pada komputer anda telah diubah. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Integritas aplikasi rusak. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Direkomendasikan untuk mengunduh blacklist baru dari server.'
+LicensingStatus_CorruptedBases_Cause = 'Salah satu alasan yang mungkin adalah pembaharuan gagal. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Anda mungkin telah membeli sebuah salinan aplikasi yang ilegal. Perlindungan dijeda. Komputer Anda beresiko terinfeksi, rusak, atau karena data yang dicuri.'
+LicensingStatus_BlockedSubscription_Cause = 'Anda membeli salinan ilegal dari aplikasi ini. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Anda telah melampaui jumlah maksimum komputer untuk ' + $ProductName + ' yang dapat di install dengan lisensi anda. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Anda telah melampaui jumlah komputer maksimum ' + $ProductName + ' dapat diinstalasi jika anda berlangganan. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'hari'} + ' tersisa sampai ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Waktu antara koneksi ke aktivasi server terlalu lama. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Kode aktivasi yang telah ditetapkan tersedia. Aplikasi akan diaktifasi segera setelah tersedia koneksi internet.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Kode aktivasi Preset tersedia. Anda dapat mengaktifkan aplikasi dengan cara ini kode aktivasi atau menghapus kode aktivasi yang telah ditetapkan.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Aplikasi ini tidak diaktifkan secara otomatis dengan cara kode aktivasi yang ditetapkan. Bantuan Anda diperlukan.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Anda dapat memasukkan kode aktifasi baru. Aplikasi ini akan diaktifkan dengan menggunakan kode aktivasi setelah lisensi saat ini berakhir .'
+ReserveCodeStatus_Ok_Cause = 'Kode aktivasi baru hadir di komputer Anda. Setelah lisensi saat ini berakhir, aplikasi akan secara otomatis diaktifkan dengan kode aktivasi yang baru. Tidak akan ada gangguan keamanan Anda.'
+ReserveCodeStatus_Invalid_Cause = 'Setelah lisensi saat ini berakhir, pembaruan tidak akan tersedia.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Gagal untuk mengaktifkan aplikasi melalui kode aktivasi baru ' + $ReserveCode + ' otomatis. Bantuan anda diperlukan.'
+ReserveCodeStatus_WaitActivation_Cause = 'Otomatis aktivasi melalui kode aktivasi baru ' + $ReserveCode + ' diharapkan.'
+
+ResolveProblem_BuyCommercial         = 'Anda disarankan untuk membeli dan mengaktifkan versi komersial untuk aplikasi ini.'
+ResolveProblem_CheckSystemTime		= 'Pastikan bahwa tanggal sistim benar.'
+ResolveProblem_ActivateAgain        = 'Cobalah untuk menghapus kunci aktivasi dan aktifkan aplikasi sekali lagi. Anda juga bisa menghubungi dukungan teknisi atau distributor aplikasi.'
+ResolveProblem_CallSupport			= 'Anda disarankan untuk menghubungi Dukungan Teknis untuk mengetahui alasan pemblokiran. Untuk mengembalikan fungsionalitas aplikasi, dapatkanlah lisensi baru.'
+ResolveProblem_ContactSupport		= 'Hubungi technical support.'
+ResolveProblem_ActialLicense		= 'Untuk melanjutkan perlindungan terhadap komputer anda, masukan kode aktivasi baru.'
+ResolveProblem_UpdateAgain			= 'Anda disarankan untuk kembali memperbarui basis data.'
+ResolveProblem_BuyNewLicense		= 'Untuk melanjutkan perlindungan pada komputer anda, dapatkan lisensi yang baru.'
+ResolveProblem_CallProvider			= 'Untuk melanjutkan berlangganan, hubungi penyedia layanan anda.'
+ResolveProblem_ProviderWebSite		= 'Untuk melanjutkan berlangganan, hubungi penyedia layanan anda.'
+ResolveProblem_RenewalNotAvailable	= 'Pembaruan berlangganan tidak tersedia.'
+ResolveProblem_BuyLicense			= 'Untuk melanjutan perlindungan terhadap komputer anda, anda harus memperoleh lisensi komersil dari Kaspersky Lab atau Distributor kami. Versi percobaan hanya bisa digunakan untuk sekali pakai.'
+ResolveProblem_Reinstall			= 'Instalasi kembali aplikasi.'
+ResolveProblem_RenewLicense			= 'Untuk mendapatkan fungsi penuh, lisensi harus diperbaharui.'
+ResolveProblem_RefreshSubscription	= 'Silahkan perbarui status berlangganan secara manual.'
+ResolveProblem_Activate				= 'Masukan kode aktivasi untuk mengaktifkan aplikasi.'
+ResolveProblem_ActivateReserveCode  = 'Coba untuk aktifkan aplikasi dengan kode aktivasi yang baru secara manual.'
+ResolveProblem_ActivateCodeManual	= 'Aktifkan aplikasi secara manual.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Periksa pengaturan koneksi internet anda dan tunggu untuk aplikasi melakukan aktivasi otomatis atau lakukan activasi manual .'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Hal ini diperlukan untuk memasukkan kode aktivasi baru. Aplikasi ini akan diaktifkan dengan menggunakan kode aktivasi setelah lisensi saat ini berakhir.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + 'Hal ini diperlukan untuk mengaktifkan aplikasi melalui kode aktivasi sebelum lisensi percobaan berakhir.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Untuk melanjutkan fungsionalitas penuh dari aplikasi, diperlukan untuk memperoleh lisensi komersial di Kaspersky Lab atau distributor kami.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Hal ini diperlukan untuk mengaktifkan aplikasi melalui kode aktivasi sebelum lisensi percobaan berakhir.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Hal ini diperlukan untuk memasukkan kode aktivasi baru. Aplikasi ini akan diaktifkan dengan menggunakan kode aktivasi setelah lisensi saat ini berakhir.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Status perlindungan tidak diketahui. '
+ProtectionLevelNoFeaturesLong = 'Perlindungan di nonaktifkan. '
+ProtectionLevelLimitedLong = 'Fungsionalitas aplikasi terbatas. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Status pembaruan tidak diketahui. '
+UpdaterLevelNotAllowedLong = 'Pembaruan tidak tersedia. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'tidak diketahui'
+SubscriptionStateActive = 'aktif'
+SubscriptionStatePaused = 'tergantung'
+SubscriptionStateCancelledSoft = 'tergantung'
+SubscriptionStateCancelledHard = 'dibatalkan'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'tidak diketahui'
+SubscriptionStatusReasonProviderInitiated = 'diaktifkan oleh penyedia jasa'
+SubscriptionStatusReasonCreditCardAuthFailed = 'otorisasi kartu kredit menurun'
+SubscriptionStatusReasonCustomerInitiated = 'diaktifkan oleh pengguna'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'otorisasi kartu kredit diterima'
+
+ProductStatusRelease = 'versi rilis'
+ProductStatusBeta = 'versi beta'
+
+LegalStatusBlocked = 'lisensi diblokir'
+LegalStatusLimited = 'melanggar perjanjian lisensi'
+LegalStatusValid = 'lisensi yang berlaku'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Ada sebuah pemberitahuan lisensi penting.\n<a href="licensemanager">Rinci...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Masa berlangganan berakhir. Untuk memperbarui langganan, hubungi penyedia layanan Anda.'
+
+LicensingState_WarningIsAvailable = 'ada peringatan'
+ProtectionState_NotificationIsAvailable = 'Notifikasi lisensi'
+LicensingState_ProblemIsAvailable = 'ada permasalahan'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Software Kaspersky Security anda akan berakhir pada ' + $LicenseDaysToExpiry + ' hari, menjadikan PC anda tidak terlindungi'
+LNCS_BBY_WillExpire_Description =	'Untuk melanjutkan cakupan anda, silahkan memperbaharui secara online di The Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Title =	    'Software Kaspersky Security anda akan segera berakhir'
+LNCS_BBY_AboutToExpire_Description = 'Hanya ada '+ $LicenseDaysToExpiry + ' hari tersisa pada cakupan anda, dan kemudian PC anda tidak akan terlindungi. Perbarui sekarang dengan menghubungi The Geek Squad Berlangganan Software Team online di The Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Software Kaspersky Security Anda ini akan berakhir hari ini, meninggalkan PC Anda tak terlindungi'
+LNCS_BBY_AboutToExpire_Today_Description = 'Perpanjang sekarang dengan menghubungi Software Langganan The Geek Squad Team online di The Geek Squad Renewal Center'
+
+LNCS_BBY_LastDay_Title =	'Perhatian! Software Kaspersky Security anda akan berakhir pada hari ini'
+LNCS_BBY_LastDay_Description =	'Jangan biarkan PC anda pergi tak terlindungi. Perpanjang online di The Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Peringatan! Kaspersky Security Software anda berakhir hari ini. Jangan biarkan PC anda pergi tidak dilindungi. Perpanjang online di <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Perhatian! PC Anda tidak dilindungi'
+LNCS_BBY_Grace_Description =	'Jangan biarkan PC anda pergi tak terlindungi. Perpanjang online di The Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Jangan biarkan PC anda pergi tak terlindungi. Perpanjang online di The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Peringatan! PC anda tidak terlindungi. Jangan biarkan PC anda pergi tidak dilindungi. Perpanjang online di <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Kami tidak dapat memperbaharui Software Kaspersky Security anda'
+LNCS_BBY_RenewFailure_Description = 'Silakan memperbaharui secara online di The Geek Squad Renewal Center'
+LNCS_BBY_RenewFailure_Description_Full = 'Silakan memperbaharui secara online di The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Kami tidak dapat memperbaharui anda Software Security Kaspersky. Silakan memperbaharui online di <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Rencana Perlindungan Kaspersky anda beresiko dibatalkan karena berkas kartu kredit Anda akan segera kedaluwarsa'
+LNCS_BBY_CCAboutToExpire_Description =	'Silakan memperbaharui secara online di The Geek Squad Renewal Center'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Silakan memperbaharui secara online di The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Masa berlangganan berakhir'
+LNCS_BBY_Expired_Description =	'Perpanjangan langganan tidak tersedia.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Ambil keuntungan memperbarui Software Kaspersky Anti-Virus Anda secara awal dan hemat 5$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Ambil keuntungan memperbarui Software Kaspersky Anti-Virus Anda secara awal dan hemat 10$..' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Ambil keuntungan memperbarui Software Kaspersky Anti-Virus Anda secara awal dan hemat 15$..' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Ambil keuntungan memperbarui Software Kaspersky Anti-Virus Anda secara awal dan hemat 20$..' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Ambil keuntungan memperbarui Software Kaspersky Internet Security Anda secara awal dan hemat 5$..' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Ambil keuntungan memperbarui Software Kaspersky Internet Security Anda secara awal dan hemat 10$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Ambil keuntungan memperbarui Software Kaspersky Internet Security Anda secara awal dan hemat 15$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Ambil keuntungan memperbarui Software Kaspersky Internet Security Anda secara awal dan hemat 20$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Perbarui Sekarang</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Software Kaspersky Anti-Virus anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Software Kaspersky Anti-Virus anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Software Kaspersky Anti-Virus anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Software Kaspersky Anti-Virus anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Software Kaspersky Internet Security anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Software Kaspersky Internet Security anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Software Kaspersky Internet Security anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Software Kaspersky Internet Security anda akan berakhir!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik Disini</a> untuk menghemat $5 pada harga perpanjangan tahunan anda.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik Disini</a> untuk menghemat $10 pada harga perpanjangan tahunan anda.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik Disini</a> untuk menghemat $15 pada harga perpanjangan tahunan anda.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klik Disini</a> untuk menghemat $20 pada harga perpanjangan tahunan anda.'
+
+LNCS_BBY_StatusUpdate = 'Status produk bisa memakan waktu hingga 24 jam untuk berubah. Klik "Verifikasi status langganan" beberapa jam setelah menyelesaikan proses pembaharuan di The Geek Squad Renewal Center untuk memaksa produk untuk memeriksa pembaruan. '
+
+EndOfLicense_Header = 'Laporan hasil aplikasi'
+WelcomPageTitle = 'Selamat datang di ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Versi sistem operasi telah berubah sejak ' + $ProductName + ' instalasi'
+ReinstallWarningDescription = 'Silahkan instal kembali ' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + ' dihentikan sementara'
+IncompatibleOsVersionDescription = 'Untuk kinerja yang tepat dari' + $ProductName + ' setelah Microsoft Windows 8 diinstal Anda harus menginstal ulang beberapa komponen aplikasi. Instalasi tidak akan mengambil lebih dari 2 menit.' + '\n\nSelama ' + $ProductName + ' konfigurasi pada Microsoft Windows 8 komputer Anda\'s perlindungan akan dibatasi.'
+
+ReinstallWarningOkButton = 'Rinci'
+IncompatibleOsVersionOkButton = 'Install dan jalankan'
+
+BrowserWaitingMessage = 'Silahkan tunggu...'
+
+OsUpgradedTitle = 'Pembaharuan Sistem Operasi'
+OsUpgradedDescription = 'Pembaharuan sistem operasi telah berhasil diselesaikan.'

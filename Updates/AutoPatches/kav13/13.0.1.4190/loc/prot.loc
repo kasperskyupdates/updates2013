@@ -1,0 +1,1401 @@
+[Global]
+#eProtStateNormal   = 0
+#eProtStateWarn     = 1
+#eProtStateCrit     = 2
+
+#eThreatsOk						= 0x00
+#eAntiSpamNeedTraining			= 0x01
+#eThreatsNeedReboot				= 0x02
+#eThreatsMalwareUntreated		= 0x04
+#eThreatsRiskwareUntreated		= 0x08
+#eThreatsSuspiciousUntreated    = 0x10
+
+#eProtectionOk			 = 0x00
+#eFirewallBlockAll		 = 0x01
+#eTasksNotRunning		 = 0x04
+#eTasksDisabled          = 0x08
+#eTasksMalfunction       = 0x10
+#eProtectionNotRunnig    = 0x20
+#eProtectionDisabled     = 0x40
+#eProtectionSafeMode     = 0x80
+#eProtectionNotInstalled = 0x100
+#eHighRiskTasksNotRunning	= 0x200
+#eHighRiskTasksDisabled		= 0x400
+#eNotImportantTasksDisabled	= 0x800
+
+; Product states
+#ProdStateProductNews                  = 1
+#ProdStateProductNotAutoRun            = 2
+#ProdStateProductAdminPolicy           = 3
+#ProdStateProductNotProtected          = 4
+#ProdStateTasksDisabledByPolicy        = 5
+#ProdStateProductIsBeta                = 6
+#ProdStateProductNeedRestart           = 7
+#ProdStateProductNoEula                = 8
+
+; License states
+#ProdStateKeyTrial                     = 33
+#ProdStateLicenseNotificationWarning   = 34
+#ProdStateKeyGracePeriod               = 36
+#ProdStateKeyExpired                   = 38
+#ProdStateKeyTrialExpired              = 39
+#ProdStateKeyBlocked                   = 40
+#ProdStateNoKeys                       = 41
+#ProdStateKeyInvalid                   = 42
+#ProdStateKeyLimited                   = 43
+#ProdStateLicenseNotificationCritical  = 44
+#ProdStateKeyUpdateFailed              = 45
+#ProdStatePreinstalledCodeWaitActivationCritical = 46
+#ProdStateKeySuspended                 = 47
+#ProdStateKeyWaitReservedActivationCritical = 48
+#ProdStateKeyReservedActivationProblem = 49
+#ProdStateKeyInvalidReserveCode		   = 50
+#ProdStateKeyWaitReservedActivationInfo = 51
+#ProdStateLicenseNotificationInfo  = 52
+#ProdStatePreinstalledCodeWaitActivationInfo = 53
+#ProdStatePreinstalledCodeActivationProblem = 54
+#ProdStatePreinstalledCodeAvailable	= 55
+
+; Protection state
+#ProdStateFirewallBlockAll             = 65
+#ProdStateTasksNotRunning              = 67
+#ProdStateTasksDisabled                = 68
+#ProdStateTasksMalfunction             = 69
+#ProdStateProtectionNotRunning         = 70
+#ProdStateProtectionDisabled           = 71
+#ProdStateProtectionSafeMode           = 72
+#ProdStateProtectionNotInstalled       = 73
+#ProdStateHighRiskTasksNotRunning      = 74
+#ProdStateHighRiskTasksDisabled        = 75
+
+; Update state
+#ProdStateUpdateNotAuto                = 97
+#ProdStateSomeBasesNeedUpdate          = 98
+#ProdStateBasesVeryOldGrace            = 99
+#ProdStateBasesVeryOld                 = 100
+#ProdStateBasesOldGrace                = 101
+#ProdStateBasesOld                     = 102
+#ProdStateUpdateNeedReboot             = 103
+#ProdStateBasesCorrupted               = 104
+
+; Threats state
+#ProdStateAntiSpamNeedTraining         = 129
+#ProdStateThreatsNeedReboot            = 130
+#ProdStateThreatsMalwareUntreated      = 131
+#ProdStateThreatsRiskwareUntreated     = 132
+#ProdStateThreatsSuspiciousUntreated   = 133
+#ProdStateMax						   = 224
+#ProdStateSomeSkipped                  = 10000
+#ProdStateAllOk                        = 0
+
+ProductStateSeverity = s_ProdStateSeverity(nVal1)
+GadgetProtectionStateText = s_ProdState_Threats(s_ProdStateSeverity(nVal1), nVal1)
+
+$IsActiveGreenPeriod = ( $IsActiveKeyTrial && bindok("global.SupportCustom.GreenPeriod") && (global.LicInfo.LicUsageDays <= global.SupportCustom.GreenPeriod ) )
+
+#eNotifySeverityCritical           = 1
+#eNotifySeverityError              = 2
+#eNotifySeverityImportant          = 3
+#eNotifySeverityNotImportant       = 4
+
+$NotifyEventSeverity               = s_VerdictIcon2ProdStateSeverity(s_VerdictIcon(Verdict))
+
+$IsBasesOk = (global.UpdateState <= #eUpdateNotAuto || f_isGracePeriodForUpdateState(global.UpdateState))
+
+$DetectTypeEx = (DetectType == #DETYPE_VULNERABILITY ? f_VulnerUrl(DetectName) : ((ObjectType == #ObjectURL) ? capitalize(s_DetectTypeShort(DetectType)) : (DetectName ? DetectName : objfile(ObjectName))))
+$DetectTypeDescr = if (DetectType == #DETYPE_VULNERABILITY, capitalize(s_DetectType(DetectType)) + " " + f_VulnerUrlLink(DetectName), $DetectTypeEx)
+
+; ePasswordConfirmReason
+#pwdc_OpenWindow       = 0
+#pwdc_SaveSettings     = 1
+#pwdc_StopTask         = 2
+#pwdc_Exit             = 3
+#pwdc_StopService      = 4
+#pwdc_Activate         = 5
+#pwdc_SaveStateAndSettings = 6
+#pwdc_StartTask        = 7
+#pwdc_OpenBackup       = 8
+#pwdc_OpenConsole      = 9
+#pwdc_OpenParctl       = 10
+
+; f_GetTypeOfTime - ��������� �������, ��� ����������
+#ePeriodDay     = 0
+#ePeriodWeek    = 1
+#ePeriodMonth   = 2
+#ePeriodYear    = 3
+
+$TreatIcon_High            = "ObjectStatus,3"
+$TreatIcon_Med             = "ObjectStatus,2"
+$TreatIcon_Inactive        = "ObjectStatus,0"
+$TreatIcon_Clean           = "ObjectStatus,0"
+$TreatIcon_Cured           = "ObjectStatus,0"
+$TreatIcon_CuredDelayed    = "ObjectStatus,1"
+
+QBOperationError = s_QBOperationsError(OperationCode)
+ProductEventSeverityText = s_ProductEventSeverityText(Severity) + ": "
+
+; alert macro cAskObjectAction::Actions
+#AlertActionActiveDetect     = 0xf0804
+#AlertActionDisinfect        = 0xf0800
+
+; alert macro cAskGuiAction::Actions
+#AlertActionShowOlaForm     = 0x00130110
+
+$AlertAppLink = (appID ? "<b><a onclick(dialog(\"AppRulesEdit\", p_appID(appID), p_pid(nPID), p_image(sImagePath)))>" + s_AppName(appID) + "</a></b>" : $UnknownApp)
+$AlertImgPathLink = "<b><a onclick(dialog(\"AppRulesEdit\", p_image(sImagePath)))>" + objfile(sImagePath) + "</a></b>"
+$AlertAppInfoStruct = nDestPID > 0 ? f_ProcessInfo(nDestPID).Module : appInfo(@1)
+
+$UseApplyToAll =  !(ApplyToAll & #APPLYTOALL_NONE) && s_ApplyToAllByTask(TaskType)
+
+$g_phish1 = (f_IsStateRunningOK(Web_Monitoring.state) && httpscan.HTTPSettings.UseAntiphishing )
+$g_phish2 = (f_IsStateRunningOK(IM_Monitoring.state) && IM_Monitoring.UseAntiphishing )
+$g_phish3 = (f_IsStateRunningOK(Anti_Spam.state) && Anti_Spam.UseAntiphishing )
+$g_antiphishInstall = f_isInstalled("IM_Monitoring") || f_isInstalled("Web_Monitoring") || f_isInstalled("Anti_Spam")
+;$g_antiphishAll = ($g_phish1 || !f_isInstalled("Web_Monitoring")) && ($g_phish2 || !f_isInstalled("IM_Monitoring")) && ($g_phish3 || !f_isInstalled("Anti_Spam")) && $g_antiphishInstall
+$g_antiphishAll = (!f_isInstalled("Web_Monitoring") || $g_phish1) && (!f_isInstalled("IM_Monitoring") || $g_phish2) && (!f_isInstalled("Anti_Spam") || $g_phish3)
+$g_antiphishAny = $g_phish1 || $g_phish2 || $g_phish3
+
+#green = 1
+#gray  = 2
+#red   = 3
+#warn  = 4
+
+#INV_EVENT_TYPE_FILE_OPEN				= 1
+#INV_EVENT_TYPE_FILE_CLOSE				= 2
+#INV_EVENT_TYPE_FILE_DELETE				= 3
+#INV_EVENT_TYPE_FILE_RENAME				= 4
+#INV_EVENT_TYPE_PROCESS_CREATE			= 5
+#INV_EVENT_TYPE_PROCESS_EXIT			= 6
+#INV_EVENT_TYPE_PROCESS_TERMINATE		= 7
+#INV_EVENT_TYPE_REGYSTRY_KEY_CREATE		= 8
+#INV_EVENT_TYPE_REGYSTRY_KEY_DELETE		= 9
+#INV_EVENT_TYPE_REGYSTRY_VALUE_SET		= 10
+#INV_EVENT_TYPE_REGYSTRY_VALUE_DELETE   = 11
+#INV_FLAG_CREATE                        = 0x1
+#INV_FLAG_MODIFY                        = 0x2
+
+$HasKsnInfo         = UseKSN && f_isHipsGroup() && !s_HipsSelfAction(Action)
+$AlertDialogAppInfo = dialog("AppRulesEdit", p_appID(appID), p_pid(nPID), p_image(sImagePath))
+$PdmDriverObject  = TaskType == "pdm" && 0 == nPID
+$IsCategoryAlert = (bindok("Categories") && Categories.size() > 0 && Categories.find("e == #ScanPasswordManagement || e == #ScanRemoteAdministration || e == #ScanMonitoring || e == #ScanAdvertising") != null)
+$IsOasOnExecute = (bindok("bOnExecute") && bOnExecute)
+$IsSpecialRiskwareAlert = (((TaskType == "oas" && $IsOasOnExecute) || TaskType == "ods") && $IsCategoryAlert)
+
+$IsExactDetect = if(TaskType == "pdm", false, #DETDANGER_HIGH == DetectDanger && DetectStatus != #DSTATUS_HEURISTIC)
+
+$LtrMark=""
+
+; ToastCancelAction
+#ToastCancelAction_Empty		= 0
+#ToastCancelAction_Default		= 1
+
+[f_isGracePeriodForUpdateState]
+ret = (global.UpdateState & (#eBasesVeryOldGrace | #eBasesOldGrace))
+
+[f_antiphishOnOff]
+$l_phishWebFail = (Web_Monitoring.state == #StateFailed && httpscan.HTTPSettings.UseAntiphishing)
+$l_phishIMFail  = (IM_Monitoring.state  == #StateFailed && IM_Monitoring.UseAntiphishing)
+$l_phishASFail  = (Anti_Spam.state      == #StateFailed && Anti_Spam.UseAntiphishing)
+$l_antiphishAllFail = ($l_phishWebFail || !f_isInstalled("Web_Monitoring")) && ($l_phishIMFail || !f_isInstalled("IM_Monitoring")) && ($l_phishASFail || !f_isInstalled("Anti_Spam"))
+;$l_antiphishAllOff  = (!($g_phish1) || !f_isInstalled("Web_Monitoring")) && (!($g_phish2) || !f_isInstalled("IM_Monitoring")) && (!($g_phish3) || !f_isInstalled("Anti_Spam"))
+$l_antiphishAllOff  = ((!$g_phish1) && (!$g_phish2) && (!$g_phish3))
+ret   = $l_antiphishAllFail ? #red : ($g_antiphishAll ? #green : ($l_antiphishAllOff ? #gray : #warn) )
+
+[f_IsAntiphishStateRunning]
+ret = var nState; nState = f_antiphishOnOff(); nState == #green || nState == #red
+
+[s_EnableAntiPhishing]
+#red   = httpscan.HTTPSettings.UseAntiphishing = false;IM_Monitoring.UseAntiphishing = false;Anti_Spam.UseAntiphishing = false;enable(false, "IM_Monitoring"); enable(false,"Web_Monitoring"); enable(false,"Anti_Spam")
+#green = httpscan.HTTPSettings.UseAntiphishing = false;IM_Monitoring.UseAntiphishing = false;Anti_Spam.UseAntiphishing = false
+#warn  = httpscan.HTTPSettings.UseAntiphishing = false;IM_Monitoring.UseAntiphishing = false;Anti_Spam.UseAntiphishing = false
+#gray  = httpscan.HTTPSettings.UseAntiphishing = true;IM_Monitoring.UseAntiphishing = true;Anti_Spam.UseAntiphishing = true;enable(true, "IM_Monitoring"); enable(true, "Web_Monitoring"); enable(true, "Anti_Spam")
+def    = @
+
+[s_PdmActionToExclude]
+#PDM2_ACTION_ROLLBACK
+#PDM2_ACTION_BLOCKED_APP_START
+; in KIS2011 'Allow' add to excludes when Action == #evtDrvStart
+#evtDrvStart                   = false
+default                        = s_PdmEventToExclude(EventType)
+
+[s_PdmEventToExclude]
+; always no
+#PDM2_EVENT_NEGATIVE_PID
+#PDM2_EVENT_HIDDEN_OBJ         = false
+;always yes
+#PDM2_EVENT_IRP_TABLE_CHANGED
+#PDM2_EVENT_KEYLOGGER          = true
+;depends Action
+default                        = 0 != nPID && DetectType==#DETYPE_RISKWARE
+
+[s_VerdictPathMask]
+pdm = AdditionalInfo
+
+[s_VerdictIcon2ProdStateSeverity]
+crit    = #eProtStateCrit
+med     = #eProtStateWarn
+def     = #eProtStateNormal
+
+[s_IsEventObjClickable]
+#evtPrtStgAccess =
+#evtUseBITS =
+#evtUseDNS	= 0
+default		= !Verdict
+
+[s_TrayProductStateList]
+#ProdStateProtectionDisabled
+
+[s_ProductStateList]
+#ProdStateProductNoEula
+#ProdStateKeyBlocked
+#ProdStateKeyInvalid
+#ProdStateKeyLimited
+#ProdStateKeyTrialExpired
+#ProdStateKeyExpired
+#ProdStateKeySuspended
+#ProdStateKeyUpdateFailed
+#ProdStateNoKeys
+#ProdStatePreinstalledCodeAvailable
+#ProdStatePreinstalledCodeActivationProblem
+#ProdStatePreinstalledCodeWaitActivationCritical
+#ProdStateKeyWaitReservedActivationCritical
+#ProdStateKeyReservedActivationProblem
+#ProdStateKeyInvalidReserveCode
+#ProdStateThreatsNeedReboot
+;#ProdStateProductAdminPolicy
+#ProdStateThreatsMalwareUntreated
+#ProdStateBasesCorrupted
+#ProdStateBasesVeryOld
+#ProdStateLicenseNotificationCritical
+#ProdStateKeyGracePeriod
+#ProdStateTasksMalfunction
+#ProdStateHighRiskTasksDisabled
+#ProdStateHighRiskTasksNotRunning
+#ProdStateProtectionNotRunning
+#ProdStateProtectionDisabled
+#ProdStateFirewallBlockAll
+#ProdStateProductNotProtected
+#ProdStateUpdateNeedReboot
+#ProdStateProductNeedRestart
+#ProdStateBasesOld
+#ProdStateThreatsSuspiciousUntreated
+#ProdStateThreatsRiskwareUntreated
+#ProdStateTasksDisabled
+#ProdStateTasksNotRunning
+#ProdStateLicenseNotificationWarning
+#ProdStateBasesVeryOldGrace
+#ProdStateBasesOldGrace
+#ProdStateSomeBasesNeedUpdate
+#ProdStateKeyWaitReservedActivationInfo
+#ProdStateLicenseNotificationInfo
+#ProdStatePreinstalledCodeWaitActivationInfo
+#ProdStateKeyTrial
+#ProdStateProductNotAutoRun
+#ProdStateUpdateNotAuto
+#ProdStateProtectionSafeMode
+#ProdStateAntiSpamNeedTraining
+#ProdStateProductIsBeta
+#ProdStateSomeSkipped
+
+[s_IsLicInvalidReason_NeedUpdate]
+#ekirInvalidBlacklist
+#ekirInconsistentUpdate = 1
+default = 0
+
+[s_ProductLinkText]
+#ProdStateProductNoEula            = $LinkAcceptEula
+#ProdStateProductNeedRestart       = $LinkRestartProduct
+#ProdStateKeyBlocked               = $LinkTechnicalSupport
+#ProdStateKeyInvalid               = s_IsLicInvalidReason_NeedUpdate(LicInfo.InvalidReason) ? if(f_isInstalled("Updater"), $LinkUpdateNow) : $LinkMoreDetails
+#ProdStateKeyLimited               = $LicenseManager
+#ProdStateKeyTrialExpired		
+#ProdStateKeyExpired
+#ProdStateNoKeys
+#ProdStatePreinstalledCodeAvailable = $LinkActivate
+#ProdStateKeySuspended
+#ProdStateKeyUpdateFailed          = $LinkUpdateSubsriptionStatus
+#ProdStateProtectionSafeMode
+#ProdStateThreatsNeedReboot
+#ProdStateUpdateNeedReboot         = $LinkRestartComputer
+#ProdStateThreatsMalwareUntreated
+#ProdStateThreatsSuspiciousUntreated
+#ProdStateThreatsRiskwareUntreated = $LinkMoreDetails
+#ProdStateProductNotProtected      = $LinkProtect
+#ProdStateProductNotAutoRun        = $LinkAutoRun
+#ProdStateBasesCorrupted
+#ProdStateSomeBasesNeedUpdate
+#ProdStateBasesVeryOldGrace
+#ProdStateBasesVeryOld
+#ProdStateBasesOldGrace
+#ProdStateBasesOld                 = $IsKAT ? $LinkProductBundleDownload : (s_IsFunctionalityLevel_Updater(LicInfo.UpdaterLevel) ? if(f_isInstalled("Updater"), $LinkUpdateNow) : $LinkActivate)
+#ProdStateKeyGracePeriod
+#ProdStateLicenseNotificationInfo
+#ProdStateLicenseNotificationWarning
+#ProdStateLicenseNotificationCritical = $LicensingSubsystem
+#ProdStateTasksMalfunction         = $LinkRepairInstall
+#ProdStateProtectionNotRunning
+#ProdStateProtectionDisabled       = $LinkProtectionTurnOn
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled            = $LinkServicesTurnOn
+#ProdStateHighRiskTasksNotRunning
+#ProdStateTasksNotRunning          = $LinkServicesResume
+#ProdStateKeyTrial                 = $LicenseManager
+#ProdStateAntiSpamNeedTraining     = $LinkStartAntiSpamTrainingWizard
+#ProdStateFirewallBlockAll         = $LinkFirewallUnBlock
+#ProdStateProductIsBeta            = if(!$IsRD, $BetaForumLinkCaption)
+#ProdStateSomeSkipped              = $LinkProdStateSomeSkipped
+#ProdStateUpdateNotAuto            = $LinkAutoUpdateTurnOn
+#ProdStatePreinstalledCodeActivationProblem
+#ProdStatePreinstalledCodeWaitActivationInfo
+#ProdStatePreinstalledCodeWaitActivationCritical
+#ProdStateKeyWaitReservedActivationInfo
+#ProdStateKeyWaitReservedActivationCritical
+#ProdStateKeyReservedActivationProblem
+#ProdStateKeyInvalidReserveCode		= $LinkMoreDetails
+
+[s_ProductLinkClick]
+#ProdStateProductNoEula            = $ShowEulaEx
+#ProdStateProductNeedRestart       = f_RestartApp()
+#ProdStateKeyBlocked               = url($SupportLink)
+#ProdStateKeyInvalid               = s_IsLicInvalidReason_NeedUpdate(product.LicInfo.InvalidReason) ? f_StartUpdater() : window("QMLMainWindow:LicenseManager")
+#ProdStateKeyLimited               = window("QMLMainWindow:LicenseManager")
+#ProdStateKeyTrialExpired
+#ProdStateKeyExpired
+#ProdStateNoKeys
+#ProdStatePreinstalledCodeAvailable
+#ProdStateKeySuspended             = $IsSubscription? window("QMLMainWindow:LicenseManager") : f_Activate()
+#ProdStateKeyUpdateFailed          = $IsSubscription? update_subscr_status() : f_Activate()
+#ProdStateProtectionSafeMode
+#ProdStateThreatsNeedReboot
+#ProdStateUpdateNeedReboot         = f_RestartOs()
+#ProdStateThreatsMalwareUntreated
+#ProdStateThreatsSuspiciousUntreated 
+#ProdStateThreatsRiskwareUntreated = window("QMLMainWindow:ProblemList")
+#ProdStateProductNotProtected      = f_TurnSelfProtectionOn()
+#ProdStateProductNotAutoRun        = f_RunAtStartup()
+#ProdStateBasesCorrupted
+#ProdStateSomeBasesNeedUpdate
+#ProdStateBasesVeryOldGrace
+#ProdStateBasesVeryOld
+#ProdStateBasesOldGrace
+#ProdStateBasesOld                 = $IsKAT ? url(env("ProductBundleDownloadLink")) : (s_IsFunctionalityLevel_Updater(product.LicInfo.UpdaterLevel) ? f_StartUpdater() : f_Activate())
+#ProdStateKeyGracePeriod
+#ProdStateLicenseNotificationInfo
+#ProdStateLicenseNotificationCritical
+#ProdStateLicenseNotificationWarning = window("QMLMainWindow:LicenseManager")
+#ProdStateTasksMalfunction         = f_repairProduct()
+#ProdStateProtectionNotRunning     = setstate(#TASK_REQUEST_RUN, "Protection")
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled
+#ProdStateProtectionDisabled       
+#ProdStateHighRiskTasksNotRunning  
+#ProdStateTasksNotRunning          = enable(true, "Protection"); setstate(#TASK_REQUEST_RUN, "Protection")
+#ProdStateKeyTrial                 = window("QMLMainWindow:LicenseManager")
+#ProdStateAntiSpamNeedTraining     = f_StartAntiSpamTrainingWizard()
+#ProdStateFirewallBlockAll         = Hips.FirewallSettings.WorkingMode = #fwAllow
+#ProdStateProductIsBeta            = url(env("ForumLink") + "//index.php?showforum=" + $BetaForumLinkSuffix)
+#ProdStateSomeSkipped              = prodStateEnable(-1)
+#ProdStateUpdateNotAuto            = autoUpdatesOn()
+#ProdStatePreinstalledCodeActivationProblem
+#ProdStatePreinstalledCodeWaitActivationInfo
+#ProdStatePreinstalledCodeWaitActivationCritical
+#ProdStateKeyWaitReservedActivationInfo
+#ProdStateKeyWaitReservedActivationCritical
+#ProdStateKeyReservedActivationProblem
+#ProdStateKeyInvalidReserveCode		= window("QMLMainWindow:LicenseManager")
+
+[s_ProductLinkText2]
+#ProdStateThreatsMalwareUntreated
+#ProdStateThreatsSuspiciousUntreated
+#ProdStateThreatsRiskwareUntreated = $LinkMoreDetails
+#ProdStateTasksMalfunction = $LinkSupport
+
+[s_ProductLinkClick2]
+#ProdStateThreatsMalwareUntreated
+#ProdStateThreatsSuspiciousUntreated
+#ProdStateThreatsRiskwareUntreated = window("MainReport:Threats")
+#ProdStateTasksMalfunction = url($SupportLink)
+
+; For testing product status color
+;[s_ProdStateSeverity]
+;def       = #eProtStateNormal
+
+[s_ProdStateSeverity]
+#ProdStateLicenseNotificationCritical = $IsActiveGreenPeriod? #eProtStateNormal : #eProtStateCrit
+#ProdStateKeyBlocked
+#ProdStateKeyInvalid
+#ProdStateKeyLimited
+#ProdStateKeyTrialExpired
+#ProdStateKeyExpired
+#ProdStateKeySuspended
+#ProdStateKeyUpdateFailed
+#ProdStatePreinstalledCodeActivationProblem
+#ProdStatePreinstalledCodeWaitActivationCritical
+#ProdStateKeyWaitReservedActivationCritical
+#ProdStateKeyReservedActivationProblem
+#ProdStateKeyInvalidReserveCode
+#ProdStateNoKeys
+#ProdStatePreinstalledCodeAvailable
+#ProdStateThreatsNeedReboot
+#ProdStateBasesCorrupted
+#ProdStateBasesVeryOld
+#ProdStateKeyGracePeriod
+#ProdStateThreatsMalwareUntreated
+#ProdStateHighRiskTasksDisabled
+#ProdStateHighRiskTasksNotRunning
+#ProdStateProtectionNotRunning
+#ProdStateProtectionDisabled
+#ProdStateTasksMalfunction
+#ProdStateProductNoEula            = #eProtStateCrit
+#ProdStateKeyTrial
+#ProdStateLicenseNotificationWarning = $IsActiveGreenPeriod? #eProtStateNormal : #eProtStateWarn
+#ProdStateThreatsRiskwareUntreated
+#ProdStateThreatsSuspiciousUntreated
+#ProdStateUpdateNeedReboot
+#ProdStateProductNeedRestart
+#ProdStateBasesOld
+#ProdStateTasksDisabled
+#ProdStateTasksNotRunning
+#ProdStateProductNotProtected
+#ProdStateProductNotAutoRun
+#ProdStateFirewallBlockAll
+#ProdStateProtectionSafeMode       = #eProtStateWarn
+default                            = #eProtStateNormal
+
+[s_NotifySeverity2ProdStateSeverity]
+#eNotifySeverityCritical
+#eNotifySeverityError         = #eProtStateCrit
+#eNotifySeverityImportant     = #eProtStateWarn
+def                           = #eProtStateNormal
+
+[s_ProtectionBannerDetailsBtnBg_L]
+#eProtStateNormal   = "BtnGlass26Left,0,3,4,2,4,2"
+#eProtStateWarn     = "BtnGlass26YellowLeft,0,3,4,2,4,2"
+#eProtStateCrit     = "BtnGlass26RedLeft,0,3,4,2,4,2"
+
+[s_ProtectionBannerDetailsBtnBg_M]
+#eProtStateNormal   = "BtnGlass26Middle,0,3,4,2,4,2"
+#eProtStateWarn     = "BtnGlass26YellowMiddle,0,3,4,2,4,2"
+#eProtStateCrit     = "BtnGlass26RedMiddle,0,3,4,2,4,2"
+
+[s_ProtectionBannerDetailsBtnBg_R]
+#eProtStateNormal   = "BtnGlass26Right,0,3,4,2,4,2"
+#eProtStateWarn     = "BtnGlass26YellowRight,0,3,4,2,4,2"
+#eProtStateCrit     = "BtnGlass26RedRight,0,3,4,2,4,2"
+
+
+; fix button
+[s_ButtonFixBg_L]
+#eProtStateNormal
+#eProtStateWarn     = "BtnGlassFix_y_l,0,2,1,0,0,1"
+#eProtStateCrit     = "BtnGlassFix_r_l,0,2,1,0,0,1"
+
+[s_ButtonFixBg_M]
+#eProtStateNormal
+#eProtStateWarn     = "BtnGlassFix_y_c,0,2,1,0,0,1"
+#eProtStateCrit     = "BtnGlassFix_r_c,0,2,1,0,0,1"
+
+[s_ButtonFixBg_R]
+#eProtStateNormal
+#eProtStateWarn     = "BtnGlassFix_y_r,0,2,1,0,0,1"
+#eProtStateCrit     = "BtnGlassFix_r_r,0,2,1,0,0,1"
+
+[s_ProtectionBannerBGFont]
+#eProtStateNormal   = "ProtBannerNormBg"
+#eProtStateWarn     = "ProtBannerWarnBg"
+#eProtStateCrit     = "ProtBannerCritBg"
+
+[s_ProtectionBannerDscBGFont]
+#eProtStateNormal   = "ProtBannerDscNormBg"
+#eProtStateWarn     = "ProtBannerDscWarnBg"
+#eProtStateCrit     = "ProtBannerDscCritBg"
+
+[s_ProtectionBannerSmBGFont]
+#eProtStateNormal   = "ProtBannerSmNormBg"
+#eProtStateWarn     = "ProtBannerSmWarnBg"
+#eProtStateCrit     = "ProtBannerSmCritBg"
+
+[s_ProtectionBannerBtnBGFont]
+#eProtStateNormal   = "ProtBannerBtnNormBg"
+#eProtStateWarn     = "ProtBannerBtnWarnBg"
+#eProtStateCrit     = "ProtBannerBtnCritBg"
+
+[f_ProductPostfix]
+ret = $IsKIS ? "_KIS" : ($IsKAV? "_KAV" : "")
+
+[f_BetaPostfix]
+ret = IsRelease ? "" : "_beta"
+
+[s_NotifyWindowColor]
+#eProtStateCrit     = "Red"
+#eProtStateWarn     = "Yellow"
+def                 = "Green"
+
+[s_NotifyWindowBannerFGFont]
+#eProtStateNormal
+#eProtStateCrit     = "Header1White"
+#eProtStateWarn     = "Header1"
+
+[s_NotifyWindowBannerBGFont]
+#eProtStateNormal
+#eProtStateCrit     = "Header1"
+#eProtStateWarn     = "Header1White"
+
+[s_MainProtStatusFont]
+#eProtStateCrit     = "MainProtStatusCrit"
+#eProtStateWarn     = "MainProtStatusWarn"
+def                 = "MainProtStatusNormal"
+
+[s_MainProtStatusIcon]
+#eProtStateCrit     = "crit"
+#eProtStateWarn     = "med"
+def                 = "low"
+
+[s_DetectObjectStatusIcon]
+def = DetectType == #DETYPE_VULNERABILITY ? $TreatIcon_Med : s_DetectObjectStatusIcon2(@)
+
+[s_DetectObjectStatusIcon2]
+#OBJSTATUS_INFECTED
+#OBJSTATUS_UNTREATABLE
+#OBJSTATUS_SUSPICION
+#OBJSTATUS_ALLOWED
+#OBJSTATUS_UNTREATABLE
+#OBJSTATUS_UNKNOWN                    = $TreatIcon_Inactive
+#OBJSTATUS_OK
+#OBJSTATUS_FALSEALARM                 = $TreatIcon_Clean
+#OBJSTATUS_ADDEDBYUSER                = $TreatIcon_Med
+#OBJSTATUS_NOTDISINFECTED             = if($IsExactDetect, $TreatIcon_High, $TreatIcon_Med)
+#OBJSTATUS_DENIED
+#OBJSTATUS_DISINFECTED
+#OBJSTATUS_DELETED
+#OBJSTATUS_QUARANTINED                = $TreatIcon_Cured
+#OBJSTATUS_DELETED_ON_REBOOT
+#OBJSTATUS_DISINFECTED_ON_REBOOT
+#OBJSTATUS_QUARANTINED_ON_REBOOT      = $TreatIcon_CuredDelayed
+def                                   = $TreatIcon_High
+
+[s_DetectDangerIcon]
+#eDDHigh            = $TreatIcon_High
+#eDDMedium          = $TreatIcon_Med
+#eDDLow             = "void16"
+#eDDInformational   = "void16"
+default             = $TreatIcon_Med
+
+[s_AlertNotificationSound]
+#DETDANGER_HIGH   = Gui.EnableClassicSounds ? "infected.wav" : "infected_p.wav"
+def               = ""
+
+[s_ProductNotificationSound]
+#eProtStateCrit     = Gui.EnableClassicSounds ? "infected.wav" : "infected_p.wav"
+def                 = ""
+
+[f_ProductNotificationText]
+ret = $IsVerdictProductStatusId ? s_ProtState($Verdict2ProductStatusId) : ($IsTaskStateEvent ? $ProductNotifyText_TaskState : s_ProductNotifyTextByTaskID(TaskID, @0))
+
+[Global]
+$ToastCaptionText            = "ntf id: " + NotificationId + "; event id: " + EventID
+$ProductNotificationText     = f_ProductNotificationText(50)
+$ProductNotificationTextBL   = removetags($ProductNotificationText, #RemTags)
+$ProductNotificationTipText  = f_ProductNotificationText(-1)
+$ProductNotificationLinkText = (f_NOTIFICATION_ID(NotificationId) == #eNotifyNewsUnread ? $LinkReadNews : \
+($IsVerdictProductStatusId ? if($Verdict2ProductStatusId != #ProdStateFirewallBlockAll && $Verdict2ProductStatusId != #ProdStateSomeSkipped, \
+(Data.ActionName ? Data.ActionName : s_ProductLinkText($Verdict2ProductStatusId))) : $LinkMoreDetails))
+$ProductNotificationLink     = s_ProdNotifLinkByNotifId(f_NOTIFICATION_ID(NotificationId)); close()
+$ProductNotifyText_TaskState = $TaskText + ": " + $VerdictDescrText + "." + if(DecisionReason == #eERROR, " " + $ReasonText + ".")
+
+[f_ProductNotificationLink]
+ret = $ProductNotificationLink
+
+[f_ToastLink]
+ret = s_ToastLinkAction($Verdict2ProductStatusId); close()
+
+[s_ToastLinkAction]
+#ProdStateProtectionNotRunning
+#ProdStateProtectionDisabled
+#ProdStateTasksDisabled
+#ProdStateProductNotProtected
+#ProdStateTasksMalfunction		= window("QMLMainWindow:ProblemList")
+#ProdStateBasesVeryOld
+#ProdStateUpdateNeedReboot		= window("QMLMainWindow:Updater")
+#ProdStateNoKeys
+#ProdStateKeyBlocked
+#ProdStateKeyLimited
+#ProdStateKeyUpdateFailed
+#ProdStateKeySuspended
+#ProdStateKeyWaitReservedActivationCritical
+#ProdStatePreinstalledCodeActivationProblem
+#ProdStateKeyReservedActivationProblem
+#ProdStatePreinstalledCodeWaitActivationCritical
+#ProdStateKeyInvalidReserveCode
+#ProdStateBasesCorrupted
+#ProdStateKeyInvalid			= window("QMLMainWindow:LicenseManager")
+def								= s_ProdNotifLinkByNotifId(f_NOTIFICATION_ID(NotificationId))
+
+[s_ToastCategory]
+#eNotifyNoProtection            = if(Severity==#eNotifySeverityCritical,#ToastCategoryProtection,#ToastCategoryIgnore)
+#eNotifySelfProtection          = #ToastCategoryProtection
+#eNotifyProduct                 = if($Verdict2ProductStatusId,#ToastCategoryProtection,#ToastCategoryIgnore) 
+
+;#eNotifyThreats                 = if(Severity==#eNotifySeverityCritical||Severity==#eNotifySeverityImportant,#ToastCategoryThreats,#ToastCategoryIgnore)
+;#eNotifyMalwareThreatsUntreated = if(Severity==#eNotifySeverityCritical,#ToastCategoryThreats,#ToastCategoryIgnore)
+;#eNotifyThreatsUntreated        = if(Severity==#eNotifySeverityImportant,#ToastCategoryThreats,#ToastCategoryIgnore)
+;#eNotifyAttackBlocked           = if(Severity==#eNotifySeverityCritical,#ToastCategoryThreats,#ToastCategoryIgnore)
+
+#eNotifyBases                   = if(Severity==#eNotifySeverityCritical||Severity==#eNotifySeverityError,#ToastCategoryBases,#ToastCategoryIgnore)
+#eNotifyUpdateNeedReboot        = if(Severity==#eNotifySeverityImportant,#ToastCategoryBases,#ToastCategoryIgnore)
+
+#eNotifyEulaNotAccepted         
+#eNotifyLicensing               = #ToastCategoryLicence
+
+#eNotifyIpm
+#eNotifyNewsUnread              = #ToastCategoryMessage
+#eNotifyProductNotAutoRun       = #ToastCategoryProtection
+def                             = #ToastCategoryIgnore
+
+[s_ToastAlertStatisticsId]
+ods          = if(s_ToastAlertDialogDescriptions(@), if($IsSpecialRiskwareAlert, "ToastThreatsSpecialAlert", "ToastThreatsODS" + s_AlertToastSeverityString(TaskType)))
+avs          = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsAVS" + s_AlertToastSeverityString(TaskType))
+oas          = if(s_ToastAlertDialogDescriptions(@), if($IsSpecialRiskwareAlert, "ToastThreatsSpecialAlert", "ToastThreatsOAS" + s_AlertToastSeverityString(TaskType)))
+hipstask
+hips
+hips_group   = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsHIPS" + s_AlertToastSeverityString(TaskType))
+firewall     = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsFireWall")
+pdm          = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsPDM")
+SW2          = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsBSS" + s_AlertToastSeverityString(TaskType))
+wmuf         = if(s_ToastAlertDialogDescriptions(@), "ToastWebThreatsMalwareDownload")
+antiphishing = if(s_ToastAlertDialogDescriptions(@), "ToastWebThreatsAntiphishing")
+httpscan     = if($IsExactDetect, "ToastWebThreatsMalwareObject", "ToastWebThreatsSuspicious")
+vul          = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsVul")
+mc_tm        = if(s_ToastAlertDialogDescriptions(@), "ToastThreatsTrafficMonitor")
+def          = "ToastThreatsGeneral"
+
+[s_ToastSimpleAlertStatisticsId]
+#AlertActionShowOlaForm = "ToastNotificationRegistration"
+
+[s_ProdNotifLinkByNotifId]
+#eNotifyStatisticsReportReady = window("StatisticsReport")
+#eNotifyNewsUnread            = (Data && Data.Title ? window("QMLMainWindow:NewsItem") : window("QMLMainWindow:NewsList"))
+#eNotifyParCtl                = s_ProdNotifLink_ParCtl(Data.serid(), Data.UserName)
+#eNotifyIpm                   = window("QMLMainWindow:LicenseManager")
+def = ($IsVerdictProductStatusId ? (Data.ActionName ? f_licenseAction(Data.ActionType, Data.URL) : Data.URL ? url(Data.URL) : s_ProductLinkClick($Verdict2ProductStatusId)) : \	
+Action != #evtAddAppToGr ? f_JumpToReport() : f_JumpToHipsRules())
+
+[s_ProdNotifLink_ParCtl]
+serid("InstantMessangerControlReportEvent") = f_ParCtl_ShowWindow("Report:IM_Usage", @1)
+serid("SocialNetworkControlReportEvent")    = f_ParCtl_ShowWindow("Report:SN_Usage", @1)
+serid("AppControlReportEvent")              = f_ParCtl_ShowWindow("Report:AppUsage", @1)
+serid("PersonalInfoControlReportEvent")     = f_ParCtl_ShowWindow("Report:PersonalInfo", @1)
+serid("WebSiteControlReportEvent")          = f_ParCtl_ShowWindow("Report:WebContent", @1)
+serid("FileDownloadControlReportEvent")     = f_ParCtl_ShowWindow("Report:Download", @1)
+serid("InternetUsageControlReportEvent")    = f_ParCtl_ShowWindow("Report:InternetUsage", @1)
+serid("ComputerControlReportEvent")         = f_ParCtl_ShowWindow("Report:ComputerUsage", @1)
+def                                         = f_ParCtl_ShowWindow("Report:AddView", @1)
+
+[f_JumpToReport]
+ret = window("MainReport:" + s_TaskID2MainWindowGroup(TaskID),p_postInit("ctl.Report.findcontent(" + Timestamp + ")"))
+
+[f_JumpToHipsRules]
+ret = window("SystemMonitor:Programs:Running")
+
+[s_TaskID2MainWindowGroup]
+#eTASK_FAV	         = "File_Monitoring"
+#eTASK_MAV	         = "Mail_Monitoring"
+#eTASK_HTTP	         = "Web_Monitoring" 
+#eTASK_AP
+#eTASK_AD
+#eTASK_IM_CHECK	     = "IM_Monitoring"
+#eTASK_IDS	         = "ids"
+#eTASK_AB	         = "AdBlocker"
+#eTASK_AS	         = "Anti_Spam"
+#eTASK_PC	         = "Protection"
+#eTASK_HIPS          = "Hips"
+#eTASK_FIREWALL
+#eTASK_SW2           = "SW2"
+#eTASK_SCAN          = "Scan_Objects"
+#eTASK_UPDATER
+#eTASK_ROLLBACK      = "Updater"
+def                  = "Protection"
+
+[s_Profile2ProfileGroup]
+File_Monitoring
+Mail_Monitoring
+Web_Monitoring	     = "Antivirus"
+ids	                 = "OnlineSecurity"
+AdBlocker
+Anti_Spam
+ParCtl	             = "ContentFilter"
+HipsTask
+Firewall
+pdm                  = "SystemWatch"
+def                  = "Protection"
+
+[s_Profile2ProfileGroup_Reports]
+Scan_My_Computer
+Scan_Objects
+Scan_Quarantine
+Scan_Startup
+Scan_Vulnerabilities = "Scan_Objects"
+Rollback
+Updater			 	 = "Updater"
+AVZ_CollectSysInfo
+AVZ_Scan             = "AVZ_Scan"
+def                  = type == "ods" ? "Scan_Objects" : @
+
+[s_AlertDetailsDialog]
+#DETYPE_UNKNOWN = dialog("MalwareInfo", p_image(ObjectName), p_TaskType(TaskType))
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE
+#DETYPE_MALWARE
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE
+#DETYPE_XFILES
+#DETYPE_SOFTWARE = dialog("MalwareInfo", p_image(ObjectName), p_TaskType(TaskType))
+#DETYPE_PHISHING = dialog("MalwareInfo", p_image(ObjectName), p_TaskType(TaskType))
+#DETYPE_SUSPIC_URL = dialog("MalwareInfo", p_image(ObjectName), p_TaskType(TaskType))
+#DETYPE_ATTACK
+#DETYPE_REGISTRY
+#DETYPE_SUSPICACTION
+#DETYPE_VULNERABILITY
+default = 0
+
+[s_Use_AlertDialog_VirWareCategoryIco]
+#DETYPE_UNKNOWN
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE
+#DETYPE_MALWARE
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE
+#DETYPE_XFILES
+#DETYPE_SOFTWARE
+#DETYPE_PHISHING
+#DETYPE_SUSPIC_URL = true
+def                = false
+
+[s_IsAlertDetail_ObjLink]
+#evtPrtStgAccess
+#evtUseBITS
+#evtUseDNS  = 1
+default = ObjectType == #eProcess ? 1 : 0
+
+[s_AlertInfoDialogByHipsAction]
+#evtPrtStgAccess
+#evtUseBITS
+#evtUseDNS  = dialog("HipsInfo", p_action(@))
+default		= 0
+
+[s_AlertInfoDialogByPdmEventType]
+#PDM2_EVENT_P2P_SC_RDL
+#PDM2_EVENT_P2P_SCN
+#PDM2_EVENT_SC_MULTIPLE
+#PDM2_EVENT_SC_AR
+#PDM2_EVENT_SC_ARsrc
+#PDM2_EVENT_SC2STARTUP
+#PDM2_EVENT_TROJAN_GEN
+#PDM2_EVENT_SCN
+#PDM2_EVENT_RDR
+#PDM2_EVENT_HIDDEN_OBJ
+#PDM2_EVENT_INVADER
+#PDM2_EVENT_INVADER_LOADER
+#PDM2_EVENT_STRANGEKEY
+#PDM2_EVENT_SYSCHANGE
+#PDM2_EVENT_HIDDEN_INSTALL
+#PDM2_EVENT_BUFFEROVERRUN
+#PDM2_EVENT_DEP
+#PDM2_EVENT_HOSTS
+#PDM2_EVENT_DOWNLOADER
+#PDM2_EVENT_DRIVER_INS
+#PDM2_EVENT_HIDDEN_SEND
+#PDM2_EVENT_KEYLOGGER
+#PDM2_EVENT_IRP_TABLE_CHANGED
+#PDM2_EVENT_NEGATIVE_PID
+#PDM2_EVENT_DNS_QUERY
+#PDM2_EVENT_PSTORE
+#PDM2_EVENT_BSS_DETECT		= dialog("HipsInfo", p_eventtype(@))
+default		= 0
+
+
+[s_MalwareInfo_Hdr]
+antiphishing = s_AlertDialogCaption(@)
+default		 = @1
+
+[s_Use_AlertDialog_VirWareCategory]
+hipstask
+hips_group = 0
+httpscan
+default    = 1
+
+[f_UseVirWare]
+ret = DetectType != #DETYPE_URGENT && DetectDanger < 0x8 && s_UseVirWareByTask(TaskType)
+
+[s_UseVirWareByTask]
+InstallKey
+hips
+hips_group   
+hipstask
+firewall      = false
+httpscan      = !$IsGeoSecurity
+pdm           = 0 != nPID
+default       = true
+
+[s_UseVirWareIcoByTask]
+SW2        = DetectType > 0
+httpscan   = #DETYPE_SUSPIC_URL != DetectType || #DETYPE_PHISHING != DetectType
+default    = true
+
+[s_Use_AlertInfoDialog]
+;#evtUseBrowserCL
+;#evtUseBrowserAPI
+#evtPrtStgAccess
+#evtUseBITS
+#evtUseDNS  = 1
+default		= 0
+
+[s_ResultActionByTaskType]
+oas
+ods
+avs = #ACTION_ADD_EXCLUDE
+default = #ACTION_ALLOW
+
+[s_AlertFooterLink]
+default = "AlertFooterLink"
+
+[Global]
+$EventAppName = if(AppID, f_EventAppLink(compressPath(f_AppInfo(AppID).sImagePath, 40)) + if($hasNativePID," (PID: " + $AppNativePID + ")" + $LtrMark) + ": " )
+$EventAppNameTooltip = if(AppID, f_AppInfo(AppID).sImagePath + $LtrMark + ": " )
+$EventAppNameNS = if(AppID, f_EventAppLink($AppName))
+$EventObjText = (s_NeedToCompressPathByObjectType(ObjectType) ? compressPath($ObjectText, @1): $ObjectText)
+$EventShow    = (($IsEventObjInfected && DecisionReason != #eDETECT_INFORMATION) || Verdict == #ePASSWORD_PROTECTED || Verdict == #eCONNECTED)
+
+[f_EventAppName]
+ret = (@ != -1) ? $EventAppName : $EventAppNameTooltip
+
+[f_EventAppLink]
+ret = f_MakeLink(@ != $UnknownApp, "AppName onclick(f_EventAppClick())", @)
+
+[f_EventAppClick]
+ret = window("AppRulesEdit", p_image(f_AppInfo(AppID).sImagePath), p_appID(AppID))
+
+[f_EventObjClick]
+ret = f_EventObjClickEx(c_object(ObjectID, object(ObjectID)))
+
+[f_EventObjClickEx]
+ret = window("AppRulesEdit", p_image(hipsGroup(@,1)), p_appID(getGroupIdByName(hipsGroup(@))) )
+
+[f_addAppToTrusted]
+ret = @ ? addToExclude(ser(ObjectName), dialog("[ExclusionEdit] alias(settings)", p_new(#true)), @1, @2) : addToTrusted(ObjectName, dialog("[TrustedAppEdit] alias(settings)"))
+
+[f_IsProdStateCritical]
+ret = s_ProdStateSeverity(@) == #eProtStateCrit
+
+[f_VerdictDesc]
+ret = s_Verdict(Verdict) + if(Verdict == #eNOT_DISINFECTED, ": " + s_DecisionReason(DecisionReason))
+
+[f_PIDValue]
+ret = if(@, " (PID:" + fmt("ld", convertToNativePid(@)) + ")")
+
+[f_VulnerUrl]
+ret = $VirusListLink + "&function=advisories&VN=" + @
+
+[f_VulnerUrlLink]
+ret = "<a onclick(url(\"" + $VirusListLink + "&function=advisories&VN=" + @ + "\"))>" + @ + "</a>"
+
+[s_RegValType]
+1   = "REG_SZ"
+2   = "REG_EXPAND_SZ"
+3   = "REG_BINARY"
+4   = "REG_DWORD"
+5   = "REG_MULTI_SZ"
+
+[f_regFormat]
+ret = "\n\n<b>" + @ + " (" + s_RegValType(@1) + "):</b>\n" + regFormat(@1, @2)
+
+[s_ProdStatusVisibleFilter]
+#ProdStateKeyInvalid = !((global.UpdateState & #eBasesCorrupted) && (global.LicInfo.InvalidReason == #ekirInconsistentUpdate))
+default				 = 1
+
+[f_appParenItem]
+ret = "<a onclick(dialog(\"AppRulesEdit:Image\",p_image(f_ProcessInfo(" + OwnerPid + ").Module.sImagePath ), p_pid(" + OwnerPid + ")))>" +  f_AppNameEx(f_ProcessInfo(OwnerPid).Module) + "</a>"
+
+[s_NeedToCompressPathByObjectType]
+#eFile
+#eDirectory
+#eRegKey
+#eProcess
+#eModule
+#eURL
+#eDriver    = 1
+def	        = 0
+
+[s_AlertDialog_Icon]
+httpscan        = if(#DETYPE_PHISHING == DetectType, "anti_phish_1")
+InstallKey
+mc
+avs
+oas
+ods             = ""
+pdm             = if(!s_IsPdmUnknownSource(EventType), s_AlertDialog_Descr_Icon(Action, ObjectName, ObjectType))
+def             = s_AlertDialog_Descr_Icon(Action, ObjectName, ObjectType)
+
+[s_IsPdmUnknownSource]
+#PDM2_EVENT_IRP_TABLE_CHANGED
+#PDM2_EVENT_KEYLOGGER               = 0 == nPID
+def                                 = false
+
+[s_AlertDialog_Descr_Icon]
+#evtProcessStart 
+#evtProcessStop  = s_AppIconBig(appID)
+default          = s_AlertDescr_IconByObjectType(ObjectType)
+
+[s_AlertDescr_IconByObjectType]
+#ObjectRegion = 0
+default       = if(nPID == 0 || EventType == #PDM2_EVENT_NEGATIVE_PID || TaskType == "wmuf", if(TaskType != "hipstask","system32"), if(sImagePath, getIconAsync(sImagePath, "unkapp", 1), "unkapp"))
+
+[f_MainReport_Period_Filter]
+p_PeriodBegin, p_PeriodEnd
+ret = if(p_PeriodBegin, "(Timestamp >= " + time2dt(p_PeriodBegin) + " && Timestamp < " + time2dt(p_PeriodEnd) + ")") + if(@2, if(p_PeriodBegin, " && (") + @2 + if(p_PeriodBegin, ")"))
+
+[f_Threats_PeriodFilter]
+p_PeriodBegin, p_PeriodEnd
+ret = if(p_PeriodBegin, "(ReportTime >= " + p_PeriodBegin + " && ReportTime < " + p_PeriodEnd + ")") + if(@2, if(p_PeriodBegin, " && (") + @2 + if(p_PeriodBegin, ")"))
+
+; ----- Tab Statistics Filter -----
+
+[s_ParCtlEx_GetStatRangePeriod]
+#ePeriodYear    = #eStatPeriodMonth
+#ePeriodMonth   = #eStatPeriodDay
+#ePeriodWeek    = #eStatPeriodDay
+#ePeriodDay     = #eStatPeriodHour
+
+[f_Statistics_Filter]
+p_PeriodBegin, p_PeriodEnd, p_PeriodType, p_PeriodShift, p_IsPrev, p_IsNext
+ret = p_PeriodShift = 0; \
+      f_Statistics_Filter_Ex( p_PeriodBegin, p_PeriodEnd, s_Statistics_ConvertType(p_PeriodType), p_PeriodShift, 0, p_IsPrev, p_IsNext )
+
+[f_Statistics_Filter_Up]
+p_PeriodBegin, p_PeriodEnd, p_PeriodType, p_PeriodShift, p_IsPrev, p_IsNext
+ret = f_Statistics_Filter_Ex( p_PeriodBegin, p_PeriodEnd, p_PeriodType, p_PeriodShift, 1, p_IsPrev, p_IsNext )
+
+[f_Statistics_Filter_Down]
+p_PeriodBegin, p_PeriodEnd, p_PeriodType, p_PeriodShift, p_IsPrev, p_IsNext
+ret = f_Statistics_Filter_Ex( p_PeriodBegin, p_PeriodEnd, p_PeriodType, p_PeriodShift, -1, p_IsPrev, p_IsNext )
+
+[f_Statistics_Filter_Ex]
+p_PeriodBegin, p_PeriodEnd, p_PeriodType, p_PeriodShift, p_Arrow, p_IsPrev, p_IsNext
+ret = p_PeriodShift = p_PeriodShift + p_Arrow; \
+      var v_newType; v_newType = -1; \
+      p_PeriodBegin = s_Statistics_Begin_Filter( p_PeriodType, p_PeriodShift, v_newType); \
+      p_PeriodEnd   = s_Statistics_End_Filter( p_PeriodType, p_PeriodShift, v_newType ); \
+      p_IsPrev = s_Statistics_Prev_Filter( p_PeriodType, p_PeriodBegin); \
+      p_IsNext = s_Statistics_Next_Filter( p_PeriodType, p_PeriodEnd); p_IsPrev
+
+[s_Statistics_Begin_Filter]
+#ePeriodYear    = timeGetLocalBegin(utctime(), #eTimeGetBeginYear, @1)
+#ePeriodMonth   = timeGetLocalBegin(utctime(), #eTimeGetBeginMonth, @1)
+#ePeriodWeek    = timeGetLocalBegin(utctime(), #eTimeGetBeginWeek, @1)
+#ePeriodDay     = timeGetLocalBegin(utctime(), #eTimeGetBeginDay, @1)
+def             = timeGetLocalBegin(getRepDbFirstTimestamp(#dbStatistics), #eTimeGetBeginDay, @1)
+
+[s_Statistics_End_Filter]
+#ePeriodYear      = timeGetLocalBegin(utctime(), #eTimeGetBeginYear, @1 + 1)
+#ePeriodMonth     = timeGetLocalBegin(utctime(), #eTimeGetBeginMonth, @1 + 1)
+#ePeriodWeek      = timeGetLocalBegin(utctime(), #eTimeGetBeginWeek, @1 + 1)
+#ePeriodDay       = timeGetLocalBegin(utctime(), #eTimeGetBeginDay, @1 + 1)
+def               = timeGetLocalBegin(utctime(), #eTimeGetBeginDay, @1 + 1)
+
+[s_Statistics_Prev_Filter]
+#ePeriodYear
+#ePeriodMonth
+#ePeriodWeek
+#ePeriodDay       = getRepDbFirstTimestamp(#dbStatistics) < @1
+def               = false
+
+[s_Statistics_Next_Filter]
+#ePeriodYear
+#ePeriodMonth
+#ePeriodWeek
+#ePeriodDay       = @1 < utctime()
+def               = false
+
+
+[f_GetTypeOfTime]
+p_TimeBegin, p_TimeEnd
+$Day    = 60*60*24
+$Week   = $Day * 7
+$Month  = $Day * 30
+ret = var tmDiff; var nChartPeriod; \
+	 tmDiff = p_TimeEnd - p_TimeBegin;\
+     nChartPeriod = \
+     ((tmDiff <= $Day) && timeGetLocalBegin(p_TimeBegin, #eTimeGetBeginDay, 0) == timeGetLocalBegin(p_TimeEnd-1, #eTimeGetBeginDay, 0)) ? #ePeriodDay : \
+     ((tmDiff <= $Week) && timeGetLocalBegin(p_TimeBegin, #eTimeGetBeginWeek, 0) == timeGetLocalBegin(p_TimeEnd-1, #eTimeGetBeginWeek, 0)) ? #ePeriodWeek : \
+     ((tmDiff <= $Month) && timeGetLocalBegin(p_TimeBegin, #eTimeGetBeginMonth, 0) == timeGetLocalBegin(p_TimeEnd-1, #eTimeGetBeginMonth, 0)) ? #ePeriodMonth : \
+     #ePeriodYear
+
+[s_Statistics_DefinType]
+;p_Type, p_Begin, p_End
+Day     = #ePeriodDay
+Week    = #ePeriodWeek
+Month   = #ePeriodMonth
+Year    = #ePeriodYear
+def     = f_GetTypeOfTime(@1, @2)
+
+[s_Statistics_ConvertType]
+Day     = #ePeriodDay
+Week    = #ePeriodWeek
+Month   = #ePeriodMonth
+Year    = #ePeriodYear
+def     = -1
+
+[s_Statistics_TypeOfEnum]
+#ePeriodDay     = #eTimeGetBeginDay
+#ePeriodWeek    = #eTimeGetBeginWeek
+#ePeriodMonth   = #eTimeGetBeginMonth
+#ePeriodYear    = #eTimeGetBeginYear
+def             = -1
+
+;$Day    = 60*60*24
+;$Week   = $Day * 7
+;$Month  = $Day * 30
+;All = (((@2-@1) < $Day) && timeGetLocalBegin(@1, #eTimeGetBeginDay, 0) == timeGetLocalBegin(@2, #eTimeGetBeginDay, 0)) ? "Day" : \
+;      (((@2-@1) < $Week) && timeGetLocalBegin(@1, #eTimeGetBeginWeek, 0) == timeGetLocalBegin(@2, #eTimeGetBeginWeek, 0)) ? "Week" : \
+;      (((@2-@1) < $Month) && timeGetLocalBegin(@1, #eTimeGetBeginMonth, 0) == timeGetLocalBegin(@2, #eTimeGetBeginMonth, 0)) ? "Month" : \
+;      "Year"
+;def     = @0
+
+[s_MainThreats_Tab_Statistics_Filter]
+def = "(Date >= " + @1 + " && Date <= " + @2 + ")" + @3
+
+[s_AvzSecurityAnalyserWizardWelcomeMask]
+0 = (wizMask = wizPagesMask("Welcome,Search,Vulnerab,Problems,Fix,Finish"); RunMode = 0; ScriptMode = 1; savesettings())
+1 = (wizMask = wizPagesMask("Welcome,Vulnerab,Problems,Fix,Finish"); RunMode = 1; ScriptMode = 2; savesettings())
+2 = (wizMask = wizPagesMask("Welcome,Search,Problems,Fix,Finish"); RunMode = 2; ScriptMode = 4; savesettings())
+
+[f_getStateIcon]
+ret = @ ? (@1 ? "ok_state" : (@2 ? "error_state" : "warning_state")) : (@1 ? "ok_state_na" : (@2 ? "error_state_na" : "warning_state_na"))
+
+[f_getFilesDataStateIcon]
+$fm   = !f_isInstalled("File_Monitoring") || f_IsStateRunningOK(File_Monitoring.state)
+$hips = !f_isInstalled("HipsTask") || f_IsStateRunningOK(HipsTask.state)
+$allOk   = ($fm) && ($hips) && ($SystemWatch)
+$anyFail = #StateFailed == File_Monitoring.state || #StateFailed == HipsTask.state || #StateFailed == pdm.state
+ret  = f_getStateIcon(@, $allOk, $anyFail)
+
+[f_getSysAppStateIcon]
+$mm   = !f_isInstalled("Mail_Monitoring") || f_IsStateRunningOK(Mail_Monitoring.state)
+$wm   = !f_isInstalled("Web_Monitoring")  || f_IsStateRunningOK(Web_Monitoring.state)
+$im   = !f_isInstalled("IM_Monitoring")   || f_IsStateRunningOK(IM_Monitoring.state)
+$ids  = !f_isInstalled("ids")             || f_IsStateRunningOK(ids.state)
+$hips = !f_isInstalled("HipsTask")        || f_IsStateRunningOK(HipsTask.state)
+$as   = !f_isInstalled("Anti_Spam")       || f_IsStateRunningOK(Anti_Spam.state)
+$SW2  = !f_isInstalled("SW2") || f_IsStateRunningOK(SW2.state)
+$allOk = ($mm) && ($wm) && ($im) && ($ids) && ($hips) && ($as) && ($SW2)
+$anyFail = #StateFailed == Mail_Monitoring.state || #StateFailed == Web_Monitoring.state || #StateFailed == IM_Monitoring.state || #StateFailed == ids.state || #StateFailed == HipsTask.state || #StateFailed == Anti_Spam.state || #StateFailed == SW2.state
+ret  = f_getStateIcon(@, $allOk, $anyFail)
+
+[f_getProtOnlinesStateIcon]
+$mm   = !f_isInstalled("Mail_Monitoring") || f_IsStateRunningOK(Mail_Monitoring.state)
+$wm   = !f_isInstalled("Web_Monitoring")  || f_IsStateRunningOK(Web_Monitoring.state)
+$im   = !f_isInstalled("IM_Monitoring")   || f_IsStateRunningOK(IM_Monitoring.state)
+$ids  = !f_isInstalled("ids")             || f_IsStateRunningOK(ids.state)
+$as   = !f_isInstalled("Anti_Spam")       || f_IsStateRunningOK(Anti_Spam.state)
+$fw   = !f_isInstalled("Firewall")        || f_IsStateRunningOK(Firewall.state)
+$allOk = ($mm) && ($wm) && ($im) && ($ids) && ($as) && ($fw) && ($g_antiphishAll)
+$anyFail = #StateFailed == Mail_Monitoring.state || #StateFailed == Web_Monitoring.state || #StateFailed == IM_Monitoring.state || #StateFailed == ids.state || #StateFailed == Firewall.state || #StateFailed == Anti_Spam.state
+ret  = f_getStateIcon(@, $allOk, $anyFail)
+
+[s_getProtBlockColor]
+warning_state
+warning_state_na = "Yellow"
+error_state
+error_state_na   = "Red"
+def              = "Green"
+
+[f_repairProduct]
+ret = if (msg("ProductRepairConfirmation") == #m_res_yes, repair())
+
+[f_getStateSemaphor2]
+ret = s_IsStateRunning(@) ? (@ == #StateMalfunction ? "WarnSemaphorSmall" : "GreenSemaphorSmall") : (@ == #StateFailed ? "RedSemaphorSmall" : "GraySemaphorSmall")
+
+[f_getStateSemaphor]
+ret = (ctl.hotlight ? f_getStateSemaphor2(@) + ",1" : f_getStateSemaphor2(@) + ",0")
+
+[s_getStateIcon]
+#green = "GreenSemaphorSmall"
+#gray  = "GraySemaphorSmall"
+#red   = "RedSemaphorSmall"
+#warn  = "WarnSemaphorSmall"
+
+[f_IsStateRunning]
+ret = s_IsStateRunning(@) ? 1 : 0
+
+
+[s_ChartId]
+#eVirware       = "0"
+#eTrojware      = "1"
+#eMalware       = "2"
+#eUrgent
+#eBSSDetect     = "3"
+#eVulnerability = "4"
+#eRiskware      = "5"
+#eAdware        = "6"
+#eSpam          = "7"
+#eBanner        = "8"
+#eAttack        = "9"
+#eMaliciousURL  = "10"
+
+[f_ChartBg]
+ret = "ReportChart"+s_ChartId(@)
+
+[f_ChartBgLegend]
+ret = "ReportChart, "+s_ChartId(@)
+
+[s_ComponentKISInstalledOnly]
+HipsTask    = 1
+Firewall	= 1
+ids			= 1
+Anti_Spam	= 1
+AdBlocker	= 1
+ParCtl		= 1
+
+[f_getHelpTopic]
+ret = if(Action == #PDM2_ACTION_ROLLBACK, 26656, s_HelpTopicByTask(TaskType))
+
+[s_HelpTopicByTask]
+mc           = s_getHelpTopic(DetectType)
+hips_group
+firewall
+hips
+hipstask     = f_getHelpTopicHips()
+httpscan     = if(#DETYPE_PHISHING == DetectType, 26503, 26469)
+def          = f_getHelpTopicAD()
+
+[f_getHelpTopicAD]
+ret = if(nActionID == #AlertActionActiveDetect, $IsKAT ? 16565 : 26511, f_getHelpTopicEx())
+
+[f_getHelpTopicEx]
+ret = if((ActionsAll & #ACTION_DISINFECT) && !(ActionsMask & #ACTION_DISINFECT), $IsKAT ? 16564 : 26695, s_getHelpTopic(DetectType))
+
+[f_getHelpTopicHips]
+ret = ObjectType == #eNetwork ? 16153 : s_getHelpTopicHips(Action) 
+
+[s_getHelpTopicHips]
+#evtDrvStart     = 26513
+#evtAddAppToGr   = 26653
+def              = 26657
+
+[f_getHelpTopicPdm]
+$hidden         = (#PDM2_EVENT_NEGATIVE_PID == EventType || #PDM2_EVENT_HIDDEN_OBJ == EventType)
+ret = if($hidden, 26694, 26470)
+
+[s_getHelpTopic]
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE = 29314
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE  = if($IsExactDetect, 26468, 29314)
+#DETYPE_PHISHING = 26503
+#DETYPE_ATTACK
+#DETYPE_REGISTRY = 26657
+#DETYPE_URGENT
+#DETYPE_SUSPIC_URL
+#DETYPE_TROJWARE
+#DETYPE_VIRWARE  = (ActionsAll & #ACTION_DISINFECT) ? ($IsKAT ? 16563 : 26468) : ($IsKAT ? 16566 : 26468)
+def = 920
+
+[s_IconObjectType]
+#INV_EVENT_TYPE_FILE_OPEN				
+#INV_EVENT_TYPE_FILE_CLOSE				
+#INV_EVENT_TYPE_FILE_DELETE				
+#INV_EVENT_TYPE_FILE_RENAME				= "disk"
+#INV_EVENT_TYPE_PROCESS_CREATE			
+#INV_EVENT_TYPE_PROCESS_EXIT			
+#INV_EVENT_TYPE_PROCESS_TERMINATE		= "startupobj"
+#INV_EVENT_TYPE_REGYSTRY_KEY_CREATE		
+#INV_EVENT_TYPE_REGYSTRY_KEY_DELETE		
+#INV_EVENT_TYPE_REGYSTRY_VALUE_DELETE
+#INV_EVENT_TYPE_REGYSTRY_VALUE_SET		= "registry"
+
+[s_IconRollbackObjectType]
+#RegistryValue = "registry"
+#File          = "resfile"
+#Process       = "void16"
+
+[s_SWObjectType]
+#INV_EVENT_TYPE_FILE_OPEN				
+#INV_EVENT_TYPE_FILE_CLOSE				
+#INV_EVENT_TYPE_FILE_DELETE				
+#INV_EVENT_TYPE_FILE_RENAME				= #eFile
+#INV_EVENT_TYPE_PROCESS_CREATE			
+#INV_EVENT_TYPE_PROCESS_EXIT			
+#INV_EVENT_TYPE_PROCESS_TERMINATE		= #eProcess
+#INV_EVENT_TYPE_REGYSTRY_KEY_CREATE		
+#INV_EVENT_TYPE_REGYSTRY_KEY_DELETE	
+#INV_EVENT_TYPE_REGYSTRY_VALUE_DELETE	
+#INV_EVENT_TYPE_REGYSTRY_VALUE_SET		= #eRegKey
+
+[f_isHipsGroup]
+ret = s_HipsGroups(TaskType)
+
+[s_HipsGroups]
+hips
+hipstask
+hips_group = 
+firewall = true
+def      = false
+
+[f_SelfAction]
+ret = ObjectType == #eNetwork ? true : s_HipsSelfAction(Action)
+
+[s_HipsSelfAction]
+#evtAddAppToGr      = false
+def                 = true
+
+[f_ksnRating]
+ret = f_KsnTrusted(@) + if(@1 > 0,"\n" + f_KsnLimited(@1)) + if(@2 > 0,"\n" + f_KsnUntrusted(@2))
+
+[s_BlicMediumCounter_Shift]
+DataSecurity   = 0
+SystemSecurity = 8
+OnlineSecurity = 4
+
+[s_IsHaveHistoryByTask]
+;#PDM2_ACTION_BLOCKED_APP_START
+$InfoAvailable    = (Parents.size() > 0 || nPID > 0)
+$HistoryAvailable = f_isInstalled("SW2") && f_IsStateRunningOK(SW2.state)
+hipstask   = (#eDriver == ObjectType) && $HistoryAvailable && $InfoAvailable
+SW2        = (Action != #PDM2_ACTION_ROLLBACK) && (nPID != 0) && $InfoAvailable
+def        = false
+
+[s_IsWebSource]
+2
+3   = true
+def = false
+
+[f_ProgramNameEx]
+p_ImagePath, p_pid
+ret = if(p_pid != 0, f_ProcessInfo(p_pid).Module.sDescription + " (" + objfile(p_ImagePath) + ": " + p_pid + ")", objfile(p_ImagePath))
+
+[s_HistoryFilter]
+FilterRegistry   = "s_SWObjectType(nType) == #eRegKey"
+FilterFile       = "s_SWObjectType(nType) == #eFile"
+FilterProc       = "s_SWObjectType(nType) == #eProcess"
+def              = ""
+
+[s_IsFileAccess]
+#evtLLFSAccess
+#evtLLDiskAccess = false
+def              = true
+
+[f_AlertDialogTroubleHips]
+ret = s_AlertDialogTroubleHipsTask(Action)
+
+[f_AlertDialogDestObject]
+ret = if(Action == #evtProcessStart || Action == #evtProcessStop, sImagePath, f_ProcessInfo(nDestPID).Module.sImagePath)
+
+[s_AlertDialogTroubleHipsTask]
+#evtDrvStart     = "<b>" + if(!appID, $UnknownApp + " ") + s_ActionInTime(@) + "</b>" + s_ActionV(@)
+#evtAddAppToGr   = f_appDenyStartReason()
+def              = $AlertAppGroupEx + s_ActionInTime(@) + s_ActionV(Action, ObjectName, ObjectType) + "." + $IfTrusted
+
+[f_Customers]
+ret = s_Customers(if(@ < 10, 0, if(@ < 100, 1, if(@ < 1000, 2, if(@ < 10000, 3, if(@ < 100000, 4, if(@ < 1000000, 5, 6)))))))
+
+[f_DetectBehaviour]
+p_TaskType, p_DetectBehaviour, p_DetectType
+$HttpScanDetectBehaviour = p_DetectType == #DETYPE_PHISHING ? 1000 : (p_DetectType == #DETYPE_MALWARE ? 1001 : p_DetectBehaviour)
+ret = p_TaskType == "httpscan" ? $HttpScanDetectBehaviour : p_DetectBehaviour
+
+[f_DetectBehaviourString]
+p_TaskType, p_DetectBehaviour, p_DetectType
+ret = s_DetectBehaviour(f_DetectBehaviour(p_TaskType, p_DetectBehaviour, p_DetectType))
+
+[f_BehaviourDetails]
+p_TaskType, p_DetectBehaviour, p_DetectType
+ret = s_BehaviourDetails(f_DetectBehaviour(p_TaskType, p_DetectBehaviour, p_DetectType))
+
+[f_HttpDetectPhishOrWmuf]
+ret = (TaskType == "httpscan" && (#DETYPE_PHISHING == DetectType || #DETYPE_MALWARE == DetectType)) ? 1 : 0
+
+[s_VirusListLink]
+httpscan = DetectType == #DETYPE_PHISHING ? $VirusListPhishingLink : if(#DETYPE_MALWARE == DetectType, $VirusListMalwareLink, $VirusListThreatLink)
+def = $VirusListThreatLink
+
+[f_ToBoldText]
+ret = if(@1, "<b>" + @ + "</b>", @)
+
+[f_showMainWindow]
+ret = if(product.EulaVerified, window(@, p_postInit(@1)), $ShowEulaEx)
+
+[f_ShowVirtualKeyboard]
+ret = if(product.EulaVerified, if(RebootsSinceInstall == 0, window("QMLProtectedInputRebootMessageBox", p_singleton(true)), window("VirtualKeyboard", p_singleton(true))), $ShowEulaEx)
+
+[s_ObjectStatusExcludable]
+#OBJSTATUS_INFECTED
+#OBJSTATUS_SUSPICION
+#OBJSTATUS_NOTDISINFECTED
+#OBJSTATUS_UNTREATABLE      = true
+default                     = false
+
+[s_GroupByDetectType]
+; Macros like #ObjectURL and #DETYPE_URGENT do not work in groups so use exact numbers
+;#DETYPE_MALWARE = (ObjectType == #ObjectURL) ? #DETYPE_PHISHING : #DETYPE_MALWARE
+#DETYPE_MALWARE = (ObjectType == 0x00010006) ? 70 : 3
+;#DETYPE_BEHAVIORAL = #DETYPE_URGENT
+#DETYPE_BEHAVIORAL = 90
+default = @
+
+[f_BallonToastCategory]
+ret = s_ToastCategory(EventID)
+[f_AlertToastCategory]
+ret = s_ToastAlertDialogCaption(TaskType)
+
+[s_BallonToastSeverity]
+crit    = #eNotifySeverityCritical
+med     = #eNotifySeverityImportant
+def     = #eNotifySeverityNotImportant
+
+[f_BallonToastSeverity]
+ret = s_BallonToastSeverity(s_VerdictIcon(Verdict))
+
+[f_AlertToastSeverity]
+ret = if((DetectStatus == #DSTATUS_HEURISTIC) && (TaskType == "SW2"), #eNotifySeverityImportant, s_DetectDanger2ToastSeverity(DetectDanger))
+
+[s_AlertToastSeverityString]
+oas
+ods
+avs         = if(nActionID != #AlertActionActiveDetect, if(f_AlertToastSeverity(DetectStatus, DetectDanger) == #eNotifySeverityCritical, "Critical", "Warning"), "Reboot")
+hips
+hips_group
+hipstask    = if(f_AlertToastSeverity(DetectStatus, DetectDanger) == #eNotifySeverityCritical, "Critical", if(f_AppInfo(AppID, "AppID").Rating.Rating > 50, "HighRate", "Warning"))
+SW2         = if(f_AlertToastSeverity(DetectStatus, DetectDanger) == #eNotifySeverityCritical, "Critical", "Warning")
+
+[s_DetectDanger2ToastSeverity]
+#DETDANGER_HIGH   = #eNotifySeverityCritical
+#DETDANGER_MEDIUM
+#DETDANGER_LOW   = #eNotifySeverityImportant
+def = #eNotifySeverityNotImportant
+
+[f_SimpleAlertToastCancelAction]
+ret = s_SimpleAlertToastCancelAction(nActionID)
+
+[s_SimpleAlertToastCancelAction]
+#AlertActionShowOlaForm = #ToastCancelAction_Empty
+def                     = #ToastCancelAction_Default
+
+[f_AlertToastCancelAction]
+ret = s_AlertToastCancelAction(TaskType)
+
+[s_AlertToastCancelAction]
+ods
+oas
+avs			= if(nActionID == #AlertActionActiveDetect, #ToastCancelAction_Empty, #ToastCancelAction_Default)
+def			= #ToastCancelAction_Default
+
+[s_ApplyToAllByTask]
+ods
+avs			= true
+SW2
+InstallKey	= false
+oas			= nActionID != #AlertActionActiveDetect && (nPID == 0 || DetectType!=#DETYPE_RISKWARE)
+def			= (TaskID != #eTASK_AP) && (nPID == 0 || DetectType!=#DETYPE_RISKWARE)

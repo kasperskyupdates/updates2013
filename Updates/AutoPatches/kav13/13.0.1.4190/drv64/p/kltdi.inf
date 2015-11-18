@@ -1,0 +1,71 @@
+[Version] 
+Signature = "$Windows NT$" 
+Class 	  = System
+Provider  = %KL%
+CatalogFile=kltdi.cat
+DriverVer= 04/29/2013,1.2.0.18            ;mm/dd/yy
+DriverPackageType=KernelService
+
+[Manufacturer]
+%KLName%=KLTDIModelSection,ntamd64
+
+[KLTDIModelSection]
+%KLTDIName%=DefaultInstall,KLTDI
+
+[KLTDIModelSection.ntamd64]
+%KLTDIName%=DefaultInstall,KLTDI
+
+[SourceDisksNames]
+1 = %Floppy_Description%,,,
+
+[SourceDisksFiles]
+kltdi.sys = 1
+
+[DefaultInstall]
+CopyFiles = Copy.Sys
+
+[DefaultInstall.ntamd64]
+CopyFiles = Copy.Sys
+
+[DefaultInstall.Services]
+AddService=kltdi,,kltdi.install
+
+[DefaultInstall.ntamd64.Services]
+AddService=kltdi,,kltdi.install
+
+[DefaultUninstall]
+DelFiles   = Copy.sys
+
+[DefaultUninstall.ntamd64]
+DelFiles   = Copy.sys
+
+[DefaultUninstall.Services]
+DelService = kltdi
+
+[DefaultUninstall.ntamd64.Services]
+DelService = kltdi
+
+[kltdi.install]
+DisplayName = %kltdi%
+ServiceType = 1;
+StartType   = 1;
+Errorcontrol= 1;
+ServiceBinary = %12%\kltdi.sys
+LoadOrderGroup = "PNP_TDI"
+
+;
+; Registry Modifications
+;
+
+[Copy.Sys]
+kltdi.sys,,,2
+
+[DestinationDirs]
+Copy.sys = 12
+
+[Strings] 
+KL = "Kaspersky Lab"
+KLName = "KL"
+KLTDIName = "KLTDI"
+kltdi = "kltdi"
+Floppy_Description = "Kaspersky Lab Installation Disk"

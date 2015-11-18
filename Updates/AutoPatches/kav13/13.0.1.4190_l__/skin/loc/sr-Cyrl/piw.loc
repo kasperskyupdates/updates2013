@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Бирање датотеке са кључем"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Кључ за ову копију апликације омогућио је произвођач опреме. Желите ли да активирате апликацију користећи овај кључ?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Подешавање апликације још увек није завршено. Желите ли заиста да изађете из чаробњака подешавања?"
+ErrEmptyActivationCode.caption  = "Није одређен активациони кôд"
+ErrEmptyActivationCode          = "Молимо унесите активациони кôд"
+ErrEmptyKeyPath.caption         = "Није одређена датотека са кључем"
+ErrEmptyKeyPath                 = "Молимо, одредите датотеку са кључем"
+$LicInfoKeyNumber               = "Број:"
+$LicInfoKeyProductName          = "Име апликације:"
+$LicInfoKeyType                 = "Тип лиценце:"
+$LicInfoExpirationDate          = "Истиче:"
+$LicErrReason                   = "Разлог:"
+$ActiveKey                      = "Активни кључ"
+$ReservedKey                    = "Додатни кључ"
+ConfirmFeedback                 = "Слажете ли се са тим да се шаљу информације у <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) је инфраструктура за услуге на мрежи и пружа ажурне информације о безбедности датотека, Web ресурса и софтвера. Коришћењем података из KSN убрзава се реакција на новонастале претње, побољшавају се перформансе неких компоненти за заштиту и смањује се ризик од лажних позитивних откривања.\nКада приступите у KSN, подаци о заразама вируса и осталим проблемима, као и проширене статистике о учитаним или извршеним апликацијама (које су у складу са <a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN изјавом о прикупљању података</a>), аутоматски се шаљу у Kaspersky Lab. \n\n<b>Kaspersky Security Network не прикупља, нити обрађује, било какве личне корисничке податке.</b>"
+
+$ToAcquireNewLicText            = "\n\nДа бисте прибавили нову лиценцу, молимо вас да контактирате вашег дистрибутера или <a Buy onclick(buy())>Kaspersky Lab одељење продаје</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nМолимо вас да покушате са ручним ажурирањем статуса претплате или да контактирате техничку подршку" : "\nМолимо вас покушате касније да активирате апликацију са активационим кôдом (за 1–2 часа) или контактирајте техничку подршку") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " чаробњак активације" : " чаробњак подешавања")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Опште обавештење"
+InitBegin.Descr                       = "Добро дошли у " + $ProductName_GEN + " чаробњака за кофигурацију."
+CheckHosts.Name                       = "Проверавање доступности Kaspersky Lab сервера"
+CheckHosts.Descr                      = "Откривено је сумњиво преусмеравање"
+ResetArea.Name                        = "Враћање поставки"
+ResetArea.Descr                       = "Поставке које се налазе испод, садрже податке које је унео корисник\nили су прикупљене током рада апликације."
+ActivationBegin.Name                  = $IsSubscription ? "Управљање претплатом" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Избриши кључ" : "Додај кључ") : "Активирај апликацију")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Лиценцирање" : "Активирајте апликацију за наставак.")
+ActivationProgress.Name               = "Активација на мрежи"
+ActivationProgress.Descr              = "Активација је у току, молимо сачекајте..."
+ActivationServerForm.Name             = "Активација на мрежи"
+ActivationServerForm.Descr            = "Молимо вас да попуните овај образац."
+ActivationChooseKey.Name              = "Активација помоћу датотеке са кључем"
+ActivationChooseKey.Descr             = "Активира апликацију користећи датотеку са кључем."
+ActivationEnd.Name                    = "Активација апликације"
+ActivationEnd.Descr                   = "Активација је завршена."
+MigrationKeyIsFound.Name         = "Доступан је кључ за тренутну лиценцу"
+MigrationKeyIsFound.Descr        = "Желите ли да користите апликацију са тренутном лиценцом?"
+MigrationBegin.Name              = "Премести на " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Бићете премештени на коришћење " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Проналажење неусаглашеног софтвера"
+MigrationSearchProgress.Descr    = "Молимо вас да сачекате док се тражи неусаглашен софтвер..."
+MigrationSafeRemoval.Name        = "Пронађен је неусаглашен софтвер"
+MigrationSafeRemoval.Descr       = "За наставак, неопходно је да уклоните неусаглашен софтвер"
+MigrationSafeProgress.Name       = "Уклони неусаглашен софтвер"
+MigrationSafeProgress.Descr      = "Молимо вас да сачекате док се уклања неусаглашен софтвер..."
+MigrationAddRemove.Name          = "Пронађен је неусаглашен софтвер"
+MigrationAddRemove.Descr         = "Молимо уклоните неусаглашен софтвер"
+MigrationUnsafeRemoval.Name      = "Пронађен је неусаглашен софтвер"
+MigrationUnsafeRemoval.Descr     = "За наставак, неопходно је да уклоните неусаглашен софтвер"
+MigrationUnsafeProgress.Name     = "Уклони неусаглашен софтвер"
+MigrationUnsafeProgress.Descr    = "Молимо вас да сачекате док се уклања неусаглашен софтвер..."
+MigrationReboot.Name             = "Оперативни систем захтева поновно покретање"
+MigrationReboot.Descr            = "Потребно је поновно покретање рачунара како би се наставила промена на нову апликацију"
+MigrationProgress.Name           = "Премести на " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Молимо вас да сачекате док се врши промена на нову апликацију..."
+MigrationRebootApp.Name          = bMigrationDone ? "Апликација ће бити поново покренута" : "Десила се грешка приликом промене на нову апликацију"
+MigrationRebootApp.Descr         = bMigrationDone ? "Апликацију треба поново покренути" : "Промена на " + s_MUProductTitleLong(env("ProductType")) + " није успела"
+MigrationFinish.Name             = "Промена на " + s_ProductTitleLong(env("ProductType")) + " је завршена"
+MigrationFinish.Descr            = "Промена на " + s_ProductTitleLong(env("ProductType")) + " је завршена"
+DNS.Name                              = "Напредне поставке"
+DNS.Descr                             = $ProductName_GEN + " напредне оперативне поставке"
+EnumExe.Name                          = "Анализирање система"
+EnumExe.Descr                         = "Молимо вас да сачекате док се прикупе информације о вашем систему..."
+InitFinish.Name                       = "Завршетак подешавања програма " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Морате поново да покренте ваш рачунар како бисте завршили конфигурацију апликације." : "Можете одмах да покренете " + $ProductName + " апликацију."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Откривено је сумњиво преусмеравање ка Kaspersky Lab серверима. Ово може бити проузроковано злонамерном активношћу, што даље може утицати на неуспешна ажурирања и активације. Сумњиви уноси у „hosts“ датотеци:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Избриши запис (препоручено)"
+Skip			= "Прескочи"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Назад"
+Back.Descr      = "Враћа вас на избор начина активације"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Додај кључ" : "&Активирај"
+Activate.Descr  = "Инсталација изабраног кључа"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Заврши"
+Finish.Descr    = "Чаробњак је завршио"
+Next.Name       = "&Даље"
+Next.Descr      = "Наставља до следећег подешавања"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Можете да наставите са коришћењем апликације са тренутном лиценцом. У овом случају, апликација ће прећи на " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Желите ли да наставите са коришћењем апликације са тренутном лиценцом?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Тип апликације:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Датум истека:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (преостаје " + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Да, и пребаци на " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Не, и напусти " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "У поступку сте премештања на " + s_MUProductTitleLong(env("ProductType")) + ". Носилац ауторских права вам омогућава не-ексклузивну лиценцу за коришћење " + s_MUProductTitleLong(env("ProductType")) + " апликације, под истим условима које сте прихватили приликом инсталирања " + s_ProductTitleLong(env("ProductType")) + " апликације"
+Text3   = "Напомена: Ово премештање захтева акцију која може довести до поновног покретања система."
+LicenseWarning  = "Пажња! Комерцијална лиценца за Kaspersky Anti-Virus истиче пре пробне лиценце за Kaspersky Internet Security. Након што комерцијална лиценца за Kaspersky Anti-Virus истекне, нећете бити у могућности да се вратите на коришћење Kaspersky Anti-Virus апликације из пробне верзије Kaspersky Internet Security. Желите ли да наставите са премештањем на Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Тражење неусаглашеног софтвера на вашем рачунару. Ово може потрајати неко време. Молимо вас да сачекате..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Следећи софтвер биће уклоњен ради обављања промене:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Молимо вас да сачекате док се уклања неусаглашен софтвер..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Следећи софтвер би требало уклонити ради обављања промене:"
+OpenAddRemove = "Отвори Додај/уклони програме прозор"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Следећи софтвер биће уклоњен ради обављања промене:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Молимо вас да сачекате док се уклања неусаглашен софтвер..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Потребно је да поново покренете рачунар како бисте наставили промену. Чаробњак ће наставити након поновног покретања."
+Reboot   = "Поново покрени одмах"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Молимо вас да сачекате док се апликације изнова конфигурише и будете премештени на " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Да бисте завршили промену на " + s_MUProductTitleLong(env("ProductType")) + ", апликација мора поново бити покренута." : "Промена на " + s_MUProductTitleLong(env("ProductType")) + " није успела."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Сада можете да испробате функције које нуди " + s_ProductTitleLong("kis") + ", као што су родитељски надзор, заштита од нежељене поште, заштитни зид и друго." : s_ProductTitleLong("kav") + " пружа само основну заштиту вашег рачунара од злонамерног софтвера."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Можете да "+if($IsRefreshSubAvail,"ажурирате статус претплате или да ")+"избришете кључ." : (f_IsActiveKeyWorkingCommercial() ? "Можете да избришете ваш активни кључ или да додате нови." : "Активирајте " + $ProductName + " како бисте омогућили пуну функционалност."+ if($CorporateOnly, " Можете да набавите <a Activate onclick(url($ActivationLink))>комерцијалну</a> или да активирате <a ActivateTrial onclick(url($ActivationTrialLink))>пробну</a> верзију апликације."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Активирај &касније"
+Later.Descr                 = "Прескочи активацију и настави до конфигурације апликације"
+ChooseKey.Name              = "Активирај користећи &датотеку са кључем"
+ChooseKey.Descr             = "Неопходна је датотека са кључем"
+ActivateBetaKAV.Name        = "Активирај Kaspersky Anti-Virus &бета верзију"
+ActivateBetaKAV.Descr       = "Бета верзија Kaspersky Anti-Virus апликације је потпуно функционална, али није завршни производ."
+ActivateBetaKIS.Name        = "Активирај Kaspersky Internet Security &бета верзију"
+ActivateBetaKIS.Descr       = "Бета верзија Kaspersky Internet Security апликације је потпуно функционална, али није завршни производ."
+ActivateTrial.Name          = "Активирај &пробну верзију"
+ActivateTrial.Descr         = "Период трајања пробне верзије назначен је у Уговор о лиценцирању са крајњим корисником"
+ActivateCommercial.Name     = "&Активирај на мрежи"
+ActivateCommercial.Descr    = "Неопходан је активациони кôд који сте добили приликом куповине"
+RemoveKey.Name              = $HasReserveKey ? "&Избриши додатни кључ" : "&Избриши кључ"
+RemoveKey.Descr             = "Да бисте заменили кључ, потребно је прво да уклоните активни кључ"
+RefreshSubscription.Name    = "&Обнови стање претплате"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Стање претплате можете ручно да обновите." :  "Заустављено је аутоматско обнављање стања претплате. Стање можете ручно да обновите."
+ActivateTrialKIS            = "Активирај Kaspersky Internet Security пробну верзију"
+ActivateTrialKIS_Desc       = "Период важења Kaspersky Internet Security пробне верзије је одређен Уговором о лиценцирању"
+RevertToCommercialKAV       = "Повратак на комерцијалну верзију Kaspersky Anti-Virus апликације"
+RevertToCommercialKAV_Desc  = "Повратак на комерцијалну верзију Kaspersky Anti-Virus апликације"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Ажурирај статус претплате"
+ActivateCommercial      = "Активирај &комерцијалну верзију"
+ActivateCommercial_Desc = (LockActivationCode)? "Унесите активациони кôд: " : "Унесите <a onclick(url(\"" + $ActCodeHint + "\"))>активациони кôд</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Ваш активациони кôд је аутоматски додат. Молимо вас да кликните на дугме „Даље“." : "Уколико немате активациони кôд, можете да га купите на <a onclick(buy())>Интернету</a>"
+ActivateBetaKAV         = "Активирај Kaspersky Anti-Virus &бета верзију"
+ActivateBetaKIS         = "Активирај Kaspersky Internet Security бета &верзију"
+ActivateTrial           = "Активирај &пробну верзију"
+ActivateTrial_Desc      = "Процените потпуно функционалну верзију апликације пре куповине."
+ActivateTrialKIS           = "Активирај Kaspersky Internet Security пробну верзију"
+ActivateTrialKIS_Desc      = "Процените потпуно функционалну верзију Kaspersky Internet Security апликације пре обављања куповине."
+RevertToCommercialKAV      = "Повратак на комерцијалну верзију Kaspersky Anti-Virus апликације"
+RevertToCommercialKAV_Desc = "Престани са коришћењем пробне верзије Kaspersky Internet Security апликације и врати се на комерцијалну верзију Kaspersky Anti-Virus апликације."
+Later                   = "&Активирај касније"
+Later_Desc              = "Потпуна функционалност апликације неће бити доступна све док је не активирате."
+RemoveKey               = "Избриши кључ"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Датотека са кључем:"
+KeyInfo         = "Информације о лиценци"
+ConnectingInfo.Name     = "Грешка активације: "
+ConnectingInfo.Val      = "опширније"
+TryAgain                = "Активација"
+Descr1                  = "Да бисте поновили активацију, обавите следећи поступак:"
+Descr2                  = "Проверите поставке Интернет везе и поновите активацију апликације."
+Descr3                  = "Идите на <a onclick(url(\"" + $ActivationLink + "\"))> Мрежни активациони центар</a> и пратите упутства.\nНакон пријема датотеке са кључем, одредите локацију и кликните „Даље“:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Датум прављења:"
+InstallDate.Name    = "Датум активације:"
+ExpirationDate.Name = "Датум истека:"
+SubscrptnExpDate.Name = "Датум истека претплате:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," за " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Системска грешка: " + s_SystemError(ErrorCode)
+2       = "Није могуће додати „" + KeyFile + "“ кључ: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Није могуће избрисати „" + KeyFile + "“: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Кôд грешке: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Овај кључ је већ додат" + $LicErrHelpLink
+0x0947901d  = "Лиценца је истекла. Ажурирање базе је постало недоступно" + $LicErrHelpLink
+0x89479002  = "Лиценца није пронађена" + $LicErrHelpLink
+0x89479003  = "Дигитални потпис или недостаје или је оштећен" + $LicErrHelpLink
+0x89479004  = "Подаци су оштећени" + $LicErrHelpLink
+0x89479005  = "Кључ је оштећен" + $LicErrHelpLink
+0x89479006  = "Лиценца је истекла" + $LicErrHelpLink
+0x89479007  = "Нити један кључ није одређен" + $LicErrHelpLink
+0x89479008  = "Кључ је неисправан" + $LicErrHelpLink
+0x89479009  = "Неуспешан покушај чувања података" + $LicErrHelpLink
+0x8947900a  = "Неуспешан покушај читања података" + $LicErrHelpLink
+0x8947900b  = "У/И грешка" + $LicErrHelpLink
+0x8947900c  = "Недостају базе података" + $LicErrHelpLink
+0x8947900d  = "Активни и додатни кључеви су већ додати" + $LicErrHelpLink
+0x8947900e  = "Лиценцна библиотека није покренута" + $LicErrHelpLink
+0x8947900f  = "Базе података су оштећене или су ручно ажуриране" + $LicErrHelpLink
+0x89479010  = "Базе података су оштећене" + $LicErrHelpLink
+0x89479011  = "Није могуће регистровати кључ који је истекао као резервни кључ" + $LicErrHelpLink
+0x89479012  = "Системска грешка" + $LicErrHelpLink
+0x89479013  = "Црна листа кључева је оштећена" + $LicErrHelpLink
+0x89479014  = "Дигитални потпис се не поклапа са Kaspersky Lab дигиталним потписом" + $LicErrHelpLink
+0x89479015  = "Није могуће активирати комерцијалну верзију апликације са бета лиценцом" + $LicErrHelpLink
+0x89479016  = "Бета верзија апликације може бити активирана искључиво са бета лиценцом" + $LicErrHelpLink
+0x89479017  = "Лиценца није примењива на ову апликацију. Није могуће активирати " + $ProductName + " са лиценцом друге апликације. Молимо, проверите коју апликацију имате инсталирану" + $LicErrHelpLink
+0x89479018  = "Кључ је блокиран" + $LicErrHelpLink
+0x89479019  = "Ова пробна лиценца већ је коришћена. Није могуће користити исту пробну лиценцу два пута" + $LicErrHelpLink
+0x8947901a  = "Кључ је оштећен" + $LicErrHelpLink
+0x8947901b  = "Недостаје дигитални потпис, оштећен је или се не поклапа са Kaspersky Lab дигиталним потписом" + $LicErrHelpLink
+0x8947901c  = "Није могуће додати кључ за некомерцијалну лиценцу, уколико је већ истекла" + $LicErrHelpLink
+0x8947901e  = "Датум прављења или активирања кључа није исправан. Проверите поставке времена на рачунару" + $LicErrHelpLink
+0x8947901f  = "Није могуће додати кључ за пробну лиценцу док је други кључ пробне лиценце активан" + $LicErrHelpLink
+0x89479020  = "Црна листа кључева или недостаје или је оштећена" + $LicErrHelpLink
+0x89479021  = "Недостаје, или је оштећен, опис ажурирања" + $LicErrHelpLink
+0x89479022  = "Нису исправни интерни подаци ове апликације" + $LicErrHelpLink
+0x89479023  = "Није могуће додати кључ са неисправним активационим кôдом" + $LicErrHelpLink
+0x89479024  = "Грешка у попуњавању корисничког обрасца" + $LicErrHelpLink
+0x89479025  = "Десила се грешка приликом слања захтева за активацију.\nМогући су следећи проблеми: Проблем са Интернетом везом или је проблем на активационом серверу.\nПокушајте ваш кoд да активирате нешто касније (за око 1-2 часа).\nАко се проблем настави, позовите вашег Интернет добављача" + $LicErrHelpLink
+0x89479026  = "Захтев садржи неисправан активациони кôд" + $LicErrHelpLink
+0x89479027  = "Није могуће добити стање" + $LicErrHelpLink
+0x89479028  = "Грешка чувања привремене датотеке" + $LicErrHelpLink
+0x89479029  = "Активациони кôд је погрешно унет или датум на вашем систему није добро подешен. Проверите поставке датума на вашем систему" + $LicErrHelpLink
+0x8947902a  = "Активациони кôд не одговара овој апликацији или је кључ истекао. Није могуће активирати " + $ProductName + " са лиценцом друге апликације. Молимо, проверите коју апликацију имате инсталирану или <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Није могуће примити кључ. Унет је неисправан активациони кôд" + $LicErrHelpLink
+0x8947902c  = "Активациони сервер је вратио грешку са бројем 400" + $OlaErrHelpLink
+0x8947902d  = "Активациони сервер је вратио грешку са бројем 401" + $OlaErrHelpLink
+0x8947902e  = "Активациони сервер је вратио грешку са бројем 403" + $OlaErrHelpLink
+0x8947902f  = "Неопходни извор тренутно није доступан на активационом серверу.\nАктивациони сервер вратио је грешку са бројем 404.\nМолимо проверите Интернет поставке" + $OlaErrHelpLink
+0x89479030  = "Активациони сервер је вратио грешку са бројем 405" + $OlaErrHelpLink
+0x89479031  = "Активациони сервер је вратио грешку са бројем 406" + $OlaErrHelpLink
+0x89479032  = "Захтева се провера посредничког сервера. Молимо проверите LAN поставке" + $LicErrHelpLink
+0x89479033  = "Захтев је истекао" + $LicErrHelpLink
+0x89479034  = "Активациони сервер је вратио грешку са бројем 409" + $OlaErrHelpLink
+0x89479035  = "Неопходни извор тренутно није доступан на активационом серверу.\nАктивациони сервер вратио је грешку са бројем 410.\nМолимо проверите Интернет поставке" + $OlaErrHelpLink
+0x89479036  = "Активациони сервер је вратио грешку са бројем 411" + $OlaErrHelpLink
+0x89479037  = "Активациони сервер је вратио грешку са бројем 412" + $OlaErrHelpLink
+0x89479038  = "Активациони сервер је вратио грешку са бројем 413" + $OlaErrHelpLink
+0x89479039  = "Активациони сервер је вратио грешку са бројем 414" + $OlaErrHelpLink
+0x8947903a  = "Активациони сервер је вратио грешку са бројем 415" + $OlaErrHelpLink
+0x8947903b  = "Непозната грешка на клијенту" + $OlaErrHelpLink
+0x8947903c  = "Интерна грешка сервера." + $LicErrHelpLink
+0x8947903d  = "Функционалност није подржана" + $LicErrHelpLink
+0x8947903e  = "Неисправан одговор мрежног пролаза. Проверите ваше мрежне поставке" + $LicErrHelpLink
+0x8947903f  = "Извор тренутно није доступан" + $LicErrHelpLink
+0x89479040  = "Захтев који се чекао је истекао. Проверите ваше мрежне поставке" + $LicErrHelpLink
+0x89479041  = "Протокол није подржан од стране сервера" + $OlaErrHelpLink
+0x89479042  = "Непозната грешка на серверу" + $OlaErrHelpLink
+0x89479043  = "Непозната http грешка" + $OlaErrHelpLink
+0x89479044  = "Неисправан идентификатор извора" + $LicErrHelpLink
+0x89479045  = "Неисправан податак у пољу „кључ“" + $LicErrHelpLink
+0x89479046  = "Неисправна URL адреса" + $LicErrHelpLink
+0x89479047  = "Неисправна одредишна фасцикла" + $LicErrHelpLink
+0x89479048  = "Грешка одређивања меморије" + $LicErrHelpLink
+0x89479049  = "Грешка претварања параметара у ANSI низ (url, фасцикла, агент)" + $LicErrHelpLink
+0x8947904a  = "Грешка при изради радне нити" + $LicErrHelpLink
+0x8947904b  = "Већ је покренута радна нит" + $LicErrHelpLink
+0x8947904c  = "Радна нит није покренута" + $LicErrHelpLink
+0x8947904d  = "Није пронађен кључ на активационом серверу" + $LicErrHelpLink
+0x8947904e  = "Кључ је блокиран" + $LicErrHelpLink
+0x8947904f  = "Интерна грешка активационог сервера" + $LicErrHelpLink
+0x89479050  = "Недовољно података у активационом захтеву" + $LicErrHelpLink
+0x89479051  = "Неисправно је корисничко име или лозинка" + $LicErrHelpLink
+0x89479052  = "Неисправан активациони кôд" + $LicErrHelpLink
+0x89479053  = "Лиценца за изабрану датотеку са кључем истиче пре тренутне лиценце" + $LicErrHelpLink
+0x89479054  = "Неисправан је датум на оперативном систему. Молимо вас да проверите датум система" + $LicErrHelpLink
+0x89479055  = "Пробна лиценца је истекла" + $LicErrHelpLink
+0x89479056  = "Истекао је активациони период" + $LicErrHelpLink
+0x89479057  = "<b>Кôд који сте унели је активиран више пута од дозвољеног</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Није могуће додати кључ за некомерцијалну лиценцу као додатни кључ, док је комерцијални кључ важећи" + $LicErrHelpLink
+0x8947905c  = "Активациони кôд је неопходан." + $LicErrHelpLink
+0x8947905d  = "Погрешан је ID купца или лозинка" + $LicErrHelpLink
+0x8947905e  = "Неисправан активациони кôд" + $LicErrHelpLink
+0x89479062  = "Није могуће повезивање са активационим сервером" + $LicErrHelpLink
+0x89479064  = "<b>Активациони сервер тренутно није доступан.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Није могуће одмах активирати апликацију. Покушајте активацију након конфигурисања апликације и поновног покретања система.", "Молимо вас да проверите поставке везе са Интернетом, а затим покушајте поново.") + $LicErrHelpLink
+0x89479065  = "Ваша лиценца је истекла. Молимо вас да <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Активни кључ није могуће заменити са кључем који је истекао" + $LicErrHelpLink
+0x89479067  = "Није могуће додати кључ који истиче пре активног кључа" + $LicErrHelpLink
+0x89479068  = "Недостаје ажурни кључ претплате" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Поступак активације завршио је са системском грешком " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Грешка активације: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Грешка активације: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Грешка активације: сервер је вратио HTTP кôд " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Активација није успела " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Интерна грешка на активационом серверу. Молимо вас да покушате поново или контактирајте техничку подршку"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Активациони кôд није усаглашен са апликацијом. Није могуће је активирати " + $ProductName + " са активационим кôдом друге апликације. Молимо вас да проверите који производ имате инсталиран"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Кључ је блокиран"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Погрешан је ID купца или лозинка"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Погрешан активациони кôд"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Потребан је активациони кôд"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Активациони период је истекао"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Прекомерно активирање са истим кôдом"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Активациони кôд није намењен овој регији"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Овај активациони кôд није могуће користити за ову локализацију апликације."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Активациони кôд је исправан за новију верзију ове апликације. Да бисте користили тренутну верзију потребно је да набавите други кôд. За опширније информације, кликните на везу испод."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Активациони сервер је вратио грешку 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Активациони сервер је вратио грешку 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Активациони сервер је вратио грешку 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Активациони сервер је вратио грешку 646"
+default                                     = "Активациона процедура је вратила грешку " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Активиран је режим „Рад ван мреже“ у Microsoft Internet Explorer прегледачу"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Неуспело повезивање са Интернетом"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Активациони сервер није доступан"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Посреднички сервер није доступан"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Истекло је предвиђено време за одговор"
+#OLA_ERR_INTERNET_INVALID_URL                = "Неисправна адреса активационог сервера"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Неисправан протокол"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Није могуће успоставити везу ка серверу"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Операција је отказана"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Није могуће успоставити везу ка серверу"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Прекинута је веза са сервером"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Веза са сервером је поновљена"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Неисправан одговор сервера"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "SSL-цертификат сервера је истекао. Молимо проверите локално време на вашем рачунару"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL-цертификовани назив сервера не одговара називу сервера"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Није могуће обавити проверу опозваних цертификата. Онемогућите ово у прегледачу Microsoft Internet Explorer (Алатке->Интернет Опције->Више опција->Провери да ли има опозива цертификата издавача), а затим покушајте поново"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Неисправан SSL-цертификат"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL-цертификат је опозван"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Неисправан цертификовани центар"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Регистрациони подаци су важни како би вас Kaspersky Lab могао обавештавати о разним промоцијама, продајама и посебним понудама."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Настави"
+Activate.Descr  = "Слање података на активациони сервер"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Чаробњак подешавања је повезан са Kaspersky Lab активационим сервером. Ово може да потраје неко време, у зависности од брзине ваше везе са Интернетом."
+ConnectingInfo.Name     = "Повезивање са активационим сервером..."
+ConnectingInfo.Val      = if(bConnected, "У реду")
+SendingCodeInfo.Name    = "Слање активационог кôда..."
+SendingCodeInfo.Val     = if(bSentCode, "У реду")
+RetrievingKeyInfo.Name  = "Чекање на одговор сервера..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "У реду")
+Status                  = "Ваша копија " + $ProductName + " производа успешно је активирана"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Датум истека:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (преостаје " + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Активација је успешно завршена." : "Апликација је већ активирана на вашем рачунару."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Даље"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Наставља до активације апликације": (((PiwFlags & #fPiwActivation) && !bSilent)?"Наставља до информације о лиценци":"Наставља до избора начина заштите")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Овај чаробњак ће вам помоћи у исправном подешавању безбедности вашег рачунара.\n\nТоком подешавања, чаробњак ће прикупити информације о вашем систему и инсталираним апликацијама на вашем рачунару. Ове информације ће се користити само у сврху пружања оптималне зашите вашег рачунара.\n\nПритисните „Даље“ како бисте покренули подешавање " + $ProductName_GEN + " апликације."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Инсталација само што није завршила..." : ((PiwFlags & #fPiwReset) ? ("Поправка је завршена.") : ("Инсталација је завршена."))
+ResetDescr          = "Чаробњак за конфигурацију је успешно вратио " + $ProductName + " поставке."
+Reboot              = "&Поново покрени рачунар"
+StartProduct        = "По&крени " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Хвала вам што сте инсталирали " + $ProductName + ". Да бисте завршили инсталацију, неопходно је да поново покренете ваш рачунар. Молимо вас да сачувате ваше податке, затворите све апликације и кликнете на дугме „Заврши“.") : "Имајте на уму да ће додатно подешавање производа бити завршено по првом покретању апликације. Ово може да потраје неколико минута док се не заврши."
+
+[ConfigureWizard.EnumExe]
+Info = "Током анализирања система, апликација прави листу поузданих апликација које се налазе на Microsoft Windows оперативном систему. \n\nАпликације које нису у оперативном систему, биће накнадно анализиране када се први пут покрену на рачунару."
+
+[s_LicKeyType]
+#ektBeta         = "Бета кључ"
+#ektTrial        = "Пробна лиценца"
+#ektTest         = "Тест кључ"
+#ektOEM          = "OEM кључ"
+#ektCommercial   = "Комерцијална"
+#ektSubscription = "Комерцијална са претплатом"
+#ektSubscriptionProtection = "Комерцијална са претплатом на заштиту"
+default          = "Непознат тип"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Непозната грешка"
+#ekirValid                      = "Лиценца је исправна"
+#ekirExpired                    = "Лиценца је истекла"
+#ekirCorrupted                  = "Лиценца није исправна"
+#ekirNotSigned                  = "Дигитални потпис или недостаје или је оштећен"
+#ekirWrongProduct               = "Лиценца се није примењива на ову апликацију. Није могуће активирати " + $ProductName + " са лиценцом друге апликације. Молимо, проверите коју апликацију имате инсталирану."
+#ekirBlackListed                = "Кључ "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" је блокиран"
+#ekirIllegalUpdate              = "Датум базе података не одговара са периодом важења лиценце"
+#ekirInconsistentUpdate         = "Базе података су оштећене"
+#ekirKeyCreationDateInvalid     = "Неисправан је датум прављења кључа"
+#ekirTrialAlreadyInUse          = "Није могуће додати кључ за пробну лиценцу док је активан други кључ пробне лиценце"
+#ekirInvalidBlacklist           = "Оштећена је црна листа кључева"
+#ekirCantBeUsedAsReserved       = "Није могуће регистровати лиценцу као додатну"
+#ekirKeyInstallDateInvalid      = "Неисправан је датум активације кључа"
+#ekirTrialPeriodIsOver          = "Пробна лиценца је истекла"
+#ekirConflictsWithCommercial    = "Нова датотека са кључем је у конфликту са тренутном комерцијалном лиценцом"
+#ekirExpiredAsReserve           = "Ова лиценца истиче пре тренутне лиценце"
+#ekirGracePeriod                = "Лиценца у одложеном периоду"
+#ekirSuspended                  = "Претплата је укинута"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Апликација би требала бити инсталирана"
+#ekirLicenseOnlyForMigration    = "Промени на другу апликацију за активирање комерцијалне верзије"
+default                         = "Неисправан кључ"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Биће одређено касније"
+#edtUnlimited = "Активан"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Укинуто од " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Информације о лиценци"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": обавештење о лиценци"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Пажња!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Користите пробну верзију " + $ProductName_GEN + " производа."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Црна листа лиценци или недостаје или је оштећена. Молимо вас да покренете <a Update onclick(f_StartUpdater())>ажурирање</a> за неометани наставак рада."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Ваша лиценца " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Да бисте задржали вашу заштиту ажурном, молимо вас да <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nУколико сте већ прибавили лиценцу, молимо вас да <a Activate onclick(f_Activate())>активирате апликацију</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Претплата је истекла." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Заштита је онемогућена."))+($IsBestBuyLink ? " Није доступно обнављање претплате." : " Рачунар је изложен ризику. \n\nДа бисте обновили претплату, <a onclick(url($KeyProviderLinkForText))>контактирајте вашег добављача услуге</a>.")) :("Преостаје вам " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " до када би требало да обновите претплату. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " до престанка ажурирања. " : " до престанка заштите." ) ) + " Да бисте обновили претплату, <a onclick(url($KeyProviderLinkForText))>контактирајте вашег добављача услуге</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Активни кључ је блокиран.\nФункција ажурирања је онемогућена тако да ваш рачунар може бити изложен ризику од заразе.</b>\n\nУколико сте легално купили апликацију, молимо вас да контактирате техничку подршку или продавца.\n\nУколико користите нелегалну копију, молимо вас да <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nУколико сте већ прибавили лиценцу, молимо вас да <a Activate onclick(f_Activate())>активирате апликацију</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "истиче данас" : "истиче за " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "је истекла"
+
+[s_LicenseRenewBuyText]
+0 = "набавите лиценцу"
+default = "обновите лиценцу"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Изаберите поставке за опоравак:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " чаробњак конфигурације"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Опште обавештење"
+InitBegin.Descr                       = "Добро дошли у " + $ProductName_GEN + " чаробњака за кофигурацију."
+CheckHosts.Name                       = "Проверавање доступности Kaspersky Lab сервера"
+CheckHosts.Descr                      = "Откривено је сумњиво преусмеравање"
+ResetArea.Name                        = "Враћање поставки"
+ResetArea.Descr                       = "Поставке које се налазе испод, садрже податке које је унео корисник\nили су прикупљене током рада апликације."
+EnumExe.Name                          = "Анализирање система"
+EnumExe.Descr                         = "Молимо сачекајте док се не прикупе информације о систему..."
+ResetFinish.Name                       = "Завршетак подешавања програма " + $ProductName
+ResetFinish.Descr                      = $ProductName + " је спреман за почетак."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Враћање је завршено."
+ResetDescr          = "Чаробњак за конфигурацију је успешно вратио " + $ProductName + " поставке."
+
+[BestBuyUpgradeMessage]
+@ = "Премештање на другу апликацију"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Почните са употребом Kaspersky Internet Security"
+RestartButton = "Покрени Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Честитамо!"
+Message = "Ваш Kaspersky Anti-Virus је успешно надограђен у Kaspersky Internet Security.\nСада можете да користите више функција за заштиту вашег рачунара."
+Description = "Хвала вам што сте изабрали Kaspersky Lab софтвер!\nУживајте у побољшаној безбедности."
+
+[ForcedUpgradeMessagePage]
+Header = "Још мало па готово"
+Message = "Хвала вам што сте изабрали Kaspersky Lab софтвер! Уживајте у побољшаној безбедности."
+Description = "Због тога што неусаглашени софтвер није уклоњен, неке Kaspersky Internet Security функције су онемогућене како би се обезбедио стабилан рад инсталираних апликација и оперативног система.\n\nМожете самостално да уклоните неусаглашен софтвер и да омогућите све нове функције у Kaspersky Internet Security прозору поставки."
+Notification = "Апликација ће поново бити покренута ради завршетка надоградње."

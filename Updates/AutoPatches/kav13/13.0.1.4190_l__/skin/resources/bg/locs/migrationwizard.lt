@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Съветник за превключване'
+UpgradeCaption = 'Надстройка'
+
+RebootPageCheckboxRebootText = 'Рестартирай компютъра'
+OpenRemoveProgramsPanel = 'Отвори лентата с инструменти'
+
+WizardBeginDescriptionKis = 'Ще бъде изпълнено превключване на Kaspersky Internet Security 2013.\n\nПритежателят на авторските права ви предоставя неизключителен лиценз за използване на Kaspersky Internet Security при същите условия, с които сте се съгласили по-рано при инсталирането на Kaspersky Anti-Virus.\n\nЗабележка: В процеса на превключване ще бъдат изпълнени редица действия, в резултат на които може да се наложи да рестартирате компютъра.'
+
+WizardBeginDescriptionKav = 'Ще бъде изпълнено превключване на Kaspersky Anti-Virus 2013.\n\nПритежателят на авторските права ви предоставя неизключителен лиценз за използване на Kaspersky Anti-Virus при същите условия, с които сте се съгласили по-рано при инсталирането на Kaspersky Internet Security.\n\nЗабележка: В процеса на превключване ще бъдат изпълнени редица действия, в резултат на които може да се наложи да рестартирате компютъра.'
+
+WizardContinueDescriptionKis = 'Продължаване с превключването на Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Продължаване с превключването на Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nВнимание! Срокът на действие на лиценза за използване на Kaspersky Anti-Virus изтича преди изтичане срока на действие на лиценза за Kaspersky Internet Security. След изтичане срока на действие на лиценза за използване на Kaspersky Anti-Virus, връщането към Kaspersky Anti-Virus ще бъде невъзможно.'
+
+PleaseWait = 'Моля, изчакайте'
+RemovalProgressDescription   = 'Премахване на несъвместимите програми'
+RemovalApplicationsDescription = 'За да се изпълни превключването ще бъдат премахнати следните програми:'
+ManualRemovalApplicationsDescription = 'За да направите превключването трябва да премахнете ръчно следните несъвместими програми:'
+SearchRemovalApplicationsDescription   = 'Търсене на несъвместими програми'
+RestartProductDescription = 'Програмата ще бъде рестартирана, за да завърши превключването.'
+RebootOsDescription = 'Трябва да рестартирате компютъра, за да продължите с превключването.\nСъветникът ще продължи след рестартирането.'
+
+MigrationProgressDescriptionKis = 'Изпълнява се преконфигуриране на модулите на програмата и превключване към използване на Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Изпълнява се преконфигуриране на модулите на програмата и превключване към използване на Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Изпълнява се преконфигуриране на модулите на програмата и превключване към използване на Kaspersky Anti-Virus'
+
+MigrationKis = 'Превключване на Kaspersky Internet Security'
+MigrationKav = 'Превключване на Kaspersky Anti-Virus'
+MigrationUnknown = 'Превключване на '
+
+SearchRemovalApplicationsHeader = 'Надстройка до Kaspersky Internet Security'
+RemovalProgressHeader = 'Премахване на несъвместимите програми'
+RemovalApplicationsHeader = 'Намерени са несъвместими програми'
+RebootOsHeader = 'Необходимо е рестартиране на компютъра'
+RestartProductHeader = 'Програмата ще бъде рестартирана'
+
+MigrationAbortedHeader = $MigrationType + ' е невъзможно'
+MigrationAbortedDescription = $MigrationType + ' е неуспешно. Опитайте да изтриете несъвместимите програми ръчно и стартирайте съветника отново.'
+
+BestBuyGiftInformation = 'Вашият Kaspersky Anti-Virus ще бъде настроен към Kaspersky Internet Security.\nСега вие ще разполагате дори с повече функции за защита на вашия компютър.'
+BestBuyGiftDescription = 'Благодарим ви, че избрахте софтуер на Kaspersky Lab! Моля, възползвайте се от допълнителната защита.'
+BestBuyUpgradeNotification = 'При надстройката, системата ви ще бъде анализирана за несъвместим софтуер, за да се осигури правилното функциониране на инсталираните приложения и операционната система.'
+BestBuyFreeUpgrade = 'Превключване на Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Надстройка във фонов режим'
+BestBuyTryAbortInformation = 'Надстройката ще продължи във фонов режим'
+BestBuyTryAbortDescription = 'Тъй като несъвместимият софтуер не е отстранен, някои нови функции на Kaspersky Internet Security са деактивирани, за да се осигури правилното функциониране на инсталираните приложения и операционната система.\n\nВие можете да отстраните несъвместимият софтуер ръчно и да активирате всички нови функции в прозорециа с настройки на Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Обратно към надстройката'
+Congratulation = 'Поздравления!'
+
+RunKisButtonText = 'Стартиране на Kaspersky Internet Security'
+
+ProductUpgraded = 'Вашият Kaspersky Anti-Virus беше надстроен успешно Kaspersky Internet Security.\nСега вие ще разполагате дори с повече функции за защита на вашия компютър.'

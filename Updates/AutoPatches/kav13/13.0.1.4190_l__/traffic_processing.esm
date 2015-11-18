@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x642d0f2d" name="traffic_processing.traffic_monitor.ProcessTcpController" module="traffic_processing_product_facade">
+    <interface iid="0x04F8121F" name="traffic_processing.traffic_monitor.IProcessTcpController"/>
+  </component>
+
+  <component clsid="0x8d99a5f2" name="traffic_processing.protocollers.ssl.filter.ConnectionInterceptor" module="traffic_processing_product_facade">
+    <interface iid="0x5f6832a0" name="traffic_processing.protocollers.ssl.filter.IInterceptor"/>
+  </component>
+
+  <component clsid="0xD6428Df4" name="traffic_processing.protocollers.http.custom_url_processor.HttpCustomUrlProcessor" module="traffic_processing_product_facade">
+    <interface iid="0xDA8E664E" name="traffic_processing.protocollers.http.custom_url_processor.IUrlFilter"/>
+    <interface iid="0xD4A2AB39" name="traffic_processing.protocollers.http.custom_url_processor.ICustomUrlProcessor"/>
+  </component>
+
+  <component clsid="0xa0738b94" name="traffic_processing.protocollers.http.pipeline.Interceptor" module="traffic_processing_product_facade">
+    <interface iid="0x6de2886e" name="traffic_processing.protocollers.http.IInterceptor"/>
+  </component>
+
+  <component clsid="0xE76A8B8F" name="traffic_processing.protocollers.http.message_builder.HttpMessageBuilder" module="traffic_processing_product_facade">
+    <interface iid="0xEA3A624C" name="traffic_processing.protocollers.http.message_builder.IResponseMessageBuilder"/>
+  </component>
+</root>

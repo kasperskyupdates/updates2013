@@ -1,0 +1,804 @@
+﻿[Global]
+$Anti_Spam                      = "Anti-Spam"
+$ParCtl                         = "Control Parental"
+$SafeBanking                    = "Pago seguro"
+$AdBlocker                      = "Anti-Banner"
+$DayTimeUnlimited               = "Ilimitado"
+$DayTimeFullRestriction         = "restricción total"
+$Clear                          = "&Borrar todo"
+$ClearUrl                       = "Borrar"
+$PublicFolder                   = "Carpeta compartida"
+$ContentFilter                  = "Filtrado de contenidos"
+$TrafficMonitor                 = "Supervisor de tráfico"
+ProfileEmptyPwdWarn.caption     = "No se ha definido contraseña"
+ProfileEmptyPwdWarn             = "Configurar una contraseña para evitar cambios no autorizados en el perfil."
+ParCtlAssignUserToProfileInfo   = " El usuario ya tiene asignado este perfil."
+ParCtlPasswordNotEnabledWarning = $ParCtl + " está activado. Recomendamos proteger por contraseña la aplicación para evitar la desactivación no autorizada del Control Parental.\n\n¿Desea hacerlo ahora?"
+ParCtlProfileMustBeEnabled      = "Configuración incorrecta del perfil"
+ParCtlReassignProfilesWarning   = "Este perfil está asociado a uno o más usuarios. Si lo desactiva, estos usuarios tendrán asociado el perfil Menor. ¿Confirma que desea continuar?"
+$List_Export                    = "Guardar como"
+$List_Import                    = "Abrir archivo"
+
+$GroupLevelReset                = "Restaurar configuración predeterminada"
+$GroupLevelCustomize            = "Cambiar configuración"
+
+$TipText_Anti_Spam_MailCount    = "Correo: "
+$TipText_AdBlocker_nURLsChecked = "Publicidades (banners): "
+$TipText_ParCtl_nURLsChecked    = "Páginas Web: "
+
+$TipText_Anti_Spam_MailSpamCount = "Correo no deseado"
+$TipText_AdBlocker_nURLsDetected = "Publicidades (banners): "
+$TipText_ParCtl_nURLsDetected    = "Páginas Web: "
+$Additional = "Avanzado"
+
+[MainWindow.ContentFilter.Anti_Spam.Body]
+Level.Name  = "Nivel de sensibilidad:"
+Bases.Name  = "Bases antispam:"
+
+[MainWindow.ContentFilter.Anti_Spam.Body_Bases]
+Status          = (NeedMoreSpamToTrain + NeedMoreHamToTrain) ? "Se requiere aprendizaje" : "Completado,"
+Train		    = "ejercitar"
+StatusNeedTrain = (NeedMoreSpamToTrain + NeedMoreHamToTrain) ? ((NeedMoreSpamToTrain > 0) ? NeedMoreSpamToTrain + " e-mail de Spam, " : NeedMoreHamToTrain + " e-mail del Spam, ") : ""
+
+[MainWindow.ContentFilter.ParCtl.Body]
+Level.Name          = "Nivel de restricción:"
+Profile.Name        = "Perfil de usuario:"
+ProfileSingle.Name  = "Perfil de usuario:"
+
+[MainWindow.ContentFilter_WorkArea_Home]
+Enable                      = "Activar el Filtrado de contenidos"
+Tasks.Header                = "Tareas"
+ContentFilter.Group2.Header = "Objetos detectados"
+
+[AdBlockerSettingsBlacklist]
+@   = "Direcciones URL bloqueadas"
+
+[AdBlockerSettingsWhitelist]
+@   = "Direcciones URL permitidas"
+
+[AntiSpamSettings_Tab]
+ExactMethods  = "Métodos exactos"
+ExpertMethods = "Métodos expertos"
+Integration   = "Avanzado"
+
+
+[AntiSpamSettings_Tab_ExactMethods]
+SpamSection  = "Clasificar mensaje como correo no deseado"
+HamSection	 = "Clasificar mensaje como correo normal"
+
+[AntiSpamSettings_Tab_ExactMethods_SpamSection]
+UseAntiphishing		= "Si contiene elementos &fraudulentos"
+APSettings			= "&Avanzado..."
+UseWMUF				= "Si &contiene direcciones URL de la base de datos de direcciones URL maliciosas"
+;MsgNotForMe			= "&Адресованные не мне"
+;MyAdresses			= "&Мои адреса..."
+UseBlackAddr		= "Si proviene de un remitente &prohibido"
+BlackAddresses		= "&Seleccionar..."
+UseBlackWords		= "Si contiene frases pro&hibidas"
+BlackWords			= "S&eleccionar..."
+
+[AntiSpamPhishingSettings_Dlg]
+@ = "Configuración del componente Antifraudes"
+
+[AntiSpamPhishingSettings_Heuristic]
+UseHeurAP = "Utilizar el Análisis heurístico para comprobar el correo en busca de fraudes"
+
+[AntiSpamSettings_Tab_ExactMethods_HamSection]
+UseWhiteAddr	= "Si pro&viene de un remitente autorizado"
+WhiteAddresses	= "Se&leccionar..."
+UseWhiteWords	= "Si contiene frases a&utorizadas"
+WhiteWords		= "Selecciona&r..."
+
+[AntiSpam_BlackList]
+@	= "Remitentes prohibidos"
+
+[AntiSpam_BlackWords]
+@	= "Frases prohibidas"
+
+[AntiSpam_BlackWords_Settings]
+Comment =  "El coeficiente de ponderación total del mensaje debe ser superior a 100 para que se clasifique como correo no deseado"
+ObsceneCheck = "B&loquear si contiene "
+ObsceneConfig = "términos obscenos"
+
+[AntiSpamSettings_BlackWords_List]
+Rule    = "Frase clave"
+Level   = "Coeficiente de valoración"
+
+
+[AntiSpam_WhiteList]
+@	= "Remitentes autorizados"
+
+[AntiSpam_WhiteWords]
+@	= "Frases autorizadas"
+
+[AntiSpamSettings_Tab_ExpertMethods]
+SpamLevel	= "Umbral de correo no deseado"
+Methods		= "Algoritmos de reconocimiento"
+Advanced	= "&Avanzado..."
+
+[AntiSpamSettings_Tab_Algorithms_CertainSpam]
+Description	= "Clasificar mensaje como correo no de&seado si se excede el umbral de correo no deseado"
+TextPrefix	= "Agregar etiquetas "
+
+[AntiSpamSettings_Tab_Algorithms_PossibleSpam]
+Description	= "Clasificar mensaje como &probablemente correo no deseado si se excede el umbral de correo no deseado"
+TextPrefix	= "Agregar etiquetas "
+
+[AntiSpamSettings_Tab_ExpertMethods_Methods]
+EnableEuristic		= "Análisis heurístico"
+UseGSG				= "Exploración de imágenes (Tecnología &GSG)"
+AnalyzeAttachments	= "Análisis de adjuntos en formato &RTF"
+UseBayes			= "Autoaprendizaje sobre algoritmos de análisis de texto (i&Bayes)"
+
+[AntiSpamSettings_Advanced]
+@="Avanzado"
+
+[AntiSpamSettings_Advanced_Body]
+AnalyzeByAddress	= "Aumentar factor indeseado al analizar las direcciones si"
+AnalyzeBySubject	= "Aumentar factor indeseado al analizar el campo Asunto, si"
+AnalyzeByBody		= "Aumentar umbral de correo no deseado al analizar cuerpo de correo:"
+
+[AntiSpamSettings_Advanced_Body_AnalyzeByAddress]
+HeadersToUndisclosed	= "Si el campo 'Para' &está vacío"
+HeadersFromToDigits		= "Si la dirección del destinatario o del remitente contiene &números"
+HeadersFromToNoDomain	= "Si la dirección del destinatario o del remitente no tiene nombre de &domino (\"@domain.com\")"
+
+[AntiSpamSettings_Advanced_Body_AnalyzeBySubject]
+HeadersSubjectTooLong	= "Si el asunto &tiene más de 250 caracteres"
+HeadersSubjectWsDots	= "Si el asunto contiene demasiados e&spacios y puntos"
+HeadersSubjectDigitTime	= "Si el asunto contiene un identificador n&umérico o una marca de tiempo"
+
+[AntiSpamSettings_Advanced_Body_AnalyzeByBody]
+ImagesOnly				= "Si el mensaje no contiene caracteres, solo &imágenes"
+IvalidTags				= "Si el mensaje contiene etiquetas &HTML incorrectas"
+Scripts                 = "Si el mensaje contiene &secuencias de comandos (scripts) ejecutables"
+HiddenElements          = "Si el mens&aje contiene elementos ocultos"
+NonLatLimit             = "Si el mensaje contiene al me&nos"
+NonLatLimitpart2        = "% caracteres no ASCII"
+
+[AntiSpamSettings_Tab_Integration]
+Actions		= "Acciones"
+Embedding	= "Conectividad"
+Outgoing	= "Correo electrónico saliente"
+Exceptions	= "Exclusiones"
+
+[AntiSpamSettings_Tab_Integration_Actions]
+UseSpamPrefix			= "&Agregar etiquetas "
+SpamDescription			= "al asunto del mensaje clasificado como correo no deseado"
+UseProbableSpamPrefix	= "A&gregar etiquetas "
+ProbableSpamDescription	= "el asunto del mensaje considerado como correo probablemente no deseado"
+
+[AntiSpamSettings_Tab_Integration_Embedding]
+Traffic                 = "&Tráfico POP3/SMTP/IMAP"
+ClientOutlook           = "Avanzado: com&plemento para Microsoft Office Outlook"
+ClientOutlookExpress    = "Avanzado: complemento para &Microsoft " + $WinMailer
+ClientTheBat            = "Avanzado: complemento para The &Bat!"
+
+[AntiSpamSettings_Tab_Integration_Incomming]
+
+[AntiSpamSettings_Tab_Integration_Outgoing]
+TrainOnOutgoing		= "Ap&rendizaje con el correo saliente"
+
+[AntiSpamSettings_Tab_Integration_Exceptions]
+DontCheckMsExNative = "&No comprobar los mensajes nativos de Microsoft Exchange Server"
+
+[AntiSpamSettings_Tab_White_TrustedSenders_TSList.ImportMenu]
+AddSender = "Agregar..."
+ImportFromFile = "Importar desde archivo..."
+ImportFromAddressBook = "Importar de la libreta de direcciones..."
+
+
+[AntiSpamSettings_Tab_General_Incoming]
+
+[AntiSpamSettings_Tab_General_Outgoing]
+TrainOnOutgoing = "&Aprendizaje con el correo saliente"
+
+[AntiSpamSettings_Tab_General_Excludes]
+DontCheckMsExNative = "&No comprobar los mensajes nativos de Microsoft Exchange Server"
+
+[AntiSpamSettings_Tab_General_Filter_Methods]
+EnableWMUFCheck	= "&Comprobar si las URL figuran en la base de datos de direcciones URL maliciosas"
+EnableAntiphishingCheck = "Comprobar la presencia de elementos de phi&shing"
+
+[AntiSpamSettings_Tab_White_TrustedSenders_TSList_Group]
+AddOnTrain = "&Agregar direcciones de remitentes autorizados cuando se realice el aprendizaje del componente Anti-Spam"
+
+[AntiSpamSettings_Tab_White_TrustedSenders_TSList]
+Rule = "Dirección del remitente"
+
+[AddrBookDlg]
+@ =	"Selección de libretas de direcciones"
+
+[AntiSpamSettings_Tab_White_TrustedWords_TWList]
+Rule = "Frase clave"
+
+[AntiSpamSettings_Tab_Black]
+BlockedSenders  = "Remitentes prohibidos"
+BlockedWords    = "Frases prohibidas"
+
+[AntiSpamSettings_BlockedSenders_BSList]
+Rule = "Dirección del remitente"
+
+[AntiSpam_AddressList]
+@ = "Mis direcciones de correo electrónico"
+
+[AntiSpam_AddressEdit]
+@			= "Máscara de direcciones de correo"
+@.Example	= "Ejemplo: *@kaspersky.com"
+
+[AntiSpam_BlackWordEdit]
+@           = "Frase prohibida"
+
+[AntiSpam_BlackWordEdit_Body]
+Example     = "Ejemplo: *viagra.*"
+LevelText   = "Coeficiente de puntuación:"
+
+[AntiSpam_WordEdit]
+@           = "Frase autorizada"
+@.Example   = "Ejemplo: *kaspersky.com*"
+
+
+[AntiSpamSettings_ObsceneWords_Dlg]
+@ = "Vocabulario explícito"
+
+[AntiSpamSettings_ObsceneWords_Body]
+
+[AntiSpamSettings_ObsceneWords_BWList]
+Rule    = "Frase prohibida"
+Level   = "Coeficiente de valoración"
+
+[AntiSpam_Obscene_WordEdit_Agreements]
+@ = "Contrato"
+
+[AntiSpam_Obscene_WordEdit_Agreements_Body]
+Agreements = "Para editar la lista de palabras malsonantes, deberá ser mayor de edad y no quebrantar las leyes de su país"
+IsAgree  = "Soy mayor de edad y acepto las condiciones"
+
+;------------- AntiSpam_MailDetails -------------
+
+[AntiSpam_MailDetails]
+@           = "Información detallada acerca del correo"
+
+[AS_Details_Body]
+FromLabel	= "De:"
+SubjectLabel = "Asunto:"
+TimeLabel	= "Recibido:"
+CategoryLabel = "Categoría:"
+
+[AS_Details_Verdicts]
+Algorithm   = "Criterios"
+Description = "Valor"
+Level       = "Coeficiente de valoración"
+
+[s_MessageSubj]
+Anti-Spam Training Wizard : Start training = "Asistente de autoaprendizaje: iniciar"
+Anti-Spam Training Wizard : Cancel training = "Asistente de autoaprendizaje: cancelar"
+Anti-Spam Training Wizard : Apply training = "Asistente de autoaprendizaje: creación de bases antispam"
+Anti-Spam Training Wizard : Merge training = "Asistente de autoaprendizaje: agregar a las bases de datos anti-spam"
+default = @
+
+[s_MessageCategoryName]
+0           = "Correo normal"
+1           = "Probablemente indeseado"
+2           = "Correo no deseado"
+
+[s_SpamProbability]
+-1          =
+-2          = "Aprendizaje cancelado"
+default     = @ * 100
+
+;------------------- AdBlocker -------------------
+
+[MainWindow.ContentFilter.AdBlocker.Body]
+Database.Name   = "Bases Anti-Banner:"
+BlackWhite.Name = "Direcciones URL de banners autorizadas y bloqueadas:"
+BlackWhite.Val  = (size(UserBlackList, "Enabled == 1") + size(UserWhiteList, "Enabled == 1")) + " (total " + (size(UserBlackList) + size(UserWhiteList)) + ")"
+
+[AdBlocker_RuleEdit]
+@           = "Máscara de dirección URL"
+@.Example   = "Ejemplo: *kaspersky.com*"
+menu_item   = Agregar al componente Anti-Banner
+
+;-------------------- ParCtl --------------------
+
+[s_ParCtlProfileName]
+#eParCtl_ProfId_Parent  = "Adulto"
+#eParCtl_ProfId_Teen    = "Adolescente"
+#eParCtl_ProfId_Child   = "Menor"
+
+[f_ParCtlAssignUserToProfileWarning]
+p_ProfileId
+ret         = "El usuario ya tiene asignado el perfil \"" + s_ParCtlProfileName(p_ProfileId) + "\". Solo puede haber un perfil por usuario en el equipo. ¿Está seguro de que desea reasignar el perfil seleccionado al usuario?"
+
+[ParCtl_SwitchProfile_Dialog]
+@ = "Cambiando perfil usuario"
+
+[ParCtl_SwitchProfile_Dialog_Body]
+ProfileLbl  = "Perfil:"
+PasswdLbl   = "Contraseña:"
+
+[ParCtlProfileSettView]
+SecurityGrp = "Nivel de restricción"
+ActionGrp   = "Acción"
+
+[ParCtl_ProtLevelDescr]
+#SETTINGS_LEVEL_DEFAULT = "Autorizar el uso de correo Web y chat"
+#SETTINGS_LEVEL_CUSTOM  = "- Haga clic en <" + $ResetLevel + "> para restablecer los parámetros predeterminados"
+#SETTINGS_LEVEL_LOW     = "Bloquear intentos de visualización de sitios Web con contenido para adultos o de carácter obsceno, o con información sobre drogas o violencia"
+#SETTINGS_LEVEL_HIGH    = "Bloquear intentos de ver sitios Web de todas las categorías prohibidas"
+
+[ParCtlProfileSettView_ActionGrp]
+ReportOnly  = "&Registrar evento"
+DenyReport  = "&Bloquear el acceso"
+
+[ParCtlSettings_Tab_Profile3]
+Descr = "De forma predeterminada, todos los usuarios tienen asociado el perfil Menor. Para asociar los perfiles Adolescente o Adulto a los usuarios debe seleccionar la pestaña correspondiente y activar Usar perfil."
+
+[ParCtlSettings_Tab_Profile1]
+Descr = "El perfil Adulto no impone limitaciones a la exploración de contenidos y está diseñado exclusivamente para adultos."
+
+[ParCtlProfileOperateView]
+Enable          = "&Usar perfil"
+Identification  = "Lista de usuarios"
+PasswordLbl = "Contraseña:"
+
+;--------- ParCtl_ProfileFilter_Dlg --------
+
+[ParCtl_ProfileFilter_Dlg]
+@ = "Configuración del perfil \"" + s_ParCtlProfileName(Id) + "\""
+
+[ParCtl_ProfileFilter_Dlg_Body]
+DayTimeSpace = "Planificación"
+Options      = "Restricciones"
+Additional   = "Avanzado"
+
+[ParCtl_ProfileTime_Dlg_Body_DayTimeSpace]
+UseDayTimeLimit = "Limitar el uso diario de Internet"
+Text            = "La planificación permite limitar la duración del acceso a Internet. Aplique \\"Bloquear\\" a aquellos intervalos de tiempo durante los que desee bloquear cualquier intento de acceder a Internet. Aplique \\"Según restricciones\\" a aquellos intervalos de tiempo durante los que desee restringir el acceso a Internet según las normas."
+
+[ParCtl_ProfileTime_Dlg_Body_Radio]
+WhiteListOnly     = "Para la navegación, permita solo sitios Web de la lista de direcciones URL permitid&as"
+WhiteListOnlyBtn  = "&Seleccionar..."
+Other             = "Definir &restricciones"
+WarnText          = "Si utiliza un servidor proxy, agregue su dirección a la lista de URL permitida"
+
+[ParCtl_ProfileTime_Dlg_Body_OtherGrp]
+BlackList               = "&Bloquear acceso a las URL"
+BlackListBtn            = "&Seleccionar..."
+Categories              = "Bloquear &URL por categoría"
+DenyCategoryPorno       = $ParCtlCategoryPorno
+DenyCategoryDrugs       = $ParCtlCategoryDrugs
+DenyCategoryViolence    = $ParCtlCategoryViolence
+DenyCategoryUncens      = $ParCtlCategoryUncens
+DenyCategoryWeapons     = $ParCtlCategoryWeapons
+DenyCategoryGambling    = $ParCtlCategoryGambling
+DenyCategoryChat        = $ParCtlCategoryChat
+DenyCategoryWebMail     = $ParCtlCategoryWebMail
+DenyCategoryCreditCards = $ParCtlCategoryCreditCards
+DenyCategorySoftware	= $ParCtlCategorySoftware
+Exceptions              = "&Exclusiones..."
+
+[ParCtl_ProfileFilter_Additional_Tab]
+UseHeuristic = "Utilizar análisis heurístico"
+
+[ParCtl_ProfileFilter_Additional_Tab_Body]
+Heuristic.Name = "Nivel de detalle:"
+
+[s_ParCtl_HeuristicType]
+#ParCtlHeuristicLevel1 = "análisis superficial"
+#ParCtlHeuristicLevel2 = "análisis medio"
+#ParCtlHeuristicLevel3 = "análisis avanzado"
+
+[s_HeuristicLevelDesc]
+#ParCtlHeuristicLevel1 = "Análisis rápido mediante palabras clave"
+#ParCtlHeuristicLevel2 = "Recomendado en la mayoría de los casos"
+#ParCtlHeuristicLevel3 = "Análisis máximo (pueden producirse falsos positivos)"
+
+;------------ ParCtl_BlackList_Dlg ----------
+
+[ParCtl_BlackList_Dlg]
+@ = "Direcciones URL bloqueadas"
+
+;------------ ParCtl_ListOnly_Dlg ----------
+
+[ParCtl_ListOnly_Dlg]
+@ = "Direcciones URL permitidas"
+
+;------------ ParCtl_WhiteList_Dlg ----------
+
+[ParCtl_WhiteList_Dlg]
+@ = "Direcciones URL permitidas"
+
+;--------- ParCtl_ProfileAccounts -----------
+
+[ParCtl_ProfileAccounts]
+@ = "Usuarios"
+
+[ParCtl_BrowseAccount_Dlg]
+@ = "Usuarios"
+
+[ParCtl_BrowseAccount_DlgBody]
+ListText = "Usuarios locales: "
+Browse   = "Buscar..."
+
+;---------- ParCtl_CheckPassword ------------
+
+[ParCtl_CheckPassword]
+@ = "Cambiar perfil"
+
+[ParCtl_CheckPassword_Body_Descr]
+DescrText = "Se requiere una contraseña para cambiar entre perfiles."
+
+[ParCtl_CheckPassword_Body_EditBlock]
+CheckText  = "Contraseña:"
+
+;------------- OutlookPlugin.TrainingWizard -----------
+
+[OutlookPlugin.TrainingWizard]
+@ = "Asistente de aprendizaje antispam"
+
+[OutlookPlugin.TrainingWizardPages]
+Page1.Name = "Asistente de aprendizaje antispam"
+Page2.Name  = "Correo electrónico útil (no correo basura)"
+Page3.Name  = "Correo electrónico no deseado (basura)"
+Page4.Name  = "Autoaprendizaje de Anti-Spam..."
+Page4.Descr = "Se está realizando el aprendizaje con colecciones de mensajes no deseadas y normales, espere..."
+Page5.Name  = "Fin del Asistente"
+Page5.Descr = "El Asistente de autoaprendizaje está terminando."
+
+[OutlookPlugin.TrainingWizardPages_Page1]
+$new_item   = "\n\n"
+$spdash     = "\n    "
+Text        = "Este asistente permite al componente antispam aprender lo básico sobre las colecciones de correos electrónicos útiles y no deseados." + \
+              $new_item + "Para el aprendizaje antispam también puede utilizar:" + \
+              $new_item + "— el menú contextual del registro de eventos;" + \
+              $new_item + "— \"Marcar como no deseado\" y \"No marcar como no deseado\" en " + \
+              $spdash + "Microsoft Office Outlook y Microsoft Outlook Express (Windows Mail);" + \
+              $new_item + "—  Menú \"Especial\" de los elementos \"Marcar como no deseado/Marcar como normal\"" + \
+              $spdash + "en The Bat!." + $new_item
+BayesInfo	= "Seleccionar la casilla de verificación para continuar:" 
+BayesOption	= "Utilizar el Autoaprendizaje de reconocimiento de texto (algoritmo i&Bayes)"
+Next.Name   = "&Siguiente"
+Next.Descr  = "Ir a la selección de mensajes normales"
+
+[OutlookPlugin.TrainingWizardPages_Page2]
+Text        = "Seleccionar carpetas que contengan correos electrónicos útiles (correo normal):"
+Next.Name   = "&Siguiente"
+Next.Descr  = "Ir a la selección de mensajes no deseados"
+Clear       = $Clear
+
+[OutlookPlugin.TrainingWizardPages_Page3]
+Text        = "Seleccionar carpetas que contengan correos electrónicos no deseados (correo no deseado):"
+Next.Name   = "&Siguiente"
+Next.Descr  = "Iniciar el aprendizaje"
+Clear       = $Clear
+InfoText    = "Si no dispone de carpetas correspondientes, ignore este paso"
+
+[OutlookPlugin.TrainingWizardPages_Page4]
+TrainingStatus  = "Estado de autoaprendizaje"
+MessageCount    = "Mensajes procesados:"
+NowProcessing   = "Procesando ahora"
+Folder.Name     = "Carpeta:"
+Message.Name    = "Mensaje:"
+Skip.Name       = "&Detener"
+Skip.Descr      = "Detener el aprendizaje"
+
+[OutlookPlugin.TrainingWizardPages_Page5]
+StatGroup           = "Resultados del aprendizaje"
+MessageCount.Name   = "Mensajes procesados:"
+Finish.Name         = "&Terminado"
+Finish.Descr        = "Guardar los resultados y cerrar el Asistente"
+
+[OutlookPlugin.TrainingWizardPages_Page5.ResultsApplySelect]
+Caption             = "Seleccionar el método para guardar los resultados del autoaprendizaje:"
+KeepExisting        = "&Agregar los resultados a una base antispam existente"
+Retrain             = "C&rear nueva base antispam"
+
+[MainWindow.ContentFilter_WorkArea_SysPerf]
+Checked.Name = "Analizados, objetos/seg"
+Detected.Name = "FiltracióncContenido, objetos/sec"
+
+[MainWindow.ContentFilter_WorkArea_SysPerf_Legend_Checked]
+Legend1.Text = "Anti-Spam"
+Legend2.Text = "Anti-Banner"
+Legend3.Text = "Control Parental"
+
+[MainWindow.ContentFilter_WorkArea_SysPerf_Legend_Detected]
+Legend1.Text = "Anti-Spam"
+Legend2.Text = "Anti-Banner"
+Legend3.Text = "Control Parental"
+
+[MainWindow.ContentFilter_WorkArea_SysPerf_Chart_Detected]
+line1 = tt("Spam: ")
+line2 = tt("Publicidades (banners): ")
+line3 = tt("Páginas Web: ")
+
+[MainWindow.ContentFilter_WorkArea_SysPerf_Chart_Checked]
+line1 = tt("Spam: ")
+line2 = tt("Publicidades (banners): ")
+line3 = tt("Páginas Web: ")
+
+;------------- TrafficMonConnectionTerm -------------
+
+[TrafficMonConnectionTerm]
+@           = "Finalización de las conexiones de red"
+
+[TrafficMonConnectionTerm_Body]
+Confirm     = "Atención. Existen " + statistics.SessionsOpened + " conexiones de red actualmente abiertas. Serán finalizadas. ¿Está de acuerdo?"
+AutoTerm    = "Las conexiones finalizarán automáticamente dentro de " + Timeout + " s."
+
+[TrafficMonAskActionDlg]
+$TrafficMonAskActionTaskName = "Supervisor de tráfico"
+@.ApplyToAll    = "Aplicar a todo"
+
+[TrafficMonAskActionDlg_Body_Descr]
+$AppName    = "<b>" + (sDescription == $UnknownApp ? f_ProcessInfo(nPID).Module.sDescription : sDescription) + "</b>"
+$ServerName = "<b>" + ServerName + "</b>"
+$TrafficMonApp = var l_appName; l_appName = (sDescription == $UnknownApp ? objfile(sImagePath) : sDescription); (if(sImagePath, "<b><a onclick(dialog(\"AppRulesEdit\", p_image(sImagePath)))>" + l_appName + "</a></b>", $UnknownApp) + if(strGroupPath, " from group \"" + f_AppRootGroupName(strGroupPath) + "\"") )
+Descr          = Valid ? ( $TrafficMonApp + " intenta configurar <b>una conexión cifrada saliente</b>. Esta conexión cifrada se puede analizar en busca de virus. ¿Desea analizarla ahora?") : ("No se puede garantizar la seguridad de la conexión cifrada entre " + $AppName + " y " + $ServerName + " porque no es posible comprobar el certificado de autenticación del sitio Web.")
+ObjectLink	 = "Ver el certificado del sitio Web"
+Qlarify      = "Posibles causas del error:\n- Está accediendo al servidor del pirata\n- No se conoce la autoridad del certificado\n- La configuración del servidor no es correcta\n"
+Object         = "Dirección del sitio Web:  " + if(ServerNameEx == "", ServerName, ServerNameEx) + if(ServerNameEx != CertName, "  (" + CertName + ")")
+
+[TrafficMonAskActionDlg_Body_Action]
+Question        = "¿Confía en el sitio Web especificado?"
+Process.Name    = (Valid ? "Comprobar" : "Aceptar certificado") + if(Valid, $AlertDefault)
+Process.Descr   = Valid ? "Analizar conexión en busca de virus" : "Permitir conexión"
+Skip.Name       = (Valid ? "Autorizar": "Rechazar certificado") + if(!Valid, $AlertDefault)
+Skip.Descr      = Valid ? "No analizar conexión" : "Finalizar conexión"
+
+[s_ReasonEx]
+-3  = "La dirección agregada a la lista de permitidos"
+-2  = "El mensaje ya se encuentra en la base antispam"
+-1  = "Autoaprendizaje"
+1   = "iBayes"
+2   = "URL de la lista de elementos autorizados"
+3   = "URL de la lista de elementos bloqueados"
+4   = "Frase de la lista permitida"
+5   = "Frase de la lista bloqueada"
+6   = "Correo fraudulento"
+7   = "No se ha encontrado la URL en la lista de elementos autorizados"
+8   = "No se ha encontrado la URL en la lista de elementos bloqueados"
+9   = "No se ha encontrado la frase en la lista de elementos autorizados"
+10  = "No se ha encontrado la frase en la lista de elementos bloqueados"
+11  = "Correo no fraudulento"
+12  = "Mensaje de correo eliminados del servidor"
+13  = "Mensaje de prueba"
+14  = "Correo basura"
+15  = "Correo libre de basura"
+16  = "HTML incorrecto"
+17  = "HTML correcto"
+18  = "Vínculo a imágenes externas"
+19  = "No contiene vínculos a imágenes externas"
+20  = "Objeto incrustado sin texto"
+21  = "Sin objetos internos incorrectos"
+22  = "Vacío"
+23  = "No vacío"
+24  = "No está dirigido a mí"
+25  = "Está dirigido a mí"
+26  = "Contiene caracteres no ANSI"
+27  = "Contiene caracteres solo ANSI"
+28  = "Demasiados destinatarios"
+29  = "Un destinatario"
+30  = "Utilizar la tecnología GSG (exploración de imágenes)"
+31  = "Tecnología PDB (análisis de encabezados)"
+32  = "HTML incorrecto: etiquetas HTML incorrectas"
+33  = "HTML incorrecto: texto con color del fondo"
+34  = "HTML incorrecto: fuentes diminutas"
+35  = "HTML incorrecto: caracteres invisibles"
+36  = "HTML incorrecto: scripts"
+37  = "HTML incorrecto: elementos ocultos"
+38  = "Correo interno de Microsoft Exchange Server"
+39  = "Análisis heurístico"
+40  = "Tecnología RecentTerms"
+41  = "Mensaje de correo con URL maliciosas"
+42	= "Correo fraudulento"
+43	= "Correo fraudulento"
+44  = "Correo electrónico que contiene direcciones URL maliciosas de la base de datos de " + $ProductName_GEN
+45  = "Correo electrónico que contiene direcciones URL maliciosas de la base de datos de Kaspersky Security Network"
+46  = "El correo electrónico contiene direcciones URL de la lista de permitidos"
+
+[s_ContentFilterHeaderText]
+#ChartMode_DetectedObjects="Objetos detectados"
+def="Objetos analizados"
+
+[MainWindow.ContentFilter_WorkArea]
+Home.Group2.Header = s_ContentFilterHeaderText(Gui.ContentFilterChartMode)
+
+[s_ParCtlError]
+0x800000C5                = "sin controlador"
+#eURLFLT_HEURISTICSTATUS  = "No es posible realizar el análisis heurístico del sitio Web"
+def                       = s_SystemError(@)
+
+[s_ProductNotifyText_ParCtl]
+#eURLFLT_SWITCHPROFILE   = $ParCtl + ": cambiar al perfil " + s_ParCtlProfileName(ExtraInfoSub1) + "."
+#eURLFLT_HEURISTICSTATUS = $ParCtl + ": no se puede realizar un análisis heurístico del sitio Web " + object(ObjectID)
+def                      = if(Verdict == #eDENIED, $ParCtl + ": " + object(ObjectID) + ": " + s_Verdict(Verdict) + "." + if(DecisionReason, " Método de detección: " + s_DecisionReason(DecisionReason) + "."))
+
+[s_ParCtlObjectText]
+#eURLFLT_SWITCHPROFILE	= "Cambiar al perfil " + s_ParCtlProfileName(ExtraInfoSub1)
+
+;------------- OutlookPlugin.Antivirus -----------
+
+[MC_Enabled]
+0       = "está desactivado"
+default = "está activado"
+
+[MC_Enable]
+0       = "activar"
+default = "desactivar"
+
+[MC_KavStarted]
+0       = "Para proteger su correo, active " +  $ProductName + "."
+default = "Puede " + switch(McEnabled,"MC_Enable") + " la protección \nde correo electrónico o modificar sus parámetros "
+
+[OutlookPlugin.Antivirus]
+@ = "Protección del correo"
+
+[OutlookPlugin.AntivirusCmn]
+Main            = "Protección del correo"
+Info            = "La Protección del correo analiza todos los mensajes entrantes y salientes en busca de virus y otros objetos maliciosos."
+Status          = "Categoría"
+EnableStat      = "La protección del correo " + switch(McEnabled,"MC_Enabled") + "."
+Settings        = switch(KavStarted,"MC_KavStarted")
+Link            = "\nhaga clic aquí"
+Options         = "Configuración"
+CheckDelivery   = "Analizar al recibir"
+CheckRead       = "Analizar al abrir"
+CheckSend       = "Analizar al enviar"
+
+;------------- OutlookPlugin.Antispam -----------
+
+[AS_Error]
+@                   = $Anti_Spam
+CannotMoveToFolder  = "No se puede mover el mensaje. La carpeta de correo no deseado especificada no es accesible. Compruebe la configuración anti-spam."
+
+[AS_Enabled]
+0       = "está desactivado"
+default = "está activado"
+
+[AS_Enable]
+0       = "activar"
+default = "desactivar"
+
+[AS_KavStarted]
+0       = "Para protegerse del correo no deseado, active " + $ProductName + "."
+default = "Puede " +  switch(AsEnabled,"AS_Enable") + " el filtrado \nde spam o modificar sus parámetros "
+
+[AS_Actions]
+0       = "Mover a la carpeta"
+1       = "Copiar a la carpeta"
+2       = "Eliminar"
+3       = "Omitir"
+default = "Desconocido"
+
+[OutlookPlugin.AntispamDlg]
+@                   = $Anti_Spam
+OENeedRestart       = "Ha modificado los parámetros del complemento Anti-Spam. Reinicie Microsoft Outlook Express para aplicar estos parámetros."
+WinMailNeedRestart  = "Ha modificado los parámetros del complemento Anti-Spam. Reinicie Microsoft Windows Mail para aplicar estos parámetros."
+
+[Global]
+ShowSettingsAgain   = "¿Desea mostrar esta ventana la próxima vez que se ejecute el complemento Anti-Spam?"
+FolderMissing       = "Indique el nombre de carpeta"
+
+[OutlookPlugin.Antispam]
+@               = $Anti_Spam
+FolderMissing   = "Indique el nombre de carpeta"
+SpamCaption     = "Correo no deseado"
+Spam            = "Marcar como no deseado"
+HamCaption      = "Normal"
+Ham             = "Marcar como normal"
+ConfigCaption   = "Configuración"
+Config          = "Cambiar la configuración del complemento Anti-Spam"
+SCUserInfo		= "Este mensaje es una denuncia por correo no deseado (spam), que se envía automáticamente de acuerdo con la configuración del complemento Anti-Spam"
+HCUserInfo		= "Este mensaje es un aviso por la recepción de correo no deseado (spam) enviado automáticamente de acuerdo con la configuración del complemento Anti-Spam"
+
+[OutlookPlugin.AntispamCmn]
+Main            = $Anti_Spam
+Info            = $Anti_Spam + " ofrece protección contra el correo no deseado en los correos electrónicos entrantes."
+Status          = "Categoría"
+EnableStat      = "Filtrado Anti-Spam " + switch(AsEnabled,"AS_Enabled") + "."
+Settings        = switch(KavStarted,"AS_KavStarted")
+Link            = "\nhaga clic aquí"
+CSpam           = "Correo no deseado"
+CS_Browse       = "..."
+CS_MarkAsRead   = "Marcar como leído"
+;CS_Additional   = "Дополнительно при отметке вручную писем как спам..."
+PSpam           = "Probablemente indeseado"
+PS_Browse       = "..."
+PS_MarkAsRead   = "Marcar como leído"
+CAlgo           = "Avanzado"
+
+
+[C_AlgoGroup]
+;UseOutlookRules = "Использовать "
+;LinkOutlook = "правило Microsoft Office Outlook"
+CheckSubFolders = "Analizar subcarpetas de correo entrante"
+
+;------------- OutlookPlugin.Antispam.Browse -----------
+
+[OutlookPlugin.Antispam.Browse]
+@                   = "Seleccionar carpeta"
+progress_spam       = "Procesando acción: \"Marcar como no deseado\"..."
+progress_notspam    = "Procesando acción: \"Marcar como correo normal\"..."
+
+;------------- InstallSslCertWizard -----------
+
+[InstallSslCertWizard]
+@ = "Instalación de certificados"
+
+[InstallSslCertWizardPages]
+Page1.Name  = "Bienvenido al Asistente para la instalación del certificado"
+Page2.Name  = "Instalación de certificados automática"
+Page3.Name  = "Error al instalar en el almacén de Microsoft Windows"
+Page4.Name  = "Instalación de certificado para Mozilla Firefox"
+Page5.Name  = "Instalación manual del certificado para Mozilla Firefox"
+Page6.Name  = "Instalación del certificado para Opera"
+Page7.Name  = "Instalación manual del certificado para Opera"
+Page7.Descr = "Guía para la instalación manual del certificado para Opera"
+Page8.Name  = "Fin del Asistente"
+
+[InstallSslCertWizardPages_Page1]
+Text1 = "Este asistente permite la instalación del certificado de Kaspersky Lab para analizar conexiones protegidas (SSL/TLS)."
+Text2 = "Las conexiones cifradas se utilizan para transferir datos seguros en redes locales y en Internet."
+CertInfo = "Información del certificado"
+Text3 = "Cierre todas las ventanas del navegador antes de iniciar la instalación."
+
+[InstallSslCertWizardPages_Page2]
+Text1 = "El asistente está instalando el certificado automáticamente."
+Text2 = "'Espere..."
+
+[InstallSslCertWizardPages_Page3]
+Text1 = "No se puede instalar el certificado en el almacén de certificados de Microsoft Windows. Microsoft Internet Explorer y Google Chrome utilizan los certificados de este almacén."
+
+[InstallSslCertWizardPages_Page3.FutherAction]
+TryAgain = "Volver a intentar instalación automática del certificado"
+DontTry = "No instalar el certificado para Microsoft Internet Explorer y Google Chrome"
+
+[InstallSslCertWizardPages_Page4]
+Text1 = "No se puede instalar el certificado automáticamente para Mozilla Firefox. La ventana del navegador está actualmente abierta."
+Text2 = "Cierre el navegador y vuelva a intentar la instalación o instale el certificado manualmente."
+
+[InstallSslCertWizardPages_Page4.FutherAction]
+TryAgain = "Volver a intentar instalación automática del certificado"
+TryManually = "Instale el certificado manualmente, de acuerdo con la guía"
+DontTry = "No instalar el certificado para Mozilla Firefox"
+
+[InstallSslCertWizardPages_Page5]
+Text1 = "Si es necesario puede consultar"
+Text2 = "la guía de instalación detallada del certificado para Mozilla Firefox"
+Instr = "<style type=\"text/css\">li{margin-bottom:8pt;}ol{margin-left:20pt;}</style><font face=\"arial\" style=\"font-size:8pt;\"><ol><li>Guarde el certificado de Kaspersky Lab en el disco duro local.</li><li>Desde la ventana principal de Mozilla Firefox, abra el menú <b>Herramientas</b> y seleccione el comando <b>Opciones</b>.</li><li>Abra la ficha <b>Avanzado</b> y abra la ficha <b>Cifrado</b>.</li><li>Haga clic en el botón <b>Ver certificados</b> y en la ventana <b>Administrador de certificados</b> abra la ficha <b>Autoridades</b>.</li><li>Haga clic en el botón <b>Importar</b> y seleccione el archivo en el que haya guardado el certificado en el paso 1.</li><li>En la ventana <b>Cargar certificado</b> seleccione las tres casillas de verificación para las acciones para las que este certificado tendrá validez.</li><li>Cierre todas las ventanas haciendo clic en <b>Aceptar</b>.</li><li>El certificado se ha instalado.</li></ol></font>"
+Save = "Guardar certificado"
+
+[InstallSslCertWizardPages_Page6]
+Text1 = "Si quiere analizar conexiones cifradas en el navegador Opera, instale el certificado manualmente, de acuerdo con la guía."
+
+[InstallSslCertWizardPages_Page6.FutherAction]
+Install = "Instale el certificado manualmente, de acuerdo con la guía"
+DontInstall = "No instale el certificado para Opera"
+
+[InstallSslCertWizardPages_Page7]
+Text1 = "Si es necesario puede consultar"
+Text2 = "la guía detallada para la instalación de certificados en Opera"
+Instr = "<style type=\"text/css\">li{margin-bottom:8pt;} ol{margin-left:20pt;}</style><font face=\"arial\" style=\"font-size:8pt;\"><ol><li>Guarde el certificado de Kaspersky Lab en el disco duro local.</li><li>Desde la ventana principal de Opera abra el menú <b>Configuración</b> y seleccione el comando <b>Preferencias</b>.</li><li>Abra la ficha <b>Avanzado</b> y seleccione la sección <b>Seguridad</b>.</li><li>Haga clic en el botón <b>Administrar certificados</b> y, en la ventana <b>Administrar certificados</b>, abra la ficha <b>Autoridades</b>.</li><li>Haga clic en el botón <b>Importar...</b> y seleccione el archivo en el que haya guardado el certificado en el paso 1.</li><li>En la ventana <b>Instalar certificado</b> haga clic en el botón <b>Instalar</b>.</li><li>Cierre todas las ventanas haciendo clic en <b>Aceptar</b>.</li><li>El certificado se ha instalado.</li></ol></font>"
+Save = "Guardar certificado"
+
+[InstallSslCertWizardPages_Page8]
+Text1 = "La instalación de certificado ha finalizado."
+Text2 = "Si necesita reinstalar el certificado o ver la guía sobre la instalación manual del certificado, vuelva a iniciar este asistente."
+Text3 = "El certificado se ha instalado correctamente para los siguientes navegadores:"
+Text4 = "- Microsoft Internet Explorer"
+Text5 = "- Google Chrome"
+Text6 = "- Mozilla Firefox"
+Text7 = "- Opera"
+Text8 = "Las guías de instalación manuales están disponibles para los siguientes navegadores:"
+Text9 = "- Mozilla Firefox"
+Text10= "- Opera"
+
+;------------- Url_Edit_Dlg --------------
+
+[Url_Edit_Dlg]
+@         = "Máscara de dirección URL"
+
+[Url_Edit_Dlg_Body]
+Example   = $SettingsUrlExampleLink

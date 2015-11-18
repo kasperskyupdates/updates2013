@@ -1,0 +1,25 @@
+﻿EndOfLicense_Header = 'Sestava týkající se výkonnosti aplikace'
+EndOfLicense_Title = 'Dear user, ' + $ProductName + '} had been protecting your computer during the last ' + $EndOfLicense_DaysCount + {$EndOfLicense_DaysCount:' day',' days',' days'}
+
+EndOfLicense_Checked_Title = 'Za tuto dobu proběhla kontrola:'
+EndOfLicense_Checked_Description = $EndOfLicense_ScannedObjectsCheckCount + {$EndOfLicense_ScannedObjectsCheckCount:' souboru',' souborů',' souborů'} + ', ' + $EndOfLicense_PhishingCheckCount + {$EndOfLicense_PhishingCheckCount:'} stránky',' stránek',' stránek'} + ' Internetu'
+
+EndOfLicense_Detected_Title = 'Zjištěno:'
+EndOfLicense_Detected_Description = $EndOfLicense_ThreatsDetectedCount + {$EndOfLicense_ThreatsDetectedCount:' hrozby',' hrozeb',' hrozeb'} + ', ' + $EndOfLicense_VulnerabilitiesDetectedCount + {$EndOfLicense_VulnerabilitiesDetectedCount:' zranitelného místa',' zranitelných míst',' zranitelných míst'}
+
+EndOfLicense_Report = 'Podrobnosti'
+
+EndOfLicense_Status_Trial = 'Platnost zkušební licence vypršela. Ochrana byla pozastavena.'
+EndOfLicense_Hint_Trial = 'Počítači hrozí infekce, poškození nebo krádež informací. Chcete-li v ochraně pokračovat, zadejte aktivační kód.'
+
+EndOfLicense_Status_Commercial = 'Platnost licence vypršela. Aktualizace databáze není k dispozici.'
+EndOfLicense_Hint_Commercial = 'Počítači hrozí infekce, poškození nebo krádež informací. Chcete-li aktualizovat databáze, zadejte aktivační kód.'
+
+EndOfLicense_Activate = 'Zadat aktivační kód'
+EndOfLicense_Continue = 'Pokračovat s pozastavenou ochranou'
+EndOfLicense_Downgrade = 'Zpět na součást Kaspersky Anti-Virus'
+
+;Buttons
+ButtonActivateNewCode = 'Zadat aktivační kód'
+ButtonBuyRenew = 'Zakoupit aktivační kód'
+ButtonRollback = 'Zpět na součást Kaspersky Anti-Virus'

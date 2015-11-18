@@ -1,0 +1,456 @@
+﻿;
+; License Manager
+;
+LicenseNumber = 'Chave:'
+LicenseState = 'Estado da chave:'
+LicenseType = 'Tipo de licença:'
+LicenseActivationDate = 'Data de activação:'
+LicenseExpirationDate = 'Data de validade:'
+LicenseExpirationDateLocal = 'Data de expiração (hora local):'
+LicenseRemainingDays = 'Restante(s):'
+LicenseManagerTitle = 'Licenciamento'
+
+; License states
+LicenseActive = 'activo'
+LicenseNotificationInfo = LicenseActive
+LicenseNotificationWarning = LicenseActive
+LicenseNotificationCritical = LicenseActive
+LicenseExpired = 'a licença expirou'
+LicenseProblems = 'inválida'
+LicenseBlocked = 'bloqueada'
+LicenseLimited = LicenseBlocked
+NoActivationCodeProvided = 'em falta'
+SubscriptionActive = LicenseActive
+SubscriptionNotificationInfo = SubscriptionActive
+SubscriptionNotificationWarning = SubscriptionActive
+SubscriptionNotificationCritical = SubscriptionActive
+SubscriptionActiveExpirationDateUnknown = SubscriptionActive
+SubscriptionExpired = 'subscrição expirada'
+SubscriptionSuspended = 'subscrição suspensa'
+SubscriptionUpdateFailed = 'sem dados'
+SubscriptionBlocked = LicenseBlocked
+SubscriptionLimited = LicenseBlocked
+PreinstalledCodeAvailable = NoActivationCodeProvided
+WaitCodeActivationInfo = NoActivationCodeProvided
+WaitCodeActivationCritical = NoActivationCodeProvided
+WaitReservedCodeActivationInfo = 'a licença expirou'
+PreinstalledCodeActivationProblem = NoActivationCodeProvided
+
+;Buttons
+ButtonBuy = 'Co&mprar código de activação'
+ButtonRenew = 'Com&pre renovação de licença'
+ButtonUpgrade = 'Co&mprar código de activação'
+ButtonInputCode = 'I&nserir código de activação'
+ButtonInputReserveCode = 'I&nserir código de activação'
+ButtonUpdateBases = 'Act&ualizar bases de dados'
+ButtonUpdateBlackList = '&Transferir lista negra do servidor'
+ButtonSupport = 'Razões e soluções possíveis'
+ButtonUpdateStatus = 'Actualizar o estado de subscrição'
+ButtonProviderWeb = 'Visite o site do fornecedor da subscrição'
+ButtonActivateReserveCode = 'Activar agora'
+ButtonCheckReserveCode = 'Verificar código de activação'
+ButtonDeleteReserveCode = 'Eliminar código de activação'
+ButtonDeletePreinstalledCode = 'Eliminar código de activação'
+ButtonRollback = 'Voltar ao Kaspersky Anti-Virus 2013'
+ButtonActivateNewCode = 'Ac&tivar a aplicação'
+ButtonActivatePreinstalledCode = ButtonActivateNewCode
+
+;License type
+LicenseTypeBeta = 'para testes beta'
+LicenseTypeTrial = 'avaliação'
+LicenseTypeTest = 'para teste'
+LicenseTypeOEM = 'para parceiros OEM'
+LicenseTypeCommercial = 'comercial'
+LicenseTypeSubscription = 'comercial com subscrição'
+LicenseTypeSubscriptionProtection = 'comercial com subscrição de protecção'
+LicenseTypeUnknown = 'Tipo desconhecido'
+
+;License type description
+NonSubscriptionLicenseTypeDescription = $LicenseType + ' para ' + $LicensePcCount + ' ' + {$LicensePcCount: 'computador', 'computadores'} + ' durante ' + $LicenseLifespan
+SubscriptionLicenseTypeDescription = $LicenseType + ' para ' + $LicensePcCount + ' ' + {$LicensePcCount: 'computador', 'computadores'}
+
+ActivationManagerLicenseTypeDescription = $LicenseType + ' para ' + $LicensePcCount + ' ' + {$LicensePcCount: 'computador', 'computadores'}
+
+ActivationManager_LicenseFromOtherProduct_LicenseTypeDescription = $LicenseFromOtherProduct_LicenseType + ' para ' + $LicenseFromOtherProduct_PcCount + ' ' + {$LicenseFromOtherProduct_PcCount: 'computador', 'computadores'}
+ActivationManager_LicenseFromOtherProduct_ActivationText = 'Sim, instalar o ' + $LicenseFromOtherProductProductName + ' e activar adicionando a chave encontrada'
+
+LicenseRemainingDaysText = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dia', 'dias'}
+LicenseRemainingDaysToBeDefinedLater = 'será determinado mais tarde'
+
+;
+; Activation Wizard
+;
+ButtonNextText = 'Seguinte >'
+ButtonBackText = '< Anterior'
+ButtonCancelText = 'Cancelar'
+ButtonFinishText = 'Concluir'
+
+CommonTextForLinks = 'Razões e soluções possíveis'
+ButtonShowHelpText = 'Ajuda'
+
+ActivationKISWizardString =  'Activação '
+ProlongationActivationWizardString = 'Renovar licença '
+
+SelectionOfActivationTypeHeader = 'Seleccionar método de activação'
+ProlongationOfActivationHeader = 'Inserir código de activação'
+
+SelectCommercialActivation = 'Activar versão comercial'
+EnterActivationCode = 'Inserir código de activação:'
+SerialNumberHelpString = 'O que é?'
+TextForPurchasingLicenseWithTrial = 'Se não possuir um código de activação, pode comprar um na loja online da Kaspersky Lab.'
+ActivationCodeInputError = 'Código de activação incorrecto'
+ActivationCodeIncorrectSymbol = 'Carácter não válido'
+
+TextForPurchasingLicense = 'Se não possuir um código de activação, pode comprar um na loja online da Kaspersky Lab.'
+
+ButtonTextForPurchasingLicense = 'Adquirir código de activação'
+SelectionTrialLicense = 'Activar a versão de avaliação'
+TextForTrialLicense = 'Avaliar uma versão de avaliação com todas as funcionalidades da aplicação antes de comprar a licença.'
+
+CheckActivationCodeString = 'A verificar código de activação'
+TextForWaitingActivation = 'Por favor, aguarde'
+ReasonTextForWaitingActivationUnknown = 'A validar dados de activação...'
+ReasonTextForWaitingActivationConnecting = 'A ligar ao servidor...'
+ReasonTextForWaitingActivationSending = 'A enviar dados de activação...'
+ReasonTextForReceiveServerResponse = 'A receber dados do servidor...'
+ReasonTextForWaitingActivationCompleted = 'Activação concluída'
+
+; wizard page: key for other product 
+KeyForOtherProductPageHeader = 'O código de activação corresponde a outra aplicação'
+KeyForOtherProductOfflinePageHeader = 'O ficheiro de chave corresponde a outra aplicação'
+KeyForOtherProductPageInfoBlockOfflineActivation = 'O ficheiro de chave corresponde à aplicação: '
+KeyForOtherProductPageInfoBlockActivationCode = 'Código de activação: '
+KeyForOtherProductPageInfoBlockProductName = 'corresponde à aplicação: '
+KeyForOtherProductPageChoiceText = 'Pretende activar o ' + $ProductName + '?'
+KeyForOtherProductPageChoice1 = 'Sim, continuar o assistente e introduzir outro código de activação'
+KeyForOtherProductPageChoice2 = 'Não, instalar o ' + $ActivationCodeProduct + ' e activar o produto com o código de activação introduzido'
+KeyForOtherProductPageOfflineChoice2 = 'Não, instalar o ' + $ActivationCodeProduct + ' e utilizar o ficheiro de chave seleccionado'
+KeyForOtherProductPageChoice3 = 'Registar o código de activação introduzido como um código novo'
+
+ActivationCodeIntendedForProductTextCaption = 'O código de activação corresponde a:'
+SelectionTextForChangeProductType = 'Instalar e activar a nova aplicação agora'
+SelectionTextForChangeProductTypeLater = 'Mudar para a nova aplicação mais tarde'
+ActivationCodeIntendedForProductDescription = 'Ao mudar, o sistema será analisado relativamente a software incompatível, que terá de ser removido. Poderá ser necessário reiniciar o computador.'
+ActivationCodeIntendedForProductLaterDescription = 'O código de activação introduzido terá de ser guardado. Após a licença expirar, será sugerido que mude para a nova aplicação. Não será necessário introduzir o código de activação.'
+
+ActivationResultSucceedHeader = 'Obrigado'
+ActivationResultLicenseExpiredHeader = 'Erro de activação'
+ActivationResultConnectionErrorHeader = 'Falhou a activação'
+
+StateTextForActivationResultLicenseExpired = 'A licença expirou'
+StateTextForActivationResultConnectionError = 'Erro ao ligar ao servidor de activação'
+
+InfoTextForActivationResultLicenseExpired = 'Introduza outra chave'
+	
+LicenseTypeInfoOnSucceedActivation = 'Tipo de licença:'
+SucceedActivationPeriodText = 'Período de validade:'
+
+RegistrationFormHeader = 'A registar...'
+
+TextForCheckInternetAndTryingActivation = 'Verifique as definições da ligação à Internet e tente novamente activar a aplicação.'
+
+ButtonTextForCheckInternetAndTryingActivation = 'Tentar novamente a activação'
+TextForActivationWithKeyFile = 'Se a activação da aplicação falhar'
+DescriptionForActivationWithKeyFile = 'Visite o <a href="CenterOfOnlineActivation"><font color ="#5495DF">Centro de Activação Online</font></a> a partir de um computador com acesso à Internet e obtenha um ficheiro de chave ao utilizar o seu código de activação. Após receber o ficheiro de chave, especifique a sua localização no seu computador e clique em Seguinte.'
+
+ActivationKeyFileText = 'Ficheiro de chave:'
+ButtonTextForBrowseKeyFile = 'Procurar...'
+
+ActivationReservedCodeHeader = 'Aviso'
+ActivationReservedCodeTextPart1 = 'Depois de clicar em Seguinte, a aplicação será activada com o novo código de activação e terá início o período da nova licença.'
+ActivationReservedCodeTextPart2 = 'Poderá utilizar o período restante da licença actual para utilizar a aplicação noutro computador.'
+
+ActivationWizard_Activation_Title = 'Activação do ' + $ProductNameFull
+ActivationWizard_AddToReserve_Title = 'Adicionar novo código de activação'
+ActivationWizard_SubscriptionUpdate_Title = 'A actualizar estado de subscrição'
+ActivationWizard_CheckReserveCode_Title = 'A verificar código de activação'
+ActivationWizard_Purchasing = 'Loja Online da Kaspersky'
+
+ActivationSuccessfullyCompleted = 'Activação concluída com sucesso'
+RegistrationCompleted = 'Registo efectuado com êxito'
+SubscriptionStatusSuccessfullyUpdated = 'O estado da subscrição foi actualizado com sucesso'
+CheckReserveCodeSuccessfullyCompleted = 'Novo código de activação validado com sucesso'
+AddCodeToReserveSuccessfullyCompleted = 'Código de activação adicionado com sucesso'
+SelectKeyFileDialogTitle = 'Seleccionar ficheiro de chave'
+CodeUsefullInFuture = 'A licença actual para utilizar a aplicação está válida. Não é necessário activar a aplicação de momento. O código de activação recebido irá permitir activar a aplicação mais tarde ou activar outra cópia da aplicação.'
+CodeUsefullInFutureErr = 'Licença adquirida com êxito. Não é possível activar a aplicação automaticamente, uma vez que existe um problema na verificação do estado de activação. Abra a janela da licença para solucionar o problema ou contacte o Suporte Técnico para obter assistência. Após resolver o problema poderá activar a aplicação manualmente com a licença adquirida.'
+
+ActivationHasLicense_Header = 'Está disponível uma chave para a licença actual'
+ActivationHasLicense_TypeOfProgram = 'Tipo de aplicação: '
+ActivationHasLicense_TypeOfLicense = 'Tipo de licença: '
+ActivationHasLicense_DateOfExpirations = 'Data de validade: '
+ActivationHasLicense_ActionText = 'Pretende utilizar a aplicação estipulada pela licença actual?'
+ActivationHasLicense_UseNewLicenseText = 'Não, continuar o assistente e introduzir novo código de activação'
+ActivationHasLicense_ReturnToPrevProduct = 'Sim, utilizar o ' + $LicenseFromOtherProductProductName
+
+ActivationSubscriptionReplace_Header = 'Aviso'
+ActivationSubscriptionReplace_Text = 'Não é possível guardar o código de activação introduzido como um código novo, mas este pode ser aplicado imediatamente para uma nova activação da aplicação. Poderá utilizar o período restante da licença actual para utilizar a aplicação noutro computador.'
+ActivationSubscriptionReplace_Check = 'Aplique o código de activação introduzido de imediato para nova activação da aplicação'
+
+ActivationWizard_SystemError = 'Erro de sistema: ' + $SystemErrorDescription
+ActivationWizard_CannotAddKeyFile = $LicenseError
+ActivationWizard_CannotDeleteKeyFile = 'Não é possível apagar "' + $KeyFile + '": ' + $LicenseError
+ActivationWizard_KeyInvalid = $KeyInvalidReason
+ActivationWizard_LicenseError = $LicenseError
+ActivationWizard_DefaultError = 'Erro indefinido'
+ActivationWizard_ServerNotAvailable = 'Não é possível estabelecer ligação ao servidor'
+
+ActivationWizard_FormProcessingError = 'Ocorreu um erro ao processar o formulário de registo'
+
+LicenseError_0x09479001  = 'Esta chave já foi adicionada'
+LicenseError_0x0947901D  = 'A licença expirou. Não é possível actualizar a base de dados'
+LicenseError_0x89479002  = 'Não é possível encontrar a licença'
+LicenseError_0x89479003  = 'A assinatura digital está em falta ou corrompida'
+LicenseError_0x89479004  = 'Os dados estão corrompidos'
+LicenseError_0x89479005  = 'O ficheiro de chave está corrompido'
+LicenseError_0x89479006  = 'A licença expirou'
+LicenseError_0x89479007  = 'O ficheiro de chave não foi especificado'
+LicenseError_0x89479008  = 'Ficheiro de chave inválido'
+LicenseError_0x89479009  = 'Não foi possível guardar os dados'
+LicenseError_0x8947900A  = 'Não foi possível ler os dados'
+LicenseError_0x8947900B  = 'Erro I/O'
+LicenseError_0x8947900C  = 'Não é possível encontrar bases de dados'
+LicenseError_0x8947900D  = 'As chaves activas e adicionais já se encontram registadas'
+LicenseError_0x8947900E  = 'A biblioteca de licenciamento não está inicializada'
+LicenseError_0x8947900F  = 'As bases de dados estão corrompidas ou foram actualizadas manualmente'
+LicenseError_0x89479010  = 'As bases de dados estão corrompidas'
+LicenseError_0x89479011  = 'Não é possível adicionar uma chave expirada como chave adicional'
+LicenseError_0x89479012  = 'Erro de sistema'
+LicenseError_0x89479013  = 'A lista negra de chaves está corrompida'
+LicenseError_0x89479014  = 'A assinatura digital não corresponde à assinatura digital da Kaspersky Lab'
+LicenseError_0x89479015  = 'Não é possível activar uma versão comercial da aplicação com uma licença beta'
+LicenseError_0x89479016  = 'A versão beta da aplicação apenas pode ser utilizada com uma licença beta'
+LicenseError_0x89479017  = 'A licença não é aplicável a esta aplicação'
+LicenseError_0x89479018  = 'A licença está bloqueada'
+LicenseError_0x89479019  = 'Esta licença de avaliação já foi utilizada'
+LicenseError_0x8947901A  = 'O ficheiro de chave está corrompido'
+LicenseError_0x8947901B  = 'A assinatura digital está em falta, corrompida ou não corresponde à assinatura digital da Kaspersky Lab'
+LicenseError_0x8947901C  = 'Não é possível adicionar uma chave a uma licença não comercial se esta tiver expirado'
+LicenseError_0x8947901E  = 'A data de criação ou de registo do ficheiro de chave é inválida. Verifique as definições de data do sistema'
+LicenseError_0x8947901F  = 'Não é possível adicionar uma chave para uma licença de avaliação enquanto outra chave para uma licença de avaliação estiver activa'
+LicenseError_0x89479020  = 'A lista negra de chaves está em falta ou corrompida'
+LicenseError_0x89479021  = 'A descrição da actualização está em falta ou corrompida'
+LicenseError_0x89479022  = 'Dados internos inválidos para esta aplicação'
+LicenseError_0x89479023  = 'Não é possível adicionar uma chave adicional utilizando um código de activação incorrecto'
+LicenseError_0x89479024  = 'Erro ao completar dados do formulário de utilizador'
+LicenseError_0x89479025  = 'Erro ao enviar pedido do servidor de activação.'
+LicenseError_0x89479026  = 'O pedido contém código de activação incorrecto'
+LicenseError_0x89479027  = 'Não é possível obter resposta de estado'
+LicenseError_0x89479028  = 'Erro ao guardar ficheiro temporário'
+LicenseError_0x89479029  = 'O código de activação foi incorrectamente introduzido ou a data do sistema está incorrecta'
+LicenseError_0x8947902A  = 'O código de activação não é adequado a esta aplicação ou a chave expirou'
+LicenseError_0x8947902B  = 'Falhou a recepção de um ficheiro de chave. Foi especificado o código de activação incorrecto.'
+LicenseError_0x8947902C  = 'O servidor de activação devolveu erro 400'
+LicenseError_0x8947902D  = 'O servidor de activação devolveu erro 401'
+LicenseError_0x8947902E  = 'O servidor de activação devolveu erro 403'
+LicenseError_0x8947902F  = 'O recurso necessário não está disponível no servidor de activação'
+LicenseError_0x89479030  = 'O servidor de activação devolveu erro 405'
+LicenseError_0x89479031  = 'O servidor de activação devolveu erro 406'
+LicenseError_0x89479032  = 'Autenticação de proxy requerida. Verifique as configurações de rede'
+LicenseError_0x89479033  = 'O pedido de tempo limite expirou'
+LicenseError_0x89479034  = 'O servidor de activação devolveu erro 409'
+LicenseError_0x89479035  = 'O recurso necessário não está disponível no servidor de activação'
+LicenseError_0x89479036  = 'O servidor de activação devolveu erro 411'
+LicenseError_0x89479037  = 'O servidor de activação devolveu erro 412'
+LicenseError_0x89479038  = 'O servidor de activação devolveu erro 413'
+LicenseError_0x89479039  = 'O servidor de activação devolveu erro 414'
+LicenseError_0x8947903A  = 'O servidor de activação devolveu erro 415'
+LicenseError_0x8947903B  = 'Erro desconhecido na máquina cliente'
+LicenseError_0x8947903C  = 'Erro interno do servidor'
+LicenseError_0x8947903D  = 'Funcionalidade não suportada'
+LicenseError_0x8947903E  = 'Resposta de porta de ligação não válida. Verifique as configurações de rede'
+LicenseError_0x8947903F  = 'Recurso temporariamente indisponível'
+LicenseError_0x89479040  = 'Excedido o tempo limite de resposta da porta de ligação. Verifique as configurações de rede'
+LicenseError_0x89479041  = 'O protocolo não é suportado pelo servidor'
+LicenseError_0x89479042  = 'Erro desconhecido no servidor'
+LicenseError_0x89479043  = 'Erro de HTTP desconhecido'
+LicenseError_0x89479044  = 'Identificador de recurso inválido'
+LicenseError_0x89479045  = 'Dados incorrectos no campo "chave"'
+LicenseError_0x89479046  = 'URL incorrecto'
+LicenseError_0x89479047  = 'Pasta de destino incorrecta'
+LicenseError_0x89479048  = 'Erro na distribuição da memória'
+LicenseError_0x89479049  = 'Erro ao converter parâmetros para uma sequência de caracteres (url, pasta, agente)'
+LicenseError_0x8947904A  = 'Erro ao criar linha de execução de trabalho'
+LicenseError_0x8947904B  = 'A linha de execução de trabalho já está em execução'
+LicenseError_0x8947904C  = 'A linha de execução trabalho não está em execução'
+LicenseError_0x8947904D  = 'Ficheiro de chave não encontrado no servidor de activação'
+LicenseError_0x8947904E  = 'A licença está bloqueada'
+LicenseError_0x8947904F  = 'Erro interno no servidor de activação'
+LicenseError_0x89479050  = 'Não existem dados suficientes no pedido de activação'
+LicenseError_0x89479051  = 'ID de utilizador ou password incorrectos'
+LicenseError_0x89479052  = 'Código de activação incorrecto'
+LicenseError_0x89479053  = 'A licença para o ficheiro de chave seleccionado expira antes da licença actual' 
+LicenseError_0x89479054  = 'Data do sistema incorrecta'
+LicenseError_0x89479055  = 'A licença de avaliação expirou'
+LicenseError_0x89479056  = 'O período de activação expirou'
+LicenseError_0x89479057  = 'O código de activação que introduziu excedeu o número de activações permitidas'
+LicenseError_0x89479058  = $OnlineActivationServerError
+LicenseError_0x89479059  = 'Não é possível adicionar uma chave para uma licença não comercial como chave adicional, enquanto utilizar uma licença comercial'
+LicenseError_0x8947905C  = 'É necessário um código de activação'
+LicenseError_0x8947905D  = 'ID de cliente ou password incorrectos'
+LicenseError_0x8947905E  = 'Código de activação incorrecto'
+LicenseError_0x89479062  = 'Falhou a ligação ao servidor de activação'
+LicenseError_0x89479064  = 'O servidor de activação não está disponível.'
+LicenseError_0x89479065  = 'A licença expirou'
+LicenseError_0x89479066  = 'Não é possível substituir a chave activa por uma chave expirada'
+LicenseError_0x89479067  = 'Não é possível adicionar uma chave que expira antes da chave activa como chave adicional'
+LicenseError_0x89479068  = 'A chave de subscrição activa está actualizada'
+LicenseError_0x8947906B  = 'A licença já está a ser utilizada no seu computador'
+
+OLA_SYSTEM_ERROR   = 'A activação falhou com um erro do sistema: ' + $OnlineActSrvErrorSpecific
+OLA_INTERNET_ERROR = 'Erro de activação: ' + $OnlineActSrvErrorSpecificToInternetErrCodes
+OLA_HTTP_ERROR     = 'Erro de activação: O servidor devolveu código HTTP ' + $OnlineActSrvErrorSpecific
+OLA_SERVER_ERROR   = $OnlineActSrvErrorSpecificToServerErrCodes
+OLA_DEFAULT        = 'A activação falhou ' + $OnlineActSrvError + ' : ' + $OnlineActSrvErrorSpecific
+
+OLA_ERR_INTERNET_CANNOT_CONNECT           = 'Não é possível estabelecer ligação ao servidor'
+
+; cURL errors
+; see error descriptions at http://curl.haxx.se/libcurl/c/libcurl-errors.html
+OLA_ERR_INTERNET_URL_MALFORMAT              = 'URL incorrecto'
+OLA_ERR_INTERNET_COULDNT_RESOLVE_PROXY      = 'Não se pode resolver o endereço do servidor proxy'
+OLA_ERR_INTERNET_COULDNT_RESOLVE_HOST       = 'Não se pode resolver o endereço do servidor'
+OLA_ERR_INTERNET_COULDNT_CONNECT            = 'Não é possível estabelecer ligação ao servidor'
+OLA_ERR_INTERNET_REMOTE_ACCESS_DENIED       = 'Acesso ao recurso negado'
+OLA_ERR_INTERNET_OPERATION_TIMEDOUT         = 'A aguardar tempo de espera'
+OLA_ERR_INTERNET_HTTP_POST_ERROR            = 'HTTP_POST_ERROR'
+OLA_ERR_INTERNET_SSL_CONNECT_ERROR          = 'Não se pode estabelecer uma ligação SSL'
+OLA_ERR_INTERNET_TOO_MANY_REDIRECTS         = 'Demasiadas redirecções'
+OLA_ERR_INTERNET_PEER_FAILED_VERIFICATION   = 'Falha na verificação do servidor'
+OLA_ERR_INTERNET_GOT_NOTHING                = 'O servidor não está a responder'
+OLA_ERR_INTERNET_SEND_ERROR                 = 'Não se podem enviar dados ao servidor'
+OLA_ERR_INTERNET_RECV_ERROR                 = 'Não se podem receber dados do servidor'
+OLA_ERR_INTERNET_SSL_CERTPROBLEM            = 'Problema do certificado local de segurança'
+OLA_ERR_INTERNET_SSL_CIPHER                 = 'Não se pode usar a encriptação especificada'
+OLA_ERR_INTERNET_SSL_CACERT                 = 'Certificado de servidor não confiável'
+OLA_ERR_INTERNET_BAD_CONTENT_ENCODING       = 'Transferência de codificação desconhecida'
+OLA_ERR_INTERNET_LOGIN_DENIED               = 'Acesso negado para o login especificado'
+OLA_ERR_INTERNET_SSL_CACERT_BADFILE         = 'Não se lêem os certificados de confiança'
+OLA_ERR_INTERNET_SSL_SHUTDOWN_FAILED        = 'Não se pode fechar a ligação SSL'
+OLA_ERR_INTERNET_AGAIN                      = 'O socket não está pronto para a transferência'
+OLA_ERR_INTERNET_SSL_CRL_BADFILE            = 'Não se lê a lista de certificados revogados (CRL)'
+OLA_ERR_INTERNET_SSL_ISSUER_ERROR           = 'Não se pode verificar o emissor do certificado'
+OLA_ERR_INTERNET_GENERAL_TRANSPORT_LAYER_ERROR = 'Erro ao nível de transporte'
+
+OLA_ERR_SRV_UNKNOWN_SERVER_ERROR			 = 'Erro desconhecido no servidor de activação. Volte a tentar ou contacte o suporte técnico'
+OLA_ERR_SRV_INTERNAL_SERVER_ERROR            = 'Erro interno no servidor de activação. Tente novamente ou contacte o suporte técnico'
+OLA_ERR_SRV_WRONG_APPLICATION_ID             = 'O código de activação não é adequado a esta aplicação.'
+OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED   = 'A licença está bloqueada'
+OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD    = 'ID de cliente ou password incorrectos'
+OLA_ERR_SRV_WRONG_ACTIVATION_CODE            = 'Código de activação incorrecto'
+OLA_ERR_SRV_LICENSE_NOT_FOUND                = 'Código de activação incorrecto'
+OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED         = 'É necessário um código de activação'
+OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED        = 'O período de activação expirou'
+OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED    = 'O número de activações com este código de activação foi excedido'
+OLA_ERR_SRV_REGION_MISMATCH                  = 'O código de activação é inválido para esta região'
+OLA_ERR_SRV_LOCALIZATION_MISMATCH            = 'O código de activação não pode ser utilizado para a localização deste idioma da aplicação.'
+OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION = 'O código de activação é válido para uma versão mais recente desta aplicação.'
+OLA_ERR_SRV_SERVER_ERROR_643                 = 'O servidor de activação devolveu erro 643'
+OLA_ERR_SRV_SERVER_ERROR_644                 = 'O servidor de activação devolveu erro 644'
+OLA_ERR_SRV_SERVER_ERROR_645                 = 'O servidor de activação devolveu erro 645'
+OLA_ERR_SRV_SERVER_ERROR_646                 = 'O servidor de activação devolveu erro 646'
+OLA_ERR_SRV_INVALID_ACTIVATION_CODE_FORMAT   = 'O código de activação introduzido está incorrecto.'
+OLA_ERR_SRV_MACHINE_TIME_IS_NOT_SYNCHRONIZED = 'A data do sistema no seu computador foi alterada. Corrija a data e tente activar novamente a aplicação'
+OLA_ERR_SRV_INVALID_APPLICATION_VERSION      = 'O código de activação introduzido corresponde a outra versão da aplicação'
+OLA_ERR_SRV_SUBSCRIPTION_EXPIRED             = 'A subscrição expirou. Introduza outro código de activação'
+OLA_ERR_SRV_ACTIVATION_COUNT_LIMIT_IS_REACHED = 'Excedeu o número máximo de activações permitidas para o código de activação introduzido'
+OLA_ERR_SRV_INVALID_LICENSE_TICKET_SIGNATURE = 'Problema de licença. Remova a chave activa e active a aplicação com o mesmo código de activação novamente'
+OLA_ERR_SRV_SUBSCRIPTION_IS_NOT_ACTIVE       = 'O seu fornecedor de serviços não activou a subscrição. Actualize o estado da subscrição mais tarde ou contacte o seu fornecedor de serviços.'
+OLA_ERR_SRV_SERVICE_IS_UNDER_MAINTENANCE     = 'O servidor está encerrado para manutenção. Tente novamente mais tarde.'
+	
+OLA_ERR_SRV_DEFAULT                          = 'A activação falhou ' + $OnlineActSrvError + ':' + $OnlineActSrvErrorSpecific
+
+KeyInvalidReason_ekirUnknown                 = 'Erro desconhecido'
+KeyInvalidReason_ekirValid                   = 'A chave é válida'
+KeyInvalidReason_ekirExpired                 = 'A licença expirou'
+KeyInvalidReason_ekirCorrupted               = 'Chave inválida'
+KeyInvalidReason_ekirNotSigned               = 'A assinatura digital está em falta ou corrompida'
+KeyInvalidReason_ekirWrongProduct            = 'A chave não é adequada a esta aplicação.'
+KeyInvalidReason_ekirBlackListed             = 'A chave está bloqueada'
+KeyInvalidReason_ekirIllegalUpdate           = 'A data da base de dados não corresponde ao período de validade da licença'
+KeyInvalidReason_ekirInconsistentUpdate      = 'As bases de dados estão corrompidas'
+KeyInvalidReason_ekirKeyCreationDateInvalid  = 'Data de criação da chave incorrecta'
+KeyInvalidReason_ekirTrialAlreadyInUse       = 'Não é possível adicionar uma chave para uma licença de avaliação enquanto outra chave para uma licença de avaliação estiver activa'
+KeyInvalidReason_ekirInvalidBlacklist        = 'A lista negra de chaves está corrompida'
+KeyInvalidReason_ekirCantBeUsedAsReserved    = 'Não é possível registar o código de activação como um código novo'
+KeyInvalidReason_ekirKeyInstallDateInvalid   = 'Data de activação incorrecta'
+KeyInvalidReason_ekirTrialPeriodIsOver       = 'A licença de avaliação expirou'
+KeyInvalidReason_ekirConflictsWithCommercial = 'O novo ficheiro de chave não é compatível com a licença comercial actual'
+KeyInvalidReason_ekirExpiredAsReserve        = 'Esta licença expira antes da licença actual'
+KeyInvalidReason_ekirLimited                 = 'Excedeu o número máximo de computadores nos quais pode instalar o ' + $ProductName + ' com a sua licença.'
+KeyInvalidReason_ekirReinstallProduct		 = 'A aplicação deve ser reinstalada'
+KeyInvalidReason_default                     = 'Ficheiro de chave inválido'
+
+; Protection level
+LicenseProtectionLevel = 'Protecção: '
+ProtectionLevelUnknown = 'desconhecida'
+ProtectionLevelNoFeatures = 'desactivado'
+ProtectionLevelLimited = 'limitado'
+ProtectionLevelExpiredState = ProtectionLevelLimited
+ProtectionLevelFull = 'totalmente activado'
+
+; Updater level
+LicenseUpdaterLevel = 'Actualização: '
+UpdaterLevelUnknown = 'desconhecida'
+UpdaterLevelNotAllowed = 'indisponível'
+UpdaterLevelUpdateBlacklistOnly = 'apenas lista negra'
+UpdaterLevelAllowed = 'permitido'
+UpdaterLevelLimited = 'limitado'
+
+LicenseInstallationDate = 'Data de instalação:'
+LicenseInvalidReason = 'Razão inválida:'
+LicenseTicketSequenceId = 'ID de activação:'
+LicenseTicketId = 'ID de activação (ID de pedido de suporte):'
+
+SubscriptionToleranceDays = 'Período de tolerância (dias):'
+SubscriptionBufferDays = 'Período de memória intermédia (dias):'
+SubscriptionGraceDays = 'Período de tolerância (dias):'
+SubscriptionExpirationDateType = 'Tipo de data de subscrição:'
+SubscriptionStatus = 'Estado de subscrição:'
+ProductActiveLicenseState = 'Estado de licenciamento (activa):'
+ProductReserveCodeState = 'Estado de licenciamento (nova):'
+SubscriptionCurrentTicket = 'Pedido de suporte actual:'
+SubscriptionCurrentKey = 'Chave actual:'
+TicketValidFrom = '    Válido a partir de (UTC):'
+KeyCreationDate = '    Data de criação (UTC):'
+KeyOrTicketValidTo = '    Válido até (UTC):'
+
+; strings in the following section refer to subscription and its expiration date
+SubscriptionExpirationDateUnknown = 'desconhecida'
+SubscriptionExpirationDateUndefined = 'será determinado mais tarde'
+SubscriptionExpirationDateUnlimited = 'indefinido'
+SubscriptionExpirationDateLimited = $SubscriptionExpirationDateTimeWithSecond
+SubscriptionExpirationDateSuspended = 'suspenso de ' + $SubscriptionExpirationDate
+
+; strings in the following section refer to a time period
+SubscriptionPeriodOfValidityUnknown = 'desconhecida'
+SubscriptionPeriodOfValidityUndefined = 'será determinado mais tarde'
+SubscriptionPeriodOfValidityUnlimited = 'indefinido'
+SubscriptionPeriodOfValidityLimited = 'até ' + $SubscriptionExpirationDate
+SubscriptionPeriodOfValiditySuspended = 'suspenso de ' + $SubscriptionExpirationDate
+
+LicenseExpirationDateShort = $LicenseExpirationDate
+LicenseExpirationDateTimeWithSeconds = $LicenseExpirationDateTimeWithSeconds
+
+TicketValidFromDescription = $TicketValidFromDate
+TicketValidToDescription = $TicketValidToDate
+
+LicenseActivationDateDescription = $ActivationDate
+LicenseInstallationDateDescription = $InstallationDate
+
+AdditionalLicenseInformationCaption = 'Informação sobre a licença'
+LicenseEulaLinkName = 'Contrato de Licença do Utilizador Final'
+
+; MessageBoxes
+DeleteLicenseMessageBoxCaption = 'Remover chave'
+DeleteActiveLicenseQuestion = 'Tem a certeza de que pretende eliminar a chave activa?'
+DeleteReserveCodeQuestion = 'Tem a certeza de que deseja apagar o novo código de activação?'
+DeletePreinstalledCodeQuestion = 'Tem a certeza de que pretende eliminar o código de activação predefinido?'
+DeleteActiveLicenseWarning = 'A protecção do computador será desactivada'
+DeleteActiveLicenseAndReserveLicenseWarning = 'A protecção do seu computador será desactivada. O novo código de activação previamente adicionado também será eliminado.'
+DeleteLicenseConfirmation = 'Apagar chave'
+ActivateReserveLicenseNow = 'Activar com o novo código de activação agora'
+
+; BestBuy license info labels:
+BestBuyActivationCode = 'Código de activação:'
+BestBuySerialNumber = 'Número de série:'

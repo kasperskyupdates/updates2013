@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security Technical Preview'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus Technical Preview'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = '최신입니다' 
+Corrupted = '손상되었습니다' 
+VeryOld = '매우 오래되었습니다' 
+Old = '오래되었습니다' 
+OldInGracePeriod = '오랫동안 업데이트하지 않았습니다'
+UpdatedAndRebootNeeded = '업데이트 완료. 재부팅해야 함' 
+UpdatedAndProductRestartNeeded = '업데이트 완료. 재시작해야 함' 
+SomeBasesNeedUpdate = '일부 구성요소를 업데이트해야 함'
+
+Schedule_Auto    = '자동 실행' 
+Schedule_Manual  = '수동 실행' 
+Schedule_Fixed   = '스케줄 실행' 
+
+Back = '뒤로' 
+StopTask = '중지'
+
+News = '뉴스'
+Reports = '리포트'
+Settings = '설정'
+Help = '도움말'
+OK = '확인'
+Cancel = '취소'
+Retry = '다시 시도'
+
+Unknown = '알 수 없음'
+
+ShortDateTimeWithSecondsFormat = '%Y/%m/%d %I:%M:%S %p'
+ShortDateTimeFormat = '%Y/%m/%d %I:%M %p'
+ShortDateFormat = '%Y/%m/%d'
+
+ShortDateTimeNewsFormat = '%Y.%m.%d, %H:%M'
+ShortDateTimeNewsTodayFormat = '오늘, %H:%M'
+ShortDateTimeNewsYesterdayFormat = '어제, %H:%M'
+
+MonthName_1  = '1월'
+MonthName_2  = '2월'
+MonthName_3  = '3월'
+MonthName_4  = '4월'
+MonthName_5  = '5월'
+MonthName_6  = '6월'
+MonthName_7  = '7월'
+MonthName_8  = '8월'
+MonthName_9  = '9월'
+MonthName_10 = '10월'
+MonthName_11 = '11월'
+MonthName_12 = '12월'
+ 
+DateUnknown = '알 수 없음'
+
+After = '-'
+Remaining = '남음'
+Ago = '전'
+
+Days_After = $DayCount + ' ' + {$DayCount : '일'}
+Hours_After = $HourCount + ' ' + {$HourCount : '시'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : '분'}
+LessMinute_After = '<1 분'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : '일'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : '시'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : '분'}
+LessMinute_Remaining = '<1 분'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : '일'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : '시'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : '분'}
+LessMinute_Ago = '<1 분'
+
+Yesterday   = '어제'
+Today       = '오늘' 
+LessWeek    = '지난 일주일 이내'
+LessTwoWeek = '지난 이주일 이내'
+LessMonth   = '지난 한달 이내'
+MoreMonth   = '지난 한달 이상'
+MoreHalfYear= '지난 반년 이상'
+MoreYear    = '지난 일년 이상'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = '확인'
+CancelButton = '취소'
+ApplyButton = '적용'
+CloseButton = '닫기'
+NextButton = '다음 >'
+BackButton = '< 뒤로'
+FinishButton = '마침'
+SaveButton = '저장'
+SkipButton = '건너뛰기'
+Continue = '계속'
+Yes = '예'
+No = '아니오'
+
+SettingsMore = '설정(&S)...'
+
+DoNoyShowThisWindow = '표시 안 함'
+
+; general system error codes
+
+SystemError_0x80000040 = '정의 안 된 오류'
+SystemError_0x8000004B = '정의 안 된 오류'
+SystemError_0x80000041 = '메모리 부족'
+SystemError_0x80000042 = '지원하지 않음'
+SystemError_0x80000043 = '권한 없음'
+SystemError_0x80000045 = '접근이 거부되었거나 개체를 찾을 수 없음'
+SystemError_0x8000004C = '개체를 찾을 수 없음'
+SystemError_0x800000C6 = '개체를 찾을 수 없음'
+SystemError_0x800000C5 = '개체를 찾을 수 없음'
+SystemError_0x8000004F = '개체가 사용 중입니다'
+SystemError_0x80000051 = '동작 취소'
+SystemError_0x80000059 = '디바이스 오류'
+SystemError_0x8000005A = '잘못된 시그니처'
+SystemError_0x8000005B = '잘못된 버전'
+SystemError_0x8000005F = '쓰기 보호'
+SystemError_0x80000061 = '라이센스가 없습니다'
+SystemError_0x80000062 = '여유 공간 부족'
+SystemError_0x80000063 = '장치가 준비되어 있지 않습니다'
+SystemError_0x800000C0 = '잘못된 형태'
+SystemError_0x800000C1 = '권한이 없습니다'
+SystemError_0x800000C2 = '초기화 오류'
+SystemError_0x800000C3 = '초기화 오류'
+SystemError_0x800000C7 = '부정확한 개체 상태'
+SystemError_0x800000C8 = '개체가 암호로 보호되었습니다'
+SystemError_0x800000CA = '읽기 오류'
+SystemError_0x800000CC = '읽기 오류'
+SystemError_0x800000CB = '쓰기 오류'
+SystemError_0x800000CD = '쓰기 오류'
+SystemError_0x800000D0 = '잘못된 개체'
+SystemError_0x800000D1 = '개체가 이미 존재합니다'
+SystemError_0x800000D5 = '다른 애플리케이션에서 개체를 사용하고 있습니다'
+SystemError_0x800000D8 = '데이터베이스가 손상되었습니다'
+SystemError_0x800001C0 = '잘못된 모듈'
+SystemError_0x800001C2 = '인증되지 않은 모듈입니다'
+SystemError_0x800001C1 = '모듈이 없습니다'
+SystemError_0x800001C4 = '구성요소를 시작할 수 없습니다'
+SystemError_0x80000221 = '시간 제한'
+SystemError_0x80000240 = '구성요소 오류'
+SystemError_0x90005000 = '잘못된 디지털 서명'
+SystemError_0x90005002 = '디지털 서명 안 됨'
+SystemError_0x80027006 = '작업을 중지했습니다'
+SystemError_0x80027007 = '작업을 중지했습니다'
+SystemError_0x80380fbb = '작업을 중지했습니다'
+SystemError_0x80017007 = '안전 모드에서는 작업을 시작할 수 없습니다'
+SystemError_0x80017005 = '작업을 사용하고 있지 않습니다'
+SystemError_0x80017006 = '잘못된 계정 입력'
+SystemError_0x80017008 = '안전 모드에서는 다른 사용자 계정을 대신해 작업을 실행할 수 없습니다'
+SystemError_0x80017009 = '드라이버가 없습니다'
+SystemError_0x80022005 = '데이터베이스 로딩 오류'
+SystemError_default    = '오류 코드: ' + $ErrorCode
+
+LicenseManager = '라이센스'
+SubscriptionManager = '월과금 라이센스 관리'
+ProblemSolution = '이 문제점을 해결하려면 라이센스 창으로 이동하십시오'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = '비활성' ;refers to connection
+Stopping = '중지 중'
+ConnectingToServer = '서버 연결 중'
+CreatingUpdateList = '파일 분석 중'
+Downloading = '파일 다운로드'
+Installing = '파일 업데이트'
+RollbackRunning = '이전 데이터베이스로 롤백'
+
+FunctionalityDisabledForExpiredSubscription = '업데이트가 중지되었습니다'
+FunctionalityDisabledForExpiredSubscriptionProtection = '컴퓨터 실시간 감시가 중지되었습니다'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '일'} + ' 남음.'
+SubscriptionExpiresToday = '오늘 만료됩니다'
+SubscriptionActivated = '활성화됨'
+CheckReserveCodeManuallyHeader = '예약한 활성화코드 자동 인증 실패' ; TODO
+CheckReserveCodeManuallyText = '직접 예약한 활성화코드로 애플리케이션을 활성화해 주시기 바랍니다.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = '베타 버전이 설치되어 있습니다'
+LicensingStatus_Trial_ShortDescription = '체험판이 설치되어 있습니다'
+LicensingStatus_OkSubscription_ShortDescription = '월과금 라이센스: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = '라이센스가 곧 만료됩니다'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = '라이센스가 곧 만료됩니다'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_InvalidActivationDate_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_InvalidKey_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_Reinstall_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_BrokenBlacklist_ShortDescription = '블랙리스트 파일이 손상되었습니다'
+LicensingStatus_CorruptedBases_ShortDescription = '라이센스 정보를 확인할 수 있는 데이터베이스가 손상되었습니다'
+LicensingStatus_BasesDateMismatch_ShortDescription = '라이센스 유효 기간과 현재 데이터베이스 배포 날짜가 일치하지 않습니다'
+LicensingStatus_Expired_ShortDescription = '라이센스가 만료되었습니다'
+LicensingStatus_ExpiredSubscription_ShortDescription = '월과금 라이센스가 만료되었습니다' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = '체험 기간이 만료되었습니다'
+LicensingStatus_ExpiredBeta_ShortDescription = '베타 버전이 만료되었습니다'
+LicensingStatus_Blocked_ShortDescription = '라이센스가 차단되었습니다'
+LicensingStatus_BlockedSubscription_ShortDescription = '월과금 라이센스가 차단되었습니다'
+LicensingStatus_LicenseViolated_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_SubscriptionViolated_ShortDescription = '라이센스에 문제가 있습니다'
+LicensingStatus_Grace_ShortDescription = '월과금 라이센스가 만료되었습니다' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = '월과금 라이센스 일시 중지되었습니다: ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = '자동 월과금 라이센스 상태 갱신 실패'
+LicensingStatus_NotActivated_ShortDescription = '애플리케이션이 활성화되지 않았습니다'
+LicensingStatus_WaitCodeActivation_ShortDescription = '애플리케이션이 활성화되지 않았습니다'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = '애플리케이션이 활성화되지 않았습니다'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = '애플리케이션이 활성화되지 않았습니다'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = '예약 활성화코드'
+ReserveCodeStatus_Ok_ShortDescription = '예약 활성화코드'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = '예약한 활성화코드는 잘못된 것입니다'
+ReserveCodeStatus_ActivationProblem_ShortDescription = '예약한 활성화코드를 활성화할 수 없습니다'
+ReserveCodeStatus_WaitActivation_ShortDescription = '자동으로 활성화됩니다'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = $ProductNameFull + '의 베타 버전은 정식 제품 출시 전 테스트 목적으로 배포된 제품입니다. 베타 버전 사용 중 문제가 발생되면, 관련 내용을 이메일로 리포트해 주시기 바랍니다.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '일'} + ' 남음. 라이센스 기간이 지나면, 애플리케이션의 보호 기능이 중지됩니다.' 
+LicenseEndsToday = '오늘 라이센스가 만료됩니다. 라이센스 기간이 지나면, 애플리케이션의 보호 기능이 중지됩니다.\n' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = '월과금 라이센스가 활성화되었습니다. 만료 날짜: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = '월과금 라이센스가 ' + $SubscriptionExpirationDate + '에 갱신되었습니다.'
+StateLimitedSubscriptionCanceledText = '월과금 라이센스가 취소되었습니다. 만료 날짜: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = '월과금 라이센스가 ' + $SubscriptionExpirationDate + '에 일시 중지됩니다.'
+StateUnlimitedSubscriptionProlongedText = '월과금 라이센스가 갱신되었으며 만료되지 않습니다'
+StateUnlimitedSubscriptionResumedText = '월과금 라이센스가 다시 시작되었습니다'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = '- ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '일'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: '일'} + ' 남음. 라이센스 기간이 지나면, 애플리케이션을 최신으로 유지할 수 없습니다.'
+LicensingStatus_ExpiresToday_Cause = '오늘 만료됩니다. 애플리케이션 기능은 만료 시 제한됩니다.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = '잘못된 라이센스 생성 날짜. 컴퓨터 날짜가 변경되어 있습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = '잘못된 활성화 날짜. 컴퓨터 날짜가 변경되어 있습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = '애플리케이션 무결성에 문제가 있습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = '서버에서 새로운 블랙 리스트 파일을 다운로드해 주십시오(업데이트 재실행).'
+LicensingStatus_CorruptedBases_Cause = '잘못된 업데이트 때문인 것 같습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = '불법으로 라이센스를 사용하고 있는 것 같습니다. 실시간 감시를 중지합니다'
+LicensingStatus_BlockedSubscription_Cause = '불법으로 라이센스를 사용하고 있는 것 같습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = '구매한 ' + $ProductName + ' 라이센스로 설치할 수 있는 컴퓨터 대수를 초과했습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = '구매한 ' + $ProductName + ' 월과금 라이센스로 설치할 수 있는 컴퓨터 대수를 초과했습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: '일'} + ' 남음 * ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = '활성화 서버에 너무 오랫동안 연결되지 않았기 때문일 수 있습니다. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = '이미 설치되어 있는 활성화코드를 이용할 수 있습니다. 애플리케이션이 인터넷에 연결되면 활성화됩니다.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = '이미 설치되어 있는 활성화코드가 있습니다. 이 활성화코드로 애플리케이션을 활성화하거나 이미 설치되어 있는 활성화코드를 삭제할 수 있습니다.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = '이미 설치되어 있는 활성화코드로 애플리케이션 자동 활성화 시 실패. 직접 활성화코드를 다시 입력해 주시기 바랍니다.'
+
+ReserveCodeStatus_NotProvided_Cause = '활성화코드를 미리 등록할 수 있습니다. 현재 사용 중인 라이센스가 만료된 후 예약한 활성화코드로 애플리케이션이 활성화됩니다.'
+ReserveCodeStatus_Ok_Cause = '새로운 활성화코드가 추가되었습니다. 현재 사용 중인 라이센스가 만료된 후, 새로운 활성화코드로 애플리케이션이 활성화됩니다.'
+ReserveCodeStatus_Invalid_Cause = '현재 사용 중인 라이센스가 만료되면, 업데이트가 중단됩니다.'
+ReserveCodeStatus_ActivationProblem_Cause = $ReserveCode + ' 새로운 활성화코드 자동 인증 실패. 직접 활성화코드를 다시 입력해 주시기 바랍니다.'
+ReserveCodeStatus_WaitActivation_Cause = '새로운 ' + $ReserveCode + ' 활성화코드로 자동 활성화됩니다.'
+
+ResolveProblem_BuyCommercial         = '상업용 라이센스로 애플리케이션을 활성화해 주시기 바랍니다.'
+ResolveProblem_CheckSystemTime		= '컴퓨터 날짜가 정확한지 확인해 주십시오.'
+ResolveProblem_ActivateAgain        = '현재 사용 중인 라이센스를 삭제한 후 애플리케이션을 다시 활성화해 주시기 바랍니다.'
+ResolveProblem_CallSupport			= '정식으로 구매한 라이센스라면 고객 지원로 문의해 주시기 바랍니다.'
+ResolveProblem_ContactSupport		= '고객 지원 연락처.'
+ResolveProblem_ActialLicense		= '컴퓨터를 계속 보호하려면, 새로운 활성화코드를 입력해 주십시오.'
+ResolveProblem_UpdateAgain			= '데이터베이스를 다시 업데이트해 주십시오.'
+ResolveProblem_BuyNewLicense		= '컴퓨터를 계속 보호하려면, 새로운 라이센스를 구매해 주시기 바랍니다.'
+ResolveProblem_CallProvider			= '월과금 라이센스를 다시 시작하려면, 서비스 공급 업체로 문의해 주시기 바랍니다.'
+ResolveProblem_ProviderWebSite		= '월과금 라이센스를 다시 시작하려면, 서비스 공급 업체로 문의해 주시기 바랍니다.'
+ResolveProblem_RenewalNotAvailable	= '월과금 라이센스를 갱신할 수 없습니다.'
+ResolveProblem_BuyLicense			= '컴퓨터를 계속 보호하려면, Kaspersky Lab 또는 판매처에서 상업용 라이센스를 구매해야 합니다. 체험판을 다시 사용할 수는 없습니다.'
+ResolveProblem_Reinstall			= '애플리케이션을 다시 설치해 주십시오.'
+ResolveProblem_RenewLicense			= '컴퓨터를 계속 보호하려면, 라이센스를 갱신 구매해 주시기 바랍니다.'
+ResolveProblem_RefreshSubscription	= '월과금 라이센스 상태를 직접 업데이트해 주시기 바랍니다.'
+ResolveProblem_Activate				= '애플리케이션을 활성화하려면 활성화코드를 입력해 주십시오.'
+ResolveProblem_ActivateReserveCode  = '새로운 활성화코드로 애플리케이션을 직접 활성화해 주십시오.'
+ResolveProblem_ActivateCodeManual	= '애플리케이션을 직접 활성화해 주십시오.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = '인터넷 연결 설정을 확인한 후 자동 활성화를 기다리거나 애플리케이션을 직접 활성화해 주십시오.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' 새로운 활성화코드를 입력해야 합니다. 현재 사용 중인 라이센스가 만료된 후 이 활성화코드를 사용해 애플리케이션이 활성화됩니다.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' 체험판이 만료되기 전에 활성화코드를 사용해 애플리케이션을 활성화해야 합니다.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = '컴퓨터를 계속 보호하려면, 상업용 라이센스를 구매해야 합니다.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' 체험판 라이센스가 만료되기 전에 활성화코드를 사용해 애플리케이션을 활성화해야 합니다.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' 새 활성화코드를 등록해야 합니다. 현재 라이센스가 만료되면, 이 활성화코드를 사용해 애플리케이션을 활성화합니다.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = '보호 상태가 정의되지 않았습니다. '
+ProtectionLevelNoFeaturesLong = '보호가 중지되었습니다. '
+ProtectionLevelLimitedLong = '보호가 중지되었습니다. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = '업데이트 상태가 정의되지 않았습니다. '
+UpdaterLevelNotAllowedLong = '업데이트를 할 수 없습니다. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = '정의 안됨'
+SubscriptionStateActive = '정상 인증'
+SubscriptionStatePaused = '일시 중지되었습니다'
+SubscriptionStateCancelledSoft = '일시 중지되었습니다'
+SubscriptionStateCancelledHard = '취소되었습니다'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = '정의 안됨'
+SubscriptionStatusReasonProviderInitiated = '서비스 공급업자가 활성화했습니다'
+SubscriptionStatusReasonCreditCardAuthFailed = '신용 카드 사용 승인이 거부되었습니다'
+SubscriptionStatusReasonCustomerInitiated = '사용자가 활성화했습니다'
+SubscriptionStatusReasonCreditCardAuthSuccess = '신용 카드 사용이 승인되었습니다'
+
+ProductStatusRelease = '릴리즈 버전'
+ProductStatusBeta = '베타 버전'
+
+LegalStatusBlocked = '라이센스가 차단되었습니다'
+LegalStatusLimited = '라이센스 동의서 위반'
+LegalStatusValid = '유효한 라이센스입니다'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = '중요한 라이센스 알림이 있습니다.\n<a href="licensemanager">자세히...</a>.'
+LNCS_SubscriptionGrace_Balloon = '월과금 라이센스가 만료되었습니다. 월과금 라이센스를 갱신하려면, 서비스 공급업체에 문의해 주십시오.'
+
+LicensingState_WarningIsAvailable = '경고 메시지가 있습니다'
+ProtectionState_NotificationIsAvailable = '라이센스 알림'
+LicensingState_ProblemIsAvailable = '문제가 있습니다'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Kaspersky 보안 소프트웨어가 ' + $LicenseDaysToExpiry + ' 일 안에 만료됩니다.'
+LNCS_BBY_WillExpire_Description =	'보호를 계속하려면, Geek Squad Renewal Center에서 온라인으로 갱신하십시오'
+
+LNCS_BBY_AboutToExpire_Title =	    '라이센스가 만료되었습니다'
+LNCS_BBY_AboutToExpire_Description = '보호가 중지될 때까지 ' + $LicenseDaysToExpiry + '일만 남았습니다. Geek Squad Renewal Center에서 Geek Squad Subscription Software Team 온라인으로 지금 문의해 갱신하십시오.'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Kaspersky Security 소프트웨어가 오늘 만료됩니다'
+LNCS_BBY_AboutToExpire_Today_Description = 'Geek Squad Renewal Center에서 Geek Squad Subscription Software Team 온라인으로 지금 문의해 갱신하십시오.'
+
+LNCS_BBY_LastDay_Title =	'경고! Kaspersky 보안 소프트웨어가 오늘 만료됩니다'
+LNCS_BBY_LastDay_Description =	'PC가 위험에 노출되지 않도록 하세요. Geek Squad Renewal Center에서 온라인으로 갱신하십시오.'
+LNCS_BBY_LastDay_Balloon =	'경고! Kaspersky 보안 소프트웨어가 오늘 만료됩니다. PC가 위험에 노출되지 않도록 하세요. <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">Geek Squad Renewal Center</a>에서 온라인으로 갱신하십시오.'
+
+LNCS_BBY_Grace_Title =			'경고! PC가 위험합니다'
+LNCS_BBY_Grace_Description =	'PC가 위험에 노출되지 않도록 하세요. Geek Squad Renewal Center에서 온라인으로 갱신하십시오.'
+LNCS_BBY_Grace_Description_Full =	'PC가 위험에 노출되지 않도록 하세요. Geek Squad Renewal Center에서 온라인으로 갱신하십시오.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'경고! PC가 보호되고 있지 않습니다. PC가 위험에 노출되지 않도록 하세요. <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">Geek Squad Renewal Center</a>에서 온라인으로 갱신하십시오.'
+
+LNCS_BBY_RenewFailure_Title =	    'Kaspersky 보안 소프트웨어를 갱신할 수 없습니다'
+LNCS_BBY_RenewFailure_Description = 'Geek Squad Renewal Center에서 온라인으로 갱신하십시오.'
+LNCS_BBY_RenewFailure_Description_Full = 'Geek Squad Renewal Center에서 온라인으로 갱신하십시오.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Kaspersky 보안 소프트웨어를 갱신할 수 없습니다. <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">Geek Squad Renewal Center</a>에서 온라인으로 갱신하십시오.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'신용 카드가 곧 만료되기 때문에 카스퍼스키 라이센스 갱신이 취소될 수 있습니다'
+LNCS_BBY_CCAboutToExpire_Description =	'Geek Squad Renewal Center에서 온라인으로 갱신하십시오.'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Geek Squad Renewal Center에서 온라인으로 갱신하십시오.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'월과금 라이센스가 만료되었습니다'
+LNCS_BBY_Expired_Description =	'월과금 라이센스를 갱신할 수 없습니다.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = '일찍 Kaspersky Anti-Virus 소프트웨어를 갱신하고 $5를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = '일찍 Kaspersky Anti-Virus 소프트웨어를 갱신하고 $10를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = '일찍 Kaspersky Anti-Virus 소프트웨어를 갱신하고 $15를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = '일찍 Kaspersky Anti-Virus 소프트웨어를 갱신하고 $20를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = '일찍 Kaspersky Internet Security 소프트웨어를 갱신하고 $5를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = '일찍 Kaspersky Internet Security 소프트웨어를 갱신하고 $10를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = '일찍 Kaspersky Internet Security 소프트웨어를 갱신하고 $15를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = '일찍 Kaspersky Internet Security 소프트웨어를 갱신하고 $20를 절약하십시오.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">지금 갱신</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Kaspersky Anti-Virus 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Kaspersky Anti-Virus 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Kaspersky Anti-Virus 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Kaspersky Anti-Virus 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Kaspersky Internet Security 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Kaspersky Internet Security 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Kaspersky Internet Security 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Kaspersky Internet Security 소프트웨어가 만료됩니다!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere = '<br>연간 갱신 비용에서 5$를 절약하려면, <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">여기를 누르십시오</a>.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br>연간 갱신 비용에서 10$를 절약하려면, <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">여기를 누르십시오</a>.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br>연간 갱신 비용에서 15$를 절약하려면, <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">여기를 누르십시오</a>.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br>연간 갱신 비용에서 20$를 절약하려면, <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-local=<Localization>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>&act-item=<ActionUiControlName>">여기를 누르십시오</a>.'
+
+LNCS_BBY_StatusUpdate = '제품 상태는 변경되는데 최대 24시간이 걸릴 수 있습니다. 강제로 제품 업데이트를 체크하려면, Geek Squad Renewal Center에서 갱신 프로세스를 완료한 후 "서브스크립션 상태 업데이트"를 눌러 주십시오.'
+
+EndOfLicense_Header = '통계 리포트'
+WelcomPageTitle = $ProductName + ' 설치'
+
+; incompatible
+ReinstallWarningTitle = $ProductName + ' 설치 이후에 운영 체제 버전이 변경되었습니다'
+ReinstallWarningDescription = $ProductName + '을 다시 설치해 주십시오'
+
+IncompatibleOsVersionTitle = $ProductName + '이 일시 중지되었습니다'
+IncompatibleOsVersionDescription = $ProductName + '을 정상적으로 사용하려면, Microsoft Windows 8을 설치한 이후에 애플리케이션을 다시 설치해야 합니다.' + '\n\nMicrosoft Windows 8에서 ' + $ProductName + '을 구성하는 동안에는 실시간 감시 기능이 제한됩니다.'
+
+ReinstallWarningOkButton = '자세히'
+IncompatibleOsVersionOkButton = '설치 및 실행'
+
+BrowserWaitingMessage = '잠시만 기다려 주십시오...'
+
+OsUpgradedTitle = '운영 체제 업데이트'
+OsUpgradedDescription = '운영 체제 업데이트가 성공적으로 완료되었습니다.'

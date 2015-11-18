@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security Technical Preview'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus Technical Preview'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'đầy đủ' 
+Corrupted = 'bị hư hỏng' 
+VeryOld = 'lỗi thời' 
+Old = 'đã cũ' 
+OldInGracePeriod = 'chưa cập nhật trong thời gian dài'
+UpdatedAndRebootNeeded = 'đã cập nhật. Yêu cầu khởi động lại máy tính' 
+UpdatedAndProductRestartNeeded = 'đã cập nhật. Yêu cầu khởi động lại ứng dụng' 
+SomeBasesNeedUpdate = 'yêu cầu cập nhật cho các thành phần'
+
+Schedule_Auto    = 'tự động' 
+Schedule_Manual  = 'thủ công' 
+Schedule_Fixed   = 'theo lịch' 
+
+Back = 'Quay lại' 
+StopTask = 'Dừng'
+
+News = 'Tin tức'
+Reports = 'Báo cáo'
+Settings = 'Cấu hình'
+Help = '&Trợ giúp'
+OK = 'OK'
+Cancel = 'Hủy bỏ'
+Retry = 'Thử lại'
+
+Unknown = 'chưa biết'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'hôm nay, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'hôm qua, %H:%M'
+
+MonthName_1  = 'Một'
+MonthName_2  = 'Hai'
+MonthName_3  = 'Ba'
+MonthName_4  = 'Tư'
+MonthName_5  = 'Năm'
+MonthName_6  = 'Sáu'
+MonthName_7  = 'Bảy'
+MonthName_8  = 'Tám'
+MonthName_9  = 'Chín'
+MonthName_10 = 'Mười'
+MonthName_11 = 'Mười một'
+MonthName_12 = 'Mười hai'
+ 
+DateUnknown = 'chưa biết'
+
+After = 'trong'
+Remaining = 'còn lại'
+Ago = 'trước'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'ngày'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'giờ'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'phút'}
+LessMinute_After = '<1 phút'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'ngày'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'giờ'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'phút'}
+LessMinute_Remaining = '<1 phút'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'ngày'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'giờ'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'phút'}
+LessMinute_Ago = '<1 phút'
+
+Yesterday   = 'hôm qua'
+Today       = 'hôm nay' 
+LessWeek    = 'ít hơn 1 tuần trước'
+LessTwoWeek = 'ít hơn 2 tuần trước'
+LessMonth   = 'ít hơn 1 tháng trước'
+MoreMonth   = 'nhiều hơn 1 tháng trước'
+MoreHalfYear= 'nhiều hơn nữa năm trước'
+MoreYear    = 'nhiều hơn 1 năm trước'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Hủy bỏ'
+ApplyButton = 'Áp dụng'
+CloseButton = 'Đóng'
+NextButton = 'Tiếp theo >'
+BackButton = '< Quay lại'
+FinishButton = 'Hoàn tất'
+SaveButton = 'Lưu'
+SkipButton = 'Bỏ qua'
+Continue = 'Tiếp tục'
+Yes = 'Có'
+No = 'Không'
+
+SettingsMore = '&Cấu hình...'
+
+DoNoyShowThisWindow = 'Không hiển thị'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Lỗi không xác định'
+SystemError_0x8000004B = 'Lỗi không xác định'
+SystemError_0x80000041 = 'Không đủ bộ nhớ'
+SystemError_0x80000042 = 'Không hỗ trợ'
+SystemError_0x80000043 = 'Không thực hiện'
+SystemError_0x80000045 = 'Truy cập bị từ chối hoặc không tìm thấy đối tượng'
+SystemError_0x8000004C = 'Không tìm thấy đối tượng'
+SystemError_0x800000C6 = 'Không tìm thấy đối tượng'
+SystemError_0x800000C5 = 'Không tìm thấy đối tượng'
+SystemError_0x8000004F = 'Đối tượng bị khóa'
+SystemError_0x80000051 = 'Hoạt động bị hủy bỏ'
+SystemError_0x80000059 = 'Lỗi thiết bị'
+SystemError_0x8000005A = 'Chữ ký không hợp lệ'
+SystemError_0x8000005B = 'Phiên bản không hợp lệ'
+SystemError_0x8000005F = 'Bảo vệ ghi'
+SystemError_0x80000061 = 'Bản quyền bị mất'
+SystemError_0x80000062 = 'Không đủ bộ nhớ'
+SystemError_0x80000063 = 'Thiết bị chưa sẵn sàng'
+SystemError_0x800000C0 = 'Định dạng không hợp lệ'
+SystemError_0x800000C1 = 'Không đủ quyền'
+SystemError_0x800000C2 = 'Lỗi khởi tạo'
+SystemError_0x800000C3 = 'Lỗi khởi tạo'
+SystemError_0x800000C7 = 'Trạng thái đối tượng không chính xác'
+SystemError_0x800000C8 = 'Đối tượng có mật khẩu bảo vệ'
+SystemError_0x800000CA = 'Lỗi đọc'
+SystemError_0x800000CC = 'Lỗi đọc'
+SystemError_0x800000CB = 'Lỗi ghi'
+SystemError_0x800000CD = 'Lỗi ghi'
+SystemError_0x800000D0 = 'Đối tượng không hợp lệ'
+SystemError_0x800000D1 = 'Đối tượng đã tồn tại'
+SystemError_0x800000D5 = 'Đối tượng được sử dụng bởi ứng dụng khác'
+SystemError_0x800000D8 = 'Cơ sở dữ liệu bị hư hỏng'
+SystemError_0x800001C0 = 'Mô-đun không hợp lệ'
+SystemError_0x800001C2 = 'Mô-dun chưa được chứng thực'
+SystemError_0x800001C1 = 'Không tìm thấy mô-dun'
+SystemError_0x800001C4 = 'Không thể nạp thành phần'
+SystemError_0x80000221 = 'Hết thời gian'
+SystemError_0x80000240 = 'Lỗi thành phần tương tác'
+SystemError_0x90005000 = 'Chữ ký điện tử không hợp lệ'
+SystemError_0x90005002 = 'Không có chữ ký điện tử'
+SystemError_0x80027006 = 'Tác vụ đã được dừng'
+SystemError_0x80027007 = 'Tác vụ đã được dừng'
+SystemError_0x80380fbb = 'Tác vụ đã được dừng'
+SystemError_0x80017007 = 'Tác vụ không thể khởi động trong chế độ an toàn'
+SystemError_0x80017005 = 'Tác vụ bị vô hiệu'
+SystemError_0x80017006 = 'Tên người dùng hoặc mật khẩu không chính xác'
+SystemError_0x80017008 = 'Tác vụ khởi động thay cho tài khoản người dùng không thể chạy trong chế độ an toàn'
+SystemError_0x80017009 = 'Không tìm thấy trình điều khiển'
+SystemError_0x80022005 = 'Lỗi tải cơ sở dữ liệu'
+SystemError_default    = 'Mã lỗi: ' + $ErrorCode
+
+LicenseManager = '&Bản quyền'
+SubscriptionManager = 'Quản lý đăng  ký'
+ProblemSolution = 'Chuyển đến cửa sổ Bản quyền để giải quyết vấn đề này'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'không hoạt động' ;refers to connection
+Stopping = 'đang dừng'
+ConnectingToServer = 'kết nối đến máy chủ'
+CreatingUpdateList = 'xử lý các tập tin'
+Downloading = 'đang tải các tập tin'
+Installing = 'các tập tin cập nhật'
+RollbackRunning = 'khôi phục lại cơ sở dữ liệu lần trước'
+
+FunctionalityDisabledForExpiredSubscription = 'cập nhật bị vô hiệu'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'Chức năng bảo vệ bị vô hiệu'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'ngày'} + ' còn lại.'
+SubscriptionExpiresToday = 'hết hạn ngày hôm nay'
+SubscriptionActivated = 'kích hoạt'
+CheckReserveCodeManuallyHeader = 'Không thể tự động kích hoạt ứng dụng bằng mã kích hoạt mới' ; TODO
+CheckReserveCodeManuallyText = 'Cố gắng kích hoạt ứng dụng bằng mã kích hoạt mới theo cách thủ công.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Phiên bản thử nghiệm của ứng đã được cài đặt'
+LicensingStatus_Trial_ShortDescription = 'Phiên bản dùng thử của ứng dụng đã được kích hoạt'
+LicensingStatus_OkSubscription_ShortDescription = 'Đăng ký: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Bản quyền sắp hết hạn'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Bản quyền sắp hết hạn'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_InvalidKey_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_Reinstall_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Danh sách đen của key bị hư hỏng'
+LicensingStatus_CorruptedBases_ShortDescription = 'Không thể xác nhận sự tương đối của cơ sở dữ liệu thỏa thuận bản quyền người dùng cuối'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Thời gian sử dụng của bạn quyền không cho phép sử dụng cơ sở dữ liệu hiện tại'
+LicensingStatus_Expired_ShortDescription = 'Bản quyền đã hết hạn'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Đăng ký đã hết hạn vào ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Bản quyền dùng thử đã hết hạn'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Phiên bản thử nghiệm đã hết hạn'
+LicensingStatus_Blocked_ShortDescription = 'Bản quyền bị khóa'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Đăng ký bị khóa'
+LicensingStatus_LicenseViolated_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Phát hiện vấn đề bản quyền'
+LicensingStatus_Grace_ShortDescription = 'Đăng ký đã hết hạn vào ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Đăng ký tạm dừng từ ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Không thể cập nhật trạng thái đăng ký tự động'
+LicensingStatus_NotActivated_ShortDescription = 'Ứng dụng chưa được kích hoạt'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Ứng dụng chưa được kích hoạt'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Ứng dụng chưa được kích hoạt'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Ứng dụng chưa được kích hoạt'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Mã kích hoạt mới'
+ReserveCodeStatus_Ok_ShortDescription = 'Mã kích hoạt mới'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Mã kích hoạt mới không hợp lệ'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Mã kích hoạt mới chưa được kích hoạt'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Kích hoạt tự động được dự kiến'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Phiên bản thử nghiệm ' + $ProductNameFull + ' có đầy đủ chức năng nhưng không phải là phiên bản hoàn tất và nó có thể chứa lỗi, thất bại hoặc khiếm khuyết. Vui lòng báo cáo vấn đề mà bạn tìm thấy ở phần tương ứng trong diễn đàn của chúng tôi.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'ngày'} + ' còn lại. Sau khi hết hạn chức năng của ứng dụng sẽ bị hạn chế.' 
+LicenseEndsToday = 'Đây là ngày cuối cùng của bản quyền. Chức năng ứng dụng sẽ bị hạn chế nếu bạn không gia hạn.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Đăng ký kích hoạt. Ngày hết hạn: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Đăng ký gia hạn ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Đăng ký bị huỷ bỏ. Ngày hết hạn: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Đăng ký sẽ tạm dừng từ ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Đăng ký gia hạn và không hết hạn'
+StateUnlimitedSubscriptionResumedText = 'Đăng ký đã được phục hồi'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'trong ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'ngày'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'ngày'} + ' còn lại. Sau khi hết hạn chức năng của ứng dụng sẽ bị hạn chế.'
+LicensingStatus_ExpiresToday_Cause = 'Hết hạn ngày hôm nay. Các chức năng của ứng dụng sẽ bị giới hạn khi hết hạn.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Ngày tạo key không hợp lệ. Ngày hệ thống trên máy tính của bạn đã được thay đổi. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Ngày kích hoạt không hợp lệ. Ngày hệ thống trên máy tính của bạn đã được thay đổi. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Chức năng ứng dụng bị lỗi. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Khuyến khích tải danh sách đen mới từ máy chủ.'
+LicensingStatus_CorruptedBases_Cause = 'Một trong những lý do có thể là do cập nhật không hợp lệ. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Bạn có thể đã mua một bản quyền bất hợp pháp của ứng dụng. Bảo vệ bị tạm dừng. Máy tính của bạn có nguy cơ nhiễm mã độc, nguy hiểm, hoặc dữ liệu bị đánh cắp.'
+LicensingStatus_BlockedSubscription_Cause = 'Bạn có thể đã mua một bản sao bất hợp pháp của ứng dụng. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Bạn đã vượt quá số lượng tối đa của máy tính mà trên đó ' + $ProductName + ' có thể cài đặt với bản quyền của bạn. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Bạn đã vượt quá số lượng tối đa của máy tính mà trên đó ' + $ProductName + ' có thể cài đặt với bản quyền của bạn. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'ngày'} + ' còn lại cho đến ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Thời gian kết nối đến máy chủ bị hết hạn. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Mã kích hoạt trước đó là có sẵn. Ứng dụng sẽ được kích hoạt ngay sau khi kết nối Internet.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Mã kích hoạt trước đó là có sẵn. Bạn có thể kích hoạt ứng dụng bằng mã kích hoạt này hoặc xóa mã kích hoạt trước đó.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Ứng dụng không tự động kích hoạt bằng mã kích hoạt trước đó. Hỗ trợ của bạn là cần thiết.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Bạn có thể nhập mã kích hoạt mới. Ứng dụng sẽ được kích hoạt bằng mã kích hoạt này sau khi bản quyền hiện tại hết hạn.'
+ReserveCodeStatus_Ok_Cause = 'Một mã kích hoạt mới trước đó trên máy tính của bạn. Sau khi bản quyền hiện tại hết hạn, ứng dụng sẽ tự động kích hoạt với mã kích hoạt mới. Điều đó sẽ không làm gián đoạn quá trình bảo vệ máy tính của bạn.'
+ReserveCodeStatus_Invalid_Cause = 'Sau khi bản quyền hiện tại hết hạn, cập nhật sẽ không có sẵn.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Không thể kích hoạt ứng dụng bằng mã kích hoạt mới ' + $ReserveCode + ' một cách tự động. Hỗ trợ của bạn được yêu cầu.'
+ReserveCodeStatus_WaitActivation_Cause = 'Tự động kích hoạt bằng mã kích hoạt mới ' + $ReserveCode + ' được dự kiến.'
+
+ResolveProblem_BuyCommercial         = 'Bạn nên mua và kích hoạt một bản quyền thương mại cho ứng dụng.'
+ResolveProblem_CheckSystemTime		= 'Bạn đảm bảo thời gian trên máy tính phải chính xác.'
+ResolveProblem_ActivateAgain        = 'Thử xóa key kích hoạt và kích hoạt ứng dụng lại một lần nữa. Bạn có thể liên hệ hỗ trợ kỹ thuật hoặc nhà phân phối ứng dụng.'
+ResolveProblem_CallSupport			= 'Bạn nên liên hệ với Hỗ trợ Kỹ thuật để tìm hiểu lý do ngăn chặn. Để khôi phục chức năng của ứng dụng, cần một bản quyền mới.'
+ResolveProblem_ContactSupport		= 'Liên hệ hỗ trợ kỹ thuật.'
+ResolveProblem_ActialLicense		= 'Để khôi phục chức năng bảo vệ máy tính của bạn, nhập mã kích hoạt mới.'
+ResolveProblem_UpdateAgain			= 'Bạn nên cập nhật lại cơ sở dữ liệu lần nữa.'
+ResolveProblem_BuyNewLicense		= 'Để khôi phục bảo vệ cho máy tính của bạn, yêu cầu bản quyền mới.'
+ResolveProblem_CallProvider			= 'Để khôi phục đăng ký, liên hệ nhà cung cấp dịch vụ của bạn.'
+ResolveProblem_ProviderWebSite		= 'Để khôi phục đăng ký, liên hệ nhà cung cấp dịch vụ của bạn.'
+ResolveProblem_RenewalNotAvailable	= 'Đăng ký gia hạn không có sẵn.'
+ResolveProblem_BuyLicense			= 'Để khôi phục chức năng bảo vệ máy tính, bạn cần bản quyền thương mại từ Kaspersky Lab hoặc nhà phân phối của chúng tôi. Phiên bản dùng thử có thể được sử dụng chỉ một lần.'
+ResolveProblem_Reinstall			= 'Cài đặt lại ứng dụng.'
+ResolveProblem_RenewLicense			= 'Để kích hoạt chức năng đầy đủ, gia hạn bản quyền.'
+ResolveProblem_RefreshSubscription	= 'Vui lòng cập nhật bản quyền theo cách thủ công.'
+ResolveProblem_Activate				= 'Nhập mã kích hoạt để kích hoạt ứng dụng'
+ResolveProblem_ActivateReserveCode  = 'Cố gắng kích hoạt ứng dụng với mã kích hoạt mới theo cách thủ công.'
+ResolveProblem_ActivateCodeManual	= 'Kích hoạt ứng dụng thủ công.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Kiểm tra cấu hình kết nối Internet của bạn và chờ kích hoạt tự động hoặc kích hoạt ứng dụng bằng cách thủ công.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Yêu cầu nhập mã kích hoạt mới. Ứng dụng sẽ kích hoạt bằng mã kích hoạt này sau khi bản quyền hiện tại hết hạn.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Yêu cầu để kích hoạt ứng dụng bằng mã kích hoạt trước đó trước khi bản quyền dùng thử hết hạn.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Để khôi phục đầy đủ chức năng của ứng dụng, yêu cầu có bản quyền thương mại tại Kaspersky Lab hoặc nhà phân phối của chúng tôi.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Yêu cầu để kích hoạt ứng dụng bằng mã kích hoạt trước đó trước khi bản quyền dùng thử hết hạn.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Yêu cầu nhập mã kích hoạt mới. Ứng dụng sẽ kích hoạt bằng mã kích hoạt này sau khi bản quyền hiện tại hết hạn.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Trạng thái bảo vệ chưa xác định. '
+ProtectionLevelNoFeaturesLong = 'Bảo vệ bị vô hiệu. '
+ProtectionLevelLimitedLong = 'Chức năng ứng dụng bị hạn chế. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Trạng thái cập nhật chưa xác định. '
+UpdaterLevelNotAllowedLong = 'Tính năng cập nhật bị vô hiệu. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'không xác định'
+SubscriptionStateActive = 'kích hoạt'
+SubscriptionStatePaused = 'tạm dừng'
+SubscriptionStateCancelledSoft = 'tạm dừng'
+SubscriptionStateCancelledHard = 'hủy bỏ'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'không xác định'
+SubscriptionStatusReasonProviderInitiated = 'kích hoạt bởi nhà cung cấp dịch vụ'
+SubscriptionStatusReasonCreditCardAuthFailed = 'ủy quyền thẻ tín dụng bị từ chối'
+SubscriptionStatusReasonCustomerInitiated = 'kích hoạt bởi người dùng'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'ủy quyền thẻ tín dụng được chấp nhận'
+
+ProductStatusRelease = 'phiên bản phát hành'
+ProductStatusBeta = 'phiên bản thử nghiệm'
+
+LegalStatusBlocked = 'bản quyền bị khóa'
+LegalStatusLimited = 'thỏa thuận bản quyền bị vi phạm'
+LegalStatusValid = 'bản quyền có hiệu lực'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Đây là thông báo bản quyền quan trọng.\n<a href="licensemanager">Chi tiết...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Đăng ký đã hết hạn. Để gia hạn đăng ký, liên hệ nhà cung cấp dịch vụ của bạn.'
+
+LicensingState_WarningIsAvailable = 'đây là cảnh báo'
+ProtectionState_NotificationIsAvailable = 'Thông báo bản quyền'
+LicensingState_ProblemIsAvailable = 'đó là một vấn đề'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Phần mềm Bảo mật Kaspersky sẽ hết hạn trong ' + $LicenseDaysToExpiry + ' ngày, PC của bạn không được bảo vệ'
+LNCS_BBY_WillExpire_Description =	'Để tiếp tục bảo vệ, vui lòng gia hạn trực tuyến tại Best Buy User Portal'
+
+LNCS_BBY_AboutToExpire_Title =	    'Phần mềm Bảo mật Kaspersky của bạn sắp hết hạn'
+LNCS_BBY_AboutToExpire_Description = 'Đây là ngày  ' + $LicenseDaysToExpiry + ' còn lại để bảo vệ, và sau đó máy tính của bạn sẽ không được bảo vệ. Gia hạn ngay bây giờ bằng cách liên hệ Best Buy Subscription Software Team trực tuyến tại Best Buy User Portal'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Phần mềm Bảo mật Kaspersky của bạn hết hạn ngày hôm nay, máy tính của bạn sẽ không được bảo vệ'
+LNCS_BBY_AboutToExpire_Today_Description = 'Gia hạn ngay bây giờ bằng cách liên hệ Best Buy Subscription Software Team trực tuyến tại Best Buy User Portal'
+
+LNCS_BBY_LastDay_Title =	'Cảnh báo! Phần mềm Bảo mật Kaspersky hết hạn ngày hôm nay'
+LNCS_BBY_LastDay_Description =	'Đừng để PC của bạn không được bảo vệ. Gia hạn trực tuyến tại Best Buy User Portal'
+LNCS_BBY_LastDay_Balloon =	'Cảnh báo! Phần mềm Bảo mật Kaspersky hết hạn vào ngày hôm nay. Đừng để máy tính của bạn không được bảo vệ. Gia hạn trực tuyến tại <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Cảnh báo! Máy tính của bạn không được bảo vệ'
+LNCS_BBY_Grace_Description =	'Đừng để máy tính của bạn không được bảo vệ. Gia hạn trực tuyến tại Best Buy User Portal'
+LNCS_BBY_Grace_Description_Full =	'Đừng để máy tính của bạn không được bảo vệ. Gia hạn trực tuyến tại Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Cảnh báo! Máy tính của bạn không được bảo vệ. Đừng để máy tính của bạn không được bảo vệ. Gia hạn trực tuyến tại <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Chúng tôi không thể gia hạn cho Phần mềm Bảo mật Kaspersky'
+LNCS_BBY_RenewFailure_Description = 'Vui lòng gia hạn trực tuyến tại Best Buy User Portal'
+LNCS_BBY_RenewFailure_Description_Full = 'Vui lòng gia hạn trực tuyến tại Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Chúng tôi không thể gia hạn cho Phần mềm Bảo mật Kaspersky. Vui lòng gia hạn trực tuyến tại <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Kaspersky Protection Plan có thể bị hủy bỏ bởi vì thẻ tín dụng của bạn sắp hết hạn'
+LNCS_BBY_CCAboutToExpire_Description =	'Vui lòng gia hạn trực tuyến tại Best Buy User Portal'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Vui lòng gia hạn trực tuyến tại Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Đăng ký đã hết hạn'
+LNCS_BBY_Expired_Description =	'Gia hạn đăng ký là không có sẵn.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Anti-Virus của bạn sớm và tiết kiệm 5$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Anti-Virus của bạn sớm và tiết kiệm 10$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Anti-Virus của bạn sớm và tiết kiệm 15$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Anti-Virus của bạn sớm và tiết kiệm 20$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Internet Security của bạn sớm và tiết kiệm 5$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Internet Security của bạn sớm và tiết kiệm 10$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Internet Security của bạn sớm và tiết kiệm 15$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Tận dụng lợi thế để gia hạn Phần mềm Kaspersky Internet Security của bạn sớm và tiết kiệm 20$.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Gia hạn ngay</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Phần mềm Kaspersky Anti-Virus của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Phần mềm Kaspersky Anti-Virus của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Phần mềm Kaspersky Anti-Virus của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Phần mềm Kaspersky Anti-Virus của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Phần mềm Kaspersky Internet Security của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Phần mềm Kaspersky Internet Security của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Phần mềm Kaspersky Internet Security của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Phần mềm Kaspersky Internet Security của bạn đã hết hạn!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Nhấn vào đây</a> đế tiết kiệm 5$ trên giá gia hạn hàng năm của bạn.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Nhấn vào đây</a> đế tiết kiệm 10$ trên giá gia hạn hàng năm của bạn.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Nhấn vào đây</a> đế tiết kiệm 15$ trên giá gia hạn hàng năm của bạn.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Nhấn vào đây</a> đế tiết kiệm 20$ trên giá gia hạn hàng năm của bạn.'
+
+LNCS_BBY_StatusUpdate = 'Trạng thái sản phẩm có thể mất tối đa 24 giờ để thay đổi. Nhấn "Xác nhận trạng thái thuê bao" một vài giờ sau khi hoàn tất quá trình đổi mới tại cổng thông tin Geek Squad Renewal Center để các sản phẩm kiểm tra các bản cập nhật.'
+
+EndOfLicense_Header = 'Báo cáo hoạt động của ứng dụng'
+WelcomPageTitle = 'Chào mừng đến với ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Phiên bản hệ điều hành đã thay đổi kể từ khi cài đặt ' + $ProductName + ''
+ReinstallWarningDescription = 'Vui lòng cài đặt lại ' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + ' được tạm dừng'
+IncompatibleOsVersionDescription = 'Đối với hiệu suất thích hợp của ' + $ProductName + ' sau khi Microsoft Windows 8 được cài đặt bạn nên cài đặt lại một số thành phần ứng dụng. Cài đặt sẽ không mất nhiều hơn 2 phút.' + '\n\nTrong cấu hình ' + $ProductName + ' trên Microsoft Windows 8 bảo vệ\máy tính của bạn sẽ bị hạn chế.'
+
+ReinstallWarningOkButton = 'Chi tiết'
+IncompatibleOsVersionOkButton = 'Cài đặt và chạy'
+
+BrowserWaitingMessage = 'Vui lòng chờ...'
+
+OsUpgradedTitle = 'Cập nhật hệ điều hành'
+OsUpgradedDescription = 'Cập nhật hệ điều hành hoàn tất thành công.'

@@ -1,0 +1,20 @@
+﻿ControlPorts = 'Puertos vigilados'
+ControlAllPorts = 'Vigilar &todos los puertos de red'
+ControlSelectedPorts = 'Vigilar solo los p&uertos seleccionados'
+Select = 'S&eleccionar...'
+
+ProtectedConnections = 'Análisis de conexiones cifradas'
+
+DecodeSSL = 'Analizar conexiones &cifradas'
+CheckAlways = '&Analizar conexiones cifradas siempre'
+CheckIfParentalControlEnabled = 'Ana&lizar las conexiones cifradas si el Control parental está activado'
+
+DecodeSPDY = '&Utilizar HTTP en vez del protocolo SPDY'
+DecodeSPDYDescription = 'La aplicación no realiza un análisis heurístico de los datos transferidos mediante SPDY.'
+
+CheckProtectedConnectionsDescription = 'Algunos sitios Web pueden no estar disponibles cuando está activado el análisis de SSL, incluso después de instalar el certificado de Kaspersky Lab.'
+InstallCertificate = 'Instalar certi&ficado...'
+
+ProxyServer = 'Servidor proxy'
+ProxyServerDescription = 'Si se conecta a Internet mediante un servidor proxy, se le pedirá que especifique la configuración de conexión del servidor proxy para obtener un rendimiento adecuado de algunos componentes de protección.'
+ProxyServerSettings = 'Configuración Servidor Pro&xy...'

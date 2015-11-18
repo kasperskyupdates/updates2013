@@ -1,0 +1,115 @@
+;;;
+;;; 
+;;;
+;;;
+;;; 
+;;;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = PnpFilter                         ;This is determined by the work this filter driver does
+ClassGuid   = {7134321E-9CA6-4167-BBEA-EED58D2F3B85}
+Provider    = %KasperskyLab%
+DriverVer= 08/08/2013,8.10.0.41            ;mm/dd/yy
+CatalogFile = klmouflt.cat
+DriverPackageType=ClassFilter
+
+[Manufacturer]
+%KLName%=klmoufltModelSection,ntamd64
+
+[klmoufltModelSection]
+%klmoufltName%=DefaultInstall,klmouflt
+
+[klmoufltModelSection.ntamd64]
+%klmoufltName%=DefaultInstall,klmouflt
+
+[DestinationDirs]
+DefaultDestDir = 12
+klmouflt.DriverFiles = 12                        ;%windir%\system32\drivers
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+klmouflt.sys = 1
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %klmoufltServiceDesc%
+CopyFiles           = klmouflt.DriverFiles
+
+[DefaultInstall.ntamd64]
+OptionDesc          = %klmoufltServiceDesc%
+CopyFiles           = klmouflt.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %klmoufltServiceName%,,klmouflt.Service
+
+[DefaultInstall.ntamd64.Services]
+AddService          = %klmoufltServiceName%,,klmouflt.Service
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = klmouflt.DriverFiles
+DelReg     = klmouflt.DelRegistry
+
+[DefaultUninstall.ntamd64]
+DelFiles   = klmouflt.DriverFiles
+DelReg     = klmouflt.DelRegistry
+
+[DefaultUninstall.Services]
+DelService = klmouflt
+
+[DefaultUninstall.ntamd64.Services]
+DelService = klmouflt
+
+;
+; Services Section
+;
+
+[klmouflt.Service]
+DisplayName      = %klmoufltDisplayName%
+Description      = %klmoufltServiceDesc%
+ServiceBinary    = %12%\klmouflt.sys                 ;%windir%\system32\drivers\klmouflt.sys
+ServiceType      = 1                            ;SERVICE_KERNEL_DRIVER
+StartType        = 3                            ;SERVICE_DEMAND_START
+ErrorControl     = 1                            ;SERVICE_ERROR_NORMAL
+LoadOrderGroup   = "Pnp Device Filter"
+AddReg           = klmouflt.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[klmouflt.AddRegistry]
+
+[klmouflt.DelRegistry]
+;HKLM,System\CurrentControlSet\Services\%klmoufltServiceName%
+;HKLM,System\CurrentControlSet\Control\Class\{4D36E96F-E325-11CE-BFC1-08002BE10318},UpperFilters,0x00018002,%klmoufltServiceName%
+
+;
+; Copy Files
+;
+
+[klmouflt.DriverFiles]
+klmouflt.sys,,,2
+
+;;
+;; String Section
+;;
+
+[Strings]
+klmoufltDisplayName     = "Kaspersky Lab KLMOUFLT"
+KasperskyLab            = "Kaspersky Lab"
+klmoufltServiceDesc     = "Kaspersky Lab Mouse Class Filter"
+klmoufltServiceName     = "klmouflt"
+Disk1                   = "klmouflt Source"
+KLName                  = "KL"
+klmoufltName            = "klmouflt"
+

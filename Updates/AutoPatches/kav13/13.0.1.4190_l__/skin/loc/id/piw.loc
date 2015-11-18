@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Memilih kunci berkas"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Salinan kunci untuk aplikasi ini disediakan oleh vendor peralatan. Apakah Anda ingin mengaktifkan aplikasi menggunakan tombol ini?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.Tanggal Kunci Berakhir)
+CancelWizardWarning             = "Konfigurasi Aplikasi belum lengkap Anda yakin ingin keluar dari konfigurasi Wizard?."
+ErrEmptyActivationCode.caption  = "Kode aktivasi tidak ditentukan"
+ErrEmptyActivationCode          = "Silahkan masukan kode aktivasi"
+ErrEmptyKeyPath.caption         = "Kunci berkas tidak ditentukan"
+ErrEmptyKeyPath                 = "Silahkan tentukan kunci berkas"
+$LicInfoKeyNumber               = "Nomor:"
+$LicInfoKeyProductName          = "Nama Aplikasi:"
+$LicInfoKeyType                 = "Tipe Lisensi:"
+$LicInfoExpirationDate          = "Tanggal kadaluwarsa:"
+$LicErrReason                   = "Alasan:"
+$ActiveKey                      = "Mengaktifkan Kunci"
+$ReservedKey                    = "Kunci Tambahan"
+ConfirmFeedback                 = "Apakah anda setuju untuk memasukan informasi ke <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) adalah sebuah infrastruktur dari layanan online yang menyediakan informasi terbaru pada keamanan berkas, sumber situs dan perangkat lunak. Menggunakan data dari KSN meningkatkan kecepatan reaksi terhadap ancaman baru, Meningkatkan kinerja komponen-komponen perlindungani dan mengurangi resiko dari kesalahan deteksi.\nKetika anda bergabung di KSN, informasi mengenai infeksi virus dan masalah lainnya, selain statistik diperpanjang berdasarkan tanggal dimuat atau aplikasi dieksekusi (sesuai dengan daftar yang ditentukan dalam <a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN Data Collection Statement</a>), secara otomatis dikirim ke Kaspersky Lab. \n\n<b>Kaspersky Security Network tidak mengumpulkan maupun memproses setiap informasi pengguna pribadi.</b>"
+
+$ToAcquireNewLicText            = "\n\nTo memperoleh lisensi baru, silahkan hubungi agen anda atau <a Buy onclick(buy())>Bagian Penjualan Kaspersky Lab</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nSilakan coba untuk memperbarui status berlangganan secara manual atau hubungi Dukungan Teknis" : "\nSilahkan coba untuk mengaktifkan aplikasi melalui kode aktivasi kemudian (dalam 1-2 jam) atau hubungi Dukungan Teknis") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? "Wizard Pengaktifkan" : "Wizard Konfigurasi")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Informasi umum"
+InitBegin.Descr                       = "Selamat datang " + $ProductName_GEN + "Wizard Konfigurasi."
+CheckHosts.Name                       = "Pengecekan ketersediaan dari server Kaspersky Lab"
+CheckHosts.Descr                      = "Pengalihan yang mencurigakan telah terdeteksi"
+ResetArea.Name                        = "Pengembalian pengaturan"
+ResetArea.Descr                       = "Pengaturan yang tercantum di bawah ini mengandung data yang dimasukkan oleh pengguna atau akumulasi \nselama aplikasi berjalan."
+ActivationBegin.Name                  = $IsSubscription ? "Manajemen berlangganan" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Hapus Kunci" : "Menambahkan kunci") : "Mengaktifkan aplikasi")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Perijinan" : "Aktifkan aplikasi untuk melanjutkan.")
+ActivationProgress.Name               = "Aktivasi online"
+ActivationProgress.Descr              = "Aktivasi sedang berjalan, silahkan tunggu..."
+ActivationServerForm.Name             = "Aktivasi online"
+ActivationServerForm.Descr            = "Silahkan isi formulir ini."
+ActivationChooseKey.Name              = "Aktivasi menggunakan file kunci"
+ActivationChooseKey.Descr             = "Mengaktifkan aplikasi menggunakan file kunci."
+ActivationEnd.Name                    = "Mengaktifkan Aplikasi"
+ActivationEnd.Descr                   = "Aktivasi selesai."
+MigrationKeyIsFound.Name         = "Kunci untuk lisensi saat ini tersedia"
+MigrationKeyIsFound.Descr        = "Apakah Anda ingin menggunakan aplikasi yang ditetapkan oleh lisensi saat ini?"
+MigrationBegin.Name              = "Dialihkan ke " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Anda akan dialihkan untuk menggunakan " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Cari perangkat lunak yang tidak kompatibel"
+MigrationSearchProgress.Descr    = "Silahkan tungu ketika mencari perangkat lunak yang tidak kompatibel..."
+MigrationSafeRemoval.Name        = "Perangkat lunak yang tidak kompatibel ditemukan"
+MigrationSafeRemoval.Descr       = "Diminta menghapus perangkat lunak yang tidak kompatibel untuk melanjutkan"
+MigrationSafeProgress.Name       = "Menghapus perangkat lunak yang tidak kompatibel"
+MigrationSafeProgress.Descr      = "Silahkan tunggu ketika sedang menghapus perangkat lunak yang tidak kompatibel..."
+MigrationAddRemove.Name          = "Perangkat lunak yang tidak kompatibel ditemukan"
+MigrationAddRemove.Descr         = "Silahkan menghapus perangkat lunak yang tidak kompatibel"
+MigrationUnsafeRemoval.Name      = "Perangkat lunak yang tidak kompatibel ditemukan"
+MigrationUnsafeRemoval.Descr     = "Diminta menghapus perangkat lunak yang tidak kompatibel untuk melanjutkan"
+MigrationUnsafeProgress.Name     = "Menghapus perangkat lunak yang tidak kompatibel"
+MigrationUnsafeProgress.Descr    = "Silahkan tunggu ketika sedang menghapus perangkat lunak yang tidak kompatibel..."
+MigrationReboot.Name             = "Diperlukan untuk memulaikembali sistem operasi"
+MigrationReboot.Descr            = "Reboot diperlukan untuk melanjutkan pengalihan ke aplikasi baru"
+MigrationProgress.Name           = "Dialihkan ke " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Silahkan tunggu ketika dialihkan ke aplikasi baru..."
+MigrationRebootApp.Name          = bMigrationDone ? "Aplikasi akan dimulai kembali" : "Salah ketika mengalihkan ke aplikasi baru"
+MigrationRebootApp.Descr         = bMigrationDone ? "Aplikasi harus dimulai kembali" : "Dialihkan ke " + s_MUProductTitleLong(env("ProductType")) + " Gagal"
+MigrationFinish.Name             = "Pengalihan " + s_ProductTitleLong(env("ProductType")) + " komplit"
+MigrationFinish.Descr            = "Pengalihan " + s_ProductTitleLong(env("ProductType")) + " komplit"
+DNS.Name                              = "Pengaturan Lanjutan"
+DNS.Descr                             = $ProductName_GEN + "Pengaturan operasi lebih jauh"
+EnumExe.Name                          = "Analisa komputer"
+EnumExe.Descr                         = "Silahkan tunggu ketika informasi mengenai sistim anda dikumpulkan..."
+InitFinish.Name                       = "Menyelesaikan konfigurasi dari " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Anda harus reboot komputer untuk melengkapi konfigurasi aplikasi." : "Anda dapat mulai" + $ProductName + " sekarang."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Pengalihan Mencurigakan dari Kaspersky Lab server telah terdeteksi. Hal ini mungkin disebabkan oleh aktivitas malware, dan dapat menyebabkan pembaruan dan aktivasi gagal. Host file entri mencurigakan:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Hapus rekaman (disarankan)"
+Skip			= "Lewati"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Kembali"
+Back.Descr      = "Kembali ke pilihan aplikasi metode aktivasi"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Menambahkan kunci" : "&Activate"
+Activate.Descr  = "Instalasi file kunci yang dipilih"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "S&elesai"
+Finish.Descr    = "Tutup Wizard Aktivasi"
+Next.Name       = "L&anjutkan"
+Next.Descr      = "Melanjutkan ke konfigurasi"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Anda dapat terus menggunakan aplikasi yang ditetapkan oleh lisensi saat ini. Dalam hal ini aplikasi akan beralih ke " + s_MUProductTitleLong(env("TipeProduk")) + "."
+Text3   = "Apakah Anda ingin terus menggunakan aplikasi yang ditetapkan oleh lisensi saat ini?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Tipe Aplikasi:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Tanggal kadaluwarsa:"
+ExpirationDate.Val      = tanggalwaktu(TanggalIjinBerakhir) + " (" + f_n_days_remaining(HariSampaiBerakhir) + "tersisa)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Ya, dan alihkan ke " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Tidak, dan tinggalkan " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Anda dalam proses beralih ke " + s_MUProductTitleLong(env("ProductType")) + ". Pemegang hak cipta memberi Anda lisensi non-eksklusif untuk digunakan " + s_MUProductTitleLong(env("ProductType")) + " dengan persyaratan yang sama seperti yang Anda diterima sebelumnya ketika menginstal " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Catatan: Pengalihan ini memerlukan tindakan tindakan yang dapat mengakibatkan reboot."
+LicenseWarning  = "Perhatian! Lisensi komersial untuk Kaspersky Anti-Virus berakhir sebelum mencoba lisensi untuk Kaspersky Internet Security. Setelah lisensi komersial untuk Kaspersky Anti-Virus berakhir tidak mungkin untuk kembali menggunakan Kaspersky Anti-Virus dari versi percobaan Kaspersky Internet Security. Apakah Anda ingin terus beralih ke Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Mencari software yang tidak kompatibel di komputer Anda Hal ini mungkin memakan waktu.. Silakan tunggu..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Perangkat lunak berikut akan dihapus untuk melakukan pengalihan:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Silahkan tunggu ketika perangkat lunak yang tidak kompatibel sedang dihapus..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Perangkat lunak berikut akan dihapus untuk melakukan pengalihan:"
+OpenAddRemove = "Membuka jendela add/remove program"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Perangkat lunak berikut akan dihapus untuk melakukan pengalihan:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Silahkan tunggu ketika perangkat lunak yang tidak kompatibel sedang dihapus..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Komputer anda harus direboot untuk melanjutkan pengalihan. Wizard akan dilanjutkan setelah reboot."
+Reboot   = "Reboot sekarang"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Silakan tunggu sementara aplikasi dikonfigurasi ulang dan Anda beralih ke " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Untuk melengkapi pengalihan ke " + s_MUProductTitleLong(env("ProductType")) + " Aplikasi akan di restart." : "Pengalihan ke " + s_MUProductTitleLong(env("ProductType")) + " gagal."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Sekarang anda dapat mengevaluasi " + s_ProductTitleLong("kis") + " Fitur Parental Kontrol, Anti-Spam, Firewall dan yang lain." : s_ProductTitleLong("kav") + " memberikan proteksi dasar pada komputer anda dari malware."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Anda dapat"+if($IsRefreshSubAvail,"Memperbarui status berlangganan atau ")+"hapus kunci." : (f_IsActiveKeyWorkingCommercial() ? "Anda dapat menghapus kunci aktif anda atau menambah kunci." : "Diaktifkan" + $ProductName + " Untuk mengaktifkan fungsi aplikasi secara menyeluruh."+ if($CorporateOnly, " Anda dapat memperoleh sebuah <a Activate onclick(url($ActivationLink))>komersil</a> atau aktifkan sebuah <a AktivasiPercobaan dengan mengklik(url($ActivationTrialLink))>percobaan</a> Versi dari aplikasi."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktifkan &nanti"
+Later.Descr                 = "Melewatkan aktivasi dan lanjutkan untuk mengkonfigurasi aplikasi"
+ChooseKey.Name              = "Aktifkan menggunakan &file kunci"
+ChooseKey.Descr             = "Dibutuhkan File kunci"
+ActivateBetaKAV.Name        = "Mengaktifkan kaspersky Anti-Virus versi be&ta"
+ActivateBetaKAV.Descr       = "Versi beta dari Kaspersky Anti-Virus berisi fungsionalitas penuh, tetapi bukan produk akhir."
+ActivateBetaKIS.Name        = "Mengaktifkan Kaspersky Internet Security v&ersi beta"
+ActivateBetaKIS.Descr       = "Versi beta dari Kaspersky Internet Security berisi fungsionalitas penuh, tetapi bukan produk akhir."
+ActivateTrial.Name          = "Mengaktifkan &versi percobaan"
+ActivateTrial.Descr         = "Periode validitas untuk versi percobaan yang ditentukan dalam perjanjian lisensi pengguna akhir"
+ActivateCommercial.Name     = "A&ktivasi online"
+ActivateCommercial.Descr    = "Kode aktivasi yang diterima selama pembelian diperlukan"
+RemoveKey.Name              = $HasReserveKey ? "&Hapus kunci tambahan" : "&Hapus kunci"
+RemoveKey.Descr             = "Untuk mengganti kuncinya terlebih dahulu Anda harus menghapus kunci aktif"
+RefreshSubscription.Name    = "&Status pembaruan berlangganan"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Anda dapat memperbarui status berlangganan secara manual. ": "Pembaruan otomatis status langganan dihentikan. Anda dapat memperbarui status secara manual. "
+ActivateTrialKIS            = "Aktivasi Kaspersky Internet Security versi percobaan"
+ActivateTrialKIS_Desc       = "Masa berlaku untuk versi trial Kaspersky Internet Security adalah ditentukan dalam perjanjian lisensi"
+RevertToCommercialKAV       = "Kembali ke versi komersial dari Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Kembali ke versi komersial dari Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Perbarui status berlangganan"
+ActivateCommercial      = "Aktivasi &versi komersial"
+ActivateCommercial_Desc = (KunciKodeAktivasi)? "Masukan kode aktivasi: " : "Masukan <a onclick(url(\"" + $ActCodeHint + "\"))>Kode aktivasi</a>:"
+ActivationCode_Desc     = (KunciKodeAktivasi)? "Kode aktivasi anda telah ditambahkan secara otomatis. Silahkan klik \"Selanjutnya\" tombol." : "Jika anda tidak memiliki kode aktivasi anda dapat memesannya <a tinggalklik(beli())>online</a>"
+ActivateBetaKAV         = "Mengaktifkan kaspersky Anti-Virus versi &beta"
+ActivateBetaKIS         = "A&ktivasi Kaspersky Internet Security versi beta"
+ActivateTrial           = "Mengaktifkan versi &percobaan"
+ActivateTrial_Desc      = "Mengevaluasi versi berfungsi penuh dari aplikasi sebelum membelinya."
+ActivateTrialKIS           = "Aktivasi Kaspersky Internet Security versi percobaan"
+ActivateTrialKIS_Desc      = "Mengevaluasi versi berfungsi penuh dari Kaspersky Internet Security sebelum membelinya."
+RevertToCommercialKAV      = "Kembali ke versi komersial dari Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Berhenti menggunakan versi trial dari Kaspersky Iinternet Security dan kembali ke versi komersial dari Anti Virus Kaspersky."
+Later                   = "A&ktivasi kemudian"
+Later_Desc              = "Fungsionalitas penuh dari aplikasi tidak akan tersedia sampai diaktifkan."
+RemoveKey               = "Hapus key file"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "File kunci:"
+KeyInfo         = "Informasi lisensi"
+ConnectingInfo.Name     = "Aktivasi error: "
+ConnectingInfo.Val      = "rinci"
+TryAgain                = "Aktifkan"
+Descr1                  = "Untuk mencoba aktivasi, lakukan tindakan berikut:"
+Descr2                  = "Periksa pengaturan koneksi internet dan coba mengaktifkan aplikasi."
+Descr3                  = "Pergi ke <tinggal klik(url(\"" + $ActivationLink + "\"))> Pusat Aktivasi Online</a> dan ikuti instruksinya. \nSetelah menerima file kunci tentukan lokasi penyimpanannya dan klik selanjutnya:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Tanggal Pembuatan:"
+InstallDate.Name    = "Tanggal Aktivasi:"
+ExpirationDate.Name = "Tanggal berakhir:"
+SubscrptnExpDate.Name = "Tanggal berakhir berlangganan:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," for " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Sistem rukas : " + s_SystemError(KodeRusak)
+2       = "Tidak dapat menambahkan \"" + FileKunci + "\" kunci: " + memanfaatkan (s_LicenseError(KerusakanKode),0) + $ToAcquireNewLicText
+3       = "Tidak dapat menghapus \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Kerusakan kode: " + KerusakanKode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Kunci ini telah di tambahkan" + $LicErrHelpLink
+0x0947901d  = "Lisensi tidak berlaku . Pembaruan basis data tidak tersedia" + $LicErrHelpLink
+0x89479002  = "Lisensi tidak ditemukan" + $LicErrHelpLink
+0x89479003  = "Salah satu signature digital hilang atau rusak" + $LicErrHelpLink
+0x89479004  = "Data telah rusak" + $LicErrHelpLink
+0x89479005  = "Key file rusak" + $LicErrHelpLink
+0x89479006  = "Lisensi sudah tidak berlaku" + $LicErrHelpLink
+0x89479007  = "Tidak ada file kunci yang ditentukan" + $LicErrHelpLink
+0x89479008  = "File Kunci tidak benar" + $LicErrHelpLink
+0x89479009  = "Gagal untuk menyimpan data" + $LicErrHelpLink
+0x8947900a  = "Gagal untuk membaca data" + $LicErrHelpLink
+0x8947900b  = "I/O rusak" + $LicErrHelpLink
+0x8947900c  = "Basis data telah hilang" + $LicErrHelpLink
+0x8947900d  = "Kunci tambahan dan kunci aktif telah ditambahkan" + $LicErrHelpLink
+0x8947900e  = "Perpustakaan Perizinan tidak diinisialisasi" + $LicErrHelpLink
+0x8947900f  = "Basis data yang rusak atau telah diperbarui secara manual" + $LicErrHelpLink
+0x89479010  = "Basis data yang ada rusak" + $LicErrHelpLink
+0x89479011  = "File kunci berakhir tidak dapat di register sebagai kunci tambahan" + $LicErrHelpLink
+0x89479012  = "Sistem rusak " + $LicErrHelpLink
+0x89479013  = "Black list kunci rusak" + $LicErrHelpLink
+0x89479014  = "Tanda tangan digital tidak cocok dengan tanda tangan Kaspersky Lab digital" + $LicErrHelpLink
+0x89479015  = "Tidak dapat mengaktifkan versi komersial dari aplikasi di bawah lisensi beta" + $LicErrHelpLink
+0x89479016  = "Versi beta dari aplikasi ini dapat diaktifkan hanya di bawah lisensi beta" + $LicErrHelpLink
+0x89479017  = "Lisensi tersebut tidak berlaku untuk aplikasi ini. Hal ini tidak mungkin untuk mengaktifkan. Hal ini tidak mungkin untuk mengaktifkan " + $ProductName + " di bawah lisensi untuk aplikasi lain. Harap memeriksa aplikasi yang anda instal" + $LicErrHelpLink
+0x89479018  = "Kunci telah terblok" + $LicErrHelpLink
+0x89479019  = "Lisensi trial ini telah digunakan, itu tidak mungkin untuk menggunakan lisensi yang sama dua kali" + $LicErrHelpLink
+0x8947901a  = "Key file rusak" + $LicErrHelpLink
+0x8947901b  = "Digital signature hilang, rusak, atau tidak sesuai dengan Kaspersky Lab signature digital" + $LicErrHelpLink
+0x8947901c  = "Tidak dapat menambahkan kunci untuk lisensi non-komersial jika telah berakhir" + $LicErrHelpLink
+0x8947901e  = "File pembuatan kunci atau tanggal pendaftaran tidak valid. periksa pengaturan sistem tanggal" + $LicErrHelpLink
+0x8947901f  = "Tidak dapat menambahkan kunci untuk lisensi percobaan ketika lisensi percobaan lainnya aktif" + $LicErrHelpLink
+0x89479020  = "Black list kunci hilang atau rusak" + $LicErrHelpLink
+0x89479021  = "Deskripsi pembaruan hilang atau rusak" + $LicErrHelpLink
+0x89479022  = "Data internal tidak valid untuk aplikasi ini" + $LicErrHelpLink
+0x89479023  = "Tidak bisa menambah kunci tambahan menggunakan kode aktivasi yang salah" + $LicErrHelpLink
+0x89479024  = "Formulir Pengguna data menyelesaikan kesalahan" + $LicErrHelpLink
+0x89479025  = "Kesalahan aktivasi server yang mengirim permintaan.\nKemungkinan alasan: Masalah koneksi Internet atau masalah sementara pada server aktivasi.\nCobalah untuk mengaktifkan kode nanti (dalam 1–2 jam).\nJika masalah yang timbul sama, hubungi provider Internet anda" + $LicErrHelpLink
+0x89479026  = "Permintaan berisi kode aktivasi yang salah" + $LicErrHelpLink
+0x89479027  = "Tidak dapat memperoleh status respon" + $LicErrHelpLink
+0x89479028  = "Kesalahan menyimpan file sementara" + $LicErrHelpLink
+0x89479029  = "Kode aktivasi yang sudah dimasukkan tidak benar atau tanggal sistem tidak benar. Periksa pengaturan sistem tanggal" + $LicErrHelpLink
+0x8947902a  = "Kode aktivasi tidak cocok untuk aplikasi ini atau kuncinya telah berakhir. Hal ini tidak mungkin untuk mengaktifkan " + $ProductName + " di bawah lisensi untuk aplikasi lain. Harap memeriksa aplikasi Anda diinstal atau <beli dengan mengklik(beli())>" + s_LicenseRenewBuyText(Lisensi.globalPembaruanLisensiTersedia) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Gagal untuk menerima file kunci. Kode aktivasi Salah ditentukan" + $LicErrHelpLink
+0x8947902c  = "Server aktivasi mengalami kesalahan 400" + $OlaErrHelpLink
+0x8947902d  = "Server aktivasi mengalami kesalahan 401" + $OlaErrHelpLink
+0x8947902e  = "Server aktivasi mengalami kesalahan 403" + $OlaErrHelpLink
+0x8947902f  = "Sumber daya yang diperlukan tidak tersedia di server aktivasi.\nServer aktivasi telah mengalami kesalahan 404.\nSilahkan cek pengaturan koneksi internet anda" + $OlaErrHelpLink
+0x89479030  = "Server aktivasi mengalami kesalahan 405" + $OlaErrHelpLink
+0x89479031  = "Server aktivasi mengalami kesalahan 406" + $OlaErrHelpLink
+0x89479032  = "Otentikasi proxy diperlukan. Silahkan cek pengaturan LAN" + $LicErrHelpLink
+0x89479033  = "Permintaan waktu keluar" + $LicErrHelpLink
+0x89479034  = "Server aktivasi mengalami kesalahan 409" + $OlaErrHelpLink
+0x89479035  = "Sumber daya yang diperlukan tidak tersedia di server aktivasi.\nServer aktivasi telah mengalami kesalahan 410.\nSilahkan cek pengaturan koneksi internet anda" + $OlaErrHelpLink
+0x89479036  = "Server aktivasi mengalami kesalahan 411" + $OlaErrHelpLink
+0x89479037  = "Server aktivasi mengalami kesalahan 412" + $OlaErrHelpLink
+0x89479038  = "Server aktivasi mengalami kesalahan 413" + $OlaErrHelpLink
+0x89479039  = "Server aktivasi mengalami kesalahan 414" + $OlaErrHelpLink
+0x8947903a  = "Server aktivasi mengalami kesalahan 415" + $OlaErrHelpLink
+0x8947903b  = "Kesalahan yang tidak diketahui pada klien" + $OlaErrHelpLink
+0x8947903c  = "Kesalahan pada server internal" + $LicErrHelpLink
+0x8947903d  = "Fungsi-fungsi tidak mendukung" + $LicErrHelpLink
+0x8947903e  = "Respon gateway tidak ada. periksa pengaturan jaringan anda" + $LicErrHelpLink
+0x8947903f  = "Sumber Daya untuk sementara tidak tersedia" + $LicErrHelpLink
+0x89479040  = "Menunggu permintaan timed out. Periksa pengaturan jaringan Anda" + $LicErrHelpLink
+0x89479041  = "Protokol ini tidak didukung oleh server" + $OlaErrHelpLink
+0x89479042  = "Kesalahan pada server tidak diketahui" + $OlaErrHelpLink
+0x89479043  = "Kesalahan http tidak diketahui" + $OlaErrHelpLink
+0x89479044  = "Identifikasi sumber daya tidak benar" + $LicErrHelpLink
+0x89479045  = "Salah info pada bidang \"kunci\"" + $LicErrHelpLink
+0x89479046  = "URL tidak benar" + $LicErrHelpLink
+0x89479047  = "Folder pilihan tidak benar" + $LicErrHelpLink
+0x89479048  = "Alokasi memori salah" + $LicErrHelpLink
+0x89479049  = "Kesalahan konversi parameter untuk ANSI string (url, folder, agent)" + $LicErrHelpLink
+0x8947904a  = "Kesalahan menciptakan working thread" + $LicErrHelpLink
+0x8947904b  = "Topik Bekerja sudah berjalan" + $LicErrHelpLink
+0x8947904c  = "Working thread tidak berjalan" + $LicErrHelpLink
+0x8947904d  = "Key file tidak ditemukan pada server aktivasi" + $LicErrHelpLink
+0x8947904e  = "Kunci telah terblok" + $LicErrHelpLink
+0x8947904f  = "Server aktivasi internal salah" + $LicErrHelpLink
+0x89479050  = "Tidak cukup data pada permintaan aktivasi" + $LicErrHelpLink
+0x89479051  = "ID Pengguna atau kata santi tidak benar" + $LicErrHelpLink
+0x89479052  = "Kode aktivasi tidak benar" + $LicErrHelpLink
+0x89479053  = "Lisensi untuk file kunci yang dipilih berakhir lebih awal dari saat ini" + $LicErrHelpLink
+0x89479054  = "Data tidak benar pada Operating System. Silahkan periksa sistem tanggal" + $LicErrHelpLink
+0x89479055  = "License percobaan sudah habis" + $LicErrHelpLink
+0x89479056  = "Periode aktivasi sudah habis" + $LicErrHelpLink
+0x89479057  = "<b>Kode aktivasi masuk telah melampaui batas aktivasi yang diperbolehkan</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Tidak dapat menambahkan kunci untuk lisensi non-komersial sebagai kunci tambahan, sementara lisensi komersial ini masih berlaku" + $LicErrHelpLink
+0x8947905c  = "Aktivasi kode yang diperlukan" + $LicErrHelpLink
+0x8947905d  = "ID atau kata sandi Kustomer tidak benar" + $LicErrHelpLink
+0x8947905e  = "Kode aktivasi tidak benar" + $LicErrHelpLink
+0x89479062  = "Tidak dapat terhubung ke server aktivasi" + $LicErrHelpLink
+0x89479064  = "<b>Server aktivasi tidak tersedia.</b>\n\n" + if(pengaturan.Ins_InitMode & #eInitMode_Init, "Tidak dapat mengaktifkan aplikasi sekarang. Coba lagi aktivasi setelah mengkonfigurasi aplikasi dan restart sistem operasi ",". Silakan periksa pengaturan koneksi internet dan coba lagi untuk aktivasi.") + $LicErrHelpLink
+0x89479065  = "Lisensi anda sudah tidak berlaku. Silahkan <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Kunci aktif tidak bisa diganti dengan kunci yang sudah berakhir" + $LicErrHelpLink
+0x89479067  = "Tidak dapat menambahkan kunci yang berakhir lebih awal dari kunci aktif sebagai kunci tambahan" + $LicErrHelpLink
+0x89479068  = "Pembaruan Key berlangganan telah hilang" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Prosedur aktivasi selesai dengan kesalahan sistem " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktivasi salah: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktivasi salah: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktivasi salah: server mengembalikan kode HTT " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktivasi gagal " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Aktivasi internal server error. Silakan coba lagi atau hubungi Dukungan Teknis"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Kode aktivasi tidak kompatibel dengan aplikasi ini. Tidaklah mungkin untuk mengaktifkan " +$ProductName + " dengan menggunakan kode aktivasi untuk aplikasi lain. Silakan memeriksa aplikasi yang diinstal"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Kunci telah terblok"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "ID Customer atau kata sandi tidak benar"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Kode aktivasi salah"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Diperlukan kode aktivasi"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Periode Aktivasi sudah habis"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Jumlah aktivasi menggunakan kode ini sudah melebihi"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Kode ini tidak valid untuk wilayah ini"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Kode aktivasi tidak dapat digunakan untuk lokalisasi aplikasi."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Kode aktivasi berlaku untuk versi terbaru dari aplikasi ini. untuk menggunakan versi saat ini diperlukan untuk mendapatkan kode lain. untuk rincian clik link di bawah ini."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Server aktivasi menggalami kesalahan 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Server aktivasi kembali mengalami kesalahan 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Server aktivasi kembali mengalami kesalahan 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Server aktivasi kembali mengalami kesalahan 646"
+default                                     = "Prosedur aktivasi kembali mengalami kesalahan " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Mode Offline diaktifkan di Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Koneksi Internet gagal"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Server aktivasi tidak tersedia"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Server Proksi tidak tersedia"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Batas waktu respon telah berakhir"
+#OLA_ERR_INTERNET_INVALID_URL                = "Server aktivasi salah alamat"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Protokol tidak benar"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Tidak dapat mengatur koneksi server"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operasi dibatalkan"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Tidak dapat mengatur koneksi server"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Koneksi server dihentikan"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Koneksi Server telah reset"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Salah respon server"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Sertifikat SSL server telah kedaluwarsa. Silakan periksa waktu komputer lokal"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Nama server Sertifikat SSL tidak sesuai dengan server"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Tidak dapat melakukan cek sertifikat pembatalan. menonaktifkan cek di Microsoft Internet Explorer (Tools->Internet Options->Advanced->Check for Server certificate revocation) dan ulangi upaya aktivasi"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Sertifikat SSL Tidak valid"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Sertifikat SSL dicabut"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Pusat sertifikasi yang tidak benar"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Pendaftaran data yang diperlukan untuk Kaspersky Lab untuk memberitahu Anda tentang berbagai kegiatan promosi, penjualan dan penawaran khusus."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "Lan&jutkan"
+Activate.Descr  = "Pengiriman data ke server aktivasi"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Wizard Konfigurasi perangkat terhubung ke server aktivasi Kaspersky Lab ini mungkin memakan waktu lama, tergantung pada kecepatan koneksi Internet Anda.."
+ConnectingInfo.Name     = "Koneksi ke server aktivasi..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Mengirim kode aktivasi..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Menunggu respon dari server..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Copy anda mengenai " + $ProductName + " telah berhasil diaktivasi"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Tanggal kadaluwarsa:"
+ExpirationDate.Val      = tanggalwaktu(TanggalIjinBerakhir) + " (" + f_n_days_remaining(HariSampaiBerakhir) + "tersisa)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktivasi telah selesai." : "Aplikasi sudah diaktifkan pada komputer anda."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "L&anjutkan"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Proses untuk mengaktifkan aplikasi": (((PiwFlags & #fPiwActivation) && !bSilent)?"Proses untuk informasi lisensi":"Proses untuk memilih mode perlindungan")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Wizard ini akan membantu Anda dalam mengkonfigurasi keamanan komputer Anda.\n\nSelama konfigurasi, Wizard akan mengumpulkan informasi tentang sistem Anda dan aplikasi yang terinstal pada komputer Anda. Informasi ini akan digunakan hanya dengan tujuan untuk memberikan perlindungan optimal komputer Anda.\n\nKlik Selanjutnya untuk memulai " + $ProductName_GEN + " proses konfigurasi."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Instalasi hampir lengkap..." : ((PiwFlags & #fPiwReset) ? ("Perbaikan komplit.") : ("Instalasi telah komplit."))
+ResetDescr          = "Konfigurasi wizard telah berhasil dipulihkan " + $ProductName + " pengaturan."
+Reboot              = "&Hidupkan ulang komputer"
+StartProduct        = "Mu&lai " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Terima kasih sudah menginstal " + $ProductName + ". Untuk menyelesaikan proses instalasi Anda harus reboot komputer. Harap menyimpan data Anda, tutup semua aplikasi, dan klik tombol 'Finish'. "):" Harap dicatat bahwa konfigurasi produk tambahan selesai pertama kali aplikasi dijalankan. Ini dapat berlangsung beberapa menit sampai akhir. "
+
+[ConfigureWizard.EnumExe]
+Info = "Selama analisis sistem daftar aplikasi terpercaya termasuk dalam pembangunan sistem operasi Microsoft Windows. \n\nProgram yang tidak termasuk dalam sistem operasi dianalisis secara terpisah ketika mereka mulai untuk pertama kalinya di komputer."
+
+[s_LicKeyType]
+#ektBeta         = "Kunci Beta"
+#ektTrial        = "Percobaan"
+#ektTest         = "Kunci Tes"
+#ektOEM          = "Kunci OEM"
+#ektCommercial   = "Komersial"
+#ektSubscription = "Komersial dengan berlangganan"
+#ektSubscriptionProtection = "Komersial dengan perlindungan berlangganan"
+default          = "Tipe tidak diketahui"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Error tidak diketahui"
+#ekirValid                      = "Lisensi yang valid"
+#ekirExpired                    = "Lisensi telah kadaluwarsa"
+#ekirCorrupted                  = "Lisensi tidak berlaku"
+#ekirNotSigned                  = "Signature digital hilang atau rusak"
+#ekirWrongProduct               = "Lisensi tersebut tidak berlaku untuk aplikasi ini. Tidaklah mungkin untuk di aktifkan " + $ProductName + " di bawah lisensi untuk aplikasi lain. Silakan memeriksa aplikasi yang telah anda instal."
+#ekirBlackListed                = "Kunci "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" telah diblok"
+#ekirIllegalUpdate              = "Tanggal basis data tidak berhubungan dengan periode validitas lisensi"
+#ekirInconsistentUpdate         = "Basis data yang ada korup"
+#ekirKeyCreationDateInvalid     = "Kesalahan pembuatan tanggal pembutan key"
+#ekirTrialAlreadyInUse          = "Tidak dapat menambahkan kunci untuk lisensi percobaan sementara kunci lisensi percobaan lainnya sudah diaktifkan"
+#ekirInvalidBlacklist           = "Black list kunci rusak"
+#ekirCantBeUsedAsReserved       = "Tidak bisa mendaftar lisensi sebagai satu tambahan"
+#ekirKeyInstallDateInvalid      = "Tanggal aktivasi tidak benar"
+#ekirTrialPeriodIsOver          = "Lisensi percobaan telah habis masa berlakunya"
+#ekirConflictsWithCommercial    = "File kunci konflik dengan lisensi komersial saat ini"
+#ekirExpiredAsReserve           = "Lisensi ini berakhir lebih awal dari lisensi saat ini"
+#ekirGracePeriod                = "Lisensi dalam tenggang waktu"
+#ekirSuspended                  = "Subskripsi ditangguhkan"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Harus dilakukan instalasi ulang aplikasi"
+#ekirLicenseOnlyForMigration    = "Beralih ke aplikasi lain untuk mengaktifkan versi komersial"
+default                         = "Key file tidak benar"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Untuk dijelaskan pengguna"
+#edtUnlimited = "Aktif"
+#edtLimited   = tanggal(SubscriptionInfo.ExpDate)
+#edtSuspended = "ditangguhkan dari " + tanggal(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Informasi lisensi"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": lisensi notifikasi"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Perhatian!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Anda sedang menggunakan versi percobaan " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Black list lisensi salah satunya hilang atau rusak. Silahkan jalankan <a Pembaruan dengan mengklik(f_StartUpdater())>pembaruan</a> untuk melanjutkan operasi."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Lisensi anda " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Untuk tetep melindungi anda silahkan perbarui <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJika anda sudah memperoleh lisensinya silahkan <a Activate onclick(f_Activate())>aktifkan aplikasi</a>."
+1       = (StatusBerlangganan==#ssExpired)? (("Masa berlangganan berakhir." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Perlindungan dinonaktifkan."))+($IsBestBuyLink ? " Pembaruan Berlangganan tidak tersedia untuk diperbarui." : " Keamanan komputer beresiko. \n\nUntuk memperbarui berlangganan , <a klik (url($KeyProviderLinkForText))>hubungi pelayanan provider anda</a>.")) :("Anda mendapatkan " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " tersisa untuk memperbarui langganan. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " tersisa sampai pembaruan dinonaktifkan. " : " tersisa sampai perlindungan dinonaktifkan." ) ) + " Untuk memperbarui berlangganan, <a klik(url($KeyProviderLinkForText))>hubungi pelayanan provider anda</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Kunci aktif telah diblok.\nFitur update dinonaktifkan sehingga komputer Anda bisa terkena risiko infeksi.</b>\n\nJika anda memesan aplikasi secara legal, silahkan menghubungi Dukungan Teknis atau pengecer.\n\nJika anda menggunakan salinan ilegal, silahkan <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJika anda sudah memiliki permintaan lisensi , silahkan <a Activate onclick(f_Activate())>aktifkan aplikasi</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "berakhir hari ini" : "berakhir pada " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "sudah berakhir"
+
+[s_LicenseRenewBuyText]
+0 = "mendapatkan lisensi"
+default = "memperbaharui lisensi"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Pilih pengaturan untuk restore:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN + " Konfigurasi Wizard"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Informasi umum"
+InitBegin.Descr                       = "Selamat datang " + $ProductName_GEN + "Wizard Konfigurasi."
+CheckHosts.Name                       = "Pengecekan ketersediaan dari server Kaspersky Lab's"
+CheckHosts.Descr                      = "Pengalihan yang mencurigakan telah terdeteksi"
+ResetArea.Name                        = "Pengembalian pengaturan"
+ResetArea.Descr                       = "Pengaturan yang tercantum di bawah ini mengandung data yang dimasukkan oleh pengguna atau akumulasi \nselama aplikasi berjalan."
+EnumExe.Name                          = "Analisa komputer"
+EnumExe.Descr                         = "Silahkan tunggu ketika informasi mengenai sistim anda dikumpulkan..."
+ResetFinish.Name                       = "Menyelesaikan konfigurasi dari " + $ProductName
+ResetFinish.Descr                      = $ProductName + " siap untuk memulai."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Restore selesai."
+ResetDescr          = "Konfigurasi wizard telah berhasil dipulihkan " + $ProductName + " pengaturan."
+
+[BestBuyUpgradeMessage]
+@ = "Beralih ke aplikasi lain"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Mulai menggunakan Kaspersky Internet Security"
+RestartButton = "Jalankan Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Selamat!"
+Message = "Kaspersky Anti-Virus Anda telah berhasil upgrade ke Kaspersky Internet Security.\nSekarang Anda dapat menikmati lebih banyak fitur untuk melindungi komputer Anda."
+Description = "Terima kasih telah memilih software Kaspersky Lab!\nSilahkan menikmati perlindungan tambahan."
+
+[ForcedUpgradeMessagePage]
+Header = "Hampir selesai"
+Message = "Terima kasih telah memilih software Kaspersky Lab!\nSilahkan menikmati perlindungan tambahan."
+Description = "Karena beberapa software yang tidak kompatibel tidak dapat dihapus, beberapa fitur baru Kaspersky Internet Security dinonaktifkan untuk memastikan berfungsinya aplikasi yang terinstal dan sistem operasi.\n\nAnda dapat menghapus software yang tidak kompatibel secara manual dan mengaktifkan semua fitur baru dalam pengaturan jendela Kaspersky Internet Security."
+Notification = "Aplikasi ini akan dimulai kembali untuk menyelesaikan peningkatan."

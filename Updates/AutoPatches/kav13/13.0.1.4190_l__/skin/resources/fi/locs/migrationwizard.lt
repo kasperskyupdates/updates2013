@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Ohjattu siirtyminen'
+UpgradeCaption = 'Päivitys'
+
+RebootPageCheckboxRebootText = 'Käynnistä tietokone uudelleen'
+OpenRemoveProgramsPanel = 'Avaa työkalurivi'
+
+WizardBeginDescriptionKis = 'Siirryt käyttämään Kaspersky Internet Security 2013 -sovellusta.\n\nTekijänoikeuden haltija myöntää käyttöösi ei-yksinoikeudellisen käyttöoikeuden Kaspersky Internet Security -sovelluksen käyttämiseksi samoilla ehdoilla, jotka hyväksyit asentaessasi Kaspersky Anti-Virus -sovelluksen.\n\nHuomautus: Siirtyminen voi edellyttää tietokoneen uudelleenkäynnistystä.'
+
+WizardBeginDescriptionKav = 'Siirryt käyttämään Kaspersky Anti-Virus 2013 -sovellusta.\n\nTekijänoikeuden haltija myöntää käyttöösi ei-yksinoikeudellisen käyttöoikeuden Kaspersky Anti-Virus -sovelluksen käyttämiseksi samoilla ehdoilla, jotka hyväksyit asentaessasi Kaspersky Internet Security -sovelluksen.\n\nHuomautus: Siirtyminen voi edellyttää tietokoneen uudelleenkäynnistystä.'
+
+WizardContinueDescriptionKis = 'Jatka Kaspersky Internet Security 2013 -sovelluksen käyttöönottoa.'
+WizardContinueDescriptionKav = 'Jatka Kaspersky Anti-Virus 2013 -sovelluksen käyttöönottoa.'
+
+MigrationNocomebackWarning = '\n\nHuomio! Kaspersky Anti-Virus -ohjelmiston nykyinen käyttöoikeus vanhenee ennen Kaspersky Internet Securityn käyttöohjetta. Kun Kaspersky Anti-Virus -käyttöoikeus vanhenee, Kaspersky Anti-Virukseen ei voi palata'
+
+PleaseWait = 'Odota'
+RemovalProgressDescription   = 'Poistetaan epäyhteensopivaa ohjelmistoa'
+RemovalApplicationsDescription = 'Seuraavat ohjelmistot poistetaan vaihtoa varten:'
+ManualRemovalApplicationsDescription = 'Seuraavat epäyhteensopivat ohjelmistot tulisi poistaa käsin, jotta vaihto onnistuu:'
+SearchRemovalApplicationsDescription   = 'Haetaan epäyhteensopivaa ohjelmistoa'
+RestartProductDescription = 'Sovellus käynnistetään uudelleen, jotta vaihto voidaan suorittaa loppuun.'
+RebootOsDescription = 'Vaihtamista varten tietokone tulisi käynnistää uudelleen.\nOhjattu toiminto jatkuu uudelleenkäynnistyksen jälkeen.'
+
+MigrationProgressDescriptionKis = 'Määritetään sovellusta uudelleen ja vaihdetaan Kaspersky Internet Security -ohjelmistoon'
+UpgradeProgressDescriptionKis   = 'Määritetään sovellusta uudelleen ja vaihdetaan Kaspersky Internet Security -ohjelmistoon'
+MigrationProgressDescriptionKav = 'Määritetään sovellusta uudelleen ja vaihdetaan Kaspersky Anti-Virus -ohjelmistoon'
+
+MigrationKis = 'Siirry käyttämään sovellusta Kaspersky Internet Security'
+MigrationKav = 'Siirry sovellukseen Kaspersky Anti-Virus'
+MigrationUnknown = 'Vaihda'
+
+SearchRemovalApplicationsHeader = 'Päivittäminen Kaspersky Internet Securityyn'
+RemovalProgressHeader = 'Poistetaan epäyhteensopivaa ohjelmistoa'
+RemovalApplicationsHeader = 'Epäyhteensopiva ohjelma löydetty'
+RebootOsHeader = 'Uudelleenkäynnistys vaaditaan'
+RestartProductHeader = 'Sovellus käynnistetään uudelleen'
+
+MigrationAbortedHeader = $MigrationType + ' ei onnistu'
+MigrationAbortedDescription = $MigrationType + ' epäonnistui. Yritä poistaa epäyhteensopivat ohjelmat käsin ja käynnistä sitten ohjattu toiminto uudelleen.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus päivitetään Kaspersky Internet Securityyn.\nNyt saat entistä enemmän ominaisuuksia tietokoneesi suojaamiseksi.'
+BestBuyGiftDescription = 'Kiitos, että valitsit Kaspersky Labin ohjelmiston! Tietokoneesi pysyy entistä paremmin turvassa.'
+BestBuyUpgradeNotification = 'Päivityksen yhteydessä tietokoneelta etsitään epäyhteensopivia ohjelmistoja, jotta asennettujen sovellusten ja käyttöjärjestelmän oikea toiminta voidaan varmistaa.'
+BestBuyFreeUpgrade = 'Siirry käyttämään sovellusta Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Päivitä taustalla'
+BestBuyTryAbortInformation = 'Päivitys jatkuu taustalla'
+BestBuyTryAbortDescription = 'Koska epäyhteensopivaa ohjelmistoa ei poistettu, osa Kaspersky Internet Securityn toiminnoista on poistettu käytöstä asennettujen sovellusten ja käyttöjärjestelmän oikeanlaisen toiminnan varmistamiseksi.\n\nVoit poistaa epäyhteensopivat ohjelmistot manuaalisesti ja ottaa uudet ominaisuudet käyttöön Kaspersky Internet Securityn asetusikkunassa.'
+BackToSubcriptionUpgradeButtonText = 'Palaa päivitykseen'
+Congratulation = 'Onneksi olkoon!'
+
+RunKisButtonText = 'Käynnistä Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus on päivitetty Kaspersky Internet Securityyn.\nNyt käytössäsi on entistä enemmän ominaisuuksia tietokoneesi suojaamiseksi.'

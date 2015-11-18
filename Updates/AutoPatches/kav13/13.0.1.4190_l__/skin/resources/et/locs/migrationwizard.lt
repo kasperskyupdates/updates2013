@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Ülemineku viisard'
+UpgradeCaption = 'Rakenduse uuendamine'
+
+RebootPageCheckboxRebootText = 'Taaskäivita arvuti'
+OpenRemoveProgramsPanel = 'Ava juhtpaneel'
+
+WizardBeginDescriptionKis = 'Üleminek rakendusele Kaspersky Internet Security 2013.\n\nÕigusteomanik annab teile mitteeksklusiivse õiguse kasutada rakendust Kaspersky Internet Security samadel tingimustel kui originaalset rakendust Kaspersky Anti-Virus.\n\nMärkus: Üleminek võib vajada arvuti taaskäivitust.'
+
+WizardBeginDescriptionKav = 'Üleminek rakendusele Kaspersky Anti-Virus 2013.\n\nÕigusteomanik annab teile mitteeksklusiivse õiguse kasutada rakendust Kaspersky Anti-Virus samadel tingimustel kui originaalset rakendust Kaspersky Internet Security.\n\nMärkus: Üleminek võib vajada arvuti taaskäivitust.'
+
+WizardContinueDescriptionKis = 'Jätka üleminekut rakendusele Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Jätka üleminekut rakendusele Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nTähelepanu! Kaspersky Anti-Virus kehtiv litsents lõpeb enne Kaspersky Internet Security litsentsi. Pärast Kaspersky Anti-Virus litsentsi kehtivusaja lõppu pole enam võimalik tagasi pöörduda Kaspersky Anti-Virus kasutamise juurde'
+
+PleaseWait = 'Palun oodake'
+RemovalProgressDescription   = 'Kokkusobimatu tarkvara eemaldamine'
+RemovalApplicationsDescription = 'Ülemineku teostamiseks eemaldatakse järgnevad rakendused:'
+ManualRemovalApplicationsDescription = 'Ülemineku teostamiseks tuleb teil eemaldada järgmised kokkusobimatud rakendused:'
+SearchRemovalApplicationsDescription   = 'Kokkusobimatu tarkvara otsing'
+RestartProductDescription = 'Rakendus taaskäivitatakse ülemineku lõpetamiseks.'
+RebootOsDescription = 'Ülemineku jätkamiseks tuleb arvuti taaskäivitada.\nPärast taaskäivitust jätkab viisard oma tööd.'
+
+MigrationProgressDescriptionKis = 'Toimub rakenduse moodulite seadistamine ja üleminek rakendusele Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Toimub rakenduse moodulite seadistamine ja üleminek rakendusele Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Toimub rakenduse moodulite seadistamine ja üleminek rakendusele Kaspersky Anti-Virus'
+
+MigrationKis = 'Üleminek rakendusele Kaspersky Internet Security'
+MigrationKav = 'Üleminek rakendusele Kaspersky Anti-Virus'
+MigrationUnknown = 'Üleminek'
+
+SearchRemovalApplicationsHeader = 'Kaspersky Internet Security 2013 versiooni laiendus'
+RemovalProgressHeader = 'Kokkusobimatu tarkvara eemaldamine'
+RemovalApplicationsHeader = 'Avastati kokkusobimatu tarkvara'
+RebootOsHeader = 'Vajalik on arvuti taaskäivitus'
+RestartProductHeader = 'Rakendus taaskäivitatakse'
+
+MigrationAbortedHeader = $MigrationType + ' pole võimalik'
+MigrationAbortedDescription = $MigrationType + ' ebaõnnestus. Proovige kokkusobimatu tarkvara eemaldada käsitsi ja käivitage viisard seejärel uuesti.'
+
+BestBuyGiftInformation = 'Rakenduselt Kaspersky Anti-Virus minnakse üle rakendusele Kaspersky Internet Security.\nTeie arvuti kaitsele lisanduvad uued funktsioonid.'
+BestBuyGiftDescription = 'Täname, et valisid Kaspersky Lab tarkvara! Nüüd on tei arvutil rohkem kaitsefunktsioone.'
+BestBuyUpgradeNotification = 'Üleminekul otsitakse teie süsteemist kokkusobimatut tarkvara, et kindlustada paigaldatud rakenduste ja operatsioonisüsteemi häireteta töö.'
+BestBuyFreeUpgrade = 'Üleminek rakendusele Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Uuenda taustal'
+BestBuyTryAbortInformation = 'Uuendamine jätkub taustaprotsessina'
+BestBuyTryAbortDescription = 'Kuna kokkusobimatut tarkvara ei eemaldatud, siis on mõned uued Kaspersky Internet Security funktsioonid välja lülitatud tagamaks paigaldatud rakenduste ja operatsioonisüsteemi häireteta töö.\n\nTe võite kokkusobimatu tarkvara eemaldada käsitsi ja lülitada uued funktsioonid sisse Kaspersky Internet Security seadete aknas.'
+BackToSubcriptionUpgradeButtonText = 'Tagasi uuendamise juurde'
+Congratulation = 'Palju õnne!'
+
+RunKisButtonText = 'Käivita Kaspersky Internet Security'
+
+ProductUpgraded = 'Üleminek rakenduselt Kaspersky Anti-Virus rakendusele Kaspersky Internet Security lõppes edukalt.\nTeie arvuti kaitsele on lisandunud uued funktsioonid.'

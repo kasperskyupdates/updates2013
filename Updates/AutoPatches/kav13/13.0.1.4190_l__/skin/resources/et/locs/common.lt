@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security Technical Preview'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus Technical Preview'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'aktuaalsed' 
+Corrupted = 'rikutud' 
+VeryOld = 'väga aegunud' 
+Old = 'aegunud' 
+OldInGracePeriod = 'pole pikka aega uuendatud'
+UpdatedAndRebootNeeded = 'uuendatud. Vajalik on arvuti taaskäivitus' 
+UpdatedAndProductRestartNeeded = 'uuendatud. Vajalik on rakenduse taaskäivitus' 
+SomeBasesNeedUpdate = 'vajalik on mõnede kaitsekomponentide uuendus'
+
+Schedule_Auto    = 'automaatselt' 
+Schedule_Manual  = 'käsitsi' 
+Schedule_Fixed   = 'ajakava järgi' 
+
+Back = 'Tagasi' 
+StopTask = 'Peata'
+
+News = 'Uudised'
+Reports = 'Aruanne'
+Settings = 'Seadistamine'
+Help = 'Abi'
+OK = 'OK'
+Cancel = 'Tühista'
+Retry = 'Korda'
+
+Unknown = 'teadmata'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'täna, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'eile, %H:%M'
+
+MonthName_1  = 'Jaanuar'
+MonthName_2  = 'Veebruar'
+MonthName_3  = 'Märts'
+MonthName_4  = 'Aprill'
+MonthName_5  = 'Mai'
+MonthName_6  = 'Juuni'
+MonthName_7  = 'Juuli'
+MonthName_8  = 'August'
+MonthName_9  = 'Septembri'
+MonthName_10 = 'Oktoober'
+MonthName_11 = 'November'
+MonthName_12 = 'Detsember'
+ 
+DateUnknown = 'teadmata'
+
+After = 'pärast'
+Remaining = 'jäänud'
+Ago = 'tagasi'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'päev', 'päeva'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'tund', 'tundi'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minutit'}
+LessMinute_After = 'vähem, kui minut'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'päev', 'päeva'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'tund', 'tundi'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minutit'}
+LessMinute_Remaining = 'vähem, kui minut'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'päev', 'päeva'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'tund', 'tundi'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minutit'}
+LessMinute_Ago = 'vähem, kui minut'
+
+Yesterday   = 'eile'
+Today       = 'täna' 
+LessWeek    = 'vähem, kui nädal tagasi'
+LessTwoWeek = 'vähem, kui kaks nädalat tagasi'
+LessMonth   = 'vähem, kui kuu tagasi'
+MoreMonth   = 'rohkem, kui kuu tagasi'
+MoreHalfYear= 'rohkem, kui pool aastat tagasi'
+MoreYear    = 'rohkem, kui aasta tagasi'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Tühista'
+ApplyButton = 'Rakenda'
+CloseButton = 'Sule'
+NextButton = 'Edasi >'
+BackButton = '< Tagasi'
+FinishButton = 'Lõpeta'
+SaveButton = 'Salvesta'
+SkipButton = 'Jäta vahele'
+Continue = 'Jätka'
+Yes = 'Jah'
+No = 'Ei'
+
+SettingsMore = '&Seadistamine...'
+
+DoNoyShowThisWindow = 'Ära näita'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Määramata viga'
+SystemError_0x8000004B = 'Määramata viga'
+SystemError_0x80000041 = 'Pole piisavalt mälu'
+SystemError_0x80000042 = 'Ei toetata'
+SystemError_0x80000043 = 'Ei ole teostatud'
+SystemError_0x80000045 = 'Juurdepääs on keelatud või objekti ei leitud'
+SystemError_0x8000004C = 'Seade pole valmis'
+SystemError_0x800000C6 = 'Seade pole valmis'
+SystemError_0x800000C5 = 'Seade pole valmis'
+SystemError_0x8000004F = 'Objekt on lukustatud'
+SystemError_0x80000051 = 'Operatsioon katkestati'
+SystemError_0x80000059 = 'Seadme viga'
+SystemError_0x8000005A = 'Vale signatuur'
+SystemError_0x8000005B = 'Vale versioon'
+SystemError_0x8000005F = 'Objekt on kirjutuskaitstud'
+SystemError_0x80000061 = 'Litsents puudub'
+SystemError_0x80000062 = 'Pole piisavalt ruumi'
+SystemError_0x80000063 = 'Seade pole valmis'
+SystemError_0x800000C0 = 'Vale vorming'
+SystemError_0x800000C1 = 'Pole piisavalt õigusi'
+SystemError_0x800000C2 = 'Lähtestuse viga'
+SystemError_0x800000C3 = 'Lähtestuse viga'
+SystemError_0x800000C7 = 'Objekti seisund on vale'
+SystemError_0x800000C8 = 'Objekt on parooliga kaitstud'
+SystemError_0x800000CA = 'Lugemise viga'
+SystemError_0x800000CC = 'Lugemise viga'
+SystemError_0x800000CB = 'Kirjutamise viga'
+SystemError_0x800000CD = 'Kirjutamise viga'
+SystemError_0x800000D0 = 'Lubamatu objekt'
+SystemError_0x800000D1 = 'Objekt on juba olemas'
+SystemError_0x800000D5 = 'Objekti kasutab teine rakendus'
+SystemError_0x800000D8 = 'Andmebaasid on rikutud'
+SystemError_0x800001C0 = 'Vale moodul'
+SystemError_0x800001C2 = 'Moodul on autentimata'
+SystemError_0x800001C1 = 'Moodulit ei leitud'
+SystemError_0x800001C4 = 'Moodulit ei saa laadida'
+SystemError_0x80000221 = 'Ooteg lõppes'
+SystemError_0x80000240 = 'Komponentide koostoime viga'
+SystemError_0x90005000 = 'Vigane digiallkiri'
+SystemError_0x90005002 = 'Digiallkiri puudub'
+SystemError_0x80027006 = 'Ülesanne peatati'
+SystemError_0x80027007 = 'Ülesanne peatati'
+SystemError_0x80380fbb = 'Ülesanne peatati'
+SystemError_0x80017007 = 'Ülesannet ei saa safe mode režiimis käivitada'
+SystemError_0x80017005 = 'Ülesanne on välja lülitatud'
+SystemError_0x80017006 = 'Vale kasutajanimi või parool'
+SystemError_0x80017008 = 'Ülesande käivitamine teise kasutajanimega pole ohutus režiimis võimalik'
+SystemError_0x80017009 = 'Draiverit ei leitud'
+SystemError_0x80022005 = 'Signatuuribaaside allalaadimise viga'
+SystemError_default    = 'Vea kood: ' + $ErrorCode
+
+LicenseManager = '&Litsentseerimine'
+SubscriptionManager = 'Tellimuse haldus'
+ProblemSolution = 'Ava selle probleemi lahendamiseks Litsentsihalduse aken'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'Mitteaktiivne' ;refers to connection
+Stopping = 'lõpetatakse'
+ConnectingToServer = 'ühendumine serveriga'
+CreatingUpdateList = 'failide töötlus'
+Downloading = 'failide allalaadimine'
+Installing = 'failide uuendamine'
+RollbackRunning = 'tagasipöördumine signatuuribaaside eelmise versiooni juurde'
+
+FunctionalityDisabledForExpiredSubscription = 'uuendus on välja lülitatud'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'teie arvuti kaitse on välja lülitatud'
+SubscriptionRemainingDaysCount = 'on jäänud ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'päev','päeva'} + '.'
+SubscriptionExpiresToday = 'lõpeb täna'
+SubscriptionActivated = 'aktiveeritud'
+CheckReserveCodeManuallyHeader = 'Rakendust ei õnnestunud uue aktiveerimiskoodiga automaatselt aktiveerida' ; TODO
+CheckReserveCodeManuallyText = 'Proovige rakendus aktiveerida uue aktiveerimiskoodiga käsitsi.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Paigaldatud on rakenduse beetaversioon'
+LicensingStatus_Trial_ShortDescription = 'Paigaldatud on rakenduse prooviversioon'
+LicensingStatus_OkSubscription_ShortDescription = 'Tellimus: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Litsentsi kehtivusaeg lõpeb peagi'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Litsentsi kehtivusaeg lõpeb peagi'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_InvalidKey_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_Reinstall_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Võtmefailide must nimekiri on rikutud'
+LicensingStatus_CorruptedBases_ShortDescription = 'Signatuuribaaside vastavust litsentsilepingule pole võimalik kontrollida'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Litsentsi kehtivusaeg ei võimalda praegused signatuuribaase kasutada'
+LicensingStatus_Expired_ShortDescription = 'Litsents aegus'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Tellimus on lõppenud alates ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Proovilitsentsi kasutusaeg on lõppenud'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Beeta versioon on aegunud'
+LicensingStatus_Blocked_ShortDescription = 'Litsents on blokeeritud'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Tellimus on blokeeritud'
+LicensingStatus_LicenseViolated_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Avastati litsentsiprobleem'
+LicensingStatus_Grace_ShortDescription = 'Tellimus on lõppenud alates ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Tellimus on peatatud alates ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Tellimuse staatuse automaatne uuendus ebaõnnestus'
+LicensingStatus_NotActivated_ShortDescription = 'Rakendus on aktiveerimata'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Rakendus on aktiveerimata'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Rakendus on aktiveerimata'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Rakendus on aktiveerimata'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Uus aktiveerimiskood'
+ReserveCodeStatus_Ok_ShortDescription = 'Uus aktiveerimiskood'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Uus aktiveerimiskood on kehtetu'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Uus aktiveerimiskood on aktiveerimata'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Oodatakse automaatset aktiveerimist'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Rakenduse ' + $ProductNameFull + ' beetaversioon on täisfunktsionaalne, kuid pole veel lõpetatud ning võib sisaldada vigu, tõrkeid või puudusi. Palun andke neist teada meie foorumi vastavas jaotises.'
+
+LicenseRemain    = 'Kehtivusaja lõpuni on jäänud ' + $LicenseRemainingDaysCount + ' '  + {$LicenseRemainingDaysCount: 'päev', 'päeva'} + '. Pärast seda on rakenduse funktsionaalsus piiratud.' 
+LicenseEndsToday = 'Täna kehtib litsents viimast päeva. Kui te litsentsi ei uuenda, piiratakse rakenduse funktsionaalsus.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Tellimus on aktiveeritud. Kehtivusaja lõpp: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Tellimus on pikendatud kuni ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Tellimus on tühistatud. Kehtivusaja lõpp: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Tellimus peatatakse alates ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Tellimus on pikendatud määramata ajaks'
+StateUnlimitedSubscriptionResumedText = 'Tellimus on uuendatud'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'päev', 'päeva'}
+LicensingStatus_WillBeExpired_Cause = 'Litsentsi kehtivusaja lõpuni on jäänud ' +$LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'päev', 'päeva'} + '. Pärast seda on rakenduse funktsionaalsus piiratud.'
+LicensingStatus_ExpiresToday_Cause = 'Aegub täna. Taotlus funktsionaalsus on piiratud lõppemisel. '
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Litsentsivõtme loomiskuupäev pole õige. Arvatavalt oli süsteemiaega muudetud. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Aktiveerimiskuupäev pole õige. Arvatavalt oli süsteemiaega muudetud. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Rakenduse terviklikus on rikutud. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Soovitame serverilt alla laadida uue musta nimekirja.'
+LicensingStatus_CorruptedBases_Cause = 'Üheks põhjuseks võib olla vigane uuendamine. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Võib-olla olete omandanud rakenduse litsenseerimata koopia. Kaitse on peatatud. Teie arvuti võib nakatuda, kahjustuda või kaotada andmed.'
+LicensingStatus_BlockedSubscription_Cause = 'Võib-olla olete omandanud rakenduse litsenseerimata koopia. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Ühe litsentsivõtmega paigaldatud rakenduse ' + $ProductName + ' koopiate lubatud hulk on ületatud. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Ühe tellimusega paigaldatud rakenduse ' + $ProductName + ' koopiate lubatud hulk on ületatud. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $FunctionalityDisabledAfterGrace + ' ' + $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'päeva', 'päeva'} + ' pärast '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Arvatavalt võtab ühendumine aktiveerimisserveriga liiga kaua aega. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Väljastatud aktiveerimiskood on saadaval. Rakendus aktiveeritakse niipea, kui internetiühendus on saadaval.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Avastati eelpaigaldatud aktiveerimiskood. Te saate programmi selle abil aktiveerida või siis koodi kustutada.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Rakendust ei õnnestunud eelpaigaldatud aktiveerimiskoodiga aktiveerida. Nõutav on teie osalus.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Te võite sisestada uue aktiveerimiskoodi. Rakendus aktiveeritakse selle aktiveerimiskoodiga pärast kehtiva litsentsi aegumist.'
+ReserveCodeStatus_Ok_Cause = 'Teie arvutis on uus aktiveerimiskood.Pärast kehtiva litsentsi aegumist aktiveeritakse rakendus uue aktiveerimiskoodiga automaatselt. See ei riku teie arvuti turvalisust.'
+ReserveCodeStatus_Invalid_Cause = 'Pärast kehtiva litsentsi aegumist pole uuendused enam kättesaadavad.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Rakendust ei õnnestu varuaktiveerimiskoodiga ' + $ReserveCode + ' automaatselt aktiveerida. Vajalik on teie abi.'
+ReserveCodeStatus_WaitActivation_Cause = 'Oodatakse automaataktiveerimist uue aktiveerimiskoodiga ' + $ReserveCode + '.'
+
+ResolveProblem_BuyCommercial         = 'Me soovitame teil osta ja aktiveerida rakenduse kommertsversioon.'
+ResolveProblem_CheckSystemTime		= 'Veenduge, et süsteemiaeg oleks õige.'
+ResolveProblem_ActivateAgain        = 'Proovige kehtiv võti kustutada ja aktiveerida rakendus veelkord.Te võite ka pöörduda tugiteenuse või edasimüüja poole.'
+ResolveProblem_CallSupport			= 'Blokeerimispõhjuse väljaselgitamiseks tuleks pöörduda Tugiteenuse poole. Rakenduse funktsionaalsuse taastamiseks ostke uus litsents.'
+ResolveProblem_ContactSupport		= 'Pöörduge tugiteenuse poole.'
+ResolveProblem_ActialLicense		= 'Arvuti kaitse taastamiseks sisestage uus aktiveerimiskood.'
+ResolveProblem_UpdateAgain			= 'Signatuuribaasid tuleb veelkord uuendada.'
+ResolveProblem_BuyNewLicense		= 'Ostke arvuti alalise kaitse taastamiseks uus litsents.'
+ResolveProblem_CallProvider			= 'Tellimuse taastamiseks võtke ühendust oma teenusepakkujaga.'
+ResolveProblem_ProviderWebSite		= 'Tellimuse taastamiseks võtke ühendust oma teenusepakkujaga.'
+ResolveProblem_RenewalNotAvailable	= 'Tellimuse uuendamine pole kättesaadav.'
+ResolveProblem_BuyLicense			= 'Teie arvuti alalise kaitse taastamiseks tuleb teil osta Kaspersky Labist või edasimüüjalt kommertslitsentsi. Proovilitsentsi saab kasutada vaid korra.'
+ResolveProblem_Reinstall			= 'Paigaldage rakendus uuesti.'
+ResolveProblem_RenewLicense			= 'Rakenduse täisfunktsionaalse töö taastamiseks tuleb uuendada litsents.'
+ResolveProblem_RefreshSubscription	= 'Palun uuendage tellimuse staatus käsitsi.'
+ResolveProblem_Activate				= 'Rakenduse aktiveerimiseks sisestage aktiveerimiskood.'
+ResolveProblem_ActivateReserveCode  = 'Proovige rakendus aktiveerida uue aktiveerimiskoodiga käsitsi.'
+ResolveProblem_ActivateCodeManual	= 'Aktiveerige rakendus käsitsi'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Kontrollige internetiühenduse seadeid ja oodake automaatset aktiveerimist või aktiveerige rakendus käsiti.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Tuleb sisestada uus aktiveerimiskood. Rakendus aktiveeritakse selle aktiveerimiskoodiga pärast kehtiva litsentsi aegumist.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Rakendus tuleb aktiveerimiskoodiga aktiveerida enne proovilitsentsi lõppemist.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Rakenduse täisfunktsionaalsuse taastamiseks tuleb osta kommertsversioon Kaspersky Labist või selle edasimüüjatelt.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Rakendus tuleb aktiveerimiskoodiga aktiveerida enne proovilitsentsi lõppemist.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Tuleb sisestada uus aktiveerimiskood. Rakendus aktiveeritakse selle aktiveerimiskoodiga pärast kehtiva litsentsi aegumist.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Alalise kaitse staatus on määratlemata. '
+ProtectionLevelNoFeaturesLong = 'Alaline kaitse on välja lülitatud. '
+ProtectionLevelLimitedLong = 'Rakenduse funktsionaalsus on piiratud. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Uuenduse staatus on määratlemata. '
+UpdaterLevelNotAllowedLong = 'Uuendused pole kättesaadavad. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'määratlemata'
+SubscriptionStateActive = 'aktiivne'
+SubscriptionStatePaused = 'peatatud'
+SubscriptionStateCancelledSoft = 'peatatud'
+SubscriptionStateCancelledHard = 'tühistatud'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'määratlemata'
+SubscriptionStatusReasonProviderInitiated = 'aktiveeritud teenusepakkuja poolt'
+SubscriptionStatusReasonCreditCardAuthFailed = 'krediitkaardi aksepteerimisest keelduti'
+SubscriptionStatusReasonCustomerInitiated = 'aktiveeritud kasutaja poolt'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'krediitkaardi autoriseerimine on aksepteeritud'
+
+ProductStatusRelease = 'väljalaskeversioon'
+ProductStatusBeta = 'beetaversioon'
+
+LegalStatusBlocked = 'litsents on blokeeritud'
+LegalStatusLimited = 'litsentsilepingut on rikutud'
+LegalStatusValid = 'litsents kehtib'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Saadaval on tähtis litsentsiteavitus.\n<a href="licensemanager">Täpsemalt...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Tellimuse kehtivusaeg on lõppenud. Pöörduge tellimuse pikendamiseks oma teenusepakkuja poole'
+
+LicensingState_WarningIsAvailable = 'hoiatus'
+ProtectionState_NotificationIsAvailable = 'Litsentsiteade'
+LicensingState_ProblemIsAvailable = 'tekkis probleem'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Teie Kaspersky Security Software aegub ' + $LicenseDaysToExpiry + ' päeva pärast ja teie arvuti jääb kaitseta'
+LNCS_BBY_WillExpire_Description =	'Kaitse jätkuvaks tagamiseks palun pikendage tegevusaega The Geek Squad Renewal Center veebiportaalis.'
+
+LNCS_BBY_AboutToExpire_Title =	    'Programmi kasutuslitsents lõpeb peatselt'
+LNCS_BBY_AboutToExpire_Description = 'Ainult' + $LicenseDaysToExpiry + ' päeva kestab veel teie arvuti kaitse, seejärel jääb teie arvuti kaitseta. Saate selle kohe uuendada, võttes portaalis The Geek Squad User Portal online ühendust The Geek Squad Subscription Software Team-iga.'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Rakenduse kasutuslitsentsi kehtivusaeg lõpeb täna. Teie arvuti kaitse lülitub välja'
+LNCS_BBY_AboutToExpire_Today_Description = 'Uuendage kohe, võttes ühendust The Geek Squad Subscription Software Team-iga portaalis The Geek Squad User Portal.'
+
+LNCS_BBY_LastDay_Title =	'Hoiatus! Teie Kaspersky Security Software aegub täna'
+LNCS_BBY_LastDay_Description =	'Ärge jätke oma arvutit kaitseta. Kaitse taastamiseks pikendage litsentsi kehtivusaega veebilehel The Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Tähelepanu! Teie Kaspersky Security Software aegub täna. Ärge jätke oma arvutit kaitseta. Uuendage litsentsi online <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Tähelepanu! Teie arvuti on kaitseta'
+LNCS_BBY_Grace_Description =	'Ärge jätke oma arvutit kaitseta. Uuendage tegevusaega portaalis The Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Ärge jätke oma arvutit kaitseta. Uuendage tegevusaega portaalis The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Tähelepanu! Teie arvuti on kaitseta. Ärge jätke oma arvutit kaitseta. Pikendage litsentsi online<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Rakenduse kasutamiseks vajaliku litsentsi kehtivusaega ei õnnestunud pikendada'
+LNCS_BBY_RenewFailure_Description = 'Palun pikendage tegevusaega portaalis The Geek Squad Renewal Center.'
+LNCS_BBY_RenewFailure_Description_Full = 'Palun pikendage tegevusaega portaalis The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Ei saa teie Kaspersky Security tarkvara litsentsi pikendada. Palun tehke seda online <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Teie Kaspersky Protection Plan võidakse tühistada, kuna teie krediitkaardi kehtivusaeg lõpeb peatselt'
+LNCS_BBY_CCAboutToExpire_Description =	'Palun pikendage tegevusaega portaalis The Geek Squad Renewal Center.'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Palun pikendage tegevusaega portaalis The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Tellimus on aegunud'
+LNCS_BBY_Expired_Description =	'Tellimuse uuendamine pole kättesaadav.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Uuendage oma Kaspersky Anti-Viruse versioon juba täna ja säästke $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Uuendage oma Kaspersky Anti-Viruse versioon juba täna ja säästke $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Uuendage oma Kaspersky Anti-Viruse versioon juba täna ja säästke $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Uuendage oma Kaspersky Anti-Viruse versioon juba täna ja säästke $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Uuendage oma Kaspersky Internet Security versioon juba täna ja säästke $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Uuendage oma Kaspersky Internet Security versioon juba täna ja säästke $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Uuendage oma Kaspersky Internet Security versioon juba täna ja säästke $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Uuendage oma Kaspersky Internet Security versioon juba täna ja säästke $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Uuenda kohe</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Kaspersky Anti-Viruse litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Kaspersky Anti-Viruse litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Kaspersky Anti-Viruse litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Kaspersky Anti-Viruse litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Kaspersky Internet Security litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Kaspersky Internet Security litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Kaspersky Internet Security litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Kaspersky Internet Security litsents hakkab lõppema!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikake siia</a> et säästa $5 rakenduse litsentsi aastamaksumusest.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikake siia</a> et säästa $10 rakenduse litsentsi aastamaksumusest.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikake siia</a> et säästa $15 rakenduse litsentsi aastamaksumusest.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikake siia</a> et säästa $20 rakenduse litsentsi aastamaksumusest.'
+
+LNCS_BBY_StatusUpdate = 'Toote oleku muutus võib võtta üle 24 tunni. Vajuta "Kinnita tellimuse olek" mõned tunnid peale uuendamisprotsessi lõppu Geek Squad portaalis, et suunata toodet kontrollima uuendusi.'
+
+EndOfLicense_Header = 'Rakenduse tööaruanne'
+WelcomPageTitle = 'Tere tulemast rakendusse ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = $ProductName + ' oli paigaldatud operatsioonisüsteemi teistsugusele versioonile'
+ReinstallWarningDescription = 'Eemaldage palun ' + $ProductName + ' süsteemist ja paigaldage uuesti'
+
+IncompatibleOsVersionTitle = $ProductName + ' töö on peatatud'
+IncompatibleOsVersionDescription = 'Rakenduse ' + $ProductName + ' korrektseks tööks pärast operatsioonisüsteemi Microsoft Windows 8 paigaldust tuleb teil uuesti paigaldada osad rakenduse komponendid. Paigaldus võtab vähem, kui 2 minutit.' + '\n\nRakenduse ' + $ProductName + ' seadistamise ajal on teie arvuti kaitse piiratud.'
+
+ReinstallWarningOkButton = 'Üksikasjad'
+IncompatibleOsVersionOkButton = 'Paigalda ja käivita'
+
+BrowserWaitingMessage = 'Palun oodake...'
+
+OsUpgradedTitle = 'Operatsioonisüsteemi uuendamine'
+OsUpgradedDescription = 'Operatsioonisüsteemi uuendamine on edukalt lõpetatud.'

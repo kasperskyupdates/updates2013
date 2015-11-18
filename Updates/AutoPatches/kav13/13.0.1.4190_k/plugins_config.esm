@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+	<component clsid="0x93202DCB" name="WebNetStat" module="webnetstat.ppl">
+		<interface iid="0x2408D9B3" name="IWebNetStat" /> 
+		<interface iid="0x6338CE41" name="IWebNetStat2" /> 
+		<interface iid="0xC4920C26" name="IUrlReputation" /> 
+		<interface iid="0x9ABBABFD" name="ITrustedUrl" /> 
+	</component>
+  
+	<component clsid="0xD74E67A2" name="plugins.office_antivirus.OfficeAntivirus" module="office_antivirus_facade">
+		<interface iid="0xEB7CE798" name="plugins.office_antivirus.IOfficeAntivirusEventsSubscription"/>
+		<interface iid="0x2D3C1251" name="plugins.office_antivirus.IOfficeAntivirusHandler"/>
+	</component>
+	
+	<component clsid="0x8f738148" name="plugins.office_antivirus.OfficeAntivirusMetaInfoDescriptors" module="plugins_meta">
+		<interface iid="0xa53230cb" name="eka.IStructMetaInfoRegistry"/>
+	</component>
+
+	<component clsid="0x970cc728" name="plugins.office_antivirus.OfficeAntivirusProxyStubFactories" module="plugins_meta">
+		<interface iid="0xa96f285b" name="eka.IPSFactoryRegistry2"/>
+	</component>
+
+	<component clsid="0x46d86a01" name="plugins.virtual_keyboard_facade" module="plugins_facade"
+			construct_iface_id="0x87576070"
+			settings_iface_id="0x4a03f4aa"
+			settings_type_id="0x515D0177"
+	>
+		<interface iid="0xF072EDE9" name="ISecureInputChannelFactory"/>
+		<interface iid="0x4726f0c2" name="IStateEventsSubscriptionProvider"/>		
+		<interface iid="0x10670226" name="IVirtualKeyboard"/>
+		<interface iid="0x23a10f2f" name="IProccessSecureInputExternalControllerEventsSubscription"/>
+	</component>
+
+	<component clsid="0xd81bfffb" name="plugins.virtual_keyboard_facade.TsfPluginsManager" module="plugins_facade">
+		<interface iid="0x90232309" name="ITsfPluginsManager"/>
+	</component>
+
+	<component clsid="0x4c6e8af5" name="plugins.virtual_keyboard_facade.VirtualInputManager" module="plugins_facade">
+		<interface iid="0xcc883614" name="ISecureInputManager"/>
+		<interface iid="0x3dcd4764" name="ISecureInputListener"/>
+	</component>
+	
+	<component clsid="0x9f739df8" name="plugins.virtual_keyboard_facade.SecureInputManager" module="plugins_facade">
+		<interface iid="0xcc883614" name="ISecureInputManager"/>
+	</component>
+
+	<component clsid="0x9e6c62f5" name="plugins.virtual_keyboard_facade.CLSID_VirtualKeyboardProxyStubFactories" module="plugins_meta"> 
+		<interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+	</component>
+	<component clsid="0x77184f84" name="plugins.virtual_keyboard_facade.CLSID_VirtualKeyboardMetaInfoDescriptors" module="plugins_meta"> 
+		<interface iid="0xa53230cb" name="IStructMetaInfoRegistry"/>
+	</component>
+	
+	<component clsid="0x568568bc" name="plugins.PragueAdapter" module="plugins_prague_adapter.ppl">
+		<interface iid="0x2d9e9984" name="plugins.virtual_keyboard.ICommandProcessor" />  
+	</component>
+
+	<component clsid="0xda0f8bb7" name="plugins.online_banking_facade" module="plugins_facade">
+		<interface iid="0x27940050" name="IBrowserSessionRegistrarProvider"/>
+		<interface iid="0xd7707488" name="IBrowserSessionEventsSubscription"/>
+	</component>
+	
+	<component clsid="0x7268c78c" name="plugins.online_banking_facade.CLSID_OnlineBankingProxyStubFactories" module="plugins_meta"> 
+		<interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+	</component>
+	<component clsid="0x5e2d82b9" name="plugins.online_banking_facade.CLSID_OnlineBankingMetaInfoDescriptors" module="plugins_meta"> 
+		<interface iid="0xa53230cb" name="IStructMetaInfoRegistry"/>
+	</component>
+	
+	<component clsid="0x51c545c3" name="plugins.anti_banner_facade.AntiBannerFacade" module="anti_banner_facade"> 
+		<interface iid="0xb551a25b" name="plugins.anti_banner_facade.IAntiBannerFacade"/>
+	</component>
+
+	<component clsid="0x0f51f9a4" name="plugins.anti_banner_facade.CLSID_AntiBannerFacadeProxyStubFactories" module="plugins_meta"> 
+		<interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+	</component>
+
+	<component clsid="0x5EA9EEC8" name="script_checker_facade" module="plugins_facade">
+		<interface iid="0xc68ace61" name="IProtectedProcessesRegistry"/>
+		<interface iid="0x9bca3d59" name="IProtectedProcessesRegistryManager"/>
+	</component>
+
+	<component clsid="0x74ba1de1" name="ContentBlockerFacade" module="plugins_facade">
+		<interface iid="0x02BC7ACE" name="IConsumedContentBlocker"/>
+		<interface iid="0xc8d7b131" name="IBrowserContentReloaderRegistrar"/>
+	</component>
+  
+	<component clsid="0xd4351a74" name="plugins.content_blocker.CLSID_ContentBlockerProxyStubFactories" module="plugins_meta"> 
+		<interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+	</component>
+
+	<component clsid="0x27FF205E" name="plugins.native_messaging.HostInfoProvider" module="plugins_facade" tracer_prefix="nm_host">
+		<interface name="plugins.native_messaging.IHostInfoProvider" iid="0x4B896E55"/>
+	</component>
+
+	<component clsid="0x4f02e1cd" name="plugins.native_messaging.CLSID_IHostInfoProviderProxyStubFactories" module="plugins_meta"> 
+		<interface iid="0xa96f285b" name="IPSFactoryRegistry2"/>
+	</component>
+	
+</root>
+	

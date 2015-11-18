@@ -1,0 +1,94 @@
+		function numDeclension(num)
+		{
+			if((num % 100) >= 11 && (num % 100) < 20)
+				return "vergangenen <b>" + num + "</b> Tagen";
+			switch(num % 10)
+			{
+			case 1:
+				return num == 1 ? ("vergangenen Tag") : ("vergangenen <b>" + num + "</b> Tagen");
+			case 2:
+			case 3:
+			case 4:
+				return "vergangenen <b>" + num + "</b> Tagen";
+			}
+			return "vergangenen <b>" + num + "</b> Tagen";
+		}
+		
+		function setLocalContent(args)
+		{
+			if(args.length < 1)
+				return;
+				
+			var reason             = args[ 0];
+			var RateColor          = args[ 1];
+			var RateLevel          = args[ 2];
+			var CommunityRateColor = args[ 3];
+			var CommunityRateLevel = args[ 4];
+			var CommunityNegVotes  = args[ 5];
+			var CommunityAffVotes  = args[ 6];
+			var SuspiciousHosts    = args[ 7];
+			var MaliciousDownloads = args[ 8];
+			var PupsDownloads      = args[ 9];
+			var UniqueMalware      = args[10];
+			var UniquePups         = args[11];
+			var Category           = args[12];
+			var BanReason          = args[13];
+			var StatDays           = args[14];
+			var StatStartDate      = args[15];
+			var StatEndDate        = args[16];
+			
+			var text = "";
+			if(reason == "loading")
+				text = "<img src=\"../../images/wtb/loader.gif\"/> Download läuft";
+			else if(reason == "wmuf")
+			{
+				text = "Der Link befindet sich in der Datenbank für verdächtige <nobr>Webadressen</nobr>";
+				changeDMeter("../../images/wtb/bdanger.jpg");
+			}
+			else if(reason == "aphish")
+			{
+				text = "Der Link befindet sich in der Datenbank für Phishing-<nobr>Webadressen</nobr>";
+				changeDMeter("../../images/wtb/bdanger.jpg");
+			}
+			else if(reason == "online") 
+			{
+				if(RateLevel == RATING_LEVEL_UNKNOWN)
+					text = "Es sind keine Angaben über den Link vorhanden";
+				else {
+					if(StatDays == -1 && StatStartDate != undefined && StatEndDate != undefined)
+						text = "Zwischen <b>" + StatStartDate + "</b> und <b>" + StatEndDate + "</b> für diese Adresse gefunden:";
+					else if(StatDays >= 0)
+						text = "In den " + numDeclension(StatDays) + " für diese Adresse gefunden:";
+					text = text + "<br/><table>";
+					
+					if( SuspiciousHosts > 0 )
+						text = text + "<tr><td>Links zu verdächtigen Seiten:</td><th>" + SuspiciousHosts + "</th></tr>";
+					if( MaliciousDownloads > 0 )
+						text = text + "<tr><td>Versuche zum Download von Malware:</td><th>" + MaliciousDownloads + "</th></tr>";
+					if( PupsDownloads > 0 )
+						text = text + "<tr><td>Versuch zum Download von Dialern und anderer Software:</td><th>" + PupsDownloads + "</th></tr>";
+					if( UniqueMalware > 0 )
+						text = text + "<tr><td>Dateien mit Malware:</td><th>" + UniqueMalware + "</th></tr>"
+					if( UniquePups > 0 )
+						text = text + "<tr><td>Dateien mit Dialern und anderer Software:</td><th>" + UniquePups + "</th></tr>";
+					text = text + "</table>";
+				}
+				
+				if(RateColor == RATING_COLOR_RED)
+					changeDMeter("../../images/wtb/dm_3.gif");
+				else 
+					changeDMeter("../../images/wtb/dm_1.gif");
+			}
+			else if(reason == "online_danger")
+			{
+				text = "Gefährliche Webressource (nach Angaben des Reputations-Service von Kaspersky Lab)";
+				changeDMeter("../../images/wtb/bdanger.jpg");
+			}
+			else if(reason == "online_suspicious")
+			{
+				text = "Keine Angaben zur Sicherheit der Webseite (nach Angaben des Reputations-Service von Kaspersky Lab)";
+				changeDMeter("../../images/wtb/bsuspic.jpg");
+			}
+
+			return text;
+		}

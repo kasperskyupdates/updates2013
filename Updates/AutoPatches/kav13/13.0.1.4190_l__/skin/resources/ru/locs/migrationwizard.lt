@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Мастер миграции'
+UpgradeCaption = 'Мастер перехода'
+
+RebootPageCheckboxRebootText = 'Перезагрузить компьютер'
+OpenRemoveProgramsPanel = 'Открыть панель управления'
+
+WizardBeginDescriptionKis = 'Будет выполнен переход к использованию Kaspersky Internet Security 2013.\n\nПравообладатель предоставляет вам неисключительную лицензию на использование Kaspersky Internet Security на тех же условиях, с которыми вы согласились ранее при установке Антивируса Касперского.\n\nВ процессе перехода будет выполнен ряд необходимых действий, в результате которых может потребоваться перезагрузка системы.'
+
+WizardBeginDescriptionKav = 'Будет выполнен переход к использованию Антивируса Касперского 2013.\n\nПравообладатель предоставляет вам неисключительную лицензию на использование Антивируса Касперского на тех же условиях, с которыми вы согласились ранее при установке Kaspersky Internet Security.\n\nВ процессе перехода будет выполнен ряд необходимых действий, в результате которых может потребоваться перезагрузка системы.'
+
+WizardContinueDescriptionKis = 'Продолжение перехода к Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Продолжение перехода к Антивирусу Касперского 2013.'
+
+MigrationNocomebackWarning = '\n\nВнимание! Срок действия лицензии на использование Антивируса Касперского истекает раньше по сравнению с лицензией на использование Kaspersky Internet Security. После истечения срока действия лицензии на использование Антивируса Касперского возврат к Антивирусу Касперского будет невозможен.'
+
+PleaseWait = 'Пожалуйста, подождите'
+RemovalProgressDescription   = 'Выполняется удаление несовместимого программного обеспечения'
+RemovalApplicationsDescription = 'Для перехода будут удалены следующие программы:'
+ManualRemovalApplicationsDescription = 'Для перехода необходимо вручную удалить следующие программы:'
+SearchRemovalApplicationsDescription   = 'Выполняется поиск несовместимого программного обеспечения'
+RestartProductDescription = 'Для завершения перехода будет выполнен перезапуск программы.'
+RebootOsDescription = 'Для продолжения перехода необходимо перезагрузить компьютер.\nПосле перезагрузки мастер продолжит работу'
+
+MigrationProgressDescriptionKis = 'Выполняется перенастройка модулей программы и переход к использованию Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Выполняется перенастройка модулей программы и переход к использованию Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Выполняется перенастройка модулей программы и переход к использованию Антивируса Касперского'
+
+MigrationKis = 'Переход к использованию Kaspersky Internet Security'
+MigrationKav = 'Переход к использованию Антивируса Касперского'
+MigrationUnknown = 'Переход '
+
+SearchRemovalApplicationsHeader = 'Обновление до Kaspersky Internet Security'
+RemovalProgressHeader = 'Удаление несовместимых программ'
+RemovalApplicationsHeader = 'Найдены несовместимые программы'
+RebootOsHeader = 'Необходимо перезагрузить компьютер'
+RestartProductHeader = 'Будет выполнен перезапуск программы'
+
+MigrationAbortedHeader = $MigrationType + ' невозможен'
+MigrationAbortedDescription = $MigrationType + ' завершился неудачно. Попробуйте вручную удалить несовместимые программы и повторно запустить мастер.'
+
+BestBuyGiftInformation = 'Будет выполнен переход от Kaspersky Anti-Virus к использованию Kaspersky Internet Security.\nВам будет доступно больше функций защиты компьютера.'
+BestBuyGiftDescription = 'Благодарим за выбор программы \"Лаборатории Касперского\". Надеемся, что вам понравится новый уровень защиты.'
+BestBuyUpgradeNotification = 'Во время обновления будет выполнен поиск несовместимого программного обеспечения, чтобы обеспечить нормальную работу установленных программ и операционной системы.'
+BestBuyFreeUpgrade = 'Перейти в Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Обновление в фоновом режиме'
+BestBuyTryAbortInformation = 'Обновление будет продолжено в фоновом режиме'
+BestBuyTryAbortDescription = 'Поскольку несовместимое программное обеспечение не было удалено, некоторые новые функции Kaspersky Internet Security выключены, чтобы не нарушать работу установленных программ и операционной системы.\n\nВы можете вручную удалить несовместимое программное обеспечение, а затем включить новую функциональность в окне настройки Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Вернуться к обновлению'
+Congratulation = 'Поздравляем!'
+
+RunKisButtonText = 'Запустить Kaspersky Internet Security'
+
+ProductUpgraded = 'Выполнено обновление с Kaspersky Anti-Virus до Kaspersky Internet Security.\nТеперь вам доступно больше функций защиты компьютера.'

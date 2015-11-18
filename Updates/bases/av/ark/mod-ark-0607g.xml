@@ -1,0 +1,72 @@
+<UpdateFiles
+	UpdateDate="24092015 1131"
+	BlackDate="24092015 0602"
+	ObjectType="2=ARK;3=BASE">
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		ReplaceMode="suffix"
+		Arch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="mark.kdl" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		SysArch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="mark32.dat" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		SysArch="x64"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="mark64.dat" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		ReplaceMode="suffix"
+		Arch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="arkmon.kdl" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		SysArch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="arkmon32.dat" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		SysArch="x64"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="arkmon64.dat" />
+	<Registry
+		ComponentID="ARK"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAZ5wHipAAHiPcTkpPuE4GXy6HvIGa+vgTUJOYPLeyjGRwWqZwKp/WjvSVpkTfdU3VfNOunf6xE2NT9ONRMQ6yWrm0nPE9wMBAB4JkgAAAAIAAigDAEFSSwMAAigEAEJBU0UBAAAJCjFEog0KOzoxMGFEdk0rN2Z6U2lyekRlMWtGQ1I2RFhCQmRMMjBrc3FXdjRYaTJrcE5QbGQzTEsxcHJEbkdKZlNrQUFnc28rWWQxV3AwODVEdW5vUkR4eWoreW5zRndqJSU="
+		Filename="ark-0607g.pbv" />
+	<Registry
+		ComponentID="ARK"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGSAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqBgABACAA8RDZtaz+ODFbGKAQ/PlpVqbzBYxWd97sN2/HQYljMiggAJmAZ7bg5ZjxB4XLLXsD4cLJxr3uySBTdkaPs7bJNWS+IABhku20zUBkAOL4bJgtW44a7ZNNy+dhaPZTPdi+p5TGdCAAY145Xi8ARqUpva60Co7nQLSsDWoUOIXVBZI9iv4+U5wgANSTE7chCmusCj256Q4+TO1SItEvYTltuElVN/vIGiyXIADrF4FK/NLarEwQmWeoki1JxBwbexUSkPO2clFj8VmWRQIAHgEBAB4JkgAAAAEAAAmlbtApDQo7OjEwYUhmZHhXbmRiOXNEKzdoRktWcXNJdnNKNWg4VnVBdU45YU1FcXZ1Ri9jU0NNTDZ0bC9ORTdjNHUrcEhyMytrQWRBaFdUTkNGVHlMbnNzRjN0eGJaNjAlJQ=="
+		Filename="mod-ark-0607g.krg" />
+</UpdateFiles>
+;:10aQfIFStVCjFMhE8kFUHzafo6gZZdn7J0RYB68WjCdyLP5zrG55jR5laCXEJSmI7M/6gY74mG+QkwwyuxnCyVwr%%

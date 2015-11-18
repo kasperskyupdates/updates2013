@@ -1,0 +1,36 @@
+interfaces virtual_keyboard_xpcom_gecko14/dom_element.xpt appversion>=14
+interfaces virtual_keyboard_xpcom_gecko14/secure_input_listener.xpt appversion>=14
+interfaces virtual_keyboard_xpcom_gecko14/settings_changing_listener.xpt appversion>=14
+interfaces virtual_keyboard_xpcom_gecko14/virtual_keyboard.xpt appversion>=14
+binary-component virtual_keyboard_xpcom_gecko14/virtual_keyboard_xpcom.dll appversion>=14
+
+interfaces virtual_keyboard_xpcom_gecko13/dom_element.xpt appversion>=13
+interfaces virtual_keyboard_xpcom_gecko13/secure_input_listener.xpt appversion>=13
+interfaces virtual_keyboard_xpcom_gecko13/settings_changing_listener.xpt appversion>=13
+interfaces virtual_keyboard_xpcom_gecko13/virtual_keyboard.xpt appversion>=13
+binary-component virtual_keyboard_xpcom_gecko13/virtual_keyboard_xpcom.dll appversion>=13
+
+interfaces virtual_keyboard_xpcom_gecko12/dom_element.xpt appversion>=12
+interfaces virtual_keyboard_xpcom_gecko12/secure_input_listener.xpt appversion>=12
+interfaces virtual_keyboard_xpcom_gecko12/settings_changing_listener.xpt appversion>=12
+interfaces virtual_keyboard_xpcom_gecko12/virtual_keyboard.xpt appversion>=12
+binary-component virtual_keyboard_xpcom_gecko12/virtual_keyboard_xpcom.dll appversion>=12
+
+interfaces virtual_keyboard_xpcom_gecko11/dom_element.xpt appversion>=11
+interfaces virtual_keyboard_xpcom_gecko11/secure_input_listener.xpt appversion>=11
+interfaces virtual_keyboard_xpcom_gecko11/settings_changing_listener.xpt appversion>=11
+interfaces virtual_keyboard_xpcom_gecko11/virtual_keyboard.xpt appversion>=11
+binary-component virtual_keyboard_xpcom_gecko11/virtual_keyboard_xpcom.dll appversion>=11
+
+interfaces virtual_keyboard_xpcom_gecko10/dom_element.xpt appversion>=10
+interfaces virtual_keyboard_xpcom_gecko10/secure_input_listener.xpt appversion>=10
+interfaces virtual_keyboard_xpcom_gecko10/settings_changing_listener.xpt appversion>=10
+interfaces virtual_keyboard_xpcom_gecko10/virtual_keyboard.xpt appversion>=10
+binary-component virtual_keyboard_xpcom_gecko10/virtual_keyboard_xpcom.dll appversion>=10
+
+interfaces virtual_keyboard_xpcom_gecko9/dom_element.xpt appversion>=9
+interfaces virtual_keyboard_xpcom_gecko9/secure_input_listener.xpt appversion>=9
+interfaces virtual_keyboard_xpcom_gecko9/settings_changing_listener.xpt appversion>=9
+interfaces virtual_keyboard_xpcom_gecko9/virtual_keyboard.xpt appversion>=9
+binary-component virtual_keyboard_xpcom_gecko9/virtual_keyboard_xpcom.dll appversion>=9
+

@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root unique_id="3480495672">
+  <Items>
+    <item_0000 unique_id="0x8BFCB846">
+      <Filter unique_id="0x87ED8826" KeyState="!Blocked;Limited"/>
+      <Items>
+        <item_0000 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" LicAddInfoScheme="1" KeyType="Subscription"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826">
+                <LicAddInfoInt>
+                  <item_0000 unique_id="0x0F2F0F07" Id="1" Value="1"/>
+                </LicAddInfoInt>
+              </Filter>
+              <Items>
+                <item_0000 unique_id="0x8BFCB846">
+                  <!--  promoType = 1001
+                        promoStartDate <= CurrentDate
+                        promoEndDate >= CurrentDate
+                    -->
+                  <Filter unique_id="0x87ED8826">
+                    <LicAddInfoInt>
+                      <item_0000 unique_id="0x0F2F0F07" Value="1001" Id="3" />
+                    </LicAddInfoInt>
+                    <LicAddInfoDate>
+                      <item_0000 unique_id="0x88875F16" Value="-now" Id="1" />
+                      <item_0001 unique_id="0x88875F16" Value="now-" Id="2" />
+                    </LicAddInfoDate>
+                  </Filter>
+                  <Items>
+                    <!-- LicenseDaysToSubsExp >= 38 (display warning at 5 day intervals)
+                      -->
+                    <item_0000 unique_id="0x8BFCB846">
+                      <Filter unique_id="0x87ED8826" LicDaysToSubsExp="38-" EachDaysSinceBBYPromoStartDate="5">
+                      </Filter>
+                      <Items>
+                        <!--  promoSKU = 3811054
+                              promoSKU = 3811328
+                          -->
+                        <item_0000 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811054;3811328" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount5" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kav_discount5.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KAV_Discount5"/>
+                              </item_0000>
+                            </Items>
+                        </item_0000>
+                        <!--  promoSKU = 3811267
+                              promoSKU = 3811373
+                          -->
+                        <item_0001 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811267;3811373" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount10" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kav_discount10.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KAV_Discount10"/>
+                              </item_0000>
+                            </Items>
+                        </item_0001>
+                        <!--  promoSKU = 3811276
+                              promoSKU = 3812035
+                          -->
+                        <item_0002 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811276;3812035" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount15" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kav_discount15.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KAV_Discount15"/>
+                              </item_0000>
+                            </Items>
+                        </item_0002>
+                        <!--  promoSKU = 3811319
+                              promoSKU = 3812781
+                          -->
+                        <item_0003 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811319;3812781" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount20" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kav_discount20.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KAV_Discount20"/>
+                              </item_0000>
+                            </Items>
+                        </item_0003>
+                        <!--  promoSKU = 3812809
+                          -->
+                        <item_0004 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812809" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount5" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kis_discount5.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KIS_Discount5"/>
+                              </item_0000>
+                            </Items>
+                        </item_0004>
+                        <!--  promoSKU = 3812818
+                          -->
+                        <item_0005 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812818" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount10" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kis_discount10.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KIS_Discount10"/>
+                              </item_0000>
+                            </Items>
+                        </item_0005>
+                        <!--  promoSKU = 3812909
+                          -->
+                        <item_0006 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812909" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount15" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kis_discount15.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KIS_Discount15"/>
+                              </item_0000>
+                            </Items>
+                        </item_0006>
+                        <!--  promoSKU = 3812936
+                          -->
+                        <item_0007 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812936" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount20" severity="3">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/interm_kis_discount20.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_InTermRenew_KIS_Discount20"/>
+                              </item_0000>
+                            </Items>
+                        </item_0007>
+                      </Items>
+                    </item_0000>
+                    <!-- LicenseDaysToSubsExp = 30,15,7,3,2,1,0
+                      -->
+                    <item_0001 unique_id="0x8BFCB846">
+                      <Filter unique_id="0x87ED8826" LicDaysToSubsExp="30;15;7;3;2;1;0" />
+                      <Items>
+                        <!--  promoSKU = 3811054
+                              promoSKU = 3811328
+                          -->
+                        <item_0000 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811054;3811328" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount5" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount5.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount5"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0000>
+                        <!--  promoSKU = 3811267
+                              promoSKU = 3811373
+                          -->
+                        <item_0001 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811267;3811373" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount10" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount10.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount10"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0001>
+                        <!--  promoSKU = 3811276
+                              promoSKU = 3812035
+                          -->
+                        <item_0002 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811276;3812035" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount15" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount15.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount15"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0002>
+                        <!--  promoSKU = 3811319
+                              promoSKU = 3812781
+                          -->
+                        <item_0003 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811319;3812781" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount20" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount20.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount20"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0003>
+                        <!--  promoSKU = 3812809
+                          -->
+                        <item_0004 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812809" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount5" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount5.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount5"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0004>
+                        <!--  promoSKU = 3812818
+                          -->
+                        <item_0005 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812818" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount10" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount10.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount10"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0005>
+                        <!--  promoSKU = 3812909
+                          -->
+                        <item_0006 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812909" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount15" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount15.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount15"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0006>
+                        <!--  promoSKU = 3812936
+                          -->
+                        <item_0007 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812936" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount20" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount20.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount20"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0007>
+                      </Items>
+                    </item_0001>
+                    <!-- LicenseDaysToSubsExp = 29-16,14-8,6-4
+                      -->
+                    <item_0002 unique_id="0x8BFCB846">
+                      <Filter unique_id="0x87ED8826" LicDaysToSubsExp="4-6;8-14;16-29" />
+                      <Items>
+                        <!--  promoSKU = 3811054
+                              promoSKU = 3811328
+                          -->
+                        <item_0000 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811054;3811328" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount5" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount5"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0000>
+                        <!--  promoSKU = 3811267
+                              promoSKU = 3811373
+                          -->
+                        <item_0001 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811267;3811373" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount10" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount10"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0001>
+                        <!--  promoSKU = 3811276
+                              promoSKU = 3812035
+                          -->
+                        <item_0002 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811276;3812035" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount15" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount15"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0002>
+                        <!--  promoSKU = 3811319
+                              promoSKU = 3812781
+                          -->
+                        <item_0003 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811319;3812781" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KAV-Discount20" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount20"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0003>
+                        <!--  promoSKU = 3812809
+                          -->
+                        <item_0004 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812809" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount5" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount5"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0004>
+                        <!-- promoSKU = 3812818
+                          -->
+                        <item_0005 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812818" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount10" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount10"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0005>
+                        <!--  promoSKU = 3812909
+                          -->
+                        <item_0006 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812909" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount15" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount15"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0006>
+                        <!--  promoSKU = 3812936
+                          -->
+                        <item_0007 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812936" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-RenewContract-KIS-Discount20" severity="2">
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount20"/>
+								<mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                              </item_0000>
+                            </Items>
+                        </item_0007>
+                      </Items>
+                    </item_0002>
+                    <!-- LicDaysSinceSubsExp = 0-30
+                      -->
+                    <item_0003 unique_id="0x8BFCB846">
+                      <Filter unique_id="0x87ED8826" LicDaysSinceSubsExp="0-30" />
+                      <Items>
+                        <!--  promoSKU = 3811054
+                              promoSKU = 3811328
+                          -->
+                        <item_0000 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811054;3811328" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KAV-Discount5" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount5.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount5" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0000>
+                        <!--  promoSKU = 3811267
+                              promoSKU = 3811373
+                          -->
+                        <item_0001 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811267;3811373" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KAV-Discount10" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount10.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount10" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0001>
+                        <!--  promoSKU = 3811276
+                              promoSKU = 3812035
+                          -->
+                        <item_0002 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811276;3812035" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KAV-Discount15" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount15.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount15" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0002>
+                        <!--  promoSKU = 3811319
+                              promoSKU = 3812781
+                          -->
+                        <item_0003 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3811319;3812781" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KAV-Discount20" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kav_discount20.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KAV_Discount20" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0003>
+                        <!--  promoSKU = 3812809
+                          -->
+                        <item_0004 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812809" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KIS-Discount5" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount5.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount5" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0004>
+                        <!--  promoSKU = 3812818
+                          -->
+                        <item_0005 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812818" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KIS-Discount10" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount10.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount10" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0005>
+                        <!--  promoSKU = 3812909
+                          -->
+                        <item_0006 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812909" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KIS-Discount15" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount15.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount15" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0006>
+                        <!--  promoSKU = 3812936
+                          -->
+                        <item_0007 unique_id="0x8BFCB846">
+                            <Filter unique_id="0x87ED8826">
+                              <LicAddInfoStr>
+                                <item_0000 unique_id="0x47D0764F" Value="3812936" Id="5" />
+                              </LicAddInfoStr>
+                            </Filter>
+                            <Items>
+                              <item_0000 unique_id="0x398EA778" contentId="BBY-GracePeriod-RenewContract-KIS-Discount20" severity="2">
+                                <messageBoxSettings unique_id="0x26113741" width="500" height="115" contentUri="loc/*/html/bby/renewalgrace_kis_discount20.html"/>
+                                <licenseManagerSettings unique_id="0xEE49F394" title="LNCS_BBY_RenewalGraceRenew_KIS_Discount20" description="LNCS_BBY_StatusUpdate"/>
+                              </item_0000>
+                            </Items>
+                        </item_0007>
+                      </Items>
+                    </item_0003>
+                  </Items>
+                </item_0000>
+                <item_0001 unique_id="0x8BFCB846">
+                  <Filter unique_id="0x87ED8826" LicDaysToSubsExp="30"/>
+                  <Items>
+                    <item_0000 unique_id="0x398EA778" contentId="BBY-WillExpire" severity="2">
+                      <licenseManagerSettings unique_id="0xEE49F394"
+                                              title=  "LNCS_BBY_WillExpire_Title"
+                                              description="LNCS_BBY_WillExpire_Description">
+                        <buttons>
+                          <item_0000 unique_id="0xBBA48DDC"
+                                     name="The Geek Squad Renewal Center"
+                                     target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                     showBasket="1"/>
+                        </buttons>
+                      </licenseManagerSettings>
+                      <problemListSettings unique_id="0x1605AE48"
+                                           title="LNCS_BBY_WillExpire_Title"
+                                           description="LNCS_BBY_WillExpire_Description"/>
+                      <messageBoxSettings unique_id="0x26113741" width="500" height="115"
+                                          contentUri="loc/*/html/bby/will_expire.html"/>
+					  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                    </item_0000>
+                  </Items>
+                </item_0001>
+                <item_0002 unique_id="0x8BFCB846">
+                  <Filter unique_id="0x87ED8826" LicDaysToSubsExp="1-3;7;15"/>
+                  <Items>
+                    <item_0000 unique_id="0x398EA778" contentId="BBY-AboutToExpire-1" severity="2">
+                      <licenseManagerSettings unique_id="0xEE49F394"
+                                              title=  "LNCS_BBY_AboutToExpire_Title"
+                                              description="LNCS_BBY_AboutToExpire_Description">
+                        <buttons>
+                          <item_0000 unique_id="0xBBA48DDC"
+                                     name="The Geek Squad Renewal Center"
+                                     target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                     showBasket="1"/>
+                        </buttons>
+                      </licenseManagerSettings>
+                      <problemListSettings unique_id="0x1605AE48"
+                                           title="LNCS_BBY_AboutToExpire_Title"
+                                           description="LNCS_BBY_AboutToExpire_Description"/>
+                     <messageBoxSettings unique_id="0x26113741" width="500" height="115"
+                                          contentUri="loc/*/html/bby/about_to_expire.html"/>
+					 <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                    </item_0000>
+                  </Items>
+                </item_0002>
+                <item_0003 unique_id="0x8BFCB846">
+                  <Filter unique_id="0x87ED8826" LicDaysToSubsExp="4-6;8-14;16-21"/>
+                  <Items>
+                    <item_0000 unique_id="0x398EA778" contentId="BBY-AboutToExpire-2" severity="2">
+                      <licenseManagerSettings unique_id="0xEE49F394"
+                                              title=  "LNCS_BBY_WillExpire_Title"
+                                              description="LNCS_BBY_WillExpire_Description">
+                        <buttons>
+                          <item_0000 unique_id="0xBBA48DDC"
+                                     name="The Geek Squad Renewal Center"
+                                     target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                     showBasket="1"/>
+                        </buttons>
+                      </licenseManagerSettings>
+                      <problemListSettings unique_id="0x1605AE48"
+                                           title="LNCS_BBY_WillExpire_Title"
+                                           description="LNCS_BBY_WillExpire_Description"/>
+					 <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                    </item_0000>
+                  </Items>
+                </item_0003>                
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" SubscriptionStatusReason="0;2">
+                <LicAddInfoInt>
+                  <item_0000 unique_id="0x0F2F0F07" Id="1" Value="1"/>
+                </LicAddInfoInt>
+              </Filter>
+              <Items>
+                <item_0000 unique_id="0x8BFCB846">
+                  <Filter unique_id="0x87ED8826" LicDaysToSubsExp="0"/>
+                  <Items>
+                    <item_0000 unique_id="0x398EA778" contentId="BBY-LastDay" severity="1">
+                      <messageBoxSettings unique_id="0x26113741" width="500" height="115"
+                                          contentUri="loc/*/html/bby/last_day.html"/>
+                      <balloonSettings unique_id="0x3487BF5C" description="LNCS_BBY_LastDay_Balloon"/>
+                      <licenseManagerSettings unique_id="0xEE49F394"
+                                              title=  "LNCS_BBY_LastDay_Title"
+                                              description="LNCS_BBY_LastDay_Description">
+                        <buttons>
+                          <item_0000 unique_id="0xBBA48DDC"
+                                      name="The Geek Squad Renewal Center"
+                                      target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                      showBasket="1"/>
+                        </buttons>
+                      </licenseManagerSettings>
+                      <problemListSettings unique_id="0x1605AE48"
+                                           title="LNCS_BBY_LastDay_Title"
+                                           description="LNCS_BBY_LastDay_Description"/>
+					 <mainWindowSettings unique_id="0x10656BE1" licenseState="LicensingState_ProblemIsAvailable"/>
+                    </item_0000>
+                  </Items>
+                </item_0000>
+                <item_0001 unique_id="0x8BFCB846">
+                  <Filter unique_id="0x87ED8826" LicDaysSinceSubsExp="0-29"/>
+                  <Items>
+                    <item_0000 unique_id="0x398EA778" contentId="BBY-Grace" severity="1">
+                      <messageBoxSettings unique_id="0x26113741" width="550" height="105"
+                                          contentUri="loc/*/html/bby/grace.html"/>
+                      <balloonSettings unique_id="0x3487BF5C" description="LNCS_BBY_Grace_Balloon"/>
+                      <licenseManagerSettings unique_id="0xEE49F394"
+                                              title="LNCS_BBY_Grace_Title"
+                                              description="LNCS_BBY_Grace_Description_Full">
+                        <buttons>
+                          <item_0000 unique_id="0xBBA48DDC"
+                                      name="The Geek Squad Renewal Center"
+                                      target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                      showBasket="1"/>
+                        </buttons>
+                      </licenseManagerSettings>
+                      <problemListSettings unique_id="0x1605AE48"
+                                           title="LNCS_BBY_Grace_Title"
+                                           description="LNCS_BBY_Grace_Description"/>
+                    </item_0000>
+                  </Items>
+                </item_0001>
+              </Items>
+            </item_0001>
+            <item_0002 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" SubscriptionStatusReason="2">
+                <LicAddInfoInt>
+                  <item_0000 unique_id="0x0F2F0F07" Id="1" Value="0"/>
+                  <item_0001 unique_id="0x0F2F0F07" Id="2" Value="-1;1"/>
+                </LicAddInfoInt>
+              </Filter>
+              <Items>
+			   <item_0000 unique_id="0x8BFCB846">
+				<Filter unique_id="0x87ED8826" LicDaysSinceSubsExp="0-29"/>
+				<Items>
+				<item_0000 unique_id="0x398EA778" contentId="BBY-RenewFailureGrace" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" width="500" height="115"
+                                      contentUri="loc/*/html/bby/renew_failure.html"/>
+                  <balloonSettings unique_id="0x3487BF5C" description="LNCS_BBY_RenewFailure_Balloon"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LNCS_BBY_RenewFailure_Title"
+                                          description="LNCS_BBY_RenewFailure_Description_Full">
+                    <buttons>
+                      <item_0000 unique_id="0xBBA48DDC"
+                                  name="The Geek Squad Renewal Center"
+                                  target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                  showBasket="1"/>
+                    </buttons>
+                  </licenseManagerSettings>
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LNCS_BBY_RenewFailure_Title"
+                                       description="LNCS_BBY_RenewFailure_Description"/>
+                </item_0000>
+				</Items>
+			   </item_0000>
+			   <item_0001 unique_id="0x8BFCB846">
+				<Items>
+				<item_0000 unique_id="0x398EA778" contentId="BBY-RenewFailure" severity="1">					
+					<messageBoxSettings unique_id="0x26113741" width="500" height="115"
+                                      contentUri="loc/*/html/bby/renew_failure.html"/>
+                  <balloonSettings unique_id="0x3487BF5C" description="LNCS_BBY_RenewFailure_Balloon"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LNCS_BBY_RenewFailure_Title"
+                                          description="LNCS_BBY_RenewFailure_Description">
+                    <buttons>
+                      <item_0000 unique_id="0xBBA48DDC"
+                                  name="The Geek Squad Renewal Center"
+                                  target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+                                  showBasket="1"/>
+                    </buttons>
+                  </licenseManagerSettings>
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LNCS_BBY_RenewFailure_Title"
+                                       description="LNCS_BBY_RenewFailure_Description"/>
+                </item_0000>
+				</Items>
+			   </item_0001>
+              </Items>
+            </item_0002>
+            <item_0003 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826">
+                <LicAddInfoInt>
+                  <item_0000 unique_id="0x0F2F0F07" Id="1" Value="0"/>
+                  <item_0001 unique_id="0x0F2F0F07" Id="2" Value="1"/>
+                </LicAddInfoInt>
+              </Filter>
+              <Items>
+				<item_0000 unique_id="0x8BFCB846">
+					<Filter unique_id="0x87ED8826" LicDaysSinceSubsExp="0-29"/>
+					<Items>
+						<item_0000 unique_id="0x398EA778" contentId="BBY-CCAboutToExpireGrace" severity="2">
+							<messageBoxSettings unique_id="0x26113741" width="500" height="115"
+												  contentUri="loc/*/html/bby/cc_about_to_expire.html"/>
+							<licenseManagerSettings unique_id="0xEE49F394"
+													  title="LNCS_BBY_CCAboutToExpire_Title"
+													  description="LNCS_BBY_CCAboutToExpire_Description_Full">
+							
+								<buttons>
+									<item_0000 unique_id="0xBBA48DDC"
+											  name="The Geek Squad Renewal Center"
+											  target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+											  showBasket="1"/>
+								</buttons>
+							</licenseManagerSettings>
+							<problemListSettings unique_id="0x1605AE48"
+												   title="LNCS_BBY_CCAboutToExpire_Title"
+												   description="LNCS_BBY_CCAboutToExpire_Description"/>
+							<mainWindowSettings unique_id="0x10656BE1"
+												  licenseState="LicensingState_WarningIsAvailable"
+												  protectionState="ProtectionState_NotificationIsAvailable" />
+						</item_0000>
+					</Items>
+				</item_0000>				
+				<item_0001 unique_id="0x8BFCB846">
+					<Items>
+						<item_0000 unique_id="0x398EA778" contentId="BBY-CCAboutToExpire" severity="2">
+							<messageBoxSettings unique_id="0x26113741" width="500" height="115"
+												  contentUri="loc/*/html/bby/cc_about_to_expire.html"/>
+							<licenseManagerSettings unique_id="0xEE49F394"
+													  title="LNCS_BBY_CCAboutToExpire_Title"
+													  description="LNCS_BBY_CCAboutToExpire_Description">
+							
+								<buttons>
+									<item_0000 unique_id="0xBBA48DDC"
+											  name="The Geek Squad Renewal Center"
+											  target="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;"
+											  showBasket="1"/>
+								</buttons>
+							</licenseManagerSettings>
+							<problemListSettings unique_id="0x1605AE48"
+												   title="LNCS_BBY_CCAboutToExpire_Title"
+												   description="LNCS_BBY_CCAboutToExpire_Description"/>
+							<mainWindowSettings unique_id="0x10656BE1"
+												  licenseState="LicensingState_WarningIsAvailable"
+												  protectionState="ProtectionState_NotificationIsAvailable" />
+						</item_0000>
+					</Items>
+				</item_0001>
+              </Items>
+            </item_0003>
+            <item_0004 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" KeyState="Expired"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="BBY-Expired" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" width="400" height="100"
+                                      contentUri="loc/*/html/bby/expired.html"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LNCS_BBY_Expired_Title"
+                                          description="LNCS_BBY_Expired_Description"/>
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LNCS_BBY_Expired_Title"
+                                       description="LNCS_BBY_Expired_Description"/>
+                </item_0000>
+              </Items>
+            </item_0004>
+          </Items>
+        </item_0000>
+      </Items>
+    </item_0000>
+  </Items>
+</root>

@@ -1,0 +1,458 @@
+﻿;
+; License Manager
+;
+LicenseNumber = 'Ключ:'
+LicenseState = 'Статус ключа:'
+LicenseType = 'Тип лицензии:'
+LicenseActivationDate = 'Дата активации:'
+LicenseExpirationDate = 'Дата окончания:'
+LicenseExpirationDateLocal = 'Дата окончания (местн. время):'
+LicenseRemainingDays = 'Осталось:'
+LicenseManagerTitle = 'Лицензирование'
+
+; License states
+LicenseActive = 'активен'
+LicenseNotificationInfo = LicenseActive
+LicenseNotificationWarning = LicenseActive
+LicenseNotificationCritical = LicenseActive
+LicenseExpired = 'срок действия лицензии истек'
+LicenseProblems = 'недействителен'
+LicenseBlocked = 'заблокирован'
+LicenseLimited = LicenseBlocked
+NoActivationCodeProvided = 'отсутствует'
+SubscriptionActive = LicenseActive
+SubscriptionNotificationInfo = SubscriptionActive
+SubscriptionNotificationWarning = SubscriptionActive
+SubscriptionNotificationCritical = SubscriptionActive
+SubscriptionActiveExpirationDateUnknown = SubscriptionActive
+SubscriptionExpired = 'подписка истекла'
+SubscriptionSuspended = 'подписка приостановлена'
+SubscriptionUpdateFailed = 'нет информации'
+SubscriptionBlocked = LicenseBlocked
+SubscriptionLimited = LicenseBlocked
+PreinstalledCodeAvailable = NoActivationCodeProvided
+WaitCodeActivationInfo = NoActivationCodeProvided
+WaitCodeActivationCritical = NoActivationCodeProvided
+WaitReservedCodeActivationInfo = 'срок действия лицензии истек'
+PreinstalledCodeActivationProblem = NoActivationCodeProvided
+
+;Buttons
+ButtonBuy = '&Купить код активации'
+ButtonRenew = '&Купить код активации для продления'
+ButtonUpgrade = '&Купить код активации'
+ButtonInputCode = '&Ввести код активации'
+ButtonInputReserveCode = '&Ввести код активации'
+ButtonUpdateBases = '&Обновить базы'
+ButtonUpdateBlackList = '&Загрузить черный список с сервера'
+ButtonSupport = 'Причины и возможные решения'
+ButtonUpdateStatus = 'Обновить статус подписки'
+ButtonProviderWeb = 'Посетить веб-сайт поставщика услуг'
+ButtonActivateReserveCode = 'Активировать сейчас'
+ButtonCheckReserveCode = 'Проверить код активации'
+ButtonDeleteReserveCode = 'Удалить код активации'
+ButtonDeletePreinstalledCode = 'Удалить код активации'
+ButtonRollback = 'Вернуться к Антивирусу Касперского 2013'
+ButtonActivateNewCode = '&Активировать программу'
+ButtonActivatePreinstalledCode = ButtonActivateNewCode
+
+;License type
+LicenseTypeBeta = 'для бета-тестирования'
+LicenseTypeTrial = 'пробная'
+LicenseTypeTest = 'для тестирования'
+LicenseTypeOEM = 'для OEM-поставок'
+LicenseTypeCommercial = 'коммерческая'
+LicenseTypeSubscription = 'коммерческая с подпиской'
+LicenseTypeSubscriptionProtection = 'коммерческая с подпиской на защиту'
+LicenseTypeUnknown = 'неизвестный тип'
+
+;License type description
+LicenseComputers = ' для ' + $LicensePcCount + ' ' + {$LicensePcCount: 'компьютера', 'компьютеров', 'компьютеров'}
+NonSubscriptionLicenseTypeDescription = $LicenseType + LicenseComputers + ' на ' + $LicenseLifespan
+SubscriptionLicenseTypeDescription    = $LicenseType + LicenseComputers
+OemCommercialLicenseTypeDescription   = $LicenseType + ' на ' + $LicenseLifespan
+
+ActivationManagerLicenseTypeDescription = $LicenseType + ' для ' + $LicensePcCount + ' ' + {$LicensePcCount: 'компьютера', 'компьютеров', 'компьютеров'}
+
+ActivationManager_LicenseFromOtherProduct_LicenseTypeDescription = $LicenseFromOtherProduct_LicenseType + ' для ' + $LicenseFromOtherProduct_PcCount + ' ' + {$LicenseFromOtherProduct_PcCount: 'компьютера', 'компьютеров', 'компьютеров'}
+ActivationManager_LicenseFromOtherProduct_ActivationText = 'Да, установить ' + $LicenseFromOtherProductProductName + ' и активировать путем добавления найденного ключа'
+
+LicenseRemainingDaysText = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'день', 'дня', 'дней'}
+LicenseRemainingDaysToBeDefinedLater = 'будет определена позднее'
+
+;
+; Activation Wizard
+;
+ButtonNextText = 'Далее >'
+ButtonBackText = '< Назад'
+ButtonCancelText = 'Отмена'
+ButtonFinishText = 'Завершить'
+
+CommonTextForLinks = 'Причины и возможные решения'
+ButtonShowHelpText = 'Справка'
+
+ActivationKISWizardString =  'Активация '
+ProlongationActivationWizardString = 'Продление срока действия лицензии '
+
+SelectionOfActivationTypeHeader = 'Выберите способ активации'
+ProlongationOfActivationHeader = 'Ввод кода активации'
+
+SelectCommercialActivation = 'Активировать коммерческую версию'
+EnterActivationCode = 'Введите код активации:'
+SerialNumberHelpString = 'Что это такое?'
+TextForPurchasingLicenseWithTrial = 'Если у вас нет кода активации, вы можете приобрести его в онлайн-магазине "Лаборатории Касперского".'
+ActivationCodeInputError = 'Неверный код активации'
+ActivationCodeIncorrectSymbol = 'Неверный символ'
+
+TextForPurchasingLicense = 'Если у вас нет кода активации, вы можете приобрести его в онлайн-магазине "Лаборатории Касперского".'
+
+ButtonTextForPurchasingLicense = 'Получить код активации'
+SelectionTrialLicense = 'Активировать пробную версию'
+TextForTrialLicense = 'Оцените полнофункциональную пробную версию программы перед приобретением лицензии.'
+
+CheckActivationCodeString = 'Проверка кода активации'
+TextForWaitingActivation = 'Пожалуйста, подождите'
+ReasonTextForWaitingActivationUnknown = 'Проверка данных активации...'
+ReasonTextForWaitingActivationConnecting = 'Выполняется соединение с сервером...'
+ReasonTextForWaitingActivationSending = 'Пересылка данных активации...'
+ReasonTextForReceiveServerResponse = 'Прием данных с сервера...'
+ReasonTextForWaitingActivationCompleted = 'Активация завершена'
+
+; wizard page: key for other product 
+KeyForOtherProductPageHeader = 'Код активации соответствует другой программе'
+KeyForOtherProductOfflinePageHeader = 'Файл ключа соответствует другой программе'
+KeyForOtherProductPageInfoBlockOfflineActivation = 'Файл ключа соответствует программе: '
+KeyForOtherProductPageInfoBlockActivationCode = 'Код активации: '
+KeyForOtherProductPageInfoBlockProductName = 'соответствует программе: '
+KeyForOtherProductPageChoiceText = 'Вы хотите активировать ' + $ProductName + '?'
+KeyForOtherProductPageChoice1 = 'Да, продолжить работу мастера и ввести другой код активации'
+KeyForOtherProductPageChoice2 = 'Нет, установить ' + $ActivationCodeProduct + ' и активировать с помощью введенного кода активации'
+KeyForOtherProductPageOfflineChoice2 = 'Нет, установить ' + $ActivationCodeProduct + ' и использовать выбранный файл ключа'
+KeyForOtherProductPageChoice3 = 'Сделать введенный код активации резервным'
+
+ActivationCodeIntendedForProductTextCaption = 'Код активации соответствует программе:'
+SelectionTextForChangeProductType = 'Установить и активировать новую программу сейчас'
+SelectionTextForChangeProductTypeLater = 'Перейти на новую программу позже'
+ActivationCodeIntendedForProductDescription = 'В процессе перехода будет выполнен анализ вашей системы, возможно потребуется удалить несовместимое ПО. В процессе установки может потребоваться перезагрузка компьютера.'
+ActivationCodeIntendedForProductLaterDescription = 'Введенный код активации будет сохранен. По истечении срока действия лицензии вам будет предложено перейти к использованию новой программы. Вводить код активации при этом не потребуется.'
+
+ActivationResultSucceedHeader = 'Спасибо'
+ActivationResultLicenseExpiredHeader = 'Ошибка активации'
+ActivationResultConnectionErrorHeader = 'Не удалось активировать программу'
+
+StateTextForActivationResultLicenseExpired = 'Срок действия лицензии истек'
+StateTextForActivationResultConnectionError = 'Ошибка подключения к серверу активации'
+
+InfoTextForActivationResultLicenseExpired = 'Введите другой ключ'
+	
+LicenseTypeInfoOnSucceedActivation = 'Тип лицензии:'
+SucceedActivationPeriodText = 'Срок действия:'
+
+RegistrationFormHeader = 'Регистрация...'
+
+TextForCheckInternetAndTryingActivation = 'Проверьте параметры подключения к интернету и попробуйте активировать программу еще раз.'
+
+ButtonTextForCheckInternetAndTryingActivation = 'Повторить попытку активации'
+TextForActivationWithKeyFile = 'Если активировать программу не удается'
+DescriptionForActivationWithKeyFile = 'Перейдите в <a href="CenterOfOnlineActivation"><font color ="#5495DF">Центр онлайн-активации</font></a> с компьютера, имеющего доступ в интернет, и получите файл ключа по коду активации. После получения файла ключа укажите его расположение на компьютере и нажмите на кнопку "Далее".'
+
+ActivationKeyFileText = 'Файл ключа:'
+ButtonTextForBrowseKeyFile = 'Обзор...'
+
+ActivationReservedCodeHeader = 'Предупреждение'
+ActivationReservedCodeTextPart1 = 'После нажатия на кнопку "Далее" программа будет активирована с помощью резервного кода активации. С этого момента начнется отсчет срока действия новой лицензии.'
+ActivationReservedCodeTextPart2 = 'Вы сможете использовать программу на другом компьютере по действующей лицензии до истечения срока действия.'
+
+ActivationWizard_Activation_Title = 'Активация программы ' + $ProductNameFull
+ActivationWizard_AddToReserve_Title = 'Добавление резервного кода активации'
+ActivationWizard_SubscriptionUpdate_Title = 'Обновление статуса подписки'
+ActivationWizard_CheckReserveCode_Title = 'Проверка кода активации'
+ActivationWizard_Purchasing = 'Интернет-магазин'
+
+ActivationSuccessfullyCompleted = 'Активация успешно завершена'
+RegistrationCompleted = 'Регистрация успешно завершена'
+SubscriptionStatusSuccessfullyUpdated = 'Статус подписки успешно обновлен'
+CheckReserveCodeSuccessfullyCompleted = 'Проверка резервного кода активации прошла успешно'
+AddCodeToReserveSuccessfullyCompleted = 'Код активации успешно добавлен'
+SelectKeyFileDialogTitle = 'Выберите файл ключа'
+CodeUsefullInFuture = 'Вы используете программу по действующей лицензии, активация программы в настоящее время не требуется. С помощью полученного кода активации вы сможете активировать программу позже или вы можете активировать другую копию программы.'
+CodeUsefullInFutureErr = 'Лицензия приобретена успешно. Автоматическая активация невозможна, так как возникла проблема при проверке статуса активации программы. Пожалуйста, перейдите в окно Лицензирование для устранения проблемы самостоятельно или обратитесь в Службу технической поддержки за консультацией. После устранения проблемы вы сможете вручную активировать программу по приобретенной лицензии.'
+
+ActivationHasLicense_Header = 'Найден ключ для действующей лицензии'
+ActivationHasLicense_TypeOfProgram = 'Тип программы: '
+ActivationHasLicense_TypeOfLicense = 'Тип лицензии: '
+ActivationHasLicense_DateOfExpirations = 'Дата окончания: '
+ActivationHasLicense_ActionText = 'Вы хотите использовать программу, предусмотренную действующей лицензией?'
+ActivationHasLicense_UseNewLicenseText = 'Нет, продолжить работу мастера и ввести новый код активации'
+ActivationHasLicense_ReturnToPrevProduct = 'Да, использовать ' + $LicenseFromOtherProductProductName
+
+ActivationSubscriptionReplace_Header = 'Предупреждение'
+ActivationSubscriptionReplace_Text = 'Введенный код активации нельзя сделать резервным, но можно применить для повторной активации программы. Действующая лицензия позволяет вам использовать программу на другом компьютере до истечения срока действия.'
+ActivationSubscriptionReplace_Check = 'Применить введенный код активации прямо сейчас для повторной активации программы'
+
+ActivationWizard_SystemError = 'Системная ошибка: ' + $SystemErrorDescription
+ActivationWizard_CannotAddKeyFile = $LicenseError
+ActivationWizard_CannotDeleteKeyFile = 'Невозможно удалить "' + $KeyFile + '": ' + $LicenseError
+ActivationWizard_KeyInvalid = $KeyInvalidReason
+ActivationWizard_LicenseError = $LicenseError
+ActivationWizard_DefaultError = 'Неопределенная ошибка'
+ActivationWizard_ServerNotAvailable = 'Не удается установить соединение с сервером'
+
+ActivationWizard_FormProcessingError = 'В процессе обработки формы регистрации произошла ошибка'
+
+LicenseError_0x09479001  = 'Этот ключ уже добавлен'
+LicenseError_0x0947901D  = 'Срок действия лицензии истек. Обновление баз недоступно'
+LicenseError_0x89479002  = 'Лицензия не найдена'
+LicenseError_0x89479003  = 'Цифровая подпись повреждена или не найдена'
+LicenseError_0x89479004  = 'Данные повреждены'
+LicenseError_0x89479005  = 'Файл ключа поврежден'
+LicenseError_0x89479006  = 'Срок действия лицензии истек'
+LicenseError_0x89479007  = 'Файл ключа не указан'
+LicenseError_0x89479008  = 'Неверный файл ключа'
+LicenseError_0x89479009  = 'Не удалось сохранить данные'
+LicenseError_0x8947900A  = 'Не удалось прочитать данные'
+LicenseError_0x8947900B  = 'Ошибка ввода/вывода'
+LicenseError_0x8947900C  = 'Базы не найдены'
+LicenseError_0x8947900D  = 'Активный и дополнительный ключи уже зарегистрированы'
+LicenseError_0x8947900E  = 'Библиотека лицензирования не загружена'
+LicenseError_0x8947900F  = 'Базы повреждены или обновлены вручную'
+LicenseError_0x89479010  = 'Базы повреждены'
+LicenseError_0x89479011  = 'Невозможно добавить в качестве дополнительного ключ, срок годности которого истек'
+LicenseError_0x89479012  = 'Системная ошибка'
+LicenseError_0x89479013  = 'Черный список ключей поврежден'
+LicenseError_0x89479014  = 'Подпись файла не соответствует цифровой подписи "Лаборатории Касперского"'
+LicenseError_0x89479015  = 'Невозможно активировать коммерческую версию программы по лицензии на бета-тестирование'
+LicenseError_0x89479016  = 'Бета-версию программы можно использовать только по лицензии на бета-тестирование'
+LicenseError_0x89479017  = 'Лицензия не распространяется на эту программу'
+LicenseError_0x89479018  = 'Лицензия заблокирована'
+LicenseError_0x89479019  = 'Ключ для пробной лицензии уже был добавлен'
+LicenseError_0x8947901A  = 'Файл ключа поврежден'
+LicenseError_0x8947901B  = 'Цифровая подпись не найдена, повреждена или не соответствует подписи "Лаборатории Касперского"'
+LicenseError_0x8947901C  = 'Невозможно добавить ключ для некоммерческой лицензии, если его срок годности истек'
+LicenseError_0x8947901E  = 'Дата создания файла ключа или его установки некорректна. Проверьте системную дату'
+LicenseError_0x8947901F  = 'Невозможно добавить ключ для пробной лицензии, пока действует другая пробная лицензия'
+LicenseError_0x89479020  = 'Черный список ключей поврежден или не найден'
+LicenseError_0x89479021  = 'Описание обновлений повреждено или не найдено'
+LicenseError_0x89479022  = 'Внутренние данные несовместимые с текущей программой'
+LicenseError_0x89479023  = 'Невозможно добавить дополнительный ключ с помощью неверного кода активации'
+LicenseError_0x89479024  = 'Ошибка заполнения формы данными'
+LicenseError_0x89479025  = 'Возникла ошибка при отправке запроса на сервер активации'
+LicenseError_0x89479026  = 'В запросе указан неверный код активации'
+LicenseError_0x89479027  = 'Невозможно получить статус ответа'
+LicenseError_0x89479028  = 'Ошибка при сохранении временного файла'
+LicenseError_0x89479029  = 'Введен неверный код активации или на компьютере установлена некорректная системная дата'
+LicenseError_0x8947902A  = 'Код активации не подходит для этой программы или истек срок годности ключа'
+LicenseError_0x8947902B  = 'Не удалось получить файл ключа. Введен некорректный код активации.'
+LicenseError_0x8947902C  = 'Сервер активации вернул ошибку 400'
+LicenseError_0x8947902D  = 'Сервер активации вернул ошибку 401'
+LicenseError_0x8947902E  = 'Сервер активации вернул ошибку 403'
+LicenseError_0x8947902F  = 'Недоступен необходимый ресурс на сервере активации'
+LicenseError_0x89479030  = 'Сервер активации вернул ошибку 405'
+LicenseError_0x89479031  = 'Сервер активации вернул ошибку 406'
+LicenseError_0x89479032  = 'Требуется аутентификация на прокси-сервере. Пожалуйста, проверьте параметры сети.'
+LicenseError_0x89479033  = 'Время ожидания запроса истекло'
+LicenseError_0x89479034  = 'Сервер активации вернул ошибку 409'
+LicenseError_0x89479035  = 'Недоступен необходимый ресурс на сервере активации'
+LicenseError_0x89479036  = 'Сервер активации вернул ошибку 411'
+LicenseError_0x89479037  = 'Сервер активации вернул ошибку 412'
+LicenseError_0x89479038  = 'Сервер активации вернул ошибку 413'
+LicenseError_0x89479039  = 'Сервер активации вернул ошибку 414'
+LicenseError_0x8947903A  = 'Сервер активации вернул ошибку 415'
+LicenseError_0x8947903B  = 'Неизвестная ошибка на стороне клиента'
+LicenseError_0x8947903C  = 'Внутренняя ошибка сервера'
+LicenseError_0x8947903D  = 'Функциональность не поддерживается'
+LicenseError_0x8947903E  = 'Некорректный ответ от шлюза. Проверьте параметры сети'
+LicenseError_0x8947903F  = 'Ресурс временно недоступен'
+LicenseError_0x89479040  = 'Время ожидания ответа от шлюза истекло. Проверьте параметры сети'
+LicenseError_0x89479041  = 'Протокол не поддерживается сервером'
+LicenseError_0x89479042  = 'Неизвестная ошибка на стороне сервера'
+LicenseError_0x89479043  = 'Неизвестная ошибка http.'
+LicenseError_0x89479044  = 'Некорректный идентификатор ресурса'
+LicenseError_0x89479045  = 'Неверные данные в поле "ключ"'
+LicenseError_0x89479046  = 'Некорректный адрес (URL)'
+LicenseError_0x89479047  = 'Некорректная папка назначения'
+LicenseError_0x89479048  = 'Ошибка выделения памяти'
+LicenseError_0x89479049  = 'Ошибка конвертации параметров в ANSI-строку (url, folder, agent)'
+LicenseError_0x8947904A  = 'Ошибка создания рабочего потока'
+LicenseError_0x8947904B  = 'Рабочий поток уже запущен'
+LicenseError_0x8947904C  = 'Рабочий поток не запущен'
+LicenseError_0x8947904D  = 'Файл ключа не найден на сервере активации'
+LicenseError_0x8947904E  = 'Лицензия заблокирована'
+LicenseError_0x8947904F  = 'Внутренняя ошибка сервера активации'
+LicenseError_0x89479050  = 'Недостаточно данных в запросе на активацию'
+LicenseError_0x89479051  = 'Неправильный идентификатор пользователя или пароль'
+LicenseError_0x89479052  = 'Неверный код активации'
+LicenseError_0x89479053  = 'Срок действия лицензии выбранного файла ключа меньше, чем срок действия действующей лицензии' 
+LicenseError_0x89479054  = 'На компьютере установлена некорректная системная дата.'
+LicenseError_0x89479055  = 'Срок действия пробной лицензии истек'
+LicenseError_0x89479056  = 'Период активации программы истек'
+LicenseError_0x89479057  = 'Превышено количество допустимых активаций программы с помощью указанного кода активации'
+LicenseError_0x89479058  = $OnlineActivationServerError
+LicenseError_0x89479059  = 'Невозможно добавить в качестве дополнительного ключ для некоммерческой лицензии, пока действует коммерческая лицензия'
+LicenseError_0x8947905C  = 'Требуется код активации'
+LicenseError_0x8947905D  = 'Неправильный номер клиента или пароль'
+LicenseError_0x8947905E  = 'Неверный код активации'
+LicenseError_0x89479062  = 'Невозможно подключиться к серверу активации'
+LicenseError_0x89479064  = 'Сервер активации недоступен.'
+LicenseError_0x89479065  = 'Срок действия лицензии истек'
+LicenseError_0x89479066  = 'Невозможно заменить активный ключ ключом с истекшим сроком годности'
+LicenseError_0x89479067  = 'Невозможно добавить в качестве дополнительного ключ, срок годности которого истекает раньше по сравнению с активным ключом'
+LicenseError_0x89479068  = 'Ваш текущий ключ подписки актуален'
+LicenseError_0x8947906B  = 'Ключ для этой лицензии уже добавлен на ваш компьютер'
+
+OLA_SYSTEM_ERROR   = 'Активация завершилась с системной ошибкой: ' + $OnlineActSrvErrorSpecific
+OLA_INTERNET_ERROR = 'Ошибка активации: ' + $OnlineActSrvErrorSpecificToInternetErrCodes
+OLA_HTTP_ERROR     = 'Ошибка активации: сервер вернул код HTTP ' + $OnlineActSrvErrorSpecific
+OLA_SERVER_ERROR   = $OnlineActSrvErrorSpecificToServerErrCodes
+OLA_DEFAULT        = 'Активация завершилась с ошибкой ' + $OnlineActSrvError + ' : ' + $OnlineActSrvErrorSpecific
+
+OLA_ERR_INTERNET_CANNOT_CONNECT           = 'Не удается установить соединение с сервером'
+
+; cURL errors
+; see error descriptions at http://curl.haxx.se/libcurl/c/libcurl-errors.html
+OLA_ERR_INTERNET_URL_MALFORMAT              = 'Неверный формат URL'
+OLA_ERR_INTERNET_COULDNT_RESOLVE_PROXY      = 'Не удается определить адрес прокси-сервера'
+OLA_ERR_INTERNET_COULDNT_RESOLVE_HOST       = 'Не удается определить адрес сервера'
+OLA_ERR_INTERNET_COULDNT_CONNECT            = 'Не удается установить соединение с сервером'
+OLA_ERR_INTERNET_REMOTE_ACCESS_DENIED       = 'Нет доступа к ресурсу'
+OLA_ERR_INTERNET_OPERATION_TIMEDOUT         = 'Истекло время ожидания'
+OLA_ERR_INTERNET_HTTP_POST_ERROR            = 'HTTP_POST_ERROR'
+OLA_ERR_INTERNET_SSL_CONNECT_ERROR          = 'Не удается установить SSL-соединение'
+OLA_ERR_INTERNET_TOO_MANY_REDIRECTS         = 'Слишком много перенаправлений'
+OLA_ERR_INTERNET_PEER_FAILED_VERIFICATION   = 'Сервер не прошел проверку'
+OLA_ERR_INTERNET_GOT_NOTHING                = 'Нет ответа от сервера'
+OLA_ERR_INTERNET_SEND_ERROR                 = 'Не удается передать данные серверу'
+OLA_ERR_INTERNET_RECV_ERROR                 = 'Не удается получить данные от сервера'
+OLA_ERR_INTERNET_SSL_CERTPROBLEM            = 'Проблема с локальным сертификатом безопасности'
+OLA_ERR_INTERNET_SSL_CIPHER                 = 'Невозможно использовать указанный алгоритм шифрования'
+OLA_ERR_INTERNET_SSL_CACERT                 = 'Недоверенный сертификат сервера'
+OLA_ERR_INTERNET_BAD_CONTENT_ENCODING       = 'Неизвестный алгоритм кодирования для передачи данных'
+OLA_ERR_INTERNET_LOGIN_DENIED               = 'Нет доступа для указанного имени пользователя'
+OLA_ERR_INTERNET_SSL_CACERT_BADFILE         = 'Не удается прочитать доверенные сертификаты'
+OLA_ERR_INTERNET_SSL_SHUTDOWN_FAILED        = 'Не удалось завершить SSL-соединение'
+OLA_ERR_INTERNET_AGAIN                      = 'Сокет не готов для передачи данных'
+OLA_ERR_INTERNET_SSL_CRL_BADFILE            = 'Не удается прочитать список отозванных сертификатов (CRL)'
+OLA_ERR_INTERNET_SSL_ISSUER_ERROR           = 'Не удается поверить издателя сертификата'
+OLA_ERR_INTERNET_GENERAL_TRANSPORT_LAYER_ERROR = 'Ошибка транспортного уровня'
+
+OLA_ERR_SRV_UNKNOWN_SERVER_ERROR			 = 'Неизвестная ошибка сервера активации. Повторите еще раз или обратитесь в Службу технической поддержки'
+OLA_ERR_SRV_INTERNAL_SERVER_ERROR            = 'Внутренняя ошибка сервера активации. Повторите еще раз или обратитесь в Службу технической поддержки'
+OLA_ERR_SRV_WRONG_APPLICATION_ID             = 'Код активации не подходит для этой программы.'
+OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED   = 'Лицензия заблокирована'
+OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD    = 'Неправильный номер клиента или пароль'
+OLA_ERR_SRV_WRONG_ACTIVATION_CODE            = 'Неверный код активации'
+OLA_ERR_SRV_LICENSE_NOT_FOUND                = 'Неверный код активации'
+OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED         = 'Требуется код активации'
+OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED        = 'Истек период активации'
+OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED    = 'Превышено количество активаций программы с помощью этого кода активации'
+OLA_ERR_SRV_REGION_MISMATCH                  = 'Код активации не подходит для этого региона'
+OLA_ERR_SRV_LOCALIZATION_MISMATCH            = 'Код активации не предназначен для используемой языковой версии программы.'
+OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION = 'Код активации предназначен для новой версии программы.'
+OLA_ERR_SRV_SERVER_ERROR_643                 = 'Сервер активации вернул ошибку 643'
+OLA_ERR_SRV_SERVER_ERROR_644                 = 'Сервер активации вернул ошибку 644'
+OLA_ERR_SRV_SERVER_ERROR_645                 = 'Сервер активации вернул ошибку 645'
+OLA_ERR_SRV_SERVER_ERROR_646                 = 'Сервер активации вернул ошибку 646'
+OLA_ERR_SRV_INVALID_ACTIVATION_CODE_FORMAT   = 'Введен неверный код активации.'
+OLA_ERR_SRV_MACHINE_TIME_IS_NOT_SYNCHRONIZED = 'Системная дата на вашем компьютере была изменена. Поправьте дату и попробуйте активировать программу еще раз'
+OLA_ERR_SRV_INVALID_APPLICATION_VERSION      = 'Введенный код активации не соответствует текущей версии программы'
+OLA_ERR_SRV_SUBSCRIPTION_EXPIRED             = 'Срок действия подписки истек. Введите другой код активации'
+OLA_ERR_SRV_ACTIVATION_COUNT_LIMIT_IS_REACHED = 'Для введенного кода активации превышено количество активаций'
+OLA_ERR_SRV_INVALID_LICENSE_TICKET_SIGNATURE = 'Проблема с лицензией. Удалите активный ключ и активируйте программу с помощью этого же кода активации еще раз'
+OLA_ERR_SRV_SUBSCRIPTION_IS_NOT_ACTIVE       = 'Подписка не активирована поставщиком услуг. Обновите статус подписки позднее или обратитесь к поставщику услуг.'
+OLA_ERR_SRV_SERVICE_IS_UNDER_MAINTENANCE     = 'На сервере ведутся технические работы. Попробуйте повторить операцию позднее.'
+	
+OLA_ERR_SRV_DEFAULT                          = 'Активация завершилась с ошибкой ' + $OnlineActSrvError + ':' + $OnlineActSrvErrorSpecific
+
+KeyInvalidReason_ekirUnknown                 = 'Неизвестная ошибка'
+KeyInvalidReason_ekirValid                   = 'Ключ действителен'
+KeyInvalidReason_ekirExpired                 = 'Cрок действия лицензии истек'
+KeyInvalidReason_ekirCorrupted               = 'Недействительный ключ'
+KeyInvalidReason_ekirNotSigned               = 'Цифровая подпись повреждена или не найдена'
+KeyInvalidReason_ekirWrongProduct            = 'Ключ не подходит для этой программы.'
+KeyInvalidReason_ekirBlackListed             = 'Ключ заблокирован'
+KeyInvalidReason_ekirIllegalUpdate           = 'Дата выпуска баз не соответствует сроку действия лицензии'
+KeyInvalidReason_ekirInconsistentUpdate      = 'Базы повреждены'
+KeyInvalidReason_ekirKeyCreationDateInvalid  = 'Дата создания ключа некорректна'
+KeyInvalidReason_ekirTrialAlreadyInUse       = 'Невозможно добавить ключ для пробной лицензии, пока действует другая пробная лицензия'
+KeyInvalidReason_ekirInvalidBlacklist        = 'Черный список ключей поврежден'
+KeyInvalidReason_ekirCantBeUsedAsReserved    = 'Невозможно сделать код активации резервным'
+KeyInvalidReason_ekirKeyInstallDateInvalid   = 'Дата активации некорректна'
+KeyInvalidReason_ekirTrialPeriodIsOver       = 'Срок действия пробной лицензии истек'
+KeyInvalidReason_ekirConflictsWithCommercial = 'Конфликт нового файла ключа с действующей коммерческой лицензией'
+KeyInvalidReason_ekirExpiredAsReserve        = 'Срок действия лицензии меньше, чем срок действия действующей лицензии'
+KeyInvalidReason_ekirLimited                 = 'Превышено количество компьютеров, на которых может быть одновременно установлен ' + $ProductName + ' по вашей лицензии.'
+KeyInvalidReason_ekirReinstallProduct		 = 'Требуется переустановка программы'
+KeyInvalidReason_default                     = 'Некорректный файл ключа'
+
+; Protection level
+LicenseProtectionLevel = 'Защита: '
+ProtectionLevelUnknown = 'неизвестно'
+ProtectionLevelNoFeatures = 'отключена'
+ProtectionLevelLimited = 'ограничена'
+ProtectionLevelExpiredState = ProtectionLevelLimited
+ProtectionLevelFull = 'полная'
+
+; Updater level
+LicenseUpdaterLevel = 'Обновление: '
+UpdaterLevelUnknown = 'неизвестно'
+UpdaterLevelNotAllowed = 'недоступно'
+UpdaterLevelUpdateBlacklistOnly = 'только черный список'
+UpdaterLevelAllowed = 'разрешено'
+UpdaterLevelLimited = 'ограничено'
+
+LicenseInstallationDate = 'Дата установки:'
+LicenseInvalidReason = 'Причина некорректности:'
+LicenseTicketSequenceId = 'Идентификатор активации:'
+LicenseTicketId = 'Идентификатор активации (Ticket ID):'
+
+SubscriptionToleranceDays = 'Период толерантности (дней):'
+SubscriptionBufferDays = 'Буферный период (дней):'
+SubscriptionGraceDays = 'Льготный период (дней):'
+SubscriptionExpirationDateType = 'Тип даты подписки:'
+SubscriptionStatus = 'Состояние подписки:'
+ProductActiveLicenseState = 'Состояние лицензирования (актив.):'
+ProductReserveCodeState = 'Состояние лицензирования (резерв.):'
+SubscriptionCurrentTicket = 'Текущий тикет:'
+SubscriptionCurrentKey = 'Текущий ключ:'
+TicketValidFrom = '    Действителен с (UTC):'
+KeyCreationDate = '    Дата создания (UTC):'
+KeyOrTicketValidTo = '    Действителен до (UTC):'
+
+; strings in the following section refer to subscription and its expiration date
+SubscriptionExpirationDateUnknown = 'неизвестна'
+SubscriptionExpirationDateUndefined = 'будет определена позднее'
+SubscriptionExpirationDateUnlimited = 'не задана'
+SubscriptionExpirationDateLimited = $SubscriptionExpirationDateTimeWithSecond
+SubscriptionExpirationDateSuspended = 'приостановлена с ' + $SubscriptionExpirationDate
+
+; strings in the following section refer to a time period
+SubscriptionPeriodOfValidityUnknown = 'неизвестен'
+SubscriptionPeriodOfValidityUndefined = 'будет определен позднее'
+SubscriptionPeriodOfValidityUnlimited = 'не задан'
+SubscriptionPeriodOfValidityLimited = 'до ' + $SubscriptionExpirationDate
+SubscriptionPeriodOfValiditySuspended = 'приостановлен с ' + $SubscriptionExpirationDate
+
+LicenseExpirationDateShort = $LicenseExpirationDate
+LicenseExpirationDateTimeWithSeconds = $LicenseExpirationDateTimeWithSeconds
+
+TicketValidFromDescription = $TicketValidFromDate
+TicketValidToDescription = $TicketValidToDate
+
+LicenseActivationDateDescription = $ActivationDate
+LicenseInstallationDateDescription = $InstallationDate
+
+AdditionalLicenseInformationCaption = 'Информация о лицензии'
+LicenseEulaLinkName = 'Лицензионное соглашение'
+
+; MessageBoxes
+DeleteLicenseMessageBoxCaption = 'Удаление ключа'
+DeleteActiveLicenseQuestion = 'Вы действительно хотите удалить активный ключ?'
+DeleteReserveCodeQuestion = 'Вы действительно хотите удалить резервный код активации?'
+DeletePreinstalledCodeQuestion = 'Вы действительно хотите удалить предустановленный код активации?'
+DeleteActiveLicenseWarning = 'Защита компьютера будет отключена'
+DeleteActiveLicenseAndReserveLicenseWarning = 'Защита компьютера будет отключена. Ранее введенный резервный код активации будет также удален.'
+DeleteLicenseConfirmation = 'Удалить ключ'
+ActivateReserveLicenseNow = 'Активировать с помощью резервного кода активации сейчас'
+
+; BestBuy license info labels:
+BestBuyActivationCode = 'Код активации:'
+BestBuySerialNumber = 'Серийный номер:'

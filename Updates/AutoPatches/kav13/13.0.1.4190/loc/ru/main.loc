@@ -1,0 +1,1058 @@
+﻿;------------- Global ------------
+
+[Locale]
+Value = 1049
+
+[Global]
+$Click_msg 							= "Возможные решения"
+$Protection                         = "Центр защиты"
+$License                            = "Лицензия"
+$LicenseOver                        = "Срок действия лицензии истек"
+$LicenseDescr                       = "Лицензия обеспечивает полнофункциональную работу " + $ProductName_GEN + ", предоставляет право на обновление и техническую поддержку"
+$SelfProtection                     = "Самозащита"
+$GroupTask                          = "(групповая задача)"
+$GroupUnk                           = "Неизвестная группа"
+$Help                               = "Справка"
+$Home                               = "Статус"
+$Events                             = "События"
+$Statistics                         = "Статистика"
+$Start                              = "Запуск"
+$Pause                              = "Пауза"
+$Stop                               = "Стоп"
+$High                               = "Высокий"
+$Medium                             = "Рекомендуемый"
+$Low                                = "Низкий"
+$Custom                             = "Другой"
+$Unrestricted                       = "Без ограничений"
+$Customize                          = "Настройка..."
+$Settings                           = "Настройка..."
+$Settings_2                         = "Настроить"
+$Settings1                          = "&Настройка..."
+$Settings2                          = "Нас&тройка..."
+$Settings3                          = "На&стройка..."
+$SettingsS                              = "Настройка"
+$AllowAll                           = "Разрешить все"
+$BlockAll                           = "Запретить все"
+$Details                            = "Подробно..."
+$Enabled                            = "Включено"
+$Disabled                           = "Выключено"
+$Enable                             = "Включить"
+$Disable                            = "Выключить"
+$Browse                             = "Обзор..."
+$ResetLevel                         = "По умолчанию"
+$Reset                              = "Восстановить"
+$Configure                          = "Настройка..."
+$Cancel                             = "Отмена"
+$Unknown                            = "Неизвестно"
+$LevelSettStd                       = "Стандартные"
+$LevelSettCustom                    = "Другие"
+$NullObj                            = "Неизвестно"
+$AppNameNullObj						= $NullObj
+$AppPIDNullObj                      = "Отсутствует"
+$Application                        = "Программа"
+$Total                              = "Всего"
+$Reports                            = "Отчеты"
+$Close                              = "&Закрыть"
+$Duration                           = "Длительность:"
+$ChartPeriod                        = "Период: "
+$NotSpec                            = "Не задано"
+$RemainsDays = (s_remains(f_numdeclension(LicInfo.DaysTillExpiration)) + " " + LicInfo.DaysTillExpiration + " " + s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration)))
+
+; well used lables
+$Add                                = "До&бавить"
+$Edit                               = "Из&менить"
+$Delete                             = "&Удалить"
+$MoveUp                             = "Ввер&х"
+$MoveDown                           = "Вни&з"
+$Export                             = "&Экспорт"
+$Import                             = "&Импорт"
+$Yes                                = "Да"
+$No                                 = "Нет"
+$ForumDefName                       = "Форум пользователей"
+$ForumDefDescr                      = "Обмен опытом с другими пользователями. Советы экспертов."
+$KnowledgeBaseLinkText              = "База знаний"
+$NewsFromKL                         = "Новости от \"Лаборатории Касперского\""
+$CurObject                          = "Объект"
+
+$ScanInProgressText = ("Проверка " + depend(f_ScanCommonCompletion()))
+$UpdateInProgressText = ("Обновление " + if(f_IsStateActive(Updater.state), (Updater.Completion + "%")))
+
+$CannotAddObjectDescr = "Укажите абсолютный путь на существующем диске или сетевом ресурсе. Допускается использование символов ? и *."
+
+$AcceptEulaButtonText				= "Принять и активировать"
+$ShowKsnGrace						= false
+
+$LearnMore                          = "Подробнее"
+
+; dialog panel buttons
+Ok                                  = ОК
+Yes                                 = Да
+YesToAll			    = Да для всех
+No                                  = Нет
+Cancel                              = Отмена
+Apply                               = Применить
+Next                                = Д&алее >
+Back                                = < &Назад
+Finish                              = &Завершить
+Close                               = &Закрыть
+StopTaskOnClose                     = "Вы действительно хотите остановить задачу?"
+FolderNotEmpty                      = "Выбранная папка не пустая. Все данные будут потеряны.\nВы действительно хотите удалить папку?"
+FolderNotExist                      = "Папки с таким именем не существует.\nВы хотите создать папку с заданным именем?"
+RestartProductWarning               = "Необходимо перезапустить " + $ProductName + ".\nВы хотите сделать это сейчас?"
+RestartComputerWarning              = "Необходимо перезагрузить компьютер.\nВы хотите сделать это сейчас?"
+ErrorSendEmail                      = "Письмо не было отправлено."
+UpdateNoKeysUnavailable             = $ProductName + " не активирован.\nОбновление отключено."
+ProductFunctionErrLicUnavailable    = if(global.EulaVerified,  $ProductName + " не активирован.\nЭта функция недоступна.", "Лицензионное соглашение не принято.\nЭта функция недоступна.")
+UpdateNotAvailable                  = "Обновления контролируются администратором."
+LicenseKeysDiscarted                = "Некоторые ключи несовместимы с программой. <a LicenseKeysDiscartedDetails onclick(dialog(\"LicenseKeysDiscartedDetails\"))>Подробно...</a>."
+LicenseRemoveKeyWarning             = "Вы действительно хотите удалить ключ?"
+ActivateOnExistingCommercKeyWarning = "Внимание! Срок действия лицензии истекает более чем через 2 недели. Если вы продлите срок действия лицензии с помощью кода активации сейчас, текущий остаток срока действия лицензии пропадет.\nРекомендуется продлять срок действия лицензии не ранее чем за 2 недели до ожидаемого истечения срока ее действия."
+DiscardThreatsWarning               = "Вы действительно хотите удалить запись о событии?"
+DiscardObjectWarning                = "Вы действительно хотите удалить объекты из карантина?"
+TimeUnknown                         = "Неизвестно"
+NoRunAsAccount.caption              = "Не указано имя пользователя"
+NoRunAsAccount                      = "Пожалуйста, введите имя пользователя."
+Duplicate.caption                   = "Элемент уже существует"
+Duplicate                           = "Элемент, который вы хотите добавить, уже присутствует в списке."
+ExportAll                           = "Вы хотите экспортировать только выделенные элементы? Для экспорта всего списка нажмите на кнопку \"Нет\"."
+ImportAll                           = "Вы хотите добавить импортируемые элементы к существующим? Для удаления существующих элементов нажмите на кнопку \"Нет\"."
+addrBookNoProfile                   = "Не существует ни одной установленной конфигурации"
+NotFound                            = "Не найдено"
+KAVMailQBSubj                       = "Объект на карантине"
+KAVMailQBBody                       = "Этот файл будет отправлен в \"Лабораторию Касперского\" на исследование."
+WantApplyScanSettings               = "Вы действительно хотите применить эти параметры ко всем задачам проверки на вирусы?"
+Attention                           = "Внимание!"
+DiscardVulnerab                     = "Очистить список найденных уязвимостей?"
+InvalidSymbol						= "Недопустимый символ"
+InputError							= "Ошибка ввода"
+OnlyNumbersAllowed					= "В это поле можно вводить только цифры"
+OutOfRange							= "Выход за пределы допустимых значений. Введите значение от %d до %d."
+ActivateCodeInputError				= "Код активации введен неверно. Пожалуйста, внимательно проверьте правильность ввода кода активации."
+ReinstallProductWarning             = $ProductName + " был установлен для другой версии операционной системы. Пожалуйста, удалите " + $ProductName + " из системы и установите заново."
+DeleteProductWarning                = "Лицензионное соглашение не было принято. Удалить " + $ProductName + " из системы?"
+ProductExitConfirm                  = "Вы действительно хотите выйти из " + $ProductName_GEN + "?"
+UninstallAVPToolWarning             = "Программа будет закрыта и удалена с компьютера. \nУдалить программу?"
+BrowseObjectNetPathUnavailableWarning = "Выбранный сетевой путь недоступен. Вы действительно хотите его использовать?"
+RegRoot								= Компьютер
+OLATimestampErrorMsg                = "Локальное время на вашем компьютере отличается от времени на сервере активации. Для продолжения активации измените локальное время.\nВремя сервера: " + datetime(ServerTime) + ". Локальное время: " + datetime(UserTime) + "."
+
+; Week Plan control
+WeekPlanMonday                      = Пн
+WeekPlanTuesday                     = Вт
+WeekPlanWednesday                   = Ср
+WeekPlanThuesday                    = Чт
+WeekPlanFriday                      = Пт
+WeekPlanSaturday                    = Сб
+WeekPlanSunday                      = Вс
+
+WeekPlanCheck                       = Разрешить использование
+WeekPlanDeny                        = Запретить использование
+WeekPlanAllow                       = Разрешать
+
+g_eulaAccepted						= false
+
+;------------- FileSize types --------------
+
+[FileSizeTypes]
+B   = "байт"
+KB  = "KБ"
+MB  = "MБ"
+GB  = "ГБ"
+
+[f_SizeType]
+ret = (@ <= 1024)? "байт" : ( (@<=1024*1024)? "КБ" : ( (@<=1024*1024*1024)? "МБ" : "ГБ" ) )
+
+;------------- Browse Dialogs ------------
+
+[BrowseForObject]
+@ = "Выбор объекта"
+
+[BrowseForObject_Body]
+PathLabel   = "Объект:"
+Recursive   = "Включая вложенные папки"
+
+[BrowseForFolder]
+@           = "Выбор папки"
+@.PathLabel = "Папка:"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForFile]
+@           = "Выбор файла или папки"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForFile_Body]
+NameLabel   = "Название ресурса:"
+PathLabel   = "Объект:"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForScanObject]
+@           				= "Выбор объекта для проверки"
+
+[BrowseForScanObject_Body]
+PathLabel   				= "Объект:"
+Recursive   				= "Включая вложенные папки"
+CannotAddObject.caption		= "Невозможно добавить объект для проверки"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForUpdateSource]
+@           = "Выбор источника обновлений"
+
+[BrowseForUpdateSource_Body]
+PathLabel   = "&Источник:"
+
+[BrowseForRegistry]
+@           = "Выбор объекта в реестре"
+
+[BrowseForRegistry_Body]
+NameLabel   = "Название ресурса:"
+PathLabel   = "Ключ:"
+ValueLabel  = "Значение:"
+
+[BrowseForAppMenu]
+AppList = $IsKAV ? "Программы" : "Программы..."
+Browse  = $Browse
+
+;------------- numdeclension ------
+
+[f_numdeclension]
+ret = if((@%100) >= 11 && (@%100) < 20, 0, switch(@%10, "numdeclension_10"))
+
+[numdeclension_10]
+1       = 1
+2       =
+3       =
+4       = 2
+default = 0
+
+;------------- Days ---------------
+
+[s_days]
+1   = "день"
+2   = "дня"
+3   = "дня"
+4   = "дня"
+def = "дней"
+
+[s_daysRemaining]
+1 = s_days(@)
+def = s_days(@)
+
+[s_daysPast]
+1 = s_days(@)
+def = s_days(@)
+
+[s_remains]
+1       = "остался"
+default = "осталось"
+
+;------------- Hours ---------------
+
+[s_hours]
+1   = "час"
+2   = "часа"
+3   = "часа"
+4   = "часа"
+def = "часов"
+
+;------------- Minutes ---------------
+
+[s_minutes]
+-1  = "меньше минуты"
+1   = "минуту"
+2   = "минуты"
+3   = "минуты"
+4   = "минуты"
+def = "минут"
+
+
+;------------- Grid Groups --------
+
+[s_date]
+0       = "Сегодня"
+-1      = "Вчера"
+-2      = "Воскресенье"
+-3      = "Суббота"
+-4      = "Пятница"
+-5      = "Четверг"
+-6      = "Среда"
+-7      = "Вторник"
+-8      = "Понедельник"
+-10     = "На этой неделе"
+-11     = "На прошлой неделе"
+-12     = "Две недели назад"
+-13     = "Три недели назад"
+-99     = "В этом месяце"
+-100    = "В прошлом месяце"
+-1000   = "В этом году"
+default = ""
+
+[Grid.Groups]
+$items          = " (" + count + ")"
+$AppRating      = if(val, ",  рейтинг: " + c_AppRating(val, appRating(val)))
+date            = "Дата: " + s_date(val) + $items
+dateonly        = "Дата: " + s_date(val)
+size            = "Размер: " + val + $items
+Action          = "Действие: " + (val ? s_Action(val) : $NullObj) + $items
+Verdict         = "Результат: " + (val ? s_Verdict(val) : $NullObj) + $items
+ObjectType      = "Объект: " + (val ? s_ObjectType(val) : $NullObj) + $items
+DetectType      = "Тип: " + (val ? s_RepDetectType(val) : $NullObj) + $items
+DetectName      = "Имя: " + (val ? val : $NullObj) + $items
+PIDGroup        = "Процесс: " + s_PIDGroup(val) + $items
+DetectDanger    = "Опасность: " + (val ? s_DetectDanger(val) : $NullObj) + $items
+Exact           = "Вероятность: " + (val ? s_Exact(val) : $NullObj) + $items
+dettype         = "Тип: " + (val ? s_DetectType(val) : $NullObj) + $items
+detobjtype      = "Объект: " + s_DetectObjectTypes(val) + $items
+threatstatus    = s_ThreatStatus(val) + $items
+
+[f_scanEventsGroup]
+ret = "   (событий: " + count + ", объектов: " + @.statistics.NumScaned + ", время: " + timestamp(f_workTime(@)) + ")"
+
+[f_workTime]
+ret = @.statistics.FinishTime == 0xFFFFFFFF ? 0xFFFFFFFF : ((@.state & #StateFlagOperational ? utctime() : @.statistics.FinishTime) - @.statistics.StartTime)
+
+[f_PIDGroupAppText]
+$name = objfile(f_AppImagePath(@.Module))
+ret = ($name ? $name : $UnknownApp) + "  PID(" + @.NativePid + ")"
+
+[StyledCaptionWindowT_Caption]
+Close.tt    = "Закрыть"
+Minimize.tt = "Свернуть"
+
+[StyledCaptionWindowT_Caption.Icon.menu]
+Close    = "&Закрыть\tAlt+F4"
+Minimize = "Свернуть"
+
+[Grid.Find]
+@       = "Поиск"
+
+[Grid.FindBody.Btns]
+Mark    = "Отметить все"
+Find    = "Искать дальше"
+
+[Grid.Export]
+@ = "Сохранение"
+
+[Grid.Filter]
+@       = "Сложный фильтр"
+
+[Grid.Filter_Body]
+Label   = "Условие:"
+And     = "И"
+Or      = "ИЛИ"
+
+[Grid.Filter.Condition]
+None                = ""
+Equals              = "равно"
+DoNotEqual          = "не равно"
+GreaterThan         = "больше"
+GreaterThanOrEqual  = "больше или равно"
+LessThan            = "меньше"
+LessThanOeEqual     = "меньше или равно"
+Blanks              = "пусто"
+NonBlanks           = "не пусто"
+Like                = "похоже"
+NotLike             = "не похоже"
+
+[Grid.FindBody]
+ColumnLbl   = "Графа:"
+FindLbl     = "Строка:"
+MatchCase   = "С учетом регистра"
+WholeWord   = "Только слова целиком"
+
+[Grid.ColumnCmb]
+All = "(Все)"
+
+[Grid.HdrPopup]
+SortDown    = "Сортировать по убыванию"
+SortUp      = "Сортировать по возрастанию"
+Find        = "Поиск..."
+Group       = "Группировка"
+Filter      = "Фильтр..."
+Remove      = "Удалить"
+
+[Grid.FltPopup]
+Custom  = "(Сложный)"
+All     = "(Все)"
+
+[Grid.Footer.Template]
+Add = "Добавить"
+
+[Grid.Footer2.Template]
+Add         = "Добавить"
+Edit        = "Изменить"
+Delete      = "Удалить"
+MoveUp      = "Вверх"
+MoveDown    = "Вниз"
+Import      = "Импорт"
+Export      = "Экспорт"
+
+[Grid.Toolbar.Template]
+Add         = "Добавить"
+Edit        = "Изменить"
+Allow       = "Разрешить"
+Deny        = "Запретить"
+Ask         = "Спрашивать"
+Delete      = "Удалить"
+MoveUp      = "Вверх"
+MoveDown    = "Вниз"
+Import      = "Импорт"
+Export      = "Экспорт"
+
+;------------- Profile Enums ------------
+
+[f_GetTimeIntervalRemaining]
+ret = if(@ > 86400, @/86400 + " " + s_daysRemaining(f_numdeclension(@/86400)), if(@ > 3600, @/3600 + " " + s_hours(f_numdeclension(@/3600)), if(@ > 60, @/60 + " " + s_minutes(f_numdeclension(@/60)), s_minutes(-1))))
+
+[f_GetTimeIntervalPast]
+ret = if(@ > 86400, @/86400 + " " + s_daysPast(f_numdeclension(@/86400)), if(@ > 3600, @/3600 + " " + s_hours(f_numdeclension(@/3600)), if(@ > 60, @/60 + " " + s_minutes(f_numdeclension(@/60)), s_minutes(-1))))
+
+[f_GetTimeInterval]
+ret = if(@ > 60, "через ", if(@ > 0, "осталось ")) + if(@ >= 0, f_GetTimeIntervalRemaining(@), f_GetTimeIntervalPast(-@)) + if(@ <= 0, " назад")
+
+[f_GetTimeIntervalByState]
+ret = if(f_IsStateActive(@1), if(@ > 60 || @ < -60, "через ", "осталось ")) + if(@ >= 0, f_GetTimeIntervalRemaining(@), f_GetTimeIntervalPast(-@)) + if(!f_IsStateActive(@1), " назад")
+
+[s_ProfileState]
+#StateRunning       = "выполняется"
+#StatePaused        = "приостановлено"
+#StateStopped       = "остановлено " + if(!@2, s_ProfileStateRes(@, @1))
+#StateCompleted     = "завершено " + if(!@2, s_ProfileStateRes(@, @1))
+#StateStarting      = "запускается"
+#StatePausing       = "приостанавливается"
+#StateResuming      = "возобновляется"
+#StateStopping      = "останавливается"
+#StateFailed
+#StateMalfunction   = "сбой "
+#StateDisabled      = $Disabled
+#StateNotStarted    = "не запускалось"
+default             = "не определено: " + state
+
+[s_ProfileStateRes]
+#StateFailed
+#StateStopped       = !statistics.FinishTime || statistics.FinishTime == 0xFFFFFFFF ? "неизвестно" : f_GetTimeIntervalByState(statistics.FinishTime - utctime(), @)
+#StateCompleted     = f_GetTimeIntervalByState(lastCompleted - utctime(), @) + if(@1, s_ProfileStateComplDescr(type, statistics))
+
+[s_ProfileDescription]
+Protection  = "Защита данных на компьютере от вредоносных программ, интернет-мошенничества и несанкционированного доступа"
+av          = "Проверка файлов, почтовых сообщений, веб-страниц и загружаемых файлов в момент обращения к ним"
+cf          = "Фильтрация нежелательной почтовой корреспонденции,\nанализ содержимого открываемых веб-сайтов"
+os          = "Защита данных на компьютере пользователя от сетевых атак и интернет-мошенничества"
+sw          = "Контроль поведения всех запускаемых на компьютере программ с использованием проактивных технологий"
+ods         = "Проверка компьютера, его отдельных папок и файлов на присутствие вредоносных объектов"
+updater     = "Регулярное обновление баз и программных модулей " + $ProductName_GEN + " является залогом эффективной защиты"
+avz         = "Для ручного лечения компьютера выполните следующие действия"
+
+[s_ProfileStateComplDescr]
+updater = ", размер обновлений: " + f_ObjSize(@1.DownloadedBytesCount) + ", средняя скорость: " + f_ObjSize(@1.Speed*1024) + "/сек"
+
+;------------- Tray ------------
+
+[Tray]
+$FullProdName = $ProductName + " " + env("ProductVersion")
+$IsEulaNowVerifing = !EulaVerified && g_eulaAccepted
+$ProdStateText = if($IsEulaNowVerifing, $FullProdName, $FullProdName + s_ProdyctTrayStatus(ProdStateId))
+@ = if(TaskManagerState, TaskManagerState == 1 ? $ProdStateText : "Сервисная часть программы была выгружена из памяти компьютера.")
+
+[s_ProdyctTrayStatus]
+$NotTaskRunStatus = (s_ProdStateSeverity(@) != #eProtStateCrit && $IsNeedReboot ? "\nТребуется перезагрузка" : (s_ProdStateSeverity(@) == #eProtStateCrit ? ("\n" + s_ProdState(@)) : if(bindok("AVService.BasesDate"), "\nДата выпуска баз: " + datetime(AVService.BasesDate))))
+def = if($IsUpdateActive, "\n" + $UpdateInProgressText, if($IsScanActive, "\n" + $ScanInProgressText, $NotTaskRunStatus))
+
+[Tray.menu]
+LaunchQMLTaskManager	  = "Менеджер задач"
+Updater                   = "Обновление" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_My_Computer          = "Полная проверка" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_Startup              = "Проверка важных областей" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_Qscan                = $Scan_Qscan + if(f_IsStateActive(state), " " + Completion + "%")
+News      	              = "Новости" + (UnreadNewsCount ? " (" + UnreadNewsCount + ")" : "")
+;RunningTask               = $ProfileName + if(f_IsStateActive(state), " " + Completion + "%")
+Tools                     = "Инструменты"
+VirtualKeyboard           = "Виртуальная клавиатура"
+EnableParCtl              = $ParCtl_IsCurUserEnabled ? "Выключить Родительский контроль" : "Включить Родительский контроль"
+kis                       = $ProductName
+DisableProtect            = (s_IsStateRunning(Protection.state) ? "Приостановить защиту..." : "Возобновить защиту") + if(s_IsStateTransitional(Protection.state), " (" + s_ProfileState(Protection.state) + ")")
+Settings                  = "Настройка"
+About                     = "О программе"
+RestartOS				  = $LinkRestartComputer
+Unload                    = "Выход"
+
+[Tray.menu_Tools]
+NetMonitor                = "Мониторинг сети"
+VirtualKeyboard           = "Виртуальная клавиатура"
+
+[TrayNewsMenu.menu]
+KAV     = $ProductName
+News    = "Новости..."
+Hide    = "Скрыть"
+
+;------------- Main Window ------------
+
+[MainWindow.Antivirus]
+Header = "Уровень безопасности"
+
+[RunAsGroup]
+@               = "Пользователь"
+Enable          = "&Запускать задачу с правами пользователя"
+Account.Name    = "&Имя:"
+Pswd.Name       = "Пaрол&ь:"
+
+[s_ToastCategoryText]
+#ToastCategoryIgnore     = ""
+#ToastCategoryProtection = "Компоненты защиты"
+#ToastCategoryThreats    = "Угрозы"
+#ToastCategoryWeb        = "Интернет"
+#ToastCategoryBases      = "Базы"
+#ToastCategoryLicence    = "Лицензия"
+#ToastCategoryMessage    = "Важное сообщение"
+
+[s_ToastDescriptionText]
+#eNotifyNone                = switch(Severity,"EventTypesSeverity")
+#eNotifyThreats             = switch(Severity,"EventTypesThreats")
+#eNotifySuspicious          = "Модификации вредоносного ПО"
+#eNotifyLicensing           = if($IsVerdictProductStatusId, s_ToastLicenseDescription($Verdict2ProductStatusId),switch(Severity,"EventTypesLicence"))
+#eNotifyProduct             = if($IsVerdictProductStatusId, s_ToastDescriptionProductState($Verdict2ProductStatusId), if(Severity == 4, switch(Severity,"EventTypesProduct")))
+#eNotifyUpdater             = switch(Severity,"EventTypesUpdater")
+#eNotifyBases               = switch(Severity,"EventTypesBases")
+#eNotifyProtocoller         = "Проверено зашифрованное соединение"
+#eNotifySSL                 = "Проверка зашифрованных соединений"
+#eNotifySelfProtection      = "Самозащита программы отключена. Включить..."
+#eNotifyPswdArchive         = "Обнаружен защищенный паролем архив"
+#eNotifyThreatNotCured      = "Лечение невозможно"
+#eNotifyThreatDeleted       = "Зараженный объект удален"
+#eNotifyThreatQuarantined   = "Объект помещен на карантин"
+#eNotifyRuleTriggered       = "Сработало правило Контроля программ"
+#eNotifyAttackBlocked       = "Обнаружена сетевая атака"
+#eNotifyBan                 = "Атакующий компьютер заблокирован"
+#eNotifyThreatsUntreated    = "Есть необработанные объекты"
+#eNotifyUpdateNeedReboot    = "Требуется перезагрузка после обновления. Перезагрузить..."
+#eNotifyParCtl              = $ParCtl
+#eNotifyAppGroupChanged     = "Программа помещена в группу с ограничениями"
+#eNotifyAppGroupChanged2Trusted = "Программа помещена в группу доверенных программ"
+#eNotifyStatisticsReportReady = "Уведомление о готовности отчета"
+#eNotifyHiddenObject        = "Обнаружен скрытый объект"
+#eNotifyBlockedBySelfProtection = "Действие заблокировано самозащитой"
+#eNotifyProductNotAutoRun     = "Автозапуск программы отключен"
+#eNotifyUpdateNotAuto         = "Автоматическое обновление отключено"
+#eNotifyNewsUnread	          = "Есть непрочитанные новости. Подробнее..."
+#eNotifySomeBasesNeedUpdate   = "Требуется обновление для некоторых компонентов защиты"
+#eNotifyNoProtection          = s_ToastDescriptionProductState($Verdict2ProductStatusId)
+#eNotifyMalwareThreatsUntreated = "Есть необработанное вредоносное ПО"
+#eNotifyEulaNotAccepted     = "Требуется принять лицензионное соглашение"
+#eNotifyIpm                 = switch(Severity, "EventTypesNotification")
+
+[EventTypes]
+#eNotifyNone                = switch(Severity,"EventTypesSeverity")
+#eNotifyThreats             = switch(Severity,"EventTypesThreats")
+#eNotifySuspicious          = "Модификации вредоносного ПО"
+#eNotifyLicensing           = switch(Severity,"EventTypesLicence")
+#eNotifyProduct             = switch(Severity,"EventTypesProduct")
+#eNotifyUpdater             = switch(Severity,"EventTypesUpdater")
+#eNotifyBases               = switch(Severity,"EventTypesBases")
+#eNotifyProtocoller         = "Проверено зашифрованное соединение"
+#eNotifySSL                 = "Проверка зашифрованных соединений"
+#eNotifySelfProtection      = "Самозащита программы отключена"
+#eNotifyPswdArchive         = "Обнаружен защищенный паролем архив"
+#eNotifyThreatNotCured      = "Лечение невозможно"
+#eNotifyThreatDeleted       = "Зараженный объект удален"
+#eNotifyThreatQuarantined   = "Объект помещен на карантин"
+#eNotifyRuleTriggered       = "Сработало правило Контроля программ"
+#eNotifyAttackBlocked       = "Обнаружена сетевая атака"
+#eNotifyBan                 = "Атакующий компьютер заблокирован"
+#eNotifyThreatsUntreated    = "Есть необработанные объекты"
+#eNotifyUpdateNeedReboot    = "Требуется перезагрузка"
+#eNotifyParCtl              = $ParCtl
+#eNotifyAppGroupChanged     = "Программа помещена в группу с ограничениями"
+#eNotifyAppGroupChanged2Trusted = "Программа помещена в группу доверенных программ"
+#eNotifyStatisticsReportReady = "Уведомление о готовности отчета"
+#eNotifyHiddenObject        = "Обнаружен скрытый объект"
+#eNotifyBlockedBySelfProtection = "Действие заблокировано самозащитой"
+#eNotifyProductNotAutoRun     = "Автозапуск программы отключен"
+#eNotifyUpdateNotAuto         = "Автоматическое обновление отключено"
+#eNotifyNewsUnread	          = "Есть непрочитанные новости"
+#eNotifySomeBasesNeedUpdate   = "Требуется обновление для некоторых компонентов защиты"
+#eNotifyNoProtection          = "Критические компоненты защиты отключены"
+#eNotifyMalwareThreatsUntreated = "Есть необработанное вредоносное ПО"
+#eNotifyIpm                   = switch(Severity,"EventTypesIpm")
+
+def = @
+
+[EventTypesIpm]
+1   = "Критическое уведомление о лицензии"
+2   = "Очень важное уведомление о лицензии"
+3   = "Важное уведомление о лицензии"
+4   = "Другое уведомление о лицензии"
+
+[EventTypesSeverity]
+0   = "Все события"
+1   = "Критические события"
+2   = "Нарушения в работе программы"
+3   = "Важные события"
+4   = "Другие события"
+
+[EventTypesThreats]
+1   = "Обнаружение вредоносного ПО"
+3   = "Обнаружение рекламных и других программ"
+4   = "Лечение зараженных объектов"
+
+[EventTypesLicence]
+1   = "Срок действия лицензии истек"
+2   = "Лицензия отсутствует или недействительна"
+3   = "Срок действия лицензии скоро истекает"
+4	= "Есть важное уведомление о лицензии"
+
+[EventTypesProduct]
+2   = "Задача не может быть выполнена"
+3   = "Другие важные уведомления"
+4   = "Компоненты защиты отключены"
+
+[s_ToastLicenseDescription]
+#ProdStateKeyTrial                      = ""
+#ProdStateKeyReservedActivationProblem  = "Не удалось применить резервный код активации"
+#ProdStatePreinstalledCodeWaitActivationCritical = "Не удалось автоматически активировать программу"
+#ProdStatePreinstalledCodeActivationProblem      = "Предустановленный код активации не был применен"
+default                                 = s_ProtState(@)
+
+[s_ToastDescriptionProductState]
+#ProdStateProtectionNotRunning      = "Защита не работает. Возобновить..."
+#ProdStateProtectionDisabled        = "Защита отключена. Возобновить..."
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled             = "Некоторые компоненты защиты отключены. Включить..."
+#ProdStateTasksMalfunction          = "Не удалось включить некоторые компоненты защиты. Включить..."
+default                             = ""
+
+[EventTypesUpdater]
+2   = "Ошибка обновления"
+4   = "Обновление завершено"
+
+[EventTypesBases]
+1   = "Базы сильно устарели"
+2   = "Базы повреждены или отсутствуют"
+3   = "Базы устарели"
+4	= "Требуется обновление для некоторых компонентов защиты"
+
+[EventTypesNotification]
+1   = "Есть важное уведомление"
+3   = "Есть важное уведомление"
+4   = "Есть уведомление"
+
+[s_SystemError]
+0x80000040
+0x8000004B              = "Неопределенная ошибка"
+0x80000041              = "Недостаточно памяти"
+0x80000042              = "Поддержка отсутствует"
+0x80000043              = "Функция не реализована"
+0x80000045              = "Доступ запрещен или объект не найден"
+0x8000004C
+0x800000C6
+#errOBJECT_NOT_FOUND    = "Объект не найден"
+0x8000004F              = "Объект заблокирован"
+0x80000051              = "Операция отменена"
+0x80000059              = "Ошибка устройства"
+0x8000005A              = "Неправильная подпись"
+0x8000005B              = "Неправильная версия"
+0x8000005F              = "Объект защищен от записи"
+0x80000061              = "Лицензия отсутствует"
+0x80000062              = "Недостаточно места"
+0x80000063              = "Устройство не готово"
+0x800000C0              = "Неверный формат"
+0x800000C1              = "Недостаточно прав"
+0x800000C2
+0x800000C3              = "Ошибка инициализации"
+0x800000C7              = "Неправильное состояние объекта"
+0x800000C8              = "Объект защищен паролем"
+0x800000CA
+0x800000CC              = "Ошибка чтения"
+0x800000CB
+0x800000CD              = "Ошибка записи"
+0x800000D0              = "Объект недействителен"
+0x800000D1              = "Объект уже существует"
+0x800000D5              = "Объект используется другой программой"
+0x800000D8              = "Базы повреждены"
+0x800001C0              = "Неверный модуль"
+0x800001C2              = "Модуль не прошел проверку подлинности"
+0x800001C1              = "Модуль не найден"
+0x800001C4              = "Модуль не может быть загружен"
+0x80000221              = "Время ожидания истекло"
+#errPROXY_STATE_INVALID = "Ошибка взаимодействия компонентов"
+0x90005000              = "Цифровая подпись недействительна"
+0x90005002              = "Отсутствует цифровая подпись"
+0x80027006
+0x80027007
+0x80380fbb              = "Выполнение задачи прервано"
+0x80017007              = "Задача не может быть запущена в безопасном режиме"
+0x80017005              = "Задача отключена"
+0x80017006              = "Неправильное имя пользователя или пароль"
+0x80017008              = "Запуск задачи от имени другой учетной записи в безопасном режиме невозможен"
+0x80017009              = "Драйвер не найден"
+0x80022005              = "Ошибка загрузки баз"
+default                 = "Код ошибки: " + fmt("08X", @)
+
+[s_ComputersForm]
+1       = "компьютера"
+default = "компьютеров"
+
+[SupportWindow]
+@               = "Поддержка"
+@.Footer.Link1  = "Лицензионное соглашение"
+@.Footer.Link2  = "Трассировки"
+
+[SupportWindow_Header]
+Caption = "Поддержка"
+Desc    = "В этом окне вы можете получить дополнительную информацию о системе, воспользоваться сервисом Интерактивной поддержки, перейти в Базу знаний или на Форум пользователей. Для использования этих ресурсов необходимо подключение к сети Интернет."
+
+[SupportWindow_New_Body]
+
+[SupportWindow_New_Body_SysInfo]
+Desc = "Поддержка " + $ProductName_GEN
+ProdVer.Name    = "Версия программы:"
+Signatures.Name = "Дата выпуска баз:"
+OSVer.Name      = "Операционная система:"
+NoKeys.Name     = "Лицензия: "
+NoKeys.Val      = "Программа не активирована"
+ActiveLic.Name   = "Ключ: "
+SubscrLic.Name   = "Подписка: "
+
+[SupportWindow_New_OneClickSprt]
+Arrow.Name         = "Интерактивная поддержка (рекомендуется)"
+Arrow.Descr        = "Регулярно обновляемая база часто задаваемых вопросов и ответов. Для использования сервиса необходимо подключение к сети Интернет."
+Forum.Descr        = "Обмен опытом с другими пользователями. Советы экспертов."
+KnowlegeBase.Name  = "База знаний"
+KnowlegeBase.Descr = "Рекомендации по работе с " + $ProductName_INS + ", ответы на часто задаваемые вопросы."
+
+[SupportWindow.Traces]
+@       = "Трассировки"
+
+[SupportWindow.Traces_Body]
+Intro   = "Внимание! Используйте это окно только под руководством специалиста Службы технической поддержки \"Лаборатории Касперского\"."
+Trace   = "Трассировка"
+Action  = "Действия"
+
+[SupportWindow.Traces_Trace]
+Label       = "По умолчанию используйте уровень трассировки \"Обычный\" (500)."
+StateLabel  = "Статус:"
+State       = tracer_state() ? "Трассировка включена" : "Трассировка выключена"
+LevelLabel  = "Уровень:"
+OnOff       = tracer_state() ? "&Выключить" : "&Включить"
+
+[SupportWindow.Traces_Trace_Level]
+lvl100  = "Критический (100)"
+lvl200  = "Высокий (200)"
+lvl300  = "Диагностический (300)"
+lvl400  = "Важный (400)"
+lvl500  = "Обычный (500)"
+lvl600  = "Низкий (600)"
+
+[SupportWindow.Traces_Action]
+AvzReport.Name  = "Создать отчет о состоянии системы"
+AvzReport.Descr = "Создание AVZ-отчета о состоянии системы"
+AvzScript.Name  = "Выполнить скрипт AVZ"
+AvzScript.Descr = "Запуск скрипта AVZ"
+Send.Name       = "Загрузить информацию для Службы технической поддержки на сервер"
+Send.Descr      = "Загрузка файлов дампов памяти и трассировок на серверы \"Лаборатории Касперского\""
+GotoFolder      = "&Просмотр..."
+
+[MainWindow]
+@ = $RemoteComputer + $ProductNameLong + if(!IsRelease, " Technical Preview")
+
+[MainWindow_Header]
+Settings        = "Настройка"
+Reports         = "Отчеты"
+Quarantine      = "Карантин"
+News      	= "Новости" + (UnreadNewsCount ? " (" + UnreadNewsCount + ")" : "")
+AlphaWarning    = "!!! НЕ ДЛЯ ПРОДАЖИ !!!"
+
+[MainWindow_Navigator_info_area]
+Fix = "Исправить!"
+
+[MainWindow_Footer_SubscrLic_Desc]
+#ssExpDateUnknown      = "статус неопределен"
+#ssUnlimitedActivated  = "активирована"
+#ssUnlimitedProlonged  = "активирована"
+#ssExpired             = "истекла"
+#ssNotYetSuspended     = "приостановлена c " + date(LicInfo.LicenseExpirationDate)
+#ssSuspended           = "приостановлена, " + ((LicInfo.KeyInfo.KeyType==#ektSubscriptionProtection)? "защита отключена" : "обновление отключено")
+#ssUnlimitedResumed    = "возобновлена"
+#ssHasExpDateActivated
+#ssHasExpDateProlonged
+#ssHasExpDateCanceled  = $RemainsDays
+#ssGracePeriod         = "льготный период, " + s_remains(f_numdeclension(LicInfo.SubscriptionCheckInfo.ToleranceDays)) + " " + f_n_days_remaining(LicInfo.SubscriptionInfo.ToleranceDays)
+
+
+[s_ProdStateKeyInvalid_Main]
+#ekirCorrupted              = "недействительный ключ"
+#ekirBlackListed            = "ключ заблокирован"
+#ekirInconsistentUpdate     = "базы повреждены"
+#ekirKeyCreationDateInvalid = "некорректная дата создания ключа"
+#ekirInvalidBlacklist       = "поврежден черный список ключей"
+#ekirKeyInstallDateInvalid  = "некорректная дата активации программы"
+#ekirLicenseCountLimitExceeded = "нарушены условия лицензионного соглашения"
+default                     = "ошибка!"
+
+[MainWindow_Footer]
+Unload      = "Выход"
+Events      = "Отчет"
+Detected    = "Обнаружено"
+Upgrade     = "Обновить до " + switch("kis", "ProductTitleLong")
+LicDescAt   = ":"
+LicenseSubscr = (ActiveLicenseAutoActivationError.ErrorCode == 0 && !SubscriptionTolerancePassed)? "Поставщик подписки" : "Обновить подписку"
+
+[MainWindow_Footer_Right]
+$LicSubscriptionDesc = (!global.KeyState || (global.KeyState & (#eKeyGracePeriod|#eKeySuspended))) ? switch(SubscriptionStatus,"MainWindow_Footer_SubscrLic_Desc") : ((global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) ? "истекла" : s_ProdStateKeyInvalid_Main(LicInfo.InvalidReason))
+$LicNonSubscriptionDesc = global.KeyState & #eNoKeys ? "не установлена" : ($IsWaitingPreinstalledCodeActivation ? "ожидается активация" : (LicInfo.InvalidReason == #ekirValid ? $RemainsDays : (global.KeyState & (#eKeyExpired|#eKeyTrialExpired) ? "истекла" : s_ProdStateKeyInvalid_Main(LicInfo.InvalidReason))))
+LicDesc     = ($IsSubscription)? "Подписка: " + ($LicSubscriptionDesc) : "Лицензия: " + ($LicNonSubscriptionDesc)
+BackToKAV   = "Антивирус"
+License     = global.LicenseRenewAvailable ? "Продлить срок действия лицензии" : "Приобрести лицензию"
+
+[MainWindow_Footer_Left]
+Cabinet     = "Личный кабинет"
+Support     = "Поддержка"
+FullProtection  = "Полная антивирусная защита"
+
+[ProfileHome_Progress]
+LastStart.Name  = "Последний запуск:"
+LastError.Name  = "Последний запуск:"
+Completion.Name = "Статус:"
+
+[ProfileHome_Progress_Compl]
+Details         = "Подробно"
+
+[Product_Notification_OptionsMenu]
+NotifyDisable       = "Отключить это уведомление"
+NotifyDisableAll    = "Отключить все уведомления"
+
+;------------- ProductInfo --------------
+
+[ProductInfo]
+@ = "О программе"
+Close = "Закрыть"
+
+[ProductInfo_Body_About]
+Copyright   = $CopyrightText
+Warning     = "Внимание! Исключительные права на программу принадлежат ЗАО \"Лаборатория Касперского\"."
+Warning2    = "Зарегистрированные товарные знаки и знаки обслуживания являются собственностью их правообладателей."
+
+;------------- Help -----------------------
+
+[f_n_days_ex]
+ret = @? "через " + f_n_days_past(@) : "сегодня"
+
+[s_DefaultTextForValidReason]
+#ektBeta        = "Срок действия бета-версии программы заканчивается "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nПредлагаем вам <a onclick(buy())>купить полную версию</a>."
+#ektTrial       = "Срок действия пробной версии программы заканчивается "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nПредлагаем вам <a onclick(buy())>купить полную версию</a>."
+#ektTest        = "Срок действия тестовой версии программы заканчивается "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nПредлагаем вам <a onclick(buy())>купить полную версию</a>."
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= "Срок действия лицензии на использование "+$ProductName_GEN+" истекает "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nЧтобы продлить срок действия лицензии, воспользуйтесь <a onclick(buy())>этой ссылкой</a>. \nЕсли вы уже продлили срок действия лицензии, пожалуйста, <a onclick(f_Activate())>активируйте программу</a> сейчас."
+default         = $ProductNotificationText
+
+[s_DefaultExpirationText]
+#ektBeta        = "Внимание! Срок действия бета-версии истек. Работа программы на вашем компьютере заблокирована. \n\nЧтобы  возобновить работу, предлагаем вам <a onclick(buy())>купить полную версию</a>."
+#ektTrial       = "Внимание! Срок действия пробной версии истек. Работа программы на вашем компьютере заблокирована. \n\nЧтобы  возобновить работу, предлагаем вам <a onclick(buy())>купить полную версию</a>."
+#ektTest        = "Внимание! Срок действия тестовой версии истек. Работа программы на вашем компьютере заблокирована. \n\nЧтобы  возобновить работу, предлагаем вам <a onclick(buy())>купить полную версию</a>."
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= "Срок действия лицензии на использование "+$ProductName_GEN+" истек. \n\nЧтобы продлить срок действия лицензии, воспользуйтесь <a onclick(buy())>этой ссылкой</a>. \nЕсли вы уже продлили срок действия лицензии, пожалуйста, <a onclick(f_Activate())>примените код активации</a> сейчас."
+default         = $ProductNotificationText
+
+[s_ProfileStateEnableText]
+#StatePaused
+#StateStopped
+#StateCompleted
+#StateNotStarted
+#StateStarting
+#StateResuming
+#StateDisabled      = "Включить"
+#StateRunning
+#StateFailed
+#StatePausing
+#StateStopping
+#StateMalfunction   = "Выключить"
+
+[s_OnOff]
+1		= "Вкл."
+default	= "Выкл."
+
+[MainWindow_Navigator_Btns]
+Protection.Desc      = "Комплексная защита вашего компьютера"
+AppCtrl.Text         = "Безопасная среда"
+AppCtrl.Text2        = ""
+AppCtrl.Desc         = "Безопасная среда \nи безопасный браузер"
+Scan.Desc            = "Проверка компьютера и файлов на вирусы"
+Updater.Text         = ("Обновление " + if(f_IsStateActive(Updater.state), (Updater.Completion + "%")))
+Updater.Desc         = "Обновление баз и программных модулей"
+AddSvc.Text          = "Инструменты"
+AddSvc.Desc          = "Инструменты для дополнительной защиты"
+Upgrade.Text         = "Расширение защиты"
+Upgrade.Desc         = "Расширение функциональности программы"
+
+[MainWindow_Body.Upgrade]
+Header               = "Расширение защиты с Kaspersky Internet Security 2013"
+Descr	             = "Kaspersky Internet Security 2013 содержит усовершенствованный набор функций для лучшего контроля, защиты работы в интернете и безопасности персональной информации."
+
+[Upgrade_Dock1]
+Hips.Name         = "Контроль программ"
+ParCtl.Name       = "Родительский контроль"
+
+[Upgrade_Dock2]
+IDS.Name          = "Защита от сетевых атак"
+Firewall.Name     = "Сетевой экран"
+
+[Upgrade_Dock3]
+AntiBanner.Name   = "Анти-Баннер"
+AntiSpam.Name     = "Анти-Спам"
+GeoSec.Name       = "Гео-фильтр"
+
+[s_MainWindow_ProfileDoWork_Caption]
+Scan_Objects         = f_IsStateActive(state) ? "Выполняется выборочная проверка " + Completion + "%" : "Выполнить выборочную проверку"
+Scan_My_Computer     = f_IsStateActive(state) ? "Выполняется полная проверка " + Completion + "%" : "Выполнить полную проверку"
+Scan_Startup         = f_IsStateActive(state) ? "Выполняется проверка важных областей " + Completion + "%" : "Выполнить проверку важных областей"
+Scan_Vulnerabilities = f_IsStateActive(state) ? "Выполняется поиск уязвимостей " + Completion + "%" : "Выполнить поиск уязвимостей"
+Updater              = f_IsStateActive(state) ? "Выполняется обновление " + Completion + "%" : "Выполнить обновление"
+Rollback             = f_IsStateActive(state) ? "Выполняется откат " + Completion + "%" : "Откат к предыдущим базам"
+def                  = switch(@, "ProfileName") + if(f_IsStateActive(state), " " + Completion + "%")
+
+[s_MainWindow_ProfileDoWork_CaptionDetails]
+Scan_Objects         = f_IsStateActive(state) ? "Выполняется выборочная проверка " + Completion + "%" : switch(@, "ProfileName")
+Scan_My_Computer     = f_IsStateActive(state) ? "Выполняется полная проверка " + Completion + "%" : switch(@, "ProfileName")
+Scan_Startup         = f_IsStateActive(state) ? "Выполняется проверка важных областей " + Completion + "%" : switch(@, "ProfileName")
+Updater              = f_IsStateActive(state) ? "Выполняется обновление " + Completion + "%" : switch(@, "ProfileName")
+Rollback             = f_IsStateActive(state) ? "Выполняется откат " + Completion + "%" : switch(@, "ProfileName")
+def                  = switch(@, "ProfileName") + if(f_IsStateActive(state), " " + Completion + "%")
+
+[s_MainWindow_ScanDoWork]
+Updater              = "Вы действительно хотите прервать обновление?"
+Scan_Objects         = "Вы действительно хотите прервать проверку?"
+def                  = s_MainWindow_ScanDoWork("Scan_Objects")
+
+[DialogPanelClassic]
+Copyright            = $CopyrightText
+
+[PromoPage]
+@ = $ProductNameLong
+
+[PromoPage_Footer]
+Show       = "&Не показывать это окно"
+Continue   = $Close
+BuyLic     = "Приобрести &лицензию"
+
+[PromoPage_Info]
+TrialHint      = if(global.KeyState & #eNoKeys, "Внимание! Программа не активирована.", "Срок действия лицензии скоро истечет.")
+PleaseBuyMe    = "Для полноценной защиты вашего компьютера рекомендуем вам <a onclick(buy())>приобрести коммерческую лицензию</a>."
+WeAreBest      = s_Promo_WeAreBest(env("ProductType"))
+
+[s_Promo_WeAreBest]
+kis = s_ProductTitleLong(@) + " содержит все необходимое для безопасной работы в интернете."
+kav = s_ProductTitleLong(@) + " предназначен для базовой защиты вашего компьютера от вредоносных программ."
+
+[s_PromoPage_Feature1_Name]
+kis = "Интернет-безопасность"
+kav = "Поиск уязвимостей"
+
+[s_PromoPage_Feature1_Desc]
+kis = "Создайте собственные параметры безопасности для более надежной защиты при работе в интернете."
+kav = "Запустите проверку компьютера на наличие уязвимостей в программах и системе для повышения уровня безопасности вашего компьютера."
+
+[s_PromoPage_Feature2_Name]
+kis = "Безопасный браузер"
+kav = "Диск аварийного восстановления"
+
+[s_PromoPage_Feature2_Desc]
+kis = "Запускайте браузер в режиме повышенной защиты при вводе конфиденциальных данных на веб-сайтах (например, при использовании услуг интернет-банкинга)."
+kav = "В случае подозрительного поведения компьютера, в том числе проблем с загрузкой операционной системы, используйте диск аварийного восстановления. Диск поможет осуществить лечение системы с помощью загрузки с CD / DVD или USB-устройства."
+
+[s_PromoPage_Feature3_Name]
+kis = "Родительский контроль"
+kav = s_ProductTitleLong("kis")
+
+[s_PromoPage_Feature3_Desc]
+kis = "Широкий набор функций поможет вам гибко регулировать использование компьютера и интернета детьми."
+kav = "Если вы - активный пользователь сети Интернет, то рекомендуем вам приобрести " + s_ProductTitleLong("kis", "") + ", который содержит все необходимое для безопасной работы в интернете."
+
+[NewsReaderTemplate_Body]
+Caption = "Новостная рассылка от \"Лаборатории Касперского\""
+
+[News_List]
+Title   = "Тема"
+Date    = "Дата"
+
+[EulaRequestPage]
+Banner.Caption = "Вас приветствует " + $ProductNameLong
+
+[EulaRequestPageDescription]
+Caption			= "Внимание!" 
+Description1		= if(env("OemCommercial") == "1","Благодарим вас за установку.\nАктивируйте вашу программу сейчас.","Безопасность вашего компьютера под угрозой.\nАктивируйте <b>" + $ProductNameLong + "</b> по <b>бесплатной 30-дневной</b> лицензии.")
+Description2		= "Нажимая на кнопку \"Принять и активировать\" ниже, вы принимаете условия <a onclick(l_page = $EulaPage)>Лицензионного соглашения</a> и активируете программу" + if(env("OemCommercial") == "1", ".", " по бесплатной 30-дневной лицензии.")
+
+[EulaDlgFooterFooter_EulaRequest]
+KsnCheckText		= "Я хочу участвовать в программе <a onclick(l_page = $KsnPage)>Kaspersky Security Network (KSN)</a>\nдля обеспечения лучшей защиты моего компьютера"
+DeclineButton		= "Напомнить позже"
+
+[DeclinedEulaPage]
+Banner.Caption = "Вы действительно не хотите активировать\n" + $ProductNameLong + "?"
+
+[DeclinedEulaPageDescription]
+Description		= "Kaspersky Internet Security <b>обеспечивает наилучшую защиту</b> от всех видов уже известных и новых угроз. Вы можете использовать все преимущества безопасной работы, <b>совершая покупки, оплачивая услуги или общаясь в интернете</b>."
+BackButton.Text = "Вернуться к активации"
+
+[EulaDlgFooterFooter_DeclinedEula]
+RemovalHint = "Вы можете удалить эту программу в любое время\nстандартными средствами Microsoft Windows."
+Postpone	= "Напомнить позже"
+
+[EulaDlgFooterFooter_MoreInfo]
+Back = "Назад"
+
+[EulaInfoPage]
+Eula			= "Лицензионное соглашение"
+back.Text		= "Назад"
+
+[KsnInfoPage]
+Ksn				= "KSN-соглашение"
+back.Text		= "Назад"
+
+[ThankYouPage]
+Banner.Caption	= "Спасибо!"
+
+[ThankYouPageDescription]
+Caption					= "Ваш компьютер будет защищен"
+Description1			= "Программа <b>" + $ProductNameLong +  "</b> активирована по <b>бесплатной 30-дневной</b> лицензии."
+Description2			= "Купите коммерческую версию, чтобы продлить защиту \nна <b>весь год!</b>"
+LearnMoreButton.Text	= "Узнать больше"
+
+[EulaDlgFooterFooter_ThankYou]
+Close = "Закрыть"
+
+[QMLMainWindow]
+@ = $RemoteComputer + $ProductNameLong + if(!IsRelease, " Technical Preview")
+
+[Mail_Notifications]
+Subject_Text           = "Уведомление " + $ProductName_GEN
+Product_Label          = "Программа"
+Operating_System_Label = "Операционная система"
+Computer_Label         = "Компьютер"
+Domain_Label           = "Домен"
+Notifications_Label    = "Уведомления"
+
+[SecuredDesktopDialog]
+@="Внимание!"
+
+[s_SecuredDesktopDialog_Messages]
+0="Это действие ухудшит защиту вашего компьютера. Продолжить?"
+1="Выбранное вами действие отличается от рекомендованного. Продолжить?"
+
+[SecuredDesktopDialog_BottomArea]
+CheckBox = "Доверять моим действиям в течение 30 минут."
+
+[SecuredDesktopDialog_TableArea]
+ProgramNameLabel = "Имя программы:"
+PublisherLabel = "Производитель:"
+PublisherValue = "\"Лаборатория Касперского\""
+ActionLabel = "Действие:"
+
+[s_SecuredDesktopDialog_Actions]
+0="Изменение параметров"
+1="Выбор действия"
+2="Удаление ключа"
+
+[MessageDialog]
+@ = msg.Caption

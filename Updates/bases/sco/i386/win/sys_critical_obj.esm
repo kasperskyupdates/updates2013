@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0xcb859602" name="sys_critical_obj.eCLSID" module="sys_critical_obj" timeout="600" category="SCO" module_category="SCO">
+    <interface iid="0xd202ba45" name="sys_critical_obj.ISystemCriticalObjects"/>
+    <interface iid="0x5e738998" name="sys_critical_obj.IBackupProvider"/>
+    <interface iid="0xc155f128" name="sys_critical_obj.ISystemCriticalObjectsProvider"/>
+  </component>
+</root>

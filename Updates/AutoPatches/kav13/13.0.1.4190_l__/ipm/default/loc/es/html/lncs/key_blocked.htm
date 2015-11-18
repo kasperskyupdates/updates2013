@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=UTF-16" />
+    <link rel="stylesheet" type="text/css" href="../../../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/widgets.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/messagebox.css">
+    <style>
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .description {
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    </style>
+</head>
+<body>
+<div id="wrap">
+<p class="danger">
+<span class="title">La clave activa está bloqueada. <br>La función de actualización está desactivada, por lo que el equipo puede estar expuesto a riesgo de infección.</span><br>
+<span class="description">Si compró la aplicación de manera legal, póngase en contacto con Soporte técnico o con el vendedor.</span>
+<span class="description">Si está usando una copia ilegal, <a href="buy" onclick="window.IpmCommandHandler.openUrl('Buy')">comprar la licencia ahora</a>.</span>
+<span class="description">Si ya ha comprado una licencia, <a href="#" onclick="window.IpmCommandHandler.openApplicationPage('LicenseManager');">activar la aplicación</a>.</span>
+</p>
+<div id="buttons">
+    <a id="close-button" class="gray-button" href="#" onclick="window.IpmCommandHandler.closeWindow()">
+        <span>Cerrar</span>
+    </a>
+</div>
+</div>
+</body>
+</html>

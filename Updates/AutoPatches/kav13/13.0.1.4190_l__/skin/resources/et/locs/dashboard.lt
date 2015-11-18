@@ -1,0 +1,83 @@
+﻿CriticalMessage = 'Arvuti turvalisus on ohus' 
+LicenseIssueMessage = 'Litsentsiprobleem'
+LicenseNotificationMessage = 'Litsentsiteade'
+InfoMessage = 'Arvuti on kaitstud' 
+
+; Protection states
+MainComponentsMalfunction = 'tõrge' 
+FileAvDisabled = 'Failide kaitse ei tööta' 
+ProtectionPaused = 'alaline kaitse on peatatud' 
+ProtectionDisabled = 'välja lülitatud' 
+NetworkTrafficBlocked = 'võrguliiklus on blokeeritud' 
+SelfProtectionDisabled = 'enesekaitse on välja lülitatud' 
+MainComponentsDisabled = 'mõned on välja lülitatud' 
+MainComponentsHidden = 'mõned on välja lülitatud'
+AutorunDisabled = 'automaatkäivitus on väljas' 
+ProtectionSafeMode = 'arvuti töötab ohutus režiimis' 
+AllComponentsEnabled = 'sisse lülitatud' 
+MainComponentsEnabled = 'põhikomponendid töötavad' 
+
+; Threats states
+RebootNeeded = 'neutraliseeritud, arvuti tuleb taaskäivitada'
+MalwareUntreated = 'kahjurprogramme'
+SuspiciousUntreated = 'muid'
+RiskwareUntreated = SuspiciousUntreated
+FullScanNeeded = 'nõutav on arvuti täiskontroll'
+NoThreats = 'puuduvad'
+
+; Bases states
+BasesUpdating = '. Uuendatakse (' + $BasesState_ProcessPercentCompleted + '%)...'
+BasesRollbacking = '. Toimub tagasipööramine (' + $BasesState_ProcessPercentCompleted + '%)...'
+
+; License states
+LicenseExpired = 'lõppenud'
+LicenseProblems = 'avastati probleem'
+LicenseBlocked = 'blokeeritud'
+LicenseLimited = LicenseProblems
+NoActivationCodeProvided = 'puudub'
+
+ExpiredToday	   = 'lõpeb täna'
+LicenseRemainDays  = 'kehtivusaja lõpuni on jäänud ' +$LicenseState_RemainingDaysCount + ' ' +{$LicenseState_RemainingDaysCount: 'päeva', 'päeva'}
+LicenseNotificationWarning	= $LicenseExpiredEx
+LicenseActive				= $LicenseExpiredEx
+
+LicenseNotificationCritical = LicenseProblems
+LicenseNotificationInfo = LicenseActive
+SubscriptionExpired = 'lõppenud'
+SubscriptionSuspended = 'peatatud' ;LOC - refers to license or subscription
+SubscriptionUpdateFailed = LicenseProblems
+SubscriptionBlocked = LicenseProblems
+SubscriptionLimited = LicenseProblems
+SubscriptionNotificationCritical = LicenseProblems
+SubscriptionNotificationWarning = 'warning'
+SubscriptionActive = LicenseRemainDays
+SubscriptionNotificationInfo = $SubscriptionRemainingDays
+SubscriptionActiveExpirationDateUnknown = 'aktiveeritud'
+PreinstalledCodeAvailable = NoActivationCodeProvided
+WaitCodeActivationInfo = NoActivationCodeProvided
+WaitCodeActivationCritical = NoActivationCodeProvided
+PreinstalledCodeActivationProblem = NoActivationCodeProvided
+
+SubscriptionBByActivatedText = 'aktiivne'
+SubscriptionBByProlongedText = 'aktiivne'
+
+InvalidReservedCode = 'probleem uue aktiveerimiskoodiga'
+WaitReservedCodeActivationInfo = 'ootab aktiveerimist'
+WaitReservedCodeActivationCritical = InvalidReservedCode
+ReservedCodeActivationProblem = InvalidReservedCode
+
+; Recommendations
+EnableAutomaticUpdates = 'luba automaatuuendus'
+TrainAntiSpam = 'treeni Rämpspostifiltrit'
+
+; State groups
+ThreatsState = 'Ohud:'
+ProtectionState = 'Alalise kaitse komponendid:'
+BasesState = 'Signatuuribaasid:'
+LicenseState = 'Litsents:'
+SubscriptionState = 'Tellimus:'
+RecommendationsState = 'Soovitused:'
+
+; Buy-Renew button
+BuyNow = 'Osta kohe!'
+Renew = 'Uuendage'

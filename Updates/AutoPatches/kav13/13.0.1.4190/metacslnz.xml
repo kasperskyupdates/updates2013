@@ -1,0 +1,333 @@
+﻿<root unique_id="3480495672">
+  <Items>
+    <item_0000 unique_id="0x8BFCB846">
+      <Filter unique_id="0x87ED8826" KeyState="!Blocked;Limited"/>
+      <Items>
+        <item_0000 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Trial" KeyLifeSpan="90-"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="88,86,84"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial90_dl88" severity="3">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial90_dl88.htm" width="530" height="130"/>
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="14,11,9,7,5,3"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial90_dl14" severity="2">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial90_dl14.htm" width="530" height="130"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                          description="LicensingStatus_WillBeExpiredTrial_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                </item_0000>
+              </Items>
+            </item_0001>
+          </Items>
+        </item_0000>
+        <item_0001 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Trial" KeyLifeSpan="30"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="29,26,23"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial30_dl29" severity="3">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial30_dl29.htm" width="530" height="130"/>
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="14,11,9,7,5,3"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial30_dl14" severity="2">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial30_dl14.htm" width="530" height="130"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpired_ShortDescription"
+                                          description="LicensingStatus_WillBeExpiredTrial_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                </item_0000>
+              </Items>
+            </item_0001>
+          </Items>
+        </item_0001>
+        <item_0002 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Trial" KeyLifeSpan="15"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="11"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial15_dl11" severity="3">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial15_dl11.htm" width="530" height="130"/>
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="7,4"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial15_dl7" severity="2">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial15_dl7.htm" width="530" height="130"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                          description="LicensingStatus_WillBeExpiredTrial_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                </item_0000>
+              </Items>
+            </item_0001>
+            <item_0002 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="8-14"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial15_dl14" severity="3">
+                  <balloonSettings unique_id="0x3487BF5C" description="LNCS_TrialExpiresSoonBaloon" />
+                </item_0000>
+              </Items>
+            </item_0002>
+          </Items>
+        </item_0002>
+        <item_0003 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Trial"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="3-14"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial_dl14" severity="2">
+                  <balloonSettings unique_id="0x3487BF5C" description="LNCS_TrialExpiresSoonBaloon" />
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                          description="LicensingStatus_WillBeExpiredTrial_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="1-2"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial_dl2" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial_dl2.htm" width="530" height="130"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                          description="LicensingStatus_WillBeExpiredTrial_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1" licenseState="LicensingState_ProblemIsAvailable"/>
+                </item_0000>
+              </Items>
+            </item_0001>
+            <item_0002 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="0"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="trial_dl0" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial_dl0.htm" width="530" height="130"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                          description="LicensingStatus_ExpiresTodayTrial_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpiredTrial_ShortDescription"
+                                       description="LicensingStatus_ExpiresToday_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1" licenseState="LicensingState_ProblemIsAvailable"/>
+                </item_0000>
+              </Items>
+            </item_0002>
+          </Items>
+        </item_0003>
+        <item_0004 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Beta"/>
+          <Items unique_id="0x8BFCB846">
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="13,11,9,7"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="beta_dl13" severity="2">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/beta_dl13.htm" width="530" height="120"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpired_ShortDescription"
+                                          description="LicensingStatus_WillBeExpired_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpired_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="0-5"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="beta_dl5" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/beta_dl5.htm" width="530" height="120"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpired_ShortDescription"
+                                          description="LicensingStatus_WillBeExpired_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpired_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1" licenseState="LicensingState_ProblemIsAvailable"/>
+                </item_0000>
+              </Items>
+            </item_0001>
+          </Items>
+        </item_0004>
+        <item_0005 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Commercial;OEM"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="7-13"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="comoem_dl13" severity="2">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/comoem_dl13.htm" width="530" height="150"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpired_ShortDescription"
+                                          description="LicensingStatus_WillBeExpired_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpired_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1"
+                                      licenseState="LicensingState_WarningIsAvailable"
+                                      protectionState="ProtectionState_NotificationIsAvailable" />
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="1-6"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="comoem_dl6" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/comoem_dl6.htm" width="530" height="150"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpired_ShortDescription"
+                                          description="LicensingStatus_WillBeExpired_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpired_ShortDescription"
+                                       description="LicensingStatus_WillBeExpired_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1" licenseState="LicensingState_ProblemIsAvailable"/>
+                </item_0000>
+              </Items>
+            </item_0001>
+            <item_0002 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" DaysLeft="0"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="comoem_dl0" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/comoem_dl0.htm" width="530" height="150"/>
+                  <licenseManagerSettings unique_id="0xEE49F394"
+                                          title="LicensingStatus_WillBeExpired_ShortDescription"
+                                          description="LicensingStatus_ExpiresToday_FullDescription" />
+                  <problemListSettings unique_id="0x1605AE48"
+                                       title="LicensingStatus_WillBeExpired_ShortDescription"
+                                       description="LicensingStatus_ExpiresToday_Cause" />
+                  <mainWindowSettings unique_id="0x10656BE1" licenseState="LicensingState_ProblemIsAvailable"/>
+                </item_0000>
+              </Items>
+            </item_0002>
+          </Items>
+        </item_0005>
+		<item_0006 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Subscription;SubscriptionLimit" SubscriptionStatus="!HasExpDateActivated;HasExpDateProlonged" DaysLeft="0">
+            <LicAddInfoInt>
+		      <item_0000 unique_id="0x0F2F0F07" Id="1" Value="!0"/>
+            </LicAddInfoInt>
+          </Filter>
+          <Items>
+			<item_0000 unique_id="0x398EA778" contentId="subscription_last_day" severity="3">
+			  <mainWindowSettings unique_id="0x10656BE1" licenseState="SubscriptionExpiresToday"/>
+			</item_0000>
+          </Items>
+		</item_0006>
+        <!-- Subscription Grace Period -->
+        <item_0007 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Subscription;SubscriptionLimit" KeyState="GracePeriod"/>
+          <Items>
+            <item_0000 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" LicAddInfoScheme="0;2-"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="subscription_grace" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/subscription_grace.htm" width="500" height="130" product="1"/>
+                </item_0000>
+              </Items>
+            </item_0000>
+            <item_0001 unique_id="0x8BFCB846">
+              <Filter unique_id="0x87ED8826" LicAddInfoScheme="1"/>
+              <Items>
+                <item_0000 unique_id="0x398EA778" contentId="bby_subscription_grace" severity="1">
+                  <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/bby/subscription_grace.html" width="500" height="115" product="1"/>
+                  <balloonSettings unique_id="0x3487BF5C" description="LNCS_SubscriptionGrace_Balloon"/>
+                </item_0000>
+              </Items>
+            </item_0001>
+          </Items>
+        </item_0007>
+        <!-- Expired -->
+        <item_0008 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Beta" KeyState="Expired"/>
+          <Items>
+            <item_0000 unique_id="0x398EA778" contentId="beta_expired" severity="1">
+              <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/beta_expired.htm" width="500" height="135" product="1"/>
+            </item_0000>
+          </Items>
+        </item_0008>
+        <item_0009 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Trial" KeyState="TrialExpired"/>
+          <Items>
+            <item_0000 unique_id="0x398EA778" contentId="trial_expired" severity="1">
+              <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/trial_expired.htm" width="500" height="120" product="1"/>
+            </item_0000>
+          </Items>
+        </item_0009>
+        <item_0010 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Test" KeyState="Expired"/>
+          <Items>
+            <item_0000 unique_id="0x398EA778" contentId="test_expired" severity="1">
+              <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/test_expired.htm" width="500" height="140" product="1"/>
+            </item_0000>
+          </Items>
+        </item_0010>
+        <item_0011 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Subscription;SubscriptionLimit" KeyState="Expired" LicAddInfoScheme="0;2-"/>
+          <Items>
+            <item_0000 unique_id="0x398EA778" contentId="expired" severity="1">
+              <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/subscription_expired.htm" width="500" height="150" product="1"/>
+            </item_0000>
+          </Items>
+        </item_0011>
+        <item_0012 unique_id="0x8BFCB846">
+          <Filter unique_id="0x87ED8826" KeyType="Commercial;OEM" KeyState="Expired" LicAddInfoScheme="0;2-"/>
+          <Items>
+            <item_0000 unique_id="0x398EA778" contentId="expired" severity="1">
+              <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/commercial_expired.htm" width="500" height="150" product="1"/>
+            </item_0000>
+          </Items>
+        </item_0012>
+      </Items>
+    </item_0000>
+	<item_0001 unique_id="0x8BFCB846">
+      <Filter unique_id="0x87ED8826" KeyState="Blocked"/>
+      <Items>
+		<item_0000 unique_id="0x398EA778" contentId="key_blocked" severity="1" showToast="0">
+          <messageBoxSettings unique_id="0x26113741" contentUri="loc/*/html/lncs/key_blocked.htm" width="500" height="240" product="1"/>
+		</item_0000>
+	  </Items>
+	</item_0001>
+  </Items>
+</root>
+

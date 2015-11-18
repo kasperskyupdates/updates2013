@@ -1,0 +1,141 @@
+﻿ActiveThreatsGroupName = 'Ameaça'
+AVBasesGroupName = 'Bases de dados'
+ProtectionComponentsGroupName = 'Componente de protecção'
+LicenseGroupName = 'Licença'
+RecommendationsGroupName = 'Recomendação'
+HiddenComponentsGroupName = 'Problema ignorado'
+
+AVBasesUpdatingTitle = 'A actualizar as bases de dados e a aplicação (' + $Update_PercentCompleted +'%)...'
+BasesUpdateStatus = 'Estado: ' + $Update_Status
+
+ManualUpdate_ProblemTitle = 'A actualização automática está desactivada'
+ManualUpdate_ProblemDescription = 'É recomendado activar as actualizações automáticas ou configurar um agendamento de actualizações.'
+
+AntispamNeedsTraining_ProblemTitle = 'O Anti-Spam requer formação'
+AntispamNeedMoreSpamToTrain_ProblemDescription = 'É necessário treino em ' + $AntispamTrainingSpamLettersCountRequest + ' spam ' + {$AntispamTrainingSpamLettersCountRequest: 'e-mail', 'e-mails'} + '.'
+AntispamNeedMoreHamToTrain_ProblemDescription = 'É necessário treino em ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'e-mail útil', 'e-mails úteis'} + '.'
+AntispamNeedMoreHamAndSpamToTrain_ProblemDescription = 'É necessário treino em ' + $AntispamTrainingSpamLettersCountRequest + ' spam ' + {$AntispamTrainingSpamLettersCountRequest: 'e-mail', 'e-mails'} + ' e em ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'e-mail útil', 'e-mails úteis'} + '.'
+AntispamNeedsTraining_ProblemDescription = 'É recomendado utilizar o assistente de treino para configurar a filtragem de e-mail.'
+
+ThreatsNeedReboot_ProblemTitle = 'É necessário reiniciar o computador para concluir a desinfecção'
+ThreatsNeedReboot_ProblemDescription = 'Após reiniciar o computador, a desinfecção será concluída automaticamente.'
+
+ThreatsProcessing_ProblemTitle = 'A carregar...'
+ThreatsProcessing_ProblemDescription = 'Por favor, aguarde'
+
+ThreatsMalwareUntreated_ProblemTitle = $ThreatName + ' detectada'
+ThreatsMalwareUntreated_ProblemDescription = 'Objecto: ' + $ObjectName
+
+ThreatsSuspiciousUntreated_ProblemTitle = $ObjectName
+ThreatsSuspiciousUntreated_ProblemDescription = 'Software que pode provocar danos'
+
+ThreatsRiskwareUntreated_ProblemTitle = $ObjectName
+ThreatsRiskwareUntreated_ProblemDescription = 'Software legal, que pode ser usado por criminosos para danificar o seu computador ou dados pessoais.'
+
+BasesCorrupted_ProblemTitle = 'As bases de dados estão corrompidas'
+BasesCorrupted_ProblemDescription = 'É recomendado actualizar novamente as bases de dados.'
+
+BasesVeryOld_ProblemTitle = 'Bases de dados estão obsoletas'
+BasesVeryOld_ProblemDescription = 'Recomendamos vivamente que actualize as bases de dados da aplicação.'
+
+BasesUpdatedAndRebootNeeded_ProblemTitle = 'É necessário reiniciar o computador'
+BasesUpdatedAndRebootNeeded_ProblemDescription = 'Para concluir a instalação de novos módulos de aplicação, é necessário reiniciar o computador.'
+
+BasesUpdatedAndRestartNeeded_ProblemTitle     = 'É necessário reiniciar a aplicação'
+BasesUpdatedAndRestartNeeded_ProblemDescription_KIS = 'Foram actualizados módulos da aplicação ' + ProductName_KIS + '. Para uma funcionalidade correcta, é necessário reiniciar a aplicação.'
+BasesUpdatedAndRestartNeeded_ProblemDescription = 'Foram actualizados módulos da aplicação ' + ProductName + '. Para uma funcionalidade correcta, é necessário reiniciar a aplicação.'
+
+BasesOld_ProblemTitle = 'Bases de dados estão desactualizadas'
+BasesOld_ProblemDescription = 'É recomendado actualizar as bases de dados.'
+
+BasesOldInGracePeriod_ProblemTitle = 'As bases de dados requerem uma actualização'
+BasesOldInGracePeriod_ProblemDescription = 'O problema será resolvido após a actualização.'
+
+SomeBasesNeedUpdate_ProblemTitle = 'As bases de dados requerem uma actualização'
+SomeBasesNeedUpdate_ProblemDescription = 'As bases de dados de alguns componentes de protecção requerem uma actualização.'
+
+ProtectionMalfunction_ProblemTitle = 'Alguns componentes de protecção estão corrompidos'
+ProtectionMalfunction_ProblemDescription     = 'Recomendamos que reinstale a aplicação.'
+
+HighRiskTasksDisabled_ProblemTitle = 'O Antivírus de Ficheiros está desactivado'
+HighRiskTasksDisabled_ProblemDescription     = 'O seu computador está em risco de infecção, danos ou roubo de dados. É recomendado activar o Antivírus de Ficheiros.'
+HighRiskTasksDisabled_ProblemTitle_FileAV    = 'O Antivírus de Ficheiros está desactivado'
+
+ProtectionPaused_ProblemTitle = 'A protecção do computador está em pausa'
+ProtectionPaused_ProblemDescription = 'O seu computador está em risco de infecção, danos ou roubo de dados. Recomendamos que active a protecção.'
+
+ProtectionDisabled_ProblemTitle = 'A protecção do computador está desactivada'
+ProtectionDisabled_ProblemDescription = 'O seu computador está em risco de infecção, danos ou roubo de dados. Recomendamos que active a protecção.'
+
+SelfProtectionDisabled_ProblemTitle_KIS = 'A Autodefesa do ' + ProductName_KIS + ' está desactivada'
+SelfProtectionDisabled_ProblemTitle = 'A Autodefesa do ' + ProductName + ' está desactivada'
+SelfProtectionDisabled_ProblemDescription = 'Em caso de um ataque de vírus, a aplicação pode ficar inoperacional. Recomendamos que active a Autodefesa.'
+
+TasksDisabled_ProblemTitle_FileAV   = 'O Antivírus de Ficheiros está desactivado.'
+TasksDisabled_ProblemTitle_AC       = 'O Controlo das Aplicações está desactivado.'
+TasksDisabled_ProblemTitle_NAB      = 'O Bloqueio de Ataques de Rede está desactivado.'
+TasksDisabled_ProblemTitle_IMAV    = 'O Antivírus de MI está desactivado.'
+TasksDisabled_ProblemTitle_MAV      = 'O Antivírus de E-mail está desactivado.'
+TasksDisabled_ProblemTitle_WAV      = 'O Antivírus de Internet está desactivado.'
+TasksDisabled_ProblemTitle_Firewall = 'A Firewall está desactivada.'
+TasksDisabled_ProblemTitle_SW       = 'A Monitorização do Sistema está desactivada.'
+
+TaskHidden_ProblemTitle_AC       = 'O Controlo das Aplicações está desactivado.'
+TaskHidden_ProblemTitle_NAB      = 'O Bloqueio de Ataques de Rede está desactivado.'
+TaskHidden_ProblemTitle_IMAV    = 'O Antivírus de MI está desactivado.'
+TaskHidden_ProblemTitle_MAV      = 'O Antivírus de E-mail está desactivado.'
+TaskHidden_ProblemTitle_WAV      = 'O Antivírus de Internet está desactivado.'
+TaskHidden_ProblemTitle_Firewall = 'A Firewall está desactivada.'
+TaskHidden_ProblemTitle_SW       = 'A Monitorização do Sistema está desactivada.'
+
+TasksDisabled_ProblemDescription = 'A aplicação não consegue fornecer uma protecção completa ao seu computador. Recomendamos que active o componente de protecção.'
+TaskHidden_ProblemDescription = 'A mensagem sobre o componente de protecção desligado está oculta. O programa não poderá fornecer protecção completa ao computador. É recomendado activar o componente de protecção.'
+
+AutorunDisabled_ProblemTitle = 'A inicialização automática da aplicação está desactivada'
+AutorunDisabled_ProblemDescription     = 'Recomendamos que active a execução automática da aplicação no arranque do sistema operativo.'
+
+ProtectionSafeMode_ProblemTitle = 'É necessário reiniciar o computador'
+ProtectionSafeMode_ProblemDescription_KIS = 'Ao executar no modo de segurança, a funcionalidade do ' + ProductName_KIS + '  está limitada. Alguns componentes de protecção não funcionam.'
+ProtectionSafeMode_ProblemDescription = 'Ao executar no modo de segurança, a funcionalidade do ' + ProductName + '  está limitada. Alguns componentes de protecção não funcionam.'
+
+FirewallBlockAll_ProblemTitle = 'O bloqueio de tráfego de rede está activado'
+FirewallBlockAll_ProblemDescription = 'Nenhuma aplicação no seu computador pode estabelecer ligação à Internet. Aconselha-se que desactive o bloqueio.'
+
+FirewallUnBlock_ActionLabel = 'Desactivar'
+OpenSupport_ActionLabel = 'Aceder ao site de suporte'
+OpenLicenseManager_ActionLabel = 'Detalhes'
+UpdateBases_ActionLabel = 'Actualizar'
+ChangeInstallProduct_ActionLabel = 'Alterar/instalar aplicação'
+OpenActivationWizard_ActionLabel = 'Activar'
+OpenPurchase_ActionLabel = 'Visite a loja online'
+OpenForum_ActionLabel = 'Aceder ao fórum da web'
+
+Reboot_ActionLabel = 'Reiniciar computador'
+ThreatReport_ActionLabel = 'Ver relatório'
+ProcessThreat_ActionLabel = 'Reparar'
+OpenThreatFolder_ActionLabel = 'Abrir a pasta de localização original'
+AddThreatToExclusionList_ActionLabel = 'Adicionar às exclusões'
+DiscardThreat_ActionLabel = 'Ignorar'
+OpenThreatSecureList_ActionLabel = 'Descrição da ameaça'
+ProcessAllThreats_ActionLabel = 'Eliminar ameaças'
+DiscardAllThreats_ActionLabel = 'Ignorar tudo'
+
+UpdaterSettings_ActionLabel = 'Configuração das Actualizações'
+Restart_ActionLabel = 'Reiniciar'
+StopUpdate_ActionLabel = 'Parar'
+UpdaterReport_ActionLabel = 'Ver relatório'
+
+MalfunctionReport_ActionLabel = 'Detalhes'
+EnableComponent_ActionLabel = 'Activar'
+HideComponent_ActionLabel = 'Ignorar o problema'
+ShowComponent_ActionLabel = 'Não ignorar o problema'
+ResumeProtection_ActionLabel = 'Activar'
+EnableProtection_ActionLabel = 'Activar'
+EnableSelfProtection_ActionLabel = 'Activar'
+EnableAutoRun_ActionLabel = 'Activar'
+
+EnableAutoUpdate_ActionLabel = 'Activar'
+SpamTrainingWizard_ActionLabel = 'Aprendizagem'
+AntiSpamSettings_ActionLabel = 'Configuração'
+
+RebootConfirmation = 'Pretende reiniciar o computador agora?'

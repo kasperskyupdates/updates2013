@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Atslēgas faila izvēle"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Šīs programmas kopijas atslēgas failu sniedzis aparatūras piegādātājs. Vai vēlaties aktivizēt programmu ar šo failu?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Programmas konfigurēšana vēl nav pabeigta. Vai tiešām vēlaties izslēgt konfigurācijas vedni?"
+ErrEmptyActivationCode.caption  = "Aktivizācijas kods nav norādīts"
+ErrEmptyActivationCode          = "Lūdzu, ievadiet aktivizācijas kodu"
+ErrEmptyKeyPath.caption         = "Atslēgas fails nav norādīts"
+ErrEmptyKeyPath                 = "Lūdzu, norādiet atslēgas failu"
+$LicInfoKeyNumber               = "Skaits:"
+$LicInfoKeyProductName          = "Programmas nosaukums:"
+$LicInfoKeyType                 = "Licences tips:"
+$LicInfoExpirationDate          = "Beigu datums:"
+$LicErrReason                   = "Iemesls:"
+$ActiveKey                      = "Aktīva atslēga"
+$ReservedKey                    = "Papildu atslēga"
+ConfirmFeedback                 = "Vai piekrītat sniegt informāciju <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) ir tiešsaistes servisu infrastruktūra, kas nodrošina aktuālu informāciju par failu, tīmekļa resursu un programmatūras drošumu. KSN datu izmantošana paātrina reakciju uz jauniem apdraudējumiem, uzlabo dažu aizsardzības komponentu darbību un samazina aplamu pozitīvo konstatēšanu.\nJa piedalāties KSN, tad informācija par inficēšanos ar vīrusiem, kā arī paplašināta ielādēto vai izpildīto programmu statistika (atvērt <a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN Datu Ievākšanas Noteikumus</a>) automātiski tiek nosūtīta uz Kaspersky Lab. \n\n<b>Kaspersky Security Network nevāc un neapstrādā nekādu lietotāja privāto informāciju.</b>"
+
+$ToAcquireNewLicText            = "\n\nLai iegādātos jaunu licenci, lūdzu, sazinieties ar izplatītāju vai <a Buy onclick(buy())>Kaspersky Lab Tirdzniecības departamentu</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nMēģiniet manuāli atjaunināt abonementa statusu vai sazinieties ar Tehnisko atbalstu" : "\nMēģiniet aktivizēt programmu ar aktivizācijas kodu vēlāk (pēc 1-2 stundām) vai sazinieties ar Tehnisko atbalstu") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Aktivizācijas vednis" : " Konfigurācijas vednis")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Vispārīgā informācija"
+InitBegin.Descr                       = "Laipni lūgti " + $ProductName_GEN + " konfigurācijas vednī."
+CheckHosts.Name                       = "Pārbauda, vai Kaspersky Lab serveri ir pieejami"
+CheckHosts.Descr                      = "Konstatēta aizdomīga virzienmaiņa"
+ResetArea.Name                        = "Atjaunot iestatījumus"
+ResetArea.Descr                       = "Tālāk uzskaitītie iestatījumi ietver datus, ko ievadījis lietotājs vai kas savākti \nprogrammas darbības laikā."
+ActivationBegin.Name                  = $IsSubscription ? "Abonementa pārvaldība" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Izdzēst licenci" : "Pievienot licenci") : "Aktivizēt programmu")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Licencēšanas" : "Aktivizēt programmu, lai turpinātu.")
+ActivationProgress.Name               = "Aktivizēt tiešsaistē"
+ActivationProgress.Descr              = "Notiek aktivizācija, uzgaidiet..."
+ActivationServerForm.Name             = "Aktivizēt tiešsaistē"
+ActivationServerForm.Descr            = "Lūdzu, aizpildiet šo veidlapu."
+ActivationChooseKey.Name              = "A&ktivizācija, izmantojot atslēgas failu"
+ActivationChooseKey.Descr             = "Aktivizēt programmu, izmantojot atslēgas failu."
+ActivationEnd.Name                    = "Programmas aktivizācija"
+ActivationEnd.Descr                   = "Aktivizācija pabeigta."
+MigrationKeyIsFound.Name         = "Esošās licences atslēga ir pieejama"
+MigrationKeyIsFound.Descr        = "Vai vēlaties lietot esošajā licencē paredzēto programmu?"
+MigrationBegin.Name              = "Pāriet uz " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Tiksiet pārslēgts uz " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Meklēt nesaderīgu programmatūru"
+MigrationSearchProgress.Descr    = "Lūdzu, uzgaidiet, kamēr meklē nesaderīgu programmatūru..."
+MigrationSafeRemoval.Name        = "Atrasta nesaderīga programmatūra"
+MigrationSafeRemoval.Descr       = "Lai turpinātu, nepieciešams noņemt nesaderīgo programmatūru"
+MigrationSafeProgress.Name       = "Noņemt nesaderīgo programmatūru"
+MigrationSafeProgress.Descr      = "Lūdzu, uzgaidiet, kamēr noņem nesaderīgo programmatūru..."
+MigrationAddRemove.Name          = "Atrasta nesaderīga programmatūra"
+MigrationAddRemove.Descr         = "Lūdzu, noņemiet nesaderīgo programmatūru"
+MigrationUnsafeRemoval.Name      = "Atrasta nesaderīga programmatūra"
+MigrationUnsafeRemoval.Descr     = "Lai turpinātu, nepieciešams noņemt nesaderīgo programmatūru"
+MigrationUnsafeProgress.Name     = "Noņemt nesaderīgo programmatūru"
+MigrationUnsafeProgress.Descr    = "Lūdzu, uzgaidiet, kamēr noņem nesaderīgo programmatūru..."
+MigrationReboot.Name             = "Nepieciešams operētājsistēmas restarts"
+MigrationReboot.Descr            = "Nepieciešams datora restarts, lai turpinātu pāreju uz jauno programmu"
+MigrationProgress.Name           = "Pāriet uz " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Lūdzu, uzgaidiet, kamēr notiek pāreja uz jauno programmu..."
+MigrationRebootApp.Name          = bMigrationDone ? "Programma tiks restartēta" : "Kļūda, veicot pāreju uz jaunu programmu"
+MigrationRebootApp.Descr         = bMigrationDone ? "Programmu nepieciešams restartēt" : "Pāreja uz " + s_MUProductTitleLong(env("ProductType")) + " neizdevās"
+MigrationFinish.Name             = "Pāreja uz " + s_ProductTitleLong(env("ProductType")) + " pabeigta"
+MigrationFinish.Descr            = "Pāreja uz " + s_ProductTitleLong(env("ProductType")) + " pabeigta"
+DNS.Name                              = "Papildu iestatījumi"
+DNS.Descr                             = $ProductName_GEN + " papildu darbības iestatījumi"
+EnumExe.Name                          = "Sistēmas analīze"
+EnumExe.Descr                         = "Lūdzu, uzgaidiet, kamēr tiek vākta informācija par sistēmu..."
+InitFinish.Name                       = "Beidz konfigurēt " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Lai pabeigtu programmas konfigurēšanu, jums jārestartē dators." : "Tagad varat palaist " + $ProductName + "."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Konstatēta Kaspersky Lab serveru aizdomīga pārvirzīšana. Iespējams, to izraisījusi ļaunprogrammatūru darbība, un tas var neatļaut atjauninājumus un aktivizēšanu. Aizdomīga resursdatora failu ieraksti:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Izdzēst ierakstus (ieteicams)"
+Skip			= "Izlaist"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Atpakaļ"
+Back.Descr      = "Atgriezties pie aktivizācijas metodes izvēles"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Pievienot atslēgu" : "&Aktivizēt"
+Activate.Descr  = "Izraudzītā atslēgas faila instalēšana"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Pabeigt"
+Finish.Descr    = "Aizvērt aktivizācijas vedni"
+Next.Name       = "&Tālāk"
+Next.Descr      = "Pāriet pie konfigurācijas"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Varat arī turpmāk lietot šo programmu, ko paredz esošā licence. Tādā gadījumā programma pārslēgsies uz " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Vai vēlaties lietot esošajā licencē paredzēto programmu?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Programmas tips:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Beigu datums:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Jā, pārslēgties uz " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Nē, un atstāt " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Jūs tiekat pārslēgts uz " + s_MUProductTitleLong(env("ProductType")) + ". Autortiesību turētājs piešķir jums neekskluzīvu licenci, lai lietotu " + s_MUProductTitleLong(env("ProductType")) + " ar tādiem pašiem nosacījumiem, kādiem piekritāt agrāk, kad instalējāt " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Piezīme: pārejas veikšanai var būt nepieciešams restartēt datoru."
+LicenseWarning  = "Uzmanību! Kaspersky Anti-Virus komerciālās licences derīguma termiņš beidzas pirms Kaspersky Internet Security izmēģinājuma licences derīguma termiņa beigām. Pēc Kaspersky Anti-Virus komerciālās licences derīguma termiņa beigām nebūs iespējams lietot Kaspersky Anti-Virus ar Kaspersky Internet Security izmēģinājuma versiju. Vai vēlaties turpināt pāreju uz Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Notiek nesaderīgu programmatūru datorā meklēšana. Tam var būt nepieciešams laiks. Lūdzu, uzgaidiet..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Lai veiktu pāreju, tiks noņemta šāda programmatūra:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Lūdzu, uzgaidiet, kamēr tiek noņemta nesaderīgā programmatūra..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Lai veiktu pāreju, jānoņem šāda programmatūra:"
+OpenAddRemove = "Atveriet logu Programmu pievienošana/noņemšana"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Lai veiktu pāreju, tiks noņemta šāda programmatūra:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Lūdzu, uzgaidiet, kamēr tiek noņemta nesaderīgā programmatūra..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Jums jāpārstartē dators, lai turpinātu pāreju. Vednis turpinās darbu pēc restarta."
+Reboot   = "Restartēt tūliņ"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Lūdzu, uzgaidiet, kamēr programma tiek pārkonfigurēta un notiek pāreja uz " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Lai pabeigtu pāreju uz " + s_MUProductTitleLong(env("ProductType")) + ", programma tiks restartēta." : "Pāreja uz " + s_MUProductTitleLong(env("ProductType")) + " neizdevās."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Tagad varat izmēģināt tādas " + s_ProductTitleLong("kis") + " funkcijas kā Vecāku kontrole, Antispams, Ugunsmūris un citas." : s_ProductTitleLong("kav") + " nodrošina jūsu datoram pamataizsardzību pret ļaunprogrammatūru."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Varat "+if($IsRefreshSubAvail,"atjaunināt abonementa statusu vai ")+"izdzēst atslēgu." : (f_IsActiveKeyWorkingCommercial() ? "Varat izdzēst aktīvo atslēgu vai pievienot atslēgu." : "Aktivizējiet " + $ProductName + ", lai iespējotu pilnu programmas funkcionalitāti."+ if($CorporateOnly, " Varat iegūt <a Activate onclick(url($ActivationLink))>komerciālo</a> programmas versiju vai aktivizēt <a ActivateTrial onclick(url($ActivationTrialLink))>izmēģinājuma</a> versiju."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktivizēt vē&lāk"
+Later.Descr                 = "Izlaist aktivizāciju un pāriet pie programmas konfigurēšanas"
+ChooseKey.Name              = "A&ktivizēt ar atslēgas failu"
+ChooseKey.Descr             = "Vajadzīgs atslēgas fails"
+ActivateBetaKAV.Name        = "Aktivizēt Kaspersky Anti-Virus &beta versiju"
+ActivateBetaKAV.Descr       = "Kaspersky Anti-Virus beta versijai ir visas funkcijas, bet tas nav pabeigts produkts."
+ActivateBetaKIS.Name        = "Aktivizēt Kaspersky Internet Security &beta versiju"
+ActivateBetaKIS.Descr       = "Kaspersky Internet Security beta versijai ir visas funkcijas, bet tas nav pabeigts produkts."
+ActivateTrial.Name          = "Aktivizē&t izmēģinājuma versiju"
+ActivateTrial.Descr         = "Izmēģinājuma versijas derīguma termiņš ir norādīts lietotāja licences līgumā"
+ActivateCommercial.Name     = "&Aktivizēt tiešsaistē"
+ActivateCommercial.Descr    = "Vajadzīgs līdz ar pirkumu saņemtais aktivizācijas kods"
+RemoveKey.Name              = $HasReserveKey ? "Iz&dzēst papildu atslēgu" : "Iz&dzēst atslēgu"
+RemoveKey.Descr             = "Lai aizstātu atslēgu, vispirms noņemiet aktīvo atslēgu"
+RefreshSubscription.Name    = "Akt&ualizēt abonementa statusu"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Varat atjaunināt abonementa statusu manuāli." : "Automātiska abonementa statusa atjaunināšana izbeigta. Varat atjaunināt statusu manuāli."
+ActivateTrialKIS            = "Aktivizēt Kaspersky Internet Security izmēģinājuma versiju"
+ActivateTrialKIS_Desc       = "Kaspersky Internet Security izmēģinājuma versijas derīguma termiņš ir norādīts licences līgumā"
+RevertToCommercialKAV       = "Atgriezties pie Kaspersky Anti-Virus komerciālās versijas"
+RevertToCommercialKAV_Desc  = "Atgriezties pie Kaspersky Anti-Virus komerciālās versijas"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Atjaunināt abonementa statusu"
+ActivateCommercial      = "Aktivizēt komer&ciālo versiju"
+ActivateCommercial_Desc = (LockActivationCode)? "Ievadīt aktivizācijas kodu: " : "Ievadīt <a onclick(url(\"" + $ActCodeHint + "\"))>aktivizācijas kodu</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Jūsu aktivizācijas kods tika pievienots automātiski. Lūdzu, noklikšķiniet uz pogas \"Tālāk\"." : "Ja jums nav aktivizācijas koda, varat to iegādāties <a onclick(buy())>tiešsaistē</a>"
+ActivateBetaKAV         = "Aktivizēt Kaspersky Anti-Virus &beta versiju"
+ActivateBetaKIS         = "Aktivizēt Kaspersky Internet Security beta &versiju"
+ActivateTrial           = "Aktivizē&t izmēģinājuma versiju"
+ActivateTrial_Desc      = "Izmēģiniet pilnīgi funkcionālu programmas versiju pirms programmas iegādes."
+ActivateTrialKIS           = "Aktivizēt Kaspersky Internet Security izmēģinājuma versiju"
+ActivateTrialKIS_Desc      = "Izmēģiniet pilnīgi funkcionālu Kaspersky Internet Security versiju pirms programmas iegādes."
+RevertToCommercialKAV      = "Atgriezties pie Kaspersky Anti-Virus komerciālās versijas"
+RevertToCommercialKAV_Desc = "Pārtraukt lietot Kaspersky Internet Security izmēģinājuma versiju un atgriezties pie Kaspersky Anti-Virus komerciālās versijas."
+Later                   = "&Aktivizēt vēlāk"
+Later_Desc              = "Visas programmas funkcijas būs pieejamas tikai pēc programmas aktivizēšanas."
+RemoveKey               = "Izdzēst atslēgas failu"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Atslēgas fails:"
+KeyInfo         = "Informācija par licenci"
+ConnectingInfo.Name     = "Aktivizācijas kļūda: "
+ConnectingInfo.Val      = "detaļas"
+TryAgain                = "Aktivizēt"
+Descr1                  = "Lai atkārtotu aktivizācijas mēģinājumu, dariet šādi:"
+Descr2                  = "Pārbaudiet interneta savienojuma iestatījumus un vēlreiz mēģiniet aktivizēt programmu."
+Descr3                  = "Pārejiet uz <a onclick(url(\"" + $ActivationLink + "\"))> Tiešsaistes aktivizācijas centru</a> un izpildiet instrukcijas.\nPēc atslēgas faila saņemšanas norādiet tā atrašanās vietu un noklikšķiniet Tālāk:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Izveides datums:"
+InstallDate.Name    = "Aktivizēšanas datums:"
+ExpirationDate.Name = "Beigu datums:"
+SubscrptnExpDate.Name = "Abonementa beigu datums:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," - " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Sistēmas kļūda: " + s_SystemError(ErrorCode)
+2       = "Nevar pievienot \"" + KeyFile + "\" atslēgu: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Nevar izdzēst \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Kļūdas kods: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Šī atslēga jau pievienota" + $LicErrHelpLink
+0x0947901d  = "Licence beigusies. Datubāzes atjaunināšana nav pieejama" + $LicErrHelpLink
+0x89479002  = "Licence nav atrasta" + $LicErrHelpLink
+0x89479003  = "Ciparparaksts ir bojāts vai tā nav" + $LicErrHelpLink
+0x89479004  = "Dati ir bojāti" + $LicErrHelpLink
+0x89479005  = "Atslēgas fails ir bojāts" + $LicErrHelpLink
+0x89479006  = "Licences derīguma termiņš ir beidzies" + $LicErrHelpLink
+0x89479007  = "Nav norādīts atslēgas fails" + $LicErrHelpLink
+0x89479008  = "Atslēgas fails nav derīgs" + $LicErrHelpLink
+0x89479009  = "Neizdevās saglabāt datus" + $LicErrHelpLink
+0x8947900a  = "Neizdevās nolasīt datus" + $LicErrHelpLink
+0x8947900b  = "Ievadizvades kļūda" + $LicErrHelpLink
+0x8947900c  = "Nav datubāzu" + $LicErrHelpLink
+0x8947900d  = "Aktīvā un papildu atslēgas jau ir pievienotas" + $LicErrHelpLink
+0x8947900e  = "Licencēšanas bibliotēka nav inicializēta" + $LicErrHelpLink
+0x8947900f  = "Datubāzes ir bojātas vai atjauninātas manuāli" + $LicErrHelpLink
+0x89479010  = "Datubāzes ir bojātas" + $LicErrHelpLink
+0x89479011  = "Noilgušu atslēgas failu nevar reģistrēt kā papildu atslēgu" + $LicErrHelpLink
+0x89479012  = "Sistēmas kļūda" + $LicErrHelpLink
+0x89479013  = "Atslēgu melnais saraksts ir bojāts" + $LicErrHelpLink
+0x89479014  = "Ciparparaksts neatbilst Kaspersky Lab ciparparakstam" + $LicErrHelpLink
+0x89479015  = "Nevar aktivizēt programmas komerciālo versiju, izmantojot beta licenci" + $LicErrHelpLink
+0x89479016  = "Programmas beta versiju var aktivizēt, tikai izmantojot beta licenci" + $LicErrHelpLink
+0x89479017  = "Licence neattiecas uz šo programmu. Nevar aktivizēt " + $ProductName + ", izmantojot citas programmas licenci. Lūdzu, pārbaudiet instalēto programmu" + $LicErrHelpLink
+0x89479018  = "Atslēga ir bloķēta" + $LicErrHelpLink
+0x89479019  = "Šī izmēģinājuma licence jau ir lietota. Vienu un to pašu izmēģinājuma licenci nevar lietot divreiz" + $LicErrHelpLink
+0x8947901a  = "Atslēgas fails ir bojāts" + $LicErrHelpLink
+0x8947901b  = "Ciparparaksta nav, tas ir bojāts vai neatbilst Kaspersky Lab ciparparakstam" + $LicErrHelpLink
+0x8947901c  = "Nevar pievienot nekomerciālas licences atslēgu, ja tās derīguma termiņš ir beidzies" + $LicErrHelpLink
+0x8947901e  = "Atslēgas faila izveides vai reģistrācijas datums ir nederīgs. Pārbaudiet sistēmas laika iestatījumus" + $LicErrHelpLink
+0x8947901f  = "Nevar pievienot atslēgu izmēģinājuma licencei, kamēr ir aktīva izmēģinājuma licences atslēga" + $LicErrHelpLink
+0x89479020  = "Atslēgu melnais saraksts iztrūkst vai ir bojāts" + $LicErrHelpLink
+0x89479021  = "Atjaunināšanas apraksts iztrūkst vai ir bojāts" + $LicErrHelpLink
+0x89479022  = "Iekšējie dati nav derīgi šai programmai" + $LicErrHelpLink
+0x89479023  = "Nevar pievienot papildu atslēgu, lietojot nepareizu aktivizācijas kodu" + $LicErrHelpLink
+0x89479024  = "Lietotāja veidlapas datu aizpildes kļūda" + $LicErrHelpLink
+0x89479025  = "Kļūda, nosūtot pieprasījumu aktivizācijas serverim.\nIespējamie iemesli: Interneta savienojuma kļūme vai īslaicīga kļūme aktivizācijas serverī.\nMēģiniet aktivizēt kodu vēlāk (pēc 1-2 stundām).\nJa kļūme saglabājas, vērsieties pie sava interneta pakalpojumu sniedzēja" + $LicErrHelpLink
+0x89479026  = "Pieprasījumā ir nepareizs aktivizācijas kods" + $LicErrHelpLink
+0x89479027  = "Nevar saņemt atbildes statusu" + $LicErrHelpLink
+0x89479028  = "Kļūda, saglabājot pagaidu failu" + $LicErrHelpLink
+0x89479029  = "Nepareizi ievadīts aktivizācijas kods vai nepareizs sistēmas datums. Pārbaudiet sistēmas laika iestatījumus" + $LicErrHelpLink
+0x8947902a  = "Aktivizēšanas kods nav piemērots šai programmai vai arī atslēgas derīguma termiņš ir beidzies. Nevar aktivizēt " + $ProductName + ", izmantojot citas programmas licenci. Lūdzu, pārbaudiet instalēto programmu vai <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Neizdevās saņemt atslēgas failu. Norādīts nepareizs aktivizācijas kods" + $LicErrHelpLink
+0x8947902c  = "Aktivizācijas serveris atbildēja ar kļūdu 400" + $OlaErrHelpLink
+0x8947902d  = "Aktivizācijas serveris atbildēja ar kļūdu 401" + $OlaErrHelpLink
+0x8947902e  = "Aktivizācijas serveris atbildēja ar kļūdu 403" + $OlaErrHelpLink
+0x8947902f  = "Aktivizācijas serverī nav vajadzīgā resursa.\nAktivizācijas serveris atbildēja ar kļūdu 404.\nLūdzu, pārbaudiet interneta savienojuma iestatījumus" + $OlaErrHelpLink
+0x89479030  = "Aktivizācijas serveris atbildēja ar kļūdu 405" + $OlaErrHelpLink
+0x89479031  = "Aktivizācijas serveris atbildēja ar kļūdu 406" + $OlaErrHelpLink
+0x89479032  = "Nepieciešama starpniekservera autentifikācija. Lūdzu, pārbaudiet LAN iestatījumus" + $LicErrHelpLink
+0x89479033  = "Pieprasītā noildze" + $LicErrHelpLink
+0x89479034  = "Aktivizācijas serveris atbildēja ar kļūdu 409" + $OlaErrHelpLink
+0x89479035  = "Aktivizācijas serverī nav vajadzīgā resursa.\nAktivizācijas serveris atbildēja ar kļūdu 410.\nLūdzu, pārbaudiet interneta savienojuma iestatījumus" + $OlaErrHelpLink
+0x89479036  = "Aktivizācijas serveris atbildēja ar kļūdu 411" + $OlaErrHelpLink
+0x89479037  = "Aktivizācijas serveris atbildēja ar kļūdu 412" + $OlaErrHelpLink
+0x89479038  = "Aktivizācijas serveris atbildēja ar kļūdu 413" + $OlaErrHelpLink
+0x89479039  = "Aktivizācijas serveris atbildēja ar kļūdu 414" + $OlaErrHelpLink
+0x8947903a  = "Aktivizācijas serveris atbildēja ar kļūdu 415" + $OlaErrHelpLink
+0x8947903b  = "Nezināma klienta kļūda" + $OlaErrHelpLink
+0x8947903c  = "Iekšējā servera kļūda" + $LicErrHelpLink
+0x8947903d  = "Funkcija netiek atbalstīta" + $LicErrHelpLink
+0x8947903e  = "Nepareiza vārtejas atbilde. Pārbaudiet tīkla iestatījumus" + $LicErrHelpLink
+0x8947903f  = "Resurss īslaicīgi nav pieejams" + $LicErrHelpLink
+0x89479040  = "Pieprasījuma gaidīšanas noildze. Pārbaudiet tīkla iestatījumus" + $LicErrHelpLink
+0x89479041  = "Serveris neatbalsta šo protokolu" + $OlaErrHelpLink
+0x89479042  = "Nezināma servera kļūda" + $OlaErrHelpLink
+0x89479043  = "Nezināma http kļūda" + $OlaErrHelpLink
+0x89479044  = "Nederīgs resursa identifikators" + $LicErrHelpLink
+0x89479045  = "Nepareiza informācija laukā \"atslēga\"" + $LicErrHelpLink
+0x89479046  = "Nepareiza URL" + $LicErrHelpLink
+0x89479047  = "Nepareiza mērķa mape" + $LicErrHelpLink
+0x89479048  = "Atmiņas piešķiršanas kļūda" + $LicErrHelpLink
+0x89479049  = "Kļūda, konvertējot parametrus par ANSI virkni (url, mape, aģents)" + $LicErrHelpLink
+0x8947904a  = "Kļūda, veidojot darba pavedienu" + $LicErrHelpLink
+0x8947904b  = "Darba pavediens jau ir palaists" + $LicErrHelpLink
+0x8947904c  = "Darba pavediens nav palaists" + $LicErrHelpLink
+0x8947904d  = "Atslēgas fails nav atrasts aktivizācijas serverī" + $LicErrHelpLink
+0x8947904e  = "Atslēga ir bloķēta" + $LicErrHelpLink
+0x8947904f  = "Aktivizācijas servera iekšējā kļūda" + $LicErrHelpLink
+0x89479050  = "Nepietiek datu aktivizācijas pieprasījumā" + $LicErrHelpLink
+0x89479051  = "Nepareizs lietotāja ID vai parole" + $LicErrHelpLink
+0x89479052  = "Nepareizs aktivizācijas kods" + $LicErrHelpLink
+0x89479053  = "Izraudzītā atslēgas faila licences derīguma termiņš beidzas ātrāk nekā esošanai licencei" + $LicErrHelpLink
+0x89479054  = "Nepareiza informācija par operētājsistēmu. Lūdzu, pārbaudiet sistēmas datumu" + $LicErrHelpLink
+0x89479055  = "Izmēģinājuma licences derīguma termiņš ir beidzies" + $LicErrHelpLink
+0x89479056  = "Aktivizācijas periods ir beidzies" + $LicErrHelpLink
+0x89479057  = "<b>Ievadītais aktivizācijas kods pārsniedz atļauto aktivizācijas reižu ierobežojumu!</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Nekomerciālas versijas atslēgu nevar pievienot kā papildu atslēgu, kamēr darbojas komerciālā atslēga" + $LicErrHelpLink
+0x8947905c  = "Vajadzīgs aktivizācijas kods" + $LicErrHelpLink
+0x8947905d  = "Nepareizs lietotāja ID vai parole" + $LicErrHelpLink
+0x8947905e  = "Nepareizs aktivizācijas kods" + $LicErrHelpLink
+0x89479062  = "Nevar savienoties ar aktivizācijas serveri" + $LicErrHelpLink
+0x89479064  = "<b>Aktivizācijas serveris nav pieejams.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Pašlaik programmu nevar aktivizēt. Mēģiniet no jauna aktivizēt pēc programmas konfigurēšanas un operētājsistēmas restarta.", "Lūdzu, pārbaudiet interneta savienojuma iestatījumus un mēģiniet no jauna aktivizēt.") + $LicErrHelpLink
+0x89479065  = "Jūsu licencei ir beidzies derīguma termiņš. Lūdzu, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Aktīvo atslēgu nevar aizstāt ar atslēgu, kuras derīguma termiņš ir beidzies" + $LicErrHelpLink
+0x89479067  = "Kā papildu atslēgu nevar pievienot atslēgu, kuras derīguma termiņš beidzas ātrāk nekā aktīvajai atslēgai" + $LicErrHelpLink
+0x89479068  = "Trūkst atjauninātā abonementa atslēgas" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Aktivizācijas procedūra beigusies ar sistēmas kļūdu " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktivizācijas kļūda: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktivizācijas kļūda: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktivizācijas kļūda: serveris atbildēja ar HTTP kodu " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktivizācija neizdevās " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Iekšējā aktivizācijas servera kļūda. Lūdzu, mēģiniet vēlreiz vai vērsieties Tehniskā atbalsta dienestā"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Aktivizācijas kods nav saderīgs ar šo programmu. Nevar aktivizēt " + $ProductName + " ar citas programmas aktivizācijas kodu. Lūdzu, pārbaudiet instalēto programmu"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Atslēga ir bloķēta"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Nepareizs klienta ID vai parole"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Nepareizs aktivizācijas kods"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Vajadzīgs aktivizācijas kods"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Aktivizācijas periods ir beidzies"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Pārsniegts aktivizācijas reižu skaits ar šo kodu"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Aktivizācijas kods nav derīgs šajā reģionā"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Šo aktivizācijas kodu nevar izmantot šai programmas lokalizācijai."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Aktivizācijas kods ir paredzēts jaunākai programmas versijai. Lai lietotu šo versiju, jāsaņem cits kods. Lai iegūtu sīkāku informāciju, klikšķiniet uz saites apakšā."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Aktivizācijas serveris atbildēja ar kļūdu 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Aktivizācijas serveris atbildēja ar kļūdu 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Aktivizācijas serveris atbildēja ar kļūdu 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Aktivizācijas serveris atbildēja ar kļūdu 646"
+default                                     = "Aktivizācijas serveris atbildēja ar kļūdu " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft Internet Explorer darbojas bezsaistes režīmā"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Interneta savienojumu neizdevās izveidot"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Aktivizācijas serveris nav pieejams"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Starpniekserveris nav pieejams"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Atbildes noildze"
+#OLA_ERR_INTERNET_INVALID_URL                = "Nepareiza aktivizācijas servera adrese"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Nepareizs protokols"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Nevar izveidot savienojumu ar serveri"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operācija atcelta"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Nevar izveidot savienojumu ar serveri"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Savienojums ar serveri tika izbeigts"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Savienojums ar serveri tika atjaunots"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Nepareiza servera atbilde"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Servera SSL sertifikāta derīguma termiņš ir beidzies. Lūdzu, pārbaudiet datora laiku"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Servera nosaukums SSL sertifikātā neatbilst šim serverim"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Nevar veikt sertifikāta atsaukšanas pārbaudi. Atspējojiet šo pārbaudi programmā Microsoft Internet Explorer (Rīki->Interneta opcijas->Papildus->Pārbaudīt servera sertifikāta atsaukšanu) un atkārtojiet aktivizācijas mēģinājumu"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Nederīgs SSL sertifikāts"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL sertifikāts ir atsaukts"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Nepareizs sertifikācijas centrs"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Reģistrācijas dati ir nepieciešami, lai Kaspersky Lab informētu jūs par dažādām veicināšanas akcijām, kampaņām un īpašiem piedāvājumiem."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Turpināt"
+Activate.Descr  = "Sūta datus aktivizācijas serverim"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Konfigurācijas vednis savienojas ar Kaspersky Lab aktivizācijas serveri. Tam var būt nepieciešams laiks, kas atkarīgs no jūsu interneta savienojuma ātruma."
+ConnectingInfo.Name     = "Savienojas ar aktivizācijas serveri..."
+ConnectingInfo.Val      = if(bConnected, "Labi")
+SendingCodeInfo.Name    = "Sūta aktivizācijas kodu..."
+SendingCodeInfo.Val     = if(bSentCode, "Labi")
+RetrievingKeyInfo.Name  = "Gaida servera atbildi..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "Labi")
+Status                  = "Jūsu " + $ProductName + " kopija ir veiksmīgi aktivizēta"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Beigu datums:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktivizācija veiksmīgi pabeigta." : "Programma jūsu datorā jau ir aktīva."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Tālāk"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Pāriet pie programmas aktivizācijas": (((PiwFlags & #fPiwActivation) && !bSilent)?"Pāriet pie informācijas par licenci":"Pāriet pie aizsrdzības režīma izvēles")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Šis vednis jums palīdzēs pareizi konfigurēt datora drošību.\n\nKonfigurēšanas laikā vednis apkopos informāciju par jūsu sistēmu un par jūsu datorā instalētajām programmām. Šī informācija tiks izmantota tikai optimālas datora aizsardzības nodrošināšanas nolūkos.\n\nNoklikšķiniet uz Tālāk, lai uzsāktu " + $ProductName_GEN + " konfigurēšanu."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Instalēšana ir gandrīz pabeigta..." : ((PiwFlags & #fPiwReset) ? ("Labošana ir pabeigta.") : ("Instalēšana ir pabeigta."))
+ResetDescr          = "Konfigurācijas vednis ir veiksmīgi pabeidzis " + $ProductName + " iestatījumu atjaunošanu."
+Reboot              = "&Restartēt datoru"
+StartProduct        = "St&artēt " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Paldies, ka instalējat " + $ProductName + ". Lai pabeigtu instalēšanu, jums jārestartē dators. Lūdzu, saglabājiet datus, aizveriet visas programmas un noklikšķiniet uz pogas 'Pabeigt'.") : "Lūdzu, ņemiet vērā, ka produkta papildu konfigurācija tiks pabeigta pirmajā produkta palaišanas reizē. Tam var būt vajadzīgas vairākas minūtes."
+
+[ConfigureWizard.EnumExe]
+Info = "Veicot sistēmas analīzi, produkts izveido Microsoft Windows operētājsistēmā esošo uzticamo programmu sarakstu. \n\nProgrammas, kas neietilpst operētājsistēmā, tiek analizētas atsevišķi, kad tās pirmo reizi izpilda datorā."
+
+[s_LicKeyType]
+#ektBeta         = "Beta atslēga"
+#ektTrial        = "Izmēģinājuma"
+#ektTest         = "Testa atslēga"
+#ektOEM          = "OEM atslēga"
+#ektCommercial   = "Komerciāla"
+#ektSubscription = "Komerciālā ar abonementu"
+#ektSubscriptionProtection = "Komerciālā ar aizsardzības abonementu"
+default          = "Nezināms tips"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Nezināma kļūda"
+#ekirValid                      = "Licence ir derīga"
+#ekirExpired                    = "Licences derīguma termiņš ir beidzies"
+#ekirCorrupted                  = "Licence nav derīga"
+#ekirNotSigned                  = "Ciparparaksts iztrūkst vai ir bojāts"
+#ekirWrongProduct               = "Licence neattiecas uz šo programmu. Nevar aktivizēt " + $ProductName + ", izmantojot citas programmas licenci. Lūdzu, pārbaudiet instalēto programmu."
+#ekirBlackListed                = "Atslēga "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" ir bloķēta"
+#ekirIllegalUpdate              = "Datubāzes datums neatbilst licences derīguma termiņam"
+#ekirInconsistentUpdate         = "Datubāzes ir bojātas"
+#ekirKeyCreationDateInvalid     = "Nepareizs atslēgas izveides datums"
+#ekirTrialAlreadyInUse          = "Nevar pievienot atslēgu izmēģinājuma licencei, kamēr ir aktīva izmēģinājuma licences atslēga"
+#ekirInvalidBlacklist           = "Atslēgu melnais saraksts ir bojāts"
+#ekirCantBeUsedAsReserved       = "Nevar reģistrēt licenci kā papildu licenci"
+#ekirKeyInstallDateInvalid      = "Nepareizs aktivizēšanas datums"
+#ekirTrialPeriodIsOver          = "Izmēģinājuma licences derīguma termiņš ir beidzies"
+#ekirConflictsWithCommercial    = "Jaunais atslēgs fails konfliktē ar esošo komerciālo licenci"
+#ekirExpiredAsReserve           = "Šīs licences derīguma termiņš beidzas ātrāk nekā esošanai licencei"
+#ekirGracePeriod                = "Licencei atlaides periods"
+#ekirSuspended                  = "Abonements ir apturēts"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Programma ir jāpārinstalē"
+#ekirLicenseOnlyForMigration    = "Mainīt uz citu programmu, lai aktivizētu komerciālo versiju"
+default                         = "Atslēgas fails ir nepareizs"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Tiks noteikts vēlāk"
+#edtUnlimited = "Aktīvs"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Apturēts no " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Informācija par licenci"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": paziņojums par licenci"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Uzmanību!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Jūs lietojat " + $ProductName_GEN + " izmēģinājuma versiju."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Licenču melnais saraksts iztrūkst vai ir bojāts. Lūdzu, palaidiet <a Update onclick(f_StartUpdater())>atjaunināšanu,</a> lai turpinātu operāciju."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Jūsu licence " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Lai varētu saglabātu aizsardzību, lūdzu, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " licenci</a>.\n\nJa esat jau iegādājies licenci, tad, lūdzu, <a Activate onclick(f_Activate())>aktivizējiet programmu</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Abonements beidzies." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Aizsardzība ir atspējota."))+($IsBestBuyLink ? " Abonementa atjaunošana nav pieejama." : " Datora drošība ir apdraudēta. \n\nLai atjaunotu abonementu, <a onclick(url($KeyProviderLinkForText))>sazinieties ar pakalpojuma sniedzēju</a>.")) :("Jums ir atlicis " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " abonementa atjaunošanai. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " atlicis līdz atjauninājumu atspējošanai. " : " atlicis līdz aizsardzības atspējošanai." ) ) + " Lai atjaunotu abonementu, <a onclick(url($KeyProviderLinkForText))>sazinieties ar pakalpojuma sniedzēju</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Aktīvā atslēga ir bloķēta.\nAtjaunināšanas funkcija ir atspējota, tāpēc pastāv datora inficēšanās risks.</b>\n\nJa esat likumīgi iegādājies programmu, lūdzu, sazinieties ar tehniskā atbalsta dienestu vai pārdevēju.\n\nJa lietojat nelegālu kopiju, lūdzu, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJa jau esat ieguvis licenci, lūdzu, <a Activate onclick(f_Activate())>aktivizējiet programmu</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "beidzas šodien" : "beidzas pēc " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "ir beigusies"
+
+[s_LicenseRenewBuyText]
+0 = "iegūt licenci"
+default = "atjaunot licenci"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Izvēlēties atjaunojamos iestatījumus:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " Konfigurācijas vednis"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Vispārīgā informācija"
+InitBegin.Descr                       = "Laipni lūgti " + $ProductName_GEN + " konfigurācijas vednī."
+CheckHosts.Name                       = "Pārbauda, vai Kaspersky Lab serveri ir pieejami"
+CheckHosts.Descr                      = "Konstatēta aizdomīga virzienmaiņa"
+ResetArea.Name                        = "Atjaunot iestatījumus"
+ResetArea.Descr                       = "Tālāk uzskaitītie iestatījumi ietver datus, ko ievadījis lietotājs vai kas savākti \nprogrammas darbības laikā."
+EnumExe.Name                          = "Sistēmas analīze"
+EnumExe.Descr                         = "Lūdzu, uzgaidiet, kamēr tiek vākta informācija par sistēmu..."
+ResetFinish.Name                       = "Beidz konfigurēt " + $ProductName
+ResetFinish.Descr                      = $ProductName + " gatavs sākt."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Atjaunošana pabeigta."
+ResetDescr          = "Konfigurācijas vednis ir veiksmīgi pabeidzis " + $ProductName + " iestatījumu atjaunošanu."
+
+[BestBuyUpgradeMessage]
+@ = "Pārslēgt uz citu programmu"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Sākt izmantot Kaspersky Internet Security"
+RestartButton = "Palaist Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Apsveicam!"
+Message = "Notika sekmīga pāreja no jūsu Kaspersky Anti-Virus uz Kaspersky Internet Security.\nTagad varat izmantot pat vēl vairāk funkciju, lai aizsargātu savu datoru."
+Description = "Paldies, ka izvēlējāties Kaspersky Lab programmatūru! Lūdzu, izmantojiet pievienoto aizsardzību."
+
+[ForcedUpgradeMessagePage]
+Header = "Gandrīz pabeigta"
+Message = "Paldies, ka izvēlējāties Kaspersky Lab programmatūru! Lūdzu, izmantojiet pievienoto aizsardzību."
+Description = "Tā kā nesaderīgā programmatūra netika noņemta, dažas no Kaspersky Internet Security jaunajām funkcijām tika atspējoatas, lai nodrošinātu pareizu instalēto programmu un operētājsistēmas darbību.\n\nNesaderīgo programmatūru varat noņemt manuāli un Kaspersky Internet Security iestatījumu logā iespējot visas jaunās funkcijas."
+Notification = "Šī programma tiks pārstartēta, lai pabeigtu pāriešanu."

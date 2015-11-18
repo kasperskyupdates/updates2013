@@ -1,0 +1,25 @@
+<UpdateFiles
+	UpdateDate="28102015 1503"
+	BlackDate="28102015 0603"
+	ObjectType="2=HIPS;3=BASE">
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.0.*.*;KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KES 10.[1-2].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="intctrl.kdl" />
+	<Registry
+		ComponentID="HIPS2"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAX1fHipAADHZy2QD2f1qp5n+JxWm94nRB0+qWsGa1ghBAsWo7cKzQZ9Cj8rp20GLJO87DJ36Rc7kiS2oj6u7N8cjl8LPnYIBAB4JZwAAAAIAAigEAEhJUFMDAAIoBABCQVNFAQAACV96gLQNCjs6MTA0UzI3Mk95VGt0V0lodStLWDBZTnVHeFZ3ajBGWlExbzB6WjNDVk5SWGdJbmFZaVE0eThPampVczRBa2hteDhqNk5iS1Y1ZFlDRm12RGcrUzhhV0ErSCUl"
+		Filename="hips-0607g.pbv" />
+	<Registry
+		ComponentID="HIPS2"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwFnAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAQABACAAvJRlHVtmqrSxR9zG0xp0bK4uY1zYfCab4ZIhOWEKEbcCAB4BAQAeCWcAAAABAAAJUbRqmw0KOzoxMDREeUJUYjYzSlBVQ1dKV044LzVSSVR0cUc5UHhlZmZBZThyaDNaUFo3Y2E4YkNTRDVBNVNKdnFkS0pzM2RtWWtxWHJoNm0vTENVRC9vazJiNytBaUZIJSU="
+		Filename="mod-hips-0607g.krg" />
+</UpdateFiles>
+;:104SdBtpo2jjExQcUgReegMZvfnWSsSP8WBYKHJBS+8MXTHjZw/PDW4S++BauMLvF37KeMhxlJ8B1j7S55aaWSDy%%

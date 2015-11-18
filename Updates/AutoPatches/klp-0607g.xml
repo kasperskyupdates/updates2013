@@ -1,0 +1,113 @@
+<UpdateFiles
+	UpdateDate="19102015 1144"
+	ObjectType="2=Core;3=BIN">
+	<FileDescription
+		ComponentID="AKP8"
+		UpdateType="desc"
+		ServerFolder="akp8"
+		Filename="akp8-0607g.xml"
+		FileDate="15102015 0816" />
+	<FileDescription
+		ComponentID="KAV2006EXEC"
+		UpdateType="desc"
+		ServerFolder="kav6"
+		Filename="kav6-0607g.xml"
+		FileDate="18082014 0601" />
+	<FileDescription
+		ComponentID="KAV8WSEE"
+		UpdateType="desc"
+		ServerFolder="kav8wsee"
+		Filename="kav8wsee-0607g.xml"
+		FileDate="14062011 1158" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder="kav12"
+		Filename="kav12-0607g.xml"
+		FileDate="05092013 0712" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		ServerFolder="kav13"
+		Filename="kav13-0607g.xml"
+		FileDate="09092015 0841" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder="kes10"
+		Filename="kes10-0607g.xml"
+		FileDate="10032014 1214" />
+	<FileDescription
+		ComponentID="KSE8"
+		UpdateType="desc"
+		ServerFolder="kse8"
+		Filename="kse8-0607g.xml"
+		FileDate="13072015 0836" />
+	<FileDescription
+		ComponentID="KSH8"
+		UpdateType="desc"
+		ServerFolder="ksh8"
+		Filename="ksh8-0607g.xml"
+		FileDate="18072013 0904" />
+	<FileDescription
+		ComponentID="KTS9"
+		UpdateType="desc"
+		ServerFolder="kts9"
+		Filename="kts9-0607g.xml"
+		FileDate="03092015 0703" />
+	<FileDescription
+		ComponentID="KAVMAC"
+		UpdateType="desc"
+		ServerFolder="kavmac"
+		Filename="kavmac-0607g.xml"
+		FileDate="19102015 1121" />
+	<FileDescription
+		ComponentID="KASMAC"
+		UpdateType="desc"
+		ServerFolder="kasmac"
+		Filename="kasmac-0607g.xml"
+		FileDate="25072011 1110" />
+	<FileDescription
+		ComponentID="KSS2"
+		UpdateType="desc"
+		ServerFolder="kss2"
+		Filename="kss2-0607g.xml"
+		FileDate="24072014 0731" />
+	<FileDescription
+		ComponentID="KLMS"
+		UpdateType="desc"
+		ServerFolder="klms"
+		Filename="klms-0607g.xml"
+		FileDate="15062015 1034" />
+	<FileDescription
+		ComponentID="KSOS2"
+		UpdateType="desc"
+		ServerFolder="ksos2"
+		Filename="ksos2-0607g.xml"
+		FileDate="11122014 0701" />
+	<FileDescription
+		ComponentID="KSVLA2"
+		UpdateType="desc"
+		ServerFolder="ksvla2"
+		Filename="ksvla2-0607g.xml"
+		FileDate="22042015 1349" />
+	<FileDescription
+		ComponentID="rd"
+		UpdateType="desc"
+		ServerFolder="rd"
+		Filename="rd-0607g.xml"
+		FileDate="27022013 0613" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH8/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAQ9zHipAAEbENb4hdAUBbKoc6HZRRIaDd5SD8A4GH4PJTlfD/pVfKS1mDy8ODhy34AIHjI8Y4zlXTAMYgDFrP2y0LtGarMsBAB4J+v9/AAEAAAnDx4E1DQo7OjEwYU54L05XcVQxbldweHpGS3hWTXNQUEVwQ3pLa3QyYmdxTitESnc5a01mSW1KZVVXc0s2TlRkQkJMbjZ5Qlo3SHAwYWNjRzdhNVpDd05uMEFXZlJtS2klJQ=="
+		Filename="kl-0607g.pbv" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAeBpHipAAGPd/7NNhLdVrbI4Z7tqOvGnZVEVfhcGw9lPYGHVWpCcS8ghG3gAn1jUHEVFtF3qsFpBxRMBf/HtUR2GJemU+T4BAB4JAwAAAAIAAigEAENvcmUDAAIoAwBCSU4BAAAJWXS1KA0KOzoxMGFWQklnRnZiUFlTaXh0MitJekUxYVJYdE1HdXhMb2tTbXRxN0pjWkpKdWt1MU1Ka25qNEV0YVlVdmJKN0c3cDlpRjk2cHd0a050K2FheDNQL1B4QXRqJSU="
+		Filename="core-bin-0607g.pbv" />
+</UpdateFiles>
+;:10aG8ScIrDAn1SCYdm/dMZ9Qro+n2IOCoyF5ou1S2TaFvm3DT4jOI5rhYnW/h3pwBL2CgplloT6yzdXTp4BaiQ+/%%

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x37964E7B" name="SwMonitorDrv" module="swmon_drv.kdl" timeout="-1" category="SW2" module_category="SW2">
+    <interface iid="0xFD19B21B" name="ISwmonDriver"/>
+  </component>
+</root>

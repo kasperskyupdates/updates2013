@@ -1,0 +1,458 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Previzualizare tehnică Kaspersky Internet Security'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Previzualizare tehnică Kaspersky Internet Security'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'la zi' 
+Corrupted = 'alterate' 
+VeryOld = 'învechit' 
+Old = 'inactual' 
+OldInGracePeriod = 'nu au fost actualizate de mult timp'
+UpdatedAndRebootNeeded = 'actualizat. Este necesară repornirea computerului' 
+UpdatedAndProductRestartNeeded = 'actualizat. Este necesară repornirea aplicaţiei' 
+SomeBasesNeedUpdate = 'pentru unele componente de protecţie este necesară actualizarea'
+
+Schedule_Auto    = 'automat' 
+Schedule_Manual  = 'manual' 
+Schedule_Fixed   = 'după planificare' 
+
+Back = 'Înapoi' 
+StopTask = 'Oprire'
+
+News = 'Ştiri'
+Reports = 'Rapoarte'
+Settings = 'Setări'
+Help = '&Ajutor'
+OK = 'OK'
+Cancel = 'Revocare'
+Retry = 'Reîncercare'
+
+Unknown = 'necunoscut'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'azi, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'ieri, %H:%M'
+
+MonthName_1  = 'Ianuarie'
+MonthName_2  = 'Februarie'
+MonthName_3  = 'Martie'
+MonthName_4  = 'Aprilie'
+MonthName_5  = 'Mai'
+MonthName_6  = 'Iunie'
+MonthName_7  = 'Iulie'
+MonthName_8  = 'August'
+MonthName_9  = 'Septembrie'
+MonthName_10 = 'Octombrie'
+MonthName_11 = 'Noiembrie'
+MonthName_12 = 'Decembrie'
+ 
+DateUnknown = 'Necunoscut'
+
+After = 'în'
+Remaining = 'rămase'
+Ago = 'în urmă'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'zi', 'zile', 'zile'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'oră', 'ore', 'ore'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minute', 'minute'}
+LessMinute_After = '<1 minut'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'zi', 'zile', 'zile'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'oră', 'ore', 'ore'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minute', 'minute'}
+LessMinute_Remaining = '<1 minut'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'zi', 'zile', 'zile'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'oră', 'ore', 'ore'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minute', 'minute'}
+LessMinute_Ago = '<1 minut'
+
+Yesterday   = 'ieri'
+Today       = 'azi ' 
+LessWeek    = 'cu mai puţin de o săptămână în urmă'
+LessTwoWeek = 'cu mai puţin de două săptămâni în urmă'
+LessMonth   = 'cu mai puţin de o lună în urmă'
+MoreMonth   = 'cu mai mult de o lună în urmă'
+MoreHalfYear= 'cu mai mult de o jumătate de an în urmă'
+MoreYear    = 'cu mai mult de un an în urmă'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Revocare'
+ApplyButton = 'Aplicare'
+CloseButton = 'Închidere'
+NextButton = 'Următorul >'
+BackButton = '< Înapoi'
+FinishButton = 'Terminare'
+SaveButton = 'Salvare'
+SkipButton = 'Omitere'
+Continue = 'Continuare'
+Yes = 'Da'
+No = 'Nu'
+
+SettingsMore = '&Setări...'
+
+DoNoyShowThisWindow = 'Fără afişare'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Eroare nedefinită'
+SystemError_0x8000004B = 'Eroare nedefinită'
+SystemError_0x80000041 = 'Memorie insuficientă'
+SystemError_0x80000042 = 'Nu este acceptat'
+SystemError_0x80000043 = 'Nu este implementat'
+SystemError_0x80000045 = 'Acces refuzat sau obiect negăsit'
+SystemError_0x8000004C = 'Obiect negăsit'
+SystemError_0x800000C6 = 'Obiect negăsit'
+SystemError_0x800000C5 = 'Obiect negăsit'
+SystemError_0x8000004F = 'Obiect blocat'
+SystemError_0x80000051 = 'Operaţiune revocată'
+SystemError_0x80000059 = 'Eroare dispozitiv'
+SystemError_0x8000005A = 'Semnătură nevalidă'
+SystemError_0x8000005B = 'Versiune nevalidă'
+SystemError_0x8000005F = 'Protecţie la scriere'
+SystemError_0x80000061 = 'Licenţă lipsă'
+SystemError_0x80000062 = 'Spaţiu insuficient'
+SystemError_0x80000063 = 'Dispozitivul nu este pregătit'
+SystemError_0x800000C0 = 'Format nevalid'
+SystemError_0x800000C1 = 'Drepturi insuficiente'
+SystemError_0x800000C2 = 'Eroare iniţializare'
+SystemError_0x800000C3 = 'Eroare iniţializare'
+SystemError_0x800000C7 = 'Stare incorectă obiect'
+SystemError_0x800000C8 = 'Obiectul este protejat prin parolă'
+SystemError_0x800000CA = 'Eroare la citire'
+SystemError_0x800000CC = 'Eroare la citire'
+SystemError_0x800000CB = 'Eroare la scriere'
+SystemError_0x800000CD = 'Eroare la scriere'
+SystemError_0x800000D0 = 'Obiect nevalid'
+SystemError_0x800000D1 = 'Obiectul există deja'
+SystemError_0x800000D5 = 'Obiect utilizat de altă aplicaţie'
+SystemError_0x800000D8 = 'Bazele de date sunt alterate'
+SystemError_0x800001C0 = 'Modul invalid'
+SystemError_0x800001C2 = 'Modulul nu a fost autentificat'
+SystemError_0x800001C1 = 'Modul negăsit'
+SystemError_0x800001C4 = 'Componenta nu se poate încărca'
+SystemError_0x80000221 = 'Întrerupt'
+SystemError_0x80000240 = 'Eroare interacţiune componentă'
+SystemError_0x90005000 = 'Semnătură digitală invalidă'
+SystemError_0x90005002 = 'Nu este semnat digital'
+SystemError_0x80027006 = 'Activitatea a fost oprită'
+SystemError_0x80027007 = 'Activitatea a fost oprită'
+SystemError_0x80380fbb = 'Activitatea a fost oprită'
+SystemError_0x80017007 = 'Imposibil de pornit activitatea în modul de siguranţă'
+SystemError_0x80017005 = 'Activitate dezactivată'
+SystemError_0x80017006 = 'Nume de utilizator sau parolă incorect(ă)'
+SystemError_0x80017008 = 'Lansarea activităţii sub un alt cont de utilizator nu este posibilă în modul de siguranţă'
+SystemError_0x80017009 = 'Driverul nu s-a găsit'
+SystemError_0x80022005 = 'Eroare la încărcarea bazelor de date'
+SystemError_default    = 'Cod eroare: ' + $ErrorCode
+
+LicenseManager = '&Licenţiere'
+SubscriptionManager = 'Gestionare abonament'
+ProblemSolution = 'Salt la fereastra Licenţiere pentru a rezolva această problemă'
+
+KBSuffix = 'KO'
+MBSuffix = 'MO'
+GBSuffix = 'GO'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'inactivă' ;refers to connection
+Stopping = 'oprire'
+ConnectingToServer = 'se face conectarea la server'
+CreatingUpdateList = 'procesare fişier în curs'
+Downloading = 'se descarcă fişiere'
+Installing = 'se actualizează fişierele'
+RollbackRunning = 'restaurare la bazele de date anterioare'
+
+FunctionalityDisabledForExpiredSubscription = 'actualizarea este dezactivată'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'protecţia computerului tău este dezactivată'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'zi', 'zile', 'zile'} + ' rămasă(e).'
+SubscriptionExpiresToday = 'expiră astăzi'
+SubscriptionActivated = 'activat'
+CheckReserveCodeManuallyHeader = 'Nu s-a reuşit activarea automată a aplicaţiei folosind noul cod de activare' ; TODO
+CheckReserveCodeManuallyText = 'Încearcă să activezi manual aplicaţia folosind noul cod de activare.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Versiunea beta a aplicaţiei este instalată'
+LicensingStatus_Trial_ShortDescription = 'O versiune trial a aplicaţiei este instalată'
+LicensingStatus_OkSubscription_ShortDescription = 'Abonament: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Licenţa expiră în curând'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Licenţa expiră în curând'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_InvalidKey_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_Reinstall_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Lista neagră de chei este alterată'
+LicensingStatus_CorruptedBases_ShortDescription = 'Nu se poate verifica corespondenţa bazelor de date cu acordul de licenţă pentru utilizatorul final'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Perioada de valabilitate a licenţei nu permite utilizarea bazelor de date curente'
+LicensingStatus_Expired_ShortDescription = 'Licenţa expiră'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Abonamentul a expirat la ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Licenţa pentru versiunea trial a expirat'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Versiunea beta a expirat'
+LicensingStatus_Blocked_ShortDescription = 'Licenţa este blocată'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Abonamentul este blocat'
+LicensingStatus_LicenseViolated_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Problemă de licenţă detectată'
+LicensingStatus_Grace_ShortDescription = 'Abonamentul a expirat la ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Abonament suspendat din ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Nu s-a reuşit actualizarea automată a stării abonamentului'
+LicensingStatus_NotActivated_ShortDescription = 'Aplicaţia nu este activată'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Aplicaţia nu este activată'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Aplicaţia nu este activată'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Aplicaţia nu este activată'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Cod nou de activare'
+ReserveCodeStatus_Ok_ShortDescription = 'Cod nou de activare'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Noul cod de activare este incorect'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Noul cod de activare nu a fost activat'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Se aşteaptă activarea automată'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Versiunea beta a ' + $ProductNameFull + ' are funcţionalitate completă, dar nu este o versiune finală şi poate conţine erori, întreruperi în funcţionalitate sau defecte. Te rugăm să raportezi orice problemă în secţiunile corespunzătoare de pe forumul nostru.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'zi', 'zile', 'zile'} + ' rămasă(e). La sfârşitul acestei perioade, funcţionalitatea aplicaţiei va fi limitată.' 
+LicenseEndsToday = 'Aceasta este ultima zi a licenţei. Funcţionalitatea aplicaţiei va fi limitată dacă nu reînnoieşti licenţa.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Abonament activat. Data expirării: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Abonament reînnoit până la ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Abonament revocat. Data expirării: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Abonamentul va fi suspendat din ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Abonament reînnoit şi fără dată de expirare'
+StateUnlimitedSubscriptionResumedText = 'Abonamentul a fost reluat'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'în ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'zi', 'zile', 'zile'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'zi', 'zile', 'zile'} + ' rămase(ă).După această perioadă, funcţionalitatea aplicaţiei va fi limitată.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Data creării cheii este nevalidă. A fost modificată data sistemului de pe computerul tău. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Data activării este nevalidă. Data sistemului de pe computerul tău a fost modificată. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Integritatea aplicaţiei este compromisă. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Se recomandă descărcarea unei noi liste negre de pe server.'
+LicensingStatus_CorruptedBases_Cause = 'Unul dintre motivele posibile este o actualizare nevalidă. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Este posibil să fi achiziţionat o copie ilegală a aplicaţiei. Protecţia este întreruptă. Computerul tău riscă să fie infectat, deteriorat sau să se fure date din el.'
+LicensingStatus_BlockedSubscription_Cause = 'Poate ai achiziţionat o copie ilegală a aplicaţiei. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Ai depăşit numărul maxim de computere pe care se poate instala ' + $ProductName + ' sub licenţa ta. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Ai depăşit numărul maxim de computere pe care se poate instala ' + $ProductName + ' cu abonamentul tău. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'zi', 'zile', 'zile'} + ' rămasă(e) până ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Este posibil să fi trecut prea mult timp între conexiunile la serverele de activare. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Codul de activare prestabilit este disponibil. Aplicaţia va fi activată imediat ce este disponibilă conexiunea la Internet.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Codul de activare prestabilit este disponibil. Poţi activa aplicaţia cu ajutorul acestui cod de activare sau şterge codul de activare prestabilit.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Aplicaţia nu a fost activată automat cu ajutorul codului de activare prestabilit. Este necesară asistenţa ta.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Poţi introduce un nou cod de activare. Aplicaţia trebuie activată prin intermediul acestui cod de activare după expirarea licenţei actuale.'
+ReserveCodeStatus_Ok_Cause = 'Un nou cod de activare este prezent pe computerul tău. După expirarea licenţei actuale, aplicaţia va fi activată automat cu noul cod de activare. Securitatea ta nu va fi întreruptă.'
+ReserveCodeStatus_Invalid_Cause = 'După expirarea licenţei actuale, actualizarea va fi indisponibilă.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Nu s-a reuşit activarea automată a aplicaţiei prin intermediul noului cod de activare ' + $ReserveCode + '. Este necesară asistenţa ta.'
+ReserveCodeStatus_WaitActivation_Cause = 'Activarea automată prin noul cod de activare ' + $ReserveCode + ' este aşteptată.'
+
+ResolveProblem_BuyCommercial         = 'Se recomandă achiziţionarea şi activarea unei versiuni comerciale a aplicaţiei.'
+ResolveProblem_CheckSystemTime		= 'Asigură-te că data sistemului este corectă.'
+ResolveProblem_ActivateAgain        = 'Încearcă să ştergi cheia activă şi să activezi din nou aplicaţia. Poţi, de asemenea, să contactezi asistenţa tehnică sau distribuitorul aplicaţiei.'
+ResolveProblem_CallSupport			= 'Se recomandă să contactezi Asistenţa tehnică pentru a afla motivul blocării. Pentru a restaura funcţionalitatea aplicaţiei, obţine o nouă licenţă.'
+ResolveProblem_ContactSupport		= 'Ia legătura cu asistenţa tehnică.'
+ResolveProblem_ActialLicense		= 'Pentru a relua protecţia computerului, introdu un nou cod de activare.'
+ResolveProblem_UpdateAgain			= 'Se recomandă să actualizezi din nou bazele de date.'
+ResolveProblem_BuyNewLicense		= 'Pentru a relua protecţia computerului, obţine o licenţă nouă.'
+ResolveProblem_CallProvider			= 'Pentru a relua abonamentul, contactează furnizorul tău de servicii.'
+ResolveProblem_ProviderWebSite		= 'Pentru a relua abonamentul, contactează furnizorul tău de servicii.'
+ResolveProblem_RenewalNotAvailable	= 'Reînnoire abonament indisponibilă.'
+ResolveProblem_BuyLicense			= 'Pentru a relua protecţia computerului, trebuie să obţii o licenţă comercială de la Kaspersky Lab sau de la distribuitorii noştri. Versiunea trial poate fi folosită o singură dată.'
+ResolveProblem_Reinstall			= 'Reinstalează aplicaţia.'
+ResolveProblem_RenewLicense			= 'Pentru a activa funcţionalitatea completă, reînnoieşte licenţa.'
+ResolveProblem_RefreshSubscription	= 'Actualizează manual starea abonamentului.'
+ResolveProblem_Activate				= 'Introdu codul de activare pentru a activa aplicaţia.'
+ResolveProblem_ActivateReserveCode  = 'Încearcă să activezi aplicaţia manual utilizând noul cod de activare.'
+ResolveProblem_ActivateCodeManual	= 'Activează manual aplicaţia.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Verifică setările conexiunii tale la Internet şi aşteaptă activarea automată sau activează manual aplicaţia.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Este necesară introducerea unui nou cod de activare. Aplicaţia va fi activată prin intermediul acestui cod de activare după expirarea licenţei actuale.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Este necesară activarea aplicaţiei prin intermediul unui cod de activare înainte de expirarea licenţei pentru versiunea trial.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Pentru a relua funcţionalitatea completă a aplicaţiei, trebuie să obţii o licenţă comercială de la Kaspersky Lab sau de la distribuitorii noştri.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Starea protecţiei este nedefinită. '
+ProtectionLevelNoFeaturesLong = 'Protecţia este dezactivată. '
+ProtectionLevelLimitedLong = 'Funcţionalitatea aplicaţiei este limitată. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Starea actualizării este nedefinită. '
+UpdaterLevelNotAllowedLong = 'Actualizarea este indisponibilă. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'nedefinit'
+SubscriptionStateActive = 'activ'
+SubscriptionStatePaused = 'suspendat'
+SubscriptionStateCancelledSoft = 'suspendat'
+SubscriptionStateCancelledHard = 'revocat'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'nedefinit'
+SubscriptionStatusReasonProviderInitiated = 'activat de către furnizorul de serviciu'
+SubscriptionStatusReasonCreditCardAuthFailed = 'autorizarea cărţii de credit refuzată'
+SubscriptionStatusReasonCustomerInitiated = 'activat de către utilizator'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'autorizarea cărţii de credit acceptată'
+
+ProductStatusRelease = 'versiune lansare'
+ProductStatusBeta = 'versiune beta'
+
+LegalStatusBlocked = 'licenţa este blocată'
+LegalStatusLimited = 'acord de licenţă încălcat'
+LegalStatusValid = 'licenţa este în vigoare'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Există o notificare importantă în legătură cu licenţa.\n<a href="licensemanager">Detalii...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Abonamentul a expirat. Pentru a-ţi reînnoi abonamentul, contactează furnizorul serviciului.'
+
+LicensingState_WarningIsAvailable = 'există un avertisment'
+ProtectionState_NotificationIsAvailable = 'Notificare licenţă'
+LicensingState_ProblemIsAvailable = 'există o problemă'
+
+; LNCS Best Buy
+
+LNCS_BBY_WillExpire_Title =	'Software-ul tău Kaspersky Security va expira în ' + $LicenseDaysToExpiry + ' zile, lăsându-ţi PC-ul neprotejat'
+LNCS_BBY_WillExpire_Description =	'Pentru a continua să fii acoperit, reînnoieşte-l on-line pe Portalul utilizatorului Best Buy'
+
+LNCS_BBY_AboutToExpire_Title =	    'Software-ul tău Kaspersky Security va expira în curând'
+LNCS_BBY_AboutToExpire_Description = 'Au mai rămas doar ' + $LicenseDaysToExpiry + ' zile de acoperire, apoi PC-ul tău va rămâne neprotejat. Reînnoieşte acum contactând Echipa de abonamente software Best Buy on-line pe Portalul utilizatorului Best Buy'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Software-ul tău Kaspersky Security va expira astăzi, lăsându-ţi PC-ul neprotejat'
+LNCS_BBY_AboutToExpire_Today_Description = 'Reînnoieşte-l acum contactând online echipa Best Buy dedicată abonamentelor pentru software pe Portalul utilizatorului Best Buy'
+
+LNCS_BBY_LastDay_Title =	'Avertisment! Software-ul tău Kaspersky Security expiră azi'
+LNCS_BBY_LastDay_Description =	'Nu lăsa ca PC-ul tău să rămână neprotejat. Reînnoieşte on-line pe Portalul utilizatorului Best Buy'
+LNCS_BBY_LastDay_Balloon =	'Avertisment! Software-ul tău Kaspersky Security Software expiră azi. Nu lăsa ca PC-ul tău să rămână neprotejat. Reînnoieşte-l on-line pe <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Avertisment! PC-ul tău nu este protejat'
+LNCS_BBY_Grace_Description =	'Nu lăsa ca PC-ul tău să rămână neprotejat. Reînnoieşte on-line pe Portalul utilizatorului Best Buy'
+LNCS_BBY_Grace_Balloon =		'Avertisment! PC-ul tău este neprotejat. Nu lăsa ca PC-ul tău să rămână neprotejat. Reînnoieşte on-line pe <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Nu am reuşit să reînnoim software-ul tău Kaspersky Security'
+LNCS_BBY_RenewFailure_Description = 'Reînnoieşte on-line pe Portalul utilizatorului Best Buy'
+LNCS_BBY_RenewFailure_Balloon = 'Nu am reuşit să îţi reînnoim Software-ul Kaspersky Security. Reînnoişte-l online pe <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Planul tău de protecţie Kaspersky riscă să fie anulat din cauză că în curând va expira cardul tău de credit de la dosar'
+LNCS_BBY_CCAboutToExpire_Description =	'Reînnoieşte on-line pe Portalul utilizatorului Best Buy'
+
+LNCS_BBY_Expired_Title =		'Abonamentul a expirat'
+LNCS_BBY_Expired_Description =	'Reînnoirea abonamentului nu este disponibilă.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Anti-Virus şi economiseşte 5 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Anti-Virus şi economiseşte 10 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Anti-Virus şi economiseşte 15 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Anti-Virus Software şi economiseşte 20 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Internet Security şi economiseşte 5 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Internet Security şi economiseşte 10 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Internet Security şi economiseşte 15 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Profită de reînnoirea timpurie a Software-ului tău Kaspersky Internet Security şi economiseşte 20 $.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Reînnoire acum</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Software-ul tău Kaspersky Anti-Virus expiră!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Software-ul tău Kaspersky Anti-Virus expiră!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Software-ul tău Kaspersky Anti-Virus expiră!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Software-ul tău Kaspersky Anti-Virus expiră!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Software-ul tău Kaspersky Internet Security expiră!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Software-ul tău Kaspersky Internet Security expiră!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Software-ul tău Kaspersky Internet Security expiră!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Software-ul tău Kaspersky Internet Security expiră!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Fă clic aici</a> pentru a economisi 5 $ din preţul de reînnoire anuală.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Fă clic aici</a> pentru a economisi 10 $ din preţul de reînnoire anuală.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Fă clic aici</a> pentru a economisi 15 $ din preţul de reînnoire anuală.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Fă clic aici</a> pentru a economisi 20 $ din preţul de reînnoire anuală.'
+
+EndOfLicense_Header = 'Raport performanţă aplicaţie'
+WelcomPageTitle = 'Bine ai venit la ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Versiunea sistemului de operare a fost modificată de când ' + $ProductName + ' a fost instalat'
+ReinstallWarningDescription = 'Reinstalează ' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + ' este pus în pauză'
+IncompatibleOsVersionDescription = 'Pentru funcţionarea corespunzătoare a ' + $ProductName + ' după instalarea Microsoft Windows 8, trebuie să reinstalezi unele componente ale aplicaţiei. Instalarea nu va dura mai mult de 2 minute.' + '\n\nÎn timpul configurării ' + $ProductName + ' pe Microsoft Windows 8 protecţia computerului \va fi restricţionată.'
+
+ReinstallWarningOkButton = 'Detalii'
+IncompatibleOsVersionOkButton = 'Instalare şi executare'
+
+BrowserWaitingMessage = 'Aşteaptă...'
+
+OsUpgradedTitle = 'Actualizare sistem de operare'
+OsUpgradedDescription = 'Actualizarea sistemului de operare s-a încheiat cu succes.'

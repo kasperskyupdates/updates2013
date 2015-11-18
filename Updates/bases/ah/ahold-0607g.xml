@@ -1,0 +1,162 @@
+<UpdateFiles
+	UpdateDate="06102015 0923"
+	BlackDate="06102015 0602"
+	ObjectType="2=AH;3=BASE">
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="ids.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="ids00313.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="klcr.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="klfw.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="klick.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="klin.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="klog.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="klstm.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="ckah.set" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="ids.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="ids00313.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="klcr.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="klfw.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="klick.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="klin.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="klog.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="klstm.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		AppName="!KES [10-*].[1-2].1.*"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="ckah.set" />
+	<Registry
+		ComponentID="AH"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Filename="ah-0607g.pbv"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAVwzHipAAAutRdr4Or7MOq1KvvyViKjpGMds3nRJ+vP8ZPNgINGjZOot8hftrFKue5okRmZzO6I4gMreLzoxAduF31Mxfh4BAB4JBwAAAAIAAigCAEFIAwACKAQAQkFTRQEAAAmUf9n3DQo7OjEwNFRzbnE1OUxHd2l1VWMzMnNLVVB5OVZYdzBpaTdwQ0I4dEVSM2YzZTVNS0wyQk1LY05KRURDTExYS3g5VVRIbko5a2ZpK3hRMGs3ZU14MWh1ckNaWUolJQ==" />
+	<Registry
+		ComponentID="AH"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Filename="ahold-0607g.krg"
+		Body="S0xyZwEHAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqEgABACAAKF6fGnQLc3jr4ZtjfmHdWfeav+WI30vagJY7asE1ABkgAAzk5BMPbRu3Otm5vIUm8ElSIBnKOv1T9oTK/90laqF5IACPp6tgZPYBbheMIcaZmJ+V6taLEz89XJE/oCP4yedvHyAAzDTd+KOQ5LMKdx+UUHj3lvycE+gkWBOIKFVP+VnomcogAAM7uwQ9KFPqmjV9VcrOi+dVuHlcOVTlKpaQkXZWfGJSIAA51dD4k7Q+62zAC0Azli/QPWuBddQN5AYTqguUFDx8TSAAaDFCQJP7jJnSIxY2aTN8qmuau5XFzqOf5GUlEn1luOwgAD8js0S9W2pZUcMnja6KZfVQpGofomP9qv1vrAYPdw+WIAAG20GAnjdxN+opne6VlPRY99IEFVj08+W3z1XMUV0uwiAAO6j1rByHUoqEFJwnutDFgbxwFqRN/wcdtaoVM1GZzI0gADm1F8hq7vM6JmQNGKf0/UZXi0vREST9RhZ+3fLh6HtPIAAZEJjaGyGX7ntI5BF3VqaoV3CxYrBk1TQiYdm0eHqygSAAoat9qBn0b6TmbL4N3Jb3C6URfulpKKqkrb8K6tAWLmIgAMcEg9PPYyhN9wsdhA1pUs6iHJ+9FFcXrLWIaZB20bIMIAAdokXioyuhcKoPHuM0Lm4VAau7ZJSF7+bp3TelgfOJ/iAAnQ7FP4xoRALHuUQMJByYGkqowzdDdyyY4Zs0/yYmeTIgAKZhTdGao81tN2p79c5V3TWJwCfexOOp3b2UmVd7qU2tIADxNy1yqovL3JDXU0+iAeyb53/1YO/+Yb8eo+sAFJgTEgIAHgEBAB4JBwAAAAEAAAnjbLtXDQo7OjEwYVZZdmo3NkQrQmZ5VGNDSy8wUkJGZXZSdHdWbmpqdUxLcW1kWkpYbUgzUklyaG00Ni9tcnc4b0hzUkg1L0kvTldtdXRZT0Q3eTNZbnl6aHVZNDJkWG8lJQ==" />
+</UpdateFiles>
+;:10q9OwAdnxuJ9g6ANzlxCPqMM7UM5f5ShhRVG/BGhUqFrq3mpF5uk13lwX1JemTuYpYh/TI3ao6zPRuHT4Affy0O%%

@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:localized>
+		<Description>
+			<em:locale>zh-Hant</em:locale>
+			<em:name>反广告</em:name>
+			<em:creator>卡巴斯基实验室</em:creator>
+			<em:homepageURL>http://www.kaspersky.com.hk</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>zh-Hans</em:locale>
+			<em:name>反广告</em:name>
+			<em:creator>卡巴斯基实验室</em:creator>
+			<em:homepageURL>http://www.kaspersky.com.cn</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>tr</em:locale>
+			<em:name>Reklam Başlığı Engelleyicisi</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/tr</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>sv</em:locale>
+			<em:name>Skydd mot webbannonser</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.se</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>sr-Cyrl</em:locale>
+			<em:name>Заштита од рекламних порука</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ru</em:locale>
+			<em:name>Анти-Баннер</em:name>
+			<em:creator>Лаборатория Касперского</em:creator>
+			<em:homepageURL>http://www.kaspersky.ru</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ro</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.ro</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>pt-BR</em:locale>
+			<em:name>Antibanner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://brazil.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>pt</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.pt</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>pl</em:locale>
+			<em:name>Blokowanie banerów</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>nl</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/nl</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>nb</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>lv</em:locale>
+			<em:name>Reklāmas bloķētājs</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>lt</em:locale>
+			<em:name>„Anti-Banner“</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ko</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ja</em:locale>
+			<em:name>アンチバナー</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.co.jp</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>it</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.it</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>id</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>hu</em:locale>
+			<em:name>Reklámcsíkblokkoló</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>fr</em:locale>
+			<em:name>Anti-bannière</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/fr</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>fi</em:locale>
+			<em:name>Bannerien esto</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>fa</em:locale>
+			<em:name>ضد بنر</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>es-MX</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>www.latam.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>es</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.es</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>el</em:locale>
+			<em:name>Πρόγραμμα Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>de</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.de</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>da</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.dk</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>cs</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ar</em:locale>
+			<em:name>مكافحة الشعارات</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>en</em:locale>
+			<em:name>Anti-Banner</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:id>anti_banner@kaspersky.com</em:id>
+		<em:version>13.0.0.3382</em:version>
+		<em:iconURL>chrome://anti_banner/content/kavab.png</em:iconURL>
+		<em:targetApplication>
+			<Description>
+			<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+			<em:minVersion>9.0</em:minVersion>
+			<em:maxVersion>14.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>

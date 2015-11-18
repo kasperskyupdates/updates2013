@@ -1,0 +1,25 @@
+﻿Description = 'Esta característica controla las actividades de la aplicación en el sistema le permite deshacer cambios de acciones maliciosas.'
+
+UseSystemWatcher = '&Activar System Watcher'
+
+ActionAsk  = 'Preguntar al us&uario'
+ActionAuto = 'Seleccionar la acción a&utomáticamente'
+ActionSelect = 'Seleccionar acc&ión:'
+
+HeuristicAnalysisSection = 'Análisis heurístico'
+UseBSS = '&Usar los patrones actualizables de actividad sospechosa (BSS)'
+AutomaticExploitPrevention = 'Activar protección frente a &vulnerabilidades'
+OnDetectingMalwareActivity = 'Al detectar actividad de software malicioso:'
+HeuristicActionQuarantine = 'Eliminar'
+HeuristicActionTerminateApplication = 'Finalizar la aplicación maliciosa'
+HeuristicActionAllow = 'Omitir'
+
+ActionAskRollback  = 'P&reguntar al usuario'
+ActionAutoRollback = 'S&eleccionar la acción automáticamente'
+ActionSelectRollback = 'Se&leccionar acción:'
+
+RollbackOfMalwareActionsSection = 'Deshacer acciones de software malicioso'
+RollbackVolumeLimit = '&Limitar los datos que se almacenan para la restauración:'
+OnDetectingPossibleRollback = 'Al detectar la posibilidad de deshacer las acciones del software malicioso:'
+MalwareActionMakeRollback = 'Deshacer'
+MalwareActionDoNotRollback = 'No deshacer'

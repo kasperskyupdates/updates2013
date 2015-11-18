@@ -1,0 +1,17 @@
+﻿SecurityLevel = 'Nível de Segurança'
+
+PredefinedLevelLowCaption = 'Baixo'
+PredefinedLevelLowDescription1 = '- Protecção mínima'
+PredefinedLevelLowDescription2 = '- Melhor desempenho'
+
+PredefinedLevelMediumCaption = 'Recomendado'
+PredefinedLevelMediumDescription1 = '- Melhor protecção'
+PredefinedLevelMediumDescription2 = '- Recomendado para a maioria dos utilizadores'
+
+PredefinedLevelHighCaption = 'Elevado'
+PredefinedLevelHighDescription1 = '- Protecção máxima'
+PredefinedLevelHighDescription2 = '- Recomendado para utilizadores em ambiente perigoso'
+
+CustomCaption = 'Personalizado'
+
+DefaultLevel = 'Nível &predefinido'

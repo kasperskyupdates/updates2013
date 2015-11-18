@@ -1,0 +1,6 @@
+﻿CaptionAdd = 'Site desprotegido'
+CaptionEdit = 'Site desprotegido'
+UrlExclusiveLabel = 'URL:'
+CurrentPage = 'Desactivar a protecção apenas na página da Internet\nespecificada'
+WholeSite = 'Desactivar a protecção em todo o site'
+UrlInputError = 'URL de site incorrecto'

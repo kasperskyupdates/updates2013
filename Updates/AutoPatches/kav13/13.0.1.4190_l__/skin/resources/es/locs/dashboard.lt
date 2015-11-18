@@ -1,0 +1,83 @@
+﻿CriticalMessage = 'La seguridad del PC está en peligro' 
+LicenseIssueMessage = 'Problema en la licencia'
+LicenseNotificationMessage = 'Notificación de la licencia'
+InfoMessage = 'El equipo está protegido' 
+
+; Protection states
+MainComponentsMalfunction = 'fallo' 
+FileAvDisabled = 'AV de archivos desactivado' 
+ProtectionPaused = 'protección desactivada' 
+ProtectionDisabled = 'desactivado' 
+NetworkTrafficBlocked = 'tráfico de red bloqueado' 
+SelfProtectionDisabled = 'Autoprotección desactivada' 
+MainComponentsDisabled = 'algunos están desactivados' 
+MainComponentsHidden = 'algunos están desactivados'
+AutorunDisabled = 'autoejecución desactivada' 
+ProtectionSafeMode = 'el equipo se está ejecutando en modo seguro' 
+AllComponentsEnabled = 'activado' 
+MainComponentsEnabled = 'principales activados' 
+
+; Threats states
+RebootNeeded = 'neutralizado, es necesario reiniciar'
+MalwareUntreated = 'Malintencionado'
+SuspiciousUntreated = 'otro'
+RiskwareUntreated = SuspiciousUntreated
+FullScanNeeded = 'Se requiere análisis completo'
+NoThreats = 'ninguna'
+
+; Bases states
+BasesUpdating = '. Actualizando (' + $BasesState_ProcessPercentCompleted + '%)...'
+BasesRollbacking = '. Reversión en progreso (' + $BasesState_ProcessPercentCompleted + '%)...'
+
+; License states
+LicenseExpired = 'caducada'
+LicenseProblems = 'se ha detectado un problema'
+LicenseBlocked = 'bloqueada'
+LicenseLimited = LicenseProblems
+NoActivationCodeProvided = 'no se encuentra'
+
+ExpiredToday	   = 'caduca hoy'
+LicenseRemainDays  = $LicenseState_RemainingDaysCount + {$LicenseState_RemainingDaysCount:' día restante',' días restantes'}
+LicenseNotificationWarning	= $LicenseExpiredEx
+LicenseActive				= $LicenseExpiredEx
+
+LicenseNotificationCritical = LicenseProblems
+LicenseNotificationInfo = LicenseActive
+SubscriptionExpired = 'caducada'
+SubscriptionSuspended = 'ha sido suspendida' ;LOC - refers to license or subscription
+SubscriptionUpdateFailed = LicenseProblems
+SubscriptionBlocked = LicenseProblems
+SubscriptionLimited = LicenseProblems
+SubscriptionNotificationCritical = LicenseProblems
+SubscriptionNotificationWarning = 'advertencia'
+SubscriptionActive = LicenseRemainDays
+SubscriptionNotificationInfo = $SubscriptionRemainingDays
+SubscriptionActiveExpirationDateUnknown = 'activada'
+PreinstalledCodeAvailable = NoActivationCodeProvided
+WaitCodeActivationInfo = NoActivationCodeProvided
+WaitCodeActivationCritical = NoActivationCodeProvided
+PreinstalledCodeActivationProblem = NoActivationCodeProvided
+
+SubscriptionBByActivatedText = 'activada'
+SubscriptionBByProlongedText = 'activada'
+
+InvalidReservedCode = 'problema con el nuevo código de activación'
+WaitReservedCodeActivationInfo = 'en espera de activación'
+WaitReservedCodeActivationCritical = InvalidReservedCode
+ReservedCodeActivationProblem = InvalidReservedCode
+
+; Recommendations
+EnableAutomaticUpdates = 'Activar la actualización automática'
+TrainAntiSpam = 'Aprendizaje antispam'
+
+; State groups
+ThreatsState = 'Amenazas:'
+ProtectionState = 'Componentes de protección:'
+BasesState = 'Bases de datos:'
+LicenseState = 'Licencia:'
+SubscriptionState = 'Suscripción:'
+RecommendationsState = 'Recomendaciones:'
+
+; Buy-Renew button
+BuyNow = 'Comprar ahora'
+Renew = 'Renovar'

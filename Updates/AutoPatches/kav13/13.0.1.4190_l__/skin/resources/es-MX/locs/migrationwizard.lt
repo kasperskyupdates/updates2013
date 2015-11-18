@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Asistente para migraciones'
+UpgradeCaption = 'Actualización'
+
+RebootPageCheckboxRebootText = 'Reiniciar el equipo'
+OpenRemoveProgramsPanel = 'Abrir barra de herramientas'
+
+WizardBeginDescriptionKis = 'Cambiará a Kaspersky Internet Security 2013.\n\nEl propietario de los derechos de propiedad intelectual le otorga una licencia no exclusiva para usar Kaspersky Internet Security bajo las mismas condiciones que aceptó cuando instaló originalmente Kaspersky Anti-Virus.\n\nNota: Este cambio puede requerir que reinicie el equipo.'
+
+WizardBeginDescriptionKav = 'Cambiará a Kaspersky Internet Security 2013.\n\nEl propietario de los derechos de propiedad intelectual le otorga una licencia no exclusiva para usar Kaspersky Anti-Virus bajo las mismas condiciones que aceptó cuando instaló originalmente Kaspersky Internet Security.\n\nNota: Este cambio puede requerir que reinicie el equipo.'
+
+WizardContinueDescriptionKis = 'Continuar con la migración a Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Continuar con la migración a Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\n¡Atención! La licencia actual de Kaspersky Anti-Virus caducará antes que la licencia de Kaspersky Internet Security. Una vez que la licencia de Kaspersky Anti-Virus caduque, no será posible volver a utilizar a Kaspersky  Anti-Virus.'
+
+PleaseWait = 'Espere...'
+RemovalProgressDescription   = 'Eliminando software no compatible'
+RemovalApplicationsDescription = 'El siguiente software se eliminará para realizar el cambio:'
+ManualRemovalApplicationsDescription = 'Se deben eliminar los siguientes software incompatibles a mano antes de realizar el cambio:'
+SearchRemovalApplicationsDescription   = 'Buscando software no compatible'
+RestartProductDescription = 'La aplicación se reiniciará para completar la migración.'
+RebootOsDescription = 'Debe reiniciar el equipo para continuar con la migración.\nEl asistente continuará una vez reiniciado el equipo.'
+
+MigrationProgressDescriptionKis = 'Reconfigurando la aplicación y cambiando a Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Reconfigurando la aplicación y cambiando a Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Reconfigurando la aplicación y cambiando a Kaspersky Anti-Virus'
+
+MigrationKis = 'Migrar a Kaspersky Internet Security'
+MigrationKav = 'Migrar a Kaspersky Anti-Virus'
+MigrationUnknown = 'Cambiar '
+
+SearchRemovalApplicationsHeader = 'Actualizando a Kaspersky Internet Security'
+RemovalProgressHeader = 'Eliminando software no compatible'
+RemovalApplicationsHeader = 'Se detectó software no compatible'
+RebootOsHeader = 'Se requiere reiniciar el equipo'
+RestartProductHeader = 'Se reiniciará la aplicación'
+
+MigrationAbortedHeader = $MigrationType + ' es imposible'
+MigrationAbortedDescription = 'Se produjo un error de ' + $MigrationType + '. Intente eliminar el software no compatible manualmente y reinicie el asistente.'
+
+BestBuyGiftInformation = 'Su Kaspersky Anti-Virus se actualizará a Kaspersky Internet Security.\nAhora podrá disfrutar de incluso más funciones para proteger el equipo.'
+BestBuyGiftDescription = 'Muchas gracias por elegir una aplicación de Kaspersky Lab. Esperamos que disfrute de la protección adicional.'
+BestBuyUpgradeNotification = 'Para asegurar el funcionamiento correcto de las aplicaciones instaladas y el sistema operativo, se analizará el sistema en búsqueda de software incompatible durante la actualización.'
+BestBuyFreeUpgrade = 'Migrar a Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Actualización en segundo plano'
+BestBuyTryAbortInformation = 'El proceso de actualización continuará en segundo plano'
+BestBuyTryAbortDescription = 'Dado que no se quitó el software incompatible, se deshabilitaron algunas funciones nuevas de Kaspersky Internet Security para asegurar el funcionamiento de las aplicaciones y el sistema operativo.\n\nPuede quitar el software incompatible de forma manual y habilitar todas las funciones nuevas en la ventana de configuraciones de Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Volver a la actualización'
+Congratulation = '¡Felicitaciones!'
+
+RunKisButtonText = 'Iniciar Kaspersky Internet Security'
+
+ProductUpgraded = 'Su copia de Kaspersky Anti-Virus se ha actualizado a Kaspersky Internet Security.\nAhora podrá disfrutar de incluso más funciones para proteger el equipo.'

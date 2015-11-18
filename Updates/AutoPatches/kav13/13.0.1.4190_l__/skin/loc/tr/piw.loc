@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Anahtar dosyası seçimi"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Uygulamanın bu kopyası için donanım satıcısı tarafından bir anahtar sağlandı. Bu anahtarı kullanarak uygulamayı etkinleştirmek istiyor musunuz?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.KeyExpirationDate)
+CancelWizardWarning             = "Uygulama geri yüklemesi henüz tamamlanmamış. Yapılandırma Sihirbazından çıkmak istediğinizden emin misiniz?"
+ErrEmptyActivationCode.caption  = "Etkinleştirme kodu belirtilmemiş"
+ErrEmptyActivationCode          = "Lütfen etkinleştirme kodunuzu giriniz"
+ErrEmptyKeyPath.caption         = "Anahtar dosyası seçilmemiş"
+ErrEmptyKeyPath                 = "Lütfen anahtar dosyasının türünü belirtin"
+$LicInfoKeyNumber               = "Kod:"
+$LicInfoKeyProductName          = "Uygulama adı:"
+$LicInfoKeyType                 = "Lisans biçimi:"
+$LicInfoExpirationDate          = "Bitiş tarihi:"
+$LicErrReason                   = "Neden:"
+$ActiveKey                      = "Etkin anahtar"
+$ReservedKey                    = "Ek anahtar"
+ConfirmFeedback                 = "<a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a> penceresi içerisinden veri gönderilmesine izin vermek istiyor musunuz?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) dosyaların, web kaynaklarının ve yazılımlarının güvenliği hakkında güncel bilgiler sağlayan bir çevrimiçi hizmetler altyapısıdır. KSN'den gelen verilerin kullanılması yeni tehditlere karşı tepki vermeyi hızlandırır, bazı koruma bileşenlerinin performansını arttırır ve hatalı olumlu tespit riskini azaltır.\nKSN'ye katıldığınızda virüs bulaşmaları ve diğer sorunlar hakkındaki bilgilerin yanı sıra yüklenen veya yürütülen uygulamalar hakkında genişletilmiş istatistikler (<a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN Veri Toplama Açıklamasında</a> belirtilen listeye göre) otomatik olarak Kaspersky Lab'a gönderilir. \n\n<b>Kaspersky Security Network hiçbir kişisel kullanıcı bilgisini toplamaz veya işlemez.</b>"
+
+$ToAcquireNewLicText            = "\n\nYeni bir lisans edinmek için, lütfen distribütörünüze veya <a Buy onclick(buy())>Kaspersky Lab Satış Departmanına başvurun</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nLütfen abonelik durumunu elle güncellemeye çalışın ya da Teknik Destek ile iletişim kurun" : "\nLütfen uygulamayı etkinleştirme kodunu kullanarak daha sonra etkinleştirmeyi (1-2 saat içinde) deneyin ya da Teknik Destek ile iletişim kurun") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Etkinleştirme Sihirbazı" : " Yapılandırma Sihirbazı")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Genel bilgi"
+InitBegin.Descr                       = $ProductName_GEN + " Uygulaması Geri Yükleme Sihirbazına Hoşgeldiniz."
+CheckHosts.Name                       = "Kaspersky Lab sunucularının erişilebilirliği kontrol ediliyor"
+CheckHosts.Descr                      = "Şüpheli yönlendirme tespit edildi"
+ResetArea.Name                        = "Ayarları geri yükle"
+ResetArea.Descr                       = "Aşağıda listelenen ayarlar, kullanıcı tarafından girilmiş ya da uygulamanın \nçalışması sırasında toplanmış verileri içermektedir."
+ActivationBegin.Name                  = $IsSubscription ? "Abonelik yönetimi" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Anahtar sil" : "Anahtar ekle") : "Uygulamayı etkinleştir")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Lisans" : "Devam etmek için uygulamayı etkinleştirin.")
+ActivationProgress.Name               = "Çevrimiçi etkinleştirme"
+ActivationProgress.Descr              = "Etkinleştirme işlemi yapılıyor, lütfen bekleyiniz..."
+ActivationServerForm.Name             = "Çevrimiçi etkinleştirme"
+ActivationServerForm.Descr            = "Lütfen istenilen bilgileri giriniz."
+ActivationChooseKey.Name              = "Anahtar dosyasını kullanarak etkinleştirme"
+ActivationChooseKey.Descr             = "Uygulamayı anahtar dosyasını kullanarak etkinleştir."
+ActivationEnd.Name                    = "Uygulamayı etkinleştirme"
+ActivationEnd.Descr                   = "Etkinleştirme tamamlandı."
+MigrationKeyIsFound.Name         = "Geçerli lisans için bir anahtar kullanılabilir"
+MigrationKeyIsFound.Descr        = "Geçerli lisansın öngördüğü uygulamayı mı kullanmak istiyorsunuz?"
+MigrationBegin.Name              = "Geç: " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = + s_MUProductTitleLong(env("ProductType")) " kullanmaya geçeceksiniz"
+MigrationSearchProgress.Name     = "Uyumsuz yazılımları ara"
+MigrationSearchProgress.Descr    = "Lütfen uyumsuz yazılımlar aranırken bekleyin..."
+MigrationSafeRemoval.Name        = "Uyumsuz yazılım bulundu"
+MigrationSafeRemoval.Descr       = "Devam edebilmek için uyumsuz yazılımın kaldırılması gerekiyor"
+MigrationSafeProgress.Name       = "Uyumsuz yazılımları kaldır"
+MigrationSafeProgress.Descr      = "Lütfen uyumsuz yazılımlar kaldırılırken bekleyin..."
+MigrationAddRemove.Name          = "Uyumsuz yazılım bulundu"
+MigrationAddRemove.Descr         = "Lütfen uyumsuz yazılımları kaldırın"
+MigrationUnsafeRemoval.Name      = "Uyumsuz yazılım bulundu"
+MigrationUnsafeRemoval.Descr     = "Devam edebilmek için uyumsuz yazılımın kaldırılması gerekiyor"
+MigrationUnsafeProgress.Name     = "Uyumsuz yazılımları kaldır"
+MigrationUnsafeProgress.Descr    = "Lütfen uyumsuz yazılımlar kaldırılırken bekleyin..."
+MigrationReboot.Name             = "İşletim sistemini yeniden başlatmak gerekiyor"
+MigrationReboot.Descr            = "Yeni uygulamaya geçmeye devam etmek için yeniden başlatmak gerekir"
+MigrationProgress.Name           = "Geç: " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Yeni uygulamaya geçiş yaparken lütfen bekleyin..."
+MigrationRebootApp.Name          = bMigrationDone ? "Uygulama yeniden başlatılacak" : "Yeni uygulamaya geçiş yaparken hata oluştu"
+MigrationRebootApp.Descr         = bMigrationDone ? "Uygulamanın yeniden başlatılması gerekir" : "" + s_MUProductTitleLong(env("ProductType")) + " ürününe geçiş başarısız oldu"
+MigrationFinish.Name             = s_ProductTitleLong(env("ProductType")) + " ürününe geçiş tamamlandı"
+MigrationFinish.Descr            = s_ProductTitleLong(env("ProductType")) + " ürününe geçiş tamamlandı"
+DNS.Name                              = "Gelişmiş ayarlar"
+DNS.Descr                             = $ProductName_GEN + " gelişmiş işlem ayarları"
+EnumExe.Name                          = "Sistem analizi"
+EnumExe.Descr                         = "Bilgisayarınız hakkındaki bilgiler toplanırken lütfen bekleyiniz..."
+InitFinish.Name                       = $ProductName + " yapılandırması tamamlanıyor"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Uygulamanın yapılandırmasını tamamlamak için bilgisayarınızı yeniden başlatmanız gerekir." : "" + $ProductName + " uygulamasını şimdi başlatabilirsiniz."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Kaspersky Lab sunucularının şüpheli bir biçimde yeniden yönlendirilmesiyle karşılaşıldı. Bu kötü amaçlı yazılım etkinliği nedeniyle meydana gelmiş olabilir ve hem güncellemelerin hem de etkinliğin başarısız olmasına neden olabilir. Şüpheli hosts dosyası girişleri:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Kayıtları sil (Önerilen)"
+Skip			= "Atla"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Geri"
+Back.Descr      = "Etkinleştirme yöntemini seçmek için geri dönün"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "Anahtar &ekle" : "&Etkinleştir"
+Activate.Descr  = "Seçilen anahtar yüklenmesi"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Bitir"
+Finish.Descr    = "Etkinleştirme Sihirbazını kapatır"
+Next.Name       = "İ&leri"
+Next.Descr      = "Ayarlar sayfasına geçer"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Geçerli lisansın öngördüğü uygulamayı kullanmaya devam edebilirsiniz. Bu durumda, uygulama şu duruma geçer: " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Geçerli lisansın öngördüğü uygulamayı kullanmaya devam etmek istiyor musunuz?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Uygulama türü:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Bitiş tarihi:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " kaldı)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Evet ve " + s_MUProductTitleLong(env("ProductType")) + "seçeneğine geç."
+NotUseFoundLicense = "Hayır ve " + switch(env("ProductType"), "ProductTitleLong", "") + " uygulamasından çık."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = '_MUProductTitleLong(env("ProductType")) + " ürününe geçmek üzeresiniz. Telif hakkı sahibi, " + s_MUProductTitleLong(env("ProductType")) + " ürününü kullanmanız için size " + s_ProductTitleLong(env("ProductType")) + "ürününü yüklerken kabul ettiğiniz aynı koşullarla özel olmayan bir lisans veriyor'
+Text3   = "Not: Bu geçiş yeniden başlatmayla sonuçlanabilecek eylemler gerektirir."
+LicenseWarning  = "Dikkat! Kaspersky Anti-Virus ticari kullanım lisansı Kaspersky Internet Security deneme lisansınızdan önce bitiyor. Kaspersky Anti-Virus ticari lisansınız sona erdikten sonra, Kaspersky Anti-Virus'ü Kaspersky Internet Security'nin deneme sürümünden kullanmaya dönmek imkansız olacaktır. Kaspersky Internet Security ürününe geçmeye devam etmek istiyor musunuz?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Bilgisayarınızdaki uyumlu olmayan yazılımları arama işlemi biraz zaman alabilir. Lütfen bekleyin..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Geçişi yapabilmek için aşağıdaki yazılımlar kaldırılacak:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Lütfen uyumsuz yazılımlar silinirken bekleyin..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Geçişi yapabilmek için aşağıdaki yazılımların kaldırılması gerekiyor:"
+OpenAddRemove = "Program Ekle/Çıkar penceresini açın"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Geçişi yapabilmek için aşağıdaki yazılımlar kaldırılacak:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Lütfen uyumsuz yazılımlar silinirken bekleyin..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Geçişe devam edebilmek için bilgisayarı yeniden başlatmanız gerekiyor. Sihirbaz yeniden başlatıldıktan sonra devam edecek."
+Reboot   = "Şimdi yeniden başlat"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Lütfen uygulama yeniden yapılandırılırken ve " + s_MUProductTitleLong(env("ProductType")) + "seçeneğine geçerken bekleyin..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "" + s_MUProductTitleLong(env("ProductType")) + " geçişin tamamlanması için uygulama yeniden başlatılacaktır." : " " + s_MUProductTitleLong(env("ProductType")) + " geçiş başarısız oldu."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Artık " + s_ProductTitleLong("kis") + " Ebeveyn Denetimi, Anti-Spam, Güvenlik Duvarı ve daha bir çoğu gibi özelliği değerlendirebilirsiniz." : s_ProductTitleLong("kav") + " bilgisayarınızın kötü amaçlı yazılımlardan temel korumasını sağlar."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Abonelik "+if($IsRefreshSubAvail,"durumunu güncelleyebilir veya ")+"anahtarı silebilirsiniz." : (f_IsActiveKeyWorkingCommercial() ? "Etkin anahtarınızı silebilir veya bir anahtar ekleyebilirsiniz." : "Tam uygulama işlevselliği için " + $ProductName + " ürününü etkinleştirin."+ if($CorporateOnly, " Uygulamanın <a Activate onclick(url($ActivationLink))>ticari</a> sürümünü elde edebilir ya da bir <a ActivateTrial onclick(url($ActivationTrialLink))>deneme</a> sürümünü etkinleştirebilirsiniz."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Daha sonra &etkinleştir"
+Later.Descr                 = "Etkinleştirmeyi atla ve uygulamayı yapılandırmaya devam et"
+ChooseKey.Name              = "&Anahtar dosyasını kullanarak etkinleştir"
+ChooseKey.Descr             = "Uygulamayı bu yöntemle etkinleştirebilmek için, lütfen bir sonraki adımda karşınıza gelecek ekrandan lisans anahtarı dosyanızın bulunduğu konumu seçiniz"
+ActivateBetaKAV.Name        = "Kaspersky Anti-Virus &beta sürümünü etkinleştir"
+ActivateBetaKAV.Descr       = "Kaspersky Anti-Virus'ün beta sürümü ürünün tüm işlevlerine sahiptir, ama tamamlanmış bir ürün değildir."
+ActivateBetaKIS.Name        = "Kaspersky Internet Security &beta sürümünü etkinleştir"
+ActivateBetaKIS.Descr       = "Kaspersky Internet Security'nin beta sürümü ürünün tüm işlevlerine sahiptir, ama tamamlanmış bir ürün değildir."
+ActivateTrial.Name          = "Deneme &sürümü etkinleştirme"
+ActivateTrial.Descr         = "Deneme sürümünün geçerlilik süresi, son kullanıcı lisans sözleşmesinde belirtilmiştir"
+ActivateCommercial.Name     = "&Çevrimiçi etkinleştir"
+ActivateCommercial.Descr    = "Çevrimiçi etkinleştirme işleminin yapılabilmesi için, satın aldığınız ürünün etkinleştirme kodunu lütfen bir sonraki adımda karşınıza gelecek kutuya giriniz"
+RemoveKey.Name              = $HasReserveKey ? "Ek anahtarı &sil" : "Anahtarı &sil"
+RemoveKey.Descr             = "Anahtarı değiştirmek için öncelikle etkin anahtarı kaldırmanız gerekir"
+RefreshSubscription.Name    = "&Etkinleştirme durumunu yenile"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Abonelik durumunu elle güncelleyebilirsiniz." :  "Abonelik durumunu otomatik güncelleme işlemi sonlandırıldı. Durumu elle güncelleyebilirsiniz."
+ActivateTrialKIS            = "Kaspersky Internet Security deneme sürümünü etkinleştir"
+ActivateTrialKIS_Desc       = "Kaspersky Internet Security deneme sürümünün geçerlilik dönemi lisans sözleşmesinde belirtilmektedir"
+RevertToCommercialKAV       = "Kaspersky Anti-Virus'ün ticari sürümüne dön"
+RevertToCommercialKAV_Desc  = "Kaspersky Anti-Virus'ün ticari sürümüne dön"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Etkinleştirme durumunu yenile"
+ActivateCommercial      = "&Ticari sürümü etkinleştir"
+ActivateCommercial_Desc = (LockActivationCode)? "Lütfen etkinleştirme kodunuzu giriniz: " : "Lütfen <a onclick(url(\"" + $ActCodeHint + "\"))>etkinleştirme kodunuzu giriniz</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Etkinleştirme kodunuz otomatik olarak eklendi. Lütfen \"İleri\" düğmesini tıklatın." : "Bir etkinleştirme kodunuz yoksa, <a onclick(buy())>çevrimiçinde</a> satın alabilirsiniz"
+ActivateBetaKAV         = "Kaspersky Anti-Virus &beta sürümünü etkinleştir"
+ActivateBetaKIS         = "Kaspersky Internet Security &beta sürümünü etkinleştir"
+ActivateTrial           = "Deneme &sürümü etkinleştirme"
+ActivateTrial_Desc      = "Satın almadan önce uygulamanın tam işlevli bir sürümünü değerlendirin."
+ActivateTrialKIS           = "Kaspersky Internet Security deneme sürümünü etkinleştir"
+ActivateTrialKIS_Desc      = "Satın almadan önce Kaspersky Internet Security'nin tam işlevli bir sürümünü değerlendirin."
+RevertToCommercialKAV      = "Kaspersky Anti-Virus'ün ticari sürümüne dön"
+RevertToCommercialKAV_Desc = "Kaspersky Internet Security deneme sürümünü kullanmayı durdur ve Kaspersky Anti-Virus ticari sürümüne dön."
+Later                   = "Daha sonra &etkinleştir"
+Later_Desc              = "Uygulama etkinleştirilene kadar tüm işlevleri kullanılamayacak."
+RemoveKey               = "Geçerli lisans anahtarını kaldır"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Anahtar dosyası:"
+KeyInfo         = "Lisans bilgisi"
+ConnectingInfo.Name     = "Etkinleştirme hatası: "
+ConnectingInfo.Val      = "ayrıntılar"
+TryAgain                = "Etkinleştir"
+Descr1                  = "Etkinleştirmeyi yeniden denemek için, lütfen aşağıdaki işlemleri yapın:"
+Descr2                  = "İnternet bağlantı ayarlarını kontrol edin ve uygulamayı etkinleştirmeyi yeniden deneyin."
+Descr3                  = "<a onclick(url(\"" + $ActivationLink + "\"))> Çevrimiçi Etkinleştirme Merkezine gidin </a> ve yönergeleri uygulayın.\nBir anahtar dosyası aldıktan sonra, konumunu belirtin ve İleri düğmesini tıklatın:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Oluşturma tarihi:"
+InstallDate.Name    = "Etkinleştirme tarihi:"
+ExpirationDate.Name = "Bitiş tarihi:"
+SubscrptnExpDate.Name = "Etkinleştirme bitiş tarihi:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Sistem hatası: " + s_SystemError(ErrorCode)
+2       = "\"" + KeyFile + "\" anahtarı eklenemiyor: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "\"" + KeyFile + "\" anahtarı silinemiyor: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Hata kodu: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Bu anahtar zaten eklenmiş" + $LicErrHelpLink
+0x0947901d  = "Lisans sona erdi. Veritabanı güncellemesi kullanılamaz" + $LicErrHelpLink
+0x89479002  = "Lisans bulunamadı" + $LicErrHelpLink
+0x89479003  = "Dijital imza geçersiz ya da bozulmuş" + $LicErrHelpLink
+0x89479004  = "Veri bozulmuş" + $LicErrHelpLink
+0x89479005  = "Anahtar bozulmuş" + $LicErrHelpLink
+0x89479006  = "Lisans sona erdi" + $LicErrHelpLink
+0x89479007  = "Anahtar seçilmedi" + $LicErrHelpLink
+0x89479008  = "Geçersiz Anahtar" + $LicErrHelpLink
+0x89479009  = "Veri kaydedilemedi" + $LicErrHelpLink
+0x8947900a  = "Veri okunamadı" + $LicErrHelpLink
+0x8947900b  = "I/O hatası" + $LicErrHelpLink
+0x8947900c  = "Veritabanları kayıp" + $LicErrHelpLink
+0x8947900d  = "Etkin ve ek anahtarlar zaten eklenmiş" + $LicErrHelpLink
+0x8947900e  = "Lisans kitaplığı başlatılamadı" + $LicErrHelpLink
+0x8947900f  = "Veritabanları bozuk ya da elle güncellenmiş" + $LicErrHelpLink
+0x89479010  = "Veritabanları bozulmuş" + $LicErrHelpLink
+0x89479011  = "Tarihi geçmiş bir anahtarı yedek anahtar olarak kaydedemezsiniz" + $LicErrHelpLink
+0x89479012  = "Sistem hatası" + $LicErrHelpLink
+0x89479013  = "Anahtar kara listesi bozuk" + $LicErrHelpLink
+0x89479014  = "Dijital imza, Kaspersky Lab dijital imzasıyla uyuşmuyor" + $LicErrHelpLink
+0x89479015  = "Uygulamanın ticari sürümü beta lisansıyla etkinleştirilemez" + $LicErrHelpLink
+0x89479016  = "Uygulamanın beta sürümü yalnızca beta lisansıyla etkinleştirilebilir" + $LicErrHelpLink
+0x89479017  = "Lisans, bu uygulama için geçerli değil. " + $ProductName + " ürünü başka bir uygulamanın lisansıyla etkinleştirilemez. Lütfen yüklü uygulamanızı kontrol edin" + $LicErrHelpLink
+0x89479018  = "Anahtar engellendi" + $LicErrHelpLink
+0x89479019  = "Bu lisans anahtarı zaten kullanımda. Aynı kayıt anahtarını iki kez kullanamazsınız" + $LicErrHelpLink
+0x8947901a  = "Anahtar bozulmuş" + $LicErrHelpLink
+0x8947901b  = "Dijital imza kayıp, bozulmuş ya da Kaspersky Lab imzası ile uyuşmuyor" + $LicErrHelpLink
+0x8947901c  = "Ticari olmayan lisansın süresi dolmuşsa bunun için anahtar eklenemez" + $LicErrHelpLink
+0x8947901e  = "Anahtar oluşturma ya da etkinleştirme tarihi geçersiz. Lütfen sistem tarihi ayarlarınızı kontrol ediniz" + $LicErrHelpLink
+0x8947901f  = "Deneme lisansı için bir anahtar etkin durumdayken, başka bir deneme lisansı anahtarı eklenemez" + $LicErrHelpLink
+0x89479020  = "Anahtar kara listesi eksik veya bozuk" + $LicErrHelpLink
+0x89479021  = "Güncelleme açıklaması bozulmuş ya da kayıp" + $LicErrHelpLink
+0x89479022  = "Bu uygulama için dahili veri geçersiz" + $LicErrHelpLink
+0x89479023  = "Yanlış bir etkinleştirme kodu kullanılarak ek anahtar eklenemez" + $LicErrHelpLink
+0x89479024  = "Kullanıcı form verisi tamamlama hatası" + $LicErrHelpLink
+0x89479025  = "Güncelleme sunucusu isteği gönderilemedi.\nOlası nedenler: İnternet bağlantı problemleri veya etkinleştirme sunucusundan kaynaklanan geçici sorunlar.\nLütfen etkinleştirme işlemini daha sonra tekrar deneyiniz (örneğin 1–2 saat sonra).\nSorun devam ederse lütfen İnternet hizmet sağlayıcınızla temasa geçiniz" + $LicErrHelpLink
+0x89479026  = "İstek, geçersiz bir etkinleştirme kodu ile yapılmaya çalışılıyor" + $LicErrHelpLink
+0x89479027  = "İstek durumu alınamadı" + $LicErrHelpLink
+0x89479028  = "Geçici dosyalar kaydedilemedi" + $LicErrHelpLink
+0x89479029  = "Girilen etkinleştirme kodu ya da sistem tarihi hatalı. Lütfen lisans bilginizi ve sistem ayarlarınızı kontrol ediniz" + $LicErrHelpLink
+0x8947902a  = "Etkinleştirme kodu bu uygulama için uygun değil ya da anahtarın süresi dolmuş. " + $ProductName + " ürünü başka bir uygulamanın lisansıyla etkinleştirilemez. Lütfen yüklü uygulamanızı kontrol edin ya da <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Anahtar alınamadı. Hatalı bir etkinleştirme kodu belirtilmiş" + $LicErrHelpLink
+0x8947902c  = "Etkinleştirme sunucusu, 400 hatası verdi" + $OlaErrHelpLink
+0x8947902d  = "Etkinleştirme sunucusu, 401 hatası verdi" + $OlaErrHelpLink
+0x8947902e  = "Etkinleştirme sunucusu, 403 hatası verdi" + $OlaErrHelpLink
+0x8947902f  = "Gerekli kaynak etkinleştirme sunucusunda kullanılamıyor.\nEtkinleştirme sunucusu 404 hatası verdi.\nLütfen İnternet bağlantısı ayarlarınızı kontrol edin." + $OlaErrHelpLink
+0x89479030  = "Etkinleştirme sunucusu, 405 hatası verdi" + $OlaErrHelpLink
+0x89479031  = "Etkinleştirme sunucusu, 406 hatası verdi" + $OlaErrHelpLink
+0x89479032  = "Proxy sunucusu girişi gerekiyor. Lütfen LAN ayarlarınızı kontrol ediniz. Eğer bir proxy sunucusu kullanmadan internete giriyorsanız, lütfen program ayarlarından Vekil Sunucusu kısmındaki seçimleri kapatınız" + $LicErrHelpLink
+0x89479033  = "İstek zaman aşımına uğradı" + $LicErrHelpLink
+0x89479034  = "Etkinleştirme sunucusu, 409 hatası verdi" + $OlaErrHelpLink
+0x89479035  = "Gerekli kaynak etkinleştirme sunucusunda kullanılamıyor.\nEtkinleştirme sunucusu 410 hatası döndürdü.\nLütfen İnternet bağlantısı ayarlarınızı kontrol edin." + $OlaErrHelpLink
+0x89479036  = "Etkinleştirme sunucusu, 411 hatası verdi" + $OlaErrHelpLink
+0x89479037  = "Etkinleştirme sunucusu, 412 hatası verdi" + $OlaErrHelpLink
+0x89479038  = "Etkinleştirme sunucusu, 413 hatası verdi" + $OlaErrHelpLink
+0x89479039  = "Etkinleştirme sunucusu, 414 hatası verdi" + $OlaErrHelpLink
+0x8947903a  = "Etkinleştirme sunucusu, 415 hatası verdi" + $OlaErrHelpLink
+0x8947903b  = "İstemcide bilinmeyen bir hata oluştu" + $OlaErrHelpLink
+0x8947903c  = "İç sunucu hatası" + $LicErrHelpLink
+0x8947903d  = "Özellik desteklenmiyor" + $LicErrHelpLink
+0x8947903e  = "Hatalı ağ geçidi yanıtı. Lütfen ağ ayarlarınızı kontrol edin" + $LicErrHelpLink
+0x8947903f  = "Kaynak, geçici olarak kullanılamıyor" + $LicErrHelpLink
+0x89479040  = "Bekleme süresi zaman aşımına uğradı. Ağ ayarlarınızı kontrol edin" + $LicErrHelpLink
+0x89479041  = "Bu iletişim sistemi sunucu tarafından desteklenmiyor" + $OlaErrHelpLink
+0x89479042  = "Sunucu tarafında bilinmeyen bir hata oluştu" + $OlaErrHelpLink
+0x89479043  = "Bilinmeyen http hatası" + $OlaErrHelpLink
+0x89479044  = "Geçersiz kaynak tanımlaması" + $LicErrHelpLink
+0x89479045  = "Hatalı \"anahtar\" bilgisi" + $LicErrHelpLink
+0x89479046  = "Hatalı adres" + $LicErrHelpLink
+0x89479047  = "Hatalı hedef klasör" + $LicErrHelpLink
+0x89479048  = "Bellek ayırma hatası" + $LicErrHelpLink
+0x89479049  = "ANSI koduna dönüştürme hatası (adres, klasör ya da aracı)" + $LicErrHelpLink
+0x8947904a  = "İşlem oluşturma hatası" + $LicErrHelpLink
+0x8947904b  = "Çalışan bir işlem zaten devam ediyor" + $LicErrHelpLink
+0x8947904c  = "Çalıştırılmış bir işlem devam etmiyor" + $LicErrHelpLink
+0x8947904d  = "Girdiğiniz kod, etkinleştirme sunucusunda bulunamadı" + $LicErrHelpLink
+0x8947904e  = "Anahtar engellendi" + $LicErrHelpLink
+0x8947904f  = "Etkinleştirme sunucusu hatası" + $LicErrHelpLink
+0x89479050  = "Etkinleştirme için yeterli veri bulunamadı" + $LicErrHelpLink
+0x89479051  = "Hatalı müşteri kodu veya şifresi" + $LicErrHelpLink
+0x89479052  = "Hatalı etkinleştirme kodu" + $LicErrHelpLink
+0x89479053  = "Seçtiğiniz anahtar dosyasının geçerlilik süresi, kurulu lisans anahtarınızdan daha kısa süre önce dolacak" + $LicErrHelpLink
+0x89479054  = "Hatalı işletim sistemi tarihi. Lütfen sistem tarihini kontrol edin" + $LicErrHelpLink
+0x89479055  = "Deneme lisansı sona erdi" + $LicErrHelpLink
+0x89479056  = "Etkinleştirme süresi dolmuş" + $LicErrHelpLink
+0x89479057  = "<b>Girdiğiniz etkinleştirme kodu ile en fazla kurulabilecek program sayısına ulaşmışsınız!</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Ticari bir lisans kullanımda iken, ticari olmayan lisans için anahtar ek bir anahtar olarak eklenemez" + $LicErrHelpLink
+0x8947905c  = "Etkinleştirme kodu gerekli" + $LicErrHelpLink
+0x8947905d  = "Hatalı müşteri kodu veya parolası" + $LicErrHelpLink
+0x8947905e  = "Hatalı etkinleştirme kodu" + $LicErrHelpLink
+0x89479062  = "Etkinleştirme sunucusuna bağlanılamıyor" + $LicErrHelpLink
+0x89479064  = "<b>Uygulama sunucusuna erişilemiyor.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Uygulama şimdi etkinleştirilemiyor. Uygulamayı yapılandırdıktan ve işletim sistemini yeniden başlattıktan sonra etkinleştirmeyi yeniden deneyin.", "Lütfen İnternet bağlantı ayarlarını kontrol edin ve etkinleştirmeyi yeniden deneyin.") + $LicErrHelpLink
+0x89479065  = "Lisansınız sona erdi. Lütfen <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Etkin anahtar süresi dolmuş bir anahtar ile değiştirilemez" + $LicErrHelpLink
+0x89479067  = "Etkin anahtardan önce son bulan bir anahtar ek anahtar olarak eklenemez" + $LicErrHelpLink
+0x89479068  = "Güncelleştirilmiş lisans anahtarı kaybolmuş" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Etkinleştirme işlemi " + OnlineActSrvErrorSpecific + " hatası ile tamamlandı"
+#OLA_LOGICAL_ERROR = "Etkinleştirme hatası: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Etkinleştirme hatası: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Etkinleştirme hatası: sunucu, " + OnlineActSrvErrorSpecific + " HTML koduyla yanıt verdi"
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Etkinleştirme başarısız " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Dahili etkinleştirme sunucusu hatası. Lütfen yeniden deneyin veya Teknik Destek ile iletişim kurun"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Etkinleştirme kodu bu uygulamayla uyumlu değil. Etkinleştirilemez." + $ProductName + " ürününü başka bir uygulamanın etkinleştirme kodunu kullanarak etkinleştirmek mümkün değildir. Lütfen yüklü uygulamayı kontrol edin"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Anahtar engellendi"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Hatalı müşteri kodu veya parolası"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Yanlış etkinleştirme kodu"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Etkinleştirme kodu gerekli"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Etkinleştirme süresi sona erdi"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Bu kodla yapılabilecek etkinleştirme sayısı aşıldı"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Etkinleştirme kodu bu bölgede geçersizdir"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Bu etkinleştirme kodu uygulamanın bu yerelleştirmesi için kullanılamaz."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Etkinleştirme kodu bu uygulamanın daha yeni bir sürümü için geçerli. Geçerli sürümü kullanmak için başka bir kod almanız gerekli. Ayrıntılar için aşağıdaki bağlantıları tıklatın."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Etkinleştirme sunucusu hatası 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Etkinleştirme sunucusu hatası 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Etkinleştirme sunucusu hatası 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Uygulama sunucusu bir 646 hatası döndürdü"
+default                                     = "Etkinleştirme prosedürü bir hata döndürdü " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft İnternet Explorer çevrimiçi kipi etkinleştirildi"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "İnternet bağlantısı mevcut değil"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Güncelleme sunucusu bulunamadı"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Proxy sunucusu bulunamadı"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Zaman aşımı"
+#OLA_ERR_INTERNET_INVALID_URL                = "Hatalı etkinleştirme sunucusu adresi"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Hatalı iletişim kuralı"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Sunucu bağlantısı kurulamıyor"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "İşlem iptal edildi"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Sunucu bağlantısı kurulamıyor"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Sunucu bağlantısı sıfırlandı"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Sunucu bağlantısı sıfırlanmış"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Hatalı sunucu yanıtı"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "SSL-sertifikası sunucu süresi sona ermiş. Lütfen bilgisayarın tarih ve saatini kontrol ediniz"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL sertifikası sunucu adı sunucuya karşılık gelmiyor"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Sertifika geçerliliği kontrolü yapılamadı. Lütfen Microsoft İnternet Explorer üst menüsünden (Araçlar->İnternet Seçenekleri->Gelişmiş->Sunucu Sertifikasının geçerliliğini denetle) kısmının kapalı olup olmadığını kontrol edip, etkinleştirme işlemini tekrar yapınız"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Geçersiz SSL sertifikası"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL sertifikası iptal edilmiş"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Hatalı sertifika merkezi"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Kaspersky Lab çeşitli tanıtım etkinlikleri, satış teklifleri ve özel teklifler hakkında sizi bilgilendirebilmek için kayıt verilerine gerek duyar."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Devam et"
+Activate.Descr  = "Bilgiler etkinleştirme sunucusuna gönderilecektir"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Yapılandırma Sihirbazı Kaspersky Lab etkinleştirme sunucusuna bağlanıyor. Bu, İnternet bağlantınızın hızına bağlı olarak biraz zaman alabilir."
+ConnectingInfo.Name     = "etkinleştirme sunucusuna bağlanılıyor..."
+ConnectingInfo.Val      = if(bConnected, "Tamam")
+SendingCodeInfo.Name    = "Etkinleştirme kodu gönderiliyor..."
+SendingCodeInfo.Val     = if(bSentCode, "Tamam")
+RetrievingKeyInfo.Name  = "Sunucudan yanıt bekleniyor..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "Tamam")
+Status                  = $ProductName + " uygulamanız başarıyla etkinleştirilmiştir"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Sona erme tarihi:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " kaldı)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Etkinleştirme başarıyla tamamlandı." : "Uygulama bilgisayarınızda zaten etkin."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&İleri"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Uygulama etkinleştirmesine geçer": (((PiwFlags & #fPiwActivation) && !bSilent)?"Lisans bilgisine geçer":"Koruma yöntemi seçimine geçer")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Bu Sihirbaz bilgisayar güvenliğini doğru olarak yapılandırmanızda size yardımcı olacaktır.\n\nYapılandırma sırasında, Sihirbaz sisteminiz ve bilgisayarınızda kurulu olan uygulamalar hakkında bilgi toplayacaktır. Bu bilgiler sadece bilgisayarınız için optimal koruma sağlamak amacıyla kullanılacaktır.\n\n" + $ProductName_GEN + " ürününün yapılandırma işlemini başlatmak için İleri düğmesine basın."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Yükleme, neredeyse tamamlandı..." : ((PiwFlags & #fPiwReset) ? ("Onarım tamamlandı.") : ("Yükleme tamamlandı."))
+ResetDescr          = "Yapılandırma Sihirbazı " + $ProductName + " ayarlarını başarıyla geri yükledi."
+Reboot              = "&Bilgisayarı yeniden başlatın"
+StartProduct        = "Ba&şlat: " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("" + $ProductName + " uygulamasını kurduğunuz için teşekkür ederiz. Kurulumu tamamlamak için, bilgisayarı yeniden başlatmanız gerekir. Lütfen verilerinizi kaydedin, tüm uygulamaları kapatın ve 'Bitir' düğmesini tıklatın.") : "Ek ürün yapılandırmasının uygulamanın bir sonraki başlatılması sırasında tamamlandığına dikkat edin. Bu işlemini tamamlanması birkaç dakika sürebilir."
+
+[ConfigureWizard.EnumExe]
+Info = "Sistem incelemesi sırasında, Microsoft Windows işletim sistemi bileşenlerindeki güvenilir uygulamaların bir listesi oluşturulur. \n\nİşletim sistemine dahil olmayan yazılımlar, ilk çalıştırıldıkları anda ayrı olarak kontrol edileceklerdir."
+
+[s_LicKeyType]
+#ektBeta         = "Beta anahtarı"
+#ektTrial        = "Deneme sürümü anahtarı"
+#ektTest         = "Test anahtarı"
+#ektOEM          = "OEM anahtarı"
+#ektCommercial   = "Ticari sürüm anahtarı"
+#ektSubscription = "Ticari sürüm anahtarı"
+#ektSubscriptionProtection = "Korumalı ticari sürüm anahtarı"
+default          = "Bilinmeyen biçim"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Bilinmeyen hata"
+#ekirValid                      = "Lisans geçerli"
+#ekirExpired                    = "Lisans sona erdi"
+#ekirCorrupted                  = "Lisans geçerli değil"
+#ekirNotSigned                  = "Dijital imza kayıp ya da bozulmuş"
+#ekirWrongProduct               = "Lisans bu uygulama için geçerli değil. " + $ProductName + " ürünü başka bir uygulamanın lisansıyla etkinleştirilemez. Lütfen yüklü uygulamanızı kontrol edin."
+#ekirBlackListed                = "Anahtar "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" engellendi"
+#ekirIllegalUpdate              = "Veritabanı tarihiniz, lisans geçerliliği süreniz ile uyuşmuyor"
+#ekirInconsistentUpdate         = "Veritabanları bozulmuş"
+#ekirKeyCreationDateInvalid     = "Hatalı anahtar oluşturma tarihi"
+#ekirTrialAlreadyInUse          = "Deneme lisansı için bir anahtar etkinken, başka bir deneme lisansı anahtarı eklenemez"
+#ekirInvalidBlacklist           = "Anahtar kara listesi bozuk"
+#ekirCantBeUsedAsReserved       = "Ek lisans olarak kaydedilemiyor"
+#ekirKeyInstallDateInvalid      = "Hatalı etkinleştirme tarihi"
+#ekirTrialPeriodIsOver          = "Deneme lisansı sona erdi"
+#ekirConflictsWithCommercial    = "Yeni anahtar dosyası geçerli ticari lisansla çakışıyor"
+#ekirExpiredAsReserve           = "Bu lisansın süresi geçerli lisansın süresinden önce doluyor"
+#ekirGracePeriod                = "Lisans yetkisiz kullanımda"
+#ekirSuspended                  = "Lisansınız iptal edilecektir"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Uygulamanın yeniden kurulması gerekir"
+#ekirLicenseOnlyForMigration    = "Ticari sürümü etkinleştirmek için diğer uygulamaya geçin"
+default                         = "Geçersiz anahtar"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Daha sonra belirlenecek"
+#edtUnlimited = "Etkin"
+#edtLimited   = datetime(SubscriptionInfo.ExpDate)
+#edtSuspended = "İptal edilme nedeni : " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Lisans bilgisi"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": lisans uyarısı"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Dikkat!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = $ProductName_GEN + " uygulamasının deneme sürümünü kullanıyorsunuz."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Lisans kara listesi eksik veya bozuk. İşleme devam edebilmek için lütfen <a Update onclick(f_StartUpdater())>güncellemeyi</a> çalıştırın."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Lisansınız " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Korumanızı güncel tutmak için, lütfen <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nLisansı daha önce aldıysanız, lütfen <a Activate onclick(f_Activate())>uygulamayı etkinleştirin</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Aboneliğin süresi sona erdi." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Koruma devre dışı bırakıldı."))+($IsBestBuyLink ? " Abonelik yenilenemiyor." : " Bilgisayar güvenliği risk altında. \n\nAboneliği yenilemek için <a onclick(url($KeyProviderLinkForText))>hizmet sağlayıcınıza başvurun</a>.")) :("" + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? ": gün: aboneliği yenilemek için kalan süre. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " gün: güncellemenin devre dışı bırakılacağı süre. " : " gün: koruma devre dışı bırakılacağı süre." ) ) + " Aboneliği yenilemek için, <a onclick(url($KeyProviderLinkForText))>hizmet sağlayıcınıza başvurun</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Etkin anahtar bloke edildi.\nGüncelleme özelliği devreden çıkarıldı, bu nedenle bilgisayarınız virüs bulaşma riskine açık olabilir.</b>\n\nUygulamayı yasal olarak satın aldıysanız, lütfen Teknik Destek merkezine veya bir bayiye başvurun.\n\nÜrünün yasadışı bir kopyasını kullanıyorsanız, lütfen <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nBir lisans satın aldıysanız, lütfen <a Activate onclick(f_Activate())>uygulamayı etkinleştirin</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "bugün sona eriyor" : "şu kadar gün içinde sona eriyor: " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "süresi sona ermiş"
+
+[s_LicenseRenewBuyText]
+0 = "lisans al"
+default = "lisansı yenile"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Geri getirilecek ayarları seçiniz:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " Yapılandırma Sihirbazı"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Genel bilgi"
+InitBegin.Descr                       = $ProductName_GEN + " Uygulaması Geri Yükleme Sihirbazına Hoşgeldiniz."
+CheckHosts.Name                       = "Kaspersky Lab sunucularının erişilebilirliği kontrol ediliyor"
+CheckHosts.Descr                      = "Şüpheli yönlendirme tespit edildi"
+ResetArea.Name                        = "Ayarları geri yükle"
+ResetArea.Descr                       = "Aşağıda listelenen ayarlar, kullanıcı tarafından girilmiş ya da uygulamanın \nçalışması sırasında toplanmış verileri içermektedir."
+EnumExe.Name                          = "Sistem analizi"
+EnumExe.Descr                         = "Bilgisayarınız hakkındaki bilgiler toplanırken lütfen bekleyiniz..."
+ResetFinish.Name                       = $ProductName + " yapılandırması tamamlanıyor"
+ResetFinish.Descr                      = $ProductName + " başlatılmaya hazır."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Geri yükleme tamamlandı."
+ResetDescr          = "Yapılandırma Sihirbazı " + $ProductName + " ayarlarını başarıyla geri yükledi."
+
+[BestBuyUpgradeMessage]
+@ = "Başka bir uygulamaya geçiş yap"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Kaspersky Internet Security’i kullanmaya başla"
+RestartButton = "Kaspersky Internet Security'yi Çalıştır"
+
+[BestBuyUpgradeMessagePage]
+Header = "Tebrikler!"
+Message = "Kaspersky Anti-Virus yazılımınız başarıyla Kaspersky Internet Security yazılımına yükseltildi.\nArtık bilgisayarınızı korumaya yönelik daha da fazla özellikten faydalanabilirsiniz."
+Description = "Kaspersky Lab yazılımını tercih ettiğiniz için teşekkür ederiz!\nArtan korumanızın keyfini çıkarın."
+
+[ForcedUpgradeMessagePage]
+Header = "Neredeyse tamamlanmak üzere"
+Message = "Kaspersky Lab yazılımını tercih ettiğiniz için teşekkür ederiz! Artan korumanızın keyfini çıkarın."
+Description = "Uyumsuz yazılım kaldırılmadığından, yüklü uygulamaların ve işletim sisteminin istikrarlı çalışmasını sağlamak için Kaspersky Internet Security işlevlerinden bazıları devre dışı bırakıldı.\n\nUyumsuz yazılımı elle kaldırabilir ve Kaspersky Internet Security ayarları penceresinden tüm yeni özellikleri etkinleştirebilirsiniz."
+Notification = "Geçiş işlemini tamamlamak için uygulama yeniden başlatılacak."

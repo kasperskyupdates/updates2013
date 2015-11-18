@@ -1,0 +1,24 @@
+<UpdateFiles
+	UpdateDate="28102015 0354"
+	BlackDate="27102015 0604"
+	ObjectType="2=VLNS;3=BASE">
+	<FileDescription
+		ComponentID="VLNS"
+		UpdateType="base"
+		ReplaceMode="suffix"
+		LocalPath="%BaseFolder%"
+		Filename="vlns.kdl" />
+	<Registry
+		ComponentID="VLNS"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAT04HipAABmegi6PWfN4WBNe5+ECPG337SPNWwOA3EO6O2ngXMMGMuCOJgOzPLC9z9EfGlrr1rUeXbb8IGAPVTlXg5I0/jEBAB4JawAAAAIAAigEAFZMTlMDAAIoBABCQVNFAQAACcxMj5gNCjs6MTA0RGJMV3VtUG0vdnVZSDlFS1RvQXdDTTRidTVpbkVIMURXaXh6ajlJZ3ErZDdDVTkwNS96ZVQwRDl0Vk0wMUt0Q01PNE5GM1pwQldYREdKejk3TTQzTyUl"
+		Filename="vlns-0607g.pbv" />
+	<Registry
+		ComponentID="VLNS"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwFrAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAQABACAACS8ccQKfd+Io93I7e30c9lpoasGeiUk+zpZLfVzAseICAB4BAQAeCWsAAAABAAAJkJAuRA0KOzoxMEtGN1JoaXFoalp4NFJpblUvRTRYZUMzcHJxMXNScGx6blh6QW5JbXJhRWlVM3IzUVlIaU1ZUkIzaW15N1dFSmhyZTlvVGJoTmNhNWVzaktxRkF5WjlNJSU="
+		Filename="mod-vlns-0607g.krg" />
+</UpdateFiles>
+;:10aT/kVZjjGgZYWH0HnG++QPsVEqB7wDZSMU3YbPEMf9OZI6ypWSLAmJODnIIafE1SwXqWb7kPMJnhITH2iYG3Yt%%

@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Assistant de migration'
+UpgradeCaption = 'Assistant de migration'
+
+RebootPageCheckboxRebootText = 'Redémarrer l\'ordinateur'
+OpenRemoveProgramsPanel = 'Ouvrir le panneau de configuration'
+
+WizardBeginDescriptionKis = 'L\'Assistant de migration va installer Kaspersky Internet Security 2013.\n\nKaspersky Lab vous octroie une licence non exclusive pour l\'utilisation de Kaspersky Internet Security sous les mêmes conditions que celles que vous aviez acceptées lors de l\'installation de Kaspersky Anti-Virus.\n\nPendant la migration, plusieurs opérations indispensables qui pourraient nécessiter le redémarrage du système vont être exécutées.'
+
+WizardBeginDescriptionKav = 'L\'Assistant de migration va installer Kaspersky Anti-Virus 2013.\n\nKaspersky Lab vous octroie une licence non exclusive pour l\'utilisation de Kaspersky Anti-Virus sous les mêmes conditions que celles que vous aviez acceptées lors de l\'installation de Kaspersky Internet Security.\n\nPendant la migration, plusieurs opérations indispensables qui pourraient nécessiter le redémarrage du système vont être exécutées.'
+
+WizardContinueDescriptionKis = 'Poursuite de la migration vers Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Poursuite de la migration vers Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nAttention ! La durée de validité de la licence pour l\'utilisation de Kaspersky Anti-Virus expire avant la licence pour l\'utilisation de Kaspersky Internet Security. Après l\'expiration de la durée de validité de la licence pour l\'utilisation de Kaspersky Anti-Virus, il ne sera plus possible de retourner à Kaspersky Anti-Virus.'
+
+PleaseWait = 'Patientez...'
+RemovalProgressDescription   = 'La suppression de l\'application incompatible est en cours.'
+RemovalApplicationsDescription = 'Les applications suivantes vont être supprimées pour la migration :'
+ManualRemovalApplicationsDescription = 'Les applications suivantes doivent être supprimées manuellement pour la migration :'
+SearchRemovalApplicationsDescription   = 'La recherche d\'une application incompatible est en cours.'
+RestartProductDescription = 'L\'application va être redémarrée pour terminer la migration.'
+RebootOsDescription = 'Le redémarrage de l\'ordinateur est requis pour la poursuite de la migration.\nL\'Assistant reprendra son activité après le redémarrage'
+
+MigrationProgressDescriptionKis = 'La reconfiguration des modules de l\'application et la migration vers Kaspersky Internet Security est en cours'
+UpgradeProgressDescriptionKis   = 'La reconfiguration des modules de l\'application et la migration vers Kaspersky Internet Security est en cours.'
+MigrationProgressDescriptionKav = 'La reconfiguration des modules de l\'application et la migration vers Kaspersky Anti-Virus est en cours'
+
+MigrationKis = 'Migration vers Kaspersky Internet Security'
+MigrationKav = 'Migration vers Kaspersky Anti-Virus'
+MigrationUnknown = 'Migration '
+
+SearchRemovalApplicationsHeader = 'Mise à jour jusqu\'à Kaspersky Internet Security'
+RemovalProgressHeader = 'Suppression des applications incompatibles'
+RemovalApplicationsHeader = 'Des applications incompatibles ont été trouvées'
+RebootOsHeader = 'Il faut redémarrer l\'ordinateur'
+RestartProductHeader = 'L\'application va être relancée'
+
+MigrationAbortedHeader = $MigrationType + ' impossible'
+MigrationAbortedDescription = $MigrationType + ' a échoué. Essayez de supprimer manuellement les applications incompatibles et relancez l\'Assistant.'
+
+BestBuyGiftInformation = 'La migration de Kaspersky Anti-Virus vers Kaspersky Internet Security sera exécutée.\nVous allez posséder plus de fonctions de protection de l\'ordinateur.'
+BestBuyGiftDescription = 'Merci d\'avoir choisi une application de Kaspersky Lab. Nous espérons que vous allez apprécier un nouveau niveau de protection.'
+BestBuyUpgradeNotification = 'Durant la mise à jour, la recherche de logiciels incompatibles sera exécutée pour assurer un fonctionnement normal des applications installées et du système d\'exploitation.'
+BestBuyFreeUpgrade = 'Migrer vers Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Mise à jour en arrière-plan'
+BestBuyTryAbortInformation = 'La mise à jour sera poursuivie en arrière-plan.'
+BestBuyTryAbortDescription = 'Puisque un logiciel incompatible n\'a pas été supprimé, certaines fonctions de Kaspersky Internet Security ont été désactivées pour assurer un fonctionnement sûr des applications installées et du système d\'exploitation.\n\nVous pouvez supprimer un logiciel incompatible manuellement et activer toutes les nouvelles possibilités dans la fenêtre de configuration des paramètres de Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Reprendre la mise à jour'
+Congratulation = 'Félicitations !'
+
+RunKisButtonText = 'Lancer Kaspersky Internet Security'
+
+ProductUpgraded = 'La mise à jour de Kaspersky Anti-Virus à Kaspersky Internet Security a eu lieu.\nMaintenant vous possédez plus de possibilités de protection de l\'ordinateur.'

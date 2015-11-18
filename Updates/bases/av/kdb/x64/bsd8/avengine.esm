@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- avengine ESM config file (FreeBSD8/x64) -->
+<root>
+  <component clsid="0x712D948D" name="CLSID_AVENGINE_KAVBASE" module="avengine" timeout="-1" category="KLAVA" module_category="KLAVA" bases_category="KLAVA">
+    <interface iid="0x54f4e512" name="IEngine"/>
+    <interface iid="0xf8ae22c3" name="IStreamFormatFilter"/>
+    <interface iid="0xff059ad9" name="IPbsDetectConversion"/>
+    <interface iid="0x2e9fb9dd" name="IUrlChecker"/>
+	<interface iid="0x8556f521" name="IUrlClassifier"/>
+	<interface iid="0x65061488" name="IScriptFilter"/>
+  </component>
+
+  <component clsid="0x55B912B1" name="CLSID_AVENGINE_BSS" module="avengine" timeout="-1" category="SW2" module_category="KLAVA" bases_category="SW2">
+    <interface iid="0x54f4e512" name="IEngine"/>
+  </component>
+
+  <component clsid="0xE5528498" name="CLSID_AVENGINE_INTEGRITYCONTROL" module="avengine" timeout="-1" category="IntegrityControl" module_category="KLAVA" bases_category="HIPS2">
+    <interface iid="0x54f4e512" name="IEngine"/>
+  </component>
+
+  <component clsid="0x32289460" name="CLSID_AVENGINE_ANTIFRAUD" module="avengine" timeout="-1" category="KLAVA" module_category="KLAVA" bases_category="KLAVA">
+    <interface iid="0x54f4e512" name="IEngine"/>
+  </component>
+</root>

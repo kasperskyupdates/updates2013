@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x71D491DC" name="file_manager" module="excludemanager">
+    <interface iid="0x89E6A54D" name="IFileMatchRules"/>
+    <interface iid="0x01923EDE" name="IFileMatch"/>
+  </component>
+
+  <component clsid="0xE80A6845" name="application_manager" module="excludemanager">
+    <interface iid="0xCE28013E" name="ITrustedApplications"/>
+    <interface iid="0xD44ABA18" name="ITrustedProcesses"/>
+  </component>
+  
+  <component clsid="0x87A6A946" name="sign_manager" module="excludemanager" timeout="-1">
+    <interface iid="0xD1114183" name="ISignatureExcluder"/>
+    <interface iid="0x54645f3e" name="IScannedObjectExcluder"/>
+	<interface iid="0xdbe0c7f9" name="IScannedObjectExcluder2"/>
+  </component>
+
+  <component clsid="0xda22f226" name="ichecker.IChecker" module="ichecker" construct_iface_id="0x77243a9e" settings_type_id="0x441826b9" autostart="true" timeout="-1">
+    <interface iid="0xa21a1471" name="IIChecker3"/>
+  </component>
+
+  <component clsid="0x0c72e79c" name="ichecker.ISwift" module="ichecker" construct_iface_id="0x77243a9e" settings_type_id="0x441826b9" autostart="true" timeout="-1">
+    <interface iid="0xa21a1471" name="IIChecker3"/>
+  </component>
+
+  <component clsid="0x8cb154d2" name="ichecker.CalcFileHash" module="ichecker">
+    <interface iid="0x0a4c6c0c" name="klif.IFileIDProvider"/>
+  </component>
+
+  <component clsid="0x70a41152" name="ThreatsManager.Manager" module="ThreatsManager" tracer_prefix="TM">
+    <interface iid="0xf1bfafee" name="threats.IManager"/>
+    <interface iid="0x09d7b932" name="threats.IManagerEx"/>
+    <interface iid="0x1fe5378f" name="threats.IThreatsManager"/>
+    <interface iid="0x88867602" name="threats.IStatistics"/>
+  </component>
+
+  <component clsid="0xc6420540" name="ThreatsManager.Collection" module="ThreatsManager">
+    <interface iid="0x96189812" name="threats.ICollection"/>
+    <interface iid="0x4a6c26b7" name="threats.ICollectionProcessor"/>
+  </component>
+
+  <component clsid="0x1b141628" name="threats_processor.ThreatsProcessor" module="threats_processor" tracer_prefix="AVS">
+    <interface iid="0xd157ec66" name="threats.IProcessor"/>
+  </component>
+
+  <component clsid="0x9763A70C" name="threats_disinfection" module="threats_disinfection" timeout="-1" tracer_prefix="TD">
+    <interface iid="0x8B5344DD" name="IThreatsTreater"/>
+    <interface iid="0xFC4B71B5" name="IAnswerCache"/>
+    <interface iid="0xC576A147" name="ISystemLocker"/>
+  </component>
+
+  <component clsid="0xaa99dad6" name="threats_disinfect.RollbackEvents" module="threats_disinfection" tracer_prefix="TD">
+    <interface iid="0x3b4429c9" name="IRollbackEvents"/>
+    <interface iid="0xb01e152d" name="IRollbackEventsSubscription"/>
+  </component>
+
+  <component clsid="0xBB577230" name="antimalware.ThreatsManagement" construct_iface_id="0x1EC2D56C" settings_type_id="0x557AC6DE" settings_iface_id="0xEE026433" module="am_facade">
+    <interface iid="0x1BF6B6C6" name="antimalware.IThreatsInfoProvider"/>
+    <interface iid="0x5756D124" name="antimalware.IThreatsOperations"/>
+    <interface iid="0xD45B67F9" name="antimalware.IThreatsOperationsTest"/>
+    <interface iid="0xEE026433" name="antimalware.IThreatsManagementSettings"/>
+    <interface iid="0x1EC2D56C" name="antimalware.IThreatsManagementConstruct"/> 
+  </component>
+
+  <component clsid="0x9A1E26A9" name="QB" module="am_facade">
+    <interface iid="0x00000023" name="IQB"/>
+    <interface iid="0x0F0F2B85" name="IQBConstruct"/>
+  </component>
+
+  <component clsid="0x12c1373f" name="antimalware.facade.AVBasesInfoProvider" module="am_facade">
+    <interface iid="0xb44e3135" name="antimalware.facade.IAVBasesInfoProvider"/>
+  </component>
+
+  <component clsid="0x14D32B1A" name="antimalware.RollbackInfoProvider" module="am_facade">
+    <interface iid="0x1DB42040" name="antimalware.IRollbackInfoProvider"/>
+  </component>
+
+  <component clsid="0x73667B0A" name="antimalware.RollbackInfoLogger" module="am_facade">
+    <interface iid="0x8F7086AE" name="antimalware.IRollbackInfoLogger"/>
+  </component>
+  
+  <component clsid="0x9470A81D" name="antimalware.KsnFacade" module="am_facade">
+    <interface iid="0xB2E20DA6" name="avengine.IKsnFacade"/>
+  </component>
+
+  <component clsid="0xd7683bd3" name="antimalware.IAdvancedDisinfectionEventsDispatcher" module="am_facade">
+    <interface iid="0x2A97EB22" name="antimalware.IAdvancedDisinfectionEvents"/>
+    <interface iid="0x20222d70" name="antimalware.IAdvancedDisinfectionEventsSubscription"/>
+  </component>
+
+  <component clsid="0xcbab2fba" name="antimalware.trusted_boot.AttestationTaskImpl" module="attestation_task" tracer_prefix="tbtask"
+             construct_iface_id="0x3ae4bff3"
+             settings_iface_id="0x442e6b5a"
+             settings_type_id="0xa74ac37f">
+    <interface iid="0xa47bf9af" name="app_core.task_manager.task.ITask"/>
+  </component>
+
+  <component clsid="0xb1a79840" name="antimalware.trusted_boot.PlatformAttestationProviderImpl" module="tcg_log_provider" tracer_prefix="tbatt">
+    <interface iid="0xc7d3cb9e" name="antimalware.trusted_boot.IPlatformAttestationProvider"/>
+  </component>
+
+  <component clsid="0xfcbf1089" name="antimalware.trusted_boot.TcgLogProviderImpl" module="tcg_log_provider" tracer_prefix="tblog">
+    <interface iid="0x0d736b7d" name="antimalware.trusted_boot.ITcgLogProvider"/>
+    <interface iid="0xa843cf52" name="antimalware.trusted_boot.ITpmInfoProvider"/>
+  </component>
+
+  <component clsid="0x74c151de" name="antimalware.AppRemediationImpl" module="win8_api" tracer_prefix="win8rem">
+    <interface iid="0xd8d1855f" name="antimalware.IAppRemediation"/>
+  </component>
+
+  <component clsid="0x2E5D576E" name="SystemVulnerabilityStatusProvider" module="vulnerability_status_provider" construct_iface_id="0x0a8c1e97" settings_type_id="0x0c802341">
+    <interface iid="0xFEE7E0C0" name="ISystemVulnerabilityStatusProvider"/>
+  </component>
+  
+  <component clsid="0xA121B038" name="antimalware.pdk_facade.SecurityRatingProvider" module="am_facade">
+    <interface iid="0x542673d0" name="antimalware.pdk_facade.ISecurityRatingProvider"/>
+  </component>
+
+  <component clsid="0xa169ca1f" name="antimalware.pdk_facade.UrlCheckService" module="am_facade">
+    <interface iid="0x722577a4" name="antimalware.pdk_facade.IUrlCheckService"/>
+  </component>
+
+  <component clsid="0xb086eaba" 
+             name="antimalware.pdk_facade.startup_objects" 
+             module="am_facade"
+             tracer_prefix="ampdkfcd">
+    <interface iid="0x83614a45" name="antimalware.pdk_facade.IStartupObjectsInformationProvider"/>
+    <interface iid="0x9d684b42" name="antimalware.pdk_facade.IStartupObjectsEventsSubscription"/>
+    <interface iid="0x98d187e5" name="antimalware.IStartupObjectsEnumHandler"/>
+  </component>
+ 
+</root>

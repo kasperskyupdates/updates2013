@@ -1,0 +1,25 @@
+<UpdateFiles
+	UpdateDate="28102015 1234"
+	BlackDate="28102015 0603"
+	ObjectType="2=PARCTL;3=BASE">
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="desc"
+		App="KES 8.*.*.*;KTS 9.*.*.*;KTS 12.*.*.*;KSOSPC 9.*.*.*;KSOSFS 9.*.*.*;KIS 12.*.*.*;KAV 12.*.*.*"
+		Filename="parctl-paro-0607g.xml"
+		FileDate="28102015 1234" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="desc"
+		App="KAV 13.*.*.*;KIS 13.*.*.*;KES 10.*.*.*;KSVLASVM 3.[0-3].*.*;KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*;KISMAC [13-14].*.*.*"
+		Filename="parctl-parm-0607g.xml"
+		FileDate="28102015 1234" />
+	<Registry
+		ComponentID="PARCTL"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAWw5HipAAHl9JMKqYITSlKTbdcGqb0wuJLnATODoYZPkF76tkbS9YXWqkKYhRtL21JsM5NPiVkpsc6NBAiKl/s3DZs1bE38BAB4JewAAAAIAAigGAFBBUkNUTAMAAigEAEJBU0UBAAAJDpZ/oQ0KOzoxMDRLN1ZJTUM0b0ZGL0tMei85a3BCM0dpc1VHYUxtYUVoQnBUYmFRaGN3OGFqS0ovRVg4VU4xMTdwUjlwd0lIYjEwTXE0SVowZWV2K3JzWjE2VFZJSTM3JSU="
+		Filename="parctl-0607g.pbv" />
+</UpdateFiles>
+;:10aLGY5+j7j5LrBBqFOHfCSE1xYU7rzrymOC/HuzylJPZyWq+MCludkfxLVPzBBFwGCKfWh4/z+tBgP3yXsKKQOs%%

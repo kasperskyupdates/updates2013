@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security Technical Preview'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus Technical Preview'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'актуални' 
+Corrupted = 'повредени' 
+VeryOld = 'много стари' 
+Old = 'остарели' 
+OldInGracePeriod = 'не са обновявани отдавна'
+UpdatedAndRebootNeeded = 'обновени. Необходимо е рестартиране на компютъра' 
+UpdatedAndProductRestartNeeded = 'обновени. Необходимо е рестартиране на програмата' 
+SomeBasesNeedUpdate = 'необходимо е обновяване на някои защитни компоненти'
+
+Schedule_Auto    = 'автоматично' 
+Schedule_Manual  = 'ръчно' 
+Schedule_Fixed   = 'по разписание' 
+
+Back = 'Назад' 
+StopTask = 'Спри'
+
+News = 'Новини'
+Reports = 'Отчети'
+Settings = 'Настройки'
+Help = 'Помо&щ'
+OK = 'OK'
+Cancel = 'Отказ'
+Retry = 'Опитай пак'
+
+Unknown = 'неизвестно'
+
+ShortDateTimeWithSecondsFormat = '%d.%m.%Y %H:%M:%S'
+ShortDateTimeFormat = '%d.%m.%Y %H:%M'
+ShortDateFormat = '%d.%m.%Y'
+
+ShortDateTimeNewsFormat = '%d.%m.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'днес, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'вчера, %H:%M'
+
+MonthName_1  = 'януари'
+MonthName_2  = 'февруари'
+MonthName_3  = 'март'
+MonthName_4  = 'април'
+MonthName_5  = 'май'
+MonthName_6  = 'юни'
+MonthName_7  = 'юли'
+MonthName_8  = 'август'
+MonthName_9  = 'септември'
+MonthName_10 = 'октомври'
+MonthName_11 = 'ноември'
+MonthName_12 = 'декември'
+ 
+DateUnknown = 'неизвестно'
+
+After = 'след'
+Remaining = 'остават'
+Ago = 'преди'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'ден', 'дни'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'час', 'часа'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'минута', 'минути'}
+LessMinute_After = 'по-малко от минута'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'ден', 'дни'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'час', 'часа'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'минута', 'минути'}
+LessMinute_Remaining = 'по-малко от минута'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'ден', 'дни'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'час', 'часа'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'минута', 'минути'}
+LessMinute_Ago = 'по-малко от минута'
+
+Yesterday   = 'вчера'
+Today       = 'днес' 
+LessWeek    = 'преди по-малко от седмица'
+LessTwoWeek = 'преди по-малко от две седмици'
+LessMonth   = 'преди по-малко от месец'
+MoreMonth   = 'преди повече от месец'
+MoreHalfYear= 'преди повече от половин година'
+MoreYear    = 'преди повече от година'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = Remaining + ' ' + $TimePeriod
+Time_Ago       = Ago + ' ' + $TimePeriod
+
+;Buttons
+ConfirmButton    = 'ОК'
+CancelButton = 'Отказ'
+ApplyButton = 'Приложи'
+CloseButton = 'Затвори'
+NextButton = 'Напред >'
+BackButton = '< Назад'
+FinishButton = 'Край'
+SaveButton = 'Запази'
+SkipButton = 'Пропусни'
+Continue = 'Продължи'
+Yes = 'Да'
+No = 'Не'
+
+SettingsMore = 'На&стройки...'
+
+DoNoyShowThisWindow = 'Повече не показвай'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Неопределена грешка'
+SystemError_0x8000004B = 'Неопределена грешка'
+SystemError_0x80000041 = 'Недостатъчно памет'
+SystemError_0x80000042 = 'Липсва поддръжка'
+SystemError_0x80000043 = 'Функцията не е реализирана'
+SystemError_0x80000045 = 'Достъпът е забранен или обекта не е намерен'
+SystemError_0x8000004C = 'Обектът не е намерен'
+SystemError_0x800000C6 = 'Обектът не е намерен'
+SystemError_0x800000C5 = 'Обектът не е намерен'
+SystemError_0x8000004F = 'Обектът е блокиран'
+SystemError_0x80000051 = 'Операцията е отменена'
+SystemError_0x80000059 = 'Грешка в устройството'
+SystemError_0x8000005A = 'Невалиден подпис'
+SystemError_0x8000005B = 'Невалидна версия'
+SystemError_0x8000005F = 'Обектът е защитен срещу записване'
+SystemError_0x80000061 = 'Липсва лиценз'
+SystemError_0x80000062 = 'Недостатъчно пространство'
+SystemError_0x80000063 = 'Устройството не е готово'
+SystemError_0x800000C0 = 'Невалиден формат'
+SystemError_0x800000C1 = 'Недостатъчно права'
+SystemError_0x800000C2 = 'Грешка при инициализация'
+SystemError_0x800000C3 = 'Грешка при инициализация'
+SystemError_0x800000C7 = 'Неправилно състояние на обекта'
+SystemError_0x800000C8 = 'Обектът е защитен с парола'
+SystemError_0x800000CA = 'Грешка при четене'
+SystemError_0x800000CC = 'Грешка при четене'
+SystemError_0x800000CB = 'Грешка при записване'
+SystemError_0x800000CD = 'Грешка при записване'
+SystemError_0x800000D0 = 'Обектът е невалиден'
+SystemError_0x800000D1 = 'Обектът вече съществува'
+SystemError_0x800000D5 = 'Обектът се използва от друга програма'
+SystemError_0x800000D8 = 'Базите са повредени'
+SystemError_0x800001C0 = 'Модулът е невалиден'
+SystemError_0x800001C2 = 'Модулът не е преминал проверката за автентичност'
+SystemError_0x800001C1 = 'Модулът не е намерен'
+SystemError_0x800001C4 = 'Модулът не може да бъде зареден'
+SystemError_0x80000221 = 'Времето за изчакване е изтекло'
+SystemError_0x80000240 = 'Грешка при взаимодействие на компонентите'
+SystemError_0x90005000 = 'Цифровият подпис е невалиден'
+SystemError_0x90005002 = 'Липсва цифров подпис'
+SystemError_0x80027006 = 'Изпълнението на задачата е прекратено'
+SystemError_0x80027007 = 'Изпълнението на задачата е прекратено'
+SystemError_0x80380fbb = 'Изпълнението на задачата е прекратено'
+SystemError_0x80017007 = 'Задачата не може да бъде стартирана в безопасен режим'
+SystemError_0x80017005 = 'Задачата е изключена'
+SystemError_0x80017006 = 'Грешно потребителско име или парола'
+SystemError_0x80017008 = 'Стартиране на задачи от името на друг акаунт в безопасен режим е невъзможно'
+SystemError_0x80017009 = 'Драйверът не е намерен'
+SystemError_0x80022005 = 'Грешка при зареждане на базите'
+SystemError_default    = 'Код на грешката: ' + $ErrorCode
+
+LicenseManager = '&Лицензиране'
+SubscriptionManager = 'Управление на абонамента'
+ProblemSolution = 'Преминете в прозореца Лицензиране, за да разрешите този проблем'
+
+KBSuffix = 'КБ'
+MBSuffix = 'MБ'
+GBSuffix = 'ГБ'
+TBSuffix = 'ТБ'
+
+; updating bases status
+Idle = 'неактивно' ;refers to connection
+Stopping = 'спиране'
+ConnectingToServer = 'свързване със сървъра'
+CreatingUpdateList = 'обработване на файлове'
+Downloading = 'сваляне на файлове'
+Installing = 'обновяване на файлове'
+RollbackRunning = 'връщане към предишните бази'
+
+FunctionalityDisabledForExpiredSubscription = 'обновяването е изключено'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'защитата е изключена'
+SubscriptionRemainingDaysCount = {$LicenseRemainingDaysCount: 'остава', 'остават'} + ' ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'ден', 'дни'}
+SubscriptionExpiresToday = 'изтича днес'
+SubscriptionActivated = 'активиран'
+CheckReserveCodeManuallyHeader = 'Автоматичното активиране на програмата с резервния код за активиране е неуспешно.' ; TODO
+CheckReserveCodeManuallyText = 'Опитайте да активирате ръчно програмата с резервния код за активиране.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Инсталирана е бета-версия на програмата'
+LicensingStatus_Trial_ShortDescription = 'Инсталирана е пробна версия на програмата'
+LicensingStatus_OkSubscription_ShortDescription = 'Абонамент: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Срокът на действие на лиценза скоро ще изтече'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Срокът на действие на лиценза скоро ще изтече'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_InvalidKey_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_Reinstall_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Черният списък с ключове е повреден'
+LicensingStatus_CorruptedBases_ShortDescription = 'Не може да се провери съответствието на базите с лицензионното споразумение'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Срокът на действие на лиценза не позволява да използвате текущите бази'
+LicensingStatus_Expired_ShortDescription = 'Срокът на действие на лиценза е изтекъл'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Абонаментът е изтекъл на ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Срокът на действие на пробния лиценз е изтекъл'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Срокът на действие на бета-версията е изтекъл'
+LicensingStatus_Blocked_ShortDescription = 'Лицензът е блокиран'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Абонаментът е блокиран'
+LicensingStatus_LicenseViolated_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Открит е проблем с лиценза'
+LicensingStatus_Grace_ShortDescription = 'Абонаментът е изтекъл на ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Абонаментът е преустановен от' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Автоматичното обновяване на статуса на абонамента е неуспешно'
+LicensingStatus_NotActivated_ShortDescription = 'Програмата не е активирана'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Програмата не е активирана'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Програмата не е активирана'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Програмата не е активирана'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Резервен код за активиране'
+ReserveCodeStatus_Ok_ShortDescription = 'Резервен код за активиране'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Резервният код за активиране е невалиден'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Резервният код за активиране не е активиран'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Изчакване за автоматично активиране'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Бета-версията на ' + $ProductNameFull  + ' е напълно функционална, но не е окончателната версия и може да съдържа грешки, пропуски или дефекти. Моля, съобщавайте за тях в съответните раздели на нашия форум.'
+
+LicenseRemain    = {$LicenseRemainingDaysCount: 'Остава', 'Остават'} + ' ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'ден', 'дни'} + '. След изтичане на този период функционалността на програмата ще бъде ограничена.' 
+LicenseEndsToday = 'Това е последният ден от вашия лиценз. Днес функционалността на програмата ще бъде ограничена.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Абонаментът е активиран. Дата на изтичане: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Абонаментът е удължен до ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Абонаментът е отказан. Дата на изтичане: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Абонаментът ще бъде преустановен от ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Абонаментът е удължен за неограничен срок'
+StateUnlimitedSubscriptionResumedText = 'Абонаментът е подновен'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'след ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'ден', 'дни'}
+LicensingStatus_WillBeExpired_Cause = {$LicenseDaysToExpiry: 'Остава', 'Остават'} + ' ' + $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'ден', 'дни'} + '. След изтичане на този период функционалността на програмата ще бъде ограничена.'
+LicensingStatus_ExpiresToday_Cause = 'Изтича днес. При изтичане, функционалността на приложението ще бъде ограничена.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Невалидна дата на създаване на ключа. Системната дата на вашия компютър е била променена. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Невалидна дата на активиране. Системната дата на вашия компютър е била променена. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Нарушена е цялостността на програмата ' +$FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Препоръчително е да свалите нов черен списък от сървъра.'
+LicensingStatus_CorruptedBases_Cause = 'Една от възможните причини е неправилно обновяване. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Възможно е да сте закупили нелегално копие на програмата. Защитата е на пауза. Компютърът е изложен на риск от заразяване, повреждане или кражба на информация.'
+LicensingStatus_BlockedSubscription_Cause = 'Възможно е да сте закупили нелегално копие на програмата. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Превишен е броят компютри, на които може да бъде едновременно инсталирана ' + $ProductName + ' с вашия лиценз. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Превишен е броят компютри, на които може да бъде едновременно инсталирана ' + $ProductName + ' с вашия абонамент. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = {$LicenseGraceDaysCount: 'Остава', 'Остават'} + ' ' + $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'ден', 'дни'} + ' до ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Възможно е твърде дълго да няма връзка със сървъра за активиране. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Открит е предварително инсталиран код за активиране. Програмата ще бъде активирана автоматично при наличие на връзка с интернет.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Открит е предварително инсталиран код за активиране. Можете да активирате програмата с него или да го изтриете.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Програмата не е активирана с помощта на предварително инсталирания код за активиране. Необходимо е вашето участие.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Можете да въведете резервен код за активиране. Програмата ще бъде активирана автоматично с този код, след като изтече срока на действие на лиценза.'
+ReserveCodeStatus_Ok_Cause = 'На вашият компютър е инсталиран резервен код за активиране. След изтичане срока на действие на лиценза, програмата ще бъде активирана автоматично с този код.'
+ReserveCodeStatus_Invalid_Cause = 'След изтичане срока на действие на лиценза, обновяването на антивирусните бази ще бъде недостъпно.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Автоматичното активиране на програмата с помощта на резервния код за активиране ' + $ReserveCode + ' е неуспешно. Необходимо е вашето участие.'
+ReserveCodeStatus_WaitActivation_Cause = 'Изчакване за автоматично активиране с помощта на резервния код за активиране ' + $ReserveCode + '.'
+
+ResolveProblem_BuyCommercial         = 'Препоръчително е да закупите и активирате комерсиалната версия на програмата.'
+ResolveProblem_CheckSystemTime		= 'Уверете се, че системната дата е правилна.'
+ResolveProblem_ActivateAgain        = 'Опитайте се да изтриете активния ключ и да активирате програмата отново. Можете също и да се обърнете към Екипа за техническа поддръжка в Kaspersky Lab или към дистрибутора, от когото сте закупили програмата.'
+ResolveProblem_CallSupport			= 'Препоръчително е да се обърнете към Екипа за техническа поддръжка за изясняване на причината за блокиране. За да възстановите функционалността на програмата закупете нов лиценз.'
+ResolveProblem_ContactSupport		= 'Обърнете се към Екипа за техническа поддръжка.'
+ResolveProblem_ActialLicense		= 'За да възобновите защитата на компютъра, въведете нов код за активиране.'
+ResolveProblem_UpdateAgain			= 'Препоръчваме ви да обновите базите още веднъж.'
+ResolveProblem_BuyNewLicense		= 'За да възобновите защитата на компютъра, трябва да закупите нов лиценз.'
+ResolveProblem_CallProvider			= 'За да подновите абонамента се обърнете към вашия доставчик на услугата.'
+ResolveProblem_ProviderWebSite		= 'За да подновите абонамента се обърнете към вашия доставчик на услугата.'
+ResolveProblem_RenewalNotAvailable	= 'Удължаването на абонамента е недостъпно.'
+ResolveProblem_BuyLicense			= 'За да възобновите защитата на компютъра, трябва да закупите комерсиален лиценз от Kaspersky Lab или от нашите дистрибутори. Повторното използване на пробен лиценз е невъзможно.'
+ResolveProblem_Reinstall			= 'Трябва да преинсталирате програмата.'
+ResolveProblem_RenewLicense			= 'За да възобновите пълната функционалност на програмата трябва да удължите срока на действие на лиценза.'
+ResolveProblem_RefreshSubscription	= 'Моля, обновете статуса на абонамента ръчно.'
+ResolveProblem_Activate				= 'Въведете код за активиране, за да активирате програмата.'
+ResolveProblem_ActivateReserveCode  = 'Опитайте да активирате ръчно програмата с резервния код за активиране.'
+ResolveProblem_ActivateCodeManual	= 'Активирайте програмата ръчно.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Проверете настройките за свързване с интернет и изчакайте за автоматично активиране или активирайте програмата ръчно.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Трябва да въведете резервен код за активиране. Програмата ще бъде активирана автоматично с този код за активиране, след изтичане срока на действие на лиценза.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause +  ' Трябва да активирате програмата с код за активиране преди да изтече срока на действие на пробният лиценз.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'За да възобновите пълната функционалност на програмата трябва да закупите комерсиален лиценз от Kaspersky Lab или от нашите дистрибутори.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause +  ' Трябва да активирате програмата с код за активиране преди да изтече срока на действие на пробният лиценз.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Трябва да въведете резервен код за активиране. Програмата ще бъде активирана автоматично с този код за активиране, след изтичане срока на действие на лиценза.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Статусът на защитата не е определен. '
+ProtectionLevelNoFeaturesLong = 'Защитата е изключена. '
+ProtectionLevelLimitedLong = 'Функционалността на програмата е ограничена. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Статусът на обновяването не е определен. '
+UpdaterLevelNotAllowedLong = 'Обновяването е недостъпно. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'не е определен'
+SubscriptionStateActive = 'активен'
+SubscriptionStatePaused = 'преустановен'
+SubscriptionStateCancelledSoft = 'преустановен'
+SubscriptionStateCancelledHard = 'отменен'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'не е определен'
+SubscriptionStatusReasonProviderInitiated = 'активиран от провайдъра'
+SubscriptionStatusReasonCreditCardAuthFailed = 'плащането с кредитната карта е отхвърлено'
+SubscriptionStatusReasonCustomerInitiated = 'активиран от потребителя'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'плащането с кредитната карта е одобрено'
+
+ProductStatusRelease = 'издание'
+ProductStatusBeta = 'бета-версия'
+
+LegalStatusBlocked = 'лицензът е блокиран'
+LegalStatusLimited = 'нарушено е лицензионното споразумение'
+LegalStatusValid = 'лицензът е в сила'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Има важно уведомяване за лиценза.\n<a href="licensemanager">Детайли...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Срокът на действие на абонамента е изтекъл. За да удължите абонамента се обърнете към вашият доставчик на услугата.'
+
+LicensingState_WarningIsAvailable = 'има предупреждение'
+ProtectionState_NotificationIsAvailable = 'Лицензно уведомяване'
+LicensingState_ProblemIsAvailable = 'има проблем'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Срокът на действие на лиценза за използване на програмата изтича след ' + $LicenseDaysToExpiry + ' дни, след което защитата на вашия компютър ще бъде изключена'
+LNCS_BBY_WillExpire_Description =	'За да продължите покритието, моля, подновете онлайн на The Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Title =	    'Срокът на действие на лиценза за използване на програмата скоро ще изтече'
+LNCS_BBY_AboutToExpire_Description = 'Остават само ' + $LicenseDaysToExpiry + ' дни от вашето покритие и след това компютърът ви ще бъде незащитен. Подновете сега като се свържете онлайн с екипа за софтуерен абонамент на Geek Squad на The Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Срокът на действие на лиценза за използване на програмата изтича днес. Защитата на вашия компютър ще бъде изключена'
+LNCS_BBY_AboutToExpire_Today_Description = 'Подновете сега като се свържете онлайн с екипа за софтуерен абонамент на Geek Squad на The Geek Squad Renewal Center'
+
+LNCS_BBY_LastDay_Title =	'Внимание! Срокът на действие на лиценза за използване на програмата изтича днес'
+LNCS_BBY_LastDay_Description =	'Не оставяйте компютъра си да работи без защита. Подновете онлайн на The Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Предупреждение! Вашият компютър не е защитен. Не оставяйте компютъра си незащитен. Подновете онлайн на адрес: <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Внимание! Защитата на вашия компютър е изключена'
+LNCS_BBY_Grace_Description =	'Не оставяйте компютъра си да работи без защита. Подновете онлайн на The Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Не оставяйте компютъра си да работи без защита. Подновете онлайн на The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Внимание! Защитата на вашия компютър е изключена. Не оставяйте вашия компютър без защита. Удължете срока на действие онлайн на <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Удължаването на срока на действие на лиценза за използване на програмата е неуспешно'
+LNCS_BBY_RenewFailure_Description = 'Моля, удължете срока на действие онлайн на The Geek Squad Renewal Center'
+LNCS_BBY_RenewFailure_Description_Full = 'Моля, удължете срока на действие онлайн на The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Не можем да подновим вашия софтуер Kaspersky Security. Моля, подновете онлайн на адрес: <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Вашият Kaspersky Protection Plan може да бъде отменен, защото срокът на валидност на вашата кредитна карта изтича скоро'
+LNCS_BBY_CCAboutToExpire_Description =	'Моля, удължете срока на действие онлайн на The Geek Squad Renewal Center'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Моля, удължете срока на действие онлайн на The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Абонаментът е изтекъл'
+LNCS_BBY_Expired_Description =	'Удължаването на абонамента е недостъпно.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Обновете вашата версия на Kaspersky Anti-Virus сега и спестете $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Обновете вашата версия на Kaspersky Anti-Virus сега и спестете $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Обновете вашата версия на Kaspersky Anti-Virus сега и спестете $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Обновете вашата версия на Kaspersky Anti-Virus сега и спестете $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Обновете вашата версия на Kaspersky Internet Security Software сега и спестете $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Обновете вашата версия на Kaspersky Internet Security Software сега и спестете $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Обновете вашата версия на Kaspersky Internet Security Software сега и спестете $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Обновете вашата версия на Kaspersky Internet Security Software сега и спестете $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Обнови сега</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Срокът на действие на лиценза за Kaspersky Anti-Virus изтича!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Срокът на действие на лиценза за Kaspersky Anti-Virus изтича!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Срокът на действие на лиценза за Kaspersky Anti-Virus изтича!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Срокът на действие на лиценза за Kaspersky Anti-Virus изтича!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Срокът на действие на лиценза за Kaspersky Internet Security изтича!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Срокът на действие на лиценза за Kaspersky Internet Security изтича!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Срокът на действие на лиценза за Kaspersky Internet Security изтича!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Срокът на действие на лиценза за Kaspersky Internet Security изтича!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Щракнете тук</a>, за да спестите $5 от годишната цена на програмата.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Щракнете тук</a>, за да спестите $10 от годишната цена на програмата.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Щракнете тук</a>, за да спестите $15 от годишната цена на програмата.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Щракнете тук</a>, за да спестите $20 от годишната цена на програмата.'
+
+LNCS_BBY_StatusUpdate = 'Промяната на състоянието на продукта може да отнеме до 24 часа. Щракнете върху "Проверка на състоянието на абонамента" няколко часа след приключване на процеса на подновяване на The Geek Squad Renewal Center, за да принудите продукта да провери за актуализация.'
+
+EndOfLicense_Header = 'Отчет за работата на програмата'
+WelcomPageTitle = 'Добре дошли в ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Версията на операционната система е била променена от момента на инсталиране на програмата ' + $ProductName
+ReinstallWarningDescription = 'Моля, инсталирайте отново ' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + ' е на пауза'
+IncompatibleOsVersionDescription = 'За да работи правилно ' + $ProductName + ' след инсталиране на Microsoft Windows 8, трябва да инсталирате отново някои компоненти на програмата. Инсталирането ще отнеме не повече от 2 минути.' + '\n\nПо време на конфигурирането на ' + $ProductName + ' за работа на Microsoft Windows 8 защитата на компютъра ви ще е ограничена.'
+
+ReinstallWarningOkButton = 'Детайли'
+IncompatibleOsVersionOkButton = 'Инсталирай и стартирай'
+
+BrowserWaitingMessage = 'Моля, изчакайте...'
+
+OsUpgradedTitle = 'Актуализация на операционната система'
+OsUpgradedDescription = 'Актуализацията на операционната система е завършена успешно.'

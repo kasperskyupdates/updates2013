@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Επιλογή του αρχείου κλειδιού"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Το κλειδί για αυτό το αντίγραφο της εφαρμογής παραχωρήθηκε από τον προμηθευτή του εξοπλισμού. Θέλετε να ενεργοποιήσετε την εφαρμογή χρησιμοποιώντας αυτό το κλειδί;\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Η διαδικασία ρύθμισης των παραμέτρων της εφαρμογής δεν έχει ακόμα ολοκληρωθεί. Θέλετε σίγουρα να βγείτε από τον Οδηγό ρύθμισης παραμέτρων;"
+ErrEmptyActivationCode.caption  = "Δεν έχει οριστεί κωδικός ενεργοποίησης"
+ErrEmptyActivationCode          = "Παρακαλώ εισάγετε τον κωδικό ενεργοποίησης"
+ErrEmptyKeyPath.caption         = "Δεν έχει οριστεί αρχείο κλειδιού"
+ErrEmptyKeyPath                 = "Καθορίστε το αρχείο κλειδιού"
+$LicInfoKeyNumber               = "Αριθμός:"
+$LicInfoKeyProductName          = "Όνομα εφαρμογής:"
+$LicInfoKeyType                 = "Τύπος άδειας:"
+$LicInfoExpirationDate          = "Ημερομηνία λήξης:"
+$LicErrReason                   = "Αιτία:"
+$ActiveKey                      = "Ενεργό κλειδί"
+$ReservedKey                    = "Πρόσθετο κλειδί"
+ConfirmFeedback                 = "Αποδέχεστε την υποβολή πληροφοριών στην υπηρεσία <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>;"
+$KsnTerms                       =  "Το Kaspersky Security Network (KSN) είναι μια υποδομή ηλεκτρονικών υπηρεσιών η οποία παρέχει ενημερωμένες πληροφορίες για την ασφάλεια των αρχείων, των πόρων ιστού και των λογισμικών. Με τη χρήση δεδομένων από το KSN επιταχύνεται η αντίδραση σε πρόσφατες απειλές, βελτιώνεται η απόδοση ορισμένων στοιχείων προστασίας και μειώνεται ο κίνδυνος ψευδών θετικών εντοπισμών.\nΌταν συμμετέχετε στο KSN, οι πληροφορίες για μολύνσεις από ιούς και άλλα προβλήματα, καθώς και εκτεταμένα στατιστικά στοιχεία για φορτωμένες εφαρμογές ή εφαρμογές που εκτελούνται (σύμφωνα με τη λίστα που καθορίζεται στη <a KsnInfo onclick(dialog(\"KsnInfo\"))>Δήλωση Συλλογής Δεδομένων του KSN</a>), αποστέλλονται αυτόματα στην Kaspersky Lab. \n\n<b>Το Kaspersky Security Network δεν συλλέγει ούτε και επεξεργάζεται τυχόν προσωπικές πληροφορίες χρήστη.</b>"
+
+$ToAcquireNewLicText            = "\n\nΓια να προμηθευτείτε μια καινούργια άδεια, επικοινωνήστε με τον διανομέα σας ή το <a Buy onclick(buy())>Τμήμα πωλήσεων της Kaspersky Lab</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nΠροσπαθήστε να ανανεώσετε την κατάσταση συνδρομής χειροκίνητα ή επικοινωνήστε με την Τεχνική υποστήριξη" : "\nΠαρακαλώ προσπαθήστε να ενεργοποιήσετε αργότερα την εφαρμογή χρησιμοποιώντας τον κωδικό (σε 1-2 ώρες) ή επικοινωνήστε με την Τεχνική υποστήριξη") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Οδηγός ενεργοποίησης" : " Οδηγός ρύθμισης παραμέτρων")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Γενικές πληροφορίες"
+InitBegin.Descr                       = "Καλώς ήρθατε στον Οδηγό ρύθμισης παραμέτρων του " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Έλεγχος διαθεσιμότητας διακομιστών της Kaspersky Lab"
+CheckHosts.Descr                      = "Εντοπίστηκε ύποπτη ανακατεύθυνση"
+ResetArea.Name                        = "Επαναφορά ρυθμίσεων"
+ResetArea.Descr                       = "Οι ρυθμίσεις που περιέχονται στην ακόλουθη λίστα περιέχουν δεδομένα \nπου έχει εισάγει ο χρήστης ή που έχουν συγκεντρωθεί κατά τη λειτουργία της εφαρμογής."
+ActivationBegin.Name                  = $IsSubscription ? "Διαχείριση συνδρομής" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Διαγραφή κλειδιού" : "Προσθήκη κλειδιού") : "Ενεργοποίηση της εφαρμογής")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Εκχώρηση άδειας χρήσης" : "Ενεργοποιήστε την εφαρμογή για να συνεχίσετε.")
+ActivationProgress.Name               = "Ηλεκτρονική ενεργοποίηση"
+ActivationProgress.Descr              = "Η διαδικασία ενεργοποίησης βρίσκεται σε εξέλιξη, παρακαλώ περιμένετε..."
+ActivationServerForm.Name             = "Ηλεκτρονική ενεργοποίηση"
+ActivationServerForm.Descr            = "Συμπληρώστε αυτή τη φόρμα."
+ActivationChooseKey.Name              = "Ενεργοποίηση με χρήση του αρχείου κλειδιού"
+ActivationChooseKey.Descr             = "Ενεργοποίηση της εφαρμογής με χρήση του αρχείου κλειδιού."
+ActivationEnd.Name                    = "Ενεργοποίηση εφαρμογής"
+ActivationEnd.Descr                   = "Η ενεργοποίηση ολοκληρώθηκε."
+MigrationKeyIsFound.Name         = "Υπάρχει κλειδί για την τρέχουσα άδεια"
+MigrationKeyIsFound.Descr        = "Θέλετε να χρησιμοποιήσετε την εφαρμογή που ορίζεται στην τρέχουσα άδεια χρήσης;"
+MigrationBegin.Name              = "Μετάβαση στο " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Θα μεταβείτε σε χρήση του " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Αναζήτηση για μη συμβατά λογισμικά"
+MigrationSearchProgress.Descr    = "Περιμένετε όσο γίνεται αναζήτηση για μη συμβατά λογισμικά..."
+MigrationSafeRemoval.Name        = "Βρέθηκαν μη συμβατά λογισμικά"
+MigrationSafeRemoval.Descr       = "Για να συνεχίσετε, απαιτείται η κατάργηση των μη συμβατών λογισμικών"
+MigrationSafeProgress.Name       = "Κατάργηση μη συμβατών λογισμικών"
+MigrationSafeProgress.Descr      = "Περιμένετε όσο γίνεται κατάργηση των μη συμβατών λογισμικών..."
+MigrationAddRemove.Name          = "Βρέθηκαν μη συμβατά λογισμικά"
+MigrationAddRemove.Descr         = "Καταργήστε τα μη συμβατά λογισμικά"
+MigrationUnsafeRemoval.Name      = "Βρέθηκαν μη συμβατά λογισμικά"
+MigrationUnsafeRemoval.Descr     = "Για να συνεχίσετε, απαιτείται η κατάργηση των μη συμβατών λογισμικών"
+MigrationUnsafeProgress.Name     = "Κατάργηση μη συμβατών λογισμικών"
+MigrationUnsafeProgress.Descr    = "Περιμένετε όσο γίνεται κατάργηση των μη συμβατών λογισμικών..."
+MigrationReboot.Name             = "Απαιτείται επανεκκίνηση του λειτουργικού συστήματος"
+MigrationReboot.Descr            = "Για να συνεχιστεί η εναλλαγή στη νέα εφαρμογή, απαιτείται επανεκκίνηση"
+MigrationProgress.Name           = "Μετάβαση στο " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Περιμένετε όσο γίνεται η εναλλαγή στη νέα εφαρμογή..."
+MigrationRebootApp.Name          = bMigrationDone ? "Η εφαρμογή θα επανεκκινηθεί" : "Σφάλμα κατά την εναλλαγή στη νέα εφαρμογή"
+MigrationRebootApp.Descr         = bMigrationDone ? "Η εφαρμογή πρέπει να επανεκκινηθεί" : "Η εναλλαγή στο " + s_MUProductTitleLong(env("ProductType")) + " απέτυχε"
+MigrationFinish.Name             = "Η εναλλαγή " + s_ProductTitleLong(env("ProductType")) + " ολοκληρώθηκε"
+MigrationFinish.Descr            = "Η εναλλαγή " + s_ProductTitleLong(env("ProductType")) + " ολοκληρώθηκε"
+DNS.Name                              = "Ρυθμίσεις για προχωρημένους"
+DNS.Descr                             = $ProductName_GEN + " ρυθμίσεις λειτουργίας για προχωρημένους"
+EnumExe.Name                          = "Ανάλυση συστήματος"
+EnumExe.Descr                         = "Παρακαλώ περιμένετε όσο συλλέγονται πληροφορίες για το σύστημά σας..."
+InitFinish.Name                       = "Ολοκλήρωση της ρύθμισης παραμέτρων του " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Πρέπει να επανεκκινήσετε τον υπολογιστή σας για να ολοκληρωθεί η διαμόρφωση της εφαρμογής." : "Μπορείτε να εκκινήσετε το " + $ProductName + " τώρα."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Εντοπίστηκε ύποπτη ανακατεύθυνση των διακομιστών της Kaspersky Lab. Αυτό μπορεί να οφείλεται σε κακόβουλη δραστηριότητα και μπορεί να προκαλέσει αποτυχία των ενημερώσεων και της ενεργοποίησης. Ύποπτες καταχωρίσεις αρχείου hosts:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Διαγραφή εγγραφών (συνιστάται)"
+Skip			= "Παράλειψη"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Πίσω"
+Back.Descr      = "Επιστρέψτε στην επιλογή μεθόδου ενεργοποίησης εφαρμογής"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Προσθήκη κλειδιού" : "&Ενεργοποίηση"
+Activate.Descr  = "Εγκατάσταση επιλεγμένου αρχείου κλειδιού"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Τέλος"
+Finish.Descr    = "Κλείσιμο Οδηγού ενεργοποίησης"
+Next.Name       = "&Επόμενο"
+Next.Descr      = "Προχωρήστε στη ρύθμιση παραμέτρων"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Μπορείτε να συνεχίσετε να χρησιμοποιείτε την εφαρμογή που ορίζεται από την τρέχουσα άδεια χρήσης. Σε αυτήν την περίπτωση, η εφαρμογή θα μετατραπεί σε " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Θέλετε να συνεχίσετε να χρησιμοποιείτε την εφαρμογή που ορίζεται από την τρέχουσα άδεια χρήσης;"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Τύπος εφαρμογής:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Ημερομηνία λήξης:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " απομένει(ουν))"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Ναι, να γίνει μετάβαση στο " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Όχι, να διατηρηθεί το " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Βρίσκεστε στη διαδικασία μετάβασης στο " + s_MUProductTitleLong(env("ProductType")) + ". Ο κάτοχος των πνευματικών δικαιωμάτων σας παραχωρεί μια μη αποκλειστική άδεια για τη χρήση του " + s_MUProductTitleLong(env("ProductType")) + " υπό τους ίδιους όρους που είχατε αποδεχτεί στο παρελθόν κατά την εγκατάσταση του " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Σημείωση: Η συγκεκριμένη μετάβαση απαιτεί ενέργειες που μπορεί να οδηγήσουν σε επανεκκίνηση."
+LicenseWarning  = "Προσοχή! Η εμπορική άδεια για το Kaspersky Anti-Virus θα λήξει πριν από τη δοκιμαστική άδεια για το Kaspersky Internet Security. Μόλις λήξει η εμπορική άδεια για το Kaspersky Anti-Virus, θα είναι αδύνατο να επιστρέψετε στη χρήση του Kaspersky Anti-Virus από τη δοκιμαστική έκδοση του Kaspersky Internet Security. Θέλετε να συνεχιστεί η εναλλαγή στο Kaspersky Internet Security;"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Γίνεται αναζήτηση για μη συμβατά λογισμικά στον υπολογιστή σας. Αυτό μπορεί να διαρκέσει κάποιο χρονικό διάστημα. Παρακαλώ περιμένετε..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Για να εκτελεστεί η εναλλαγή, θα καταργηθεί το ακόλουθο λογισμικό:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Περιμένετε όσο γίνεται η διαγραφή των μη συμβατών λογισμικών..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Για να εκτελεστεί η εναλλαγή, θα πρέπει να καταργηθεί το ακόλουθο λογισμικό:"
+OpenAddRemove = "Ανοίξτε το παράθυρο Προσθαφαίρεση προγραμμάτων"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Για να εκτελεστεί η εναλλαγή, θα καταργηθεί το ακόλουθο λογισμικό:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Περιμένετε όσο γίνεται η διαγραφή των μη συμβατών λογισμικών..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Για να ολοκληρωθεί η εναλλαγή, πρέπει να επανεκκινήσετε τον υπολογιστή. Ο οδηγός θα συνεχίσει μετά την εκκίνηση."
+Reboot   = "Επανεκκίνηση τώρα"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Περιμένετε μέχρι να επαναδιαμορφωθεί η εφαρμογή και να μεταβείτε στο " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Για να ολοκληρωθεί η εναλλαγή στο " + s_MUProductTitleLong(env("ProductType")) + " η εφαρμογή θα επανεκκινηθεί." : "Η εναλλαγή στο " + s_MUProductTitleLong(env("ProductType")) + " απέτυχε."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Τώρα έχετε τη δυνατότητα να αξιολογείτε χαρακτηριστικά του " + s_ProductTitleLong("kis") + ", όπως Γονικός Έλεγχος, Πρόγραμμα Anti-Spam, Τείχος προστασίας και πολλά παραπάνω."Το : s_ProductTitleLong("kav") + " παρέχει βασική προστασία στον υπολογιστή σας από κακόβουλα λογισμικά."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Μπορείτε να "+if($IsRefreshSubAvail,"ενημερώσετε την κατάσταση της συνδρομής ή να ")+"διαγράψετε το κλειδί." : (f_IsActiveKeyWorkingCommercial() ? "Μπορείτε να διαγράψετε το ενεργό κλειδί σας ή να προσθέσετε ένα κλειδί." : "Ενεργοποιήστε το " + $ProductName + " για να έχετε την πλήρη λειτουργικότητα της εφαρμογής."+ if($CorporateOnly, " Μπορείτε να προμηθευτείτε μια <a Activate onclick(url($ActivationLink))>εμπορική</a> άδεια ή να ενεργοποιήσετε μια <a ActivateTrial onclick(url($ActivationTrialLink))>δοκιμαστική</a> έκδοση της εφαρμογής."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "&Ενεργοποίηση αργότερα"
+Later.Descr                 = "Παράλειψη ενεργοποίησης και συνέχιση με τη διαμόρφωση της εφαρμογής"
+ChooseKey.Name              = "Ενεργοποίηση με χρήση του αρχείου &κλειδιού"
+ChooseKey.Descr             = "Απαιτείται αρχείο κλειδιού"
+ActivateBetaKAV.Name        = "Ενεργοποίηση της έκδοσης &beta του Kaspersky Anti-Virus"
+ActivateBetaKAV.Descr       = "Η έκδοση beta του Kaspersky Anti-Virus διαθέτει πλήρη λειτουργικότητα, ωστόσο, δεν είναι το ολοκληρωμένο προϊόν."
+ActivateBetaKIS.Name        = "Ενεργοποίηση της έκδοσης &beta του Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "Η έκδοση beta του Kaspersky Internet Security διαθέτει πλήρη λειτουργικότητα, ωστόσο, δεν είναι το ολοκληρωμένο προϊόν."
+ActivateTrial.Name          = "Ενεργοποίηση &δοκιμαστικής έκδοσης"
+ActivateTrial.Descr         = "Η περίοδος ισχύος της δοκιμαστικής έκδοσης καθορίζεται στην άδεια χρήσης τελικού χρήστη"
+ActivateCommercial.Name     = "&Ηλεκτρονική ενεργοποίηση"
+ActivateCommercial.Descr    = "Απαιτείται ο κωδικός ενεργοποίησης που παραλήφθηκε κατά την αγορά"
+RemoveKey.Name              = $HasReserveKey ? "&Διαγραφή πρόσθετου κλειδιού" : "&Διαγραφή κλειδιού"
+RemoveKey.Descr             = "Για να αντικαταστήσετε το κλειδί, θα πρέπει πρώτα να καταργήσετε το ενεργό κλειδί"
+RefreshSubscription.Name    = "&Ενημέρωση κατάστασης συνδρομής"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Μπορείτε να ενημερώσετε την κατάσταση της συνδρομής χειροκίνητα." :  "Έγινε τερματισμός της αυτόματης ενημέρωσης της κατάστασης συνδρομής. Μπορείτε να ανανεώσετε την κατάσταση χειροκίνητα."
+ActivateTrialKIS            = "Ενεργοποίηση της δοκιμαστικής έκδοσης του Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "Η περίοδος ισχύος για τη δοκιμαστική έκδοση του Kaspersky Internet Security καθορίζεται στην άδεια χρήσης"
+RevertToCommercialKAV       = "Επιστροφή στην εμπορική έκδοση του Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Επιστροφή στην εμπορική έκδοση του Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Ενημέρωση κατάστασης συνδρομής"
+ActivateCommercial      = "&Ενεργοποίηση εμπορικής έκδοσης"
+ActivateCommercial_Desc = (LockActivationCode)? "Εισάγετε τον κωδικό ενεργοποίησης: " : "Εισάγετε <a onclick(url(\"" + $ActCodeHint + "\"))>τον κωδικό ενεργοποίησης</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Ο κωδικός ενεργοποίησής σας προστέθηκε αυτόματα. Κάντε κλικ στο κουμπί \"Επόμενο\"." : "Εάν δεν έχετε στην κατοχή σας κωδικό ενεργοποίησης, μπορείτε να αγοράσετε μια άδεια <a onclick(buy())>ηλεκτρονικά</a>"
+ActivateBetaKAV         = "Ενεργοποίηση της έκδοσης &beta του Kaspersky Anti-Virus"
+ActivateBetaKIS         = "Ενεργοποίηση της έκδοσης &beta του Kaspersky Internet Security"
+ActivateTrial           = "Ενεργοποίηση &δοκιμαστικής έκδοσης"
+ActivateTrial_Desc      = "Αξιολογήστε μια πλήρως λειτουργική έκδοση της εφαρμογής πριν την αγοράσετε."
+ActivateTrialKIS           = "Ενεργοποίηση της δοκιμαστικής έκδοσης του Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "Αξιολογήστε μια πλήρως λειτουργική έκδοση του Kaspersky Internet Security πριν το αγοράσετε."
+RevertToCommercialKAV      = "Επιστροφή στην εμπορική έκδοση του Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Διακοπή χρήσης της δοκιμαστικής έκδοσης του Kaspersky Internet Security και επιστροφή στην εμπορική έκδοση του Kaspersky Anti-Virus."
+Later                   = "&Ενεργοποίηση αργότερα"
+Later_Desc              = "Η πλήρης λειτουργικότητα της εφαρμογής δεν θα είναι διαθέσιμη εάν δεν ενεργοποιηθεί."
+RemoveKey               = "Διαγραφή αρχείου κλειδιού"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Αρχείο κλειδιού:"
+KeyInfo         = "Στοιχεία άδειας"
+ConnectingInfo.Name     = "Σφάλμα ενεργοποίησης: "
+ConnectingInfo.Val      = "λεπτομέρειες"
+TryAgain                = "Ενεργοποίηση"
+Descr1                  = "Για να επαναλάβετε τη ενεργοποίηση, εκτελέστε τις ακόλουθες ενέργειες:"
+Descr2                  = "Ελέγξτε τις ρυθμίσεις σύνδεσης στο Διαδίκτυο και επαναλάβετε την ενεργοποίηση της εφαρμογής."
+Descr3                  = "Μεταβείτε στο <a onclick(url(\"" + $ActivationLink + "\"))>Κέντρο Ενεργοποίησης στο Διαδίκτυο</a> και ακολουθήστε τις οδηγίες. \nΜόλις λάβετε ένα αρχείο κλειδιού, καθορίστε την τοποθεσία του και κάντε κλικ στο κουμπί Επόμενο:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Ημερομηνία δημιουργίας:"
+InstallDate.Name    = "Ημερομηνία ενεργοποίησης:"
+ExpirationDate.Name = "Ημερομηνία λήξης:"
+SubscrptnExpDate.Name = "Ημερομηνία λήξης συνδρομής:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection,"για " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Σφάλμα συστήματος: " + s_SystemError(ErrorCode)
+2       = "Δεν είναι δυνατή η προσθήκη του κλειδιού \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Δεν είναι δυνατή η διαγραφή \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Κωδικός σφάλματος: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Αυτό το κλειδί έχει ήδη προστεθεί" + $LicErrHelpLink
+0x0947901d  = "Η άδεια έληξε. Η ενημέρωση βάσης δεδομένων δεν είναι διαθέσιμη" + $LicErrHelpLink
+0x89479002  = "Δεν ήταν δυνατή η εύρεση της άδειας" + $LicErrHelpLink
+0x89479003  = "Η ψηφιακή υπογραφεί λείπει ή είναι κατεστραμμένη" + $LicErrHelpLink
+0x89479004  = "Τα δεδομένα είναι κατεστραμμένα" + $LicErrHelpLink
+0x89479005  = "Το αρχείο κλειδιού είναι κατεστραμμένο" + $LicErrHelpLink
+0x89479006  = "Η άδεια έχει λήξει" + $LicErrHelpLink
+0x89479007  = "Δεν έχει οριστεί αρχείο κλειδιού" + $LicErrHelpLink
+0x89479008  = "Μη έγκυρο αρχείο κλειδιού" + $LicErrHelpLink
+0x89479009  = "Παρουσιάστηκε σφάλμα κατά την αποθήκευση δεδομένων" + $LicErrHelpLink
+0x8947900a  = "Παρουσιάστηκε σφάλμα κατά την ανάγνωση δεδομένων" + $LicErrHelpLink
+0x8947900b  = "Σφάλμα εισόδου/εξόδου" + $LicErrHelpLink
+0x8947900c  = "Οι βάσεις δεδομένων δεν υπάρχουν" + $LicErrHelpLink
+0x8947900d  = "Το ενεργό κλειδί και τα πρόσθετα κλειδιά έχουν ήδη προστεθεί" + $LicErrHelpLink
+0x8947900e  = "Η βιβλιοθήκη αδειών χρήσης δεν έχει αρχικοποιηθεί" + $LicErrHelpLink
+0x8947900f  = "Οι βάσεις δεδομένων έχουν καταστραφεί ή έχουν ενημερωθεί χειροκίνητα" + $LicErrHelpLink
+0x89479010  = "Οι βάσεις δεδομένων είναι κατεστραμμένες" + $LicErrHelpLink
+0x89479011  = "Δεν είναι δυνατή η καταχώρηση του κλειδιού που έχει λήξει ως πρόσθετο κλειδί" + $LicErrHelpLink
+0x89479012  = "Σφάλμα συστήματος" + $LicErrHelpLink
+0x89479013  = "Η μαύρη λίστα των κλειδιών έχει καταστραφεί" + $LicErrHelpLink
+0x89479014  = "Η ψηφιακή υπογραφή δεν είναι ίδια με την ψηφιακή υπογραφή της Kaspersky Lab" + $LicErrHelpLink
+0x89479015  = "Δεν είναι δυνατή η ενεργοποίηση μιας εμπορικής έκδοσης της εφαρμογής με μια άδεια beta" + $LicErrHelpLink
+0x89479016  = "Η έκδοση beta της εφαρμογής μπορεί να ενεργοποιηθεί μόνο με μια άδεια beta" + $LicErrHelpLink
+0x89479017  = "Η άδεια δεν ισχύει για αυτήν την εφαρμογή. Είναι αδύνατον να ενεργοποιήσετε το " + $ProductName + " με την άδεια μιας άλλης εφαρμογής. Ελέγξτε την εγκατεστημένη εφαρμογή" + $LicErrHelpLink
+0x89479018  = "Το κλειδί έχει αποκλειστεί" + $LicErrHelpLink
+0x89479019  = "Αυτή η δοκιμαστική άδεια χρησιμοποιείται ήδη. Δεν επιτρέπεται η χρήση της ίδιας δοκιμαστικής άδειας για δεύτερη φορά" + $LicErrHelpLink
+0x8947901a  = "Το αρχείο κλειδιού είναι κατεστραμμένο" + $LicErrHelpLink
+0x8947901b  = "Η ψηφιακή υπογραφή λείπει, έχει καταστραφεί ή δεν είναι ίδια με την ψηφιακή υπογραφή της Kaspersky Lab" + $LicErrHelpLink
+0x8947901c  = "Δεν είναι δυνατή η προσθήκη κλειδιού για μια μη εμπορική άδεια, αν έχει λήξει" + $LicErrHelpLink
+0x8947901e  = "Η ημερομηνία δημιουργίας ή ενεργοποίησης του κλειδιού δεν είναι έγκυρη. Ελέγξτε τις ρυθμίσεις ημερομηνίας του συστήματος" + $LicErrHelpLink
+0x8947901f  = "Δεν είναι δυνατή η προσθήκη κλειδιού για δοκιμαστική άδεια όταν είναι ενεργό ένα άλλο κλειδί για μια δοκιμαστική άδεια" + $LicErrHelpLink
+0x89479020  = "Η μαύρη λίστα των κλειδιών είτε λείπει είτε έχει καταστραφεί" + $LicErrHelpLink
+0x89479021  = "Η περιγραφή ενημέρωσης λείπει ή είναι κατεστραμμένη" + $LicErrHelpLink
+0x89479022  = "Τα εσωτερικά δεδομένα για αυτήν την εφαρμογή δεν είναι έγκυρα" + $LicErrHelpLink
+0x89479023  = "Δεν είναι δυνατή η προσθήκη πρόσθετου κλειδιού με χρήση λάθος κωδικού ενεργοποίησης" + $LicErrHelpLink
+0x89479024  = "Σφάλμα κατά τη συμπλήρωση των δεδομένων φόρμας χρήστη" + $LicErrHelpLink
+0x89479025  = "Σφάλμα κατά την αποστολή αίτησης σε διακομιστή ενεργοποίησης.\nΠιθανές αιτίες: Προβλήματα με τη σύνδεση στο Internet ή προσωρινά προβλήματα του διακομιστή ενεργοποίησης\nΠροσπαθήστε να ενεργοποιήσετε αργότερα τον κωδικό (σε 1–2 ώρες).\nΕάν το πρόβλημα παραμένει, επικοινωνήστε με την υπηρεσία παροχής Internet που χρησιμοποιείτε" + $LicErrHelpLink
+0x89479026  = "Η αίτηση περιέχει λάθος κωδικό ενεργοποίησης" + $LicErrHelpLink
+0x89479027  = "Δεν είναι δυνατή η λήψη της κατάστασης απόκρισης" + $LicErrHelpLink
+0x89479028  = "Σφάλμα κατά την αποθήκευση προσωρινού αρχείου" + $LicErrHelpLink
+0x89479029  = "Λάθος κωδικός ενεργοποίησης ή λάθος ημερομηνία συστήματος. Ελέγξτε τις ρυθμίσεις ημερομηνίας του συστήματος" + $LicErrHelpLink
+0x8947902a  = "Ο κωδικός ενεργοποίησης δεν είναι κατάλληλος για αυτήν την εφαρμογή ή το κλειδί έχει λήξει. Είναι αδύνατο να ενεργοποιηθεί το " + $ProductName + " με την άδεια μιας άλλης εφαρμογής. Ελέγξτε την εγκατεστημένη εφαρμογή ή <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Δεν ήταν δυνατή η λήψη αρχείου κλειδιού. Ορίστηκε λάθος κωδικός ενεργοποίησης" + $LicErrHelpLink
+0x8947902c  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 400" + $OlaErrHelpLink
+0x8947902d  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 401" + $OlaErrHelpLink
+0x8947902e  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 403" + $OlaErrHelpLink
+0x8947902f  = "Δεν είναι διαθέσιμοι οι απαραίτητοι πόροι στο διακομιστή ενεργοποίησης.\nΟ διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 404.\nΠαρακαλώ ελέγξτε τις ρυθμίσεις της σύνδεσής σας στο Διαδίκτυο" + $OlaErrHelpLink
+0x89479030  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 405" + $OlaErrHelpLink
+0x89479031  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 406" + $OlaErrHelpLink
+0x89479032  = "Απαιτείται έλεγχος ταυτότητας του διακομιστή μεσολάβησης. Ελέγξτε τις ρυθμίσεις LAN" + $LicErrHelpLink
+0x89479033  = "Το χρονικό όριο αιτήματος έληξε" + $LicErrHelpLink
+0x89479034  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 409" + $OlaErrHelpLink
+0x89479035  = "Δεν είναι διαθέσιμοι οι απαραίτητοι πόροι στο διακομιστή ενεργοποίησης.\nΟ διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 410.\nΠαρακαλώ ελέγξτε τις ρυθμίσεις της σύνδεσής σας στο Διαδίκτυο" + $OlaErrHelpLink
+0x89479036  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 411" + $OlaErrHelpLink
+0x89479037  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 412" + $OlaErrHelpLink
+0x89479038  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 413" + $OlaErrHelpLink
+0x89479039  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 414" + $OlaErrHelpLink
+0x8947903a  = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 415" + $OlaErrHelpLink
+0x8947903b  = "Άγνωστο σφάλμα στο πρόγραμμα-πελάτη" + $OlaErrHelpLink
+0x8947903c  = "Εσωτερικό σφάλμα διακομιστή" + $LicErrHelpLink
+0x8947903d  = "Η λειτουργία δεν υποστηρίζεται" + $LicErrHelpLink
+0x8947903e  = "Μη έγκυρη απόκριση πύλης. Ελέγξτε τις ρυθμίσεις του δικτύου σας" + $LicErrHelpLink
+0x8947903f  = "Οι πόροι προσωρινά δεν είναι διαθέσιμοι" + $LicErrHelpLink
+0x89479040  = "Η αναμονή λήξης χρονικού ορίου αιτήματος έληξε. Ελέγξτε τις ρυθμίσεις του δικτύου σας" + $LicErrHelpLink
+0x89479041  = "Το πρωτόκολλο δεν υποστηρίζεται από το διακομιστή" + $OlaErrHelpLink
+0x89479042  = "Άγνωστο σφάλμα διακομιστή" + $OlaErrHelpLink
+0x89479043  = "Άγνωστο σφάλμα http" + $OlaErrHelpLink
+0x89479044  = "Μη έγκυρο αναγνωριστικό πόρου" + $LicErrHelpLink
+0x89479045  = "Λανθασμένες πληροφορίες στο πεδίο \"κλειδιού\"" + $LicErrHelpLink
+0x89479046  = "Λάθος URL" + $LicErrHelpLink
+0x89479047  = "Λάθος φάκελος προορισμού" + $LicErrHelpLink
+0x89479048  = "Σφάλμα εκχώρησης μνήμης" + $LicErrHelpLink
+0x89479049  = "Σφάλμα κατά τη μετατροπή παραμέτρων σε συμβολοσειρά ANSI (url, φάκελος, παράγοντας)" + $LicErrHelpLink
+0x8947904a  = "Σφάλμα κατά τη δημιουργία νήματος εργασίας" + $LicErrHelpLink
+0x8947904b  = "Το νήμα εργασίας εκτελείται ήδη" + $LicErrHelpLink
+0x8947904c  = "Το νήμα εργασίας δεν εκτελείται" + $LicErrHelpLink
+0x8947904d  = "Δεν βρέθηκε κλειδί στο διακομιστή ενεργοποίησης" + $LicErrHelpLink
+0x8947904e  = "Το κλειδί έχει αποκλειστεί" + $LicErrHelpLink
+0x8947904f  = "Εσωτερικό σφάλμα διακομιστή ενεργοποίησης" + $LicErrHelpLink
+0x89479050  = "Δεν υπάρχουν επαρκή δεδομένα στην αίτηση ενεργοποίησης" + $LicErrHelpLink
+0x89479051  = "Εσφαλμένη ταυτότητα χρήστη ή κωδικός πρόσβασης" + $LicErrHelpLink
+0x89479052  = "Λάθος κωδικός ενεργοποίησης" + $LicErrHelpLink
+0x89479053  = "Η άδεια για το επιλεγμένο αρχείο κλειδιού λήγει νωρίτερα από την τρέχουσα άδεια" + $LicErrHelpLink
+0x89479054  = "Εσφαλμένη ημερομηνία λειτουργικού συστήματος. Ελέγξτε την ημερομηνία του συστήματος" + $LicErrHelpLink
+0x89479055  = "Η δοκιμαστική άδεια έχει λήξει" + $LicErrHelpLink
+0x89479056  = "Η περίοδος ενεργοποίησης έχει λήξει" + $LicErrHelpLink
+0x89479057  = "<b>Ο κωδικός ενεργοποίησης που έχετε εισάγει υπερβαίνει το όριο των επιτρεπόμενων ενεργοποιήσεων</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Δεν μπορεί να οριστεί ως πρόσθετο κλειδί ένα κλειδί για μια μη εμπορική άδεια, ενώ είναι σε ισχύ μια εμπορική άδεια" + $LicErrHelpLink
+0x8947905c  = "Απαιτείται κωδικός ενεργοποίησης" + $LicErrHelpLink
+0x8947905d  = "Λανθασμένο ID πελάτη ή κωδικός πρόσβασης" + $LicErrHelpLink
+0x8947905e  = "Λάθος κωδικός ενεργοποίησης" + $LicErrHelpLink
+0x89479062  = "Δεν είναι δυνατή η σύνδεση με το διακομιστή ενεργοποίησης" + $LicErrHelpLink
+0x89479064  = "<b>Ο διακομιστής ενεργοποίησης δεν είναι διαθέσιμος.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Αυτή τη στιγμή δεν είναι δυνατή η ενεργοποίηση της εφαρμογής. Επαναλάβετε την ενεργοποίηση μόλις διαμορφώσετε την εφαρμογή και επανεκκινήσετε το λειτουργικό σύστημα.", "Ελέγξτε τις ρυθμίσεις σύνδεσης στο Διαδίκτυο και επαναλάβετε την ενεργοποίηση.") + $LicErrHelpLink
+0x89479065  = "Η άδειά σας έχει λήξει. Παρακαλώ <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Δεν επιτρέπεται η αντικατάσταση του ενεργού κλειδιού με ένα κλειδί που έχει λήξει" + $LicErrHelpLink
+0x89479067  = "Δεν είναι δυνατός ο ορισμός ως πρόσθετου κλειδιού ενός κλειδιού που λήγει νωρίτερα από το ενεργό κλειδί" + $LicErrHelpLink
+0x89479068  = "Το ενημερωμένο κλειδί συνδρομής λείπει" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Η διαδικασία ενεργοποίησης ολοκληρώθηκε " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Σφάλμα ενεργοποίησης: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Σφάλμα ενεργοποίησης: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Σφάλμα ενεργοποίησης: ο διακομιστής επέστρεψε σφάλμα κωδικού HTTP " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Η διαδικασία ενεργοποίησης απέτυχε " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Εσωτερικό σφάλμα διακομιστή ενεργοποίησης. Παρακαλώ προσπαθήστε ξανά ή επικοινωνήστε με την Τεχνική υποστήριξη"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Ο κωδικός ενεργοποίησης δεν είναι συμβατός με αυτήν την εφαρμογή. Δεν είναι δυνατό να ενεργοποιήσετε το " + $ProductName + " με έναν κωδικό ενεργοποίησης μιας άλλης εφαρμογής. Ελέγξτε την εγκατεστημένη εφαρμογή"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Το κλειδί έχει αποκλειστεί"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Λανθασμένο ID πελάτη ή κωδικός πρόσβασης"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Λανθασμένος κωδικός ενεργοποίησης"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Απαιτείται κωδικός ενεργοποίησης"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Η περίοδος ενεργοποίησης έχει λήξει"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Υπέρβαση ορίου επιτρεπόμενων ενεργοποιήσεων με αυτόν τον κωδικό"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Ο κωδικός ενεργοποίησης είναι μη έγκυρος για αυτήν την περιοχή"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Αυτός ο κωδικός ενεργοποίησης δεν μπορεί να χρησιμοποιηθεί για τη συγκεκριμένη τοπική προσαρμογή της εφαρμογής."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Ο κωδικός ενεργοποίησης είναι έγκυρος για μια νεότερη έκδοση αυτής της εφαρμογής. Για χρήση της τρέχουσας έκδοσης απαιτείται η λήψη ενός άλλου κωδικού. Για λεπτομέρειες, κάντε κλικ στην παρακάτω σύνδεση."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Ο διακομιστής ενεργοποίησης επέστρεψε σφάλμα με κωδικό 646"
+default                                     = "Η διαδικασία ενεργοποίησης επέστρεψε ένα σφάλμα " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Η λειτουργία εργασίας εκτός σύνδεσης έχει ενεργοποιηθεί στον Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Η σύνδεση στο Internet απέτυχε"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Ο διακομιστής ενεργοποίησης δεν είναι διαθέσιμος"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Ο διακομιστής μεσολάβησης δεν είναι διαθέσιμος"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Το χρονικό όριο απόκρισης έχει λήξει"
+#OLA_ERR_INTERNET_INVALID_URL                = "Εσφαλμένη διεύθυνση διακομιστή ενεργοποίησης"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Λάθος πρωτόκολλο"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Δεν είναι δυνατή η ρύθμιση σύνδεσης με τον διακομιστή"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Η λειτουργία ακυρώθηκε"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Δεν είναι δυνατή η ρύθμιση σύνδεσης με τον διακομιστή"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Η σύνδεση με το διακομιστή τερματίστηκε"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Έγινε επαναφορά της σύνδεσης με το διακομιστή"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Λάθος απόκριση διακομιστή"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Το πιστοποιητικό SSL του διακομιστή έχει λήξει. Ελέγξτε την ώρα του τοπικού υπολογιστή"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Το όνομα διακομιστή που περιέχεται στο πιστοποιητικό SSL δεν αντιστοιχεί στο διακομιστή"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Δεν είναι δυνατός ο έλεγχος ανάκλησης πιστοποιητικού. Απενεργοποιήστε αυτόν τον έλεγχο στον Microsoft Internet Explorer (Εργαλεία->Επιλογές Internet->Για προχωρημένους->Έλεγχος ανάκλησης πιστοποιητικού διακομιστή) και επαναλάβετε τη διαδικασία ενεργοποίησης"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Μη έγκυρο πιστοποιητικό SSL"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Το πιστοποιητικό SSL ανακλήθηκε"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Λάθος κέντρο πιστοποίησης"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Τα δεδομένα εγγραφής είναι απαραίτητα ώστε η Kaspersky Lab να σας ενημερώνει για διάφορες εκδηλώσεις προώθησης, εκπτώσεις και ειδικές προσφορές."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Συνέχεια"
+Activate.Descr  = "Αποστολή δεδομένων στο διακομιστή ενεργοποίησης"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Ο Οδηγός ρύθμισης παραμέτρων συνδέεται με το διακομιστή ενεργοποίησης της Kaspersky Lab. Ίσως χρειαστούν λίγα λεπτά, ανάλογα με την ταχύτητα της σύνδεσής σας στο Διαδίκτυο."
+ConnectingInfo.Name     = "Προσπάθεια σύνδεσης με το διακομιστή ενεργοποίησης..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Διαδικασία αποστολής κωδικού ενεργοποίησης..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Αναμένεται απάντηση από το διακομιστή..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Το " + $ProductName + " ενεργοποιήθηκε επιτυχώς"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Ημερομηνία λήξης:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " απομένει(ουν))"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Η ενεργοποίηση ολοκληρώθηκε με επιτυχία." : "Η εφαρμογή έχει ήδη ενεργοποιηθεί στον υπολογιστή σας."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Επόμενο"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Προχωρήστε στην ενεργοποίηση της εφαρμογής": (((PiwFlags & #fPiwActivation) && !bSilent)?"Προχωρήστε στις πληροφορίες άδειας χρήσης":"Προχωρήστε στην επιλογή κατάστασης λειτουργίας προστασίας")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Αυτός ο Οδηγός θα σας βοηθήσει να ρυθμίσετε σωστά τις παραμέτρους ασφαλείας του υπολογιστή σας.\n\nΚατά τη διάρκεια της ρύθμισης παραμέτρων, ο Οδηγός θα συλλέγει πληροφορίες για το σύστημά σας και τις εφαρμογές που είναι εγκατεστημένες στον υπολογιστή σας. Αυτές οι πληροφορίες θα χρησιμοποιηθούν μόνο για την παροχή βέλτιστης προστασίας στον υπολογιστή σας.\n\nΚάντε κλικ στο κουμπί 'Επόμενο' για να ξεκινήσει η διαδικασία ρύθμισης παραμέτρων του " + $ProductName_GEN + "."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Η εγκατάσταση έχει σχεδόν ολοκληρωθεί..." : ((PiwFlags & #fPiwReset) ? ("Η επιδιόρθωση έχει ολοκληρωθεί.") : ("Η εγκατάσταση έχει ολοκληρωθεί."))
+ResetDescr          = "Ο Οδηγός διαμόρφωσης ολοκλήρωσε με επιτυχία την επαναφορά των ρυθμίσεων του " + $ProductName + "."
+Reboot              = "&Επανεκκίνηση του υπολογιστή"
+StartProduct        = "&Έναρξη " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Ευχαριστούμε για την εγκατάσταση του " + $ProductName + ". Για να ολοκληρωθεί η εγκατάσταση, πρέπει να επανεκκινήσετε τον υπολογιστή σας. Αποθηκεύστε τα δεδομένα σας, κλείστε όλες τις εφαρμογές και κάντε κλικ στο κουμπί 'Τέλος'.") : "Σημειώστε ότι πρόσθετη ρύθμιση του προϊόντος ολοκληρώνεται την πρώτη φορά που ξεκινά η εφαρμογή. Η διαδικασία αυτή μπορεί να χρειαστεί αρκετά λεπτά για να ολοκληρωθεί."
+
+[ConfigureWizard.EnumExe]
+Info = "Κατά την ανάλυση του συστήματος, δημιουργείται μια λίστα με τις αξιόπιστες εφαρμογές που περιλαμβάνονται στο λειτουργικό σύστημα των Microsoft Windows. \n\nΤα προγράμματα που δεν περιλαμβάνονται στο λειτουργικό σύστημα αναλύονται ξεχωριστά, κατά την πρώτη τους εκκίνηση στον υπολογιστή."
+
+[s_LicKeyType]
+#ektBeta         = "Κλειδί beta"
+#ektTrial        = "Δοκιμή"
+#ektTest         = "Δοκιμαστικό κλειδί"
+#ektOEM          = "Κλειδί OEM"
+#ektCommercial   = "Εμπορικό"
+#ektSubscription = "Εμπορικό με συνδρομή"
+#ektSubscriptionProtection = "Εμπορικό με συνδρομή προστασίας"
+default          = "Άγνωστος τύπος"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Άγνωστο σφάλμα"
+#ekirValid                      = "Η άδεια είναι έγκυρη"
+#ekirExpired                    = "Η άδεια έχει λήξει"
+#ekirCorrupted                  = "Η άδεια δεν είναι έγκυρη"
+#ekirNotSigned                  = "Η ψηφιακή υπογραφεί λείπει ή είναι κατεστραμμένη"
+#ekirWrongProduct               = "Η άδεια δεν ισχύει για αυτήν την εφαρμογή. Είναι αδύνατον να ενεργοποιήσετε το " + $ProductName + " με την άδεια μιας άλλης εφαρμογής. Ελέγξτε την εγκατεστημένη εφαρμογή."
+#ekirBlackListed                = "Το κλειδί "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" έχει αποκλειστεί"
+#ekirIllegalUpdate              = "Η ημερομηνία της βάσης δεδομένων δεν αντιστοιχεί στην περίοδο ισχύος της άδειας"
+#ekirInconsistentUpdate         = "Οι βάσεις δεδομένων είναι κατεστραμμένες"
+#ekirKeyCreationDateInvalid     = "Λανθασμένη ημερομηνία δημιουργίας κλειδιού"
+#ekirTrialAlreadyInUse          = "Δεν είναι δυνατή η προσθήκη κλειδιού για μια δοκιμαστική άδεια όταν είναι ενεργό ένα άλλο κλειδί για μια δοκιμαστική άδεια"
+#ekirInvalidBlacklist           = "Η μαύρη λίστα των κλειδιών έχει καταστραφεί"
+#ekirCantBeUsedAsReserved       = "Είναι αδύνατη η καταχώρηση της άδειας ως πρόσθετης άδειας"
+#ekirKeyInstallDateInvalid      = "Λανθασμένη ημερομηνία ενεργοποίησης"
+#ekirTrialPeriodIsOver          = "Η δοκιμαστική άδεια έχει λήξει"
+#ekirConflictsWithCommercial    = "Το νέο αρχείο κλειδιού προκαλεί διένεξη με την τρέχουσα εμπορική άδεια"
+#ekirExpiredAsReserve           = "Αυτή η άδεια λήγει νωρίτερα από την τρέχουσα άδεια"
+#ekirGracePeriod                = "Η άδεια βρίσκεται στην περίοδο χάριτος"
+#ekirSuspended                  = "Η συνδρομή έχει ανασταλεί"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Η εφαρμογή πρέπει να επανεγκατασταθεί"
+#ekirLicenseOnlyForMigration    = "Πραγματοποιείστε εναλλαγή σε μια άλλη εφαρμογή για να ενεργοποιήσετε την εμπορική άδεια"
+default                         = "Λανθασμένο αρχείο κλειδιού"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Θα καθοριστεί αργότερα"
+#edtUnlimited = "Ενεργό"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Διεκόπει από " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Στοιχεία άδειας"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": ειδοποίηση άδειας"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Προσοχή!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Χρησιμοποιείτε μία δοκιμαστική έκδοση του " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Η μαύρη λίστα των αδειών είτε λείπει είτε καταστράφηκε. Εκτελέστε την <a Update onclick(f_StartUpdater())>ενημέρωση</a> για να συνεχιστεί η λειτουργία."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Η άδειά σας " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Για να διατηρήσετε την προστασία σας ενημερωμένη, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nΑν έχετε αποκτήσει ήδη την άδεια, <a Activate onclick(f_Activate())>ενεργοποιήστε την εφαρμογή</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Η συνδρομή έληξε." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Protection is disabled."))+($IsBestBuyLink ? " Δεν είναι διαθέσιμη η ανανέωση της συνδρομής." : " Η ασφάλεια του υπολογιστή κινδυνεύει. \n\nΓια να ανανεώσετε τη συνδρομή, <a onclick(url($KeyProviderLinkForText))>επικοινωνήστε με τον πάροχο της υπηρεσίας σας</a>.")) :("Απομένουν " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " για ανανέωση της συνδρομής. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " μέχρι να απενεργοποιηθεί η ενημέρωση. " : " μέχρι να απενεργοποιηθεί η προστασία." ) ) + " Για να ανανεώσετε τη συνδρομή, <a onclick(url($KeyProviderLinkForText))>επικοινωνήστε με τον πάροχο της υπηρεσίας σας</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Το ενεργό κλειδί έχει αποκλειστεί.\nΗ λειτουργία ενημέρωσης απενεργοποιήθηκε και, συνεπώς, ο υπολογιστής σας μπορεί να εκτεθεί σε κίνδυνο μόλυνσης.</b>\n\nΕάν αγοράσατε την εφαρμογή νόμιμα, επικοινωνήστε με την Τεχνική υποστήριξη ή κάποιον πωλητή.\n\nΕάν χρησιμοποιείτε ένα παράνομο αντίγραφο, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nΕάν έχετε ήδη αγοράσει μια άδεια, <a Activate onclick(f_Activate())>ενεργοποιήστε την εφαρμογή</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "λήγει σήμερα" : "λήγει σε " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "έχει λήξει"
+
+[s_LicenseRenewBuyText]
+0 = "απόκτηση άδειας"
+default = "ανανέωση άδειας"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Επιλέξτε ρυθμίσεις που θέλετε να επαναφέρετε:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN + " Οδηγό ρύθμισης παραμέτρων"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Γενικές πληροφορίες"
+InitBegin.Descr                       = "Καλώς ήρθατε στον Οδηγό ρύθμισης παραμέτρων του " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Έλεγχος διαθεσιμότητας διακομιστών της Kaspersky Lab"
+CheckHosts.Descr                      = "Εντοπίστηκε ύποπτη ανακατεύθυνση"
+ResetArea.Name                        = "Επαναφορά ρυθμίσεων"
+ResetArea.Descr                       = "Οι ρυθμίσεις που περιέχονται στην ακόλουθη λίστα περιέχουν δεδομένα \nπου έχει εισάγει ο χρήστης ή που έχουν συγκεντρωθεί κατά τη λειτουργία της εφαρμογής."
+EnumExe.Name                          = "Ανάλυση συστήματος"
+EnumExe.Descr                         = "Παρακαλώ περιμένετε όσο συλλέγονται πληροφορίες για το σύστημά σας..."
+ResetFinish.Name                       = "Ολοκλήρωση της ρύθμισης παραμέτρων του " + $ProductName
+ResetFinish.Descr                      = $ProductName + " είναι έτοιμο για έναρξη."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Η επαναφορά ολοκληρώθηκε."
+ResetDescr          = "Ο Οδηγός διαμόρφωσης ολοκλήρωσε με επιτυχία την επαναφορά των ρυθμίσεων του " + $ProductName + "."
+
+[BestBuyUpgradeMessage]
+@ = "Μετάβαση σε άλλη εφαρμογή"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Έναρξη χρήσης του Start using Kaspersky Internet Security"
+RestartButton = "Εκτέλεση του Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Συγχαρητήρια!"
+Message = "Το Kaspersky Anti-Virus που διαθέτετε αναβαθμίστηκε με επιτυχία στο Kaspersky Internet Security.\nΜπορείτε πλέον να απολαμβάνετε ακόμα περισσότερες λειτουργίες για την προστασία του υπολογιστή σας."
+Description = "Ευχαριστούμε που επιλέξατε το λογισμικό της Kaspersky Lab!\nΕυχόμαστε να απολαύσετε την πρόσθετη προστασία που μόλις αποκτήσατε."
+
+[ForcedUpgradeMessagePage]
+Header = "Σχεδόν ολοκληρώθηκε"
+Message = "Ευχαριστούμε που επιλέξατε το λογισμικό της Kaspersky Lab! Ευχόμαστε να απολαύσετε την πρόσθετη προστασία που μόλις αποκτήσατε."
+Description = "Επειδή δεν έγινε κατάργηση μη συμβατού λογισμικού, ορισμένες λειτουργίες του Kaspersky Internet Security απενεργοποιήθηκαν για να διασφαλιστεί η σταθερότητα των εγκατεστημένων εφαρμογών και του λειτουργικού συστήματος.\n\nΜπορείτε να καταργήσετε το μη συμβατό λογισμικό χειροκίνητα και να ενεργοποιήσετε όλες τις νέες λειτουργίες από το παράθυρο ρυθμίσεων του Kaspersky Internet Security."
+Notification = "Η εφαρμογή θα επανεκκινηθεί για να ολοκληρωθεί η αναβάθμιση."

@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Pārejas vednis'
+UpgradeCaption = 'Pāriešana'
+
+RebootPageCheckboxRebootText = 'Restartēt datoru'
+OpenRemoveProgramsPanel = 'Atvērt rīkjoslu'
+
+WizardBeginDescriptionKis = 'Jūs pārejat uz Kaspersky Internet Security 2013.\n\nAutortiesību īpašnieks ar šo piešķir jums neekskluzīvu Kaspersky Internet Security lietošanas licenci uz tādiem pašiem noteikumiem, kādiem jūs piekritāt, kad sākotnēji instalējāt Kaspersky Anti-Virus.\n\nPiezīme: pārejas rezultātā var būt nepieciešams pārstartēt datoru.'
+
+WizardBeginDescriptionKav = 'Jūs pārejat uz Kaspersky Anti-Virus 2013.\n\nAutortiesību īpašnieks ar šo piešķir jums neekskluzīvu Kaspersky Anti-Virus lietošanas licenci uz tādiem pašiem noteikumiem, kādiem jūs piekritāt, kad sākotnēji instalējāt Kaspersky Internet Security.\n\nPiezīme: pārejas rezultātā var būt nepieciešams pārstartēt datoru.'
+
+WizardContinueDescriptionKis = 'Turpināt pāreju uz Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Turpināt pāreju uz Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nUzmanību! Esošās Kaspersky Anti-Virus licences derīguma termiņš beidzas pirms Kaspersky Internet Security licences derīguma termiņa beigām. Pēc Kaspersky Anti-Virus licences derīguma termiņa beigām nebūs iespējams atgriezties uz Kaspersky Anti-Virus.'
+
+PleaseWait = 'Lūdzu, uzgaidiet'
+RemovalProgressDescription   = 'Izdzēš nesaderīgu programmatūru'
+RemovalApplicationsDescription = 'Lai veiktu pāreju, tiks noņemta šāda programmatūra:'
+ManualRemovalApplicationsDescription = 'Jums manuāli jānoņem šāda nesaderīga programmatūra, lai veiktu pāreju:'
+SearchRemovalApplicationsDescription   = 'Meklēt nesaderīgu programmatūru'
+RestartProductDescription = 'Šī programma tiks pārstartēta, lai pabeigtu pāreju.'
+RebootOsDescription = 'Jums jāpārstartē dators, lai turpinātu pāreju.\nVednis turpinās darbu pēc restarta.'
+
+MigrationProgressDescriptionKis = 'Pārkonfigurē programmu un pāriet uz Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Pārkonfigurē programmu un pāriet uz Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Pārkonfigurē programmu un pāriet uz Kaspersky Anti-Virus'
+
+MigrationKis = 'Pāriet uz Kaspersky Internet Security'
+MigrationKav = 'Pāriet uz Kaspersky Anti-Virus'
+MigrationUnknown = 'Pārslēgties '
+
+SearchRemovalApplicationsHeader = 'Jaunināt uz Kaspersky Internet Security'
+RemovalProgressHeader = 'Izdzēš nesaderīgu programmatūru'
+RemovalApplicationsHeader = 'Atrasta nesaderīga programmatūra'
+RebootOsHeader = 'Datoru nepieciešams pārstartēt'
+RestartProductHeader = 'Programma tiks pārstartēta'
+
+MigrationAbortedHeader = $MigrationType + ' nav iespējama'
+MigrationAbortedDescription = $MigrationType + ' neizdevās. Mēģiniet manuāli noņemt nesaderīgo programmatūru un tad atkal palaidiet vedni.'
+
+BestBuyGiftInformation = 'Notiks pāriešana no Kaspersky Anti-Virus uz Kaspersky Internet Security.\nTagad jums būs pat vēl vairāk funkciju, lai aizsargātu savu datoru.'
+BestBuyGiftDescription = 'Paldies, ka izvēlējāties Kaspersky Lab programmatūru! Lūdzu, izmantojiet pievienoto aizsardzību.'
+BestBuyUpgradeNotification = 'Atjaunināšanas laikā jūsu sistēma tiks analizēta, meklējot nesaderīgu programmatūru, lai nodrošinātu pareizu instalēto programmu un operētājsistēmas darbību.'
+BestBuyFreeUpgrade = 'Pāriet uz Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Pāriešana fonā'
+BestBuyTryAbortInformation = 'Pāriešana tiks turpināta fonā'
+BestBuyTryAbortDescription = 'Tā kā nesaderīgā programmatūra netika noņemta, dažas no Kaspersky Internet Security jaunajām funkcijām tika atspējoatas, lai nodrošinātu pareizu instalēto programmu un operētājsistēmas darbību.\n\nNesaderīgo programmatūru varat noņemt manuāli un Kaspersky Internet Security iestatījumu logā iespējot visas jaunās funkcijas.'
+BackToSubcriptionUpgradeButtonText = 'Atpakaļ uz pāriešanu...'
+Congratulation = 'Apsveicam!'
+
+RunKisButtonText = 'Palaist Kaspersky Internet Security'
+
+ProductUpgraded = 'Notika sekmīga pāreja no jūsu Kaspersky Anti-Virus uz Kaspersky Internet Security.\nTagad varat izmantot pat vēl vairāk funkciju, lai aizsargātu savu datoru.'

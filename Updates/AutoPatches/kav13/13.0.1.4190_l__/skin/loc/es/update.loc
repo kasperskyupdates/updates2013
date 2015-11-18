@@ -1,0 +1,483 @@
+﻿[Global]
+$Updater                                = "Actualización"
+$Rollback                               = "Deshacer"
+$Default								= "Predeterminado"
+$UpdateSourceKL                         = "Servidores de actualización de Kaspersky Lab"
+$UpdateSourceAK                         = "Kaspersky Administration Kit"
+$UpdateSourceMainAdministrationServer   = "Servidor de administración Kaspersky"
+$UpdateSourceNetworkAgent               = "Agente de red Kaspersky"
+$UpdateSourceCustom                     = "Definido por el usuario"
+UpdateStopConfirm                       = "¿Está seguro de querer detener la actualización?"
+NoUpdateSourcesSelected.caption         = "No se especificó un origen de actualizaciones"
+NoUpdateSourcesSelected                 = "Seleccione al menos un origen de actualizaciones"
+$TipText_Updater_DownloadedBytesCount   = "Velocidad de descarga: "
+Update_AreYouSureToRebootService        = $ProductName + " ha sido actualizado. Es necesario reiniciar el servicio correspondiente a la aplicación.\n\n¿Desea reiniciar ahora?"
+$UpdateProduct                          = "Actualización de aplicación"
+
+[f_BasesStatus]
+ret = ((@ & #eBasesCorrupted) ? "Dañado" : (((@ & (#eBasesOld|#eBasesOldGrace)) ? "Desactualizado" : ((@ & (#eBasesVeryOld|#eBasesVeryOldGrace)) ? "Obsoleto" : ((@ & #eUpdateNeedReboot) ? "Es necesario reiniciar" : ((@ & #eUpdateSomeBasesNeedUpdate) ? "Es necesario actualizar" : "Actualizado"))))))
+
+[MainWindow_Body.Updater]
+Header                            = "Centro de Actualización"
+Descr                             = "Actualizaciones periódicas del software " + $ProductName_GEN + " y de las bases de datos garantizan la protección más completa y eficaz."
+BasesStat.Name                    = "Estado de las bases de datos:"
+BasesDate.Name                    = "Fecha de las bases:"
+BasesCount.Name                   = "Número de firmas:"
+Download                          = "Descargar..."
+VirusWatch                        = "Info. Actividad vírica"
+Updater.Name.Body.InactiveEx.Name = "Modo de ejecución: "
+Rollback.Descr                    = "En caso de que se hayan descargado actualizaciones no válidas, puede restablecer la versión anterior de las bases de datos."
+
+[MainWindow.Updater_NewVer]
+NewVer = "Se ha publicado una nueva versión de " + $ProductName + ". "
+Download = "Detalles..."
+
+[MainWindow.Updater_UpdateStarted]
+Duration.Name = "Estado: "
+UpdateSize.Name = "Descargado: "
+
+[s_StatusUdate]
+0 = "Buscando actualizaciones"
+def = "Descargando archivos"
+
+[MainWindow.Updater_WorkArea_Statistics_Data]
+CounterType = "Tipos de amenazas detectadas"
+New         = "Nuevo"
+Total       = "Total"
+BaseDate    = "Fecha de las bases"
+
+[MainWindow.Updater_WorkArea_Statistics_Chart_Data]
+Header.Name = "Tipos de amenaza:"
+Header.Val1  = "Total:"
+Header.Val2  = "Fecha de las bases:"
+
+[MainWindow.Update_Filters_Menu]
+ByTime   = "Agrupar por hora"
+ByTask   = "Agrupar por tarea"
+
+[UpdaterProfileHome_Header]
+Caption1 = "Estado de las bases de datos: "
+
+[MainWindow.Update_Updater_Info]
+BasesDate.Name      = "Fecha de las bases:"
+RecordsCount.Name   = "Núm. de registros:"
+Status.Name         = "Estado de las bases de datos:"
+VirusWatch          = "Info. Actividad vírica"
+
+[MainWindow.Update_Updater_Group1_New]
+Start.Name          = "Ejecutar actualización"
+Stop.Name           = "Detener\n" + ((Rollback.state & #StateFlagOperational) ? "operación deshacer" : "la actualización")
+
+[MainWindow.Update_Updater_Group1_New_Info]
+Settings.Name       = "Configuración:"
+Scheduler.Name      = "Modo de ejecución: "
+UpdateSize.Name     = "Tamaño de las actualizaciones:"
+TransferRate.Name   = "Velocidad media:"
+TransferRate.Val    = f_ObjSize(Speed*1024) + "/seg"
+NextStart.Name      = "Próxima actualización: "
+
+[MainWindow.Update_Updater_Group2_New]
+Desc                = "Las bases contienen:"
+
+[MainWindow.Update_Updater_Group2_New_Info]
+BasesDate.Name      = "Fecha de las bases:"
+RecordsCount.Name   = "Núm. de registros:"
+Status.Name         = "Estado de las bases de datos:"
+VirusWatch          = "Info. Actividad vírica"
+
+[MainWindow.Update_Updater_Extras]
+Extras             = "Avanzado:"
+Rollback           = "Volver a la versión anterior de las bases de datos"
+VirusWatch         = "Info. Actividad vírica"
+
+[MainWindow.Update_Updater_Group2]
+Start.Name          = "Ejecutar actualización"
+Stop.Name           = "Detener\n" + ((Rollback.state & #StateFlagOperational) ? "operación deshacer" : "la actualización")
+
+[MainWindow.Update_Updater_Group2_Info]
+Settings.Name       = "Configuración:"
+Scheduler.Name      = "Modo de ejecución: "
+UpdateSize.Name     = "Tamaño de las actualizaciones:"
+TransferRate.Name   = "Velocidad media:"
+TransferRate.Val    = f_ObjSize(Speed*1024) + "/seg"
+Rollback            = "Volver a la versión anterior de las bases de datos"
+
+[Updater_Events_Report]
+Event       = "Evento"
+Object      = "Objeto"
+Time        = "Hora"
+Reason      = "Motivo"
+
+[MainReport.Updater_Events_Descr]
+Time.Name        = "Hora: "
+Object.Name      = "Objeto: "
+ObjectSize.Name  = "Tamaño: "
+Reason.Name      = "Motivo: "
+
+[UpdaterSettings]
+@ = "Actualización"
+
+[UpdaterSettings_Tab]
+Source      = "Origen de actualizaciones"
+Additional  = "Avanzado"
+RunMode     = "Modo de ejecución"
+
+[UpdaterSettings_Tab_Source]
+Proxy   = "Servidor pro&xy..."
+Region  = "Configuración regional"
+
+[UpdaterSettings_Tab_Source_List]
+Name = "Etiqueta"
+
+[UpdaterSettings_Tab_RunMode]
+Schedule = "Planificación"
+
+[UpdaterSettings_Tab_RunMode_Schedule]
+Auto    = "A&utomático"
+Manual  = "&Manual"
+Fixed   = "Median&te planificación"
+
+[s_UpdaterError]
+#errTASK_ALREADY_RUNNING                        = "No se pueden ejecutar dos tareas al mismo tiempo"
+#errUPDATER_FailedToCreateFolder                = "No se puede crear esta carpeta"
+#errUPDATER_NotEnoughPermissions                = "Permisos insuficientes para esta operación con archivos"
+#errUPDATER_NoSuchFileOrDirectory               = "Archivo o carpeta no encontrados"
+#errUPDATER_NotEnoughSpace                      = "No hay espacio suficiente en el disco"
+#errUPDATER_NO_SOURCE_FILE                      = "Los archivos de actualización están dañados"
+#errUPDATER_URLS_EXHAUSTED                      = "No se especificó un origen de actualizaciones"
+#errUPDATER_NOTHING_TO_UPDATE                   = "No hay actualizaciones disponibles"
+#errUPDATER_NotAllComponentsAreUpdated          = "No todos los componentes fueron actualizados"
+#errUPDATER_ComponentRejectedByProduct          = "Error al comprobar el componente cargado"
+#errUPDATER_WRONG_KEY                           = "Fallo al comprobar la licencia"
+#errUPDATER_ADMKIT_FAILURE                      = "Error al recuperar los parámetros de actualización"
+#errUPDATER_INVALID_SIGNATURE                   = "Los archivos de actualización están dañados"
+#errUPDATER_GenericFileOperationFailure         = "Fallo en operaciones con archivos"
+#errUPDATER_CANCELLED                           = "Operación cancelada por el usuario"
+#errUPDATER_CURRENT_VERSION_NEWER               = "No hay actualizaciones disponibles"
+#errUPDATER_NO_RESERVED_UPDATE_DESCRIPTION      = "No se encuentran los archivos necesarios para deshacer la operación"
+#errUPDATER_UPDATE_DESCRIPTION_DAMAGED          = "Archivo índice dañado o no existe"
+#errUPDATER_INTERNAL_ERROR                      = "Error de actualización"
+#errUPDATER_DOWNLOAD_ERROR                      = "Error al descargar las actualizaciones"
+#errUPDATER_REMOTE_HOST_CLOSED_CONNECTION       = "Conexión terminada"
+#errUPDATER_DOWNLOAD_TIMEOUT                    = "Agotado el tiempo de espera de funcionamiento de la red"
+#errUPDATER_FTP_AUTH_ERROR                      = "Error de autenticación del servidor FTP"
+#errUPDATER_PROXY_AUTH_ERROR                    = "Error de autenticación del servidor proxy"
+#errUPDATER_CANT_RESOLVE_NAME                   = "No se encuentra el origen de actualizaciones. Compruebe la configuración de su conexión a Internet."
+#errUPDATER_CANT_CONNECT_ADM_SERVER             = "Error de conexión con el servidor de administración de Kaspersky"
+#errUPDATER_RETRANSLATION_SUCCESSFUL            = "Distribución de actualizaciones terminada con éxito"
+#errUPDATER_NO_OPERATION_REQUESTED              = "Error de actualización"
+#errUPDATER_UpdateSuccessfulRetranslationFailed = "Actualización terminada con éxito, fallo de la distribución de actualizaciones"
+#errUPDATER_CANT_CONNECT_INET_SERVER            = "Error de conexión con el origen de actualizaciones. Compruebe la configuración de su conexión a Internet."
+#errUPDATER_SERVER_AUTH_ERROR                   = "Error de autenticación del origen de actualizaciones "
+#errUPDATER_BASE_CHECK_FAILED                   = "Error al comprobar los archivos de actualización"
+#errUPDATER_CANT_CONNECT_TO_PROXY               = "Error de conexión con el servidor proxy"
+#errUPDATER_CANT_RESOLVE_PROXY                  = "Servidor proxy no encontrado"
+#errUPDATER_AK_WrongReceiverId                  = "Error de registro en Kaspersky Network Agent"
+#errUPDATER_AK_ServerBusy                       = "El servidor de administración está ocupado y no puede tratar la petición ahora"
+#errUPDATER_AK_ConnectionError                  = "Fallo de conexión, error físico"
+#errUPDATER_AK_ConnectionNagentError            = "Fallo de conexión, error físico"
+#errUPDATER_AK_ConnectionServerError            = "Fallo de conexión, error físico"
+#errUPDATER_AK_CannotConnectToServer            = "Fallo de conexión, error desconocido"
+#errUPDATER_AK_WrongArguments                   = "Fallo al recuperar un archivo, argumento de transporte no válido"
+#errUPDATER_AK_ErrorInOperation                 = "Fallo al recuperar un archivo"
+#errUPDATER_AK_UnknownError                     = "Error de transporte"
+#errUPDATER_SOURCE_SELECTED                     = "Origen de actualizaciones seleccionado"
+#errUPDATER_ADMIN_KIT_SOURCE_SELECTED           = "Origen de actualizaciones seleccionado"
+#errUPDATER_PROXY_SERVER_SELECTED               = "Servidor proxy seleccionado"
+#errOBJECT_NOT_FOUND                            = "Objeto no encontrado u origen de actualizaciones no disponible"
+#errUPDATER_CORE_LICENSE_CHECK_FAILED           = "Error al comprobar la lista negra de claves"
+def                                             = s_SystemError(@)
+
+[MainWindow.Update_WorkArea_Events_Report]
+Time    = "Hora"
+Event   = "Evento"
+Object  = "Objeto"
+row     = "Etiqueta"
+
+[ProxyAuthDialog]
+@           = "Servidor proxy"
+
+[ProxyAuthDialog_Modal]
+@           = "Servidor proxy"
+
+[ProxyAuthDialog_Body]
+Login.Name  = "Nombre de usuario"
+Pswd.Name   = "Contraseña"
+Save        = "Guardar parámetros de autenticación"
+
+;------------- UpdaterProgressWindow -----------
+
+[UpdaterProgressWindow]
+Footer.Cancel = p_fAutonomeMode && f_IsStateActive(state) ? "Cancelar" : "Cerrar"
+
+[UpdaterProgressWindow_Body_Status]
+UpdateSize.Name     = "Tamaño: "
+Duration.Name       = "Duración: "
+TransferRate.Name   = "Velocidad: "
+TransferRate.Val    = filesize(Speed*1024, "FileSizeTypes") + "/seg"
+
+[UpdaterProgressWindow_Body_Status_Active]
+Duration.Name       = "Duración: "
+
+[UpdaterProgressWindow_Body_ActiveInfo]
+Downloading.Name    = "Descargando archivos: "
+Location.Name       = "Origen: "
+$FindNewFile         = "Buscando actualizaciones"
+
+[s_BasesCounterType]
+#bs_kdb     = "Software malicioso (malware)"
+#bs_wa      = "Scripts maliciosos"
+#bs_ah      = "Ataques de red"
+#bs_ap      = "Sitios Web de Phishing"
+#bs_pas     = "Correo no deseado"
+#bs_parctl  = "Sitios web maliciosos"
+#bs_adb     = "Publicidades (banners)"
+#bs_hips     = "Reglas para aplicaciones"
+#bs_ssa      = "Reglas del análisis de seguridad"
+#bs_vlns     = "Vulnerabilidades"
+
+
+[MainWindow.Update_Updater.SpeedChart]
+d.Name = "Velocidad de transferencia, " + f_SizeType(ctl.Chart.MaxVal()) + "/seg"
+
+[MainWindow.Update_Updater.SpeedChart_Legend]
+DownloadedBytesCount.Text = "Velocidad de descarga"
+
+[AskRollback_Body]
+Info.Text   = "Deshacer"
+Start.Name  = "Deshacer la última actualización"
+Start.Descr = "Volver al estado de la aplicación anterior a la última actualización"
+
+;------------------ ReportWindow -------------
+
+[UpdateResult]
+#CORE_NO_ERROR          = f(BoldInfo)Actualización terminada con éxito
+#CORE_NOTHING_TO_UPDATE = f(BoldInfo)No es necesario actualizar
+default                 = f(BoldError)$(@,KLUPDCoreErrorText)
+
+[RollbackResult]
+#CORE_NO_ERROR  = f(BoldInfo)Operación deshacer terminada con éxito
+default         = f(BoldError)Fallo al deshacer
+
+[KLUPDCoreSuccessByGender]
+updater     = completado
+rollback    = completado
+
+[KLUPDCoreCancelByGender]
+updater     = terminado
+rollback    = terminado
+
+[KLUPDCoreErrorTextShortResult]
+#CORE_NO_ERROR                              = $(type,KLUPDCoreSuccessByGender)
+#CORE_NotEnoughPermissions                  = error
+#CORE_NO_SOURCE_FILE                        = error
+#CORE_URLS_EXHAUSTED                        = error
+#CORE_NOTHING_TO_UPDATE                     = $(type,KLUPDCoreSuccessByGender)
+#CORE_ADMKIT_FAILURE                        = error
+#CORE_CANCELLED                             = $(type,KLUPDCoreCancelByGender)
+#CORE_NO_RESERVED_UPDATE_DESCRIPTION        = error
+#CORE_UPDATE_DESCRIPTION_DAMAGED            = error
+#CORE_DOWNLOAD_TIMEOUT                      = error
+#CORE_FTP_AUTH_ERROR                        = error
+#CORE_PROXY_AUTH_ERROR                      = error
+#CORE_CANT_CONNECT_ADM_SERVER               = error
+#CORE_RETRANSLATION_SUCCESSFUL              = $(type,KLUPDCoreSuccessByGender)
+#CORE_UpdateSuccessfulRetranslationFailed   = parcialmente completado
+#CORE_SERVER_AUTH_ERROR                     = error
+#CORE_CANT_CONNECT_INET_SERVER              = error
+#CORE_CANT_CONNECT_TO_PROXY                 = error
+#CORE_CANT_RESOLVE_PROXY                    = error
+#CORE_AK_WrongReceiverId                    = error
+#CORE_AK_ServerBusy                         = error
+#CORE_AK_ConnectionError                    = error
+#CORE_AK_ConnectionNagentError              = error
+#CORE_AK_ConnectionServerError              = error
+#CORE_AK_CannotConnectToServer              = error
+#CORE_AK_WrongArguments                     = error
+#CORE_AK_ErrorInOperation                   = error
+#CORE_AK_UnknownError                       = error
+0x99480008                                  = error
+default                                     = $(lastErr,KLUPDCoreErrorText)
+; this section provides short messages for result codes
+
+[KLUPDCoreErrorTextByType]
+updater     = Actualización terminada con éxito
+rollback    = Operación deshacer terminada con éxito
+
+[KLUPDCoreErrorTransportText]
+#CORE_NO_ERROR                      = Archivo descargado con éxito
+#CORE_FailedToCreateFolder          = No se puede crear esta carpeta
+#CORE_NotEnoughPermissions          = Permisos insuficientes para esta operación con archivos
+#CORE_NoSuchFileOrDirectory         = Archivo o carpeta no encontrados
+#CORE_NO_SOURCE_FILE                = No se ha encontrado el archivo
+#CORE_WRONG_KEY                     = Fallo al comprobar la licencia
+#CORE_ADMKIT_FAILURE                = Error al recuperar la configuración
+#CORE_GenericFileOperationFailure   = Fallo en operaciones con archivos
+#CORE_CANCELLED                     = Operación cancelada por el usuario
+#CORE_DOWNLOAD_ERROR                = Fallo de red al descargar el archivo
+#CORE_REMOTE_HOST_CLOSED_CONNECTION = Conexión terminada
+#CORE_DOWNLOAD_TIMEOUT              = Tiempo de espera agotado de la operación de red
+#CORE_FTP_AUTH_ERROR                = Error de autenticación del servidor FTP
+#CORE_PROXY_AUTH_ERROR              = Error de autenticación del servidor proxy $(parameter2)
+#CORE_CANT_RESOLVE_NAME             = Servidor no encontrado
+#CORE_SERVER_AUTH_ERROR             = Error de autenticación del servidor $(parameter2)
+#CORE_CANT_CONNECT_INET_SERVER      = Error de conexión con el servidor
+#CORE_CANT_CONNECT_TO_PROXY         = Error de conexión con el servidor proxy
+#CORE_CANT_RESOLVE_PROXY            = Servidor proxy no encontrado
+#EVENT_PROXY_SERVER_SELECTED        = El servidor proxy está seleccionado
+#EVENT_DOWNLOAD_FILE_STARTED        = Descarga de archivos iniciada
+#EVENT_FILE_DOWNLOADED              = Archivo descargado
+#EVENT_DNS_NAME_RESOLVED            = Nombre DNS resuelto $(parameter2)
+#warnFALSE                          = Contenido vacío
+default                             = Error de descarga del archivo
+
+[KLUPDCoreErrorText]
+#CORE_NO_ERROR                              = $(type,KLUPDCoreErrorTextByType)
+#CORE_FailedToCreateFolder                  = No se puede crear esta carpeta
+#CORE_NotEnoughPermissions                  = Permisos insuficientes para esta operación con archivos
+#CORE_NoSuchFileOrDirectory                 = Archivo o carpeta no encontrados
+#CORE_NO_SOURCE_FILE                        = Los archivos de actualización están dañados
+#CORE_URLS_EXHAUSTED                        = No se especificó un origen de actualizaciones
+#CORE_NOTHING_TO_UPDATE                     = No hay actualizaciones disponibles
+#CORE_NotAllComponentsAreUpdated            = La totalidad de los componentes no fueron actualizados
+#CORE_ComponentRejectedByProduct            = Error al comprobar el componente cargado
+#CORE_WRONG_KEY                             = Fallo al comprobar la licencia
+#CORE_ADMKIT_FAILURE                        = Error al recuperar los parámetros de actualización
+#CORE_INVALID_SIGNATURE                     = Los archivos de actualización están dañados
+#CORE_GenericFileOperationFailure           = Fallo en operaciones con archivos
+#CORE_CANCELLED                             = Operación cancelada por el usuario
+#CORE_NO_RESERVED_UPDATE_DESCRIPTION        = No se encuentran los archivos necesarios para deshacer la operación
+#CORE_UPDATE_DESCRIPTION_DAMAGED            = Archivo índice dañado o no existe
+#CORE_INTERNAL_ERROR                        = Error de actualización
+#CORE_DOWNLOAD_ERROR                        = Fallo de red al descargar las actualizaciones
+#CORE_REMOTE_HOST_CLOSED_CONNECTION         = Conexión terminada
+#CORE_DOWNLOAD_TIMEOUT                      = Tiempo de espera agotado de la operación de red
+#CORE_FTP_AUTH_ERROR                        = Error de autenticación del servidor FTP
+#CORE_PROXY_AUTH_ERROR                      = Error de autenticación del servidor proxy $(parameter2)
+#CORE_CANT_RESOLVE_NAME                     = No se encuentra el origen de actualizaciones
+#CORE_CANT_CONNECT_ADM_SERVER               = Error de conexión con el servidor de administración de Kaspersky
+#CORE_RETRANSLATION_SUCCESSFUL              = La distribución de actualizaciones se ha realizado con éxito
+#CORE_NO_OPERATION_REQUESTED                = Error de actualización
+#CORE_UpdateSuccessfulRetranslationFailed   = Actualización terminada con éxito, fallo de la distribución de actualizaciones
+#CORE_CANT_CONNECT_INET_SERVER              = Error de conexión al origen de actualizaciones
+#CORE_SERVER_AUTH_ERROR                     = Error de autenticación del origen de actualizaciones $(parameter2)
+#CORE_BASE_CHECK_FAILED                     = Error al comprobar los archivos de actualización
+#CORE_CANT_CONNECT_TO_PROXY                 = Error de conexión con el servidor proxy
+#CORE_CANT_RESOLVE_PROXY                    = Servidor proxy no encontrado
+#CORE_AK_WrongReceiverId                    = Error de registro en Kaspersky Network Agent
+#CORE_AK_ServerBusy                         = El servidor de administración está ocupado y no puede tratar la petición ahora
+#CORE_AK_ConnectionError                    = Fallo de conexión, error físico
+#CORE_AK_ConnectionNagentError              = Fallo de conexión, error físico
+#CORE_AK_ConnectionServerError              = Fallo de conexión, error físico
+#CORE_AK_CannotConnectToServer              = Fallo de conexión, error desconocido
+#CORE_AK_WrongArguments                     = Fallo al recuperar un archivo, argumento de transporte no válido
+#CORE_AK_ErrorInOperation                   = Fallo al recuperar un archivo
+#CORE_AK_UnknownError                       = Error de transporte
+#EVENT_SOURCE_SELECTED                      = Origen de actualizaciones seleccionado
+#EVENT_ADMIN_KIT_SOURCE_SELECTED            = Origen de actualizaciones seleccionado
+#EVENT_PROXY_SERVER_SELECTED                = El servidor proxy está seleccionado
+#EVENT_DOWNLOAD_FILE_STARTED                = Descarga de archivos iniciada
+#EVENT_FILE_DOWNLOADED                      = Archivo descargado
+#EVENT_NEW_FILE_INSTALLED                   = Archivo instalado
+#EVENT_FILE_UPDATED                         = Archivo actualizado
+#EVENT_FILE_ROLLED_BACK                     = Deshacer archivo
+#EVENT_TaskStarted                          = Tarea iniciada
+#EVENT_StartInstallFilesForUpdate           = Actualización de archivos en curso
+#EVENT_StartInstallFilesForRetranslation    = Distribución de actualizaciones en curso
+#EVENT_StartCopyFilesForRollback            = Operación deshacer en curso
+#EVENT_DNS_NAME_RESOLVED                    = Nombre DNS resuelto $(parameter2)
+#EVENT_ComponentIsNotUpdated                = Error al actualizar el componente
+#EVENT_GeneratingFileListToDownload         = Creación de la lista de archivos para descargar
+#EVENT_ComponentIsNotRetranslated           = Error al copiar las actualizaciones de componentes
+0x99480008                                  = Imposible ejecutar dos tareas de actualización al mismo tiempo
+default                                     = $(defaultLocalization)
+
+[KLUPDCoreErrorDescription]
+#CORE_NO_ERROR                              = Este error suele producirse cuando el origen de actualizaciones contiene un conjunto dañado de archivos de actualización.\nSi está actualizando desde servidores Kaspersky Lab, intente actualizar más tarde para solucionar el problema. Si está utilizando un origen de actualizaciones distinto, debe asegurarse de que contiene el conjunto de archivos de actualización correcto.\n$GetTraceFiles
+#CORE_FailedToCreateFolder                  = Este error puede producirse cuando la cuenta de usuario utilizada para ejecutar la actualización no dispone de privilegios suficientes para crear una carpeta de distribución de actualizaciones. Compruebe que la cuenta de usuario dispone de privilegios suficientes o seleccione una cuenta de usuario con los privilegios necesarios.\n$GetTraceFiles
+#CORE_NotEnoughPermissions                  = Este error puede producirse cuando la cuenta de usuario utilizada para ejecutar la actualización no dispone de privilegios suficientes para acceder a la carpeta de distribución de actualizaciones. Compruebe que la cuenta de usuario dispone de privilegios suficientes o seleccione una cuenta de usuario con los privilegios necesarios.\n$GetTraceFiles
+#CORE_NoSuchFileOrDirectory                 = x
+#CORE_NO_SOURCE_FILE                        = Este error suele producirse cuando el origen de actualizaciones contiene un conjunto dañado de archivos de actualización.\nSi está actualizando desde servidores Kaspersky Lab, intente actualizar más tarde para solucionar el problema. Si está utilizando un origen de actualizaciones distinto, debe asegurarse de que contiene el conjunto de archivos de actualización correcto.\n$GetTraceFiles
+#CORE_URLS_EXHAUSTED                        = x
+#CORE_NotAllComponentsAreUpdated            = x
+#CORE_ComponentRejectedByProduct            = x
+#CORE_WRONG_KEY                             = x
+#CORE_ADMKIT_FAILURE                        = x
+#CORE_INVALID_SIGNATURE                     = Este error suele producirse cuando el origen de actualizaciones contiene un conjunto dañado de archivos de actualización.\nSi está actualizando desde servidores Kaspersky Lab, intente actualizar más tarde para solucionar el problema. Si está utilizando un origen de actualizaciones distinto, debe asegurarse de que contiene el conjunto de archivos de actualización correcto.\n$GetTraceFiles
+#CORE_GenericFileOperationFailure           = Este error puede producirse cuando la cuenta de usuario utilizada para ejecutar la actualización no dispone de privilegios suficientes para acceder a la carpeta de origen de actualización o de distribución de actualizaciones. Compruebe que la cuenta de usuario dispone de privilegios suficientes o seleccione una cuenta de usuario con los privilegios necesarios.\n$GetTraceFiles
+#CORE_CANCELLED                             = x
+#CORE_NO_RESERVED_UPDATE_DESCRIPTION        = x
+#CORE_UPDATE_DESCRIPTION_DAMAGED            = Este error suele producirse cuando el origen de actualizaciones contiene un conjunto dañado de archivos de actualización.\nSi está actualizando desde servidores Kaspersky Lab, intente actualizar más tarde para solucionar el problema. Si está utilizando un origen de actualizaciones distinto, debe asegurarse de que contiene el conjunto de archivos de actualización correcto.\n$GetTraceFiles
+#CORE_INTERNAL_ERROR                        = Para localizar el problema, $TraceFilesAreNeed\n\n$RtfLinkFAQ
+#CORE_DOWNLOAD_ERROR                        = Este error suele producirse debido a una conexión de red baja o inestable, a una configuración de conexión de red incorrecta, etc. Para resolver el problema, compruebe la conexión a la red y la disponibilidad del origen de actualización. A continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_REMOTE_HOST_CLOSED_CONNECTION         = x
+#CORE_DOWNLOAD_TIMEOUT                      = Este error suele producirse debido a una conexión de red débil o inestable, o a una configuración de conexión de red incorrecta. Para resolver el problema, compruebe la conexión a la red y la disponibilidad del origen de actualización. A continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_FTP_AUTH_ERROR                        = Normalmente este error se produce si la cuenta del usuario que se va a usar para actualizar no se especifica o se especifica de forma incorrecta, o si los permisos de esa cuenta de usuario no son suficientes para acceder al servidor de FTP.\nPara resolver el problema, compruebe los parámetros del servidor de FTP y, a continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_PROXY_AUTH_ERROR                      = Normalmente este error ocurre si la cuenta de usuario que se va a utilizar para actualizar no se especifica o se especifica de forma incorrecta, o si los permisos de esta cuenta de usuario no son suficientes para acceder al servidor proxy.\nPara resolver el problema, compruene los parámetros del servidor proxy y, a continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_CANT_RESOLVE_NAME                     = Este error suele producirse si la dirección del origen de actualización se indica de forma incorrecta, la conexión de red se configura incorrectamente, la calidad de la conexión es baja, el servidor DNS no está disponible, etc.\nPara resolver el problema, compruebe la conexión a la red y la disponibilidad del origen de actualización. A continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_CANT_CONNECT_ADM_SERVER               = Para localizar el problema, $TraceFilesAreNeed
+#CORE_NO_OPERATION_REQUESTED                = Para localizar el problema, $TraceFilesAreNeed\n\n$RtfLinkFAQ
+#CORE_UpdateSuccessfulRetranslationFailed   = x
+#CORE_CANT_CONNECT_INET_SERVER              = Este error suele producirse al especificar la dirección del origen de actualización erróneamente, cuando la calidad de la conexión es baja o inestable, la configuración de la conexión de red es incorrecta, etc.\nPara resolver el problema, compruebe la dirección y la disponibilidad del origen de actualización y la configuración de conexión de red. A continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_BASE_CHECK_FAILED                     = Para resolver el problema, intente ejecutar la actualización más tarde.\n$GetTraceFiles
+#CORE_CANT_CONNECT_TO_PROXY                 = Este error suele producirse al especificar la dirección del servidor proxy erróneamente, cuando la calidad de la conexión es baja o inestable, la configuración de la conexión de red es incorrecta, etc.\nPara resolver el problema, compruebe la dirección y la disponibilidad del servidor proxy y la configuración de conexión de red. A continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_CANT_RESOLVE_PROXY                    = Este error suele producirse al asignar la dirección del servidor proxy erróneamente, cuando la configuración de la conexión de red es incorrecta, la calidad de la conexión es baja, el servidor DNS no está disponible, etc.\nPara resolver el problema, compruebe la configuración del servidor proxy y la configuración de conexión de red. A continuación, intente actualizar de nuevo.\n$GetTraceFiles
+#CORE_AK_WrongReceiverId                    = x
+#CORE_AK_ServerBusy                         = x
+#CORE_AK_ConnectionError                    = x
+#CORE_AK_ConnectionNagentError              = x
+#CORE_AK_ConnectionServerError              = x
+#CORE_AK_CannotConnectToServer              = x
+#CORE_AK_WrongArguments                     = x
+#CORE_AK_ErrorInOperation                   = x
+#CORE_AK_UnknownError                       = x
+
+;------------- AskNewVersionDlg -------------
+
+[s_AskNewVersionDlgCaption]
+def = "Actualización de aplicación"
+
+[s_NewVersionType]
+#caseGen = (NewProductName ? ("nueva versión de la aplicación " + NewProductName) : ("actualización técnica de " + $ProductName))
+#caseAcc = (NewProductName ? ("nueva versión de la aplicación " + NewProductName) : ("actualización técnica de " + $ProductName))
+def = (NewProductName ? ("nueva versión de la aplicación " + NewProductName) : ("actualización técnica de " + $ProductName))
+
+[s_AskNewVersionDlgDescr]
+#nvaDownload = (NewProductName ? ("Hay " + s_NewVersionType(#caseNom)) : ("Hay " + s_NewVersionType(#caseNom))) + "."
+#nvaInstall =	"La descarga del archivo con " + s_NewVersionType(#caseGen) + " ha terminado correctamente."
+#nvaRemindInstall = "Se ha pospuesto la instalación de " + s_NewVersionType(#caseGen) + "."
+#nvaRetryDownload = "Error al realizar varios intentos de descarga y ejecución de " + s_NewVersionType(#caseAcc) + "."
+
+[s_AskNewVersionDlgDownloadName]
+#nvaDownload = "Sí, descargar (recomendado)"
+#nvaInstall
+#nvaRemindInstall = "Sí, instalar (recomendado)"
+#nvaRetryDownload = "Sí, continuar"
+
+[s_AskNewVersionDlgDownloadDescr]
+#nvaDownload = (NewProductName ? "Archivo de distribución" : "Archivo de actualización") + " se descargará en la siguiente carpeta: " + SetupFolder
+#nvaInstall
+#nvaRemindInstall = "Atención. Es necesario reiniciar para realizar la instalación"
+#nvaRetryDownload = "Se seguirá intentando en segundo plano"
+
+[s_AskNewVersionDlgCancelName]
+#nvaDownload = (NeverAsk ? "No" : "No, recordar más tarde")
+#nvaInstall
+#nvaRemindInstall = "Posponer instalación"
+#nvaRetryDownload = "No, no volver a intentarlo"
+
+[s_AskNewVersionDlgQuestion]
+#nvaDownload = "¿Quiere descargar la " + ( "nueva versión de " : "actualización técnica de " + NewProductName ?) + "?"
+#nvaInstall 
+#nvaRemindInstall = "¿Desea instalar " + (NewProductName ? "la nueva versión?" : "la actualización técnica?")
+#nvaRetryDownload = "¿Desea continuar con los intentos?"
+
+[AskNewVersionDlg]
+@.ApplyToAll    = (AskWhat == #nvaRemindInstall || AskWhat == #nvaInstall ? "No preguntar hasta que haya una nueva versión" : "No notificar esta actualización")
+
+[AskNewVersionDlg_Body_Descr]
+CurrentVersion 	= "Versión actual de la aplicación: " + env("ProductVersion")
+NewVersion 		= (AskWhat == #nvaDownload ? "Nueva versión: " : "Versión de actualización: ") + NewVersion
+File			= "Archivo: "
+InfoLink 		= "Más" + (NewProductName ? " sobre las nuevas características" : "")
+DownSize		= "Tamaño " + ("del archivo de distribución de" : "de la actualización de " NewProductName ?) + ": <b>" + f_ObjSize(Size) + "</b> "

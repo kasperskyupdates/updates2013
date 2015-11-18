@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "A kulcsfájl kiválasztása"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Az alkalmazás ezen példányához a kulcsfájlt a berendezés szállítója biztosította. Kívánja aktiválni az alkalmazást a kulcs használatával?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Az alkalmazás beállítása még nincs kész. Valóban ki akar lépni a Konfigurációs varázslóból?"
+ErrEmptyActivationCode.caption  = "Az aktiválókód nincs megadva"
+ErrEmptyActivationCode          = "Adja meg az aktiválókódot"
+ErrEmptyKeyPath.caption         = "A kulcsfájl nincs megadva"
+ErrEmptyKeyPath                 = "Adja meg a kulcsfájlt"
+$LicInfoKeyNumber               = "Szám:"
+$LicInfoKeyProductName          = "Alkalmazás neve:"
+$LicInfoKeyType                 = "Licenctípus:"
+$LicInfoExpirationDate          = "Lejárat dátuma:"
+$LicErrReason                   = "Ok:"
+$ActiveKey                      = "Aktív kulcs"
+$ReservedKey                    = "További kulcs"
+ConfirmFeedback                 = "Beleegyezik az információk elküldésébe a <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "A Kaspersky Security Network (KSN) egy online szolgáltatási infrastruktúra, amely naprakész információt nyújt a fájlok, webes erőforrások és szoftverek biztonságáról. A KSN adataival felgyorsul az új fenyegetésekre adott reakció, javul egyes védelmi összetevők teljesítménye és csökken a téves észlelések kockázata.\nHa részt vesz a KSN-ben, a program a vírusfertőzésekkel és más problémákkal kapcsolatos információkat, valamint a betöltött és elindított alkalmazások kibővített statisztikáját (a <a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN Adatgyűjtési nyilatkozatban</a> meghatározott módon) automatikusan elküldi a Kaspersky Labnek. \n\n<b>A Kaspersky Security Network nem gyűjti és nem dolgozza fel a felhasználók személyes adatait.</b>"
+
+$ToAcquireNewLicText            = "\n\nÚj licenc megszerzéséhez lépjen kapcsolatba a forgalmazóval vagy a <a Buy onclick(buy())>Kaspersky Lab értékesítési részlegével.</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nPróbálja meg frissíteni előfizetését vagy lépjen kapcsolatba a terméktámogatással" : "\n Próbálja meg az alkalmazás aktiválását később (1-2 óra múlva), vagy lépjen kapcsolatba a terméktámogatással.") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Aktiválási varázsló" : " Beállítóvarázsló")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Általános információk"
+InitBegin.Descr                       = "Üdvözli a " + $ProductName_GEN + " beállítóvarázslója."
+CheckHosts.Name                       = "A Kaspersky Lab kiszolgálói elérhetőségének ellenőrzése"
+CheckHosts.Descr                      = "Gyanús átirányítás észlelése"
+ResetArea.Name                        = "Beállítások helyreállítása"
+ResetArea.Descr                       = "Az alább felsorolt bejegyzések a felhasználó által megadott vagy az alkalmazás működése \nsorán összegyűjtött adatokat tartalmaznak."
+ActivationBegin.Name                  = $IsSubscription ? "Előfizetés kezelése" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Kulcs törlése" : "Kulcs hozzáadása") : "Alkalmazás aktiválása")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Licencelés" : "A folytatáshoz aktiválja az alkalmazást.")
+ActivationProgress.Name               = "Aktiválás online"
+ActivationProgress.Descr              = "Az aktiválás folyamatban, várjon..."
+ActivationServerForm.Name             = "Aktiválás online"
+ActivationServerForm.Descr            = "Töltse ki ezt az űrlapot."
+ActivationChooseKey.Name              = "Aktiválás kulcsfájllal"
+ActivationChooseKey.Descr             = "Az alkalmazás aktiválása a kulcsfájl használatával."
+ActivationEnd.Name                    = "Alkalmazás aktiválása"
+ActivationEnd.Descr                   = "Aktiválás befejezve."
+MigrationKeyIsFound.Name         = "Elérhető az aktív licenc kulcsa"
+MigrationKeyIsFound.Descr        = "Kívánja használni az aktív licenc által meghatározott alkalmazást?"
+MigrationBegin.Name              = "Váltás a(z) " + s_MUProductTitleLong(env("ProductType")) + " alkalmazásra"
+MigrationBegin.Descr             = "Átvált a(z) " + s_MUProductTitleLong(env("ProductType")) használatára
+MigrationSearchProgress.Name     = "Inkompatibilis szoftverek keresése"
+MigrationSearchProgress.Descr    = "Várjon, amíg tart az inkompatibilis szoftverek keresése..."
+MigrationSafeRemoval.Name        = "Talált inkompatibilis szoftver(ek):"
+MigrationSafeRemoval.Descr       = "A folytatáshoz el kell távolítani az inkompatibilis szoftver(eke)t"
+MigrationSafeProgress.Name       = "Inkompatibilis szoftver(ek) eltávolítása"
+MigrationSafeProgress.Descr      = "Várjon, amíg megtörténik az inkompatibilis szoftver(ek) eltávolítása..."
+MigrationAddRemove.Name          = "Talált inkompatibilis szoftver(ek):"
+MigrationAddRemove.Descr         = "Távolítsa el az inkompatibilis szoftver(eke)t"
+MigrationUnsafeRemoval.Name      = "Talált inkompatibilis szoftver(ek):"
+MigrationUnsafeRemoval.Descr     = "A folytatáshoz el kell távolítani az inkompatibilis szoftver(eke)t"
+MigrationUnsafeProgress.Name     = "Inkompatibilis szoftver(ek) eltávolítása"
+MigrationUnsafeProgress.Descr    = "Várjon, amíg megtörténik az inkompatibilis szoftver(ek) eltávolítása..."
+MigrationReboot.Name             = "Az operációs rendszer újraindítása szükséges"
+MigrationReboot.Descr            = "Az új alkalmazásra való átváltás folytatásához újraindítás szükséges"
+MigrationProgress.Name           = "Váltás a(z) " + s_MUProductTitleLong(env("ProductType")) + " alkalmazásra"
+MigrationProgress.Descr          = "Kérjük, várjon, amíg megtörténik a váltás az új alkalmazásra..."
+MigrationRebootApp.Name          = bMigrationDone ? "Az alkalmazás újra lesz indítva" : "Hiba történt az új alkalmazásra való váltás közben"
+MigrationRebootApp.Descr         = bMigrationDone ? "Az alkalmazást újra kell indítani" : "A váltás a(z) " + s_MUProductTitleLong(env("ProductType")) + " termékre sikertelen"
+MigrationFinish.Name             = "A váltás a(z) " + s_ProductTitleLong(env("ProductType")) + " termékre befejeződött"
+MigrationFinish.Descr            = "A váltás a(z) " + s_ProductTitleLong(env("ProductType")) + " termékre befejeződött"
+DNS.Name                              = "Speciális beállítások"
+DNS.Descr                             = $ProductName_GEN + " speciális működési beállításai"
+EnumExe.Name                          = "Rendszerelemzés"
+EnumExe.Descr                         = "Várjon a rendszerinformációk összegyűjtéséig..."
+InitFinish.Name                       = "A következő beállításának befejezése: " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Az alkalmazás beállításának befejezéséhez újra kell indítania a számítógépet." : "Most elindíthatja a " + $ProductName + " programot."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "A program a Kaspersky Lab kiszolgálóinak gyanús átirányítását észlelte. A lehetséges ok egy rosszindulatú program tevékenysége lehet, amely hibát okozhat frissítéskor és aktiváláskor. Gazdafájl gyanús bejegyzései:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Bejegyzések törlése (ajánlott)"
+Skip			= "Átugrás"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Vissza"
+Back.Descr      = "Vissza az alkalmazás-aktiválási mód kiválasztásához"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Kulcs hozzáadása" : "&Aktiválás"
+Activate.Descr  = "Kiválasztott kulcsfájl telepítése"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Befejezés"
+Finish.Descr    = "Aktiválási varázsló bezárása"
+Next.Name       = "&Tovább"
+Next.Descr      = "Továbblépés a beállításra"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Folytathatja az aktív licenc által meghatározott alkalmazás használatát. Ebben az esetben az alkalmazás a következőre vált: " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Továbbra is használni kívánja az aktív licenc által meghatározott alkalmazást?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Alkalmazás típusa:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Lejárat dátuma:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " van hátra)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Igen, és váltás a következőre: " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Nem, és maradjon a következő: "  + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Megtörténik az átváltás a(z) " + s_MUProductTitleLong(env("ProductType")) + " termékre. A szerzői jogok tulajdonosa nem kizárólagos licencet ad Önnek a(z) " + s_MUProductTitleLong(env("ProductType")) + " használatára, ugyanazokkal a feltételekkel, amelyeket korábban, a(z) " + s_ProductTitleLong(env("ProductType")) + " telepítésekor már elfogadott."
+Text3   = "Megjegyzés: a váltás olyan műveleteket igényel, amelyek a számítógép újraindítását eredményezhetik."
+LicenseWarning  = "Figyelem! A Kaspersky Anti-Virus kereskedelmi licence a Kaspersky Internet Security próbalicence előtt lejár. A Kaspersky Anti-Virus kereskedelmi licencének lejárta után nem térhet vissza a Kaspersky Anti-Virus használatához a Kaspersky Internet Security próbaverziójából. Biztosan váltani szeretne a Kaspersky Internet Security alkalmazásra?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Inkompatibilis szoftverek keresése a számítógépen. Ez eltarthat egy ideig. Kérjük, várjon..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "A váltáshoz az alábbi szoftver(ek) lesz(nek) eltávolítva:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Várjon, amíg megtörténik az inkompatibilis szoftver törlése..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "A váltáshoz az alábbi szoftver(eke)t el kell távolítani:"
+OpenAddRemove = "Nyissa meg a Programok hozzáadása/törlése ablakot"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "A váltáshoz az alábbi szoftver(ek) lesz(nek) eltávolítva:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Várjon, amíg megtörténik az inkompatibilis szoftver törlése..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "A váltás folytatásához újra kell indítani a számítógépet. A varázsló az újraindítás után folytatódik."
+Reboot   = "Újraindítás most"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Várjon, amíg megtörténik az alkalmazás újrakonfigurálása és az átváltás a(z) " + s_MUProductTitleLong(env("ProductType")) + " termékre..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "A(z) " + s_MUProductTitleLong(env("ProductType")) + " alkalmazásra történő váltás befejezéséhez újra kell indítani az alkalmazást." : "A(z) " + s_MUProductTitleLong(env("ProductType")) + " alkalmazásra váltás sikertelen."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Most lehetősége van a(z) " + s_ProductTitleLong("kis") + " olyan funkcióinak kipróbálására, mint a Szülői felügyelet, a Levélszemét-blokkoló, a Tűzfal stb." : "A(z) " + s_ProductTitleLong("kav") + " alapszintű védelmet nyújt a számítógépen megjelenő rosszindulatú programok ellen."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Ön "+if($IsRefreshSubAvail,"frissítheti az előfizetés állapotát vagy ")+"törölheti a kulcsot." : (f_IsActiveKeyWorkingCommercial() ? "Törölheti az aktív kulcsot vagy hozzáadhat másikat." : "Az alkalmazás összes funkciójának engedélyezéséhez aktiválja a(z) " + $ProductName + " alkalmazást."+ if($CorporateOnly, " Beszerezhet egy <a Activate onclick(url($ActivationLink))>kereskedelmi licencet</a> vagy aktiválhatja az alkalmazás <a ActivateTrial onclick(url($ActivationTrialLink))>próbaverzióját</a>."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "&Aktiválás később"
+Later.Descr                 = "Aktiválás kihagyása és továbblépés az alkalmazás beállításához"
+ChooseKey.Name              = "Aktiválás a &kulcsfájl használatával"
+ChooseKey.Descr             = "Kulcsfájl szükséges"
+ActivateBetaKAV.Name        = "Kaspersky Anti-Virus &béta verzió aktiválása"
+ActivateBetaKAV.Descr       = "A Kaspersky Anti-Virus béta verziója annak minden funkcióját tartalmazza, de ez nem egy befejezett termék."
+ActivateBetaKIS.Name        = "Kaspersky Internet Security &béta verzió aktiválása"
+ActivateBetaKIS.Descr       = "A Kaspersky Internet Security béta verziója annak minden funkcióját tartalmazza, de ez nem egy befejezett termék."
+ActivateTrial.Name          = "&Próbaverzió aktiválása"
+ActivateTrial.Descr         = "A próbaverzió érvényességi ideje a végfelhasználói licencszerződésben van megadva."
+ActivateCommercial.Name     = "Aktiválás &online"
+ActivateCommercial.Descr    = "A vásárláskor kapott aktiválókód szükséges"
+RemoveKey.Name              = $HasReserveKey ? "&További kulcs törlése" : "&Kulcs törlése"
+RemoveKey.Descr             = "A kulcs cseréjéhez előbb el kell távolítania az aktív kulcsot"
+RefreshSubscription.Name    = "&Előfizetés állapotának frissítése"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Kézzel frissítheti az előfizetés állapotát." :  "Az előfizetés automatikus frissítése megszakadt. Frissítse kézzel."
+ActivateTrialKIS            = "Kaspersky Internet Security próbaverzió aktiválása"
+ActivateTrialKIS_Desc       = "A Kaspersky Internet Security próbaverzió érvényességi ideje a licencszerződésben van megadva"
+RevertToCommercialKAV       = "Visszatérés a Kaspersky Anti-Virus kereskedelmi verziójához"
+RevertToCommercialKAV_Desc  = "Visszatérés a Kaspersky Anti-Virus kereskedelmi verziójához"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Előfizetés állapotának frissítése"
+ActivateCommercial      = "Kereskedelmi &verzió aktiválása"
+ActivateCommercial_Desc = (LockActivationCode)? "Adja meg az aktiválókódot: " : "Adja meg <a onclick(url(\"" + $ActCodeHint + "\"))>az aktiválókódot</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Az aktiváló kód automatikus hozzáadása megtörtént. Kattintson a \"Tovább\" gombra." : "Ha nincs aktiváló kódja, akkor vásárolhat egyet <a onclick(buy())>online</a>"
+ActivateBetaKAV         = "Kaspersky Anti-Virus &béta verzió aktiválása"
+ActivateBetaKIS         = "Kaspersky Internet Security béta &verzió aktiválása"
+ActivateTrial           = "&Próbaverzió aktiválása"
+ActivateTrial_Desc      = "Az alkalmazás teljes funkcionalitású verziójának kipróbálása a vásárlás előtt."
+ActivateTrialKIS           = "Kaspersky Internet Security próbaverzió aktiválása"
+ActivateTrialKIS_Desc      = "A Kaspersky Internet Security teljes funkcionalitású verziójának kipróbálása a vásárlás előtt."
+RevertToCommercialKAV      = "Visszatérés a Kaspersky Anti-Virus kereskedelmi verziójához"
+RevertToCommercialKAV_Desc = "A Kaspersky Internet Security próbaverziója használatának leállítása és visszatérés a Kaspersky Anti-Virus kereskedelmi verziójához."
+Later                   = "&Aktiválás később"
+Later_Desc              = "Az aktiválásig az alkalmazás egyes funkciói nem lesznek elérhetők."
+RemoveKey               = "Kulcsfájl törlése"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Kulcsfájl:"
+KeyInfo         = "Licencinformációk"
+ConnectingInfo.Name     = "Aktiválási hiba: "
+ConnectingInfo.Val      = "részletek"
+TryAgain                = "Aktiválás"
+Descr1                  = "Az aktiválás megismétléséhez tegye a következőket:"
+Descr2                  = "Ellenőrizze az internetkapcsolat beállításait, és próbálja meg újra az alkalmazás aktiválását."
+Descr3                  = "Keresse fel az <a onclick(url(\"" + $ActivationLink + "\"))>Online aktiválóközpontot</a> és kövesse az utasításokat.\nHa megkapta a kulcsfájlt, adja meg annak helyét, és kattintson a Tovább gombra:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Létrehozás dátuma:"
+InstallDate.Name    = "Aktiválás dátuma:"
+ExpirationDate.Name = "Lejárat dátuma:"
+SubscrptnExpDate.Name = "Előfizetés lejárati dátuma:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," a következőre: " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Rendszerhiba: " + s_SystemError(ErrorCode)
+2       = "A(z) \"" + KeyFile + "\" kulcs nem adható hozzá: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "\"" + KeyFile + "\" nem törölhető: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Hibakód: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Ez a kulcs már hozzá lett adva" + $LicErrHelpLink
+0x0947901d  = "A licenc lejárt. Az adatbázisok frissítése nem működik" + $LicErrHelpLink
+0x89479002  = "A licenc nem található" + $LicErrHelpLink
+0x89479003  = "A digitális aláírás hiányzik vagy sérült" + $LicErrHelpLink
+0x89479004  = "Az adatok sérültek" + $LicErrHelpLink
+0x89479005  = "A kulcsfájl sérült" + $LicErrHelpLink
+0x89479006  = "A licenc lejárt" + $LicErrHelpLink
+0x89479007  = "Nincs kulcsfájl megadva" + $LicErrHelpLink
+0x89479008  = "A kulcsfájl érvénytelen" + $LicErrHelpLink
+0x89479009  = "Az adatok mentése meghiúsult" + $LicErrHelpLink
+0x8947900a  = "Az adatok olvasása meghiúsult" + $LicErrHelpLink
+0x8947900b  = "I/O hiba" + $LicErrHelpLink
+0x8947900c  = "Hiányzó adatbázisok" + $LicErrHelpLink
+0x8947900d  = "Az aktív és a további kulcsok már hozzá lettek adva" + $LicErrHelpLink
+0x8947900e  = "A licenckezelési függvénykönyvtár nincs inicializálva" + $LicErrHelpLink
+0x8947900f  = "Az adatbázisok sérültek, vagy kézzel lettek frissítve" + $LicErrHelpLink
+0x89479010  = "Az adatbázisok megsérültek" + $LicErrHelpLink
+0x89479011  = "A lejárt kulcsfájl nem regisztrálható további kulcsként" + $LicErrHelpLink
+0x89479012  = "Rendszerhiba" + $LicErrHelpLink
+0x89479013  = "A kulcsok feketelistája sérült" + $LicErrHelpLink
+0x89479014  = "A digitális aláírás nem egyezik a Kaspersky Lab digitális aláírásával" + $LicErrHelpLink
+0x89479015  = "Az alkalmazás kereskedelmi verziója nem aktiválható béta licenccel." + $LicErrHelpLink
+0x89479016  = "Az alkalmazás béta verziója csak béta licenccel aktiválható" + $LicErrHelpLink
+0x89479017  = "A licenc nem vonatkozik erre az alkalmazásra. A(z) " + $ProductName + " aktiválása nem lehetséges egy másik alkalmazáshoz tartozó licenccel. Ellenőrizze a telepített alkalmazást" + $LicErrHelpLink
+0x89479018  = "A kulcs blokkolt" + $LicErrHelpLink
+0x89479019  = "Ez a próbalicenc már használatban van. Ugyanaz a próbalicenc nem használható kétszer" + $LicErrHelpLink
+0x8947901a  = "A kulcsfájl sérült" + $LicErrHelpLink
+0x8947901b  = "A digitális aláírás hiányzik, sérült vagy nem egyezik a Kaspersky Lab digitális aláírásával" + $LicErrHelpLink
+0x8947901c  = "Nem kereskedelmi licenchez nem adható hozzá kulcs, ha az lejárt" + $LicErrHelpLink
+0x8947901e  = "A kulcsfájl létrehozási vagy regisztrációs dátuma érvénytelen. Ellenőrizze a rendszerdátum beállításait" + $LicErrHelpLink
+0x8947901f  = "Kulcs hozzáadása próbalicenchez nem lehetséges, amíg a próbalicenchez tartozó másik kulcs aktív" + $LicErrHelpLink
+0x89479020  = "A kulcsok feketelistája hiányzik vagy sérült" + $LicErrHelpLink
+0x89479021  = "A frissítés leírása hiányzik vagy sérült" + $LicErrHelpLink
+0x89479022  = "A belső adatok érvénytelenek ehhez az alkalmazáshoz" + $LicErrHelpLink
+0x89479023  = "További kulcs hozzáadása nem lehetséges helytelen aktiválási kód használatával" + $LicErrHelpLink
+0x89479024  = "Felhasználói űrlapkitöltési hiba" + $LicErrHelpLink
+0x89479025  = "Hiba a kérés küldésekor az aktiválási kiszolgálónak.\nValószínű okok: az internetkapcsolat vagy az aktiválási kiszolgáló ideiglenes problémái.\nPróbálja (1-2 órával) később aktiválni a kódot.\nHa a probléma továbbra is fennáll, keresse meg internetszolgáltatóját" + $LicErrHelpLink
+0x89479026  = "A kérés helytelen aktiválókódot tartalmaz" + $LicErrHelpLink
+0x89479027  = "Nem szerezhető be a válaszállapot" + $LicErrHelpLink
+0x89479028  = "Hiba az ideiglenes fájl mentésekor" + $LicErrHelpLink
+0x89479029  = "Az aktiválókódot helytelenül adta meg, vagy a rendszerdátum helytelen. Ellenőrizze a rendszerdátum beállításait" + $LicErrHelpLink
+0x8947902a  = "Az aktiválási kód nem megfelelő ehhez az alkalmazáshoz, vagy a kulcs lejárt. A(z) " + $ProductName + " aktiválása nem lehetséges egy másik alkalmazáshoz tartozó licenccel. Ellenőrizze a telepített alkalmazást vagy <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "A kulcsfájl betöltése sikertelen. Érvénytelen aktiválókód van megadva" + $LicErrHelpLink
+0x8947902c  = "Az aktiváló kiszolgáló 400-as hibát adott vissza" + $OlaErrHelpLink
+0x8947902d  = "Az aktiváló kiszolgáló 401-es hibát adott vissza" + $OlaErrHelpLink
+0x8947902e  = "Az aktiváló kiszolgáló 403-as hibát adott vissza" + $OlaErrHelpLink
+0x8947902f  = "Egy szükséges erőforrás nem érhető el az aktiváló kiszolgálón.\nAz aktiváló kiszolgáló 404-es hibát adott vissza.\nEllenőrizze az internetkapcsolat beállításait" + $OlaErrHelpLink
+0x89479030  = "Az aktiváló kiszolgáló 405-ös hibát adott vissza" + $OlaErrHelpLink
+0x89479031  = "Az aktiváló kiszolgáló 406-os hibát adott vissza" + $OlaErrHelpLink
+0x89479032  = "Proxyhitelesítés szükséges. Ellenőrizze a LAN-beállításokat" + $LicErrHelpLink
+0x89479033  = "Kérés időtúllépése" + $LicErrHelpLink
+0x89479034  = "Az aktiváló kiszolgáló 409-es hibát adott vissza" + $OlaErrHelpLink
+0x89479035  = "Egy szükséges erőforrás nem érhető el az aktiváló kiszolgálón.\nAz aktiváló kiszolgáló 410-es hibát adott vissza.\nEllenőrizze az internetkapcsolat beállításait." + $OlaErrHelpLink
+0x89479036  = "Az aktiváló kiszolgáló 411-es hibát adott vissza" + $OlaErrHelpLink
+0x89479037  = "Az aktiváló kiszolgáló 412-es hibát adott vissza" + $OlaErrHelpLink
+0x89479038  = "Az aktiváló kiszolgáló 413-as hibát adott vissza" + $OlaErrHelpLink
+0x89479039  = "Az aktiváló kiszolgáló 414-es hibát adott vissza" + $OlaErrHelpLink
+0x8947903a  = "Az aktiváló kiszolgáló 415-ös hibát adott vissza" + $OlaErrHelpLink
+0x8947903b  = "Ismeretlen hiba az ügyfélen" + $OlaErrHelpLink
+0x8947903c  = "Belső kiszolgálóhiba" + $LicErrHelpLink
+0x8947903d  = "A funkció nem támogatott" + $LicErrHelpLink
+0x8947903e  = "Érvénytelen válasz az átjárótól. Ellenőrizze a hálózati beállításokat" + $LicErrHelpLink
+0x8947903f  = "Az erőforrás ideiglenesen nem érhető el." + $LicErrHelpLink
+0x89479040  = "Várakozási kérés időtúllépése. Ellenőrizze a hálózati beállításokat" + $LicErrHelpLink
+0x89479041  = "A kiszolgáló nem támogatja a protokollt" + $OlaErrHelpLink
+0x89479042  = "Ismeretlen hiba a kiszolgálón" + $OlaErrHelpLink
+0x89479043  = "Ismeretlen HTTP-hiba" + $OlaErrHelpLink
+0x89479044  = "Érvénytelen erőforrás-azonosító" + $LicErrHelpLink
+0x89479045  = "Hibás információ a \"kulcs\" mezőben" + $LicErrHelpLink
+0x89479046  = "Hibás URL" + $LicErrHelpLink
+0x89479047  = "Hibás célmappa" + $LicErrHelpLink
+0x89479048  = "Memóriaallokációs hiba" + $LicErrHelpLink
+0x89479049  = "Hiba történt a paraméterek ANSI-karakterlánccá való alakítása során (url, mappa, ügynök)" + $LicErrHelpLink
+0x8947904a  = "Hiba a munkafolyamat létrehozása során" + $LicErrHelpLink
+0x8947904b  = "A munkafolyamat már fut" + $LicErrHelpLink
+0x8947904c  = "A munkafolyamat nem fut" + $LicErrHelpLink
+0x8947904d  = "A kulcsfájl nem található az aktiváló kiszolgálón" + $LicErrHelpLink
+0x8947904e  = "A kulcs blokkolt" + $LicErrHelpLink
+0x8947904f  = "Belső hiba az aktiváló kiszolgálón" + $LicErrHelpLink
+0x89479050  = "Nincs elég adat az aktiválási kérelemben" + $LicErrHelpLink
+0x89479051  = "Helytelen felhasználói azonosító vagy jelszó" + $LicErrHelpLink
+0x89479052  = "Érvénytelen aktiválókód" + $LicErrHelpLink
+0x89479053  = "A kijelölt kulcsfájlhoz tartozó licenc korábban jár le, mint az aktív licenc" + $LicErrHelpLink
+0x89479054  = "Az operációs rendszer dátumbeállítása hibás. Ellenőrizze a rendszer dátumát" + $LicErrHelpLink
+0x89479055  = "A próbalicenc lejárt" + $LicErrHelpLink
+0x89479056  = "Az aktiválási periódus lejárt" + $LicErrHelpLink
+0x89479057  = "<b>A megadott aktiváló kód meghaladta az engedélyezett aktiválások számát</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Nem kereskedelmi licenchez tartozó kulcs nem adható hozzá további kulcsként, míg a kereskedelmi licenc érvényben van" + $LicErrHelpLink
+0x8947905c  = "Aktiváló kód szükséges" + $LicErrHelpLink
+0x8947905d  = "Hibás ügyfélazonosító vagy jelszó" + $LicErrHelpLink
+0x8947905e  = "Érvénytelen aktiválókód" + $LicErrHelpLink
+0x89479062  = "Nem sikerült kapcsolódni az aktiváló kiszolgálóhoz" + $LicErrHelpLink
+0x89479064  = "<b>Az aktiváló kiszolgáló nem érhető el.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Az alkalmazás most nem aktiválható. Próbálja meg újra az aktiválást az alkalmazás konfigurálása és az operációs rendszer újraindítása után.", "Ellenőrizze az internetkapcsolat beállításait és próbálja újra az aktiválást.") + $LicErrHelpLink
+0x89479065  = "A licenc lejárt. <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Az aktív kulcs nem helyettesíthető lejárt kulccsal" + $LicErrHelpLink
+0x89479067  = "Nem lehetséges olyan kulcs hozzáadása további kulcsként, amely hamarabb jár le, mint az aktív kulcs" + $LicErrHelpLink
+0x89479068  = "A frissített előfizetési kulcs hiányzik" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Az aktiválási folyamat rendszerhibával végződött " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktiválási hiba: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktiválási hiba: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktiválási hiba: visszakapott HTTP kód " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktiválás sikertelen " + OnlineActSrvError + "':" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Aktiváló kiszolgáló belső hibája. Próbálja újra, vagy forduljon a terméktámogatáshoz"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Az aktiválási kód nem kompatibilis ezzel az alkalmazással. Nem lehetséges a(z) " + $ProductName + " aktiválása egy másik alkalmazáshoz tartozó aktiválási kóddal. Ellenőrizze a a telepített alkalmazást."
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "A kulcs blokkolt"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Hibás ügyfélazonosító vagy jelszó"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Rossz aktiváló kód"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Aktiváló kód szükséges"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Az aktiválási periódus lejárt"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Túllépte a kóddal végzett aktiválások számát"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Az aktiváló kód érvénytelen ebben a régióban"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Az aktiváló kód nem használható az alkalmazásnak ezzel a honosított változatával."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Az aktiváló kód az alkalmazás újabb verziójához való. A jelenlegi változat használatához másik kódot kell beszereznie. A részletekért kattintson az alábbi hivatkozásra."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Az aktiváló kiszolgáló 643-as hibát adott vissza"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Az aktiváló kiszolgáló 644-es hibát adott vissza"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Az aktiváló kiszolgáló 645-ös hibát adott vissza"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Az aktiváló kiszolgáló 646-os hibát adott vissza"
+default                                     = "Az aktiválási eljárás " + #OLA_SERVER_ERROR + " hibát adott vissza:" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "A Microsoft Internet Explorerben aktiválva van a kapcsolat nélküli munka mód"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Az internetkapcsolat nem működik"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Az aktivációs szerver nem érhető el"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "A proxy szerver nem érhető el"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Időtúllépés"
+#OLA_ERR_INTERNET_INVALID_URL                = "Hibás aktivációs szerver cím"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Nem megfelelő protokoll"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "A kapcsolat a kiszolgálóval nem hozható létre"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Művelet megszakítva"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "A kapcsolat a kiszolgálóval nem hozható létre"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "A szerverkapcsolat befejeződött"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "A kiszolgálói kapcsolatot visszaállították"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Nem megfelelő szerver válasz"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "A szerver SSL-tanúsítványa lejárt. Ellenőrizze az időbeállítást"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "A SSL tanúsítványban lévő szervernév nem megfelelő"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Nem lehetséges a tanúsítvány ellenőrzése. Tiltsa le ezt az ellenőrzést a Microsoft Internet Explorerben (Eszközök->Internetbeállítások ->Speciális->A kiszolgálói tanúsítvány visszavonásának ellenőrzése), és ismételje meg az aktiválást"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Érvénytelen SSL-tanúsítvány"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Az SSL-tanúsítványt visszavonták"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Érvénytelen hitelesítésszolgáltató"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "A regisztrációs adatokra a Kaspersky Lab-nek azért van szüksége, hogy tájékoztatni tudja Önt a különféle promóciós eseményekről, kedvezményekről és speciális ajánlatokról."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Folytatás"
+Activate.Descr  = "Adatok küldése az aktiváló kiszolgálónak"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "A konfigurációs varázsló a Kaspersky Lab aktiváló kiszolgálójához csatlakozik. Ez az internet-hozzáférés sebességétől függően eltarthat egy ideig."
+ConnectingInfo.Name     = "Kapcsolat felvétele az aktiváló kiszolgálóval..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Aktiváló kód küldése..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Várakozás a kiszolgáló válaszára..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "A " + $ProductName + " termék sikeresen aktiválva lett"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Lejárat dátuma:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " van hátra)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Az aktiválás sikeresen befejeződött." : "Az alkalmazás már aktíválva van a számítógépen."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Tovább"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Tovább az alkalmazás aktiválásához": (((PiwFlags & #fPiwActivation) && !bSilent)?"Tovább a licencinformációkhoz":"Tovább a védelmi mód kiválasztásához")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Ez a varázsló segít gyorsan és megfelelően beállítani a számítógép védelmét.\n\nA beállítás során a varázsló információkat gyűjt a rendszerről és a számítógépre telepített alkalmazásokról. Ezek az információk csak a számítógép optimális védelmének biztosításához lesznek felhasználva.\n\nKattintson a Tovább gombra a(z) " + $ProductName_GEN + " beállítási folyamatának elindításához."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "A telepítés majdnem kész..." : ((PiwFlags & #fPiwReset) ? ("A javítás befejeződött.") : ("A telepítés befejeződött."))
+ResetDescr          = "A Beállítóvarázsló sikeresen befejezte a(z) " + $ProductName + " program beállításainak visszaállítását."
+Reboot              = "&Számítógép újraindítása"
+StartProduct        = $ProductName + " &indítása"
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Köszönjük, hogy telepítette a(z) " + $ProductName + " alkalmazást. A telepítés befejezéséhez újra kell indítani a számítógépet. Mentse el az adatokat, zárja be az összes alkalmazást, majd kattintson a Befejezés gombra.") : "A termék további beállítása az alkalmazás első indításakor történik meg. Ennek befejezése néhány percet igénybe vehet."
+
+[ConfigureWizard.EnumExe]
+Info = "A rendszerelemzés során a termék felépíti a Microsoft Windows operációs rendszer által tartalmazott megbízható alkalmazások listáját. \n\nAz operációs rendszertől független alkalmazások vizsgálata külön történik a számítógépen való első elindításukkor."
+
+[s_LicKeyType]
+#ektBeta         = "Béta-kulcs"
+#ektTrial        = "Próba"
+#ektTest         = "Tesztkulcs"
+#ektOEM          = "OEM-kulcs"
+#ektCommercial   = "Kereskedelmi"
+#ektSubscription = "Kereskedelmi előfizetéssel"
+#ektSubscriptionProtection = "Kereskedelmi védelem előfizetéssel"
+default          = "Ismeretlen típus"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Ismeretlen hiba"
+#ekirValid                      = "A licenc érvényes"
+#ekirExpired                    = "A licenc lejárt"
+#ekirCorrupted                  = "A licenc nem érvényes"
+#ekirNotSigned                  = "A digitális aláírás hiányzik vagy sérült"
+#ekirWrongProduct               = "A licenc nem vonatkozik erre az alkalmazásra. A(z) " + $ProductName + " aktiválása nem lehetséges egy másik alkalmazáshoz tartozó licenccel. Ellenőrizze a telepített alkalmazást."
+#ekirBlackListed                = "A(z) "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" kulcs blokkolva van."
+#ekirIllegalUpdate              = "Az adatbázis nem felel meg a licenc érvényességi idejének"
+#ekirInconsistentUpdate         = "Az adatbázisok megsérültek"
+#ekirKeyCreationDateInvalid     = "Érvénytelen kulcskészítési dátum"
+#ekirTrialAlreadyInUse          = "Kulcs hozzáadása próbalicenchez nem lehetséges, amíg a próbalicenchez tartozó másik kulcs aktív"
+#ekirInvalidBlacklist           = "A kulcsok feketelistája sérült"
+#ekirCantBeUsedAsReserved       = "A licenc regisztrálása további licencként nem lehetséges"
+#ekirKeyInstallDateInvalid      = "Az aktiválás dátuma érvénytelen"
+#ekirTrialPeriodIsOver          = "A próbalicenc lejárt"
+#ekirConflictsWithCommercial    = "Az új kulcsfájl ütközik a jelenlegi kereskedelmi licenccel"
+#ekirExpiredAsReserve           = "Ez a licenc hamarabb jár le, mint az aktív licenc"
+#ekirGracePeriod                = "A licenc türelmi időszakba lépett"
+#ekirSuspended                  = "Előfizetés felfüggesztve"
+#ekirLicenseCountLimitExceeded  = switch("Szöveg1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Az alkalmazást újra kell telepíteni"
+#ekirLicenseOnlyForMigration    = "A kereskedelmi verzió aktiválásához váltson másik alkalmazásra."
+default                         = "A kulcsfájl érvénytelen"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Később meghatározandó"
+#edtUnlimited = "Aktív"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Felfüggesztve: " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Licencinformációk"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": licencértesítés"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Figyelem!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "A " + $ProductName_GEN + " próbaverzióját használja. "
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "A licencek feketelistája hiányzik vagy sérült. A művelet folytatásához futtassa a <a Update onclick(f_StartUpdater())>frissítést</a>."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Licence " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". A védelem naprakészen tartásához <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nHa már megvásárolta a licencet, <a Activate onclick(f_Activate())>aktiválja az alkalmazást</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Az előfizetés lejárt." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " A védelem ki van kapcsolva."))+($IsBestBuyLink ? " Az előfizetés megújítása nem érhető el." : " A számítógép biztonsága veszélyben van. \n\nAz előfizetés megújításához <a onclick(url($KeyProviderLinkForText))>lépjen kapcsolatba előfizetési szolgáltatójával</a>.")) :(f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " maradt az előfizetés megújításáig. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " maradt, ami után a frissítés már letiltásra kerül. " : " maradt a védelem kikapcsolásáig." ) ) + " Az előfizetés megújításához <a onclick(url($KeyProviderLinkForText))>lépjen kapcsolatba előfizetési szolgáltatójával</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Az aktív kulcs blokkolva van.\nA frissítési funkció le van tiltva, ezért számítógépe vírusfertőzés veszélyének lehet kitéve.</b>\n\nHa törvényesen vásárolta meg az alkalmazást, lépjen kapcsolatba a Terméktámogatás munkatársaival vagy egy forgalmazóval.\n\nHa a szoftver illegális másolatát használja, <a Buy onclick(buy())> + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nHa már vásárolt licencet, <a Activate onclick(f_Activate())>aktiválja az alkalmazást</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "ma lejár" : "ennyi nap múlva lejár: " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "lejárt"
+
+[s_LicenseRenewBuyText]
+0 = "licenc beszerzése"
+default = "licenc megújítása"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Válassza ki a visszaállítandó beállításokat:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " beállítóvarázsló"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Általános információk"
+InitBegin.Descr                       = "Üdvözli a " + $ProductName_GEN + " beállítóvarázslója."
+CheckHosts.Name                       = "A Kaspersky Lab kiszolgálói elérhetőségének ellenőrzése"
+CheckHosts.Descr                      = "Gyanús átirányítás észlelése"
+ResetArea.Name                        = "Beállítások helyreállítása"
+ResetArea.Descr                       = "Az alább felsorolt bejegyzések a felhasználó által megadott vagy az alkalmazás működése \nsorán összegyűjtött adatokat tartalmaznak."
+EnumExe.Name                          = "Rendszerelemzés"
+EnumExe.Descr                         = "Várjon a rendszerinformációk összegyűjtéséig..."
+ResetFinish.Name                       = "A következő beállításának befejezése: " + $ProductName
+ResetFinish.Descr                      = "A " + $ProductName + " készen áll az elindításra."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Visszaállítás befejezve."
+ResetDescr          = "A Beállítóvarázsló sikeresen befejezte a(z) " + $ProductName + " program beállításainak visszaállítását."
+
+[BestBuyUpgradeMessage]
+@ = "Váltás másik alkalmazásra"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="A Kaspersky Internet Security használatának megkezdése"
+RestartButton = "Kaspersky Internet Security futtatása"
+
+[BestBuyUpgradeMessagePage]
+Header = "Gratulálunk!"
+Message = "A Kaspersky Anti-Virus a Kaspersky Internet Security alkalmazásra frissült.\nImmár több lehetősége nyílik számítógépe védelmére."
+Description = "Köszönjük, hogy a Kaspersky Lab szoftverét választotta.\nKellemes használatot kívánunk a további védelemhez."
+
+[ForcedUpgradeMessagePage]
+Header = "Mindjárt kész"
+Message = "Köszönjük, hogy a Kaspersky Lab szoftverét választotta. Kellemes használatot kívánunk a további védelemhez."
+Description = 'Mivel az inkompatibilis szoftverek nem lettek eltávolítva, a telepített alkalmazások és az operációs rendszer stabil működésének biztosításához a Kaspersky Internet Security egyes új funkciói le lettek tiltva.\n\nManuálisan eltávolíthatja az inkompatibilis alkalmazásokat, és engedélyezheti az új funkciókat a Kaspersky Internet Security beállítási ablakában.'
+Notification = "A váltás befejezéséhez az alkalmazás újraindul."

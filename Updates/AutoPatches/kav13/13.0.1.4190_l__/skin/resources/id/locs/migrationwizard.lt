@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Panduan Migrasi'
+UpgradeCaption = 'Meningkatkan'
+
+RebootPageCheckboxRebootText = 'Reboot Komputer'
+OpenRemoveProgramsPanel = 'Buka toolbar'
+
+WizardBeginDescriptionKis = 'Anda akan dialihkan ke Kaspersky Internet Security 2013.\n\nPemegang hak cipta memberi Anda lisensi non-eksklusif untuk menggunakan Kaspersky Internet Security dengan persyaratan yang sama yang Anda terima ketika Anda awalnya diinstal Kaspersky Anti-Virus.\n\nCatatan: Pengalihan ini mengharuskan anda untuk menghidupkan kembali komputer anda.'
+
+WizardBeginDescriptionKav = 'Anda akan dialihkan ke Kaspersky Anti-Virus 2013.\n\nPemegang hak cipta memberi Anda lisensi non-eksklusif untuk menggunakan Kaspersky Anti-Virus dengan persyaratan yang sama yang Anda terima ketika Anda awalnya diinstal Kaspersky Internet Security.\n\nPerhatian: Penglihan ini mengharuskan anda untuku menghidupkan kembali komputer anda.'
+
+WizardContinueDescriptionKis = 'Lanjutkan pengalihan ke Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Lanjutkan pengalihan ke Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nPerhatian! Lisensi saat ini untuk Kaspersky Anti-Virus berakhir sebelum lisensi untuk Kaspersky Internet Security. Setelah Kaspersky Anti-Virus lisensi berakhir, tidak mungkin untuk kembali ke Kaspersky Anti-Virus.'
+
+PleaseWait = 'Silahkan tunggu'
+RemovalProgressDescription   = 'Menghapus Perangkat lunak yang tidak kompatibel'
+RemovalApplicationsDescription = 'Perangkat lunak ini akan dihapus untuk melakukan peralihan:'
+ManualRemovalApplicationsDescription = 'Anda harus menghapus software yang tidak kompatibel berikut secara manual untuk melakukan peralihan:'
+SearchRemovalApplicationsDescription   = 'Mencari perangkat lunak yang tidak kompatibel'
+RestartProductDescription = 'Aplikasi akan di-restart untuk menyelesaikan peralihan.'
+RebootOsDescription = 'Anda harus reboot komputer untuk melanjutkan peralihan.\n wizard akan berlanjut setelah reboot.'
+
+MigrationProgressDescriptionKis = 'Konfigurasi ulang aplikasi dan Peralihan ke Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Konfigurasi ulang aplikasi dan Peralihan ke Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Konfigurasi ulang aplikasi dan beralih ke Kaspersky Anti-Virus'
+
+MigrationKis = 'Beralih ke Kaspersky Internet Security'
+MigrationKav = 'Beralin ke Kaspersky Anti-Virus'
+MigrationUnknown = 'Peralihan '
+
+SearchRemovalApplicationsHeader = 'Peningkatan ke Kaspersky Internet Security'
+RemovalProgressHeader = 'Menghapus Perangkat lunak yang tidak kompatibel'
+RemovalApplicationsHeader = 'Software yang tidak kompatibel telah ditemukan'
+RebootOsHeader = 'Komputer memerlukan reboot'
+RestartProductHeader = 'Aplikasi akan direstart'
+
+MigrationAbortedHeader = $MigrationType + ' tidak Mungkin'
+MigrationAbortedDescription = $MigrationType + ' gagal. coba hapus perangkat lunak yang tidak kompatibel secara manual kemudian restart wizard.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus anda akan ditingkatkan ke Kaspersky Internet Security.\nSekarang anda akan memiliki lebih banyak fitur untuk melindungi komputer anda.'
+BestBuyGiftDescription = 'Terima kasih telah memilih software Kaspersky Lab! Silahkan menikmati perlindungan tambahan.'
+BestBuyUpgradeNotification = 'Sementara peningkatan, sistem anda akan dianalisis untuk perangkat lunak yang tidak kompatibel untuk memastikan berfungsinya aplikasi yang terinstal dan sistem operasi.'
+BestBuyFreeUpgrade = 'Beralih ke Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Peningkatan di latar belakang'
+BestBuyTryAbortInformation = 'Peningkatan akan dilanjutkan di latar belakang'
+BestBuyTryAbortDescription = 'Sebagai software yang tidak kompatibel tidak dihapus, beberapa fitur baru Kaspersky Internet Security dinonaktifkan untuk memastikan berfungsinya aplikasi yang terinstal dan sistem operasi.\n\nAnda dapat menghapus perangkat lunak yang tidak kompatibel secara manual dan mengaktifkan semua baru fitur di jendela pengaturan Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Kembali untuk meningkatkan'
+Congratulation = 'Selamat!'
+
+RunKisButtonText = 'Mulai Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus anda telah berhasil ditingkatkan ke Kaspersky Internet Security.\nSekarang anda dapat menikmati lebih banyak fitur untuk melindungi komputer anda.'

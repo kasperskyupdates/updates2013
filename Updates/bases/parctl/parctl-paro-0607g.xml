@@ -1,0 +1,213 @@
+<UpdateFiles
+	UpdateDate="28102015 1234"
+	BlackDate="28102015 0603"
+	ObjectType="2=PARCTL;3=BASE">
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="parctl.stt"
+		Body="NTc0ODE7MjAxNTEwMjgxMjM0DQo=" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="parctl.set" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0001.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0002.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0003.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0004.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0005.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0006.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0007.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0008.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0009.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0010.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0011.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0012.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0013.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0014.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0015.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0016.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0017.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0018.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0019.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0020.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0021.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0022.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0023.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0024.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0025.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0026.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		UpdateType="base"
+		ServerFolder="paro"
+		LocalPath="%BaseFolder%"
+		Filename="pc0027.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		App="KTS 9.*.*.*;KIS [12-13].0.*.*;KTS 12.*.*.*;KISMAC [13-14].*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="ssearch.xms" />
+	<FileDescription
+		ComponentID="PARCTL"
+		App="KIS [12-13].0.*.*;KTS 9.1.*.*;KTS 12.*.*.*;KISMAC [13-14].*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sna0001.dat" />
+	<FileDescription
+		ComponentID="PARCTL"
+		App="KIS 13.0.*.*;KES 10.[1-2].*.*;KISMAC [13-14].*.*.*;KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="cat0001.dat" />
+	<Registry
+		ComponentID="PARCTL"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAWw5HipAAHl9JMKqYITSlKTbdcGqb0wuJLnATODoYZPkF76tkbS9YXWqkKYhRtL21JsM5NPiVkpsc6NBAiKl/s3DZs1bE38BAB4JewAAAAIAAigGAFBBUkNUTAMAAigEAEJBU0UBAAAJDpZ/oQ0KOzoxMDRLN1ZJTUM0b0ZGL0tMei85a3BCM0dpc1VHYUxtYUVoQnBUYmFRaGN3OGFqS0ovRVg4VU4xMTdwUjlwd0lIYjEwTXE0SVowZWV2K3JzWjE2VFZJSTM3JSU="
+		Filename="parctl-0607g.pbv" />
+	<Registry
+		ComponentID="PARCTL"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwF7AIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqIAABACAAVfb/B7UuQCBXZkBQXzwWDLekPbGo5ZZXcPAoWufre+sgAOdASajxOtUq7DyKYC05eRmwrwTRwnKNYdGukItdJZzSIACXmzqlT1NcEfXGpfqn2OKsRT+hAgW/2feNJZjxfy42ayAA9w7nesMwbsgoFGbqd75Tr/BDanCKv5Weq++8F3i/pqQgAFWp57JFAeQyPvdWFVf0/wE/2+ucnNGHEH9K1Tb9ooC4IABm4OkqSOx2dQWPXFxyxRlNMfoyCHw+07w+jZXM8iEBaSAAsWbC7uGlkAopcJ81ye6LGUcnQ3ezmixq2dbO1zel46QgAIgXfMeEf6JZoK7DPBSMPoNuRQJznG1KV2NpHQKG9ixgIAB+tjUk+1XojTK6cLfHa3VF6X4CB70232tu0oQa80A7HyAArnM+yKNWYNqd65jKXm941LHH3lwrMihZLHPPMadXt70gADWROoYyfZ4o15OCve5QIFpkr9h82OhSkpKGcdmV9w7sIAB+/eJpzIZRvx5Ash1jcNz5uRban4CtFp65t12nzm7LPSAAARRtyekhtO4JyJzm25tReS8VY6UHXlFDciieE6keP9cgAPJWhJMreyc8FTzfHzs/8Wmbsz7o27iwYlz8+L2JWS1HIAC7NtnB4CScyR8D9CI+qpyYaZZEIpOo58Fzcyd/6FYvpiAAf491LxKFUZvclD1GWiOItKdH5PiQu+LbHkMrE20qinIgAHZ8CUaY5/8xyKidsjx3tWoobeEHdxPCE+Sz3pU2IXIQIABzDepRXfnXxSZEI7FO6VdtiAbvPqRUHB/w0uRpreCcviAAqxxE7tgcJQnjznl/OQXoGpmy/fE8ncwuuoZR03MGbYogAKq6jLd5v7kCbivE0O1rI1hWLkOC02YNNJxubGZMnzoSIAA6xMwxSNJwZvfxYOxVsj2GbKi2kCqXarYtouRJzf5YXyAA8HGNcKRy4eG1CFxnRctyuINhSBxjm4owcupGo9bzIN4gAFE2qhpnaTfI42/Vzujy+5Nvj7wT6dmiW7+oUDEkNF0wIACaCAOqFrrpHWgI6RBQ3r8f/pqlk2JUfxvoK83FWcAezyAABjmm+jJnxh7h3QevwiafrgR2sAj1Gm9o9Cn7Xs3COtMgAEGzyGu8zDTW7YMScvU2pw5pOQmoCOJN9CDasYe97uJtIADImwzW+u8EzKuGegdnzzhNKLNborRRHHs+ILxg43faSyAAT7ufalgqS3gEmhaA3i0LwMvxjOZt5qbh91HG5gLHDyUgANLEMxmQhBzZX7zjwiQn4B17uqUC2oqmgv8ZMPWaySJ9IABw+HTn2iTCrsZPssouDl1ge4DGCbEQd32uJK694U+c6VCMzTAgAH7aTeQJm0LvG53eTfP5k9Y8GakabYydnHwwev/I2mCEIAAv4WIPvoblI9azFSkHtLgxqmDKoE8N9b2SeCpZqYTIlwIAHgEBAB4JewAAAAEAAAlAthh0DQo7OjEwYTAzOHZZelpUMVB1MTVjTkNZanN6SWdTU2VQeDFSTkoxZlIyUlBjVlVicXN0MHZ5TnNRNEVFQ3pKS2k5VEo3T1F3TFJpS0pudmE5dkVIcGVpV3ZBOXglJQ=="
+		Filename="parctl-paro-0607g.krg" />
+</UpdateFiles>
+;:10a62obeEhumeg+Ht7rzOfTpe0qQiThXyqof8035GJXDTJI7zyzhj0KVQ9OahWS4765rK20RVEEKm3xi/QN8KHWq%%

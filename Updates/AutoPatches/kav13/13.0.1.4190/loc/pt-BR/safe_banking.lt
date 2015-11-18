@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'Banca segura'
+CustomActionDescription = 'É altamente recomendável usar um navegador protegido para <br>realizar operações bancárias e compras em lojas virtuais.'
+SafeRunButtonText = 'Executar'
+SkipButtonText = 'Ignorar'
+RememberChoiceText = 'Lembrar minha opção para esse site'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = 'O certificado obtido ao estabelecer conexão segura <br>não corresponde ao certificado original.'
+CertificateInfoDescription = 'É altamente recomendável não visitar esse site, a fim de evitar problemas <br>de segurança e no armazenamento de seus dados confidenciais.'
+IgnoreInvalidCertificate = 'Ignorar e abrir a página da Web'
+CertificateInvalidReasonCodeText = 'erro:'
+CertificateInvalidReason0 = 'Erro indefinido'
+CertificateInvalidReason1 = 'Certificado anulado'
+CertificateInvalidReason2 = 'Certificado falso'
+CertificateInvalidReason3 = 'A cadeia do certificado está quebrada'
+CertificateInvalidReason4 = 'O domínio especificado no certificado não corresponde ao site ao qual a conexão foi estabelecida'
+CertificateInvalidReason5 = 'Foram detectadas violações no uso do certificado'
+CertificateInvalidReason6 = 'Violação na hora do certificado'
+CertificateInvalidReason7 = 'A estrutura do certificado está quebrada'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = 'As atualizações críticas do sistema não estão instaladas'
+VulnerabilityInfoDescription = 'Sem as atualizações instaladas, o navegador protegido <br>não poderá assegurar proteção completa de seus dados.'
+UpdaterDisabled = 'O download de atualizações está desativado. É altamente recomendado ativar o download de atualizações.'
+UpdatesNotAllowed = 'Para instalar atualizações, entre em contato com o administrador desse computador.'
+UpdaterError = 'Falha ao inicializar as atualizações do sistema.'
+RunUpdater = 'Atualizar'
+IgnoreVulnerability = 'Ignorar'
+NotifyAboutVulnerabilities = 'Notificar-me sobre as vulnerabilidades'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = 'Página da Web aberta no navegador protegido'
+SafeNavigateInfoDescription = 'O navegador protegido fornece segurança completa <br>em todas as operações bancárias e compras em lojas virtuais.'
+SafeBankingGetMoreInfo = 'Saiba mais'
+SafeBankingShowSettings = 'Exibir configurações'
+CancelSafeBrowserExecution = 'Abrir página da Web na mesma janela'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = 'Pagamentos concluído com êxito.'
+CompletedScenarioInfoDescription = 'Redirecionado para o navegador padrão. <br>Você pode continuar suas operações nele.'
+SafeBankingGetMoreInfoText = 'Mais sobre a Banca Segura'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = 'Redirecionado para uma nova janela do navegador'
+UnsafeNavigateInfoDescription = 'Você pode continuar seus pagamentos aqui.'
+UnsafeNavigateInfoText = 'Mais sobre a Banca Segura'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = 'Erro de execução'
+SafeBrowserLaunchErrorDescription = 'Falha ao executar o navegador protegido'
+SafeBrowserLaunchError0xA0010008 = 'Navegador de destino não encontrado'
+SafeBrowserLaunchError0xA0010009 = 'O plugin Banca Segura não está instalado ou está desativado'
+SafeBrowserLaunchError0xA001000A = 'Não é possível criar o processo para o navegador protegido'
+SafeBankingLearnMore = 'Saiba mais'

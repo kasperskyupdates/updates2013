@@ -1,0 +1,778 @@
+<UpdateFiles
+	UpdateDate="28102015 1516"
+	BlackDate="28102015 0603"
+	ObjectType="2=APU;3=BASE">
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="apu.stt"
+		Body="NzIyNTg0OzIwMTUxMDI4MTUxNg0K" />
+	<FileDescription
+		ComponentID="APU"
+		AppName="!KSE|KSH 8.*.*.*"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu.set" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		App="KAV [12-13].0.*.*;KIS [12-13].0.*.*;KAVSDK 8.*.*.*;KES [8-10].[1-2].*.*;KTS 12.*.*.*;KISMAC [13-14].*.*.*;KLMS 8.0.1.*;PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="apu.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		App="KSH 8.2.*.*;KSMG 1.0.0.*"
+		AppName="KSE 8.[3-*].*.*;KSH 8.3.*.*;KLMS 8.0.1.*;KFPMAC 1.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="apu14.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		App="KSH 8.2.*.*"
+		AppName="KSE 8.[3-*].*.*;KSH 8.3.*.*"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="heurap.dll" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0001.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0002.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0003.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0004.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0005.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0006.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0007.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0008.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0009.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0010.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0011.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0012.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0013.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0014.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0015.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0016.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0017.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0018.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0019.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0020.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0021.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0022.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0023.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0024.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0025.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0026.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0027.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0028.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0029.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0030.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0031.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0032.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0033.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0034.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0035.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0036.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0037.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0038.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0039.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0040.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0041.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0042.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0043.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0044.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0045.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0046.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0047.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0048.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0049.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0050.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0051.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0052.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0053.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0054.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0055.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0056.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0057.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0058.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0059.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0060.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0061.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0062.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0063.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0064.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0065.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0066.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0067.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0068.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0069.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0070.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0071.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0072.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0073.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0074.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0075.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0076.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0077.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0078.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0079.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0080.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0081.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0082.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0083.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0084.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0085.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0086.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0087.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0088.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0089.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0090.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0091.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0092.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0093.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0094.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0095.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0096.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0097.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0098.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0099.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0100.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0101.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0102.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0103.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0104.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0105.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0106.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0107.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0108.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0109.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0110.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0111.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0112.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0113.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0114.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0115.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0116.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0117.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0118.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0119.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0120.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0121.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0122.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0123.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0124.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0125.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0126.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0127.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0128.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0129.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0130.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0131.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0132.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0133.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0134.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0135.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0136.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0137.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0138.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0139.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="apu0140.dat" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		App="KLMS 8.0.1.*;KSMG 1.0.0.*"
+		OS="Linux"
+		ServerFolder="i386/nix"
+		LocalPath="%BaseFolder%"
+		Filename="libhap.so"
+		FileSize="2107474" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		App="KLMS 8.0.1.*"
+		OS="FreeBSD8"
+		ServerFolder="i386/bsd8"
+		LocalPath="%BaseFolder%"
+		Filename="libhap.so"
+		FileSize="2298538" />
+	<FileDescription
+		ComponentID="APU"
+		UpdateType="base"
+		App="KLMS 8.0.1.*"
+		OS="FreeBSD9"
+		ServerFolder="i386/bsd9"
+		LocalPath="%BaseFolder%"
+		Filename="libhap.so"
+		FileSize="2297782" />
+	<Registry
+		ComponentID="APU,AP"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAeR3HipAAD83c55+H0F6JOBbHmZfX5Lplr2yLo/QoklVRrzMmI8CdOeUP/y6wFJ82OuWFkn3FxxGI61kSOscCTAmuZjcm0MBAB4JiwAAAAIAAigDAEFQVQMAAigEAEJBU0UBAAAJwQz1tA0KOzoxMDRCWGxLVkJVV0t3T1RtQnJrUE5UcXpTb2lIU3dKMTdOcUpZL1VVSHIxaUpxNXZZZkQ5WE5CaFB6aCs5VVlLY2NKWXl4bmYxSGVMRmNYV1Y1MzcwUEJaJSU="
+		Filename="apu-0607g.pbv" />
+	<Registry
+		ComponentID="APU,AP"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="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"
+		Filename="apu-0607g.krg" />
+</UpdateFiles>
+;:104B45JH+BmDJx3QsW4bp6PbZ3lZKIEQVdJv86sSx4gKyW0U/+0XAu7xNV1Pex9wnbJxdwaXkO0yqB8N3K5LUVu2%%

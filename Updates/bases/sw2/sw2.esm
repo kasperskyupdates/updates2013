@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x918D58C5" name="sw2" module="klavasyswatch" category="SW2" module_category="SW2" bases_category="SW2">
+	  <interface iid="0xBEB7D4F7" name="IPragueHandler"/>
+	  <interface iid="0x238E8FA8" name="IInvestigator"/>
+	  <interface iid="0x485474C4" name="IRollbackManager"/>
+	  <interface iid="0xca6ef3c9" name="IObjectHistoryStore"/>
+	  <interface iid="0x9c1f5b95" name="IRbStorageManager"/>
+	  <interface iid="0xc1f152a6" name="IGenericHandler"/>
+	  <interface iid="0xcadb5231" name="IGenericEvent"/>
+	  <interface iid="0xedf74243" name="IHistoryManager"/>
+  </component>
+</root>

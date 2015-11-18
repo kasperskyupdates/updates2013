@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Pré-visualização Técnica do Kaspersky Internet Security'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Pré-visualização Técnica do Kaspersky Anti-Virus'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'atualizados' 
+Corrupted = 'corrompidos' 
+VeryOld = 'obsoletos' 
+Old = 'desatualizados' 
+OldInGracePeriod = 'não atualizados por muito tempo'
+UpdatedAndRebootNeeded = 'atualizados. É necessário reiniciar o computador' 
+UpdatedAndProductRestartNeeded = 'atualizados. É necessário reiniciar o aplicativo' 
+SomeBasesNeedUpdate = 'atualização de alguns componentes de proteção necessária'
+
+Schedule_Auto    = 'automaticamente' 
+Schedule_Manual  = 'manualmente' 
+Schedule_Fixed   = 'por programação' 
+
+Back = 'Voltar' 
+StopTask = 'Interromper'
+
+News = 'Notícias'
+Reports = 'Relatórios'
+Settings = 'Configurações'
+Help = '&Ajuda'
+OK = 'OK'
+Cancel = 'Cancelar'
+Retry = 'Repetir'
+
+Unknown = 'desconhecido'
+
+ShortDateTimeWithSecondsFormat = '%d.%m.%Y %H:%M:%S'
+ShortDateTimeFormat = '%d.%m.%Y %H:%M'
+ShortDateFormat = '%d.%m.%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'hoje, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'ontem, %H:%M'
+
+MonthName_1  = 'Janeiro'
+MonthName_2  = 'Fevereiro'
+MonthName_3  = 'Março'
+MonthName_4  = 'Abril'
+MonthName_5  = 'Maio'
+MonthName_6  = 'Junho'
+MonthName_7  = 'Julho'
+MonthName_8  = 'Agosto'
+MonthName_9  = 'Setembro'
+MonthName_10 = 'Outubro'
+MonthName_11 = 'Novembro'
+MonthName_12 = 'Dezembro'
+ 
+DateUnknown = 'desconhecido'
+
+After = 'em'
+Remaining = 'restante(s)'
+Ago = 'atrás'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'dia', 'dias'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'hora', 'horas'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minuto', 'minutos'}
+LessMinute_After = '<1 minuto'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'dia', 'dias'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'hora', 'horas'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minuto', 'minutos'}
+LessMinute_Remaining = '<1 minuto'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'dia', 'dias'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'hora', 'horas'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minuto', 'minutos'}
+LessMinute_Ago = '<1 minuto'
+
+Yesterday   = 'ontem'
+Today       = 'hoje' 
+LessWeek    = 'menos de uma semana atrás'
+LessTwoWeek = 'menos de duas semanas atrás'
+LessMonth   = 'menos de um mês atrás'
+MoreMonth   = 'mais de um mês atrás'
+MoreHalfYear= 'mais de meio ano atrás'
+MoreYear    = 'mais de um ano atrás'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Cancelar'
+ApplyButton = 'Aplicar'
+CloseButton = 'Fechar'
+NextButton = 'Avançar >'
+BackButton = '< Voltar'
+FinishButton = 'Concluir'
+SaveButton = 'Salvar'
+SkipButton = 'Ignorar'
+Continue = 'Continuar'
+Yes = 'Sim'
+No = 'Não'
+
+SettingsMore = '&Configurações...'
+
+DoNoyShowThisWindow = 'Não mostrar'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Erro indefinido'
+SystemError_0x8000004B = 'Erro indefinido'
+SystemError_0x80000041 = 'Memória insuficiente'
+SystemError_0x80000042 = 'Sem suporte'
+SystemError_0x80000043 = 'Não implementado'
+SystemError_0x80000045 = 'Acesso negado ou objeto não encontrado'
+SystemError_0x8000004C = 'Objeto não encontrado'
+SystemError_0x800000C6 = 'Objeto não encontrado'
+SystemError_0x800000C5 = 'Objeto não encontrado'
+SystemError_0x8000004F = 'Objeto bloqueado'
+SystemError_0x80000051 = 'Operação cancelada'
+SystemError_0x80000059 = 'Erro de dispositivo'
+SystemError_0x8000005A = 'Assinatura inválida'
+SystemError_0x8000005B = 'Versão inválida'
+SystemError_0x8000005F = 'Proteção contra gravação'
+SystemError_0x80000061 = 'Licença ausente'
+SystemError_0x80000062 = 'Espaço insuficiente'
+SystemError_0x80000063 = 'O dispositivo não está pronto'
+SystemError_0x800000C0 = 'Formato inválido'
+SystemError_0x800000C1 = 'Não há direitos suficientes'
+SystemError_0x800000C2 = 'Erro de inicialização'
+SystemError_0x800000C3 = 'Erro de inicialização'
+SystemError_0x800000C7 = 'Estado incorreto do objeto'
+SystemError_0x800000C8 = 'Objeto protegido por senha'
+SystemError_0x800000CA = 'Erro de leitura'
+SystemError_0x800000CC = 'Erro de leitura'
+SystemError_0x800000CB = 'Erro de gravação'
+SystemError_0x800000CD = 'Erro de gravação'
+SystemError_0x800000D0 = 'Objeto inválido'
+SystemError_0x800000D1 = 'O objeto já existe'
+SystemError_0x800000D5 = 'Objeto em uso por outro aplicativo'
+SystemError_0x800000D8 = 'Os bancos de dados estão corrompidos'
+SystemError_0x800001C0 = 'Módulo inválido'
+SystemError_0x800001C2 = 'O módulo não foi autenticado'
+SystemError_0x800001C1 = 'Módulo não encontrado'
+SystemError_0x800001C4 = 'Não é possível carregar o componente'
+SystemError_0x80000221 = 'Tempo limite esgotado'
+SystemError_0x80000240 = 'Erro de interação de componentes'
+SystemError_0x90005000 = 'Assinatura digital inválida'
+SystemError_0x90005002 = 'Não assinado digitalmente'
+SystemError_0x80027006 = 'A tarefa foi interrompida'
+SystemError_0x80027007 = 'A tarefa foi interrompida'
+SystemError_0x80380fbb = 'A tarefa foi interrompida'
+SystemError_0x80017007 = 'Não é possível iniciar a tarefa no modo de segurança'
+SystemError_0x80017005 = 'Tarefa desativada'
+SystemError_0x80017006 = 'Nome de usuário ou senha inválidos'
+SystemError_0x80017008 = 'Não é possível iniciar tarefas em nome de outra conta de usuário no modo de segurança'
+SystemError_0x80017009 = 'Driver não encontrado'
+SystemError_0x80022005 = 'Erro ao carregar os bancos de dados'
+SystemError_default    = 'Código de erro: ' + $ErrorCode
+
+LicenseManager = '&Licença'
+SubscriptionManager = 'Gerenciar Assinatura'
+ProblemSolution = 'Ir para a janela Licença para resolver este problema'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'inativa' ;refers to connection
+Stopping = 'interrompendo'
+ConnectingToServer = 'conectando ao servidor'
+CreatingUpdateList = 'processando arquivos'
+Downloading = 'baixando arquivos'
+Installing = 'atualizando arquivos'
+RollbackRunning = 'reverter para os bancos de dados anteriores'
+
+FunctionalityDisabledForExpiredSubscription = 'a atualização ser desativada'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'a proteção do computador ser desativada'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dia', 'dias'} + ' restante(s).'
+SubscriptionExpiresToday = 'expira hoje'
+SubscriptionActivated = 'ativado'
+CheckReserveCodeManuallyHeader = 'Falha ao ativar automaticamente o aplicativo com o novo código de ativação' ; TODO
+CheckReserveCodeManuallyText = 'Tente ativar o aplicativo usando o novo código de ativação manualmente.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'A versão beta do aplicativo está instalada'
+LicensingStatus_Trial_ShortDescription = 'Está instalada uma versão de avaliação do aplicativo'
+LicensingStatus_OkSubscription_ShortDescription = 'Assinatura: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'A licença vai expirar em breve'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'A licença vai expirar em breve'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_InvalidKey_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_Reinstall_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Lista negra de chaves corrompida'
+LicensingStatus_CorruptedBases_ShortDescription = 'Não é possível verificar a correspondência entre os bancos de dados e o contrato de licença do usuário final'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'O período de validade da licença não permite usar os bancos de dados atuais'
+LicensingStatus_Expired_ShortDescription = 'Licença expirada'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'A assinatura expirou em ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'A licença de avaliação expirou'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Versão beta expirada'
+LicensingStatus_Blocked_ShortDescription = 'Licença bloqueada'
+LicensingStatus_BlockedSubscription_ShortDescription = 'A assinatura está bloqueada'
+LicensingStatus_LicenseViolated_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Problema de licença detectado'
+LicensingStatus_Grace_ShortDescription = 'A assinatura expirou em ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Assinatura suspensa a partir de ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Falha ao atualizar o status da assinatura automaticamente'
+LicensingStatus_NotActivated_ShortDescription = 'O aplicativo não está ativado'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'O aplicativo não está ativado'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'O aplicativo não está ativado'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'O aplicativo não está ativado'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Novo código de ativação'
+ReserveCodeStatus_Ok_ShortDescription = 'Novo código de ativação'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'O novo código de ativação é inválido'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'O novo código de ativação não foi ativado'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'É esperada a ativação automática'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'A versão beta do ' + $ProductNameFull + ' é totalmente funcional, mas não é a versão final do produto e pode conter erros, falhas ou defeitos. Informe quaisquer problemas nas seções correspondentes do nosso fórum.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dia', 'dias'} + ' restante(s). Após esse período, a funcionalidade do aplicativo será bastante limitada.' 
+LicenseEndsToday = 'Hoje é o último dia da sua licença. Se você não renová-la, a funcionalidade do aplicativo será limitada.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Assinatura ativada. Data de expiração: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Assinatura renovada até ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'A assinatura foi cancelada. Data de expiração: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'A assinatura será suspensa em ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'A assinatura foi renovada e nunca vai expirar'
+StateUnlimitedSubscriptionResumedText = 'Assinatura reiniciada'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'em ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dia', 'dias'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'dia restante', 'dias restantes'} + '. Após esse período, a funcionalidade do aplicativo será bastante limitada.'
+LicensingStatus_ExpiresToday_Cause = 'Expira hoje. Após a expiração, a funcionalidade do aplicativo será limitada.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Data de criação da chave incorreta. A data do sistema no computador foi alterada. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Data de ativação incorreta. A data do sistema no computador pode ter sido alterada. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'A integridade do aplicativo foi corrompida. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'É recomendável baixar a nova lista negra do servidor.'
+LicensingStatus_CorruptedBases_Cause = 'Um dos motivos possíveis é a atualização incorreta. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Talvez você tenha comprado uma cópia ilegal do aplicativo. A proteção está pausada. Seu computador está em risco de ser infectado, danificado ou sujeito a roubo de dados.'
+LicensingStatus_BlockedSubscription_Cause = 'Talvez você tenha comprado uma cópia ilegal do aplicativo. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Você excedeu o número máximo de computadores em que o ' + $ProductName + ' pode ser instalado com a sua licença. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Você excedeu o número máximo de computadores em que o ' + $ProductName + ' pode ser instalado com a sua assinatura. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'dia', 'dias'} + ' restante(s) até ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Talvez tenha demorado muito entre as conexões com os servidores de ativação. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'O código de ativação predefinido está disponível. O aplicativo será ativado assim que uma conexão com a Internet estiver disponível.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'O código de ativação predefinido está disponível. Você pode ativar o aplicativo com este código de ativação ou excluir o código de ativação pré-definido.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'O aplicativo não foi ativado automaticamente com o código de ativação predefinido. Sua assistência é necessária.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Você pode inserir um novo código de ativação. O aplicativo será ativado com o novo código de ativação após a licença atual expirar.'
+ReserveCodeStatus_Ok_Cause = 'Um novo código de ativação está presente no computador. Depois de a licença atual expirar, o aplicativo será automaticamente ativado com o novo código de ativação. A sua segurança não será interrompida.'
+ReserveCodeStatus_Invalid_Cause = 'Depois que a licença atual expirar, a atualização não estará disponível.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Falha ao ativar o aplicativo com o novo código de ativação ' + $ReserveCode + '. Sua assistência é necessária.'
+ReserveCodeStatus_WaitActivation_Cause = 'É esperada a ativação automática usando o novo código de ativação ' + $ReserveCode + '.'
+
+ResolveProblem_BuyCommercial         = 'É recomendável comprar e ativar uma versão comercial do aplicativo.'
+ResolveProblem_CheckSystemTime		= 'Verifique se a data do sistema está correta.'
+ResolveProblem_ActivateAgain        = 'Tente excluir a chave ativa e ativar o aplicativo novamente. Você pode também entrar em contato com o suporte técnico ou o distribuidor do aplicativo.'
+ResolveProblem_CallSupport			= 'É recomendável entrar em contato com o Suporte Técnico para descobrir o motivo do bloqueio. Para restaurar a funcionalidade do aplicativo, adquira uma nova licença.'
+ResolveProblem_ContactSupport		= 'Entre em contato com o Suporte Técnico.'
+ResolveProblem_ActialLicense		= 'Para reiniciar a proteção do computador, insira um novo código de ativação.'
+ResolveProblem_UpdateAgain			= 'É recomendável atualizar os bancos de dados novamente.'
+ResolveProblem_BuyNewLicense		= 'Para reiniciar a proteção do computador, adquira uma nova licença.'
+ResolveProblem_CallProvider			= 'Para reiniciar a assinatura, entre em contato com seu provedor de serviços.'
+ResolveProblem_ProviderWebSite		= 'Para reiniciar a assinatura, entre em contato com seu provedor de serviços.'
+ResolveProblem_RenewalNotAvailable	= 'Renovação de assinatura indisponível.'
+ResolveProblem_BuyLicense			= 'Para reiniciar a proteção do computador, compre uma licença comercial da Kaspersky Lab ou de nossos distribuidores. A versão de avaliação somente pode ser usada uma vez.'
+ResolveProblem_Reinstall			= 'Reinstalar o aplicativo.'
+ResolveProblem_RenewLicense			= 'Para ativar a funcionalidade completa, renove a licença.'
+ResolveProblem_RefreshSubscription	= 'Atualize o status da assinatura manualmente.'
+ResolveProblem_Activate				= 'Insira o código de ativação para ativar o aplicativo.'
+ResolveProblem_ActivateReserveCode  = 'Tente ativar o aplicativo com o novo código de ativação manualmente.'
+ResolveProblem_ActivateCodeManual	= 'Ativar o aplicativo manualmente.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Verifique as configurações de conexão com a Internet e aguarde pela ativação automática ou ative o aplicativo manualmente.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' É necessário inserir um novo código de ativação. O aplicativo será ativado com este código de ativação depois da licença atual expirar.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' É necessário ativar o aplicativo usando um código de ativação antes da licença de avaliação expirar.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Para reiniciar a funcionalidade completa do aplicativo, é necessário comprar uma licença comercial da Kaspersky Lab ou de nossos distribuidores.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' É necessário ativar o aplicativo usando um código de ativação antes da licença de avaliação expirar.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' É necessário inserir um novo código de ativação. O aplicativo será ativado com este código de ativação depois da licença atual expirar.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'O status de proteção está indefinido. '
+ProtectionLevelNoFeaturesLong = 'A proteção está desativada. '
+ProtectionLevelLimitedLong = 'A funcionalidade do aplicativo é limitada. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'O status de atualização está indefinido. '
+UpdaterLevelNotAllowedLong = 'A atualização não está disponível. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'indefinida'
+SubscriptionStateActive = 'ativa'
+SubscriptionStatePaused = 'suspensa'
+SubscriptionStateCancelledSoft = 'suspensa'
+SubscriptionStateCancelledHard = 'cancelada'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'indefinida'
+SubscriptionStatusReasonProviderInitiated = 'ativada pelo fornecedor de serviço'
+SubscriptionStatusReasonCreditCardAuthFailed = 'autorização do cartão de crédito rejeitada'
+SubscriptionStatusReasonCustomerInitiated = 'ativada pelo usuário'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'autorização do cartão de crédito aceite'
+
+ProductStatusRelease = 'versão de lançamento'
+ProductStatusBeta = 'versão beta'
+
+LegalStatusBlocked = 'licença bloqueada'
+LegalStatusLimited = 'contrato de licença violado'
+LegalStatusValid = 'a licença está efetiva'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Existe uma notificação importante da licença.\n<a href="licensemanager">Detalhes...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'A assinatura expirou. Para renovar a assinatura, entre em contato com seu provedor de serviços.'
+
+LicensingState_WarningIsAvailable = 'existe um aviso'
+ProtectionState_NotificationIsAvailable = 'Notificação sobre a licença'
+LicensingState_ProblemIsAvailable = 'existe um problema'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Seu software do Kaspersky Security irá expirar em ' + $LicenseDaysToExpiry + ' dias, deixando seu PC desprotegido'
+LNCS_BBY_WillExpire_Description =	'Para continuar a proteção, renove on-line no The Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Title =	    'Seu software do Kaspersky Security está prestes a expirar'
+LNCS_BBY_AboutToExpire_Description = 'Há somente ' + $LicenseDaysToExpiry + ' remanescentes em sua cobertura, e então seu PC estará desprotegido. Renove agora ao contatar a Equipe de Assinatura de Software The Geek Squad on-line no The Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Seu software do Kaspersky Security está prestes a expirar hoje, deixando seu PC desprotegido'
+LNCS_BBY_AboutToExpire_Today_Description = 'Renove já entrando em contato com a equipe on-line de software de assinaturas The Geek Squad no The Geek Squad Renewal Center'
+
+LNCS_BBY_LastDay_Title =	'Aviso! Seu software do Kaspersky Security expira hoje'
+LNCS_BBY_LastDay_Description =	'Não deixe seu PC ficar desprotegido. Renove on-line no The Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Aviso! Seu software do Kaspersky Security expira hoje. Não deixe seu PC ficar desprotegido. Renove online em <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Aviso! Seu PC está desprotegido'
+LNCS_BBY_Grace_Description =	'Não deixe seu PC ficar desprotegido. Renove on-line no The Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Não deixe seu PC ficar desprotegido. Renove on-line no The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Aviso! Seu PC está desprotegido. Não deixe seu PC ficar desprotegido. Renove online em <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Não foi possível renovar seu software do Kaspersky Security'
+LNCS_BBY_RenewFailure_Description = 'Renove on-line no The Geek Squad Renewal Center'
+LNCS_BBY_RenewFailure_Description_Full = 'Renove on-line no The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Não foi possível renovar seu software do Kaspersky Security. Renove on-line no <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Seu Plano de Proteção Kaspersky está em risco de ser cancelado porque seu cartão de crédito armazenado em arquivo está prestes a expirar'
+LNCS_BBY_CCAboutToExpire_Description =	'Renove on-line no The Geek Squad Renewal Center'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Renove on-line no The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'A assinatura expirou'
+LNCS_BBY_Expired_Description =	'Renovação de assinatura indisponível.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Tire partido da renovação de seu software Kaspersky Anti-Virus antes da expiração e poupe $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Tire partido da renovação de seu software Kaspersky Anti-Virus antes da expiração e poupe $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Tire partido da renovação de seu software Kaspersky Anti-Virus antes da expiração e poupe $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Tire partido da renovação do seu software Kaspersky Anti-Virus antes da expiração e poupe $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Tire partido da renovação do seu software Kaspersky Internet Security antes da expiração e poupe $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Tire partido da renovação do seu software Kaspersky Internet Security antes da expiração e poupe $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Tire partido da renovação do seu software Kaspersky Internet Security antes da expiração e poupe $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Tire partido da renovação de seu software Kaspersky Internet Security antes da expiração e poupe $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Renovar Agora</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Seu software Kaspersky Anti-Virus está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Seu software Kaspersky Anti-Virus está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Seu software Kaspersky Anti-Virus está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Seu software Kaspersky Anti-Virus está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Seu software Kaspersky Internet Security está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Seu software Kaspersky Internet Security está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Seu software Kaspersky Internet Security está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Seu software Kaspersky Internet Security está expirando!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Clique aqui</a> para poupar $5 no preço de sua renovação anual.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Clique aqui</a> para poupar $10 no preço de sua renovação anual.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Clique aqui</a> para poupar $15 no preço de sua renovação anual.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Clique aqui</a> para poupar $20 no preço de sua renovação anual.'
+
+LNCS_BBY_StatusUpdate = 'O estado do produto pode demorar até 24 horas para ser alterado. Clique em "Atualizar o status da assinatura" algumas horas depois de completar o processo de renovação no The Geek Squad Renewal Center para forçar o produto a verificar se existe uma atualização.'
+
+EndOfLicense_Header = 'Relatório de desempenho do aplicativo'
+WelcomPageTitle = 'Bem-vindo ao ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'A versão do sistema operacional foi alterada após a instalação do ' + $ProductName
+ReinstallWarningDescription = 'Instale o ' + $ProductName + ' novamente'
+
+IncompatibleOsVersionTitle = 'O ' + $ProductName + ' está pausado'
+IncompatibleOsVersionDescription = 'Para um funcionamento correto do ' + $ProductName + ' após a instalação do Microsoft Windows 8 você deve reinstalar alguns componentes de aplicativos. A instalação não demorará mais do que 2 minutos.' + '\n\nDurante a configuração do ' + $ProductName + ' no Microsoft Windows 8, a proteção de seu computador\'s será limitada.'
+
+ReinstallWarningOkButton = 'Detalhes'
+IncompatibleOsVersionOkButton = 'Instalar e executar'
+
+BrowserWaitingMessage = 'Aguarde...'
+
+OsUpgradedTitle = 'Atualização do sistema operacional'
+OsUpgradedDescription = 'Atualização do sistema operacional concluída com êxito.'

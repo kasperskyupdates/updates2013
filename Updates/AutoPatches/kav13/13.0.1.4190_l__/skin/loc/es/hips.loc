@@ -1,0 +1,1216 @@
+﻿[Global]
+$now                            = "hoy"
+$OpenedPorts                    = "abiertos: "+ count
+$Connections                    = "conexiones: "+ count
+$SystemWatch                    = "Control de aplicaciones"
+$SW2                            = "System Watcher"
+$Hips                           = "Control de aplicaciones"
+$Fw                             = "Firewall"
+$NetworkWatcher                 = "Monitor de red"
+$Source                         = "Origen:"
+$Target                         = "Destino:"
+$Protocol                       = "Protocolo:"
+$OtherNetworks                  = "Otras redes"
+$BrowseForExecutable            = "Selección de módulos ejecutables"
+$PacketRules                    = "Reglas para paquetes"
+$KavDescr_sw                    = switch("kis", "ProductTitleLong", "") + " también contiene los componentes " + $Hips + " y " + $Fw + ", que ofrecen en conjunto un control total de las aplicaciones. La función Monitor de red también está disponible en la aplicación."
+CantCloseActiveNetStat          = "La ventana se cerrará después de detener la tarea."
+ErrResolvingIp.caption          = "No se puede resolver la dirección IP"
+ErrResolvingIp                  = "No se puede resolver la dirección IP, probablemente especificó un nombre de equipo incorrecto."
+ErrPortsList.caption			= "Se ha especificado una lista de puertos de red no válida"
+ErrPortsList					= "Introduzca una lista de puertos de red válida"
+WarnPortsList.caption			= "La lista especificada de puertos de red es incorrecta"
+WarnPortsList					= "La lista tiene entradas repetidas"
+AppIsRunning.caption            = "Reglas de la aplicación"
+AppIsRunning                    = "No se pueden eliminar reglas de una aplicación actualmente en ejecución."
+ServiceNotMatch.caption         = "Servicio de red no válido"
+ServiceNotMatch                 = "El servicio de red seleccionado no corresponde a la actividad de red mostrada. Especifique un servicio de red válido."
+NeedService.caption             = "No se especificó el servicio de red"
+NeedService                     = "Para elegir un servicio de red, debe seleccionar uno de los elementos de la lista."
+NeedAddress.caption             = "No se especificó el grupo de direcciones"
+NeedAddress                     = "Para elegir un grupo de direcciones, debe seleccionar uno de los elementos de la lista."
+NeedName.caption                = "Nombre no especificado"
+NeedName                        = "Especifique el nombre."
+NeedAddresses.caption           = "Ninguna dirección de red no especificada"
+NeedAddresses                   = "Para agregar una dirección de red, haga clic en el vínculo \"Agregar\"."
+WrongAction.caption             = "Acción incorrecta"
+WrongAction                     = "La acción \"Proceso de acuerdo con las reglas de aplicación\" está únicamente disponible para los protocolos TCP y UDP. Seleccione un servicio de red que utilice el protocolo TCP o UDP."
+ConfirmDenyDevice               = "Atención. Apagar dispositivos de juego puede impedir el funcionamiento correcto del teclado y ratón USB. ¿Desea continuar?"
+ConfirmDenyTrustedApp           = "Atención. reducir los permisos de componentes en el sistema operativo puede ser causa de inestabilidad. ¿Desea continuar?"
+ConfirmDenyTrustedApp.caption   = $ProductName
+ConfirmDeleteNetResources	= "Al eliminar un servicio de red, también se eliminarán las reglas de filtrado correspondientes.\n¿Está seguro de que desea quitar los servicios?"
+ConfirmDeleteNetResourcesAddr   = "Al eliminar una dirección de red, también se eliminarán las reglas de filtrado correspondientes.\n¿Está seguro de que desea quitar la dirección o direcciones?"
+$TipText_Hips_InBytes           = "Tráfico entrante: " + e + " " + f_SizeType(e_abs)
+$TipText_Hips_OutBytes          = "Tráfico saliente: " + e + " " + f_SizeType(e_abs)
+$TipText_Hips_UntrustAppCount   = "Aplicaciones no fiables: "
+$TipText_pdm_TreatsCount        = "Comportamiento sospechoso: "
+$NoDetailsAvailable             = "Información detallada no disponible"
+$AreYouRealyWantToCloseSettings = "Se ha modificado la configuración. \n\nSi cierra la ventana de configuración, se perderán todas las modificaciones.\n¿Está seguro de que desea cerrar la ventana de configuración?"
+$ByUser                         = " (asociado por usuario)"
+$ByParent                       = " (asociado por secuencia de ejecución)"
+$Search                         = "Buscar"
+$CreateRule                     = "Regla creada" 
+$TryNow                         = "Probar ahora"
+$BuyNow                         = "Comprar ahora"
+$AntiPhishing                   = "Antifraudes"
+$TwoFirewall                    = "Firewall"
+$GeoSecurity                    = "Filtrado Geográfico"
+$TotalScanned                   = "Total de analizados: "
+$KSNDisabled                    = "No participa en la red de seguridad de Kaspersky"
+$GeoSharingCountryOther         = "Otros países"
+$NewWebServiceName              = "Regla de red n.º" + vRuleList.size("RuleTypeId == #HIPS_RULE_TYPE_PACKET")
+
+NameIsWrong = "El nombre no puede contener símbolos especiales, como" + $InvalidFileNameCharacters
+
+$NetRuleDescr = "<b>Descripción de la regla</b>\n\n" + $NetRuleDescr_Action + "\n" + $NetRuleDescr_Protocol + $NetRuleDescr_Direction + $NetRuleDescr_RemotePorts + $NetRuleDescr_LocalPorts + $NetRuleDescr_RemoteAddr
+$NetRuleDescr_Action = "Acción: <a NetRuleActionEdit onclick(menu(\"PacketRuleList.Menu\"))>" + s_AppRule(AccessFlag & #HIPS_FLAG_ALL_ACTIONS) + "</a>\n"
+$NetRuleDescr_Protocol = if(l_ws.Data.Flags & #wsProtocol, "Protocolo: <a onclick(ctl.parent.List.edit(dialog(\"[PacketRuleEdit]\")))>" + f_NetProtocol(l_ws.Data) + "</a>\n")
+$NetRuleDescr_Direction = "Dirección: <a onclick(ctl.parent.List.edit(dialog(\"[PacketRuleEdit]\")))>" + s_NetDirection(l_ws.Data.Direction) + "</a>\n"
+$NetRuleDescr_RemotePorts = if(l_ws.Data.RemotePorts.size(), "Puertos remotos: <a onclick(ctl.parent.List.edit(dialog(\"[PacketRuleEdit]\")))>" + f_formatPorts(l_ws.Data.RemotePorts) + "</a>\n")
+$NetRuleDescr_LocalPorts  = if(l_ws.Data.LocalPorts.size(),  "Puertos remotos: <a onclick(ctl.parent.List.edit(dialog(\"[PacketRuleEdit]\")))>" + f_formatPorts(l_ws.Data.LocalPorts) + "</a>\n")
+$NetRuleDescr_RemoteAddr = if(l_ip.Data.serid() == #SeveritySerId || l_ip.Data.serid() == #IpRangeSerId, "Direcciones remotas: <a onclick(ctl.parent.List.edit(dialog(\"[PacketRuleEdit]\")))>" + f_RemoteAddrText(l_ip.Data) + "</a>\n")
+
+$NetRuleDescrReadOnly = "<b>Descripción de la regla</b>\n\n" + $NetRuleRead_Action + "\n" + $NetRuleRead_Protocol + $NetRuleRead_Direction + $NetRuleRead_RemotePorts + $NetRuleRead_LocalPorts + $NetRuleRead_RemoteAddr
+$NetRuleRead_Action = "Acción: " + s_AppRule(AccessFlag & #HIPS_FLAG_ALL_ACTIONS) + "\n"
+$NetRuleRead_Protocol = if(l_ws.Data.Flags & #wsProtocol, "Protocolo: " + f_NetProtocol(l_ws.Data) + "\n")
+$NetRuleRead_Direction = "Dirección: " + s_NetDirection(l_ws.Data.Direction) + "\n"
+$NetRuleRead_RemotePorts = if(l_ws.Data.RemotePorts.size(), "Puertos remotos: " + f_formatPorts(l_ws.Data.RemotePorts) + "\n")
+$NetRuleRead_LocalPorts  = if(l_ws.Data.LocalPorts.size(),  "Puertos remotos: " + f_formatPorts(l_ws.Data.LocalPorts) + "\n")
+$NetRuleRead_RemoteAddr = if(l_ip.Data.serid() == #SeveritySerId || l_ip.Data.serid() == #IpRangeSerId, "Direcciones remotas: " + f_RemoteAddrText(l_ip.Data) + "\n")
+
+#warnFLT_DEV_ERR                = 0x1bf8d001
+
+$CleanHistoryAtExit             = "Borrar los datos de Modo Seguro al salir"
+
+HistorySaved                    = "Informe guardado en " + History.sHistoryPath
+HistoryNotSaved                 = "Error al guardar el informe." + ErrorCode
+
+ConfirmChangeStatusWithChild    = "Al modificar el grupo de la aplicación, también se modificará el grupo de las aplicaciones que se ejecutaron desde él.\n¿Está seguro de que desea modificar el grupo de esta aplicación?"
+ConfirmChangeCustomStatus       = "Todos los cambios personalizados del control de la aplicación y el firewall se perderán si se cambia el grupo.\n¿Está seguro de que desea " + (p_CtlVal == #HIPS_APP_ID_DEFAULT ? "restaurar el grupo predeterminado?" : "mover a \"" + s_AppStatusName(p_CtlVal) + "\" el grupo?")
+KillProcessConfirm              = "¿Confirma que desea terminar la aplicación \"" + s_AppName(Id) + "\"?"
+
+#WEEK_FROM_SUNDAY               = 0
+
+$AddedByUser					= "Agregado por el usuario"
+$NoInfo							= "No se encuentra la información"
+
+[s_ResGroupName]
+KLRoot                      = "Todos los recursos"
+KLSystemData                = "Sistema operativo"
+KLPrivateData               = "Datos de identidad"
+KLPublicData                = "Datos públicos"
+KLStartupRegKeys            = "Parámetros del inicio"
+KLInternetSecRegKeys        = "Seguridad online"
+KLPrivateUserFiles          = "Archivos de usuario"
+KLSystemFiles               = "Archivos de sistema"
+KLSystemSecRegKeys          = "Configuración de seguridad"
+KLSystemServicesRegKeys     = "Servicios del sistema"
+KLCriticalParams			= "Parámetros críticos"
+KLStartUpFolders            = "Carpetas de Autoejecución"
+KLIESettingsRegKeys         = "Configuración de Microsoft Internet Explorer"
+KLIEPlugInsRegKeys          = "Complementos para Microsoft Internet Explorer"
+KLExplorerSettingsRegKeys   = "Configuración del Explorador de Windows"
+KLNetwork                   = "Redes"
+KLTrusted                   = "Redes de confianza"
+KLLocal                     = "Redes locales"
+KLPublic                    = "Redes públicas"
+KLPrivileges                = "Permisos"
+KLPermissionShell           = "Modificación del ambiente de ejecución"
+KLPermissionAppAccess       = "Acceso a otros procesos"
+KLPermissionSystem          = "Modificación del sistema"
+KLPermissionProcManage      = "Control de proceso"
+KLPermissionProcEmbed       = "Intrusión en otros procesos"
+KLPermissionSysObjAccess    = "Acceso a objetos del sistema"
+KLPermissionStrange         = "Modificaciones sospechosas del sistema"
+KLPermissionMemoryAccess    = "Acceso a memoria"
+KLPermissionPrivileges      = "Modificaación de permisos"
+KLPermissionHiddenNetAct    = "Acceso oculto a la red"
+KLStartProc                 = "Inicio de otros procesos"
+KLStopProc                  = "Detención de otros procesos"
+KLSuspend                   = "Suspensión de otros procesos y subprocesos"
+KLSuspProcessInteraction	= "Operaciones sospechosas"
+KLSchedulerStart            = "Ejecución del programador de tareas"
+KLWMSend                    = "Envío de mensajes Windows a otros procesos"
+KLSetHook                   = "Instalación de subcontroles (Hooks)"
+KLCodeInject                = "Infiltración de código"
+KLAttachThreadInput         = "Subcontrol mensajes entrantes del flujo"
+KLDrvStart                  = "Inicio de controlador"
+KLOlePortAccess             = "Utilizando interfaces de programas de otras aplicaciones"
+KLCreateKnownDlls           = "Cambio en módulos de sistema (KnownDlls)"
+;KLServiceStart              = "Запуск сервиса"
+KLKeyLogger                 = "Actividad de Keylogger"
+KLScreenshots               = "Capturando pantalla"
+KLSelfStart                 = "Ejecutar"
+KLLLDiskAccess              = "Acceso de bajo nivel al disco"
+KLLLFSAccess                = "Acceso de bajo nivel al sistema de archivos"
+;KLClipBoardAccess           = "Доступ к буферу обмена"
+KLCriticalCOMAccess         = "Acceso a objetos críticos del sistema"
+KLCreateRegHiddKey          = "Creación de claves de Registro ocultas"
+KLSetHardLink               = "Creación de vínculo directo a archivo"
+;KLADSAccess                 = "Доступ к файловым потокам"
+KLDirectMemAccess           = "Acceso directo a memoria física"
+KLReadProcMem               = "Lectura de memoria de otros procesos"
+KLSetDbgPrivilege           = "Definición de permisos de depuración"
+KLChangeObjPrivilege        = "Cambiando permisos de acceso al objeto"
+KLUseBrowserCL              = "Uso de la línea de comandos del navegador"
+KLUseBrowserAPI             = "Usar interfaces software del navegador"
+KLUseDNS                    = "Uso de interfaces del programas sistema (DNS)"
+KLUseBITS                   = "Uso de interfaces de programas sistema"
+KLWindowsShutDown           = "Salida de Microsoft Windows"
+KLSaveRegKey                = "Guardado de claves del Registro en archivo"
+KLPrtStgAccess              = "Acceso a almacenamiento de contraseñas"
+KLWebServices               = "Servicios de red"
+KLIPRanges                  = "Direcciones de red"
+KLShellWindowsAcceess       = "Acceso a datos internos del navegador"
+KLUserAccountAccess         = "Acceso a la configuración de cuentas de usuario"
+KLOtherSoft                 = "Configuración del programa"
+KLInternetBrowsers          = "Navegadores Internet"
+KLFileBrowsers              = "Administradores de archivos"
+KLMail                      = "Clientes de correo"
+KLMessengers                = "Clientes de mensajería instantánea"
+KLDownloadManagers          = "Administradores de descargas"
+KLFTPManagers               = "Administrador FTP"
+KLOnLineMoney               = "Monederos electrónicos"
+KLProtected_applications    = "Aplicaciones protegidas"
+KLDuplicateHandle           = "Duplicación de controlador"
+KLWinSpool                  = "Administrando controlador de impresora"
+KLDeleteService             = "Eliminando servicio"
+KLStartService              = "Iniciando servicio"
+KLControlService            = "Administrando servicio"
+KLChangeServiceConfig       = "Modificando la configuración de la impresora"
+KLOpenService               = "Abriendo servicio para escribir"
+KLReadOpenService           = "Abriendo servicio para leer"
+KLCreateService             = "Creando servicio"
+Antiviruses					= "Antivirus"
+KLVMOperation				= "Modificando la memoria de otros procesos"
+<empty>                     = "Desconocido"
+default                     = @
+
+[s_AppGroupName]
+KLAppRoot           = "Todas las aplicaciones"
+KLAppTrusted        = "De confianza"
+KLAppSecurity       = "Seguridad"
+KLAppRestrictedLow  = "Restricción mínima"
+KLAppRestrictedHi   = "Restricción máxima"
+KLAppUntrusted      = "No fiable"
+default             = @
+
+[s_AppStatusName]
+#HIPS_APP_ID_TRUSTED        = "De confianza"
+#HIPS_APP_ID_LO_REST        = "Restricción mínima"
+#HIPS_APP_ID_HI_REST        = "Restricción máxima"
+#HIPS_APP_ID_UNTRUSTED      = "No fiable"
+#HIPS_APP_ID_DEFAULT        = "Restaurar grupo predeterminado"
+#HIPS_APP_ID_HIPSNOTRUNNING = "No controlado"
+#HIPS_APP_ID_UNKNOWN        = ""
+default                     = "Configuración personalizada"
+
+[s_AppStatusDetails]
+#HIPS_APP_ID_TRUSTED        = s_AppGroupDetails("KLAppTrusted")
+#HIPS_APP_ID_LO_REST        = s_AppGroupDetails("KLAppRestrictedLow")
+#HIPS_APP_ID_HI_REST        = s_AppGroupDetails("KLAppRestrictedHi")
+#HIPS_APP_ID_UNTRUSTED      = s_AppGroupDetails("KLAppUntrusted")
+#HIPS_APP_ID_HIPSNOTRUNNING = "La aplicación no está supervisada porque \"" + $Hips + "\" está desactivado."
+
+[s_AppGroupDetails]
+KLAppTrusted        = "El grupo \"De confianza\" contiene aplicaciones con firma digital de proveedores de confianza y las aplicaciones que se encuentran listadas en la base de datos centralizada de software conocido.\nNo se aplican restricciones especiales a dichas aplicaciones, aunque el componente \"Antivirus de archivos\" también las supervisa."
+KLAppRestrictedLow  = "El grupo \"Restricción mínima\" contiene aplicaciones sin firma digital que no están presentes en la base de datos centralizada de software conocido, pero que poseen un cómputo heurístico de riesgo de amenaza bajo.\nEstas aplicaciones no tienen permitido el acceso a datos de usuarios y configuraciones personales ni la modificación de datos públicos. Además, al producirse un intento de modificación de datos del sistema o de realizar operaciones con privilegios, se solicitará al usuario que confirme dichas operaciones. La actividad de red de las aplicaciones de este grupo es asimismo restringida."
+KLAppRestrictedHi   = "El grupo \"Restricción máxima\" contiene aplicaciones sin firma digital que no están presentes en la base de datos centralizada de software conocido y que poseen un cómputo heurístico de riesgo de amenaza elevado.\nEstas aplicaciones no pueden acceder a datos de usuarios y configuraciones personales, ni modificar datos públicos y del sistema. Al producirse un intento de realizar una operación con privilegios, se solicitará al usuario que confirme dicha operación. La actividad de red de las aplicaciones de este grupo está bloqueada."
+KLAppUntrusted      = "El grupo \"No fiable\" contiene aplicaciones sin firma digital que no están presentes en la base de datos centralizada de software conocido y que poseen un cómputo heurístico de riesgo de amenaza muy elevado.\nEl funcionamiento de dichas aplicaciones está totalmente bloqueado en el equipo del usuario."
+;KLAppSecurity       = "Безопасность"
+default             = ""
+
+[s_AppRule]
+#HIPS_FLAG_ALLOW    = "Autorizar"
+#HIPS_FLAG_DENY     = "Bloquear"
+#HIPS_FLAG_ASK      = "Preguntar al usuario"
+#HIPS_FLAG_BYAPP    = "De acuerdo con la regla de aplicación"
+#HIPS_FLAG_INHERIT  = "Heredar"
+#HIPS_FLAG_LOG      = "Registrar eventos"
+
+[s_RuleStateTxt]
+#HIPS_RULE_STATE_DENY
+#HIPS_RULE_STATE_INH_DENY   = "Bloquear"
+#HIPS_RULE_STATE_ALLOW
+#HIPS_RULE_STATE_INH_ALLOW  = "Autorizar"
+#HIPS_RULE_STATE_ASK
+#HIPS_RULE_STATE_INH_ASK    = "Preguntar al usuario"
+#HIPS_RULE_STATE_MIX
+#HIPS_RULE_STATE_INH_MIX    = "Estado mixto"
+
+[s_NetDirection]
+#wsIn           = "Entrante (paquete)"
+#wsOut          = "Saliente (paquete)"
+#wsInOut        = "Entrante/Saliente"
+#wsInStream     = "Entrante"
+#wsOutStream    = "Saliente"
+
+[s_NetSeverity]
+#znAll          = "Todas las redes"
+#znUntrusted    = "Red pública" + if(@1, ", stealthed")
+#znNetBIOS      = "Red local"
+#znTrusted      = "Red de confianza"
+
+[f_NetConnected]
+ret = @ ? "Conectado" + if(@1, " mediante " + @1) : "Desconectado"
+
+[s_NetType]
+#If_LoopBack    = "LoopBack"
+#If_Ethernet    = "Red cableada (Ethernet)"
+#If_WiFi        = "Red inalámbrica (WiFi)" + if(@1 != null, "\n(" + s_WiFiSecLevel(@1) + ")")
+#If_Tunnel      = "Túnel"
+#If_PPP         = "Conexión PPP"
+#If_PPPoE       = "Conexión PPPoE"
+#If_VPN         = "Conexión VPN"
+#If_Modem       = "Conexión por módem"
+#If_Internet    = "Internet"
+def             = "Otro"
+
+[s_WiFiSecLevel]
+0   = "no segura"
+def = "seguridad activada"
+
+[HipsRules]
+@ = p_fwTabs ? "Firewall" : "Protección de la identidad digital"
+
+[HipsRules_Tab]
+Rules         = "Reglas de la aplicación"
+ConfRes       = "Datos de identidad"
+OSRes         = "Sistema operativo"
+ExclusionsRes = "Exclusiones"
+Packets       = "Reglas para paquetes"
+Nets          = "Redes"
+Resources     = "Recursos"
+
+[HipsRules_AppCategoryCombo]
+All = "Todas las aplicaciones"
+Network = "Aplicaciones de red"
+
+[HipsRules_Tab_Resources_GrpList_Ex]
+Toolbar.Other = "Agregar categoría"
+
+[HipsRules_Tab_Resources_GrpList]
+Group    = "Recurso"
+Resource = "Ruta"
+
+[HipsRules_Tab_Resources_ResList]
+Group    = "Recurso"
+Resource = "Ruta"
+
+[SystemMonitor_Tab_Exclusions_List]
+Group    = "Recurso"
+Resource = "Ruta"
+
+[BrowseForNamedRes]
+@ = "Recurso de usuario"
+
+[BrowseForNamedRes_Body]
+Name.Name = "Nombre:"
+Value.Name = "Ruta:"
+Browse = "Examinar..."
+
+[HipsRules_Tab_NetResources_Srv]
+Resource = "Servicio de red"
+
+[HipsRules_Tab_NetResources_Addr]
+Resource = "Dirección de red"
+
+[Rules_Legend]
+Allow = "Autorizado"
+Deny  = "Bloqueado"
+Ask   = "- solicitud de acción"
+Mix   = "- reglas distintas"
+ByApp = "- procesar conforme a la regla de la aplicación"
+
+[HipsRules_Tab_RulesList]
+Name    = "Grupos y aplicaciones"
+Network = "Permiso"
+Popularity = "Popularidad"
+Traffic = "Tráfico"
+
+[HipsRules_Tab_Rules_Name]
+Name    = "Nombre"
+Path    = "Ruta"
+
+[HipsRules_Tab_Rules_Traffic]
+TrafficIn  = "Entrantes"
+TrafficOut = "Salientes"
+
+[HipsRulesList.Footer]
+Add         = "Agregar"
+AddGroup    = "Agregar grupo"
+Edit        = "Modificar"
+Delete      = "Eliminar"
+Move        = "Mover a"
+
+[HipsRules_Tab_Nets1]
+Toolbar.Other = "Desconectado"
+
+[HipsRules_Tab_Nets]
+Name        = "Nombre"
+Status      = "Estado"
+Severity    = "Categoría"
+
+[HipsRules_Tab_Nets.Menu]
+Trusted     = "Red de confianza"
+Local       = "Red local"
+Untrusted   = "Red pública"
+Separator
+Stealth     = "Modo invisible"
+
+[HipsGroups]
+@    = p_fwRules ? "Reglas del firewall" : "Reglas del control de actividad"
+
+[HipsGroups_Rules]
+Name = "Tipo de aplicación"
+
+[HipsGroupsList.Footer]
+Edit  = "Modificar"
+
+[MainWindow.Hips_Filters_Menu]
+ByTime      = "Agrupar por hora"
+AllItems    = "No agrupar"
+ByApp       = "Agrupar por aplicación"
+
+[MainWindow.Hips_Filters2_Menu]
+ByTime      = "Agrupar por hora"
+AllItems    = "No agrupar"
+ByApp       = "Agrupar por proveedor"
+
+[Hips_ResListAddMenu]
+File        = "Archivo o carpeta"
+Registry    = "Clave de Registro"
+
+[Hips_GroupNameEdit]
+@ = "Categoría de datos de identidad"
+
+[Hips_AppGroupNameEdit]
+@ = "Grupo de aplicaciones"
+
+[HipsRuleColumn.Menu]
+Inherit = "Heredar"
+Allow   = "Autorizar"
+Ask     = "Preguntar al usuario"
+Deny    = "Bloquear"
+
+[AppRules]
+@ = "Aplicaciones"
+
+[AppRules_Body_DisplayArea]
+Toolbar.Delete = "Eliminar de la lista"
+Toolbar.Edit   = "Modificar"
+
+[AppRules_Body_DisplayArea_List]
+Name       = "Grupos y aplicaciones"
+Status     = "Categoría"
+Popularity = "Popularidad"
+
+[AppRules_Body_AppCategoryCombo]
+All          = "Todas las aplicaciones"
+StartUp      = "Ejecución al iniciar"
+
+[AppRules_Body_Legend]
+SystemStatus   = " - estado del sistema"
+UserStatus     = " - grupo seleccionado por el usuario"
+CustomSettings = " - configuración modificada por el usuario"
+
+[AppRules_Body_DisplayArea_Menu]
+DeleteProgram   = "Eliminar de la lista"
+MakeSubgroup    = "Crear subgrupo"
+ResetAppRules   = "Restaurar la configuración"
+ResetGroupRules = "Restaurar la configuración"
+Category        = "Mover al grupo"
+DeleteGroup     = "Eliminar"
+
+[AppRules_Body_DisplayArea_Menu_ResetGroupRules]
+ResetSelected    = "solo grupos"
+ResetRecursively = "todos los subgrupos y aplicaciones"
+
+[s_AppRulesMenuItemText]
+1   = "Reglas del grupo..."
+def = "Reglas de la aplicación..."
+
+;---------- WebServiceEdit ------------
+
+[WebServiceEdit]
+@                   = "Servicio de red"
+
+[WebServiceEdit_Body]
+Name.Name           = "Nombre:"
+Protocol.Name       = "Protocolo:"
+Direction.Name      = "Dirección:"
+IcmpType.Name       = "Tipo de ICMP:"
+IcmpCode.Name       = "Código ICMP:"
+RemotePorts.Name    = "Puertos remotos:"
+LocalPorts.Name     = "Puertos locales:"
+
+[IpRangeEdit]
+@           = "Direcciones de red"
+
+[IpRangeEdit_Body]
+Name.Name   = "Nombre:"
+LocalAddrs  = "Direcciones locales"
+RemoteAddrs = "Direcciones remotas"
+
+;---------- AddressEdit ------------
+
+[AddressEdit]
+@           = "Dirección IP o nombre DNS"
+@.Example   = "Ejemplo: kaspersky.com, 1.2.3.4(/24), 1234::cdef(/96)"
+
+[IpEdit]
+@           = "Dirección IP"
+@.Example   = "Ejemplo: 1.2.3.4(/24), 1234::cdef(/96)"
+
+[ResolveIp]
+@       = "Resolviendo la dirección IP"
+
+[ResolveIp_Body]
+Text    = "Resolviendo la dirección IP. Espere..."
+
+;---------- PacketRuleList ------------
+
+[HipsRules_Tab_Packets_Info]
+Label       = "Las reglas del paquete tienen prioridad sobre las reglas de aplicación."
+Service     = "Servicio de red"
+Action      = "Permiso"
+Area        = "Dirección"
+Zone.Name   = "Mostrar reglas para redes con el estado siguiente:"
+DefRule     = "Visualizar las reglas de aplicación predeterminadas"
+Toolbar.Other = "Avanzado..."
+
+[HipsRules_Tab_Packets_View]
+All = "Todas las redes"
+
+[AppRulesEdit_Tab_Rules]
+Inherit = "Heredar las restricciones del proceso padre (aplicación)"
+Service = "Servicio de red"
+Action  = "Permiso"
+Area    = "Dirección"
+
+[PacketRuleList]
+Service = "Servicio de red"
+Action  = "Permiso"
+Area    = "Dirección"
+
+[PacketRuleList_Service]
+Name    = "Nombre"
+Direct  = "Dirección"
+Proto   = "Protocolo"
+RPorts  = "Puertos remotos"
+LPorts  = "Puertos locales"
+
+[PacketRuleList_Area]
+LocalAddr  = "Dirección local"
+RemoteAddr = "Dirección remota"
+
+;---------- PacketRuleEdit ------------
+
+[PacketRuleEdit]
+@       = "Regla para la red"
+
+[PacketRuleEdit_Body]
+Action.Name = "Acción:"
+Log     = "Registrar eventos"
+
+[PacketRuleEdit_Action]
+Allow   = "Autorizar"
+Block   = "Bloquear"
+Ask     = "Preguntar al usuario"
+Skip    = "Por reglas de la aplicación"
+
+[PacketRuleEdit_Address]
+Address.Name      = "Dirección:"
+RemoteAddrs.Name  = "Dirección remota:"
+LocalAddress.Name = "Dirección local:"
+
+[PacketRuleEdit_Address_Combo]
+Any     = "Cualquier dirección"
+Net     = "Dirección de subred"
+Group   = "Direcciones de la lista"
+
+;---------- PacketRuleCreate ------------
+
+[Global]
+$TcpOut = " intenta establecer una conexión TCP saliente con el equipo remoto " + f_NetAddr(RemoteIP) + " en el puerto remoto " + RemotePort
+$TcpIn  = " intenta aceptar una conexión TCP entrante del equipo remoto " + f_NetAddr(RemoteIP) + " al puerto local " + LocalPort
+$UdpOut = " intenta enviar un paquete UDP al equipo remoto " + f_NetAddr(RemoteIP) + " al puerto remoto " + RemotePort
+$UdpIn  = " intenta recibir un paquete UDP del equipo remoto " + f_NetAddr(RemoteIP) + " al puerto local " + LocalPort
+$IcmpOut = " intenta enviar un paquete ICMP al equipo remoto " + f_NetAddr(RemoteIP) + ", tipo de paquete: " + s_ICMPTypes(IcmpType)
+$IcmpIn  = " intenta recibir un paquete ICMP del equipo remoto " + f_NetAddr(RemoteIP) + ", tipo de paquete: " + s_ICMPTypes(IcmpType)
+$Icmp6Out= " intenta enviar un paquete ICMPv6 al equipo remoto " + f_NetAddr(RemoteIP) + ", tipo de paquete: " + s_ICMP6Types(IcmpType)
+$Icmp6In = " intenta recibir un paquete ICMPv6 del equipo remoto " + f_NetAddr(RemoteIP) + ", tipo de paquete: " + s_ICMP6Types(IcmpType)
+
+[PacketRuleCreate]
+@ = "Crear regla de aplicación"
+
+[PacketRuleCreatePages]
+Action.Name     = "Acción"
+Action.Descr    = "Seleccionar acción"
+Service.Name    = "Servicio de red"
+Service.Descr   = "Selección del servicio de red al que se aplicará la regla"
+Address.Name    = "Direcciones"
+Address.Descr   = "Selección de la dirección IP o del intervalo de direcciones para la regla"
+
+[PacketRuleCreate_Action]
+Next.Name   = "Siguiente"
+Next.Descr  = "Ir al paso siguiente"
+
+[PacketRuleCreate_Service]
+Filter      = "Mostrar únicamente servicios que correspondan a la actividad de red actual"
+Next.Name   = "Siguiente"
+Next.Descr  = "Ir al paso siguiente"
+
+[PacketRuleCreate_Address]
+Next.Name   = "Finalizar"
+Next.Descr  = "Fin del Asistente"
+
+[FwSettings]
+@           = "Avanzado"
+
+[FwSettings_Body]
+FtpTracking = "Autorizar FTP en modo activo"
+NoGuiAction = "Bloquear conexiones si no se puede pedir confirmación al usuario (interfaz de la aplicación no cargada)"
+OnShutdown  = "No desactivar el componente Firewall hasta la parada completa del sistema"
+
+;---------- FileInfo_Tab ------------
+
+[FileInfo_Tab]
+File.Name       = "Ruta:"
+
+[FileInfo_Tab_IfFileNotExist]
+Descr = "Información de archivo no encontrada."
+;File.Name   = "Путь:"
+
+[FileInfo_Tab_GroupProductInfo]
+File.Name       = "Ruta:"
+Version.Name    = "Versión:"
+Vendor.Name     = "Proveedor:"
+Product.Name    = "Programa:"
+Size.Name       = "Tamaño:"
+Created.Name    = "Creado:"
+Modified.Name   = "Modificado:"
+
+[FileInfo_Tab_GroupSignature]
+Group.Name      = "Estado/Grupo:"
+Rating.Name     = "Nivel de amenaza:"
+ScanResult.Name = "Detectados:"
+KLDataBase.Name = "Base de datos:"
+Origin.Name     = "Origen:"
+Sign.Name       = "Firma digital:"
+SignDate.Name   = "Fecha de firma:"
+
+[FileInfo_Tab_GroupKsn]
+Popularity.Name = "Número de usuarios:"
+Found.Name      = "Apareció en KSN:"
+Geography.Name  = "El más popular en:"
+
+[s_PMRating]
+default = if( (@ <= 40), @ == 0 ? "Seguro" : "Mínima") + if( (@ > 40 && @ <= 80), "Media") + if( (@ > 80 && @ <= 100), "Máxima") + " (rate: " + @ + ")"
+
+[f_SignStatus]
+ret = Signature.sSignerOrganization ? (Signature.sSignerOrganization + if(Signature.sSignerCommonName != Signature.sSignerOrganization, ", " + Signature.sSignerCommonName)) : (Signature.sSignerCommonName ? Signature.sSignerCommonName : "Ausente")
+
+;---------- AppExecuteChain ------------
+[AppExecuteChain]
+@ = "Secuencia de ejecución de la aplicación"
+
+[AppExecuteChain_List]
+StartTime = "Hora de ejecución"
+PID       = "Id. del proceso"
+Program   = "Aplicación"
+Status    = "Categoría"
+
+[AppExecuteChain_List_Program]
+Description = "Descripción"
+File        = "Archivo"
+Folder      = "Carpeta"
+Vendor      = "Proveedor"
+Product     = "Aplicación"
+Version     = "Versión"
+Size        = "Tamaño"
+Created     = "Creado"
+Modified    = "Ha cambiado"
+
+
+;---------- AppRulesEdit ------------
+
+[Global]
+$AppGroupByUser = if(AppDFlags & 0x02, "\n(agregado por el usuario)")
+
+[AppRulesEdit]
+@ = appID & #HIPS_APPID_FLAG_GROUP ? "Reglas de grupo" : (!p_OnlyFileInfo && f_isInstalled("Hips")) ? "Reglas de la aplicación" : "Información de la aplicación"
+
+[AppRulesEdit_Tab]
+Image       = "Archivo"
+Group       = "General"
+Files       = "Archivos y Registro del sistema"
+Permiss     = "Permisos"
+Net         = "Reglas para red"
+Runtime     = "Hora de ejecución"
+History     = "Historial"
+Excludes    = "Exclusiones"
+
+[AppRulesEdit_Tab_Runtime]
+ExecInf     = "Supervisión del programa"
+Changes     = "Modificación del programa"
+LParents    = "Secuencia de ejecución de la aplicación (lista de procesos padre)"
+
+[AppRulesEdit_Tab_Runtime_OpenProcesses]
+PID     = "Id. del proceso"
+User    = "Usuario"
+
+[AppRulesEdit_Tab_Runtime_Parents]
+Name    = "Aplicación"
+Group   = "Grupo"
+
+[AppRulesEdit_Tab_History_Execute]
+ExecLabel     = "Contador de ejecución: "
+LastExecLabel = "Última ejecución: "
+
+[AppRulesEdit_Tab_Changes_Created]
+Created.Name = "Creado:"
+
+[AppRulesEdit_Tab_Changes_Modified]
+Modified.Name = "Modificado:"
+
+[AppRulesEdit_Tab_Changes_Deleted]
+Deleted.Name = "Eliminados:"
+
+[AppRulesEdit_Tab_Rules_Select]
+Files   = "Archivos y Registro del sistema"
+Permiss = "Permisos"
+Net     = "Reglas para red"
+
+[AppRulesEdit_Tab_Rules_Files]
+Name    = "Recurso"
+Read    = "Leer"
+Write   = "Escribir"
+Remove  = "Eliminar"
+Create  = "Crear"
+
+[AppRulesEdit_Tab_Rules_Permiss]
+Name    = "Recurso"
+Allow   = "Permiso"
+
+[AppRulesEdit_Tab_Group]
+Name.Name   = "Nombre:"
+
+[AppRulesEdit_Tab_History_Events]
+@ = "Eventos"
+
+;---------- SnifferStatistic ------------
+
+[SnifferStatistic]
+@ = "Estadísticas del análisis de paquetes de red"
+
+[SnifferStatistic_Filter]
+RunFilter = " Filtrar "
+
+[SnifferStatistic.Footer]
+Close = "&Cerrar"
+
+[SnifferStatistic_RunPanel]
+Start   = "Ejecutar"
+Stop    = "Detener"
+Clear   = "&Borrar"
+
+[SnifferStatistic_Splitter_Frames]
+TimeOffset  = "Hora"
+Source      = $Source
+Target      = $Target
+Etype       = "Tipo"
+Protocol    = $Protocol
+
+;---------- AdapterEdit ------------
+
+[AdapterEdit]
+@ = "Adaptador de red"
+
+[AdapterEdit_Tab]
+General = "Principal"
+
+[AdapterEdit_Tab_General]
+NewNetwork = "Nuevas conexiones"
+
+[AdapterEdit_Tab_General_Info]
+Type.Name   = "Tipo:"
+Status.Name = "Categoría:"
+
+[AdapterEdit_Tab_General_NewNetwork]
+Legend      = "Realizar las accione siguientes si el equipo se conecta a la nueva red mediante este adaptador:"
+Ask         = "Preguntar por el grupo"
+AssignTo    = "Agregar automáticamente nuevas redes al grupo:"
+Stealth     = "Modo invisible"
+
+;---------- NetworkEdit ------------
+
+[NetworkEdit]
+@ = "Conexión de red"
+
+[NetworkEdit_Tab]
+General     = "Propiedades"
+Addresses   = "Direcciones"
+Settings    = "Avanzado"
+
+[NetworkEdit_Tab_General]
+Type.Name       = "Tipo:"
+WiFiName.Name   = "Nombre WiFi:"
+Status.Name     = "Estado:"
+LastConnect     = "Última conexión:"
+Created.Name    = "Creado:"
+Name.Name       = "Nombre:"
+Severity.Name   = "Categoría:"
+Stealth         = "Modo invisible"
+Area            = "Subredes adicionales"
+
+[NetworkEdit_Tab_Settings]
+ArpPoison   = "Protección contra ataques de red de envenenamiento ARP"
+Notify      = "Notificar"
+Action      = "Acción al establecer la conexión"
+
+[NetworkEdit_Tab_Settings_Notify]
+Connect = "Cuando la conexión de red está establecida"
+ChgMac  = "Cuando se cambia la correspondencia entre la dirección MAC y la dirección IP"
+NewMac  = "Cuando una nueva dirección MAC aparece"
+
+[NetworkEdit_Tab_Settings_Action]
+UsePrnt = "Seleccionar la impresora predeterminada:"
+
+;---------- NewNetwork ------------
+
+[NewNetwork]
+$NewNetworkTaskName = "Firewall"
+
+[NewNetwork_Descr]
+Header         = "<b>Nueva red conectada</b>"
+Adapter.Name    = "Adaptador:"
+Type.Name       = "Tipo:"
+Network.Name    = "Nombre:"
+
+[NewNetwork_Body_Actions]
+Question        = "¿Se puede confiar en la conexión de red?"
+Trusted.Name    = "Sí, es una red de confianza" + $Def
+Trusted.Descr   = "Autorizar cualquier actividad de red"
+Local.Name      = "Red local" + $Def
+Local.Descr     = "Autorizar compartir archivos e impresoras"
+Public.Name     = "No, es una red pública" + $Def
+Public.Descr    = "Bloquear el acceso remoto al equipo"
+
+[MainWindow.SystemWatch_WorkArea]
+Home.Group2.Header = "Rendimiento del sistema"
+
+[MainWindow.SystemWatch_WorkArea_List]
+Application  = $Application
+TrafficIn    = "Entrantes"
+TrafficOut   = "Salientes"
+TrafficTotal = "Total"
+
+[s_HipsError]
+#warnFLT_DEV_ERR    = "Las reglas para dispositivos no se aplicarán"
+def                 = s_SystemError(@)
+
+[MainWindow.SystemWatch.Hips]
+Sett = "Configuración"
+
+[MainWindow.SystemWatch.Fw]
+Mode.Name       = "Modo de operación:"
+NetPackets.Name = "Paquetes de red:"
+NetPackets.Val  = "Configuración"
+
+[MainWindow.SystemWatch.pdm]
+DetectMethods.Name  = "Métodos de detección:"
+DetectMethods.Val   = (!(nFlags & #vfSkipTrojGen) + !(nFlags & #vfSkipWormGen) + !(nFlags & #vfSkipWormP2P) + !(nFlags & #vfSkipKeylogger) + !(nFlags & #vfSkipSuspDrvInst) + !(nFlags & #vfSkipIrpTableChange) + !(nFlags & #vfSkipHiddenObj) + !(nFlags & #vfSkipNegativePID)) + " (8 en total)"
+
+[MainWindow.SystemWatch.SysWatch]
+Descr = "Obteniendo información detallada de la actividad de las aplicaciones"
+
+[WebServiceEdit_Prot_ComboDiz]
+Undef = "No definido"
+
+[s_HipsSubSystemState]
+#ehsssAllow = "Autorizar"
+#ehsssDeny  = "Bloquear"
+#ehsssApp   = "Mediante reglas"
+
+[s_FwWorkMode]
+#fwAllowAll = "Autorizar"
+#fwAllow    = "Mediante reglas"
+#fwBlockAll = "Bloquear"
+
+[Programs_RunList_ActionsArea]
+menu = "Filtrar"
+
+[Programs_RunList_ActionsArea_Menu]
+mStartRun = "Ejecutar al iniciar"
+mAvp      = "Procesos de Kaspersky Internet Security"
+mSystem   = "Procesos del sistema"
+
+;------------- System Monitor -----------
+[SystemMonitor]
+@ = "Actividad de aplicaciones"
+
+[SystemMonitor_Tab_Programs]
+CategoryLbl = "Categoría"
+
+[Programs_AllList_ActionsArea_SetRules]
+Btn = "Configurar reglas"
+
+[SystemMonitor_Tab_Programs_Lists]
+All     = "Mostrar procesos de " + $ProductName
+System  = "Mostrar procesos del sistema"
+
+[SystemMonitor_Tab_Programs_Category]
+Running     = "En ejecución"
+Startup     = "Ejecutado al iniciar el sistema"
+Network     = "Red"
+Trusted     = "De confianza"
+Restricted  = "Restringido"
+Banned      = "Bloqueado"
+Today       = "Iniciado hoy"
+ThisWeek    = "Iniciado esta semana"
+ThisMonth   = "Iniciado este mes"
+All         = "Todo"
+
+[Programs_RunList]
+;StartTime   = "Запуск"
+Program  	= "Proceso"
+Status   	= "Estado/Grupo"
+State    	= "Estado"
+Popularity	= "Popularidad"
+PID      	= "Id. del proceso"
+UserName 	= "Nombre de usuario"
+CPU      	= "CPU, %"
+Memory   	= "Memoria"
+History  	= "Secuencia de ejecución"
+
+[Programs_AllList_ActionsArea]
+GroupFilter = "Ver"
+
+[Programs_AllList_StateFilters]
+Other.tt = s_AppStatusName(#HIPS_APP_ID_TRUSTED)
+Norm.tt  = s_AppStatusName(#HIPS_APP_ID_LO_REST)+"/"+s_AppStatusName(#HIPS_APP_ID_HI_REST)
+Hight.tt = s_AppStatusName(#HIPS_APP_ID_UNTRUSTED)
+
+[Programs_RunList_Menu]
+Properties   = f_isInstalled("Hips") ? "Reglas de la aplicación" : "Información de la aplicación"
+ShowHistory  = "Secuencia de ejecución"
+ChangeStatus = "Mover al grupo"
+KillProcess  = "Terminar proceso"
+
+[Programs_Program]
+Description = "Descripción"
+File        = "Archivo"
+Folder      = "Carpeta"
+Vendor      = "Proveedor"
+Product     = "Aplicación"
+Version     = "Versión"
+Size        = "Tamaño"
+Created     = "Creado"
+Modified    = "Ha cambiado"
+
+[Programs_State]
+StartTime = "Ejecutar"
+ExitTime  = "Cerrar"
+
+[Programs_LastRun]
+LastRun  = "Fecha"
+RunCount = "Contador de ejecución"
+
+[Programs_RunList_Memory]
+WorkingSet = "Memoria"
+PageFile   = "Memoria virtual"
+
+[Programs_RunList_Status]
+Default = "Predeterminado"
+Current = "Actual"
+
+[Programs_AllList]
+Program = "Aplicación"
+LastRun = "Última ejecución"
+Status  = "Estado/Grupo"
+Popularity	= "Popularidad"
+Parents = "Secuencia de ejecución"
+
+[Programs_AllList_Menu]
+Properties   = f_isInstalled("Hips") ? "Reglas de la aplicación" : "Información de la aplicación"
+ChangeStatus = "Mover al grupo"
+Delete       = "Eliminar de la lista"
+
+[Programs_AllList_Status]
+Default = "Predeterminado"
+Current = "Actual"
+
+[SystemMonitor_Tab_OS]
+CategoryLbl = "Categoría"
+
+[HipsRules_Tab_Resources]
+CategoryLbl = "Categoría"
+
+[Programs_Lists_ActionsArea]
+CategoryLbl = "Categoría"
+
+[s_AppWorkState]
+0 = "En ejecución"
+default = "Cerrado"
+
+;------------- Network Monitor -----------
+
+[NetworkMonitor]
+@ = "Monitor de red"
+
+[NetworkMonitor_Tab]
+Conn        = "Actividad de la red"
+OpenedPorts = "Puertos abiertos"
+Packets     = $Fw + ": registro de reglas procesadas"
+Traffic     = "Tráfico de red"
+Banned      = "Equipos bloqueados"
+
+[NetworkMonitor_Tab_Conn_ToolBar]
+Rules           = "Configuración de reglas"
+BlockNet        = Hips.FirewallSettings.WorkingMode == #fwBlockAll ? "Desbloquear el tráfico de red" : "Bloquear el tráfico de red"
+Filter          = "Filtrar"
+
+[NetworkMonitor_Tab_Conn_ToolBar.Menu]
+AllRules        = "Todas las reglas de la red"
+AppRules        = "Reglas de red de la aplicación"
+
+[NetworkMonitor_Tab_Conn_ToolBar.ListMenu]
+AppRules        = "Reglas de red de la aplicación"
+AllRules        = "Todas las reglas de la red"
+ShowAVP         = "Mostrar las conexiones establecidas por " + $ProductName_INS
+ShowLocal       = "Mostrar conexiones locales"
+
+[NetworkMonitor_Tab_Conn_ToolBar_Filter.Menu]
+ShowAVP         = "Mostrar las conexiones establecidas por " + $ProductName_INS
+ShowLocal       = "Mostrar conexiones locales"
+
+[NetworkMonitor_Tab_Conn_List]
+App             = "Proceso"
+Proto           = "Protocolo"
+LocalAddress    = "Dirección local"
+RemoteAddress   = "Dirección remota"
+Duration        = "Duración"
+Bytes           = "Bytes recibidos/enviados"
+
+[NetworkMonitor_Tab_Conn_List_Bytes]
+BytesRecieved   = "Bytes recibidos"
+BytesSent       = "Bytes enviados"
+
+[NetworkMonitor_Tab_Conn_List_RemoteAddress]
+RemoteIP        = "Dirección IP remota"
+RemotePort      = "Puerto remoto"
+
+[NetworkMonitor_Tab_Conn_List_LocalAddress]
+LocalIP         = "Dirección IP local"
+LocalPort       = "Puerto local"
+
+[NetworkMonitor_Tab_Conn_List_Proto]
+Proto           = "Protocolo"
+Direction       = "Dirección"
+
+[NetworkMonitor_Tab_OpenedPorts_ToolBar] 
+Rules           = "Configuración de reglas"
+Filter          = "Filtrar"
+
+[NetworkMonitor_Tab_OpenedPorts_List]
+App             = "Proceso"
+Proto           = "Protocolo"
+LocalPort       = "Puerto local"
+LocalIP         = "Dirección local"
+Duration        = "Duración"
+
+[NetworkMonitor_Tab_OpenedPorts_List_Filter.Menu]
+All             = "Todos los puertos abiertos"
+ExceptLoopback  = "Todo excepto loopback"
+
+; __DELETE__ - [NetworkMonitor_Tab_Packets] нигде не используется
+[NetworkMonitor_Tab_Packets]
+ViewLbl = "Mostrar"
+
+[NetworkMonitor_Tab_Packets_Log.Menu]
+Rule = "Crear una regla"
+
+[NetworkMonitor_Tab_Traffic]
+Application = $Application
+TrafficIn   = "Tráfico entrante"
+TrafficOut  = "Tráfico saliente"
+
+[NetworkMonitor_Tab_Traffic_ListArea_ActionsArea]
+Label       = "Distribución de tráfico por aplicaciones"
+
+[NetworkMonitor_Tab_BannedHosts_ListArea_List]
+IP      = "Dirección"
+Time    = "Hora"
+
+[NetworkMonitor_Tab_BannedHosts_ActionsArea]
+Unban = "Desbloquear"
+
+[Grid.Groups]
+FwAddrR = "Dirección remota " + ip(c_ipHash(val))
+FwAddrL = "Dirección local " + ip(c_ipHash(val))
+FwPortR = "Puerto remoto " + (val ? val : "no disponible")
+FwPortL = "Puerto local" + (val ? val : "no disponible")
+
+;---------------- PDM2_AlertDetails_History ---------------
+
+[s_PDM2_AlertDialog_Description]
+def =  (Action == #PDM2_ACTION_BLOCKED_APP_START && ActionsAll & #ACTION_TERMINATE) ? s_PDM2_AlertDialog_DescriptionPast(@) : s_PDM2_AlertDialog_DescriptionNow(@)
+
+[s_PDM2_AlertDialog_DescriptionPast]
+#PDM2_EVENT_P2P_SC_RDL         = "En la sesión anterior, el proceso se parecía a un gusano de red"
+#PDM2_EVENT_SC_AR              = "En la sesión anterior, el proceso intentó registrar una copia de sí mismo como objeto del inicio autoejecutable. Este comportamiento es característico de troyanos"
+#PDM2_EVENT_SC_ARsrc           = "En la sesión anterior, el proceso intentó registrar una copia de sí mismo como objeto del inicio autoejecutable. Este comportamiento es característico de troyanos"
+#PDM2_EVENT_SCN                = "En la sesión anterior " + $AlertAppLinkWithGroup + " mostró actividad sospechosa propia de gusanos (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Worm.generic</a>)"
+#PDM2_EVENT_P2P_SCN            = "En la sesión anterior " + $AlertAppLinkWithGroup + " mostró actividad sospechosa propia de gusanos P2P (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Worm.P2P.generic</a>)"
+#PDM2_EVENT_SC2STARTUP         = "En la sesión anterior, el proceso intentó registrar una copia de sí mismo como objeto del inicio autoejecutable. Este comportamiento es característico de troyanos"
+#PDM2_EVENT_SC_MULTIPLE        = "En la sesión anterior, el proceso se parecía a un gusano P2P"
+#PDM2_EVENT_RDR                = "En la sesión anterior, el proceso intentó redireccionar la entrada/salida de datos, lo cual podría ser un intento de acceder a su equipo de forma remota"
+#PDM2_EVENT_HIDDEN_OBJ         = "En la sesión anterior, " + $AlertAppLinkWithGroup + " se mostró como un <a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>objeto oculto</a>. Este comportamiento puede ser resultado de la acción del usuario o estar causado por software malicioso (un rootkit)."
+#PDM2_EVENT_INVADER            = "En la sesión anterior, el proceso intentó introducirse en otro proceso. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_INVADER_LOADER     = "En la sesión anterior, el proceso trató de introducir un módulo en todos los procesos. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_STRANGEKEY	       = "En la sesión anterior, el proceso intentó obtener acceso a un valor del Registro con nombre ilegible"
+#PDM2_EVENT_HIDDEN_INSTALL     = "En la sesión anterior, se produjo un intento de ejecutar una instalación oculta en el sistema"
+#PDM2_EVENT_BUFFEROVERRUN      = "En la sesión anterior, se detectó un intento de saturación del búfer. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_DEP                = "En la sesión anterior, se detectó un intento de ejecutar datos como código de programa. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_HOSTS              = "En la sesión anterior, se detectó un intento de alterar el archivo Hosts. Este archivo asigna direcciones IP a nombres de servidores"
+#PDM2_EVENT_DOWNLOADER	       = "En la sesión anterior, se produjo un intento de ejecutar un módulo descargado recientemente. Este comportamiento es característico de cargadores troyanos, un tipo de software malicioso"
+#PDM2_EVENT_TROJAN_GEN         = "En la sesión anterior " + $AlertAppLinkWithGroup + " mostró actividad sospechosa propia de troyanos (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Trojan.generic</a>)"
+#PDM2_EVENT_DRIVER_INS         = "En la sesión anterior " +  $AlertAppLinkWithGroup + " intentó <a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>descargar un controlador</a> de forma oculta" + if(AdditionalInfo, " " + AdditionalInfo) + ". " + $ProductName + " no podrá controlar la actividad de la aplicación después de instalarlo."
+#PDM2_EVENT_HIDDEN_SEND        = "En la sesión anterior, el proceso intentó enviar datos a través de una aplicación de confianza"
+#PDM2_EVENT_PSTORE             = "En la sesión anterior, el proceso intentó tener acceso a sus datos personales o contraseñas"
+#PDM2_EVENT_DNS_QUERY	       = "En la sesión anterior, el proceso intentó obtener acceso a la caché de DNS"
+#PDM2_EVENT_KEYLOGGER          = "En la sesión anterior " + $AlertAppLinkWithGroup + " intentó interceptar la entrada del teclado (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Keylogger</a>)" + if(AdditionalInfo && 0 == nPID, " Archivo del controlador: " + AdditionalInfo)
+default                        = "En la sesión anterior, el proceso estuvo realizando acciones sospechosas"
+
+[s_PDM2_AlertDialog_DescriptionNow]
+#PDM2_EVENT_P2P_SC_RDL         = "El proceso parece un gusano de red"
+#PDM2_EVENT_SC_AR              = "El proceso está intentando registrar la copia de sí mismo como un objeto del inicio autoejecutable. Este comportamiento es característico de troyanos"
+#PDM2_EVENT_SC_ARsrc           = "El proceso está intentando registrar una copia de sí mismo como un objeto del inicio autoejecutable. Este comportamiento es característico de troyanos"
+;#PDM2_EVENT_SCN               = "Процесс пытается скопировать себя на сетевой ресурс"
+#PDM2_EVENT_SCN                = $AlertAppLinkWithGroup + " muestra actividad sospechosa propia de gusanos (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Worm.generic</a>)"
+;#PDM2_EVENT_P2P_SCN           = "Процесс проявляет активность, характерную для P2P-червей"
+#PDM2_EVENT_P2P_SCN            = $AlertAppLinkWithGroup + " muestra actividad sospechosa propia de gusanos P2P (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Worm.P2P.generic</a>)"
+#PDM2_EVENT_SC2STARTUP         = "El proceso está intentando registrar una copia de sí mismo como un objeto del inicio autoejecutable. Este comportamiento es característico de troyanos"
+#PDM2_EVENT_SC_MULTIPLE        = "El proceso parece un gusano P2P"
+#PDM2_EVENT_RDR                = "El proceso está intentando redireccionar la salida/entrada de datos, lo cual podría ser un intento de acceder a su equipo de forma remota"
+;#PDM2_EVENT_HIDDEN_OBJ        = "Обнаружен скрытый процесс. Сокрытие в системе вредоносных программ и их процессов является результатом работы программ-маскировщиков (rootkit)"
+#PDM2_EVENT_HIDDEN_OBJ         = $AlertAppLinkWithGroup + " se mostró como un <a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>objeto oculto</a>. Este comportamiento puede ser resultado de la acción del usuario o estar causado por software malicioso (un rootkit)."
+#PDM2_EVENT_INVADER            = "El proceso está intentando introducirse en otro proceso. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_INVADER_LOADER     = "El proceso está tratando de introducir un módulo en todos los procesos. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_STRANGEKEY	       = "El proceso intenta obtener acceso a un valor del Registro con nombre ilegible"
+#PDM2_EVENT_SYSCHANGE          = "Detectada una actividad de sistema sospechosa"
+#PDM2_EVENT_HIDDEN_INSTALL     = "Ejecutando una instalación oculta dentro del sistema"
+#PDM2_EVENT_BUFFEROVERRUN      = "Se ha detectado un intento de desbordamiento del búfer. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_DEP                = "Se ha detectado un intento de ejecutar datos como código de programa. Este comportamiento es habitual en algunos tipos de software malicioso"
+#PDM2_EVENT_HOSTS              = "El archivo Hosts ha sido alterado. Este archivo contiene las asignaciones de direcciones de red"
+#PDM2_EVENT_DOWNLOADER	       = "Se ha producido un intento de ejecutar un módulo descargado recientemente. Este comportamiento es característico de cargadores troyanos, un tipo de software malicioso"
+;#PDM2_EVENT_TROJAN_GEN	       = $(EventSubType,AlertDialog_Description_PDM2_TROJAN_GEN)
+#PDM2_EVENT_TROJAN_GEN         = $AlertAppLinkWithGroup + " muestra actividad sospechosa propia de troyanos (<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Trojan.generic</a>)"
+;#PDM2_EVENT_DRIVER_INS        = "Процесс пытается получить полный доступ к системе путем установки драйвера. Дальнейший контроль над этой программой будет невозможен"
+#PDM2_EVENT_DRIVER_INS         = $AlertAppLinkWithGroup + " está intentando <a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>cargar el siguiente controlador</a> de forma oculta" + if(AdditionalInfo, " " + AdditionalInfo) + ". " + $ProductName + " no podrá controlar la actividad de la aplicación tras la instalación."
+#PDM2_EVENT_HIDDEN_SEND        = "El proceso intenta enviar datos a través de una aplicación de confianza"
+#PDM2_EVENT_PSTORE             = "El proceso intenta tener acceso a sus datos personales o contraseñas"
+#PDM2_EVENT_DNS_QUERY	       = "El proceso está intentando obtener acceso a la caché de DNS"
+#PDM2_EVENT_KEYLOGGER          = if($PdmDriverObject,"Una aplicación desconocida está intentado interceptar la entrada del teclado:\n<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>Keylogger</a>", "Un proceso está intentado interceptar la entrada del teclado")
+#PDM2_EVENT_IRP_TABLE_CHANGED  = "Se han detectado modificaciones sospechosas en el núcleo del sistema:\n<a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>orden de peticiones de procesamiento modificado.</a>\n" + "Esta modificación puede ser resultado de controladores de rootkit o del funcionamiento de emuladores de CD o DVD."
+#PDM2_EVENT_NEGATIVE_PID       = "Se ha detectado un proceso con un <b><a onclick(dialog(\"HipsInfo\", p_eventtype(EventType)))>valor de PID sospechoso</a></b> " + f_PIDValue(nPID)+ ". Este comportamiento puede ser resultado de la acción del usuario o estar causado por software malicioso (un rootkit)."
+default                        = "El proceso está realizando acciones sospechosas"
+
+[s_PDM2_AlertDialog_EventEx]
+#OBJSTATUS_OK                  = "Operación deshacer terminada con éxito."
+#OBJSTATUS_NOTBACKUPPED        = "Fallo de deshacer."
+
+[s_PDM2_ByEventType]
+#PDM2_EVENT_P2P_SC_RDL
+#PDM2_EVENT_P2P_SCN
+#PDM2_EVENT_SC_MULTIPLE         = "Worm.P2P.generic"
+#PDM2_EVENT_SC_AR
+#PDM2_EVENT_SC_ARsrc
+#PDM2_EVENT_SC2STARTUP
+#PDM2_EVENT_TROJAN_GEN          = "Trojan.generic"
+#PDM2_EVENT_SCN                 = "Worm.generic"
+#PDM2_EVENT_RDR                 = "RootShell"
+#PDM2_EVENT_HIDDEN_OBJ          = "Objeto oculto"
+#PDM2_EVENT_INVADER             = "Invasor"
+#PDM2_EVENT_INVADER_LOADER      = "Invasor (cargador)"
+#PDM2_EVENT_STRANGEKEY        = "Valor de Registro sospechoso"
+#PDM2_EVENT_SYSCHANGE         = "Comportamiento sospechoso"
+;#PDM2_EVENT_HIDDEN_INSTALL    = "Скрытая установка"
+;#PDM2_EVENT_BUFFEROVERRUN     = "Переполнение буфера"
+;#PDM2_EVENT_DEP               = "Выполнение"
+#PDM2_EVENT_HOSTS             = "Archivo Hosts modificado"
+;#PDM2_EVENT_DOWNLOADER        = "Загрузчик троянских программ"
+#PDM2_EVENT_DRIVER_INS          = "Operación sospechosa de instalación de controlador"
+#PDM2_EVENT_HIDDEN_SEND       = "Envío de datos ocultos"
+#PDM2_EVENT_KEYLOGGER           = "Keylogger"
+#PDM2_EVENT_IRP_TABLE_CHANGED   = "Modificación de la dirección de una función sistema"
+#PDM2_EVENT_NEGATIVE_PID        = "Proceso con PID negativo"
+#PDM2_EVENT_PSTORE              = "Acceso a datos privados"
+#PDM2_EVENT_BSS_DETECT          = DetectName
+#PDM2_EVENT_DNS_QUERY           = "Petición DNS"
+default                         = if(@, "unk: " + @)
+
+[s_PDM2_AlertDialog_Event]
+;#PDM2_ACTION_ASK               =
+;#PDM2_ACTION_DETECT            =
+#PDM2_ACTION_ROLLBACK           = "Se ha forzado el cierre de una aplicación. Se recomienda deshacer los cambios que haya producido en el sistema."
+#PDM2_ACTION_TERMINATE_FAILED   = "El proceso no puede ser terminado: " + s_SystemError(Error)
+#PDM2_ACTION_ROLLBACK_RESULT    = s_PDM2_AlertDialog_EventEx(ObjectStatus)
+#PDM2_ACTION_TERMINATE_INFO     = "Terminación forzada del proceso."
+#PDM2_ACTION_QUARANTINE_FAILED  = "Error al mover a Cuarentena."
+#PDM2_ACTION_FILE_DELETED       = "Archivo origen eliminado."
+#PDM2_ACTION_FILE_DELETE_FAILED = "Error al borrar archivo: " + s_SystemError(nError)
+#PDM2_ACTION_QUARANTINED        = "Archivo movido a la cuarentena."
+default                         = s_PDM2_AlertDialog_Description(EventType)
+
+;----------------------------------------------------------
+
+[MainWindow.SystemWatch_WorkArea_SysPerf_Legend]
+Legend1.Text    = "Tráfico entrante"
+Legend2.Text    = "Tráfico saliente"
+
+[MainWindow.SystemWatch_WorkArea_SysPerf_Legend_Detected]
+Legend1.Text    = "Aplicaciones no fiables"
+Legend2.Text    = "Comportamiento sospechoso"
+
+[MainWindow.SystemWatch_WorkArea_SysPerf]
+Traffic.Name    = "Analizados, " + f_SizeType(ctl.Chart.MaxVal()) + "/s"
+Detected.Name   = "Objetos detectados/s"
+
+[SystemWatchChartMenu]
+SwitchToTraffic     = "Tráfico analizado"
+SwitchToDetected    = "Detectados"
+
+[s_AlertDetailsPDM_AddInfo_Text]
+#PDM2_EVENT_INVADER        = "<b>Proceso intrusivo :</b>\n" + ObjectName + "<b>\nID del proceso (IDP):</b> " + nIDP + "\n\n<b>Tentativa de intrusión de proceso:</b>\n" + strDestObjectName + "<b>\nID del process (PID):</b> " DestPID
+#PDM2_EVENT_INVADER_LOADER = "<b>Módulo intrusivo:</b>\n" + strDestObjectName + "<b>\n\nID del proceso (PID):</b> " + nPID
+#PDM2_EVENT_STRANGEKEY     = "El proceso está intentando dirigir el valor <b>" + strValueName + "</b> con un nombre ilegal."
+#PDM2_EVENT_SYSCHANGE      = "Comportamiento sospechoso"
+#PDM2_EVENT_KEYLOGGER      = "Keylogger detectado. El posible nombre del controlador es <b>" + strUserDescription + "</b>."
+#PDM2_EVENT_HIDDEN_SEND    = "El proceso <b>" + ObjectName + " (PID: " + nPID + ")</b> está intentando transferir datos utilizando una aplicación de confianza.\n\n<b>Dirección de destino:</b>\n" + strDestObjectName
+
+[s_TTraf_NM]
+def = "\nTráfico entrante: " + f_ObjSize(@0.BytesIn) + "\nTráfico saliente: " + f_ObjSize(@0.BytesOut)
+
+[s_TTHour_NM]
+def = "Período: " + timeshort_tz(@0) +"-" + timeshort_tz(@0+3600) + s_TTraf_NM(@1)
+
+[s_TTDay_NM]
+def = "Período: " + s_MonthOfYear_day(GetOfTime_Month(@0), GetOfTime_Day(@0) ) + s_TTraf_NM(@1)
+
+[s_TTWeek_NM]
+def = "Período: " + s_DayOfWeek(@0) + s_TTraf_NM(@1)
+
+[s_TTMonth_NM]
+def = "Período: " + s_MonthOfYear(@0) + s_TTraf_NM(@1)
+
+[f_Periods]
+ret                            = "Períodos: " + @ + " día(s)"
+
+[f_Price]
+#pay                           = 60
+ret                            = "Precio: " + #pay + " EUR"
+
+[f_ProcessIsClosed]
+ret = "Proceso terminado"

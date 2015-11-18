@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Čarobnjak migracije'
+UpgradeCaption = 'Nadogradi'
+
+RebootPageCheckboxRebootText = 'Ponovo pokreni računar'
+OpenRemoveProgramsPanel = 'Otvori traku sa alatkama'
+
+WizardBeginDescriptionKis = 'Bićete premešteni na Kaspersky Internet Security 2013.\n\nNosilac autorskih prava vam dozvoljava ne-ekskluzivnu licencu za korišćenje Kaspersky Internet Security aplikacije pod istim uslovima koje ste prihvatili prilikom prvobitnog instaliranja Kaspersky Anti-Virus aplikacije.\n\nPažnja: Ovo premeštanje može zahtevati ponovno pokretanje računara.'
+
+WizardBeginDescriptionKav = 'Bićete premešteni na Kaspersky Anti-Virus 2013.\n\nNosilac autorskih prava vam dozvoljava ne-ekskluzivnu licencu za korišćenje Kaspersky Anti-Virus aplikacije pod istim uslovima koje ste prihvatili prilikom prvobitnog instaliranja Kaspersky Internet Security aplikacije.\n\nPažnja: Ovo premeštanje može zahtevati ponovno pokretanje računara.'
+
+WizardContinueDescriptionKis = 'Nastavi promenu na Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Nastavi promenu na Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nPažnja! Vaša trenutna licenca za Kaspersky Anti-Virus ističe pre licence za Kaspersky Internet Security. Nakon što Kaspersky Anti-Virus licenca istekne, nećete biti u mogućnosti da se vratite na Kaspersky Anti-Virus.'
+
+PleaseWait = 'Molimo, sačekajte'
+RemovalProgressDescription   = 'Brisanje neusaglašenog softvera'
+RemovalApplicationsDescription = 'Sledeći softver biće uklonjen radi obavljanja promene:'
+ManualRemovalApplicationsDescription = 'Potrebno je da ručno uklonite sledeći neusaglašen softver zbog promene:'
+SearchRemovalApplicationsDescription   = 'Traži se neusaglašen softver'
+RestartProductDescription = 'Aplikacija će biti ponovo pokrenuta radi završetka promene.'
+RebootOsDescription = 'Potrebno je da ponovo pokrenete računar kako biste nastavili promenu.\nČarobnjak će nastaviti nakon ponovnog pokretanja.'
+
+MigrationProgressDescriptionKis = 'Aplikacija se ponovo konfiguriše i vrši se promena na Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Aplikacija se ponovo konfiguriše i vrši se promena na Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Aplikacija se ponovo konfiguriše i vrši se promena na Kaspersky Anti-Virus'
+
+MigrationKis = 'Promeni na Kaspersky Internet Security'
+MigrationKav = 'Promeni na Kaspersky Anti-Virus'
+MigrationUnknown = 'Promeni '
+
+SearchRemovalApplicationsHeader = 'Nadogradnja u Kaspersky Internet Security'
+RemovalProgressHeader = 'Brisanje neusaglašenog softvera'
+RemovalApplicationsHeader = 'Pronađen je neusaglašen softver'
+RebootOsHeader = 'Potrebno je ponovno pokretanje računara'
+RestartProductHeader = 'Aplikacija će biti ponovo pokrenuta'
+
+MigrationAbortedHeader = $MigrationType + ' nije moguće'
+MigrationAbortedDescription = $MigrationType + ' nije uspelo. Pokušajte ručno da uklonite neusaglašen softver, a zatim ponovo pokrenite čarobnjaka.'
+
+BestBuyGiftInformation = 'Vaš Kaspersky Anti-Virus biće nadograćen u Kaspersky Internet Security.\nSada ćete imati još više funkcija za zaštitu vašeg računara.'
+BestBuyGiftDescription = 'Hvala vam što ste izabrali Kaspersky Lab softver! Uživajte u poboljšanoj bezbednosti.'
+BestBuyUpgradeNotification = 'Dok traje nadogradnja, vaš sistem se analizira na neusaglašen softver kako bi se obezbedilo ispravno funkcionisanje instaliranih aplikacija i operativnog sistema.'
+BestBuyFreeUpgrade = 'Promeni na Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Nadogradi u pozadini'
+BestBuyTryAbortInformation = 'Nadogradnja će se nastaviti u pozadini'
+BestBuyTryAbortDescription = 'Pošto neusaglašen softver nije uklonjen, neke nove Kaspersky Internet Security funkcije su onemogućene kako bi se osiguralo ispravno funkcionisanje instaliranih aplikacija i operativnog sistema.\n\nMožete ručno da uklonite neusaglašen softver i omogućite sve nove funkcije u prozoru Kaspersky Internet Security postavki.'
+BackToSubcriptionUpgradeButtonText = 'Nazad na nadogradnju'
+Congratulation = 'Čestitamo!'
+
+RunKisButtonText = 'Pokreni Kaspersky Internet Security'
+
+ProductUpgraded = 'Vaš Kaspersky Anti-Virus je uspešno nadograđen u Kaspersky Internet Security.\nSada možete da koristite više funkcija za zaštitu vašeg računara.'

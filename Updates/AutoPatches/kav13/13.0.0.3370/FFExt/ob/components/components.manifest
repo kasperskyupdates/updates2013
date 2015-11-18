@@ -1,0 +1,24 @@
+interfaces online_banking_xpcom_gecko14/browser_navigator.xpt appversion>=14
+interfaces online_banking_xpcom_gecko14/online_banking.xpt appversion>=14
+binary-component online_banking_xpcom_gecko14/online_banking_xpcom.dll appversion>=14
+
+interfaces online_banking_xpcom_gecko13/browser_navigator.xpt appversion>=13
+interfaces online_banking_xpcom_gecko13/online_banking.xpt appversion>=13
+binary-component online_banking_xpcom_gecko13/online_banking_xpcom.dll appversion>=13
+
+interfaces online_banking_xpcom_gecko12/browser_navigator.xpt appversion>=12
+interfaces online_banking_xpcom_gecko12/online_banking.xpt appversion>=12
+binary-component online_banking_xpcom_gecko12/online_banking_xpcom.dll appversion>=12
+
+interfaces online_banking_xpcom_gecko11/browser_navigator.xpt appversion>=11
+interfaces online_banking_xpcom_gecko11/online_banking.xpt appversion>=11
+binary-component online_banking_xpcom_gecko11/online_banking_xpcom.dll appversion>=11
+
+interfaces online_banking_xpcom_gecko10/browser_navigator.xpt appversion>=10
+interfaces online_banking_xpcom_gecko10/online_banking.xpt appversion>=10
+binary-component online_banking_xpcom_gecko10/online_banking_xpcom.dll appversion>=10
+
+interfaces online_banking_xpcom_gecko9/browser_navigator.xpt appversion>=9
+interfaces online_banking_xpcom_gecko9/online_banking.xpt appversion>=9
+binary-component online_banking_xpcom_gecko9/online_banking_xpcom.dll appversion>=9
+

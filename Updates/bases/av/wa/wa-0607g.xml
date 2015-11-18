@@ -1,0 +1,75 @@
+<UpdateFiles
+	UpdateDate="28102015 0602"
+	BlackDate="27102015 0604"
+	ObjectType="2=WA;3=BASE">
+	<FileDescription
+		ComponentID="WA"
+		App="KTS 9.*.*.*;WKS 6.0.4.*;FS 6.0.4.*;KAVSDK 8.*.*.*;KSOSPC 9.*.*.*;KSOSFS 9.*.*.*"
+		UpdateType="base"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="wa.stt"
+		Body="MzI0NTg7MjAxNTEwMjgwNjAyDQo=" />
+	<FileDescription
+		ComponentID="WA"
+		App="KTS 9.*.*.*;WKS 6.0.4.*;FS 6.0.4.*;KAVSDK 8.*.*.*;KSOSPC 9.*.*.*;KSOSFS 9.*.*.*"
+		UpdateType="base"
+		ReplaceMode="suffix"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="webav.kdl" />
+	<FileDescription
+		ComponentID="WA"
+		App="KTS 9.*.*.*;WKS 6.0.4.*;FS 6.0.4.*;KAVSDK 8.*.*.*;KSOSPC 9.*.*.*;KSOSFS 9.*.*.*"
+		UpdateType="base"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="webav.kfb" />
+	<FileDescription
+		ComponentID="WA"
+		UpdateType="base"
+		App="KIS [12-13].0.*.*;KAV [12-13].0.*.*;KAVSDK 8.*.*.*;KTS 12.*.*.*;PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="geosec.xms" />
+	<FileDescription
+		ComponentID="WA"
+		UpdateType="base"
+		App="KIS [12-13].0.*.*;KAV [12-13].0.*.*;KAVSDK 8.[2-3].*.*;KTS 12.*.*.*;KISMAC [13-14].*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="trafmon.xms" />
+	<FileDescription
+		ComponentID="WA"
+		UpdateType="base"
+		App="KIS [12-13].0.*.*;KAV [12-13].0.*.*;KAVSDK 8.*.*.*;KTS 12.*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="geowl.dat" />
+	<FileDescription
+		ComponentID="WA"
+		UpdateType="base"
+		App="KIS [12-13].0.*.*;KAV [12-13].0.*.*;KAVSDK 8.*.*.*;KES [8-10].[1-2].*.*;KTS 12.*.*.*;KISMAC [13-14].*.*.*;KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="appcat.xms" />
+	<FileDescription
+		ComponentID="WA"
+		UpdateType="base"
+		App="KIS 13.0.*.*;KAV 13.0.*.*;KFPMAC 1.*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="sbank.xms" />
+	<Registry
+		ComponentID="WA"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJASAhHipAAH1iUPequeO7cSSaIunXXI7jot9XyOfZK3Yjo5Q/OLc5TVTZCcoHuIM4jfNGsNNcbIdvzvHzGL4DS2q+nWget6IBAB4JmgAAAAIAAigCAFdBAwACKAQAQkFTRQEAAAmxebQhDQo7OjEwYU5HdFdKZWlvanFmZUNFMS9URHJ5Zk4xNnBVa3pBWGhsMVducGZYTmF1VWpkVTJoQnpaLzVTZ2lzcUh2VTdrdG5YZlEyWlo2TUlzQ0E4eU9hbGMybWElJQ=="
+		Filename="wa-0607g.pbv" />
+	<Registry
+		ComponentID="WA"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGaAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqCAABACAAf11o4GjWANovryBcLbqS7I3A8XudumSzFlygXY/5SXAgAP8hFyfs3t16CFQEZ6m+Psfob9RrJ8rCffPqXKBpmXZ7IADXSPu7ZFMYjm2UEqlpn9U2WMYfhsEz1V0EBxYKyu8uoSAAVI+jLRHOP/YCnUQs6uHQ0wJe26QChRhzSYl+Y2SwX2YgAJmNGN4XL+vCwf8QZtGeB2Dzwpk+qfxwqrmbaGgk98hUIAAQ7Zsn2qucCxQS1Wwj+xOJ3xaW/2LUssv0KZNPohBfSSAAPB3UVCV4QmVurN9AQeDPl8Qeoq9VfejXbYSaP88WTQUgAEDFaVSrWkakitAd0XWE02za7ez3fUBIAdQNmP8v/LXwAQAeCZoAAAABAAAJT8kvVQ0KOzoxMEsxR0E5ZHVidnhRMzhqK3N0Wlk2c21IMzBnUUUrZldEdzlVc0R2SlhTQVQ5SlMwQlI0dW9WanJRbW9GVURKMjNTK1NabUVOVGtrV1FVVjM3c01MOHpJJSU="
+		Filename="wa-0607g.krg" />
+</UpdateFiles>
+;:10qU47eV5q+KBoq+zXJg5fl7QDv07fInsWXGn3kRJ0GjZjKQJuUCZwuhYNrwzQ6IhF3UFQudA3w8DMkfDcqsvTHy%%

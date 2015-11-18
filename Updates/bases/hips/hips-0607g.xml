@@ -1,0 +1,479 @@
+<UpdateFiles
+	UpdateDate="28102015 1503"
+	BlackDate="28102015 0603"
+	ObjectType="2=HIPS;3=BASE">
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		AppName="!KAV|KIS|PURE|KSOSFS|KSOSPC [13-*].*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="hipsdb2.xml" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KAV 13.*.*.*; KIS 13.*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="hipsdb3.xml" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="ru"
+		LocalPath="%BaseFolder%\ru"
+		Filename="localization.xms">
+		<LocLang
+			Lang="ru" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="bg"
+		LocalPath="%BaseFolder%\bg"
+		Filename="localization.xms">
+		<LocLang
+			Lang="bg" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="fr"
+		LocalPath="%BaseFolder%\fr"
+		Filename="localization.xms">
+		<LocLang
+			Lang="fr" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="de"
+		LocalPath="%BaseFolder%\de"
+		Filename="localization.xms">
+		<LocLang
+			Lang="de" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="it"
+		LocalPath="%BaseFolder%\it"
+		Filename="localization.xms">
+		<LocLang
+			Lang="it" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="es"
+		LocalPath="%BaseFolder%\es"
+		Filename="localization.xms">
+		<LocLang
+			Lang="es" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="ar"
+		LocalPath="%BaseFolder%\ar"
+		Filename="localization.xms">
+		<LocLang
+			Lang="ar" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="en"
+		LocalPath="%BaseFolder%\en"
+		Filename="localization.xms">
+		<LocLang
+			Lang="en" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="es-mx"
+		LocalPath="%BaseFolder%\es-mx"
+		Filename="localization.xms">
+		<LocLang
+			Lang="es-MX" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="ja"
+		LocalPath="%BaseFolder%\ja"
+		Filename="localization.xms">
+		<LocLang
+			Lang="ja" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="kk"
+		LocalPath="%BaseFolder%\kk"
+		Filename="localization.xms">
+		<LocLang
+			Lang="kk" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="pt"
+		LocalPath="%BaseFolder%\pt"
+		Filename="localization.xms">
+		<LocLang
+			Lang="pt" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="pt-br"
+		LocalPath="%BaseFolder%\pt-br"
+		Filename="localization.xms">
+		<LocLang
+			Lang="pt-br" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="zh-hans"
+		LocalPath="%BaseFolder%\zh-hans"
+		Filename="localization.xms">
+		<LocLang
+			Lang="zh-Hans" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="cs"
+		LocalPath="%BaseFolder%\cs"
+		Filename="localization.xms">
+		<LocLang
+			Lang="cs" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="hu"
+		LocalPath="%BaseFolder%\hu"
+		Filename="localization.xms">
+		<LocLang
+			Lang="hu" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="ko"
+		LocalPath="%BaseFolder%\ko"
+		Filename="localization.xms">
+		<LocLang
+			Lang="ko" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="lt"
+		LocalPath="%BaseFolder%\lt"
+		Filename="localization.xms">
+		<LocLang
+			Lang="lt" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="pl"
+		LocalPath="%BaseFolder%\pl"
+		Filename="localization.xms">
+		<LocLang
+			Lang="pl" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="ro"
+		LocalPath="%BaseFolder%\ro"
+		Filename="localization.xms">
+		<LocLang
+			Lang="ro" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="th"
+		LocalPath="%BaseFolder%\th"
+		Filename="localization.xms">
+		<LocLang
+			Lang="th" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="tr"
+		LocalPath="%BaseFolder%\tr"
+		Filename="localization.xms">
+		<LocLang
+			Lang="tr" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="vi"
+		LocalPath="%BaseFolder%\vi"
+		Filename="localization.xms">
+		<LocLang
+			Lang="vi" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		ServerFolder="zh-hant"
+		LocalPath="%BaseFolder%\zh-hant"
+		Filename="localization.xms">
+		<LocLang
+			Lang="zh-hant" />
+	</FileDescription>
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.1.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.10.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.104.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.12.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.120.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.13.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.14.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.15.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.16.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.17.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.18.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.2.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.3.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.35.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.36.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.4.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES [8-10].[1-2].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="catkl.index.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*;KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KES 10.[1-2].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="intctrl.kdc" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*;KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KES 10.[1-2].*.*"
+		LocalPath="%BaseFolder%"
+		Filename="intctrl.mft" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*"
+		AppName="PURE 13.*.*.*;KES 10.[1-2].*.*"
+		LocalPath="%DataFolder%"
+		Filename="safe_banking.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*"
+		AppName="PURE 13.*.*.*;KES 10.[1-2].*.*"
+		LocalPath="%DataFolder%"
+		Filename="safe_banking_index.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		App="KES 10.1.*.*;KSVLA 3.[0-3].*.*"
+		AppName="KES 10.2.*.*"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="version_locales.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES 10.1.*.*;KSVLA 3.[0-3].*.*"
+		AppName="KES 10.2.*.*"
+		LocalPath="%DataFolder%"
+		Filename="sd.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES 10.1.*.*;KSVLA 3.[0-3].*.*"
+		AppName="KES 10.2.*.*"
+		LocalPath="%DataFolder%"
+		Filename="sd_index.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		ReplaceMode="suffix"
+		LocalPath="%BaseFolder%"
+		Filename="vulnpathes.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		ReplaceMode="suffix"
+		LocalPath="%BaseFolder%"
+		Filename="vulnrules.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KIS 13.*.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*"
+		ReplaceMode="suffix"
+		LocalPath="%BaseFolder%"
+		Filename="vulnrulesindex.xms" />
+	<FileDescription
+		ComponentID="HIPS2"
+		GenericApp="NOT(AND(OR(#KAV#,#KIS#),HR(13)))"
+		App="KSVLA 3.[0-3].*.*"
+		AppName="PURE 13.*.*.*;KES 10.[1-2].*.*"
+		UpdateType="desc"
+		Filename="mod-hips-0607g.xml"
+		FileDate="28102015 1503" />
+	<FileDescription
+		ComponentID="KAV_2345COM,KAV12_ASUS,KAV12_KDDI,KAV_NORDNET,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV_ORANGE,KAV12_ALFA,KAV12_NIFTY,KAV12_SONY"
+		UpdateType="desc"
+		LocalPath="%BaseFolder%"
+		Filename="mod-hips-0607g.xml"
+		FileDate="28102015 1503" />
+	<FileDescription
+		ComponentID="KAV13"
+		Target="[150001-262143]"
+		UpdateType="desc"
+		Filename="mod-hips-0607g.xml"
+		FileDate="28102015 1503" />
+	<FileDescription
+		ComponentID="KAV13"
+		Target="[0-150000]"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Filename="mod-hips-0607g.xml"
+		FileDate="28102015 1503" />
+	<FileDescription
+		ComponentID="HIPS2"
+		UpdateType="base"
+		App="KES 10.1.*.*"
+		LocalPath="%DataFolder%"
+		Filename="certdb.dat" />
+	<Registry
+		ComponentID="HIPS2"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAX1fHipAADHZy2QD2f1qp5n+JxWm94nRB0+qWsGa1ghBAsWo7cKzQZ9Cj8rp20GLJO87DJ36Rc7kiS2oj6u7N8cjl8LPnYIBAB4JZwAAAAIAAigEAEhJUFMDAAIoBABCQVNFAQAACV96gLQNCjs6MTA0UzI3Mk95VGt0V0lodStLWDBZTnVHeFZ3ajBGWlExbzB6WjNDVk5SWGdJbmFZaVE0eThPampVczRBa2hteDhqNk5iS1Y1ZFlDRm12RGcrUzhhV0ErSCUl"
+		Filename="hips-0607g.pbv" />
+	<Registry
+		ComponentID="HIPS2"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="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"
+		Filename="hips-0607g.krg" />
+</UpdateFiles>
+;:10qEtx1HzWl7WTwzx5E3sNR6i2zB52UoZpZZXxNjG5Xij3dmmBatNK45ZGIPfjHOxQXd8fBdByjk75sOELsY5GRU%%

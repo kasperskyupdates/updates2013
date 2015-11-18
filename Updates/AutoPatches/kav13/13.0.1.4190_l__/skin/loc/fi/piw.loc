@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Avaintiedoston valitseminen"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Avaimen toimitti tähän sovelluskopioon laitteiston toimittaja. Haluatko aktivoida sovelluksen käyttämällä tätä avainta?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Sovelluksen määritys ei ole vielä valmis. Haluatko todella poistua ohjatusta määritysohjelmasta?"
+ErrEmptyActivationCode.caption  = "Aktivointikoodia ei ole annettu"
+ErrEmptyActivationCode          = "Syötä aktivointikoodi"
+ErrEmptyKeyPath.caption         = "Avaintiedostoa ei ole määritetty"
+ErrEmptyKeyPath                 = "Määritä avaintiedosto"
+$LicInfoKeyNumber               = "Numero:"
+$LicInfoKeyProductName          = "Sovelluksen nimi:"
+$LicInfoKeyType                 = "Käyttöoikeustyyppi:"
+$LicInfoExpirationDate          = "Vanhentumispäivämäärä:"
+$LicErrReason                   = "Syy:"
+$ActiveKey                      = "Aktiivinen avain"
+$ReservedKey                    = "Lisäavain"
+ConfirmFeedback                 = "Hyväksytkö tietojen lähettämisen <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Networkiin</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) koostuu verkkopalveluista, jotka tarjoavat ajantasaista tietoa tiedostojen, verkkoresurssien ja ohjelmiston turvallisuudesta. KSN nopeuttaa reagointia uusiin uhkiin, parantaa tiettyjen suojauskomponenttien toimintaa sekä vähentää väärien hälytysten mahdollisuutta.\nKun osallistut KSN:ään, tietoa virustartunnoista ja muista ongelmista sekä laajennettuja tilastoja ladatuista ja suoritetuista sovelluksista (<a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN-tiedonkeruulausekkeen</a> mukaisesti) lähetetään automaattisesti Kaspersky Labille. \n\n<b>Kaspersky Security Network ei kerää tai käsittele henkilökohtaista käyttäjätietoa.</b>"
+
+$ToAcquireNewLicText            = "\n\nVoit hankkia uuden käyttöoikeuden ottamalla yhteyttä jakelijaasi tai <a Buy onclick(buy())>Kaspersky Labin myyntiosastoon</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nYritä päivittää tilauksen tila manuaalisesti tai ottamalla yhteys tekniseen tukipalveluun" : "\nYritä aktivoida sovellus myöhemmin (1-2 tunnin päästä) käyttämällä aktivointikoodia tai ota yhteys tekniseen tukipalveluun") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Ohjattu aktivointiohjelma" : " Ohjattu määritysohjelma")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Yleiset tiedot"
+InitBegin.Descr                       = "Tervetuloa " + $ProductName_GEN + " -sovelluksen ohjattuun kokoonpanotoimintoon."
+CheckHosts.Name                       = "Tarkistetaan Kaspersky Lab -palvelimien saatavuus"
+CheckHosts.Descr                      = "Epäilyttävä uudelleenohjaus on havaittu"
+ResetArea.Name                        = "Palauta asetukset"
+ResetArea.Descr                       = "Alla listatut asetukset sisältävät käyttäjän syöttämää tai kerääntynyttä tietoa \nsovellustoiminnon aikana."
+ActivationBegin.Name                  = $IsSubscription ? "Tilauksen hallinta" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Poista avain" : "Lisää avain") : "Aktivoi sovellus")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Käyttöoikeudet" : "Jatka aktivoimalla sovellus.")
+ActivationProgress.Name               = "Aktivoi verkossa"
+ActivationProgress.Descr              = "Aktivointi on käynnissä, odota..."
+ActivationServerForm.Name             = "Aktivoi verkossa"
+ActivationServerForm.Descr            = "Täytä tämä lomake."
+ActivationChooseKey.Name              = "Aktivointi avaintiedostolla"
+ActivationChooseKey.Descr             = "Aktivoi sovellus käyttämällä avaintiedostoa."
+ActivationEnd.Name                    = "Sovelluksen aktivointi"
+ActivationEnd.Descr                   = "Aktivointi valmis."
+MigrationKeyIsFound.Name         = "Avain on saatavana nykyiselle käyttöoikeudelle"
+MigrationKeyIsFound.Descr        = "Haluatko käyttää nykyisen käyttöoikeuden määrittämää sovellusta?"
+MigrationBegin.Name              = "Vaihda tyyppiin " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Sinut siirretään tyyppiin " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Hae epäyhteensopivaa ohjelmistoa"
+MigrationSearchProgress.Descr    = "Odota, haetaan epäyhteensopivaa ohjelmistoa..."
+MigrationSafeRemoval.Name        = "Epäyhteensopivaa ohjelmistoa löytynyt"
+MigrationSafeRemoval.Descr       = "Jatkaminen edellyttää, että epäyhteensopiva ohjelmisto poistetaan"
+MigrationSafeProgress.Name       = "Poista epäyhteensopiva ohjelmisto"
+MigrationSafeProgress.Descr      = "Odota, poistetaan epäyhteensopivaa ohjelmistoa..."
+MigrationAddRemove.Name          = "Epäyhteensopivaa ohjelmistoa löytynyt"
+MigrationAddRemove.Descr         = "Poista epäyhteensopiva ohjelmisto"
+MigrationUnsafeRemoval.Name      = "Epäyhteensopivaa ohjelmistoa löytynyt"
+MigrationUnsafeRemoval.Descr     = "Jatkaminen edellyttää, että epäyhteensopiva ohjelmisto poistetaan"
+MigrationUnsafeProgress.Name     = "Poista epäyhteensopiva ohjelmisto"
+MigrationUnsafeProgress.Descr    = "Odota, poistetaan epäyhteensopivaa ohjelmistoa..."
+MigrationReboot.Name             = "Järjestelmän uudelleenkäynnistys vaaditaan"
+MigrationReboot.Descr            = "Uuteen sovellukseen vaihtaminen vaatii uudelleenkäynnistystä"
+MigrationProgress.Name           = "Vaihda tyyppiin " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Odota, vaihdetaan uuteen sovellukseen..."
+MigrationRebootApp.Name          = bMigrationDone ? "Sovellus käynnistetään uudelleen" : "Virhe vaihdettaessa uuteen sovellukseen"
+MigrationRebootApp.Descr         = bMigrationDone ? "Sovellus tulee käynnistää uudelleen" : "Vaihto sovellukseen " + s_MUProductTitleLong(env("ProductType")) + " epäonnistui"
+MigrationFinish.Name             = "Vaihto sovellukseen " + s_ProductTitleLong(env("ProductType")) + " valmis"
+MigrationFinish.Descr            = "Vaihto sovellukseen " + s_ProductTitleLong(env("ProductType")) + " valmis"
+DNS.Name                              = "Lisäasetukset"
+DNS.Descr                             = $ProductName_GEN + " -lisätoimintoasetukset"
+EnumExe.Name                          = "Järjestelmän analysointi"
+EnumExe.Descr                         = "Odota, kun tietoa järjestelmästäsi kerätään..."
+InitFinish.Name                       = "Määrityksen suorittaminen loppuun " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Tietokone on käynnistettävä uudelleen, jotta sovelluksen määritys voidaan suorittaa loppuun." : "Voit käynnistää " + $ProductName + " -sovelluksen nyt."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Epäilyttäviä uudelleenohjauksia Kaspersky Lab -palvelimiin on havaittu. Todennäköisin syy on haittaohjelma, joka on aiheuttanut päivityksen ja aktivoinnin epäonnistumisen. Epäilyttäviä merkintöjä isännän tiedostossa:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Poista tietueet (suositellaan)"
+Skip			= "Ohita"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Takaisin"
+Back.Descr      = "Siirry takaisin sovelluksen aktivointimenetelmän valintaan"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Lisää avain" : "&Aktivoi"
+Activate.Descr  = "Valitun avaintiedoston asennus"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Lopeta"
+Finish.Descr    = "Sulje ohjattu aktivointiohjelma"
+Next.Name       = "&Seuraava"
+Next.Descr      = "Siirry määritykseen"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Voit jatkaa nykyisen käyttöoikeuden määräämän sovelluksen käyttöä. Tällöin sovellus siirtyy tilaan " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Haluatko jatkaa nykyisen käyttöoikeuden määräämän sovelluksen käyttöä?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Sovelluksen tyyppi:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Vanhentumispäivämäärä:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " jäljellä)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Kyllä, ja vaihda tyyppiin " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Ei, ja poistu sovelluksesta " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Sovelluksen tyypiksi muutetaan " + s_MUProductTitleLong(env("ProductType")) + ". Tekijänoikeuden haltija myöntää sinulle ei-yksinomaisen käyttöoikeuden käyttää sovellusta " + s_MUProductTitleLong(env("ProductType")) + " samoilla ehdoilla, jotka olet hyväksynyt asentaessasi tyyppiä " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Huomaa: Tämä vaihto edellyttää toimia, joista voi seurata järjestelmän uudelleenkäynnistys."
+LicenseWarning  = "Huomio! Kaspersky Anti-Virus -ohjelmiston kaupallinen käyttöoikeus päättyy ennen Kaspersky Internet Security -ohjelmiston kokeilukäyttöoikeuden päättymistä. Kun Kaspersky Anti-Virus -ohjelmiston kaupallinen käyttöoikeus päättyy, Kaspersky Anti-Virus -ohjelmiston käyttöön ei voida palata Kaspersky Internet Security -kokeiluversiosta. Haluatko jatkaa vaihtoa Kaspersky Internet Security -ohjelmistoon?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Etsitään epäyhteensopivaa ohjelmistoa tietokoneesta. Tämä voi kestää hetken. Odota..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Seuraavat ohjelmistot poistetaan vaihtoa varten:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Odota, kun ei-yhteensopiva ohjelmisto poistetaan..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Seuraavat ohjelmistot tulisi poistaa vaihtoa varten:"
+OpenAddRemove = "Avaa Lisää/Poista Ohjelmia -ikkuna"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Seuraavat ohjelmistot poistetaan vaihtoa varten:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Odota, kun ei-yhteensopiva ohjelmisto poistetaan..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Vaihtamista varten tietokone tulisi käynnistää uudelleen. Ohjattu toiminto jatkuu uudelleenkäynnistyksen jälkeen."
+Reboot   = "Käynnistä uudelleen nyt"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Odota, kun sovellus määritetään uudelleen, ja sinut vaihdetaan tyyppiin " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Vaihto sovellukseen " + s_MUProductTitleLong(env("ProductType")) + " viimeistellään käynnistämällä sovellus uudelleen." : "Vaihto ohjelmistoon " + s_MUProductTitleLong(env("ProductType")) + " epäonnistui."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Voit nyt arvioida sovelluksen " + s_ProductTitleLong("kis") + " ominaisuuksia, kuten Käytönvalvonta, Roskapostin esto, Palomuuri ja paljon muuta." : s_ProductTitleLong("kav") + " tarjoaa tietokoneen perussuojauksen haittaohjelmilta."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Voit "+if($IsRefreshSubAvail,"päivittää tilauksen tilan tai ")+"poistaa avaimen." : (f_IsActiveKeyWorkingCommercial() ? "Voit poistaa aktiivisen avaimen tai lisätä avaimen." : "Aktivoimalla " + $ProductName + " -sovelluksen saat sen kaikki toiminnot käyttöösi."+ if($CorporateOnly, " Voit hankkia <a Activate onclick(url($ActivationLink))>kaupallisen käyttöoikeuden</a> tai <a ActivateTrial onclick(url($ActivationTrialLink))>kokeiluversion</a> sovelluksesta."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktivoi &myöhemmin"
+Later.Descr                 = "Ohita aktivointi ja siirry sovelluksen määrittämiseen"
+ChooseKey.Name              = "Aktivoi käyttämällä &avaintiedostoa"
+ChooseKey.Descr             = "Avaintiedosto vaaditaan"
+ActivateBetaKAV.Name        = "Aktivoi Kaspersky Anti-Virus &beta-versio"
+ActivateBetaKAV.Descr       = "Kaspersky Anti-Virus beta-versio sisältää täyden toiminnallisuuden, mutta se ei ole valmis tuote."
+ActivateBetaKIS.Name        = "Aktivoi Kaspersky Internet Security &beta-versio"
+ActivateBetaKIS.Descr       = "Kaspersky Internet Security beta-versio sisältää täyden toiminnallisuuden, mutta se ei ole valmis tuote."
+ActivateTrial.Name          = "Aktivoi &kokeiluversio"
+ActivateTrial.Descr         = "Kokeiluversion voimassaoloaika on määritetty käyttöoikeussopimuksessa"
+ActivateCommercial.Name     = "&Aktivoi verkossa"
+ActivateCommercial.Descr    = "Oston yhteydessä saatu aktivointikoodi vaaditaan"
+RemoveKey.Name              = $HasReserveKey ? "&Poista lisäavain" : "&Poista avain"
+RemoveKey.Descr             = "Jotta voit korvata avaimen, sinun täytyy ensin poistaa aktiivinen avain"
+RefreshSubscription.Name    = "&Päivitä tilauksen tila"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Voit päivittää tilauksen tilan manuaalisesti." :  "Automaattinen tilauksen tilan päivitys on lopetettu. Voit päivittää tilan manuaalisesti."
+ActivateTrialKIS            = "Aktivoi Kaspersky Internet Security -kokeiluversio"
+ActivateTrialKIS_Desc       = "Kaspersky Internet Security -kokeiluversion voimassaoloaika on määritetty käyttöoikeussopimuksessa"
+RevertToCommercialKAV       = "Palaa Kaspersky Anti-Virus -ohjelman kaupalliseen versioon"
+RevertToCommercialKAV_Desc  = "Palaa Kaspersky Anti-Virus -ohjelman kaupalliseen versioon"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Päivitä tilauksen tila"
+ActivateCommercial      = "Aktivoi &kaupallinen versio"
+ActivateCommercial_Desc = (LockActivationCode)? "Syötä aktivointikoodi: " : "Syötä <a onclick(url(\"" + $ActCodeHint + "\"))>aktivointikoodi</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Aktivointikoodisi lisättiin automaattisesti. Napsauta Seuraava-painiketta." : "Jos sinulla ei ole aktivointikoodia, voit ostaa sen <a onclick(buy())>verkosta</a>"
+ActivateBetaKAV         = "Aktivoi Kaspersky Anti-Virus &beta-versio"
+ActivateBetaKIS         = "Aktivoi Kaspersky Internet Security &beta-versio"
+ActivateTrial           = "Aktivoi &kokeiluversio"
+ActivateTrial_Desc      = "Voit kokeilla sovelluksen täyden toiminnallisuuden versiota ennen sen ostamista."
+ActivateTrialKIS           = "Aktivoi Kaspersky Internet Security -kokeiluversio"
+ActivateTrialKIS_Desc      = "Voit kokeilla täyden toiminnallisuuden Kaspersky Internet Security -versiota ennen sen ostamista."
+RevertToCommercialKAV      = "Palaa Kaspersky Anti-Virus -ohjelman kaupalliseen versioon"
+RevertToCommercialKAV_Desc = "Lopeta Kaspersky Internet Security -ohjelman kokeiluversion käyttö ja palaa Kaspersky Anti-Virus -ohjelman kaupalliseen versioon."
+Later                   = "&Aktivoi myöhemmin"
+Later_Desc              = "Sovelluksen täysi toiminnallisuus ei ole käytettävissä, ennen kuin se on aktivoitu."
+RemoveKey               = "Poista avaintiedosto"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Avaintiedosto:"
+KeyInfo         = "Käyttöoikeustiedot"
+ConnectingInfo.Name     = "Aktivointivirhe: "
+ConnectingInfo.Val      = "lisätiedot"
+TryAgain                = "Aktivoi"
+Descr1                  = "Voit yrittää aktivointia uudelleen toimimalla seuraavasti:"
+Descr2                  = "Tarkista Internet-yhteysasetukset ja yritä sovelluksen aktivointia uudelleen."
+Descr3                  = "Siirry <a onclick(url(\"" + $ActivationLink + "\"))> Online Activation Centeriin</a> ja noudata ohjeita.\nKun olet saanut avaintiedoston, määritä sen sijainti ja napsauta Seuraava:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Luontipäivämäärä:"
+InstallDate.Name    = "Aktivointipäivämäärä:"
+ExpirationDate.Name = "Vanhentumispäivämäärä:"
+SubscrptnExpDate.Name = "Tilauksen vanhenemispäivämäärä:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," kohteelle " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Järjestelmävirhe: " + s_SystemError(ErrorCode)
+2       = "Ei voida lisätä \"" + KeyFile + "\" -avainta: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Ei voida poistaa \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Virhekoodi: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Tämä avain on jo lisätty" + $LicErrHelpLink
+0x0947901d  = "Käyttöoikeus on vanhentunut. Tietokantojen päivitys ei ole saatavana" + $LicErrHelpLink
+0x89479002  = "Käyttöoikeutta ei löydy" + $LicErrHelpLink
+0x89479003  = "Digitaalinen allekirjoitus joko puuttuu tai se on korruptoitunut" + $LicErrHelpLink
+0x89479004  = "Tieto on korruptoitunut" + $LicErrHelpLink
+0x89479005  = "Avaintiedosto on korruptoitunut" + $LicErrHelpLink
+0x89479006  = "Käyttöoikeus on vanhentunut" + $LicErrHelpLink
+0x89479007  = "Avaintiedostoa ei ole määritetty" + $LicErrHelpLink
+0x89479008  = "Avaintiedosto on virheellinen" + $LicErrHelpLink
+0x89479009  = "Tiedon tallentaminen epäonnistui" + $LicErrHelpLink
+0x8947900a  = "Tiedon lukeminen epäonnistui" + $LicErrHelpLink
+0x8947900b  = "I/O-virhe" + $LicErrHelpLink
+0x8947900c  = "Tietokantoja puuttuu" + $LicErrHelpLink
+0x8947900d  = "Aktiiviset avaimet ja lisäavaimet on jo lisätty" + $LicErrHelpLink
+0x8947900e  = "Käyttöoikeuskirjastoa ei ole alustettu" + $LicErrHelpLink
+0x8947900f  = "Tietokannat ovat korruptoituneet tai ne on päivitetty manuaalisesti" + $LicErrHelpLink
+0x89479010  = "Tietokannat ovat korruptoituneet" + $LicErrHelpLink
+0x89479011  = "Vanhentunutta avaintiedostoa ei voida rekisteröidä lisäavaimena" + $LicErrHelpLink
+0x89479012  = "Järjestelmävirhe" + $LicErrHelpLink
+0x89479013  = "Avainten musta lista on vioittunut" + $LicErrHelpLink
+0x89479014  = "Digitaalinen allekirjoitus ei vastaa Kaspersky Labin digitaalista allekirjoitusta" + $LicErrHelpLink
+0x89479015  = "Beetakäyttöoikeudella ei voi aktivoida sovelluksen kaupallista versiota" + $LicErrHelpLink
+0x89479016  = "Sovelluksen beetaversio voidaan aktivoida vain beetakäyttöoikeudella" + $LicErrHelpLink
+0x89479017  = "Käyttöoikeus ei koske tätä sovellusta. " + $ProductName + " -sovellusta ei voi aktivoida toisen sovelluksen käyttöoikeudella. Tarkista asennettu sovellus." + $LicErrHelpLink
+0x89479018  = "Avain on estetty" + $LicErrHelpLink
+0x89479019  = "Tämä kokeilukäyttöoikeus on jo käytetty. Ei ole mahdollista käyttää samaa kokeilukäyttöoikeutta kahdesti" + $LicErrHelpLink
+0x8947901a  = "Avaintiedosto on korruptoitunut" + $LicErrHelpLink
+0x8947901b  = "Digitaalinen allekirjoitus puuttuu, on korruptoitunut tai ei vastaa Kaspersky Labin digitaalista allekirjoitusta" + $LicErrHelpLink
+0x8947901c  = "Ei voida lisätä avainta ei-kaupalliselle käyttöoikeudelle, jos se on vanhentunut" + $LicErrHelpLink
+0x8947901e  = "Avaintiedoston luonti- tai rekisteröintipäivämäärä on virheellinen. Tarkista järjestelmän päivämääräasetukset" + $LicErrHelpLink
+0x8947901f  = "Kokeilukäyttöoikeuden avainta ei voi lisätä, kun toinen kokeilukäyttöoikeuden avain on aktiivinen" + $LicErrHelpLink
+0x89479020  = "Avainten musta lista puuttuu tai on vioittunut" + $LicErrHelpLink
+0x89479021  = "Päivityksen kuvaus puuttuu tai on korruptoitunut" + $LicErrHelpLink
+0x89479022  = "Tämän sovelluksen sisäinen tieto on virheellinen" + $LicErrHelpLink
+0x89479023  = "Lisäavainta ei voi lisätä virheellisellä aktivointikoodilla" + $LicErrHelpLink
+0x89479024  = "Virhe käyttäjälomaketiedon täyttämisessä" + $LicErrHelpLink
+0x89479025  = "Virhe aktivointipalvelinpyynnön lähetyksessä.\nTodennäköiset syyt: Internet-yhteysongelmat tai väliaikaiset ongelmat aktivointipalvelimessa.\nYritä aktivoida koodi myöhemmin (1-2 tunnin päästä).\nJos ongelma ei poistu, ota yhteys Internet-palveluntarjoajaan" + $LicErrHelpLink
+0x89479026  = "Pyyntö sisältää virheellisen aktivointikoodin" + $LicErrHelpLink
+0x89479027  = "Vastaustilaa ei saada" + $LicErrHelpLink
+0x89479028  = "Virhe väliaikaisen tiedoston tallentamisessa" + $LicErrHelpLink
+0x89479029  = "Aktivointikoodi on syötetty virheellisesti tai järjestelmän päivämäärä on virheellinen. Tarkista järjestelmän päivämääräasetukset" + $LicErrHelpLink
+0x8947902a  = "Aktivointikoodi ei ole tarkoitettu tälle sovellukselle tai avain on vanhentunut. Sovellusta " + $ProductName + " ei voida aktivoida toisen sovelluksen käyttöoikeuden puitteissa. Tarkista asennettu sovellus tai <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Avaintiedoston vastaanotto epäonnistui. Virheellinen aktivointikoodi määritettiin" + $LicErrHelpLink
+0x8947902c  = "Aktivointipalvelin antoi virheen 400" + $OlaErrHelpLink
+0x8947902d  = "Aktivointipalvelin antoi virheen 401" + $OlaErrHelpLink
+0x8947902e  = "Aktivointipalvelin antoi virheen 403" + $OlaErrHelpLink
+0x8947902f  = "Tarvittava resurssi ei ole saatavilla aktivointipalvelimessa.\nAktivointipalvelin antoi virheen 404.\nTarkista Internet-yhteysasetukset" + $OlaErrHelpLink
+0x89479030  = "Aktivointipalvelin antoi virheen 405" + $OlaErrHelpLink
+0x89479031  = "Aktivointipalvelin antoi virheen 406" + $OlaErrHelpLink
+0x89479032  = "Välityspalvelimen todennus vaaditaan. Tarkista LAN-asetukset" + $LicErrHelpLink
+0x89479033  = "Pyyntö aikakatkaistiin" + $LicErrHelpLink
+0x89479034  = "Aktivointipalvelin antoi virheen 409" + $OlaErrHelpLink
+0x89479035  = "Tarvittava resurssi ei ole saatavilla aktivointipalvelimessa.\nAktivointipalvelin antoi virheen 410.\nTarkista Internet-yhteysasetukset" + $OlaErrHelpLink
+0x89479036  = "Aktivointipalvelin antoi virheen 411" + $OlaErrHelpLink
+0x89479037  = "Aktivointipalvelin antoi virheen 412" + $OlaErrHelpLink
+0x89479038  = "Aktivointipalvelin antoi virheen 413" + $OlaErrHelpLink
+0x89479039  = "Aktivointipalvelin antoi virheen 414" + $OlaErrHelpLink
+0x8947903a  = "Aktivointipalvelin antoi virheen 415" + $OlaErrHelpLink
+0x8947903b  = "Asiakaskoneessa tuntematon virhe" + $OlaErrHelpLink
+0x8947903c  = "Palvelimen sisäinen virhe" + $LicErrHelpLink
+0x8947903d  = "Toiminnallisuutta ei tueta" + $LicErrHelpLink
+0x8947903e  = "Yhdyskäytävän virheellinen vastaus. Tarkista verkon asetukset" + $LicErrHelpLink
+0x8947903f  = "Resurssi ei ole saatavilla väliaikaisesti" + $LicErrHelpLink
+0x89479040  = "Odotuspyyntö aikakatkaistiin. Tarkista verkon asetukset" + $LicErrHelpLink
+0x89479041  = "Palvelin ei tue protokollaa" + $OlaErrHelpLink
+0x89479042  = "Tuntematon virhe palvelimessa" + $OlaErrHelpLink
+0x89479043  = "Tuntematon http-virhe" + $OlaErrHelpLink
+0x89479044  = "Virheellinen resurssitunniste" + $LicErrHelpLink
+0x89479045  = "Virheellinen tieto kentässä \"avain\"" + $LicErrHelpLink
+0x89479046  = "Virheellinen URL-osoite" + $LicErrHelpLink
+0x89479047  = "Virheellinen kohdekansio" + $LicErrHelpLink
+0x89479048  = "Muistin varausvirhe" + $LicErrHelpLink
+0x89479049  = "Virhe muunnettaessa parametreja ANSI-merkkijonoon (url, kansio, agentti)" + $LicErrHelpLink
+0x8947904a  = "Virhe työsäikeen luomisessa" + $LicErrHelpLink
+0x8947904b  = "Työsäie on jo käynnissä" + $LicErrHelpLink
+0x8947904c  = "Työsäie ei ole käynnissä" + $LicErrHelpLink
+0x8947904d  = "Avaintiedostoa ei löydy aktivointipalvelimesta" + $LicErrHelpLink
+0x8947904e  = "Avain on estetty" + $LicErrHelpLink
+0x8947904f  = "Aktivointipalvelimen sisäinen virhe" + $LicErrHelpLink
+0x89479050  = "Ei tarpeeksi tietoa aktivointipyynnössä" + $LicErrHelpLink
+0x89479051  = "Virheellinen käyttäjätunnus tai salasana" + $LicErrHelpLink
+0x89479052  = "Virheellinen aktivointikoodi" + $LicErrHelpLink
+0x89479053  = "Valitun avaintiedoston käyttöoikeus vanhenee ennen nykyistä käyttöoikeutta" + $LicErrHelpLink
+0x89479054  = "Väärä käyttöjärjestelmän päiväys. Tarkista järjestelmän päiväys" + $LicErrHelpLink
+0x89479055  = "Kokeilukäyttöoikeus on vanhentunut" + $LicErrHelpLink
+0x89479056  = "Aktivointijakso on vanhentunut" + $LicErrHelpLink
+0x89479057  = "<b>Syötetty aktivointikoodi on ylittänyt sallittujen aktivointien lukumäärän!</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Ei-kaupallisen käyttöoikeuden avainta ei voi lisätä lisäavaimeksi, jos kaupallinen käyttöoikeus on voimassa" + $LicErrHelpLink
+0x8947905c  = "Aktivointikoodi vaaditaan" + $LicErrHelpLink
+0x8947905d  = "Virheellinen käyttäjätunnus tai salasana" + $LicErrHelpLink
+0x8947905e  = "Virheellinen aktivointikoodi" + $LicErrHelpLink
+0x89479062  = "Yhdistäminen aktivointipalvelimeen epäonnistui" + $LicErrHelpLink
+0x89479064  = "<b>Aktivointipalvelin ei ole käytettävissä.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Sovellusta ei voida aktivoida nyt.Yritä aktivointia uudelleen, kun olet määrittänyt sovelluksen ja käynnistänyt käyttöjärjestelmän uudelleen", "Tarkista internetyhteyden asetukset ja yritä aktivointia uudelleen.") + $LicErrHelpLink
+0x89479065  = "Käyttöoikeutesi on vanhentunut. Hanki <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Aktiivista avainta ei voida korvata vanhentuneella avaimella" + $LicErrHelpLink
+0x89479067  = "Ei voida lisätä lisäavaimeksi avainta, joka vanhenee ennen aktiivista avainta" + $LicErrHelpLink
+0x89479068  = "Päivitetty tilausavain puuttuu" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Järjestelmävirhe aktivointimenetelmää suoritettaessa " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktivointivirhe: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktivointivirhe: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktivointivirhe: palvelin palautti HTTP-koodin " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktivointi epäonnistui " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Aktivointipalvelimen sisäinen virhe. Yritä uudelleen tai ota yhteys tekniseen tukipalveluun"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Aktivointikoodi ei ole yhteensopiva tämän sovelluksen kanssa. Sovellusta " + $ProductName + " ei voida aktivoida käyttämällä toisen sovelluksen aktivointikoodia. Tarkista asennettu sovellus"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Avain on estetty"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Väärä asiakastunnus tai salasana"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Väärä aktivointikoodi"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Aktivointikoodi vaaditaan"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Aktivointijakso vanhentunut"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Aktivointien lukumäärä tätä koodia käyttäen ylitetty"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Aktivointikoodi on virheellinen tälle alueelle"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Tätä aktivointikoodia ei voida käyttää sovelluksen tälle lokalisaatiolle."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Aktivointikoodi on voimassa sovelluksen uudemmalle versiolle. Nykyisen version käyttöön vaaditaan toinen koodi. Saat lisätietoja napsauttamalla alla olevaa linkkiä."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Aktivointipalvelin antoi virheen 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Aktivointipalvelin antoi virheen 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Aktivointipalvelin antoi virheen 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Aktivointipalvelin antoi virheen 646"
+default                                     = "Aktivointimenetelmä antoi virheen " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Offline-tila on aktivoitu Microsoft Internet Explorerissa"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Internet-yhteys epäonnistui"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Aktivointipalvelin ei ole saatavilla"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Välityspalvelin ei ole saatavilla"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Vastauksen aikakatkaisu"
+#OLA_ERR_INTERNET_INVALID_URL                = "Virheellinen aktivointipalvelimen osoite"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Virheellinen protokolla"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Palvelinyhteyttä ei voida muodostaa"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Toiminto peruutettu"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Palvelinyhteyttä ei voida muodostaa"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Palvelinyhteys on katkaistu"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Palvelinyhteys nollattiin"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Virheellinen palvelinvastaus"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Palvelimen SSL-varmenne on vanhentunut. Tarkista tietokoneen aika"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL-varmennepalvelimen nimi ei vastaa palvelinta"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Ei voida suorittaa varmenteen kumoamistarkistusta. Ota tämä tarkistus pois käytöstä Microsoft Internet Explorerissa (Työkalut->Internet-asetukset->Lisäasetukset->Tarkista, onko palvelimen varmenne kumottu) ja toista aktivointiyritys"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Virheellinen SSL-varmenne"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL-varmenne kumottiin"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Virheellinen varmennekeskus"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Rekisteröintitiedot tarvitaan, jotta Kaspersky Lab voi tiedottaa erilaisista tapahtumista, alennuksista ja erikoistarjouksista."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Jatka"
+Activate.Descr  = "Lähetetään tietoa aktivointipalvelimeen"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Ohjattu määritysohjelma muodostaa yhteyttä Kaspersky Lab -aktivointipalvelimeen. Tämä voi kestää jonkin aikaa Internet-yhteyden nopeudesta riippuen."
+ConnectingInfo.Name     = "Yhdistetään aktivointipalvelimeen..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Lähetetään aktivointikoodi..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Odotetaan vastausta palvelimelta..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = " " + $ProductName + " -kopio on aktivoitu onnistuneesti"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Vanhentumispäivämäärä:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " jäljellä)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktivointi suoritettu onnistuneesti." : "Sovellus on jo aktivoitu tietokoneessasi."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Seuraava"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Siirry sovelluksen aktivointiin": (((PiwFlags & #fPiwActivation) && !bSilent)?"Siirry käyttöoikeustietoon":"Siirry suojaustilan valintaan")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Tämä ohjattu ohjelma auttaa sinua määrittämään tietokoneen tietoturvan oikein.\n\nMäärityksen aikana ohjattu ohjelma kerää tietoa järjestelmästäsi ja tietokoneellesi asennetuista ohjelmista. Tätä tietoa käytetään vain tietokoneesi suojauksen optimoimiseen.\n\nKäynnistä " + $ProductName_GEN + " -määritysprosessi painamalla Seuraava."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Asennus on pian suoritettu..." : ((PiwFlags & #fPiwReset) ? ("Korjaus on suoritettu.") : ("Asennus on suoritettu."))
+ResetDescr          = "Ohjattu määritysohjelma on palauttanut sovelluksen " + $ProductName + " asetukset."
+Reboot              = "&Käynnistä tietokone uudelleen"
+StartProduct        = "&Aloita " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Kiitos " + $ProductName + "-sovelluksen asentamisesta. Sinun täytyy käynnistää tietokone uudelleen, jotta asennus voidaan suorittaa loppuun. Tallenna kaikki tietosi, sulje kaikki sovellukset ja napsauta 'Lopeta'-painiketta.") : "Huomioi, että tuotteen lisämääritys suoritetaan, kun sovellus käynnistetään ensimmäistä kertaa. Tämän suorittamisessa voi kestää useita minuutteja."
+
+[ConfigureWizard.EnumExe]
+Info = "Järjestelmän analysoinnin aikana sovellus muodostaa luettelon Microsoft Windows -käyttöjärjestelmään sisältyvistä luotetuista sovelluksista. \n\nOhjelmat, jotka eivät sisälly käyttöjärjestelmään, analysoidaan erikseen, kun ne käynnistetään ensimmäistä kertaa tietokoneella."
+
+[s_LicKeyType]
+#ektBeta         = "Beta-avain"
+#ektTrial        = "Kokeilu"
+#ektTest         = "Testiavain"
+#ektOEM          = "OEM-avain"
+#ektCommercial   = "Kaupallinen"
+#ektSubscription = "Kaupallinen tilauksella"
+#ektSubscriptionProtection = "Kaupallinen suojaustilauksella"
+default          = "Tuntematon tyyppi"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Tuntematon virhe"
+#ekirValid                      = "Käyttöoikeus on voimassa"
+#ekirExpired                    = "Käyttöoikeus on vanhentunut"
+#ekirCorrupted                  = "Käyttöoikeus ei ole voimassa"
+#ekirNotSigned                  = "Digitaalinen allekirjoitus joko puuttuu tai on korruptoitunut"
+#ekirWrongProduct               = "Käyttöoikeus ei koske tätä sovellusta. " + $ProductName + " -sovellusta ei voi aktivoida toisen sovelluksen käyttöoikeudella. Tarkista asennettu sovellus."
+#ekirBlackListed                = "Avain "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" on estetty"
+#ekirIllegalUpdate              = "Tietokannan päivämäärä ei vastaa käyttöoikeuden voimassaoloaikaa"
+#ekirInconsistentUpdate         = "Tietokannat ovat korruptoituneet"
+#ekirKeyCreationDateInvalid     = "Virheellinen avaimen luontipäivämäärä"
+#ekirTrialAlreadyInUse          = "Kokeilukäyttöoikeuden avainta ei voi lisätä, kun toinen kokeilukäyttöoikeuden avain on aktiivinen"
+#ekirInvalidBlacklist           = "Avaimien musta lista on vioittunut"
+#ekirCantBeUsedAsReserved       = "Käyttöoikeutta ei voida rekisteröidä lisäkäyttöoikeutena"
+#ekirKeyInstallDateInvalid      = "Virheellinen aktivointipäivämäärä"
+#ekirTrialPeriodIsOver          = "Kokeilukäyttöoikeus on vanhentunut"
+#ekirConflictsWithCommercial    = "Uusi avaintiedosto on ristiriidassa nykyisen kaupallisen käyttöoikeuden kanssa"
+#ekirExpiredAsReserve           = "Tämä käyttöoikeus vanhenee aikaisemmin kuin nykyinen käyttöoikeus"
+#ekirGracePeriod                = "Käyttöoikeus on jatkoajalla"
+#ekirSuspended                  = "Tilaus on peruutettu"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Sovellus täytyy asentaa uudelleen"
+#ekirLicenseOnlyForMigration    = "Vaihda toiseen sovellukseen aktivoidaksesi kaupallisen version"
+default                         = "Avaintiedosto on virheellinen"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Määritetään myöhemmin"
+#edtUnlimited = "Aktiivinen"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Peruutettu alkaen " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Käyttöoikeustiedot"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": -käyttöoikeusilmoitus"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Huomio!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Käytät " + $ProductName_GEN + "-kokeiluversiota."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Käyttöoikeuksien musta lista puuttuu tai on korruptoitunut. Jatka toimintoa käynnistämällä <a Update onclick(f_StartUpdater())>update</a> ."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Käyttöoikeutesi " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Voit pitää suojauksen ajan tasalla <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJos olet jo ostanut käyttöoikeuden, <a Activate onclick(f_Activate())>aktivoi sovellus</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Tilaus vanhentunut." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Suojaus on poistettu käytöstä."))+($IsBestBuyLink ? " Tilauksen uusiminen ei käytössä." : " Tietokoneen turvallisuus on vaarassa. \n\nUusi tilaus <a onclick(url($KeyProviderLinkForText))>ottamalla yhteyttä palveluntarjoajaan</a>.")) :("Sinulla on " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " aikaa uusia tilaus. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " aikaa, ennen kuin päivitys poistetaan käytöstä. " : " aikaa, ennen kuin suojaus poistetaan käytöstä." ) ) + " Uusi tilaus <a onclick(url($KeyProviderLinkForText))>ottamalla yhteyttä palveluntarjoajaan</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Aktiivinen avain on estetty.\nPäivitystoiminto ei ole käytössä. Tietokoneesi on altistettu tartunnoille.</b>\n\nJos olet ostanut tuotteen laillisesti, ota yhteys tekniseen tukeen tai jälleenmyyjään.\n\nJos käytät laitonta kopiota, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJos olet jo ostanut käyttöoikeuden, <a Activate onclick(f_Activate())>aktivoi ohjelma</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "vanhentuu tänään" : "vanhentuu " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "on vanhentunut"
+
+[s_LicenseRenewBuyText]
+0 = "hanki käyttöoikeus"
+default = "uusi käyttöoikeus"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Valitse palautettavat asetukset:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " -ohjelmiston ohjattu kokoonpanotoiminto"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Yleiset tiedot"
+InitBegin.Descr                       = "Tervetuloa " + $ProductName_GEN + " -sovelluksen ohjattuun kokoonpanotoimintoon."
+CheckHosts.Name                       = "Tarkistetaan Kaspersky Lab -palvelimien saatavuus"
+CheckHosts.Descr                      = "Epäilyttävä uudelleenohjaus on havaittu"
+ResetArea.Name                        = "Palauta asetukset"
+ResetArea.Descr                       = "Alla listatut asetukset sisältävät käyttäjän syöttämää tai kerääntynyttä tietoa \nsovellustoiminnon aikana."
+EnumExe.Name                          = "Järjestelmän analysointi"
+EnumExe.Descr                         = "Odota, kun tietoa järjestelmästäsi kerätään..."
+ResetFinish.Name                       = "Määrityksen suorittaminen loppuun " + $ProductName
+ResetFinish.Descr                      = $ProductName + " on valmis käynnistymään."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Palautus valmis."
+ResetDescr          = "Ohjattu määritysohjelma on palauttanut sovelluksen " + $ProductName + " asetukset."
+
+[BestBuyUpgradeMessage]
+@ = "Vaihda toiseen sovellukseen"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Aloita Kaspersky Internet Securityn käyttäminen"
+RestartButton = "Käynnistä Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Onneksi olkoon!"
+Message = "Kaspersky Anti-Virus on päivitetty onnistuneesti Kaspersky Internet Securityksi.\nNyt käytössäsi on entistä enemmän ominaisuuksia tietokoneesi suojaamiseksi."
+Description = "Kiitos, että valitsit Kaspersky Labin ohjelmiston!\nTietokoneesi pysyy entistä paremmin turvassa."
+
+[ForcedUpgradeMessagePage]
+Header = "Melkein valmista"
+Message = "Kiitos, että valitsit Kaspersky Labin ohjelmiston! Tietokoneesi pysyy entistä paremmin turvassa."
+Description = "Epäyhteensopivia ohjelmistoja ei poistettu, joten jotkin Kaspersky Internet Securityn toiminnoista poistettiin käytöstä asennettujen sovellusten ja käyttöjärjestelmän vakaan toiminnan varmistamiseksi.\n\nVoit poistaa epäyhteensopivat ohjelmistot käsin ja ottaa kaikki uudet ominaisuudet käyttöön Kaspersky Internet Securityn asetusikkunassa."
+Notification = "Sovellus käynnistetään nyt uudelleen, jotta päivitys voidaan suorittaa loppuun."

@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security Teknik Önizleme'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus Teknik Önizleme'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'güncel' 
+Corrupted = 'bozuk' 
+VeryOld = 'eski' 
+Old = 'güncel değil' 
+OldInGracePeriod = 'uzun süredir güncellenmedi'
+UpdatedAndRebootNeeded = 'güncellendi. Bilgisayarın yeniden başlatılması gerekiyor' 
+UpdatedAndProductRestartNeeded = 'güncellendi. Uygulamanın yeniden başlatılması gerekiyor' 
+SomeBasesNeedUpdate = 'bazı koruma bileşenleri için güncelleme gerekiyor'
+
+Schedule_Auto    = 'otomatik' 
+Schedule_Manual  = 'elle' 
+Schedule_Fixed   = 'zamanlamaya göre' 
+
+Back = 'Geri' 
+StopTask = 'Durdur'
+
+News = 'Haberler'
+Reports = 'Raporlar'
+Settings = 'Ayarlar'
+Help = '&Yardım'
+OK = 'Tamam'
+Cancel = 'İptal'
+Retry = 'Yeniden dene'
+
+Unknown = 'bilinmeyen'
+
+ShortDateTimeWithSecondsFormat = '%d/%m/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%d/%m/%Y %I:%M %p'
+ShortDateFormat = '%d/%m/%Y'
+
+ShortDateTimeNewsFormat = '%d.%m.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'bugün, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'dün, %H:%M'
+
+MonthName_1  = 'Ocak'
+MonthName_2  = 'Şubat'
+MonthName_3  = 'Mart'
+MonthName_4  = 'Nisan'
+MonthName_5  = 'Mayıs'
+MonthName_6  = 'Haziran'
+MonthName_7  = 'Temmuz'
+MonthName_8  = 'Ağustos'
+MonthName_9  = 'Eylül'
+MonthName_10 = 'Ekim'
+MonthName_11 = 'Kasım'
+MonthName_12 = 'Aralık'
+ 
+DateUnknown = 'bilinmeyen'
+
+After = 'içinde'
+Remaining = 'kalan'
+Ago = 'önce'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'gün '}
+Hours_After = $HourCount + ' ' + {$HourCount : 'saat'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'dakika'}
+LessMinute_After = '<1 dakika'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'gün '}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'saat'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'dakika'}
+LessMinute_Remaining = '<1 dakika'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'gün '}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'saat'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'dakika'}
+LessMinute_Ago = '<1 dakika'
+
+Yesterday   = 'dün'
+Today       = 'bugün' 
+LessWeek    = 'bir haftadan daha kısa süre önce'
+LessTwoWeek = 'iki haftadan daha kısa süre önce'
+LessMonth   = 'bir aydan daha kısa süre önce'
+MoreMonth   = 'bir aydan daha uzun süre önce'
+MoreHalfYear= 'altı aydan daha uzun süre önce'
+MoreYear    = 'bir yıldan daha uzun süre önce'
+
+Time_After     = $TimePeriod + ' ' + After
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'Tamam'
+CancelButton = 'İptal'
+ApplyButton = 'Uygula'
+CloseButton = 'Kapat'
+NextButton = 'İleri >'
+BackButton = '< Geri'
+FinishButton = 'Bitir'
+SaveButton = 'Kaydet'
+SkipButton = 'Atla'
+Continue = 'Devam Et'
+Yes = 'Evet'
+No = 'Hayır'
+
+SettingsMore = '&Ayarlar...'
+
+DoNoyShowThisWindow = 'Gösterme'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Tanımlanamayan hata'
+SystemError_0x8000004B = 'Tanımlanamayan hata'
+SystemError_0x80000041 = 'Bellek yetersiz'
+SystemError_0x80000042 = 'Desteklenmiyor'
+SystemError_0x80000043 = 'Dahil edilmemiş'
+SystemError_0x80000045 = 'Erişim engellendi veya nesne bulunamadı'
+SystemError_0x8000004C = 'Öğe bulunamadı'
+SystemError_0x800000C6 = 'Öğe bulunamadı'
+SystemError_0x800000C5 = 'Öğe bulunamadı'
+SystemError_0x8000004F = 'Öğe kilitli'
+SystemError_0x80000051 = 'İşlem iptal edildi'
+SystemError_0x80000059 = 'Aygıt hatası'
+SystemError_0x8000005A = 'Geçersiz imza'
+SystemError_0x8000005B = 'Geçersiz sürüm'
+SystemError_0x8000005F = 'Yazma koruması'
+SystemError_0x80000061 = 'Kayıp Lisans'
+SystemError_0x80000062 = 'Alan dışı'
+SystemError_0x80000063 = 'Aygıt hazır değil'
+SystemError_0x800000C0 = 'Geçersiz biçim'
+SystemError_0x800000C1 = 'Yetersiz yetki'
+SystemError_0x800000C2 = 'Başlatma hatası'
+SystemError_0x800000C3 = 'Başlatma hatası'
+SystemError_0x800000C7 = 'Hatalı öğe durumu'
+SystemError_0x800000C8 = 'Nesne parola korumalı'
+SystemError_0x800000CA = 'Okuma hatası'
+SystemError_0x800000CC = 'Okuma hatası'
+SystemError_0x800000CB = 'Yazma hatası'
+SystemError_0x800000CD = 'Yazma hatası'
+SystemError_0x800000D0 = 'Geçersiz öğe'
+SystemError_0x800000D1 = 'Öğe zaten mevcut durumda'
+SystemError_0x800000D5 = 'Öğe başka bir uygulama tarafından kullanılıyor'
+SystemError_0x800000D8 = 'Veritabanları bozulmuş'
+SystemError_0x800001C0 = 'Geçersiz modül'
+SystemError_0x800001C2 = 'Modül onaylanmamış'
+SystemError_0x800001C1 = 'Modül bulunamadı'
+SystemError_0x800001C4 = 'Bileşen yüklenemiyor'
+SystemError_0x80000221 = 'Zaman aşımına uğradı'
+SystemError_0x80000240 = 'Bileşen etkileşim hatası'
+SystemError_0x90005000 = 'Geçersiz dijital imza'
+SystemError_0x90005002 = 'Dijital olarak imzalanmamış'
+SystemError_0x80027006 = 'Görev durdurulmuş'
+SystemError_0x80027007 = 'Görev durdurulmuş'
+SystemError_0x80380fbb = 'Görev durdurulmuş'
+SystemError_0x80017007 = 'Görev güvenli modda başlatılamıyor'
+SystemError_0x80017005 = 'Görev devre dışı bırakıldı'
+SystemError_0x80017006 = 'Hatalı kullanıcı adı veya parolası'
+SystemError_0x80017008 = 'Güvenli modda görevin başka bir kullanıcı hesabı adıyla başlatılması mümkün değildir'
+SystemError_0x80017009 = 'Sürücü bulunamadı'
+SystemError_0x80022005 = 'Veritabanı yükleme hatası'
+SystemError_default    = 'Hata kodu: ' + $ErrorCode
+
+LicenseManager = '&Lisans'
+SubscriptionManager = 'Aboneliği yönet'
+ProblemSolution = 'Bu sorunu çözmek için Lisans penceresine gidin'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'aktif değil' ;refers to connection
+Stopping = 'durduruluyor'
+ConnectingToServer = 'sunucuya bağlanılıyor'
+CreatingUpdateList = 'dosyalar işleniyor'
+Downloading = 'dosyalar indiriliyor'
+Installing = 'dosyalar güncelleniyor'
+RollbackRunning = 'önceki veritabanlarını geri alma'
+
+FunctionalityDisabledForExpiredSubscription = 'güncelleme devre dışı bırakıldı'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'bilgisayarınızın koruması devre dışı bırakıldı'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'gün kaldı.'}
+SubscriptionExpiresToday = 'bugün sona eriyor'
+SubscriptionActivated = 'etkinleştirildi'
+CheckReserveCodeManuallyHeader = 'Uygulama, yeni etkinleştirme koduyla otomatik olarak etkinleştirilemedi' ; TODO
+CheckReserveCodeManuallyText = 'Uygulamayı yeni etkinleştirme kodunu kullanarak elle etkinleştirmeyi deneyin.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Uygulamanın Beta sürümü yüklendi'
+LicensingStatus_Trial_ShortDescription = 'Uygulamanın deneme sürümü yüklendi'
+LicensingStatus_OkSubscription_ShortDescription = 'Abonelik: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Lisans kısa süre sonra sona eriyor'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Lisans kısa süre sonra sona eriyor'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_InvalidKey_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_Reinstall_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Anahtar kara listesi bozuk'
+LicensingStatus_CorruptedBases_ShortDescription = 'Veritabanlarının son kullanıcı lisans sözleşmesiyle uyumlu olup olmadığı doğrulanamıyor'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Lisans geçerlilik süresi geçerli veritabanlarının kullanımına izin vermiyor'
+LicensingStatus_Expired_ShortDescription = 'Lisans sona ermiş'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Şu tarihte abonelik sona ermiş: ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Deneme lisansı sona erdi'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Beta sürümü süresi doldu'
+LicensingStatus_Blocked_ShortDescription = 'Lisans engellendi'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Abonelik engellenmiş'
+LicensingStatus_LicenseViolated_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Lisans sorunu tespit edildi'
+LicensingStatus_Grace_ShortDescription = 'Şu tarihte abonelik sona ermiş: ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Abonelik askıya alma tarihi ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Abonelik durumu otomatik olarak güncellenemedi'
+LicensingStatus_NotActivated_ShortDescription = 'Uygulama etkinleştirilmemiş'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Uygulama etkinleştirilmemiş'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Uygulama etkinleştirilmemiş'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Uygulama etkinleştirilmemiş'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Yeni etkinleştirme kodu'
+ReserveCodeStatus_Ok_ShortDescription = 'Yeni etkinleştirme kodu'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Yeni etkinleştirme kodu geçersiz'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Yeni etkinleştirme kodu etkinleştirilmedi'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Otomatik etkinleştirme bekleniyor'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = $ProductNameFull + ' ürününün beta sürümü tam işlevselliğe sahiptir, ancak nihai sürüm değildir ve hatalar, arızalar veya kusurlar içerebilir. Lütfen tüm sorunları forumumuzda ilgili bölümlerde bildirin.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'gün'} + ' kaldı. Bu dönemin sonunda, uygulama işlevselliği büyük ölçüde sınırlanır.' 
+LicenseEndsToday = 'Bugün lisansınızın son günü. Yenilemezseniz uygulama işlevleri sınırlanacak.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Abonelik etkinleştirildi. Bitiş tarihi: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Abonelik ' + $SubscriptionExpirationDate + ' tarihine kadar yenilendi.'
+StateLimitedSubscriptionCanceledText = 'Abonelik iptal edildi. Bitiş tarihi: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Şu tarihten itibaren abonelik askıya alınacak: ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Abonelik yenilendi ve süresi asla sona ermeyecek'
+StateUnlimitedSubscriptionResumedText = 'Lisansınız tekrar etkinleştirildi'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'gün içinde'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'gün'} + ' kaldı. Bu sürenin sonunda uygulama işlevleri büyük ölçüde sınırlanacaktır.'
+LicensingStatus_ExpiresToday_Cause = 'Bugün lisansınızın son günü. Uygulama işlevleri sınırlanacak.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Geçersiz anahtar oluşturma tarihi. Bilgisayarınızdaki sistem tarihi değiştirildi. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Geçersiz etkinleştirme tarihi. Bilgisayarınızdaki sistem tarihi değiştirilmiş olabilir. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Uygulama bütünlüğü bozuk. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Sunucudan yeni kara listeyi indirmeniz önerilir.'
+LicensingStatus_CorruptedBases_Cause = 'Olası nedenlerden biri geçersiz bir güncellemedir. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Uygulamanın yasadışı bir kopyasını satın almış olabilirsiniz. Korumaya ara verildi. Bilgisayarınız, bulaşma, hasar veya verilerin çalınması riskiyle karşı karşıya.'
+LicensingStatus_BlockedSubscription_Cause = 'Uygulamanın yasal olmayan bir kopyasını satın almış olabilirsiniz. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = $ProductName + ' ürününün elinizdeki lisansla kurulabileceği maksimum bilgisayar sayısını aştınız. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = $ProductName + ' ürününün elinizdeki abonelikle kurulabileceği maksimum bilgisayar sayısını aştınız. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $FunctionalityDisabledAfterGrace + ' tarihine kadar ' + $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'gün var. '}
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Etkinleştirme sunucularıyla yapılan bağlantılar arasında çok uzun bir süre geçmiş olabilir. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Ön ayarlı etkinleştirme kodu kullanılabilir. İnternet bağlantısı uygun olur olmaz uygulama etkinleştirilecektir.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Ön ayarlı etkinleştirme kodu kullanılabilir. Bu etkinleştirme kodu aracılığıyla uygulamayı etkinleştirebilir ya da ön ayarlı etkinleştirme kodunu silebilirsiniz.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Uygulama, ön ayarlı etkinleştirme kodu aracılığıyla otomatik olarak etkinleştirilmedi. Yardımınız gerekiyor.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Yeni bir etkinleştirme kodu girebilirsiniz. Geçerli lisansın süresi dolduktan sonra, uygulama bu etkinleştirme koduyla etkinleştirilecek.'
+ReserveCodeStatus_Ok_Cause = 'Bilgisayarınızda yeni bir etkinleştirme kodu var. Geçerli lisansın süresi dolduktan sonra, uygulama yeni etkinleştirme koduyla otomatik olarak etkinleştirilecek. Güvenliğiniz herhangi bir kesintiye uğramayacak.'
+ReserveCodeStatus_Invalid_Cause = 'Geçerli lisansın süresi dolduktan sonra güncelleme kullanılamayacak.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Uygulama yeni etkinleştirme kodu ' + $ReserveCode + ' ile otomatik olarak etkinleştirilemedi. Yardımınız gerekiyor.'
+ReserveCodeStatus_WaitActivation_Cause = 'Yeni etkinleştirme koduyla ' + $ReserveCode + 'otomatik etkinleştirme bekleniyor.'
+
+ResolveProblem_BuyCommercial         = 'Uygulamanın ticari bir sürümünü almanız ve bu sürümü etkinleştirmeniz önerilir.'
+ResolveProblem_CheckSystemTime		= 'Sistem tarihinin doğru olduğundan emin olun.'
+ResolveProblem_ActivateAgain        = 'Etkin anahtarı silmeyi ve uygulamayı yeniden etkinleştirmeyi deneyin. Ayrıca, teknik destekle ya da uygulama dağıtımcısıyla iletişim kurabilirsiniz.'
+ResolveProblem_CallSupport			= 'Engellemenin nedenini bulmak için Teknik Destek ile iletişim kurmanız önerilir. Uygulama işlevselliğini geri yüklemek için yeni bir lisans edinin.'
+ResolveProblem_ContactSupport		= 'Teknik desteğe başvurun.'
+ResolveProblem_ActialLicense		= 'Bilgisayar korumanızın devam edebilmesi için yeni etkinleştirme kodunu girin.'
+ResolveProblem_UpdateAgain			= 'Uygulama veritabanını yeniden güncellemeniz önerilir.'
+ResolveProblem_BuyNewLicense		= 'Bilgisayarınızın korunmasını devam ettirebilmek için yeni bir lisans edinin.'
+ResolveProblem_CallProvider			= 'Aboneliğinizi sürdürmek için hizmet sağlayıcınıza başvurun.'
+ResolveProblem_ProviderWebSite		= 'Aboneliğinizi sürdürmek için hizmet sağlayıcınıza başvurun.'
+ResolveProblem_RenewalNotAvailable	= 'Abonelik yenilemesi kullanılamıyor.'
+ResolveProblem_BuyLicense			= 'Bilgisayarınızın korunmasını devam ettirebilmek için, Kaspersky Lab\'dan veya distribütörlerimizden ticari bir lisans almanız gerekir. Deneme sadece bir kez kullanılabilir.'
+ResolveProblem_Reinstall			= 'Uygulamayı yeniden yükleyin.'
+ResolveProblem_RenewLicense			= 'Tüm işlevleri kullanabilmek için lisansı yenileyin.'
+ResolveProblem_RefreshSubscription	= 'Abonelik durumunu lütfen el ile güncelleyin.'
+ResolveProblem_Activate				= 'Uygulamayı etkinleştirmek için etkinleştirme kodunu girin.'
+ResolveProblem_ActivateReserveCode  = 'Uygulamayı, yeni etkinleştirme kodunu kullanarak elle etkinleştirmeyi deneyin.'
+ResolveProblem_ActivateCodeManual	= 'Uygulamayı elle etkinleştirin.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'İnternet bağlantı ayarlarınızı kontrol edip otomatik etkinleştirmeyi bekleyin veya uygulamayı elle etkinleştirin.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Yeni bir etkinleştirme kodunun girilmesi gerekiyor. Geçerli lisansın süresi dolduktan sonra, uygulama bu etkinleştirme koduyla etkinleştirilecek.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Deneme sürüm lisansı sona ermeden önce etkinleştirme kodu aracılığıyla uygulamanın etkinleştirilmesi gerekiyor.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Uygulamanın tüm işlevlerini kullanabilmek için, Kaspersky Lab\'dan veya distribütörlerimizden ticari bir lisans satın almanız gerekiyor.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Deneme sürüm lisansı sona ermeden önce etkinleştirme kodu aracılığıyla uygulamanın etkinleştirilmesi gerekiyor.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Yeni bir etkinleştirme kodunun girilmesi gerekiyor. Geçerli lisansın süresi dolduktan sonra, uygulama bu etkinleştirme koduyla etkinleştirilecek.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Koruma durumu tanımlanmadı. '
+ProtectionLevelNoFeaturesLong = 'Koruma kapatıldı. '
+ProtectionLevelLimitedLong = 'Uygulama işlevleri sınırlandırılmış. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Güncelleme durumu tanımlanmadı. '
+UpdaterLevelNotAllowedLong = 'Güncelleme kullanılamıyor. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'tanımlanmamış'
+SubscriptionStateActive = 'etkin'
+SubscriptionStatePaused = 'askıya alındı'
+SubscriptionStateCancelledSoft = 'askıya alındı'
+SubscriptionStateCancelledHard = 'iptal edildi'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'tanımlanmamış'
+SubscriptionStatusReasonProviderInitiated = 'hizmet sağlayıcı tarafından etkinleştirildi'
+SubscriptionStatusReasonCreditCardAuthFailed = 'kredi kartı doğrulama reddedildi'
+SubscriptionStatusReasonCustomerInitiated = 'kullanıcı tarafından etkinleştirildi'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'kredi kartı doğrulama kabul edildi'
+
+ProductStatusRelease = 'sürüm'
+ProductStatusBeta = 'beta sürümü'
+
+LegalStatusBlocked = 'lisans engellendi'
+LegalStatusLimited = 'lisans sözleşmesi ihlal edildi'
+LegalStatusValid = 'lisans devrede'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Önemli bir lisans bildirimi var.\n<a href="licensemanager">Ayrıntılar...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Aboneliğin süresi sona erdi. Aboneliği yenilemek için, hizmet sağlayıcınız ile iletişime geçin.'
+
+LicensingState_WarningIsAvailable = 'bir uyarı var'
+ProtectionState_NotificationIsAvailable = 'Lisans bildirimi'
+LicensingState_ProblemIsAvailable = 'bir sorun var'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Kaspersky Security Software lisansı ' + $LicenseDaysToExpiry + ' gün içerisinde sona erecek ve bilgisayarınız korunmasız kalacak'
+LNCS_BBY_WillExpire_Description =	'Korunmaya devam etmek için, lütfen Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin'
+
+LNCS_BBY_AboutToExpire_Title =	    'Kaspersky Security Software lisansınızın süresi dolmak üzere'
+LNCS_BBY_AboutToExpire_Description = 'Korumanız sadece ' + $LicenseDaysToExpiry + ' gün sonra sona erecek ve bilgisayarınız korumasız kalacak. The Geek Squad Renewal Center\'dan Geek Squad Subscription Software Team ile çevrimiçi irtibata geçerek yenileyin'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Kaspersky Security Software\'inizin süresi bugün doluyor ve bilgisayarınız korumasız kalıyor'
+LNCS_BBY_AboutToExpire_Today_Description = 'The Geek Squad Renewal Center\'dan Geek Squad Subscription Software Team ile çevrimiçi irtibata geçerek hemen yenileyin'
+
+LNCS_BBY_LastDay_Title =	'Uyarı! Kaspersky Security Software lisans süresi bugün doluyor'
+LNCS_BBY_LastDay_Description =	'Bilgisayarınızın korumasız kalmasına izin vermeyin. Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin'
+LNCS_BBY_LastDay_Balloon =	'Uyarı! Kaspersky Security Software lisansınızın süresi bugün sona eriyor. Bilgisayarınızın korumasız kalmasına izin vermeyin. <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Uyarı! Bilgisayarınız korunmuyor'
+LNCS_BBY_Grace_Description =	'Bilgisayarınızın korumasız kalmasına izin vermeyin. Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin.'
+LNCS_BBY_Grace_Description_Full =	'Bilgisayarınızın korumasız kalmasına izin vermeyin. Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Warning! Your PC is unprotected. Don’t let your PC go unprotected. Renew online at <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Geek Squad Yenileme Merkezi</a> konumundan çevrimiçi olarak yenileyin.'
+
+LNCS_BBY_RenewFailure_Title =	    'Kaspersky Security Software uygulamanızı yenileyemiyoruz'
+LNCS_BBY_RenewFailure_Description = 'Lütfen Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin'
+LNCS_BBY_RenewFailure_Description_Full = 'Lütfen Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Kaspersky Security Software lisansını yenileyemiyoruz. Lütfen <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Yenileme Merkezi</a> konumundan çevrimiçi olarak yenileyin.</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Kayıtlı kredi kartınızın süresi yakında dolacağı için, Kaspersky Koruma Planınız iptal edilme riskiyle karşı karşıya'
+LNCS_BBY_CCAboutToExpire_Description =	'Lütfen Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Lütfen Geek Squad Yenileme Merkezinden çevrimiçi olarak yenileyin.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Etkinleştirmenin süresi dolmuş'
+LNCS_BBY_Expired_Description =	'Abonelik yenileme kullanılamıyor.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Kaspersky Anti-Virus Software\'inizi erkenden yenilemenin avantajını yakalayın ve $5 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Kaspersky Anti-Virus Software\'inizi erkenden yenilemenin avantajını yakalayın ve $10 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Kaspersky Anti-Virus Software\'inizi erkenden yenilemenin avantajını yakalayın ve $15 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Kaspersky Anti-Virus Software\'inizi erkenden yenilemenin avantajını yakalayın ve $20 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Kaspersky Internet Security Software\'inizi erkenden yenilemenin avantajını yakalayın ve $5 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Kaspersky Internet Security Software\'inizi erkenden yenilemenin avantajını yakalayın ve $10 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Kaspersky Internet Security Software\'inizi erkenden yenilemenin avantajını yakalayın ve $15 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Kaspersky Internet Security Software\'inizi erkenden yenilemenin avantajını yakalayın ve $20 tasarruf edin.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Şimdi Yenile</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Kaspersky Anti-Virus Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Kaspersky Anti-Virus Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Kaspersky Anti-Virus Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Kaspersky Anti-Virus Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Kaspersky Internet Security Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Kaspersky Internet Security Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Kaspersky Internet Security Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Kaspersky Internet Security Software\'inizin süresi doluyor!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Burayı tıklayın</a> ve yıllık yenileme fiyatından $5 tasarruf edin.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Burayı tıklayın</a> ve yıllık yenileme fiyatından $10 tasarruf edin.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Burayı tıklayın</a> ve yıllık yenileme fiyatından $15 tasarruf edin.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Burayı tıklayın</a> ve yıllık yenileme fiyatından $20 tasarruf edin.'
+
+LNCS_BBY_StatusUpdate = 'Ürün durumunun değişmesi 24 saat sürebilir. Ürünün güncellemeleri kontrol etmesi için Geek Squad Yenileme Merkezindeki yenileme işlemini tamamladıktan birkaç saat sonra "Etkinleştirme durumunu yenile" seçeneğini tıklayın.'
+
+EndOfLicense_Header = 'Uygulama performans raporu'
+WelcomPageTitle = $ProductName + '\'e Hoş Geldiniz'
+
+; incompatible
+ReinstallWarningTitle = 'İşletim sistemi sürümü ' + $ProductName + ' kurulumundan bu yana değişmiş'
+ReinstallWarningDescription = 'Lütfen ' + $ProductName + ' uygulamasını tekrar kurun'
+
+IncompatibleOsVersionTitle = $ProductName + ' duraklatıldı'
+IncompatibleOsVersionDescription = 'Microsoft Windows 8 yüklendikten sonra ' + $ProductName + ' ürününün uygun performansı açısından bazı uygulama bileşenlerini yeniden yüklemelisiniz. Yükleme işlemi 2 dakikadan daha fazla sürmeyecektir.' + '\n\nMicrosoft Windows 8 üzerinde ' + $ProductName + ' yapılandırması sırasında bilgisayarınızın koruması kısıtlanacaktır.'
+
+ReinstallWarningOkButton = 'Ayrıntılar'
+IncompatibleOsVersionOkButton = 'Yükle ve çalıştır'
+
+BrowserWaitingMessage = 'Lütfen bekleyin...'
+
+OsUpgradedTitle = 'İşletim sistemi güncellemesi'
+OsUpgradedDescription = 'İşletim sistemi güncellemesi başarıyla tamamlandı.'

@@ -1,0 +1,71 @@
+[Version] 
+Signature = "$Windows NT$" 
+Class 	  = System
+Provider  = %KL%
+CatalogFile=klwfp.cat
+DriverVer= 02/27/2013,1.2.0.21            ;mm/dd/yy
+DriverPackageType=KernelService
+
+[Manufacturer]
+%KLName%=KLWFPModelSection,ntamd64
+
+[KLWFPModelSection]
+%KLWFPName%=DefaultInstall,KLWFP
+
+[KLWFPModelSection.ntamd64]
+%KLWFPName%=DefaultInstall,KLWFP
+
+[SourceDisksNames]
+1 = %Floppy_Description%,,,
+
+[SourceDisksFiles]
+klwfp.sys = 1
+
+[DefaultInstall]
+CopyFiles = Copy.Sys
+
+[DefaultInstall.ntamd64]
+CopyFiles = Copy.Sys
+
+[DefaultInstall.Services]
+AddService=klwfp,,klwfp.install
+
+[DefaultInstall.ntamd64.Services]
+AddService=klwfp,,klwfp.install
+
+[DefaultUninstall]
+DelFiles   = Copy.sys
+
+[DefaultUninstall.ntamd64]
+DelFiles   = Copy.sys
+
+[DefaultUninstall.Services]
+DelService = klwfp
+
+[DefaultUninstall.ntamd64.Services]
+DelService = klwfp
+
+[klwfp.install]
+DisplayName = %klwfp%
+ServiceType = 1;
+StartType   = 1;
+Errorcontrol= 1;
+ServiceBinary = %12%\klwfp.sys
+LoadOrderGroup   = "PNP_TDI"
+
+;
+; Registry Modifications
+;
+
+[Copy.Sys]
+klwfp.sys,,,2
+
+[DestinationDirs]
+Copy.sys = 12
+
+[Strings] 
+KL = "Kaspersky Lab"
+KLName = "KL"
+KLWFPName = "KLWFP"
+klwfp = "klwfp"
+Floppy_Description = "Kaspersky Lab Installation Disk"

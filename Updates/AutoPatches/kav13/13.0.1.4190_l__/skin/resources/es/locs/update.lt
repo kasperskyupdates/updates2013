@@ -1,0 +1,33 @@
+﻿BasesAndModulesActual    = 'Las bases de datos y la aplicación están actualizadas' 
+BasesAndModulesVeryOld   = 'Las bases de datos y la aplicación están obsoletas'
+BasesAndModulesOld       = 'Las bases de datos y la aplicación están desactualizadas'
+BasesAndModulesCorrupted = 'Las bases de datos están dañadas'
+BasesAndModulesUpdatedAndRebootNeeded         = 'Las bases de datos y la aplicación están actualizadas.\nEs necesario reiniciar el equipo' 
+BasesAndModulesUpdatedAndProductRestartNeeded = 'Las bases de datos y la aplicación están actualizadas.\nEs necesario reiniciar la aplicación' 
+BasesAndModulesSomeBasesNeedUpdate = 'Es necesario llevar a cabo la actualización de algunos\ncomponentes de protección'
+BasesAndModulesOldInGracePeriod = 'Las bases de datos no se actualizaron desde hace mucho tiempo'
+
+
+BasesAndModulesOriginal  = 'Las bases de datos y la aplicación no se han actualizado nunca'
+BasesAndModulesUpdating  = 'Actualizando bases de datos y aplicación (' + $Update_PercentCompleted +'%)...'
+BasesAndModulesRollbacking = 'Volviendo a las bases de datos anteriores (' + $Update_PercentCompleted + '%)...'
+BasesAndModulesDescription_kav = 'De forma predeterminada, Kaspersky Anti-Virus comprobará de forma regular la existencia de actualizaciones, y descargará e instalará automáticamente nuevas firmas de la base de datos. También puede actualizar la aplicación manualmente en cualquier momento.'
+BasesAndModulesDescription_kis = 'De forma predeterminada, Kaspersky Internet Security comprobará de forma regular la existencia de actualizaciones, y descargará e instalará automáticamente nuevas firmas de la base de datos. También puede actualizar la aplicación manualmente en cualquier momento.'
+
+LastUpdate = 'Última actualización:'
+LastUpdateTime = $Update_LastUpdateTime
+LastUpdateFailed = 'falló'
+BasesSignatures = 'Firmas:'
+BasesRunmode = 'Modo de ejecución:'
+UpdateStatus = 'Estado:'
+DownloadStatus = 'Descargado:'
+UpdateDownloadProgress = $Updater_DownloadedSize + ' KB (' + $Updater_DownloadedSpeed + ' KB/seg)'
+UpdateDownloadProgressNoSpeed = $Updater_DownloadedSize + ' KB (' + ' calculando velocidad... )'
+UpdateSource = 'Origen:'
+
+UpdateAction = 'Actualizar'
+CancelUpdateAction = 'Detener'
+UpdaterSettingsAction = 'Configuración'
+UpdaterReportAction   = 'Informe'
+NotCompleted = 'no realizado' ;refers to update
+VirusListLinkText = 'Info. Actividad vírica'

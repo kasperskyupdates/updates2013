@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security előzetes kiadás'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus előzetes kiadás'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'friss' 
+Corrupted = 'sérült' 
+VeryOld = 'elavult' 
+Old = 'régi' 
+OldInGracePeriod = 'régóta nem lettek frissítve'
+UpdatedAndRebootNeeded = 'frissítve. A számítógépet újra kell indítani' 
+UpdatedAndProductRestartNeeded = 'frissítve. Az alkalmazást újra kell indítani' 
+SomeBasesNeedUpdate = 'egyes védelmi összetevőket frissíteni kell'
+
+Schedule_Auto    = 'automatikus' 
+Schedule_Manual  = 'kézi' 
+Schedule_Fixed   = 'ütemezés szerint' 
+
+Back = 'Vissza' 
+StopTask = 'Leállítás'
+
+News = 'Hírek'
+Reports = 'Jelentések'
+Settings = 'Beállítások'
+Help = '&Súgó'
+OK = 'OK'
+Cancel = 'Mégse'
+Retry = 'Újra'
+
+Unknown = 'ismeretlen'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'ma, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'tegnap, %H:%M'
+
+MonthName_1  = 'Január'
+MonthName_2  = 'Február'
+MonthName_3  = 'Március'
+MonthName_4  = 'Április'
+MonthName_5  = 'Május'
+MonthName_6  = 'Június'
+MonthName_7  = 'Július'
+MonthName_8  = 'Augusztus'
+MonthName_9  = 'Szeptember'
+MonthName_10 = 'Október'
+MonthName_11 = 'November'
+MonthName_12 = 'December'
+ 
+DateUnknown = 'ismeretlen'
+
+After = 'ekkor'
+Remaining = 'van hátra'
+Ago = 'óta'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'nap', 'nap'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'óra', 'óra'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'perc', 'perc'}
+LessMinute_After = '<1 perc'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'nap', 'nap'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'óra', 'óra'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'perc', 'perc'}
+LessMinute_Remaining = '<1 perc'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'nap', 'nap'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'óra', 'óra'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'perc', 'perc'}
+LessMinute_Ago = '<1 perc'
+
+Yesterday   = 'tegnap'
+Today       = 'ma' 
+LessWeek    = 'kevesebb, mint egy hete'
+LessTwoWeek = 'kevesebb, mint két hete'
+LessMonth   = 'kevesebb, mint egy hónapja'
+MoreMonth   = 'több, mint egy hónapja'
+MoreHalfYear= 'több, mint fél éve'
+MoreYear    = 'több, mint egy éve'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Mégse'
+ApplyButton = 'Alkalmaz'
+CloseButton = 'Bezárás'
+NextButton = 'Tovább >'
+BackButton = '< Vissza'
+FinishButton = 'Befejezés'
+SaveButton = 'Mentés'
+SkipButton = 'Átugrás'
+Continue = 'Folytatás'
+Yes = 'Igen'
+No = 'Nem'
+
+SettingsMore = '&Beállítások...'
+
+DoNoyShowThisWindow = 'Ne jelenjen meg'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Nem meghatározott hiba'
+SystemError_0x8000004B = 'Nem meghatározott hiba'
+SystemError_0x80000041 = 'Nincs elég memória'
+SystemError_0x80000042 = 'Nem támogatott'
+SystemError_0x80000043 = 'Nem megvalósított'
+SystemError_0x80000045 = 'Hozzáférés megtagadva, vagy az objektum nem található'
+SystemError_0x8000004C = 'Az objektum nem található'
+SystemError_0x800000C6 = 'Az objektum nem található'
+SystemError_0x800000C5 = 'Az objektum nem található'
+SystemError_0x8000004F = 'Az objektum zárolva'
+SystemError_0x80000051 = 'Művelet megszakítva'
+SystemError_0x80000059 = 'Eszközhiba'
+SystemError_0x8000005A = 'Érvénytelen aláírás'
+SystemError_0x8000005B = 'Érvénytelen verzió'
+SystemError_0x8000005F = 'Írásvédelem'
+SystemError_0x80000061 = 'Hiányzó licenc'
+SystemError_0x80000062 = 'Nincs elég hely'
+SystemError_0x80000063 = 'Az eszköz nem áll készen'
+SystemError_0x800000C0 = 'Érvénytelen formátum'
+SystemError_0x800000C1 = 'Nincs elég jogosultság'
+SystemError_0x800000C2 = 'Inicializálási hiba'
+SystemError_0x800000C3 = 'Inicializálási hiba'
+SystemError_0x800000C7 = 'Hibás objektumállapot'
+SystemError_0x800000C8 = 'Az objektum jelszóval védett'
+SystemError_0x800000CA = 'Olvasási hiba'
+SystemError_0x800000CC = 'Olvasási hiba'
+SystemError_0x800000CB = 'Írási hiba'
+SystemError_0x800000CD = 'Írási hiba'
+SystemError_0x800000D0 = 'Érvénytelen objektum'
+SystemError_0x800000D1 = 'Az objektum már létezik'
+SystemError_0x800000D5 = 'Az objektumot egy másik alkalmazás használja'
+SystemError_0x800000D8 = 'Az adatbázisok megsérültek'
+SystemError_0x800001C0 = 'Érvénytelen modul'
+SystemError_0x800001C2 = 'A modul hitelesítése nem történt meg'
+SystemError_0x800001C1 = 'A modul nem található'
+SystemError_0x800001C4 = 'Az összetevő nem tölthető be'
+SystemError_0x80000221 = 'Időtúllépés'
+SystemError_0x80000240 = 'Összetevő-együttműködési hiba'
+SystemError_0x90005000 = 'Érvénytelen digitális aláírás'
+SystemError_0x90005002 = 'Nincs digitálisan aláírva'
+SystemError_0x80027006 = 'A feladat le lett állítva'
+SystemError_0x80027007 = 'A feladat le lett állítva'
+SystemError_0x80380fbb = 'A feladat le lett állítva'
+SystemError_0x80017007 = 'A feladat nem indítható biztonságos módban'
+SystemError_0x80017005 = 'Feladat letiltva'
+SystemError_0x80017006 = 'Helytelen név vagy jelszó'
+SystemError_0x80017008 = 'A feladatindítás más felhasználó nevében biztonságos módban nem lehetséges'
+SystemError_0x80017009 = 'Illesztőprogram nem található'
+SystemError_0x80022005 = 'Hiba az adatbázisok betöltése közben'
+SystemError_default    = 'Hibakód: ' + $ErrorCode
+
+LicenseManager = '&Licencelés'
+SubscriptionManager = 'Előfizetés kezelése'
+ProblemSolution = 'A probléma megoldásához lépjen a Licencelés ablakba'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'inaktív' ;a kapcsolatra utal
+Stopping = 'leállítás'
+ConnectingToServer = 'kapcsolódás a kiszolgálóhoz'
+CreatingUpdateList = 'fájl feldolgozása'
+Downloading = 'fájlok letöltése'
+Installing = 'fájlok frissítése'
+RollbackRunning = 'visszagörgetés a korábbi adatbázisokra'
+
+FunctionalityDisabledForExpiredSubscription = 'a frissítés le van tiltva'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'a számítógép védelme ki van kapcsolva'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'day', 'days'} + ' maradt.'
+SubscriptionExpiresToday = 'ma lejár'
+SubscriptionActivated = 'aktivált'
+CheckReserveCodeManuallyHeader = 'Az alkalmazás automatikus aktiválása az új aktiváló kóddal nem sikerült' ; TODO
+CheckReserveCodeManuallyText = 'Próbálja meg az alkalmazás aktiválását manuálisan az új aktiváló kóddal.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Az alkalmazás béta verziója került telepítésre'
+LicensingStatus_Trial_ShortDescription = 'Az alkalmazás próbaverziója van telepítve'
+LicensingStatus_OkSubscription_ShortDescription = 'Előfizetés: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'A licenc hamarosan lejár'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'A licenc hamarosan lejár'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_InvalidKey_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_Reinstall_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'A kulcsok feketelistája sérült'
+LicensingStatus_CorruptedBases_ShortDescription = 'Az adatbázisok végfelhasználói licencszerződésnek történő megfelelése nem ellenőrizhető '
+LicensingStatus_BasesDateMismatch_ShortDescription = 'A licenc érvényességi időszaka nem teszi lehetővé a jelenlegi adatbázisok használatát'
+LicensingStatus_Expired_ShortDescription = 'A licenc lejárt'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Az előfizetés lejárt: ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'A próbalicenc lejárt'
+LicensingStatus_ExpiredBeta_ShortDescription = 'A béta verzió lejárt'
+LicensingStatus_Blocked_ShortDescription = 'A licenc blokkolva van'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Előfizetés blokkolva'
+LicensingStatus_LicenseViolated_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Licenc probléma észlelhető'
+LicensingStatus_Grace_ShortDescription = 'Az előfizetés lejárt: ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Előfizetés felfüggesztésének kezdete: ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Az előfizetés állapotának automatikus frissítése nem sikerült'
+LicensingStatus_NotActivated_ShortDescription = 'Az alkalmazás nincs aktiválva'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Az alkalmazás nincs aktiválva'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Az alkalmazás nincs aktiválva'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Az alkalmazás nincs aktiválva'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Új aktiváló kód'
+ReserveCodeStatus_Ok_ShortDescription = 'Új aktiváló kód'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Az új aktiváló kód érvénytelen'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Nem került aktiválásra új aktiváló kód'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Automatikus aktiválás várható.'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'A(z) ' + $ProductNameFull + ' béta változata a teljes funkcionalitást tartalmazza, de nem a termék befejezett verziója és hibákat tartalmazhat. Az észlelt problémákat jelentse a fórumunk megfelelő részében.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'nap', 'nap'} + ' maradt. Az időszak lejárta után az alkalmazás funkcionalitása jelentős korlátozás alá kerül.' 
+LicenseEndsToday = 'Ez a licenc utolsó napja. Az alkalmazás korlátozott funkciókkal működik tovább, ha nem újítja meg a licencet.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Előfizetés aktiválva. Lejárat dátuma: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Előfizetés megújítva eddig: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Előfizetés megszakítva. Lejárat dátuma: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Előfizetés felfüggesztve ettől a dátumtól: ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Előfizetés örökre megújítva'
+StateUnlimitedSubscriptionResumedText = 'Előfizetés engedélyezve'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'nap múlva lejár', 'nap múlva lejár'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'nap', 'nap'} + ' maradt. Az időszak lejárta után az alkalmazás funkcionalitása jelentős korlátozás alá kerül.'
+LicensingStatus_ExpiresToday_Cause = 'Ma lejár. Az alkalmazás funkciói a lejárat után korlátozva lesznek.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'A kulcs létrehozásának dátuma nem megfelelő. A számítógép rendszerdátuma módosulhatott. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Az aktiválás dátuma pontatlan. A számítógép rendszerdátuma módosulhatott. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Az alkalmazás integritása megsérült. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Ajánlott a legújabb feketelista letöltése a kiszolgálóról.'
+LicensingStatus_CorruptedBases_Cause = 'Egy lehetséges ok a nem megfelelő frissítés. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Valószínű, hogy az alkalmazás egy illegális másolatát vásárolta meg. A védelem szünetel. Számítógépe ki van téve a fertőződés, károsodás, adatlopás kockázatának.'
+LicensingStatus_BlockedSubscription_Cause = 'Elképzelhető, hogy az alkalmazás egy illegális másolatát szerezte be. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Meghaladta a számítógépek maximális számát, amelyekre a ' + $ProductName + ' az Ön előfizetésével feltelepíthető. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Meghaladta a számítógépek maximális számát, amelyekre a ' + $ProductName + ' az Ön előfizetésével telepíthető. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'nap', 'nap'} + ' maradt hátra ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Elképzelhető, hogy túl sok idő telt el az aktiváló kiszolgálókhoz történő kapcsolódások között. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Beállított aktiváló kód elérhető. Az alkalmazás működő internetkapcsolat esetén azonnal aktiválódik.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'A(z) beállított aktiváló kód érhető el. Az aktiváló kóddal aktiválhatja az alkalmazást, vagy törölheti a beállított aktiváló kódot.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Nem sikerült az alkalmazás automatikus aktiválása a beállított aktiváló kóddal. További segítségre van szükség.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Megadhatja az új aktiváló kódot. Az alkalmazás az aktív licenc lejárta után ezzel az aktiváló kóddal lesz aktiválva.'
+ReserveCodeStatus_Ok_Cause = 'Új aktiváló kód van jelen a számítógépen. A jelenlegi licenc lejártakor az alkalmazás automatikusan az új aktiváló kóddal lesz aktiválva. A védelem nem szakad meg.'
+ReserveCodeStatus_Invalid_Cause = 'Ha az aktív licenc lejár, a frissítés nem lesz elérhető.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Nem sikerült az alkalmazás automatikus aktiválása az új ' + $ReserveCode + ' aktiváló kóddal. További segítségre van szükség.'
+ReserveCodeStatus_WaitActivation_Cause = 'Automatikus aktiválás várható a(z) új ' + $ReserveCode + ' aktiválási kód segítségével.'
+
+ResolveProblem_BuyCommercial         = 'Javasoljuk, hogy vásárolja meg és aktiválja az alkalmazás kereskedelmi verzióját.'
+ResolveProblem_CheckSystemTime		= 'Ellenőrizze, hogy pontos-e a rendszerdátum.'
+ResolveProblem_ActivateAgain        = 'Próbálja meg az aktív kulcs törlését, majd az alkalmazás ismételt aktiválását. Továbbá kapcsolatba léphet a Terméktámogatás munkatársaival vagy az alkalmazás terjesztőjével.'
+ResolveProblem_CallSupport			= 'A blokkolás okát megtudhatja a Terméktámogatástól. Az alkalmazás funkcionalitásának helyreállításához szerezzen be egy új licencet.'
+ResolveProblem_ContactSupport		= 'Forduljon a terméktámogatáshoz.'
+ResolveProblem_ActialLicense		= 'A számítógép védelmének további biztosításához adja meg az új aktiváló kódot.'
+ResolveProblem_UpdateAgain			= 'Javasoljuk, hogy ismét frissítse az adatbázisokat.'
+ResolveProblem_BuyNewLicense		= 'A számítógép védelmének folytonossá tételéhez szerezzen be egy új licencet.'
+ResolveProblem_CallProvider			= 'Az előfizetés folytatásához forduljon a szolgáltatójához.'
+ResolveProblem_ProviderWebSite		= 'Az előfizetés folytatásához forduljon a szolgáltatójához.'
+ResolveProblem_RenewalNotAvailable	= 'Az előfizetés megújítása nem elérhető.'
+ResolveProblem_BuyLicense			= 'A számítógép védelmének folytatásához be kell szereznie egy kereskedelmi licencet a Kaspersky Lab-tól vagy a forgalmazótól. A próbaverzió csak egyszer használható.'
+ResolveProblem_Reinstall			= 'Telepítse újra az alkalmazást.'
+ResolveProblem_RenewLicense			= 'Újítsa meg a licencet, hogy minden funkció újra működhessen.'
+ResolveProblem_RefreshSubscription	= 'Kérjük, frissítse az előfizetés státuszát manuálisan.'
+ResolveProblem_Activate				= 'Az alkalmazás aktiválásához adja meg az aktiváló kódot.'
+ResolveProblem_ActivateReserveCode  = 'Próbálja meg az alkalmazás aktiválását manuálisan az új aktiváló kóddal.'
+ResolveProblem_ActivateCodeManual	= 'Aktiválja manuálisan az alkalmazást.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Ellenőrizze internetkapcsolatának beállításait, és várjon az automatikus aktiválásra vagy aktiválja manuálisan az alkalmazást.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Meg kell adnia az új aktiváló kódot. Az alkalmazás az aktív licenc lejárta után ezzel az aktiváló kóddal aktiválódik.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + 'Az alkalmazást a próbalicenc lejárta előtt kell aktiválni egy aktiválási kód segítségével.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Ha ismét használni szeretné az alkalmazás minden funkcióját, javasoljuk, hogy vásároljon egy kereskedelmi licencet a Kaspersky Lab-nél vagy valamelyik viszonteladójánál.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + 'Az alkalmazást a próbalicenc lejárta előtt kell aktiválni egy aktiválási kód segítségével.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Meg kell adnia az új aktiváló kódot. Az alkalmazás az aktív licenc lejárta után ezzel az aktiváló kóddal aktiválódik.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'A védelem állapota nincs meghatározva. '
+ProtectionLevelNoFeaturesLong = 'A védelem le van tiltva. '
+ProtectionLevelLimitedLong = 'Az alkalmazás korlátozott funkciókkal működik. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'A frissítés állapota nincs meghatározva. '
+UpdaterLevelNotAllowedLong = 'Frissítés nem elérhető. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'nem definiált'
+SubscriptionStateActive = 'aktív'
+SubscriptionStatePaused = 'felfüggesztve'
+SubscriptionStateCancelledSoft = 'felfüggesztve'
+SubscriptionStateCancelledHard = 'megszakítva'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'nem definiált'
+SubscriptionStatusReasonProviderInitiated = 'szolgáltató által aktiválva'
+SubscriptionStatusReasonCreditCardAuthFailed = 'hitelkártya hitelesítése elutasítva'
+SubscriptionStatusReasonCustomerInitiated = 'felhasználó által aktiválva'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'hitelkártya hitelesítése elfogadva'
+
+ProductStatusRelease = 'végleges kiadás'
+ProductStatusBeta = 'béta verzió'
+
+LegalStatusBlocked = 'a licenc blokkolva van'
+LegalStatusLimited = 'licencszerződés megsértése'
+LegalStatusValid = 'a licenc érvényes'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Fontos licencértesítés érkezett.\n<a href="licensemanager">Részletek...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Az előfizetés lejárt. Az előfizetés megújításához lépjen kapcsolatba a szolgáltatójával.'
+
+LicensingState_WarningIsAvailable = 'figyelmeztetés érkezett'
+ProtectionState_NotificationIsAvailable = 'Licenc figyelmeztetés'
+LicensingState_ProblemIsAvailable = 'probléma merült fel'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'A Kaspersky Security szoftver ' + $LicenseDaysToExpiry + ' nap múlva lejár, és számítógépe védelem nélkül marad'
+LNCS_BBY_WillExpire_Description =	'További védelme érdekében újítsa meg előfizetését online a Geek Squad User Renewal Center'
+
+LNCS_BBY_AboutToExpire_Title =	    'A Kaspersky Security szoftver hamarosan lejár'
+LNCS_BBY_AboutToExpire_Description = 'Csupán ' + $LicenseDaysToExpiry + ' napja maradt előfizetéséből, majd ezt követően számítógépe nem részesül védelemben. Vegye fel a kapcsolatot online a The Geek Squad Renewal Center oldalon elérhető Geek Squad Subscription Software Team csapatával, hogy megújítsa előfizetését'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'A Kaspersky Security szoftver ma lejár, és nem védi tovább a számítógépét.'
+LNCS_BBY_AboutToExpire_Today_Description = 'Vegye fel a kapcsolatot online a Geek Squad Renewal Center webhelyen a Geek Squad Subscription Software Team csapatával, hogy megújítsa előfizetését'
+
+LNCS_BBY_LastDay_Title =	'Figyelmeztetés! Kaspersky Security szoftvere a mai napon lejár'
+LNCS_BBY_LastDay_Description =	'Ne engedje, hogy számítógépe védelem nélkül maradjon. Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon'
+LNCS_BBY_LastDay_Balloon =	'Figyelmeztetés! Kaspersky Security szoftvere a mai napon lejár. Ne engedje, hogy számítógépe védelem nélkül maradjon. Újítsa meg előfizetését a <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a> oldalon.'
+
+LNCS_BBY_Grace_Title =			'Az előfizetés lejárt'
+LNCS_BBY_Grace_Description =	'Ne engedje, hogy számítógépe védelem nélkül maradjon. Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon.'
+LNCS_BBY_Grace_Description_Full =	'Ne engedje, hogy számítógépe védelem nélkül maradjon. Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Figyelmeztetés! Számítógépe nem áll védelem alatt. Ne engedje, hogy számítógépe védelem nélkül maradjon. Újítsa meg előfizetését online <a href="https://pcservices.bestbuy.com/wps/portal/RenewContract?SN=<AdditionalInfoStrings4>&ContractID=<AdditionalInfoStrings3>">The Geek Squad Renewal Center</a> oldalon.'
+
+LNCS_BBY_RenewFailure_Title =	    'Kaspersky Security szoftverének megújítása nem sikerült'
+LNCS_BBY_RenewFailure_Description = 'Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon'
+LNCS_BBY_RenewFailure_Description_Full = 'Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Kaspersky biztonsági szoftverének megújítása nem sikerült. Újítsa meg a <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>oldalon.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Előfordulhat, hogy a számítógép védelmére irányuló "Kaspersky Protection Plan" érvényessége megszűnik, mivel a nyilvántartásunkban szereplő hitelkártyája hamarosan lejár'
+LNCS_BBY_CCAboutToExpire_Description =	'Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Újítsa meg előfizetését online a Geek Squad Renewal Center oldalon.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Az előfizetés lejárt'
+LNCS_BBY_Expired_Description =	'Az előfizetés megújítása nem elérhető.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Újítsa meg idejekorán Kaspersky Anti-Virus szoftverét, és takarítson meg 5 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Újítsa meg idejekorán Kaspersky Anti-Virus szoftverét, és takarítson meg 10 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Újítsa meg idejekorán Kaspersky Anti-Virus szoftverét, és takarítson meg 15 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Újítsa meg idejekorán Kaspersky Anti-Virus szoftverét, és takarítson meg 20 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Újítsa meg idejekorán Kaspersky Internet Security szoftverét, és takarítson meg 5 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Újítsa meg idejekorán Kaspersky Internet Security szoftverét, és takarítson meg 10 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Újítsa meg idejekorán Kaspersky Internet Security szoftverét, és takarítson meg 15 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Újítsa meg idejekorán Kaspersky Internet Security szoftverét, és takarítson meg 20 amerikai dollárt.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Azonnali megújítás</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Kaspersky Anti-Virus szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Kaspersky Anti-Virus szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Kaspersky Anti-Virus szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Kaspersky Anti-Virus szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Kaspersky Internet Security szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Kaspersky Internet Security szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Kaspersky Internet Security szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Kaspersky Internet Security szoftvere lejár!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kattintson ide,</a> ha meg szeretne takarítani 5 amerikai dollárt az éves megújítási díjból'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kattintson ide,</a> ha meg szeretne takarítani 10 amerikai dollárt az éves megújítási díjból'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kattintson ide,</a> ha meg szeretne takarítani 15 amerikai dollárt az éves megújítási díjból.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Kattintson ide,</a> ha meg szeretne takarítani 20 amerikai dollárt az éves megújítási díjból.'
+
+LNCS_BBY_StatusUpdate = 'A termékállapot módosulása akár 24 órát is igénybe vehet. Kattintson az "Előfizetés állapotának frissítése" lehetőségre néhány órával a megújítási eljárás befejezése után Geek Squad Renewal Center, hogy utasítsa a terméket a frissítések ellenőrzésére.'
+
+EndOfLicense_Header = 'Alkalmazásteljesítmény jelentés'
+WelcomPageTitle = 'Üdvözli a ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'A(z) ' + $ProductName + ' telepítése óta megváltozott az operációs rendszer verziója'
+ReinstallWarningDescription = 'Telepítse újra a(z) ' + $ProductName + ' alkalmazást'
+
+IncompatibleOsVersionTitle = 'A(z) ' + $ProductName + ' fel van függesztve'
+IncompatibleOsVersionDescription = 'Ahhoz, hogy a(z) ' + $ProductName + ' a Microsoft Windows 8 telepítése után is megfelelő teljesítménnyel működjön, újra kell telepíteni egyes alkalmazás-összetevőket. A telepítés 2 percnél többet nem vesz igénybe.' + '\n\nMiközben telepíti a(z) ' + $ProductName + ' alkalmazást a Microsoft Windows 8 rendszerre, a számítógép védelme korlátozott lesz.'
+
+ReinstallWarningOkButton = 'Részletek'
+IncompatibleOsVersionOkButton = 'Telepítés és futtatás'
+
+BrowserWaitingMessage = 'Kérjük, várjon...'
+
+OsUpgradedTitle = 'Operációs rendszer frissítése'
+OsUpgradedDescription = 'Az operációs rendszer frissítése sikeresen befejeződött.'

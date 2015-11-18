@@ -1,0 +1,1058 @@
+﻿;------------- Global ------------
+
+[Locale]
+Value = 1035
+
+[Global]
+$Click_msg 							= "Ratkaisuja saatavana"
+$Protection                         = "Suojauskeskus"
+$License                            = "Käyttöoikeus"
+$LicenseOver                        = "Käyttöoikeus on vanhentunut"
+$LicenseDescr                       = "Käyttöoikeus antaa sinulle pääsyn  " + $ProductName_GEN + ", -sovelluksen täyden toiminnallisuuden versioon, antaa sinun päivittää sovelluksen sekä konsultoida teknistä tukea"
+$SelfProtection                     = "Itsepuolustus"
+$GroupTask                          = "(ryhmätehtävä)"
+$GroupUnk                           = "Tuntematon ryhmä"
+$Help                               = "Ohje"
+$Home                               = "Tila"
+$Events                             = "Tapahtumat"
+$Statistics                         = "Tilastotiedot"
+$Start                              = "Aloita"
+$Pause                              = "Keskeytä"
+$Stop                               = "Pysäytä"
+$High                               = "Korkea"
+$Medium                             = "Suositeltu"
+$Low                                = "Alhainen"
+$Custom                             = "Mukautettu"
+$Unrestricted                       = "Ei rajoituksia"
+$Customize                          = "Asetukset..."
+$Settings                           = "Asetukset..."
+$Settings_2                         = "Asetukset"
+$Settings1                          = "&Asetukset..."
+$Settings2                          = "&Asetukset..."
+$Settings3                          = "&Asetukset..."
+$SettingsS                              = "Asetukset"
+$AllowAll                           = "Salli kaikki"
+$BlockAll                           = "Estä kaikki"
+$Details                            = "Lisätiedot..."
+$Enabled                            = "Otettu käyttöön"
+$Disabled                           = "Poistettu käytöstä"
+$Enable                             = "Ota käyttöön"
+$Disable                            = "Ota pois käytöstä"
+$Browse                             = "Selaa..."
+$ResetLevel                         = "Oletusarvoisesti"
+$Reset                              = "Palauta"
+$Configure                          = "Asetukset..."
+$Cancel                             = "Peruuta"
+$Unknown                            = "Tuntematon"
+$LevelSettStd                       = "Tavallinen"
+$LevelSettCustom                    = "Muu"
+$NullObj                            = "Tuntematon"
+$AppNameNullObj						= $NullObj
+$AppPIDNullObj                      = "Poissa"
+$Application                        = "Sovellus"
+$Total                              = "Yhteensä"
+$Reports                            = "Raportit"
+$Close                              = "&Sulje"
+$Duration                           = "Kesto:"
+$ChartPeriod                        = "Ajanjakso: "
+$NotSpec                            = "Määrittämätön"
+$RemainsDays = (s_remains(f_numdeclension(LicInfo.DaysTillExpiration)) + " " + LicInfo.DaysTillExpiration + " " + s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration)))
+
+; well used lables
+$Add                                = "&Lisää"
+$Edit                               = "&Muokkaa"
+$Delete                             = "&Poista"
+$MoveUp                             = "Siirrä &ylös"
+$MoveDown                           = "Siirrä &alas"
+$Export                             = "&Vie"
+$Import                             = "&Tuo"
+$Yes                                = "Kyllä"
+$No                                 = "Ei"
+$ForumDefName                       = "Käyttäjäfoorumi"
+$ForumDefDescr                      = "Jaa kokemuksesi. Saat neuvoja asiantuntijoiltamme ja muilta käyttäjiltä."
+$KnowledgeBaseLinkText              = "Vastaustietokanta"
+$NewsFromKL                         = "Kaspersky Lab -uutiset"
+$CurObject                          = "Objekti"
+
+$ScanInProgressText = ("Tarkista " + depend(f_ScanCommonCompletion()))
+$UpdateInProgressText = ("Päivitä " + if(f_IsStateActive(Updater.state), (Updater.Completion + "%")))
+
+$CannotAddObjectDescr = "Määritä olemassa olevan paikallisen tai verkkoaseman täsmällinen polku. Merkkien ? ja * käyttäminen on sallittua."
+
+$AcceptEulaButtonText				= "Hyväksy ja aktivoi"
+$ShowKsnGrace						= epätosi
+
+$LearnMore                          = "Lue lisää"
+
+; dialog panel buttons
+Ok                                  = OK
+Yes                                 = Kyllä
+YesToAll			    = Kyllä kaikkiin
+No                                  = Ei
+Cancel                              = Peruuta
+Apply                               = Käytä
+Next                                = &Seuraava >
+Back                                = < &Takaisin
+Finish                              = &Lopeta
+Close                               = &Sulje
+StopTaskOnClose                     = "Haluatko varmasti pysäyttää tehtävän?"
+FolderNotEmpty                      = "Määritetty kansio ei ole tyhjä. Kaikki tieto menetetään.\nHaluatko poistaa tämän kansion siitä huolimatta?"
+FolderNotExist                      = "Kansiota ei löydy kyseisellä nimellä.\nHaluatko luoda kansion määritetyllä nimellä?"
+RestartProductWarning               = "Uudelleenkäynnistys vaaditaan " + $ProductName + ".\nKäynnistä uudelleen nyt?"
+RestartComputerWarning              = "Tietokone on käynnistettävä uudelleen.\nKäynnistetäänkö uudelleen nyt?"
+ErrorSendEmail                      = "Sähköpostiviestiä ei lähetetty."
+UpdateNoKeysUnavailable             = $ProductName + " ei ole aktivoitu.\nPäivitykset on otettu pois käytöstä."
+ProductFunctionErrLicUnavailable    = if(global.EulaVerified,  $ProductName + " ei ole aktivoitu.\nTämä toiminto ei ole käytettävissä.", "Loppukäyttäjän käyttöoikeussopimusta ei ole hyväksytty.\nTämä toiminto ei ole käytettävissä.")
+UpdateNotAvailable                  = "Järjestelmänvalvoja hallitsee päivityksiä."
+LicenseKeysDiscarted                = "Jotkin avaimet eivät ole yhteensopivia tämän sovelluksen kanssa. <a LicenseKeysDiscartedDetails onclick(dialog(\"LicenseKeysDiscartedDetails\"))>Lisätiedot...</a>."
+LicenseRemoveKeyWarning             = "Oletko varma, että haluat poistaa avaimen?"
+ActivateOnExistingCommercKeyWarning = "Huomio! Nykyinen käyttöoikeus on voimassa yli kaksi viikkoa. Jos uusit käyttöoikeuden nyt käyttämällä aktivointikoodia, menetät nykyisen käyttöoikeuden jäljellä olevan ajan.\nOn suositeltavaa uusia käyttöoikeus aikaisintaan silloin, aktiivisen käyttöoikeuden vanhenemiseen on aikaa kaksi viikkoa."
+DiscardThreatsWarning               = "Haluatko varmasti poistaa raporttimerkinnän?"
+DiscardObjectWarning                = "Haluatko varmasti poistaa objektit karanteenista?"
+TimeUnknown                         = "Tuntematon"
+NoRunAsAccount.caption              = "Käyttäjänimeä ei ole määritetty"
+NoRunAsAccount                      = "Anna käyttäjänimi."
+Duplicate.caption                   = "Elementti on jo olemassa"
+Duplicate                           = "Elementti, jota yrität lisätä, on jo listalla."
+ExportAll                           = "Haluatko viedä vain valitut kohteet? Jos valitset \"Ei\", koko lista viedään."
+ImportAll                           = "Haluatko liittää tuodut kohteet listaan? Jos valitset \"Ei\", listan kohteiden päälle kirjoitetaan."
+addrBookNoProfile                   = "Asennettua määritystä ei ole"
+NotFound                            = "Ei löytynyt"
+KAVMailQBSubj                       = "Karanteeniin asetettu objekti"
+KAVMailQBBody                       = "Tämä tiedosto lähetetään Kaspersky Labiin analysointia varten."
+WantApplyScanSettings               = "Haluatko varmasti ottaa nämä asetukset käyttöön kaikille virustarkistustehtäville?"
+Attention                           = "Huomio!"
+DiscardVulnerab                     = "Tyhjennä lista havaituista heikkouksista?"
+InvalidSymbol						= "Virheellinen merkki"
+InputError							= "Syöttövirhe"
+OnlyNumbersAllowed					= "Tähän kenttään voidaan syöttää vain numeerisia merkkejä"
+OutOfRange							= "Arvo on alueen ulkopuolella. Syötä arvo väliltä %d ja %d."
+ActivateCodeInputError				= "Syötetty aktivointikoodi on virheellinen. Tarkista, että koodi on syötetty oikein."
+ReinstallProductWarning             = "Käyttöjärjestelmän versio on muuttunut sen jälkeen, kun " + $ProductName + " asennettiin. Asenna " + $ProductName + " uudelleen."
+DeleteProductWarning                = "Loppukäyttäjän käyttöoikeussopimusta ei ole hyväksytty. Haluatko poistaa tuotteen " + $ProductName + " järjestelmästä?"
+ProductExitConfirm                  = "Haluatko varmasti poistua sovelluksesta " + $ProductName_GEN + "?"
+UninstallAVPToolWarning             = "Sovellus suljetaan ja sen asennus poistetaan. \nPoista sovelluksen asennus?"
+BrowseObjectNetPathUnavailableWarning = "Valittu verkkopolku ei ole saatavilla. Haluatko varmasti käyttää sitä?"
+RegRoot								= Tietokone
+OLATimestampErrorMsg                = "Tietokoneen paikallinen aika eroaa aktivointipalvelimen ajasta. Voit jatkaa aktivointia päivittämällä paikallisen ajan.\nPalvelimen aika: " + datetime(ServerTime) + ". Paikallinen aika: " + datetime(UserTime) + "."
+
+; Week Plan control
+WeekPlanMonday                      = Ma
+WeekPlanTuesday                     = Ti
+WeekPlanWednesday                   = Ke
+WeekPlanThuesday                    = To
+WeekPlanFriday                      = Pe
+WeekPlanSaturday                    = La
+WeekPlanSunday                      = Su
+
+WeekPlanCheck                       = Salli
+WeekPlanDeny                        = Estä
+WeekPlanAllow                       = Salli
+
+g_eulaAccepted						= epätosi
+
+;------------- FileSize types --------------
+
+[FileSizeTypes]
+B   = "tavua"
+KB  = "Kt"
+MB  = "Mt"
+GB  = "Gt"
+
+[f_SizeType]
+ret = (@ <= 1024)? "tavua" : ( (@<=1024*1024)? "Kt" : ( (@<=1024*1024*1024)? "Mt" : "Gt" ) )
+
+;------------- Browse Dialogs ------------
+
+[BrowseForObject]
+@ = "Selaa objektia"
+
+[BrowseForObject_Body]
+PathLabel   = "Objekti:"
+Recursive   = "Sisällytä alikansiot"
+
+[BrowseForFolder]
+@           = "Valitse kansio"
+@.PathLabel = "Kansio:"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForFile]
+@           = "Valitse tiedosto tai kansio"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForFile_Body]
+NameLabel   = "Resurssin nimi:"
+PathLabel   = "Objekti:"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForScanObject]
+@           				= "Valitse tarkistettava objekti"
+
+[BrowseForScanObject_Body]
+PathLabel   				= "Objekti:"
+Recursive   				= "Sisällytä alikansiot"
+CannotAddObject.caption		= "Objekteja ei voida lisätä tarkistukseen"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForUpdateSource]
+@           = "Valitse päivityslähde"
+
+[BrowseForUpdateSource_Body]
+PathLabel   = "&Lähde:"
+
+[BrowseForRegistry]
+@           = "Määritä rekisteriobjekti"
+
+[BrowseForRegistry_Body]
+NameLabel   = "Resurssin nimi:"
+PathLabel   = "Objekti:"
+ValueLabel  = "Arvo:"
+
+[BrowseForAppMenu]
+AppList = $IsKAV ? "Sovellukset" : "Sovellukset..."
+Browse  = $Browse
+
+;------------- numdeclension ------
+
+[f_numdeclension]
+ret = if((@%100) >= 11 && (@%100) < 20, 0, switch(@%10, "numdeclension_10"))
+
+[numdeclension_10]
+1       = 1
+2       =
+3       =
+4       = 2
+default = 0
+
+;------------- Days ---------------
+
+[s_days]
+1   = "päivä"
+2   = "päivää"
+3   = "päivää"
+4   = "päivää"
+def = "päivää"
+
+[s_daysRemaining]
+1 = s_days(@)
+def = s_days(@)
+
+[s_daysPast]
+1 = s_days(@)
+def = s_days(@)
+
+[s_remains]
+1       = "jäljellä"
+default = "jäljellä"
+
+;------------- Hours ---------------
+
+[s_hours]
+1   = "tunti"
+2   = "tuntia"
+3   = "tuntia"
+4   = "tuntia"
+def = "tuntia"
+
+;------------- Minutes ---------------
+
+[s_minutes]
+-1  = "<1 minuutti"
+1   = "minuutti"
+2   = "minuuttia"
+3   = "minuuttia"
+4   = "minuuttia"
+def = "minuuttia"
+
+
+;------------- Grid Groups --------
+
+[s_date]
+0       = "Tänään"
+-1      = "Eilen"
+-2      = "Sunnuntai"
+-3      = "Lauantai"
+-4      = "Perjantai"
+-5      = "Torstai"
+-6      = "Keskiviikko"
+-7      = "Tiistai"
+-8      = "Maanantai"
+-10     = "Tällä viikolla"
+-11     = "Viime viikolla"
+-12     = "Kaksi viikkoa sitten"
+-13     = "Kolme viikkoa sitten"
+-99     = "Tässä kuussa"
+-100    = "Viime kuussa"
+-1000   = "Tänä vuonna"
+default = ""
+
+[Grid.Groups]
+$items          = " (" + count + ")"
+$AppRating      = if(val, ",  luokitus: " + c_AppRating(val, appRating(val)))
+date            = "Päivämäärä: " + s_date(val) + $items
+dateonly        = "Päivämäärä: " + s_date(val)
+size            = "Koko: " + val + $items
+Action          = "Toiminto: " + (val ? s_Action(val) : $NullObj) + $items
+Verdict         = "Tulos: " + (val ? s_Verdict(val) : $NullObj) + $items
+ObjectType      = "Objekti: " + (val ? s_ObjectType(val) : $NullObj) + $items
+DetectType      = "Tyyppi: " + (val ? s_RepDetectType(val) : $NullObj) + $items
+DetectName      = "Nimi: " + (val ? val : $NullObj) + $items
+PIDGroup        = "Prosessi: " + s_PIDGroup(val) + $items
+DetectDanger    = "Vaara: " + (val ? s_DetectDanger(val) : $NullObj) + $items
+Exact           = "Todennäköisyys: " + (val ? s_Exact(val) : $NullObj) + $items
+dettype         = "Tyyppi: " + (val ? s_DetectType(val) : $NullObj) + $items
+detobjtype      = "Objekti: " + s_DetectObjectTypes(val) + $items
+threatstatus    = s_ThreatStatus(val) + $items
+
+[f_scanEventsGroup]
+ret = "   (tapahtumat: " + count + ", objektit: " + @.statistics.NumScaned + ", time: " + timestamp(f_workTime(@)) + ")"
+
+[f_workTime]
+ret = @.statistics.FinishTime == 0xFFFFFFFF ? 0xFFFFFFFF : ((@.state & #StateFlagOperational ? utctime() : @.statistics.FinishTime) - @.statistics.StartTime)
+
+[f_PIDGroupAppText]
+$name = objfile(f_AppImagePath(@.Module))
+ret = ($name ? $name : $UnknownApp) + "  PID(" + @.NativePid + ")"
+
+[StyledCaptionWindowT_Caption]
+Close.tt    = "Sulje"
+Minimize.tt = "Minimoi"
+
+[StyledCaptionWindowT_Caption.Icon.menu]
+Close    = "&Sulje\tAlt+F4"
+Minimize = "Minimoi"
+
+[Grid.Find]
+@       = "Hae"
+
+[Grid.FindBody.Btns]
+Mark    = "Merkitse kaikki"
+Find    = "Etsi seuraava"
+
+[Grid.Export]
+@ = "Tallenna"
+
+[Grid.Filter]
+@       = "Mukautettu suodatin"
+
+[Grid.Filter_Body]
+Label   = "Näytä rivit missä:"
+And     = "Ja"
+Or      = "Tai"
+
+[Grid.Filter.Condition]
+None                = ""
+Equals              = "on yhtä suuri kuin"
+DoNotEqual          = "ei yhtä suuri kuin"
+GreaterThan         = "on suurempi kuin"
+GreaterThanOrEqual  = "on suurempi tai yhtä suuri kuin"
+LessThan            = "on pienempi kuin"
+LessThanOeEqual     = "on pienempi tai yhtä suuri kuin"
+Blanks              = "tyhjä"
+NonBlanks           = "ei-tyhjä"
+Like                = "kuin"
+NotLike             = "ei kuin"
+
+[Grid.FindBody]
+ColumnLbl   = "Sarake:"
+FindLbl     = "Merkkijono:"
+MatchCase   = "Sama kirjainkoko"
+WholeWord   = "Vain koko sana"
+
+[Grid.ColumnCmb]
+All = "(Kaikki)"
+
+[Grid.HdrPopup]
+SortDown    = "Lajittele laskevasti"
+SortUp      = "Lajittele nousevasti"
+Find        = "Hae..."
+Group       = "Ryhmitä tämän kentän mukaan"
+Filter      = "Suodata tämän kentän mukaan..."
+Remove      = "Poista tämä kenttä"
+
+[Grid.FltPopup]
+Custom  = "(Mukautettu)"
+All     = "(Kaikki)"
+
+[Grid.Footer.Template]
+Add = "Lisää"
+
+[Grid.Footer2.Template]
+Add         = "Lisää"
+Edit        = "Muokkaa"
+Delete      = "Poista"
+MoveUp      = "Siirrä ylös"
+MoveDown    = "Siirrä alas"
+Import      = "Tuo"
+Export      = "Vie"
+
+[Grid.Toolbar.Template]
+Add         = "Lisää"
+Edit        = "Muokkaa"
+Allow       = "Salli"
+Deny        = "Estä"
+Ask         = "Kysy"
+Delete      = "Poista"
+MoveUp      = "Siirrä ylös"
+MoveDown    = "Siirrä alas"
+Import      = "Tuo"
+Export      = "Vie"
+
+;------------- Profile Enums ------------
+
+[f_GetTimeIntervalRemaining]
+ret = if(@ > 86400, @/86400 + " " + s_daysRemaining(f_numdeclension(@/86400)), if(@ > 3600, @/3600 + " " + s_hours(f_numdeclension(@/3600)), if(@ > 60, @/60 + " " + s_minutes(f_numdeclension(@/60)), s_minutes(-1))))
+
+[f_GetTimeIntervalPast]
+ret = if(@ > 86400, @/86400 + " " + s_daysPast(f_numdeclension(@/86400)), if(@ > 3600, @/3600 + " " + s_hours(f_numdeclension(@/3600)), if(@ > 60, @/60 + " " + s_minutes(f_numdeclension(@/60)), s_minutes(-1))))
+
+[f_GetTimeInterval]
+ret = if(@ > 60, "jäljellä ", if(@ > 0, "jäljellä ")) + if(@ >= 0, f_GetTimeIntervalRemaining(@), f_GetTimeIntervalPast(-@)) + if(@ <= 0, " sitten")
+
+[f_GetTimeIntervalByState]
+ret = if(f_IsStateActive(@1), if(@ > 60 || @ < -60, "jäljellä ", "jäljellä ")) + if(@ >= 0, f_GetTimeIntervalRemaining(@), f_GetTimeIntervalPast(-@)) + if(!f_IsStateActive(@1), " sitten")
+
+[s_ProfileState]
+#StateRunning       = "suoritetaan"
+#StatePaused        = "keskeytetty"
+#StateStopped       = "pysäytetty " + if(!@2, s_ProfileStateRes(@, @1))
+#StateCompleted     = "suoritettu " + if(!@2, s_ProfileStateRes(@, @1))
+#StateStarting      = "käynnistetään"
+#StatePausing       = "keskeytetään"
+#StateResuming      = "jatketaan"
+#StateStopping      = "pysäytetään"
+#StateFailed
+#StateMalfunction   = "virhe "
+#StateDisabled      = $Disabled
+#StateNotStarted    = "älä suorita koskaan"
+default             = "ei määritetty: " + state
+
+[s_ProfileStateRes]
+#StateFailed
+#StateStopped       = !statistics.FinishTime || statistics.FinishTime == 0xFFFFFFFF ? "tuntematon" : f_GetTimeIntervalByState(statistics.FinishTime - utctime(), @)
+#StateCompleted     = f_GetTimeIntervalByState(lastCompleted - utctime(), @) + if(@1, s_ProfileStateComplDescr(type, statistics))
+
+[s_ProfileDescription]
+Protection  = "Tietokoneen tiedon suojaus haittaohjelmistoa, Internet-petoksia ja luvatonta käyttöä vastaan"
+av          = "Tarkista tietokoneesi tiedostot, sähköpostiviestit, verkkosivut ja ladatut tiedostot heti, kun niitä aletaan käyttää"
+cf          = "Suodattaa epätoivotut sähköpostit, analysoi avattujen verkkosivujen sisällön"
+os          = "Tietokoneen tiedon suojaus verkkohyökkäyksiä ja Internet-petoksia vastaan"
+sw          = "Valvoo kaikkien tietokoneen sovellusten ja prosessien toimintaa"
+ods         = "Tarkistaa tietokoneen, sen erilliset kansiot ja tiedostot, haitallisten objektien varalta"
+updater     = "Säännölliset " + $ProductName_GEN + " -tietokantojen ja ohjelmamoduulien päivitykset varmistavat tehokkaan suojauksen"
+avz         = "Voit suorittaa manuaalisen tartunnan poiston seuraavasti:"
+
+[s_ProfileStateComplDescr]
+updater = ", päivityksen koko: " + f_ObjSize(@1.DownloadedBytesCount) + ", keskimääräinen nopeus: " + f_ObjSize(@1.Speed*1024) + "/s"
+
+;------------- Tray ------------
+
+[Tray]
+$FullProdName = $ProductName + " " + env("ProductVersion")
+$IsEulaNowVerifing = !EulaVerified && g_eulaAccepted
+$ProdStateText = if($IsEulaNowVerifing, $FullProdName, $FullProdName + s_ProdyctTrayStatus(ProdStateId))
+@ = if(TaskManagerState, TaskManagerState == 1 ? ($ProductName + " " + env("ProductVersion") + s_ProdyctTrayStatus(ProdStateId)) : "Ohjelman huolto-osa on poistettu tietokoneen muistista.")
+
+[s_ProdyctTrayStatus]
+$NotTaskRunStatus = (s_ProdStateSeverity(@) != #eProtStateCrit && $IsNeedReboot ? "\nUudelleenkäynnistys vaaditaan" : (s_ProdStateSeverity(@) == #eProtStateCrit ? ("\n" + s_ProdState(@)) : if(bindok("AVService.BasesDate"), "\nTietokantojen julkaisupäivämäärä: " + datetime(AVService.BasesDate))))
+def = if($IsUpdateActive, "\n" + $UpdateInProgressText, if($IsScanActive, "\n" + $ScanInProgressText, $NotTaskRunStatus))
+
+[Tray.menu]
+LaunchQMLTaskManager	  = "Tehtävienhallinta"
+Updater                   = "Päivitys" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_My_Computer          = "Täydellinen tarkistus" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_Startup              = "Kriittisten alueiden tarkistus" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_Qscan                = $Scan_Qscan + if(f_IsStateActive(state), " " + Completion + "%")
+News      	              = "Uutiset" + (UnreadNewsCount ? " (" + UnreadNewsCount + ")" : "")
+;RunningTask               = $ProfileName + if(f_IsStateActive(state), " " + Completion + "%")
+Tools                     = "Työkalut"
+VirtualKeyboard           = "Virtuaalinen näppäimistö"
+EnableParCtl              = $ParCtl_IsCurUserEnabled ? "Poista Käytönvalvonta käytöstä" : "Ota Käytönvalvonta käyttöön"
+kis                       = $ProductName
+DisableProtect            = (s_IsStateRunning(Protection.state) ? "Keskeytä suojaus..." : "Jatka suojausta") + if(s_IsStateTransitional(Protection.state), " (" + s_ProfileState(Protection.state) + ")")
+Settings                  = "Asetukset"
+About                     = "Tietoja"
+RestartOS				  = $LinkRestartComputer
+Unload                    = "Poistu"
+
+[Tray.menu_Tools]
+NetMonitor                = "Verkkovalvonta"
+VirtualKeyboard           = "Virtuaalinen näppäimistö"
+
+[TrayNewsMenu.menu]
+KAV     = $ProductName
+News    = "Uutiset..."
+Hide    = "Piilota"
+
+;------------- Main Window ------------
+
+[MainWindow.Antivirus]
+Header = "Tietoturvataso"
+
+[RunAsGroup]
+@               = "Käyttäjätili"
+Enable          = "Suorita tehtävä &käyttäjänä:"
+Account.Name    = "&Nimi:"
+Pswd.Name       = "&Salasana:"
+
+[s_ToastCategoryText]
+#ToastCategoryIgnore     = ""
+#ToastCategoryProtection = "Suojauskomponentit"
+#ToastCategoryThreats    = "Uhkat"
+#ToastCategoryWeb        = "Internet"
+#ToastCategoryBases      = "Tietokannat"
+#ToastCategoryLicence    = "Käyttöoikeus"
+#ToastCategoryMessage    = "Tärkeä viesti"
+
+[s_ToastDescriptionText]
+#eNotifyNone                = switch(Severity,"EventTypesSeverity")
+#eNotifyThreats             = switch(Severity,"EventTypesThreats")
+#eNotifySuspicious          = "Haittaohjelman muokkaukset"
+#eNotifyLicensing           = if($IsVerdictProductStatusId, s_ToastLicenseDescription($Verdict2ProductStatusId),switch(Severity,"EventTypesLicence"))
+#eNotifyProduct             = if($IsVerdictProductStatusId, s_ToastDescriptionProductState($Verdict2ProductStatusId), if(Severity == 4, switch(Severity,"EventTypesProduct")))
+#eNotifyUpdater             = switch(Severity,"EventTypesUpdater")
+#eNotifyBases               = switch(Severity,"EventTypesBases")
+#eNotifyProtocoller         = "Salattu yhteys tarkistettu"
+#eNotifySSL                 = "Salattujen yhteyksien tarkistus"
+#eNotifySelfProtection      = "Itsepuolustus on pois käytöstä. Ota käyttöön"
+#eNotifyPswdArchive         = "Salasanasuojattu arkisto havaittu"
+#eNotifyThreatNotCured      = "Tartunnan poistaminen mahdotonta"
+#eNotifyThreatDeleted       = "Tartunnan saanut objekti poistettu"
+#eNotifyThreatQuarantined   = "Objekti siirretty karanteeniin"
+#eNotifyRuleTriggered       = "Sovelluksen hallintasääntö laukaistu"
+#eNotifyAttackBlocked       = "Verkkohyökkäys havaittu"
+#eNotifyBan                 = "Hyökkäävä tietokone estetty"
+#eNotifyThreatsUntreated    = "Käsittelemättömiä objekteja on olemassa"
+#eNotifyUpdateNeedReboot    = "Uudelleenkäynnistys vaaditaan. Käynnistä uudelleen..."
+#eNotifyParCtl              = $ParCtl
+#eNotifyAppGroupChanged     = "Sovellus asetettu rajoitettuun ryhmään"
+#eNotifyAppGroupChanged2Trusted = "Sovellus on sijoitettu luotettujen sovellusten ryhmään"
+#eNotifyStatisticsReportReady = "Ilmoitus raporttia luotaessa"
+#eNotifyHiddenObject        = "Piilotettu objekti havaittu"
+#eNotifyBlockedBySelfProtection = "Itsepuolustus esti toiminnon"
+#eNotifyProductNotAutoRun     = "Sovelluksen automaattinen käynnistys on otettu pois päältä"
+#eNotifyUpdateNotAuto         = "Automaattiset päivitykset ovat pois käytöstä"
+#eNotifyNewsUnread	          = "Lukemattomia uutisia saatavilla. Lisätietoja..."
+#eNotifySomeBasesNeedUpdate   = "Tietyille suojauskomponenteille tarvitaan päivitys"
+#eNotifyNoProtection          = s_ToastDescriptionProductState($Verdict2ProductStatusId)
+#eNotifyMalwareThreatsUntreated = "Prosessoimattomia haittaohjelmia on havaittu"
+#eNotifyEulaNotAccepted     = "Loppukäyttäjän käyttöoikeussopimus tulee hyväksyä"
+#eNotifyIpm                 = switch(Severity, "EventTypesNotification")
+
+[EventTypes]
+#eNotifyNone                = switch(Severity,"EventTypesSeverity")
+#eNotifyThreats             = switch(Severity,"EventTypesThreats")
+#eNotifySuspicious          = "Haittaohjelman muokkaukset"
+#eNotifyLicensing           = switch(Severity,"EventTypesLicence")
+#eNotifyProduct             = switch(Severity,"EventTypesProduct")
+#eNotifyUpdater             = switch(Severity,"EventTypesUpdater")
+#eNotifyBases               = switch(Severity,"EventTypesBases")
+#eNotifyProtocoller         = "Salattu yhteys tarkistettu"
+#eNotifySSL                 = "Salattujen yhteyksien tarkistus"
+#eNotifySelfProtection      = "Itsepuolustus on otettu pois päältä"
+#eNotifyPswdArchive         = "Salasanasuojattu arkisto havaittu"
+#eNotifyThreatNotCured      = "Tartunnan poistaminen mahdotonta"
+#eNotifyThreatDeleted       = "Tartunnan saanut objekti poistettu"
+#eNotifyThreatQuarantined   = "Objekti siirretty karanteeniin"
+#eNotifyRuleTriggered       = "Sovelluksen hallintasääntö laukaistu"
+#eNotifyAttackBlocked       = "Verkkohyökkäys havaittu"
+#eNotifyBan                 = "Hyökkäävä tietokone estetty"
+#eNotifyThreatsUntreated    = "Käsittelemättömiä objekteja on olemassa"
+#eNotifyUpdateNeedReboot    = "Uudelleenkäynnistys vaaditaan"
+#eNotifyParCtl              = $ParCtl
+#eNotifyAppGroupChanged     = "Sovellus siirretty rajoitettuun ryhmään"
+#eNotifyAppGroupChanged2Trusted = "Sovellus siirretty luotettujen sovellusten ryhmään"
+#eNotifyStatisticsReportReady = "Ilmoitus raporttia luotaessa"
+#eNotifyHiddenObject        = "Piilotettu objekti havaittu"
+#eNotifyBlockedBySelfProtection = "Itsepuolustus esti toiminnon"
+#eNotifyProductNotAutoRun     = "Sovelluksen automaattinen käynnistys on otettu pois päältä"
+#eNotifyUpdateNotAuto         = "Automaattiset päivitykset ovat pois käytöstä"
+#eNotifyNewsUnread	          = "Lukemattomia uutisia saatavilla"
+#eNotifySomeBasesNeedUpdate   = "Tietyille suojauskomponenteille tarvitaan päivitys"
+#eNotifyNoProtection          = "Kriittisiä suojauskomponentteja on kytketty pois käytöstä"
+#eNotifyMalwareThreatsUntreated = "Prosessoimattomia haittaohjelmia on havaittu"
+#eNotifyIpm                   = switch(Severity,"EventTypesIpm")
+
+def = @
+
+[EventTypesIpm]
+1   = "Kriittinen käyttöoikeusilmoitus"
+2   = "Hyvin tärkeä käyttöoikeusilmoitus"
+3   = "Tärkeä käyttöoikeusilmoitus"
+4   = "Muu käyttöoikeusilmoitus"
+
+[EventTypesSeverity]
+0   = "Kaikki tapahtumat"
+1   = "Kriittiset tapahtumat"
+2   = "Toiminnallisuusvirhe"
+3   = "Tärkeät tapahtumat"
+4   = "Muut tapahtumat"
+
+[EventTypesThreats]
+1   = "Haittaohjelman havaitseminen"
+3   = "Mainosohjelmien ja muiden ohjelmien havaitseminen"
+4   = "Tartunnan poisto tartunnan saaneista objekteista"
+
+[EventTypesLicence]
+1   = "Käyttöoikeus on vanhentunut"
+2   = "Käyttöoikeus puuttuu tai on virheellinen"
+3   = "Käyttöoikeus vanhenee pian"
+4	= "Tärkeä käyttöoikeusilmoitus on saatavana"
+
+[EventTypesProduct]
+2   = "Tehtävää ei voida suorittaa"
+3   = "Muut tärkeät ilmoitukset"
+4   = "Suojauskomponentit ovat pois käytöstä"
+
+[s_ToastLicenseDescription]
+#ProdStateKeyTrial                      = ""
+#ProdStateKeyReservedActivationProblem  = "Vara-aktivointikoodin käyttäminen epäonnistui"
+#ProdStatePreinstalledCodeWaitActivationCritical = "Sovelluksen automaattinen aktivointi epäonnistui"
+#ProdStatePreinstalledCodeActivationProblem      = "Valmiiksi määritettyä aktivointikoodia ei käytetty"
+default                                 = s_ProtState(@)
+
+[s_ToastDescriptionProductState]
+#ProdStateProtectionNotRunning      = "Suojaus ei ole käynnissä. Jatka suojausta..."
+#ProdStateProtectionDisabled        = "Suojaus on otettu pois käytöstä. Ota käyttöön..."
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled             = "Jotkut suojauskomponentit ovat pois käytöstä. Ota käyttöön..."
+#ProdStateTasksMalfunction          = "Joitakin suojauskomponentteja ei voitu ottaa käyttöön. Ota käyttöön..."
+default                             = ""
+
+[EventTypesUpdater]
+2   = "Päivitysvirhe"
+4   = "Päivitys suoritettu"
+
+[EventTypesBases]
+1   = "Tietokannat ovat vanhentuneet"
+2   = "Tietokannat puuttuvat tai ovat korruptoituneet"
+3   = "Tietokannat eivät ole ajan tasalla"
+4	= "Tietyille suojauskomponenteille tarvitaan päivitys"
+
+[EventTypesNotification]
+1   = "Tärkeä ilmoitus odottaa"
+3   = "Tärkeä ilmoitus odottaa"
+4   = "Ilmoitus odottaa"
+
+[s_SystemError]
+0x80000040
+0x8000004B              = "Odottamaton virhe"
+0x80000041              = "Liian vähän muistia"
+0x80000042              = "Ei tuettu"
+0x80000043              = "Ei käytössä"
+0x80000045              = "Käyttö estetty tai objektia ei löydy"
+0x8000004C
+0x800000C6
+#errOBJECT_NOT_FOUND    = "Objektia ei löytynyt"
+0x8000004F              = "Objekti on lukittu"
+0x80000051              = "Toiminto peruutettu"
+0x80000059              = "Tietovälinevirhe"
+0x8000005A              = "Virheellinen allekirjoitus"
+0x8000005B              = "Virheellinen versio"
+0x8000005F              = "Kirjoitussuojaus"
+0x80000061              = "Käyttöoikeus puuttuu"
+0x80000062              = "Liian vähän tilaa"
+0x80000063              = "Objektia ei löytynyt"
+0x800000C0              = "Väärä muoto"
+0x800000C1              = "Oikeudet eivät riitä"
+0x800000C2
+0x800000C3              = "Alustusvirhe"
+0x800000C7              = "Virheellinen objektin tila"
+0x800000C8              = "Objekti on salasanasuojattu"
+0x800000CA
+0x800000CC              = "Lukuvirhe"
+0x800000CB
+0x800000CD              = "Kirjoitusvirhe"
+0x800000D0              = "Virheellinen objekti"
+0x800000D1              = "Objekti on jo olemassa"
+0x800000D5              = "Toinen sovellus käyttää objektia"
+0x800000D8              = "Tietokannat ovat korruptoituneet"
+0x800001C0              = "Moduuli vioittunut"
+0x800001C2              = "Moduulia ei ole todennettu"
+0x800001C1              = "Moduulia ei löydy"
+0x800001C4              = "Komponenttia ei voida ladata"
+0x80000221              = "Aikakatkaisu"
+#errPROXY_STATE_INVALID = "Komponentin vuorovaikutusvirhe"
+0x90005000              = "Digitaalinen allekirjoitus virheellinen"
+0x90005002              = "Ei digitaalisesti allekirjoitettu"
+0x80027006
+0x80027007
+0x80380fbb              = "Tehtävä on pysäytetty"
+0x80017007              = "Tehtävää ei voida käynnistää vikasietotilassa"
+0x80017005              = "Tehtävä pois käytöstä"
+0x80017006              = "Virheellinen käyttäjänimi tai salasana"
+0x80017008              = "Tehtävän suorittaminen toisen käyttäjän tilillä ei ole mahdollista vikasietotilassa"
+0x80017009              = "Ohjainta ei löydy"
+0x80022005              = "Virhe tietokantojen latauksessa"
+default                 = "Virhekoodi: " + fmt("08X", @)
+
+[s_ComputersForm]
+1       = "tietokone"
+default = "tietokoneet"
+
+[SupportWindow]
+@               = "Tuki"
+@.Footer.Link1  = "Käyttäjän käyttöoikeussopimus"
+@.Footer.Link2  = "Tukityökalut"
+
+[SupportWindow_Header]
+Caption = "Tuki"
+Desc    = "Tässä ikkunassa voit tarkastella järjestelmätietoja, käydä FastTrack-tukipalvelussa sekä avata tietopankin ja käyttäjäfoorumin. Näiden resurssien käyttö vaatii internetyhteyden."
+
+[SupportWindow_New_Body]
+
+[SupportWindow_New_Body_SysInfo]
+Desc = $ProductName_GEN + " -tuki"
+ProdVer.Name    = "Sovellusversio:"
+Signatures.Name = "Tietokantojen julkaisupäivämäärä:"
+OSVer.Name      = "Käyttöjärjestelmä:"
+NoKeys.Name     = "Käyttöoikeus: "
+NoKeys.Val      = "Sovellusta ei ole aktivoitu"
+ActiveLic.Name   = "Avain:"
+SubscrLic.Name   = "Tilaus: "
+
+[SupportWindow_New_OneClickSprt]
+Arrow.Name         = "FastTrack-tuki (suositeltu)"
+Arrow.Descr        = "Tämä käytönaikainen vianmääritystyökalu ohjaa sinut nopeasti ongelmasi ratkaisuun sekä tarvittaessa ottamaan yhteyttä tekniseen tukeen."
+Forum.Descr        = "Jaa kokemuksesi. Saat neuvoja asiantuntijoiltamme ja muilta käyttäjiltä."
+KnowlegeBase.Name  = "Vastaustietokanta"
+KnowlegeBase.Descr = "Suosituksia " + $ProductName + " -ohjelmiston käyttöön ja vastauksia usein kysyttyihin kysymyksiin."
+
+[SupportWindow.Traces]
+@       = "Tukityökalut"
+
+[SupportWindow.Traces_Body]
+Intro   = "Huomio! Tätä ikkunaa tulee käyttää vain Kaspersky Labin teknisen tukipalvelun asiantuntijan avustuksella."
+Trace   = "Jäljet"
+Action  = "Toiminnot"
+
+[SupportWindow.Traces_Trace]
+Label       = "Käytä normaalia (500) jäljitystasoa oletusarvoisesti."
+StateLabel  = "Tila:"
+State       = tracer_state() ? "Jäljet ovat käytössä" : "Jäljet eivät ole käytössä"
+LevelLabel  = "Taso:"
+OnOff       = tracer_state() ? "&Ota pois käytöstä" : "&Ota käyttöön"
+
+[SupportWindow.Traces_Trace_Level]
+lvl100  = "Kriittinen (100)"
+lvl200  = "Korkea (200)"
+lvl300  = "Diagnostinen (300)"
+lvl400  = "Tärkeä (400)"
+lvl500  = "Normaali (500)"
+lvl600  = "Alhainen (600)"
+
+[SupportWindow.Traces_Action]
+AvzReport.Name  = "Luo järjestelmän tilaraportti"
+AvzReport.Descr = "Luo järjestelmän tilaraportti (AVZ-raportti)"
+AvzScript.Name  = "Suorita AVZ-komentojono"
+AvzScript.Descr = "Suorita AVZ-komentosarja"
+Send.Name       = "Lataa palvelimeen tietoja teknistä tukipalvelua varten"
+Send.Descr      = "Ladataan kerätyt muistitiedostovedokset ja -jäljet Kaspersky Lab -palvelimiin"
+GotoFolder      = "&Tarkastele..."
+
+[MainWindow]
+@ = $RemoteComputer + $ProductNameLong + if(!IsRelease, " Tekniikkaesittely")
+
+[MainWindow_Header]
+Settings        = "Asetukset"
+Reports         = "Raportit"
+Quarantine      = "Karanteeni"
+News      	= "Uutiset" + (UnreadNewsCount ? " (" + UnreadNewsCount + ")" : "")
+AlphaWarning    = "!!! EI MYYTÄVÄKSI !!!"
+
+[MainWindow_Navigator_info_area]
+Fix = "Korjaa nyt"
+
+[MainWindow_Footer_SubscrLic_Desc]
+#ssExpDateUnknown      = "tilaa ei määritetty"
+#ssUnlimitedActivated  = "aktiivinen"
+#ssUnlimitedProlonged  = "aktiivinen"
+#ssExpired             = "vanhentunut"
+#ssNotYetSuspended     = "peruutettu alkaen " + date(LicInfo.LicenseExpirationDate)
+#ssSuspended           = "peruutettu, " + ((LicInfo.KeyInfo.KeyType==#ektSubscriptionProtection)? "suojaus on pois käytöstä" : "päivitystoiminto on pois käytöstä")
+#ssUnlimitedResumed    = "jatkettu"
+#ssHasExpDateActivated
+#ssHasExpDateProlonged
+#ssHasExpDateCanceled  = $RemainsDays
+#ssGracePeriod         = "lisäaika, " + s_remains(f_numdeclension(LicInfo.SubscriptionCheckInfo.ToleranceDays)) + " " + f_n_days_remaining(LicInfo.SubscriptionInfo.ToleranceDays)
+
+
+[s_ProdStateKeyInvalid_Main]
+#ekirCorrupted              = "virheellinen avain"
+#ekirBlackListed            = "avain on estetty"
+#ekirInconsistentUpdate     = "tietokannat ovat korruptoituneet"
+#ekirKeyCreationDateInvalid = "virheellinen avaimen luontipäivämäärä"
+#ekirInvalidBlacklist       = "avaimien musta lista on vioittunut"
+#ekirKeyInstallDateInvalid  = "virheellinen sovelluksen aktivointipäivämäärä"
+#ekirLicenseCountLimitExceeded = "käyttöoikeussopimusta rikottu"
+default                     = "virhe!"
+
+[MainWindow_Footer]
+Unload      = "Poistu"
+Events      = "Raportti"
+Detected    = "Havaittu"
+Upgrade     = "Päivitä kohteeseen " + switch("kis", "ProductTitleLong")
+LicDescAt   = ":"
+LicenseSubscr = (ActiveLicenseAutoActivationError.ErrorCode == 0 && !SubscriptionTolerancePassed)? "Palveluntarjoaja" : "Päivitä tilaus"
+
+[MainWindow_Footer_Right]
+$LicSubscriptionDesc = (!global.KeyState || (global.KeyState & (#eKeyGracePeriod|#eKeySuspended))) ? switch(SubscriptionStatus,"MainWindow_Footer_SubscrLic_Desc") : ((global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) ? "vanhentunut" : s_ProdStateKeyInvalid_Main(LicInfo.InvalidReason))
+$LicNonSubscriptionDesc = global.KeyState & #eNoKeys ? "ei asennettu" : ($IsWaitingPreinstalledCodeActivation ? "odottaa aktivointia" : (LicInfo.InvalidReason == #ekirValid ? $RemainsDays : (global.KeyState & (#eKeyExpired|#eKeyTrialExpired) ? "vanhentunut" : s_ProdStateKeyInvalid_Main(LicInfo.InvalidReason))))
+LicDesc     = ($IsSubscription)? "Tilaus: " + ($LicSubscriptionDesc) : "Käyttöoikeus: " + ($LicNonSubscriptionDesc)
+BackToKAV   = "Virustorjunta"
+License     = global.LicenseRenewAvailable ? "Uusi käyttöoikeus" : "Osta käyttöoikeus"
+
+[MainWindow_Footer_Left]
+Cabinet     = "Oma Kaspersky-tili"
+Support     = "Tuki"
+FullProtection  = "Täysi suojaus viruksia vastaan"
+
+[ProfileHome_Progress]
+LastStart.Name  = "Viimeinen suoritus:"
+LastError.Name  = "Viimeinen suoritus:"
+Completion.Name = "Tila:"
+
+[ProfileHome_Progress_Compl]
+Details         = "Lisätiedot"
+
+[Product_Notification_OptionsMenu]
+NotifyDisable       = "Ota tämä ilmoitus pois käytöstä"
+NotifyDisableAll    = "Ota kaikki ilmoitukset pois käytöstä"
+
+;------------- ProductInfo --------------
+
+[ProductInfo]
+@ = "Tietoja"
+Close = "Sulje"
+
+[ProductInfo_Body_About]
+Copyright   = $CopyrightText
+Warning     = "Varoitus! Ohjelman yksinomaiset oikeudet kuuluvat Kaspersky Lab ZAO:lle."
+Warning2    = "Rekisteröidyt tavaramerkit ja palvelun tavaramerkit ovat niiden omistajiensa omaisuutta."
+
+;------------- Help -----------------------
+
+[f_n_days_ex]
+ret = @? "päiviä jäljellä: " + f_n_days_past(@) : "tänään"
+
+[s_DefaultTextForValidReason]
+#ektBeta        = "Sovelluksen beta-versio vanhenee "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nVoit varmistaa keskeytymättömän suojauksen <a onclick(buy())>napsauttamalla tästä ja ostamalla tuotteen</a>."
+#ektTrial       = "Kokeiluaikasi loppuu "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nVoit varmistaa keskeytymättömän suojauksen <a onclick(buy())>napsauttamalla tästä ja ostamalla tuotteen</a>."
+#ektTest        = "Sovelluksen beta-versio vanhenee "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nVoit varmistaa keskeytymättömän suojauksen <a onclick(buy())>napsauttamalla tästä ja ostamalla tuotteen</a>."
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= $ProductName + " käyttöoikeus vanhenee "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". \n\nVoit pitää suojauksen ajan tasalla <a onclick(buy())>uusimalla käyttöoikeuden täältä</a>.\nJos olet jo ostanut tuotteen, <a onclick(f_Activate())>aktivoi se nyt</a>."
+default         = $ProductNotificationText
+
+[s_DefaultExpirationText]
+#ektBeta        = "Huomio! "+$ProductName+" -beta-versio on vanhentunut. Tietokoneen suojaus on pois käytöstä. \n\nVoit ottaa suojauksen käyttöön <a onclick(buy())>napsauttamalla tästä ja ostamalla tuotteen</a>."
+#ektTrial       = "Huomio! Kokeiluaika on loppunut. Tietokoneen suojaus on otettu pois käytöstä. \n\nVoit ottaa suojauksen käyttöön <a onclick(buy())>napsauttamalla tästä ja ostamalla tuotteen</a>."
+#ektTest        = "Huomio! "+$ProductName+" -beta-versio on vanhentunut. Tietokoneen suojaus on pois käytöstä.\n\nVoit ottaa suojauksen käyttöön <a onclick(buy())>napsauttamalla tästä ja ostamalla tuotteen</a>."
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= $ProductName + " -käyttöoikeus on vanhentunut. \n\nJos haluat pitää suojauksen ajan tasalla, <a onclick(buy())>uusi käyttöoikeus tästä</a>. \nJos olet jo uusinut käyttöoikeuden, <a onclick(f_Activate())>ota aktivointikoodi käyttöön</a> nyt."
+default         = $ProductNotificationText
+
+[s_ProfileStateEnableText]
+#StatePaused
+#StateStopped
+#StateCompleted
+#StateNotStarted
+#StateStarting
+#StateResuming
+#StateDisabled      = "Ota käyttöön"
+#StateRunning
+#StateFailed
+#StatePausing
+#StateStopping
+#StateMalfunction   = "Ota pois käytöstä"
+
+[s_OnOff]
+1		= "Käytössä"
+default	= "Ei käytössä"
+
+[MainWindow_Navigator_Btns]
+Protection.Desc      = "Täydennä tietokoneesi suojaus"
+AppCtrl.Text         = "Turvallinen suoritus"
+AppCtrl.Text2        = ""
+AppCtrl.Desc         = "Sovellusten käyttäminen ja \nverkkosivustojen selaaminen turvallisessa ympäristössä"
+Scan.Desc            = "Tarkistetaan tiedostot ja tietokone virusten varalta"
+Updater.Text         = ("Päivtyskeskus " + if(f_IsStateActive(Updater.state), (Updater.Completion + "%")))
+Updater.Desc         = "Päivitä tietokannat ja ohjelmamoduulit"
+AddSvc.Text          = "Työkalut"
+AddSvc.Desc          = "Lisätyökaluja tietokoneen suojauksen parantamiseksi"
+Upgrade.Text         = "Päivitys"
+Upgrade.Desc         = "Sovellustoiminnallisuuden laajentaminen"
+
+[MainWindow_Body.Upgrade]
+Header               = "Päivitä Kaspersky Internet Security 2013:een"
+Descr	             = "Kaspersky Internet Security 2013 sisältää kehittyneitä ominaisuuksia, joilla voit paremmin hallita käyttöä, suojata verkkoselailua sekä turvata henkilökohtaiset tietosi."
+
+[Upgrade_Dock1]
+Hips.Name         = "Sovellusten valvonta"
+ParCtl.Name       = "Käytönvalvonta"
+
+[Upgrade_Dock2]
+IDS.Name          = "Verkkohyökkäysten esto"
+Firewall.Name     = "Palomuuri"
+
+[Upgrade_Dock3]
+AntiBanner.Name   = "Bannerien esto"
+AntiSpam.Name     = "Roskapostin esto"
+GeoSec.Name       = "Geosuodatin"
+
+[s_MainWindow_ProfileDoWork_Caption]
+Scan_Objects         = f_IsStateActive(state) ? "Mukautettu tarkistus on käynnissä " + Completion + "%" : "Suorita mukautettu tarkistus"
+Scan_My_Computer     = f_IsStateActive(state) ? "Täydellinen tarkistus on käynnissä " + Completion + "%" : "Suorita täydellinen tarkistus"
+Scan_Startup         = f_IsStateActive(state) ? "Kriittisten alueiden tarkistus on käynnissä " + Completion + "%" : "Suorita kriittisten alueiden tarkistus"
+Scan_Vulnerabilities = f_IsStateActive(state) ? "Heikkoustarkistus on käynnissä " + Completion + "%" : "Suorita heikkoustarkistus"
+Updater              = f_IsStateActive(state) ? "Päivitys on käynnissä " + Completion + "%" : "Suorita päivitys"
+Rollback             = f_IsStateActive(state) ? "Palautus käynnissä " + Completion + "%" : "Palautus edellisiin tietokantoihin"
+def                  = switch(@, "ProfileName") + if(f_IsStateActive(state), " " + Completion + "%")
+
+[s_MainWindow_ProfileDoWork_CaptionDetails]
+Scan_Objects         = f_IsStateActive(state) ? "Mukautettu tarkistus on käynnissä " + Completion + "%" : switch(@, "ProfileName")
+Scan_My_Computer     = f_IsStateActive(state) ? "Täydellinen tarkistus käynnissä " + Completion + "%" : switch(@, "ProfileName")
+Scan_Startup         = f_IsStateActive(state) ? "Kriittisten alueiden tarkistus on käynnissä " + Completion + "%" : switch(@, "ProfileName")
+Updater              = f_IsStateActive(state) ? "Päivitys käynnissä " + Completion + "%" : switch(@, "ProfileName")
+Rollback             = f_IsStateActive(state) ? "Palautus käynnissä " + Completion + "%" : switch(@, "ProfileName")
+def                  = switch(@, "ProfileName") + if(f_IsStateActive(state), " " + Completion + "%")
+
+[s_MainWindow_ScanDoWork]
+Updater              = "Haluatko varmasti peruuttaa päivityksen?"
+Scan_Objects         = "Haluatko varmasti peruuttaa tarkistuksen?"
+def                  = s_MainWindow_ScanDoWork("Scan_Objects")
+
+[DialogPanelClassic]
+Copyright            = $CopyrightText
+
+[PromoPage]
+@ = $ProductNameLong
+
+[PromoPage_Footer]
+Show       = "&Älä näytä tätä ikkunaa"
+Continue   = $Close
+BuyLic     = "&Osta käyttöoikeus"
+
+[PromoPage_Info]
+TrialHint      = if(global.KeyState & #eNoKeys, "Huomio! Sovellusta ei ole aktivoitu.", "Käyttöoikeus vanhenee pian.")
+PleaseBuyMe    = "Tietokoneen kattavan suojauksen varmistamiseksi suosittelemme <a onclick(buy())>hankkimaan kaupallisen käyttöoikeuden</a>."
+WeAreBest      = s_Promo_WeAreBest(env("ProductType"))
+
+[s_Promo_WeAreBest]
+kis = s_ProductTitleLong(@) + " tarjoaa kaiken, mitä tarvitset internetselaamisesi turvaamiseen."
+kav = s_ProductTitleLong(@) + " on tarkoitettu tietokoneen perussuojaukseen haittaohjelmia vastaan."
+
+[s_PromoPage_Feature1_Name]
+kis = "Turvallinen selaus"
+kav = "Heikkoustarkistus"
+
+[s_PromoPage_Feature1_Desc]
+kis = "Tämän toiminnon avulla voit selata verkkoa täysin turvallisesti. Ilmoitamme, onko sivusto luotettava, vai voiko se sisältää haittaohjelmistoa."
+kav = "Paranna tietokoneesi suojaustasoa etsimällä sovelluksista ja käyttöjärjestelmästä heikkouksia."
+
+[s_PromoPage_Feature2_Name]
+kis = "Turvallinen suoritus"
+kav = "Pelastuslevy"
+
+[s_PromoPage_Feature2_Desc]
+kis = "Tämä erityistila tarjoaa turvallisemman ympäristön, jossa epäilyttäviä ohjelmia ja verkkosivustoja voidaan käyttää ylimääräisen suojatason avulla. Se on täysin eristettynä tiedoistasi ja tietokoneesi asetuksista, joten voit täysin luottaa siihen, että tietokoneesi ei vaurioidu."
+kav = "Jos tietokoneesi käyttäytyy epäilyttävästi tai käyttöjärjestelmän lataamisessa on ongelmia, käynnistä pelastuslevyltä."
+
+[s_PromoPage_Feature3_Name]
+kis = "Käytönvalvonta"
+kav = s_ProductTitleLong("kis")
+
+[s_PromoPage_Feature3_Desc]
+kis = "Runsaiden toimintojen avulla voit hallinnoida, miten ja milloin lapsesi käyttävät tietokonetta ja internetiä."
+kav = "Saat huipputason suojauksen hankkimalla " + s_ProductTitleLong("kis", "") + " -sovelluksen. Se sisältää kehittyneitä ominaisuuksia, jotka suojaavat sinua työskentelyn, verkkopankin käytön, verkko-ostosten ja verkkopelien aikana."
+
+[NewsReaderTemplate_Body]
+Caption = "Kaspersky Lab -uutisia"
+
+[News_List]
+Title   = "Aihe"
+Date    = "Päiväys"
+
+[EulaRequestPage]
+Banner.Caption = "Tervetuloa käyttämään tuotetta " + $ProductNameLong
+
+[EulaRequestPageDescription]
+Caption			= "Huomio!" 
+Description1		= if(env("OemCommercial") == "1","Kiitos ostoksestasi.\nAktivoi sovellus nyt.","Tietokoneesi voi altistua virus- ja vakoiluohjelmahyökkäyksille.\nAktivoi <b>" + $ProductNameLong + "</b> – saat <b>ILMAISEN 30 päivän</b> käyttöoikeuden.")
+Description2		= "Napsauttamalla alla olevaa \"Hyväksy ja aktivoi\" -painiketta hyväksyt <a onclick(l_page = $EulaPage)>käyttäjän käyttöoikeussopimuksen</a> ja sovellus aktivoidaan" + if(env("OemCommercial") == "1", ".", " 30 päivän käyttöluvan avulla.")
+
+[EulaDlgFooterFooter_EulaRequest]
+KsnCheckText		= "Haluan suojata tietokonettani paremmin <a onclick(l_page = $KsnPage)>Kaspersky Security Networkin (KSN)</a>\navulla"
+DeclineButton		= "Muistuta minua myöhemmin"
+
+[DeclinedEulaPage]
+Banner.Caption = "Oletko varma, ettet halua aktivoida tuotetta\n" + $ProductNameLong + "?"
+
+[DeclinedEulaPageDescription]
+Description		= "Kaspersky Internet Securityn <b>palkittu turva</b> suojaa sinua nykypäivän monimutkaisilta ja jatkuvasti kehittyviltä uhkilta. <b>Voit käyttää huoletta internetin kaikkia palveluita</b> aina verkkopankista ostosten tekoon ja sosiaalisiin verkkopalveluihin."
+BackButton.Text = "Takaisin aktivointiin"
+
+[EulaDlgFooterFooter_DeclinedEula]
+RemovalHint = "Voit poistaa sovelluksen milloin tahansa\nMicrosoft Windowsin työkalujen avulla."
+Postpone	= "Muistuta minua myöhemmin"
+
+[EulaDlgFooterFooter_MoreInfo]
+Back = "Takaisin"
+
+[EulaInfoPage]
+Eula			= "Käyttäjän käyttöoikeussopimus"
+back.Text		= "Takaisin"
+
+[KsnInfoPage]
+Ksn				= "KSN-Sopimus"
+back.Text		= "Takaisin"
+
+[ThankYouPage]
+Banner.Caption	= "Kiitos!"
+
+[ThankYouPageDescription]
+Caption					= "Tietokoneesi on suojattu"
+Description1			= "<b>" + $ProductNameLong + "</b> aktivoidaan automaattisesti <b>ILMAISEN 30 päivän käyttöluvan</b> avulla kun tämä ikkuna suljetaan."
+Description2			= "Osta nyt, jos haluat jatkaa suojaustasi kokonaisen vuoden ajaksi!"
+LearnMoreButton.Text	= "Lue lisää"
+
+[EulaDlgFooterFooter_ThankYou]
+Close = "Sulje"
+
+[QMLMainWindow]
+@ = $RemoteComputer + $ProductNameLong + if(!IsRelease, " Tekniikkaesittely")
+
+[Mail_Notifications]
+Subject_Text           = "Ilmoitus sovelluksesta " + $ProductName_GEN
+Product_Label          = "Sovellus"
+Operating_System_Label = "Käyttöjärjestelmä"
+Computer_Label         = "Tietokone"
+Domain_Label           = "Toimialue"
+Notifications_Label    = "Ilmoitukset"
+
+[SecuredDesktopDialog]
+@="Huomio!"
+
+[s_SecuredDesktopDialog_Messages]
+0="Tämä toimenpide vähentää tietokoneesi suojausta. Haluatko varmasti jatkaa?"
+1="Valittu toimenpide poikkeaa suositellusta. Haluatko varmasti jatkaa?"
+
+[SecuredDesktopDialog_BottomArea]
+CheckBox = "Luota toimenpiteisiini 30 minuuttia."
+
+[SecuredDesktopDialog_TableArea]
+ProgramNameLabel = "Sovelluksen nimi:"
+PublisherLabel = "Toimittaja:"
+PublisherValue = "Kaspersky Lab"
+ActionLabel = "Toiminto:"
+
+[s_SecuredDesktopDialog_Actions]
+0="Muokkaa asetuksia"
+1="Valitse toiminto"
+2="Poista avain"
+
+[MessageDialog]
+@ = msg.Caption

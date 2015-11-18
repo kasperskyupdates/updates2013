@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x9D137F53" name="AntiRootkit" module="qscan.kdl" timeout="-1" category="KLAVA" module_category="KLAVA" bases_category="KLAVA">
+    <interface iid="0xB13C57D7" name="IStartupScanner"/>
+    <interface iid="0x02D3C52D" name="IStartupScanner2"/>
+    <interface iid="0x5E5D84C0" name="IFileFactory"/>
+    <interface iid="0x60C2A293" name="IDiskFactory"/>
+    <interface iid="0xCD6CFEE7" name="IRollbackObjectsProvider"/>
+    <interface iid="0xFA2F9144" name="IBootSectorsScanner"/>
+    <interface iid="0x365C8C72" name="IActiveDetectInfoProvider"/>
+  </component>
+  <component clsid="0x9CE93F2D" name="AntiRootkitLite" module="qscan.kdl" timeout="-1" category="KLAVA" module_category="KLAVA" bases_category="KLAVA">
+    <interface iid="0xB13C57D7" name="IStartupScanner"/>
+    <interface iid="0x02D3C52D" name="IStartupScanner2"/>
+    <interface iid="0x5E5D84C0" name="IFileFactory"/>
+    <interface iid="0x60C2A293" name="IDiskFactory"/>
+    <interface iid="0xCD6CFEE7" name="IRollbackObjectsProvider"/>
+    <interface iid="0xFA2F9144" name="IBootSectorsScanner"/>
+    <interface iid="0x365C8C72" name="IActiveDetectInfoProvider"/>
+  </component>
+</root>

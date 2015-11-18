@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Chọn tập tin key"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Key của ứng dụng này được cung cấp bởi nhà cung cấp phần mềm. Bạn có muốn kích hoạt ứng dụng bằng cách sử dụng key này không?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Thiết lập cấu hình ứng dụng chưa được hoàn tất. Bạn có chắc chắn rằng bạn muốn thoát Trình hướng dẫn cấu hình không?"
+ErrEmptyActivationCode.caption  = "Chưa chỉ định mã kích hoạt"
+ErrEmptyActivationCode          = "Vui lòng nhập mã kích hoạt"
+ErrEmptyKeyPath.caption         = "Tập tin key chưa được chỉ định"
+ErrEmptyKeyPath                 = "Vui lòng chọn một tập tin key"
+$LicInfoKeyNumber               = "Số:"
+$LicInfoKeyProductName          = "Tên ứng dụng:"
+$LicInfoKeyType                 = "Loại bản quyền:"
+$LicInfoExpirationDate          = "Ngày hết hạn:"
+$LicErrReason                   = "Lý do:"
+$ActiveKey                      = "Key kích hoạt"
+$ReservedKey                    = "Key bổ sung"
+ConfirmFeedback                 = "Bạn có đồng ý gửi thông tin đến <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a> không?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) là một hệ thống của dịch vụ trực tuyến, cung cấp các thông tin cập nhật về bảo mật của tập tin, tài nguyên mạng và phần mềm. Sử dụng dữ liệu từ KSN để tăng tốc độ phản ứng với các mối đe dọa gần đây, tăng cường hiệu suất của một số thành phần bảo vệ và giảm nguy cơ nhận diện sai.\nKhi bạn tham gia vào KSN, thông tin về nhiễm virus và các vấn đề khác, cũng như số liệu thống kê mở rộng các ứng dụng được tải hoặc thực thi (theo danh mục quy định trong <a KsnInfo onclick(dialog(\"KsnInfo\"))>Báo cáo thu thập dữ liệu KSN</a>), sẽ tự động gửi đến Kaspersky Lab. \n\n<b>Kaspersky Security Network không thu thập và xử lý bất kỳ thông tin cá nhân riêng tư nào của người dùng.</b>"
+
+$ToAcquireNewLicText            = "\n\nĐể được một bản quyền mới, vui lòng liên hệ với nhà phân phối của bạn hoặc <a Buy onclick(buy())>Bộ phận kinh doanh Kaspersky Lab</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nVui lòng thử cập nhật trạng thái đăng ký bằng cách thủ công hoặc liên hệ Hỗ trợ Kỹ thuật" : "\nVui lòng thử kích hoạt ứng dụng bằng mã kích hoạt vào lúc khác (khoảng 1–2 giờ) hoặc liên hệ Hỗ trợ Kỹ thuật") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Trình hướng dẫn kích hoạt" : " Trình hướng dẫn thiết lập cấu hình")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Thông tin tổng quát"
+InitBegin.Descr                       = "Chào mừng đến với Trình hướng dẫn thiết lập " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Đánh dấu sẵn của các máy chủ Kaspersky Lab"
+CheckHosts.Descr                      = "Chuyển hướng đáng ngờ đã được phát hiện"
+ResetArea.Name                        = "Khôi phục cấu hình"
+ResetArea.Descr                       = "Cấu hình được liệt kê dưới đây chứa dữ liệu nhập vào bởi người dùng hoặc tích lũy \ntrong hoạt động ứng dụng."
+ActivationBegin.Name                  = $IsSubscription ? "Quản lý đăng ký" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Xóa key" : "Thêm key") : "Kích hoạt ứng dụng")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Bản quyền" : "Kích hoạt ứng dụng để tiếp tục.")
+ActivationProgress.Name               = "Kích hoạt trực tuyến"
+ActivationProgress.Descr              = "Đang tiến hành kích hoạt, vui lòng chờ..."
+ActivationServerForm.Name             = "Kích hoạt trực tuyến"
+ActivationServerForm.Descr            = "Vui lòng điền thông tin vào biểu mẫu."
+ActivationChooseKey.Name              = "Kích hoạt bằng cách sử dụng tập tin key"
+ActivationChooseKey.Descr             = "Kích hoạt ứng dụng bằng cách sử dụng tập tin key."
+ActivationEnd.Name                    = "Kích hoạt ứng dụng"
+ActivationEnd.Descr                   = "Hoàn thành kích hoạt."
+MigrationKeyIsFound.Name         = "Key bản quyền hiện tại là có sẵn"
+MigrationKeyIsFound.Descr        = "Bạn có muốn sử dụng quy tắc ứng dụng bằng bản quyền hiện tại không?"
+MigrationBegin.Name              = "Chuyển đến " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Bạn sẽ được chuyển sang sử dụng " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Tìm kiếm các phần mềm không tương thích"
+MigrationSearchProgress.Descr    = "Xin vui lòng chờ trong khi đang tìm kiếm phần mềm không tương thích..."
+MigrationSafeRemoval.Name        = "Không tìm thấy phần mềm không tương thích"
+MigrationSafeRemoval.Descr       = "Xin vui lòng chờ trong khi gỡ bỏ phần mềm không tương thích để tiếp tục"
+MigrationSafeProgress.Name       = "Gỡ bỏ phần mềm không tương thích"
+MigrationSafeProgress.Descr      = "Xin vui lòng chờ trong khi đang gỡ bỏ phần mềm không tương thích..."
+MigrationAddRemove.Name          = "Không tìm thấy phần mềm không tương thích"
+MigrationAddRemove.Descr         = "Xin vui lòng gỡ bỏ phần mềm không tương thích"
+MigrationUnsafeRemoval.Name      = "Không tìm thấy phần mềm không tương thích"
+MigrationUnsafeRemoval.Descr     = "Xin vui lòng chờ trong khi gỡ bỏ phần mềm không tương thích để tiếp tục"
+MigrationUnsafeProgress.Name     = "Gỡ bỏ phần mềm không tương thích"
+MigrationUnsafeProgress.Descr    = "Xin vui lòng chờ trong khi đang gỡ bỏ phần mềm không tương thích..."
+MigrationReboot.Name             = "Yêu cầu khởi động lại hệ điều hành"
+MigrationReboot.Descr            = "Yêu cầu khởi động lại hệ điều hành để tiếp tục chuyển sang ứng dụng mới"
+MigrationProgress.Name           = "Chuyển tới " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Xin vui lòng đợi trong khi đang chuyển sang ứng dụng mới..."
+MigrationRebootApp.Name          = bMigrationDone ? "Ứng dụng sẽ được khởi động lại" : "Lỗi trong khi chuyển sang ứng dụng mới"
+MigrationRebootApp.Descr         = bMigrationDone ? "Ứng dụng sẽ được khởi động lại" : "Chuyển đến " + s_MUProductTitleLong(env("ProductType")) + " không thành công"
+MigrationFinish.Name             = "Chuyển " + s_ProductTitleLong(env("ProductType")) + " hoàn tất"
+MigrationFinish.Descr            = "Chuyển " + s_ProductTitleLong(env("ProductType")) + " hoàn tất"
+DNS.Name                              = "Cấu hình nâng cao"
+DNS.Descr                             = $ProductName_GEN + " cấu hình hoạt động nâng cao"
+EnumExe.Name                          = "Phân tích hệ thống"
+EnumExe.Descr                         = "Xin vui lòng chờ trong khi các thông tin về hệ thống của bạn đang được thu thập..."
+InitFinish.Name                       = "Kết thúc cấu hình của " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Bạn phải khởi động lại máy tính của bạn để hoàn tất việc cấu hình ứng dụng." : "Bạn có thể khởi động " + $ProductName + " ngay bây giờ."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Chuyển hướng đáng ngờ của máy chủ Kaspersky Lab được phát hiện. Điều này có thể được gây ra bởi hoạt động của phần mềm độc hại, và có thể gây ra cập nhật và kích hoạt không thành công. Mục tập tin host đáng ngờ:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Xóa các bản ghi (nên chọn)"
+Skip			= "Bỏ qua"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Quay lại"
+Back.Descr      = "Quay lại để chọn các phương thức kích hoạt ứng dụng"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Thêm key" : "&Kích hoạt"
+Activate.Descr  = "Cài đặt key đã chọn"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Hoàn tất"
+Finish.Descr    = "Đóng trình hướng dẫn kích hoạt"
+Next.Name       = "&Tiếp theo"
+Next.Descr      = "Tiếp tục thiết lập cấu hình"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Bạn có thể tiếp tục sử dụng ứng dụng bằng bản quyền hiện tại. Trong trường hợp này ứng dụng sẽ chuyển sang " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Bạn có muốn tiếp tục sử dụng ứng dụng bằng bản quyền hiện tại không?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Loại ứng dụng:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Ngày hết hạn:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " còn lại)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Có, và chuyển đến " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Không, và để lại " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Bạn đang trong quá trình chuyển đến " + s_MUProductTitleLong(env("ProductType")) + ". Hãng Kaspersky Lab sẽ cung cấp cho bạn một bản quyền riêng biệt để sử dụng " + s_MUProductTitleLong(env("ProductType")) + " dựa trên các điều khoản giống như bạn đã chấp nhận trước khi cài đặt " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Lưu ý: chuyển đổi này phải yêu cầu khởi động lại máy."
+LicenseWarning  = "Chú ý! Bản quyền thương mại để sử dụng Kaspersky Anti-Virus đã hết hạn trước khi kích hoạt bản quyền dùng thử Kaspersky Internet Security. Sau khi bản quyền thương mại Kaspersky Anti-Virus hết hạn nó sẽ không quay lại sử dụng sử dụng Kaspersky Anti-Virus từ phiên bản dùng thử Kaspersky Internet Security. Bạn có muốn tiếp tục chuyển sang Kaspersky Internet Security không?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Tìm kiếm phần mềm không tương tích trên máy tính của bạn. Điều này có thể mất một khoảng thời gian. Vui lòng chờ..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Các phần mềm không tương thích sau đây sẽ được gỡ bỏ để thực hiện chuyển đổi:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Vui lòng chờ trong khi các phần mềm không tương thích này đang được xóa..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Các phần mềm không tương thích sau đây sẽ được gỡ bỏ để thực hiện chuyển đổi:"
+OpenAddRemove = "Mở cửa sổ Add/Remove Programs"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Các phần mềm không tương thích sau đây sẽ được gỡ bỏ để thực hiện chuyển đổi:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Xin vui lòng chờ trong khi các phần mềm không tương thích này đang được xóa..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Yêu cầu khởi động lại máy tính để tiếp tục nâng cấp. Chương trình sẽ tiếp tục sau khi khởi động lại."
+Reboot   = "Khởi động lại ngay bây giờ"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Vui lòng chờ trong khi ứng dụng được cấu hình lại và bạn đang chuyển đến " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Để hoàn tất chuyển đổi sang " + s_MUProductTitleLong(env("ProductType")) + " Ứng dụng sẽ khởi động lại." : "Chuyển đến " + s_MUProductTitleLong(env("ProductType")) + " không thành công."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Bây giờ bạn có thể đánh giá như " + s_ProductTitleLong("kis") + " các tính năng như Quản lý người dùng, Chống thư rác, Tường lửa và các tính năng khác." : s_ProductTitleLong("kav") + " cung cấp bảo vệ cơ bản cho máy tính của bạn từ sự tấn công của phần mềm độc hại."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Bạn có thể "+if($IsRefreshSubAvail,"cập nhật trạng thái đăng ký hoặc ")+"xóa key." : (f_IsActiveKeyWorkingCommercial() ? "Bạn có thể xóa key kích hoạt của bạn hoặc thêm key." : "Kích hoạt " + $ProductName + " để chức năng của ứng dụng được cho phép đầy đủ."+ if($CorporateOnly, " Bạn có thể mua một bản quyền <a Activate onclick(url($ActivationLink))>thương mại</a> hoặc kích hoạt phiên bản <a ActivateTrial onclick(url($ActivationTrialLink))>dùng thử</a> của ứng dụng."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "&Kích hoạt sau"
+Later.Descr                 = "Bỏ qua kích hoạt và tiến hành cấu hình ứng dụng"
+ChooseKey.Name              = "Kích hoạt bằng cách sử dụng tập tin &key"
+ChooseKey.Descr             = "Tập tin key là cần thiết"
+ActivateBetaKAV.Name        = "Kích hoạt bản Kaspersky Anti-Virus thử nghiệm"
+ActivateBetaKAV.Descr       = "Phiên bản thử nghiệm của Kaspersky Anti-Virus có đầy đủ chức năng của nó, nhưng không phải là một sản phẩm hoàn tất."
+ActivateBetaKIS.Name        = "Kích hoạt phiên bản Kaspersky Internet Security &thử nghiệm"
+ActivateBetaKIS.Descr       = "Phiên bản thử nghiệm của Kaspersky Internet Security có đầy đủ chức năng của nó, nhưng không phải là một sản phẩm hoàn tất."
+ActivateTrial.Name          = "Kích hoạt bản dùng thử"
+ActivateTrial.Descr         = "Thời hạn hiệu lực cho bản dùng thử được quy định trong các thỏa thuận bản quyền người dùng cuối"
+ActivateCommercial.Name     = "Kí&ch hoạt trực tuyến"
+ActivateCommercial.Descr    = "Mã kích hoạt nhận được trong yêu cầu mua hàng"
+RemoveKey.Name              = $HasReserveKey ? "&Xóa key bổ sung" : "&Xóa key"
+RemoveKey.Descr             = "Để thay thế key trước tiên bạn nên gỡ bỏ key kích hoạt"
+RefreshSubscription.Name    = "Cập nhật &trạng thái đăng ký "
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Bạn có thể cập nhật trạng thái đăng ký bằng cách thủ công." :  "Kết thúc cập nhật tự động trạng thái đăng ký. Bạn có thể cập nhật trạng thái bằng cách thủ công."
+ActivateTrialKIS            = "Kích hoạt phiên bản dùng thử Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "Thời hạn hiệu lực cho bản  Kaspersky Internet Security dùng thử được quy định trong các thỏa thuận bản quyền"
+RevertToCommercialKAV       = "Trở lại phiên bản thương mại của Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Trở lại phiên bản thương mại của Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Cập nhật trạng thái đăng ký "
+ActivateCommercial      = "Kí&ch hoạt bản thương mại"
+ActivateCommercial_Desc = (LockActivationCode)? "Nhập mã kích hoạt: " : "Nhập <a onclick(url(\"" + $ActCodeHint + "\"))>mã kích hoạt</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Mã kích hoạt của bạn đã được tự động. Xin vui lòng chọn nút\"Tiếp theo\"." : "Nếu bạn chưa có mã kích hoạt bạn có thể mua <a onclick(buy())>trực tuyến</a>"
+ActivateBetaKAV         = "Kích hoạt phiên bản thử n&ghiệm Kaspersky Anti-Virus"
+ActivateBetaKIS         = "Kích hoạt phiê&n bản thử nghiệm Kaspersky Internet Security"
+ActivateTrial           = "Kích hoạt phiên &bản dùng thử"
+ActivateTrial_Desc      = "Đánh giá  đầy đủ chức năng của một phiên bản ứng dụng trước khi mua nó."
+ActivateTrialKIS           = "Kích hoạt bản Kaspersky Internet Security dùng thử"
+ActivateTrialKIS_Desc      = "Đánh giá  đầy đủ chức năng của bản Kaspersky Internet Security trước khi mua nó."
+RevertToCommercialKAV      = "Trở lại phiên bản thương mại của Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Ngừng sử dụng phiên bản dùng thử của Kaspersky Internet Security và quay trở lại phiên bản thương mại của Kaspersky Anti-Virus."
+Later                   = "&Kích hoạt sau"
+Later_Desc              = "Chức năng đầy đủ của ứng dụng sẽ không được sẵn sàng cho đến khi nó được kích hoạt."
+RemoveKey               = "Xóa tập tin key"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Tập tin key:"
+KeyInfo         = "Thông tin bản quyền"
+ConnectingInfo.Name     = "Lỗi kích hoạt: "
+ConnectingInfo.Val      = "chi tiết"
+TryAgain                = "Kích hoạt"
+Descr1                  = "Để kích hoạt trở lại, thực hiện các hành động sau:"
+Descr2                  = "Kiểm tra cấu hình kết nối Internet và kích hoạt ứng dụng trở lại"
+Descr3                  = "Truy cập <a onclick(url(\"" + $ActivationLink + "\"))> Trung tâm Kích hoạt Trực tuyến</a> và làm theo hướng dẫn. \nSau khi bạn nhận được một tập tin key xác định vị trí của nó và nhấn Tiếp theo:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Ngày tạo:"
+InstallDate.Name    = "Ngày kích hoạt:"
+ExpirationDate.Name = "Ngày hết hạn:"
+SubscrptnExpDate.Name = "Ngày hết hạn đăng ký:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," cho " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Lỗi hệ thống: " + s_SystemError(ErrorCode)
+2       = "Không thể thêm \"" + KeyFile + "\" key: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Không thể xóa \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Mã lỗi: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Key này đã được thêm" + $LicErrHelpLink
+0x0947901d  = "Bản quyền đã hết hạn. Không thể cập nhật cơ sở dữ liệu" + $LicErrHelpLink
+0x89479002  = "Không tìm thấy bản quyền" + $LicErrHelpLink
+0x89479003  = "Chữ ký số bị mất hoặc bị hỏng" + $LicErrHelpLink
+0x89479004  = "Dữ liệu bị hư hỏng" + $LicErrHelpLink
+0x89479005  = "Key bị hư hỏng" + $LicErrHelpLink
+0x89479006  = "Thời gian sử dụng bản quyền đã hết hạn" + $LicErrHelpLink
+0x89479007  = "Không có tập tin key nào được chỉ định" + $LicErrHelpLink
+0x89479008  = "Tập tin key không hợp lệ" + $LicErrHelpLink
+0x89479009  = "Lưu dữ liệu thất bại" + $LicErrHelpLink
+0x8947900a  = "Đọc dữ liệu thất bại" + $LicErrHelpLink
+0x8947900b  = "Lỗi I/O" + $LicErrHelpLink
+0x8947900c  = "Cơ sở dữ liệu bị mất" + $LicErrHelpLink
+0x8947900d  = "Key kích hoạt và bổ sung đã được thêm" + $LicErrHelpLink
+0x8947900e  = "Thư viện bản quyền chưa được khởi tạo" + $LicErrHelpLink
+0x8947900f  = "Cơ sở dữ liệu bị hư hỏng hoặc được cập nhật thủ công" + $LicErrHelpLink
+0x89479010  = "Cơ sở dữ liệu bị hư hỏng" + $LicErrHelpLink
+0x89479011  = "Tập tin key hết hạn không thể đăng ký như key bổ sung" + $LicErrHelpLink
+0x89479012  = "Lỗi hệ thống" + $LicErrHelpLink
+0x89479013  = "Danh sách đen của key bị hư hỏng" + $LicErrHelpLink
+0x89479014  = "Nhận diện số không giống với nhận diện số của Kaspersky Lab" + $LicErrHelpLink
+0x89479015  = "Không thể kích hoạt bản quyền thương mại cho ứng dụng từ một bản quyền thử nghiệm" + $LicErrHelpLink
+0x89479016  = "Phiên bản thử nghiệm của ứng dụng chỉ có thể kích hoạt từ bản quyền thử nghiệm" + $LicErrHelpLink
+0x89479017  = "Bản quyền không áp dụng được cho ứng dụng này. Nó không thể kích hoạt " + $ProductName + " từ bản quyền của ứng dụng khác. Vui lòng kiểm tra ứng dụng đã cài đặt" + $LicErrHelpLink
+0x89479018  = "Key bị khóa" + $LicErrHelpLink
+0x89479019  = "Bản quyền dùng thử này đã được sử dụng. Không thể sử dụng cùng một bản quyền dùng thử cho hai lần." + $LicErrHelpLink
+0x8947901a  = "Key bị hư hỏng" + $LicErrHelpLink
+0x8947901b  = "Nhận diện số bị mất, hư hỏng hoặc không trùng khớp với nhận diện số của Kaspersky Lab" + $LicErrHelpLink
+0x8947901c  = "Không thể thêm key cho bản quyền phi thương mại nếu nó đã hết hạn" + $LicErrHelpLink
+0x8947901e  = "Ngày tạo hoặc đăng ký của key không hợp lệ. Kiểm tra cấu hình ngày giờ hệ thống" + $LicErrHelpLink
+0x8947901f  = "Không thể thêm key cho bản quyền dùng thử trong khi key khác của bản quyền dùng thử đã kích hoạt" + $LicErrHelpLink
+0x89479020  = "Danh sách đen của key bị mất hoặc hư hỏng" + $LicErrHelpLink
+0x89479021  = "Mô tả cập nhật bị mất hoặc hư hỏng" + $LicErrHelpLink
+0x89479022  = "Dữ liệu nội bộ không hợp lệ cho ứng dụng này" + $LicErrHelpLink
+0x89479023  = "Không thể bổ sung key bằng cách sử dụng mã kích hoạt không chính xác" + $LicErrHelpLink
+0x89479024  = "Lỗi hoàn tất mẫu dữ liệu người dùng" + $LicErrHelpLink
+0x89479025  = "Lỗi gửi yêu cầu đến máy chủ kích hoạt.\nCó thể do: Sự cố kết nối Internet hoặc sự cố tạm thời trên máy chủ kích hoạt.\nThử kích hoạt lại sau (trong 1–2 giờ).\nNếu sự cố vẫn còn, liên hệ nhà cung cấp Internet của bạn" + $LicErrHelpLink
+0x89479026  = "Yêu cầu gửi đi chứa mã kích hoạt không chính xác" + $LicErrHelpLink
+0x89479027  = "Không nhận được trạng thái phản hồi" + $LicErrHelpLink
+0x89479028  = "Lỗi lưu tập tin tạm thời" + $LicErrHelpLink
+0x89479029  = "Mã kích hoạt đã nhập vào không chính xác hoặc ngày hệ thống không chính xác. Kiểm tra cấu hình ngày giờ hệ thống" + $LicErrHelpLink
+0x8947902a  = "Mã kích hoạt không tương thích với ứng dụng này hoặc key đã hết hạn. Không thể kích hoạt " + $ProductName + " từ bản quyền của ứng dụng khác. Vui lòng kiểm tra ứng dụng đã cài đặt hoặc <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Nhận key thất bại. Mã kích hoạt chỉ định không chính xác" + $LicErrHelpLink
+0x8947902c  = "Máy chủ kích hoạt trả về lỗi 400" + $OlaErrHelpLink
+0x8947902d  = "Máy chủ kích hoạt trả về lỗi 401" + $OlaErrHelpLink
+0x8947902e  = "Máy chủ kích hoạt trả về lỗi 403" + $OlaErrHelpLink
+0x8947902f  = "Tài nguyên cần thiết là không hiện hữu trên máy chủ kích hoạt.\nMáy chủ kích hoạt trả về lỗi 404.\nVui lòng kiểm tra cấu hình kết nối Internet" + $OlaErrHelpLink
+0x89479030  = "Máy chủ kích hoạt trả về lỗi 405" + $OlaErrHelpLink
+0x89479031  = "Máy chủ kích hoạt trả về lỗi 406" + $OlaErrHelpLink
+0x89479032  = "Yêu cầu chứng thực Proxy. Vui lòng kiểm tra cấu hình mạng LAN" + $LicErrHelpLink
+0x89479033  = "Thời gian chờ yêu cầu hết hạn" + $LicErrHelpLink
+0x89479034  = "Máy chủ kích hoạt trả về lỗi 409" + $OlaErrHelpLink
+0x89479035  = "Tài nguyên cần thiết là không hiện hữu trên máy chủ kích hoạt.\nMáy chủ kích hoạt trả về lỗi 410.\nVui lòng kiểm tra cấu hình kết nối Internet" + $OlaErrHelpLink
+0x89479036  = "Máy chủ kích hoạt trả về lỗi 411" + $OlaErrHelpLink
+0x89479037  = "Máy chủ kích hoạt trả về lỗi 412" + $OlaErrHelpLink
+0x89479038  = "Máy chủ kích hoạt trả về lỗi 413" + $OlaErrHelpLink
+0x89479039  = "Máy chủ kích hoạt trả về lỗi 414" + $OlaErrHelpLink
+0x8947903a  = "Máy chủ kích hoạt trả về lỗi 415" + $OlaErrHelpLink
+0x8947903b  = "Lỗi chưa rõ trên máy khách" + $OlaErrHelpLink
+0x8947903c  = "Lỗi máy chủ nội bộ" + $LicErrHelpLink
+0x8947903d  = "Các tính năng không được hỗ trợ" + $LicErrHelpLink
+0x8947903e  = "Phân giải máy chủ không hợp lệ. Vui lòng kiểm tra cấu hình mạng LAN" + $LicErrHelpLink
+0x8947903f  = "Nguồn tạm thời không tồn tại" + $LicErrHelpLink
+0x89479040  = "Quá thời gian chờ yêu cầu. Vui lòng kiểm tra cấu hình mạng LAN" + $LicErrHelpLink
+0x89479041  = "Giao thức không được hỗ trợ bởi máy chủ" + $OlaErrHelpLink
+0x89479042  = "Lỗi chưa xác định được trên máy chủ" + $OlaErrHelpLink
+0x89479043  = "Lỗi http chưa xác định được" + $OlaErrHelpLink
+0x89479044  = "Nhận dạng nguồn không hợp lệ" + $LicErrHelpLink
+0x89479045  = "Thông tin trong mục không chính xác \"key\"" + $LicErrHelpLink
+0x89479046  = "Sai URL" + $LicErrHelpLink
+0x89479047  = "Thư mục đích không chính xác" + $LicErrHelpLink
+0x89479048  = "Lỗi bộ nhớ thứ cấp" + $LicErrHelpLink
+0x89479049  = "Lỗi chuyển đổi thông số sang chuỗi ANSI (url, thư mục, agent)" + $LicErrHelpLink
+0x8947904a  = "Lỗi thực thi" + $LicErrHelpLink
+0x8947904b  = "Lỗi trong quá trình thực thi" + $LicErrHelpLink
+0x8947904c  = "Tiến trình không thể thực thi" + $LicErrHelpLink
+0x8947904d  = "Tập tin key không tìm thấy trên máy chủ kích hoạt" + $LicErrHelpLink
+0x8947904e  = "Key bị khóa" + $LicErrHelpLink
+0x8947904f  = "Lỗi nội bộ máy chủ kích hoạt" + $LicErrHelpLink
+0x89479050  = "Không đủ dữ liệu yêu cầu kích hoạt" + $LicErrHelpLink
+0x89479051  = "Sai ID hoặc mật khẩu người dùng" + $LicErrHelpLink
+0x89479052  = "Mã kích hoạt không chính xác" + $LicErrHelpLink
+0x89479053  = "Bản quyền của key đã chọn hết hạn sớm hơn bản quyền hiện tại" + $LicErrHelpLink
+0x89479054  = "Ngày hệ thống không chính xác. Kiểm tra cấu hình ngày hệ thống" + $LicErrHelpLink
+0x89479055  = "Thời hạn sử dụng bản quyền dùng thử đã hết" + $LicErrHelpLink
+0x89479056  = "Thời gian kích hoạt đạ hết hạn" + $LicErrHelpLink
+0x89479057  = "<b>Mã kích hoạt được nhập đã vượt quá giới hạn cho phép</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Không thể thêm key vào bản quyền phi thương mại thành key bổ sung, trong khi bản quyền thương mại có hiệu lực" + $LicErrHelpLink
+0x8947905c  = "Yêu cầu mã kích hoạt" + $LicErrHelpLink
+0x8947905d  = "ID hoặc mật khẩu khách hàng không hợp lệ" + $LicErrHelpLink
+0x8947905e  = "Mã kích hoạt không chính xác" + $LicErrHelpLink
+0x89479062  = "Không thể kết nối tới máy chủ kích hoạt" + $LicErrHelpLink
+0x89479064  = "<b>Máy chủ kích hoạt không hiện hữu.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Không thể kích hoạt ứng dụng ngay bây giờ. Thử kích hoạt lại sau khi thiết lập ứng dụng và khởi động lại hệ điều hành.", "Vui lòng kiểm tra cấu hình kết nối Internet và thử kích hoạt lại.") + $LicErrHelpLink
+0x89479065  = "Bản quyền đã hết hạn. Vui lòng <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Key kích hoạt không thể thay thế bằng key đã hết hạn" + $LicErrHelpLink
+0x89479067  = "Không thể thêm key mà nó hết hạn sớm hơn key kích hoạt như một key bổ sung" + $LicErrHelpLink
+0x89479068  = "Key đăng ký cập nhật bị thất lạc" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Thủ tục kích hoạt hoàn tất với lỗi hệ thống " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Lỗi kích hoạt: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Lỗi kích hoạt: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Lỗi kích hoạt: máy chủ trả về mã HTTP " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Kích hoạt không thành công " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Lỗi máy chủ nội bộ kích hoạt. Vui lòng thử lại hoặc liên hệ Hỗ trợ Kỹ thuật"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Mã kích hoạt không tương thích với ứng dụng này. Không thể kích hoạt " + $ProductName + " bằng mã kích hoạt của ứng dụng khác. Vui lòng kiểm tra ứng dụng đã cài đặt"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Key bị khóa"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "ID hoặc mật khẩu không chính xác"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Mã kích hoạt bị sai"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Yêu cầu mã kích hoạt"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Thời gian kích hoạt đã hết hạn"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Đã vượt quá số lần kích hoạt dành cho mã này"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Mã kích hoạt không hợp lệ đối với khu vực này"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Mã kích hoạt này không thể sử dụng cho khu vực của ứng dụng."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Các mã kích hoạt có giá trị trong một phiên bản mới hơn của ứng dụng này. Để sử dụng phiên bản hiện tại là cần thiết để có được một mã. Để biết chi tiết nhấp vào liên kết bên dưới."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Máy chủ kích hoạt trả về lỗi 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Máy chủ kích hoạt trả về lỗi 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Máy chủ kích hoạt trả về lỗi 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Máy chủ kích hoạt trả về lỗi 646"
+default                                     = "Thủ tục kích hoạt trả về lỗi" + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Chế độ ngoại tuyến (Offline) đã được kích hoạt trong Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Kết nối Internet thất bại"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Máy chủ kích hoạt không hiện hữu"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Máy chủ proxy không hiện hữu"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Thời gian phản hồi đã hết hạn"
+#OLA_ERR_INTERNET_INVALID_URL                = "Địa chỉ máy chủ kích hoạt không chính xác"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Giao thức không chính xác"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Không thể thiết lập kết nối đến máy chủ"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Hoạt động bị hủy bỏ"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Không thể thiết lập kết nối đến máy chủ"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Kết nối máy chủ đã bị đứt"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Kết nối máy chủ được thiết lập lại"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Máy chủ phản hồi sai"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Chứng nhận SSL của máy chủ đã hết hạn. Vui lòng kiểm tra thời gian trên máy tính nội bộ"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Chứng nhận SSL tên máy chủ không tương thích với máy chủ"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Không thể thực thi chứng nhận giấy phép. Tắt việc kiểm tra trong Microsoft Internet Explorer (Tools->Internet Options->Advanced->Chọn vào mục chứng nhận cho máy chủ)"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Chứng nhận SSL không hợp lệ"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Chứng nhận SSL đã được thu hồi"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Sai trung tâm chứng nhận"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Dữ liệu đăng ký là cần thiết để Kaspersky Lab thông báo cho bạn các sự kiện quảng cáo, bán hàng và các khuyến mãi đặc biệt."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Tiếp tục"
+Activate.Descr  = "Đang gửi dữ liệu tới máy chủ kích hoạt"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Trình hướng dẫn cấu hình đang kết nối đến máy chủ kích hoạt của Kaspersky Lab. Việc này sẽ mất một khoảng thời gian, tùy theo tốc độ kết nối Internet của bạn."
+ConnectingInfo.Name     = "Đang kết nối tới máy chủ kích hoạt"
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Đang gửi mã kích hoạt..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Đang chờ phản hồi từ máy chủ..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Chương trình " + $ProductName + " của bạn đã kích hoạt thành công"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Ngày hết hạn:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " còn lại)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Kích hoạt hoàn tất thành công." : "Ứng dụng đã được kích hoạt trên máy tính của bạn."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Tiếp theo"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Tiếp tục kích hoạt ứng dụng": (((PiwFlags & #fPiwActivation) && !bSilent)?"Tiến trình thông tin bản quyền":"Tiến trình lựa chọn chế độ bảo vệ")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Trình hướng dẫn này sẽ giúp bạn thiệt lập các cấu hình bảo mật máy tính.\n\nTrong quá trình thiết lập, Trình hướng dẫn sẽ thu thập thông tin về hệ thống và các ứng dụng được cài đặt trên máy tính. Thông tin này sẽ được dùng với mục đích cung cấp sự bảo vệ tối ưu cho máy tính của bản.\n\nNhấn Tiếp theo để khởi động tiến trình thiết lập " + $ProductName_GEN + "."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Việc cài đặt gần như hoàn tất..." : ((PiwFlags & #fPiwReset) ? ("Tiến trình sửa chữa hoàn thành.") : ("Tiến trình cài đặt hoàn tất."))
+ResetDescr          = "Trình hướng dẫn thiết lập đã khôi phục cấu hình " + $ProductName + " thành công."
+Reboot              = "&Khởi động lại máy tính"
+StartProduct        = "&Khởi động " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Cảm ơn bạn đã cài đặt " + $ProductName + ". Để hoàn tất cài đặt bạn cần khởi động lại máy tính. Vui lòng lưu dữ liệu, đóng tất cả ứng dụng, và nhấn nút 'Hoàn tất'.") : "Xin lưu ý rằng tiến trình thiết lập bổ sung sẽ được hoàn tất vào lầu chạy đầu tiến. Điều này có thể mất vài phút để hoàn tất."
+
+[ConfigureWizard.EnumExe]
+Info = "Trong phân tích hệ thống một danh sách các ứng dụng tin tưởng bao gồm các ứng dụng mà hệ điều hành Microsoft Windows đã xây dựng. \n\nCác chương trình không bao gồm trong hệ điều hành được phân tích riêng lẻ khi nó được khởi động lần đầu tiên trên máy tính."
+
+[s_LicKeyType]
+#ektBeta         = "Key dùng thử"
+#ektTrial        = "Dùng thử"
+#ektTest         = "Key thử nghiệm"
+#ektOEM          = "Key OEM"
+#ektCommercial   = "Thương mại"
+#ektSubscription = "Thương mại có đăng ký dài hạn"
+#ektSubscriptionProtection = "Thương mại có bảo vệ đăng ký"
+default          = "Loại chưa xác định"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Lỗi chưa xác định"
+#ekirValid                      = "Bản quyền hợp lệ"
+#ekirExpired                    = "Bản quyền đã hết hạn"
+#ekirCorrupted                  = "Bản quyền không hợp lệ"
+#ekirNotSigned                  = "Chữ ký điện tử bị mất hoặc hư hỏng"
+#ekirWrongProduct               = "Bản quyền không áp dụng được cho ứng dụng này. Không thể kích hoạt " + $ProductName + " từ bản quyền của ứng dụng khác. Vui lòng kiểm tra ứng dụng đã cài đặt."
+#ekirBlackListed                = "Key "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" bị khóa"
+#ekirIllegalUpdate              = "Ngày cập nhật cơ sở dữ liệu không tương thích với thời gian sử dụng của bản quyền"
+#ekirInconsistentUpdate         = "Cơ sở dữ liệu bị hư hỏng"
+#ekirKeyCreationDateInvalid     = "Ngày tạo key không chính xác"
+#ekirTrialAlreadyInUse          = "Không thể thêm key cho bản quyền dùng thử trong khi key khác của bản quyền dùng thử đã kích hoạt"
+#ekirInvalidBlacklist           = "Danh sách đen của key bị hư hỏng"
+#ekirCantBeUsedAsReserved       = "Không thể đăng ký bản quyền như một bản quyền bổ sung"
+#ekirKeyInstallDateInvalid      = "Ngày kích hoạt không chính xác"
+#ekirTrialPeriodIsOver          = "Bản quyền dùng thử đã hết hạn"
+#ekirConflictsWithCommercial    = "Tập tin key mới xung đột với bản quyền thương mại hiện tại"
+#ekirExpiredAsReserve           = "Bản quyền này hết hạn sớm hơn bản quyền hiện tại"
+#ekirGracePeriod                = "Bản quyền trong thời gian đáo hạn"
+#ekirSuspended                  = "Đăng ký đã bị đình chỉ"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Ứng dụng này cần phải được cài đặt lại"
+#ekirLicenseOnlyForMigration    = "Chuyển sang ứng dụng khác để kích hoạt phiên bản thương mại"
+default                         = "Tập tin key không chính xác"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Được xác định sau"
+#edtUnlimited = "Kích hoạt"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Tạm hoãn từ " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Thông tin bản quyền"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": thông báo bản quyền"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Chú ý!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Bạn đang sử dụng phiên bản dùng thử của " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Danh sách các key đen bị thiếu sót hoặc hư hỏng. Vui lòng chạy <a Update onclick(f_StartUpdater())>cập nhật</a> để tiếp tục hoạt động."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Bản quyền của bạn " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Để giữ chức năng bảo vệ luôn hoạt động ổn định vui lòng <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nNếu bạn đã mua bản quyền vui lòng <a Activate onclick(f_Activate())>kích hoạt ứng dụng</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Đăng ký đã hết hạn." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Chức năng bảo vệ bị vô hiệu."))+($IsBestBuyLink ? " Không thể gia hạn đăng ký." : " Bảo mật máy tính không còn tốt. \n\nĐể gia hạn đăng ký, <a onclick(url($KeyProviderLinkForText))>liên hệ nhà cung cấp dịch vụ của bạn</a>.")) :("Bạn có " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " còn lại để gia hạn đăng ký. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " còn lại cho đến khi chức năng cập nhật bị vô hiệu. " : " còn lại cho đến khi chức năng bảo vệ bị vô hiệu." ) ) + " Để gia hạn đăng ký, <a onclick(url($KeyProviderLinkForText))>liên hệ nhà cung cấp dịch vụ của bạn</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Key kích hoạt đã bị khóa.\nChức năng cập nhật bị vô hiệu do đó máy tính của bạn có thể bị nguy hiểm.</b>\n\nNếu bạn mua ứng dụng hợp pháp, vui lòng liên hệ Hỗ trợ Kỹ thuật hoặc nhà bán lẻ của bạn.\n\nNếu bạn đang sử dụng một bản sao bất hợp pháp, vui lòng <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nNếu bạn đã có bản quyền, vui lòng <a Activate onclick(f_Activate())>kích hoạt ứng dụng</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "Ngày hôm nay hết hạn" : "hết hạn trong " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "đã hết hạn"
+
+[s_LicenseRenewBuyText]
+0 = "có bản quyền"
+default = "gia hạn bản quyền"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Chọn cấu hình để khôi phục:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = " Trình hướng dẫn thiết lập " + $ProductName_GEN
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Thông tin tổng quát"
+InitBegin.Descr                       = "Chào mừng đến với Trình hướng dẫn thiết lập " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Đánh dấu sẵn của các máy chủ Kaspersky Lab"
+CheckHosts.Descr                      = "Chuyển hướng đáng ngờ đã được phát hiện"
+ResetArea.Name                        = "Khôi phục cấu hình"
+ResetArea.Descr                       = "Cấu hình được liệt kê dưới đây chứa dữ liệu nhập vào bởi người dùng hoặc tích lũy \ntrong hoạt động ứng dụng."
+EnumExe.Name                          = "Phân tích hệ thống"
+EnumExe.Descr                         = "Xin vui lòng chờ trong khi các thông tin về hệ thống của bạn đang được thu thập..."
+ResetFinish.Name                       = "Hoàn tất cấu hình của " + $ProductName
+ResetFinish.Descr                      = $ProductName + " sẵn sàng để bắt đầu"
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Hoàn tất khôi phục."
+ResetDescr          = "Trình hướng dẫn thiết lập đã khôi phục cấu hình " + $ProductName + " thành công."
+
+[BestBuyUpgradeMessage]
+@ = "Chuyển đến ứng dụng khác"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Bắt đầu sử dụng Kaspersky Internet Security"
+RestartButton = "Khởi động Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Xin chúc mừng!"
+Message = "Kaspersky Anti-Virus của bạn đã được nâng cấp thành công lên Kaspersky Internet Security.\nNgay bây giờ bạn có nhiều tính năng hơn để bảo vệ máy tính của bạn."
+Description = "Cảm ơn bạn đã chọn phần mềm Kaspersky Lab!\nHãy tận hưởng bảo vệ bổ sung."
+
+[ForcedUpgradeMessagePage]
+Header = "Gần hoàn tất"
+Message = "Cảm ơn bạn đã chọn phần mềm Kaspersky Lab! Hãy tận hưởng bảo vệ bổ sung."
+Description = "Bởi vì phần mềm không tương thích không được gỡ bỏ, một số chức năng của Kaspersky Internet Security đã bị vô hiệu để đảm bảo cho các ứng dụng được cài đặt và hệ điều hành hoạt động ổn định.\n\nBạn có thể gỡ bỏ phần mềm không tương thích bằng cách thủ công và cho phép tất cả các tính năng mới trong cửa sổ cấu hình của Kaspersky Internet Security."
+Notification = "Ứng dụng sẽ khởi động lại để hoàn tất quá trình nâng cấp."

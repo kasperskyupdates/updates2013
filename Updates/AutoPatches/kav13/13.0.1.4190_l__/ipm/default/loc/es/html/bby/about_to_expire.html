@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/widgets.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/messagebox.css"/>
+  </head>
+  <body>
+    <div id="wrap">
+      <p class="warning">
+        <span class="title">Su software de seguridad de Kaspersky está a punto de caducar.</span><br>
+        <span class="description">Solo quedan <span id="days-left"></span> días de cobertura antes de que el equipo se quede desprotegido. Renueve ahora poniéndose en contacto online con el equipo Best Buy Subscription Software Team en <a href="#" onclick="window.IpmCommandHandler.openUrl('https://pcservices.bestbuy.com/wps/portal/RenewContract?SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;')">El portal de usuarios Best Buy</a>.</span>
+      </p>
+    </div>
+    <script src="../../../../js/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        var daysLeft = document.getElementById('days-left');
+        daysLeft.innerHTML = window.IpmCommandHandler.getTemplateSubstitutionText('$LicenseDaysToExpiry');
+    });
+    </script>
+  </body>
+</html>

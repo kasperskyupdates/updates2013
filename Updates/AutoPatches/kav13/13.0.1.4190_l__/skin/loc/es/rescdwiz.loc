@@ -1,0 +1,151 @@
+﻿;------------- MakeRescueDiskWizard -------------
+
+[Global]
+$RescueDisk             = "Kaspersky Rescue Disk"
+
+AskCancelCopy		= "¿Desea cancelar la copia de archivos?"
+AskCancelDownload	= "¿Desea cancelar la descarga de archivos?"
+AskCancelUpdateIso	= "¿Quiere cancelar la actualización del archivo .iso?"
+AskCancelUSBMake	= "¿Cancelar grabación en la unidad flash USB?"
+AskEraseMedia		= "El disco regrabable no está vacío. Todos los datos de este disco se sobrescribirán. ¿Quiere usar este disco para grabar el Kaspersky Rescue Disk?"
+AskOverwriteFile	= "El archivo o carpeta " + strFilename + " ya existe. ¿Sobrescribir?"
+AskFormatVolume		= "El disco " + strVolume + " no está formateado. Debe formatearlo para continuar.\nAtención. Se perderán todos los datos del disco " + strVolume +".\n¿Desea formatear el disco?"
+AskNotEnoughSpace	= "No hay espacio suficiente en el disco para completar. Requerido: " + filesize(nNeeded, "FileSizeTypes") + ", disponible: " + filesize(nActual, "FileSizeTypes") + ".\nLibere algo de espacio y haga clic en Aceptar para continuar."
+SpecifyFullPath		= "Especifique la ruta del archivo."
+PathIsFolder		= "La ruta especificada es una carpeta. Especifique el nombre de archivo."
+RdiskCopyError		= "Error al copiar el archivo (" + s_SystemError(ErrorCode) + ")." + "\n\n<a Support onclick(url(\"" + $Rdisk_CopyError_url + "\"))>" + $Click_msg + "</a>"
+RdiskDownloadError	= "Error al descargar el archivo (" + s_RdiskDownloadError(ErrorCode) + ")." + "\n\n<a Support onclick(url(\"" + $Rdisk_DownloadError_url + "\"))>" + $Click_msg + "</a>" + $tryManual
+RdiskUpdateIsoError	= s_RdiskUpdateError(ErrorCode) + "\n\n<a Support onclick(" + s_RdiskUpdateIsoErrorUrl(ErrorCode) + ")>" + $Click_msg + "</a>" + s_RdiskUpdateErrorAddInfo(ErrorCode)
+RdiskBurnIsoError	= s_RdiskBurnIsoErrorText(OperationCode) + "." + "\n\n<a Support onclick(url(\"" + $Rdisk_BurnIsoError_url + "\"))>" + $Click_msg + "</a>"
+RdiskMakeUSBError	= s_RdiskMakeUSBErrorText(ErrorCode) + "." + "\n\n<a Support onclick(url(\"" + $Rdisk_MakeUSBError_url + "\"))>" + $Click_msg + "</a>"
+$isoLink = "<a Support onclick(url(\"" + strIsoUrl + "\"))>" + strIsoUrl + "</a>"
+$tryManual = if(strIsoUrl, "\n\n\nIntente descargar una imagen de Kaspersky Rescue Disk de forma manual desde Internet\n" + $isoLink + "\no desde una unidad local")
+
+[s_RdiskDownloadError]
+0x8000A002="permisos insuficientes para esta operación"
+0x800000C0="formato de archivo incorrecto o permisos insuficientes para esta operación"
+default=s_UpdaterError(@)
+
+[s_RdiskUpdateErrorStandard]
+0x80000061="no se pueden actualizar las bases de datos del Kaspersky Rescue Disk debido a problemas de licencia"
+0x800000C0="formato de archivo incorrecto o permisos insuficientes para esta operación"
+0x90000001="no se pudieron descargar las bases de datos de Kaspersky Rescue Disk desde Internet. Es posible que no haya conexión de red o suficiente espacio en la unidad de disco duro."
+default=s_SystemError(@)
+
+[s_RdiskUpdateError]
+#errTASK_ALREADY_RUNNING = "No se pudo actualizar la base de datos de Kaspersky Rescue Disk al actualizar " + $ProductName + ". Puede reintentar la actualización de Kaspersky Rescue Disk después de que la actualización de " + $ProductName + " haya terminado (recomendado) o puede omitir la actualización de la base de datos de Kaspersky Rescue Disk."
+default = "Error de actualización de la imagen de Kaspersky Rescue Disk (" + s_RdiskUpdateErrorStandard(ErrorCode) + ")."
+
+[s_RdiskUpdateErrorAddInfo]
+#errTASK_ALREADY_RUNNING
+0x80000061
+0x90000001="\n\n¿Desea continuar sin actualizar?"
+
+[s_RdiskUpdateIsoErrorUrl]
+0x80000061="window(\"QMLMainWindow:LicenseManager\")"
+default="url(\"" + $Rdisk_UpdateIsoError_url + "\")"
+
+[s_RdiskBurnError]
+default=s_SystemError(@)
+
+[s_RdiskBurnIsoErrorText]
+0xC0AA0204 = "Cara incorrecta del disco"
+0xC0AA0202 = "Inserte un disco"
+0xC0AA0300 = "Subdesbordamiento de búfer. Cierre el resto de aplicaciones e intente grabar de nuevo"
+0xC0AA0203 = "El disco no es compatible con el dispositivo de grabación o está dañado"
+0xC0AA0209 = "El disco está protegido contra escritura"
+0xC0AA020F = "El dispositivo de grabación no admite las posibles velocidades de grabación de este disco"
+0xC0AA0210 = "Otra aplicación está utilizando el dispositivo de grabación"
+0xC0AA0407 = "Escribiendo en un disco de solo lectura o el dispositivo de grabación seleccionado no es compatible con el disco grabable"
+default	   = "Error al grabar la imagen del disco (" + s_RdiskBurnError(ErrorCode) + ")"
+
+[s_RdiskMakeUSBErrorText]
+0x800000C5 = "Falta un archivo necesario para grabar Kaspersky Rescue Disk en una unidad flash USB, o la imagen del disco está dañada."
+default	   = (OperationCode && s_RdiskMakeUSBNativeErrorText(OperationCode) ? s_RdiskMakeUSBNativeErrorText(OperationCode) : "Error de grabación de Kaspersky Rescue Disk en la unidad flash USB (" + s_SystemError(ErrorCode) + ")") 
+
+[s_RdiskMakeUSBNativeErrorText]
+1105 = "Error al formatear la unidad flash USB. Puede que a la unidad le falte una partición."
+
+[MakeRescueDiskWizard]
+@ = "Crear Kaspersky Rescue Disk"
+
+[MakeRescueDiskWizardPages]
+$IsoBurnPrepareName = eTarget == #eRdiskTargetCD ? "Grabando datos en un CD/DVD" : (eTarget == #eRdiskTargetUSB ? "Grabando datos en una unidad flash USB" : "Guardando imagen de disco en el archivo")
+Intro.Name               		= "¿Desea crear y grabar Kaspersky Rescue Disk en un CD/DVD o en una unidad flash USB?"
+Iso_Locate.Name					= "Seleccionar origen de imagen de disco"
+Iso_CopyLocal.Name				= "Copiando imagen de disco"
+Iso_CopyLocal_Progress.Name		= "Copiando imagen de disco"
+Iso_Download_Progress.Name		= "Descargando imagen de disco"
+Iso_Update_Prepare.Name			= "Actualizando imagen de disco"
+Iso_Update_Progress.Name		= "Actualizando imagen de disco"
+Iso_Choose_Action.Name          = "Grabando datos"
+Iso_Burn_Prepare.Name			= $IsoBurnPrepareName
+Iso_Burn_Progress.Name			= $IsoBurnPrepareName
+Iso_CopyFolder_Progress.Name	= "Copiando Kaspersky Rescue Disk en archivo de unidad local o de red"
+Finish.Name						= "Fin del Asistente"
+
+[MakeRescueDiskWizardPages_Intro_Inner]
+Descr			= "Kaspersky Rescue Disk es un CD o unidad USB flash desde el que se puede arrancar y que contiene un conjunto de herramientas que detectan y eliminan de forma eficaz las infecciones que pueda sufrir un equipo. Es necesario cuando el daño sufrido por el equipo es tal que el sistema operativo o el software antivirus no se pueden iniciar correctamente.\n\nEl asistente de creación de Kaspersky Rescue Disk permite crear una imagen de disco (archivo .iso) con los archivos de configuración y las bases de datos de antivirus actualizadas para grabarlos en un  CD, DVD o unidad USB flash."
+Text			= "El asistente ha detectado una imagen ISO existente del Kaspersky Rescue Disk."
+Version                 = "Versión de la imagen: " + strExistentIsoVersion
+UseExistentIso	= "Usar imagen de Kaspersky Rescue Disk existente"
+
+[MakeRescueDiskWizardPages_NewVersion]
+TextNew			= "Está disponible una nueva versión de la imagen de Kaspersky Rescue Disk"
+Text			= "Versión de imagen ISO disponible"
+Version			= "Versión: " + global.NewRescueDiskVersion.Version
+Descr			= "Descripción: " + global.NewRescueDiskVersion.Desc
+RelDate			= "Publicado:" + global.NewRescueDiskVersion.RelDate
+Size			= "Tamaño: " + f_ObjSize(global.NewRescueDiskVersion.Size)
+
+[MakeRescueDiskWizardPages_Iso_Locate_Inner]
+Descr			= "Para crear un Kaspersky Rescue Disk, es necesaria una imagen de disco preparada (un archivo .iso)."
+Text			= "Elija una de las opciones siguientes:"
+
+[MakeRescueDiskWizardPages_Iso_Locate_RadioGroup]
+CopyLocal		= "Copiar la imagen ISO desde una unidad local o de red"
+Download		= "Descargar imagen ISO desde el servidor de Kaspersky Lab"
+
+[MakeRescueDiskWizardPages_Iso_CopyLocal_Inner]
+$SelectISOFileCaption = "Seleccionar un archivo de imagen del Kaspersky Rescue Disk"
+Descr			= "Especificar un archivo de imagen de Kaspersky Rescue Disk. El asistente lo copiará para futuros usos."
+PathLabel		= "Ruta del archivo"
+
+[MakeRescueDiskWizardPages_Iso_CopyLocal_Progress_Inner]
+Descr			= "El asistente está copiando el archivo de imagen ISO."
+Text			= "Copiado " + f_ObjSize(nCurrentBytes) + " de " + f_ObjSize(nTotalBytes)
+
+[MakeRescueDiskWizardPages_Iso_Download_Progress_Inner]
+Descr			= "El asistente está descargando el archivo de imagen ISO desde los servidores de Kaspersky Lab."
+Text			= "Descargado " + f_ObjSize(nCurrentBytes) + " de " + f_ObjSize(nTotalBytes)
+
+[MakeRescueDiskWizardPages_Iso_Update_Prepare_Inner]
+Descr			= "El Asistente actualizará la base Antivirus y los archivos de configuración."
+
+[MakeRescueDiskWizardPages_Iso_Update_Progress_Inner]
+Descr			= "El asistente está descargando el archivo de imagen .iso. Se están actualizando las bases de datos de antivirus y los archivos de configuración. Esta operación puede durar unos minutos..."
+
+[MakeRescueDiskWizardPages_Iso_Choose_Action_Inner]
+TargetText		= "Seleccionar acción para el Kaspersky Rescue Disk: "
+Instructions	= "Conecte la unidad flash USB y haga clic en Siguiente"
+
+[MakeRescueDiskWizardPages_Iso_Choose_Action_Target]
+CD			= "Grabar en CD/DVD"
+CDText	        	=  bNeedIMAPIv2 ? "\nAdvertencia. No se puede encontrar el componente Windows Image Mastering API v2.0 (IMAPIv2.0) en el equipo. Para grabar el Kaspersky Rescue Disk, tiene que instalar <a onclick(url($KB932716LinkText))>la actualización KB932716</a> de Microsoft Windows." : "\nNo se puede encontrar ningún dispositivo para grabar CD/DVD en el equipo."
+USB			= "Grabar en unidad flash USB"
+Folder			= "Guarde la imagen del disco en un archivo de la unidad local o de red"
+
+
+[MakeRescueDiskWizardPages_Iso_Burn_Prepare_Inner]
+$SelectDestFolderCaption = "Especifique la ruta del archivo para guardar la imagen del Kaspersky Rescue Disk"
+Descr			= (eTarget == #eRdiskTargetCD ? "El Asistente grabará los datos en un CD/DVD." : "El Asistente grabará los datos en una unidad flash USB.")
+ComboLabel		= eTarget == #eRdiskTargetCD ? "Seleccione el dispositivo de grabación:" : (eTarget == #eRdiskTargetUSB ? "Seleccione la unidad flash USB:" : $SelectDestFolderCaption + ":")
+Instructions	= (eTarget == #eRdiskTargetCD ? "\nIntroduzca un CD/DVD grabable y haga clic en Siguiente" : "\nAtención. Para grabar el Kaspersky Rescue Disk, se recomienda utilizar únicamente unidades flash USB y discos duros USB. No utilice reproductores de mp3, teléfonos inteligentes o dispositivos similares.\n\nSi tiene problemas para arrancar desde una unidad flash USB, pruebe a utilizar el Kaspersky Rescue Disk grabado en CD/DVD. El arranque desde una unidad flash USB puede requerir una configuración adicional del BIOS.\n\nPara evitar la pérdida de datos, se recomienda encarecidamente hacer la copia de seguridad en una unidad flash USB.\n\n<a onclick(url(\"" + $RescueDiskDetailsLink + "\"))>Más información sobre Kaspersky Rescue Disk...</a>")
+
+
+[MakeRescueDiskWizardPages_Iso_Burn_Progress_Inner]
+Descr			= "El Asistente está " + (eTarget == #eRdiskTargetFolder ? "guardando la imagen del disco en un archivo" : (eTarget == #eRdiskTargetUSB ? "grabando en una unidad flash USB" : "grabando en un CD/DVD")) + ". Puede tardar unos pocos minutos..."
+
+[MakeRescueDiskWizardPages_Finish_Inner]
+Descr			= "Se ha completado la creación del Kaspersky Rescue Disk."
+DescrLast		= "\nHaga clic en Finalizar para cerrar este ventana."

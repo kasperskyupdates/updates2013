@@ -1,0 +1,112 @@
+<UpdateFiles
+	UpdateDate="28102015 1513"
+	BlackDate="28102015 0603"
+	ObjectType="2=UDS;3=BASE">
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="klsrl.dat" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KES [8-10].*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="klsrl2.dat" />
+	<FileDescription
+		ComponentID="UDS"
+		UpdateType="base"
+		OS="Win"
+		LocalPath="%BaseFolder%"
+		Filename="uds.esm" />
+	<FileDescription
+		ComponentID="UDS"
+		UpdateType="desc"
+		GenericApp="NOT(AND(OR(#KAV#,#KIS#,#KES#),OR(HR(8),HR(10),HR([12,13]))))"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV_2345COM,KAV12_ASUS,KAV12_KDDI,KAV_NORDNET,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV_ORANGE,KAV12_ALFA,KAV12_NIFTY,KAV12_SONY"
+		UpdateType="desc"
+		Filename="mod-uds-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Target="[0-131000]"
+		ServerFolder="mod"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Arch="mod"
+		ServerFolder="mod"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-131000]"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Arch="mod"
+		ServerFolder="mod"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		Target="[0-262000]"
+		ServerFolder="mod"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Target="[131001-262143]"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Arch="mod"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Target="[131001-262143]"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Arch="mod"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		Target="[262001-262143]"
+		Filename="mod-uds-0607g.xml"
+		FileDate="28102015 1513" />
+	<Registry
+		ComponentID="UDS"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAeVhHipAACNsV6nqczG4SCWKQcBOEXj/ZSTgks9qnskfYFX13YCKHg2tICxd81c+Fpp5HJ79k0T1umZ1ueilvRAMP9xYSlkBAB4JwQAAAAIAAigDAFVEUwMAAigEAEJBU0UBAAAJ8jtlKQ0KOzoxMEtNRWQycWt3TURUWjJiZ2g5RGIvUmF5Q2FRdnYyRWduWlNXWU1WZWhRbnVqWXJZYjJhNDQzMUxiQld2bkNrazNOWGk1TUQvM1Z4aXJZQ2cwVVdjY014JSU="
+		Filename="uds-0607g.pbv" />
+	<Registry
+		ComponentID="UDS"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwHBAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAwABACAAa/XYmA3FoQXwFDvhZhxINXDzBzrAu6/cGxJo+kPFMEIgAOFPAROMNr8NKlmUEYVsuph14me9zy+JIv2KnND6JbFXIADNjeZZv8TrkbIfrJ6pkaeTGkrrDPc3DwtKr+bjFzBxVwEAHgnBAAAAAQAACaQRwY8NCjs6MTBLMzRBWWpDRXJUM1VRRDMxazBMOXMwdWhJMDZoa1RnWDhsM29Xb3FLcHYvRWN6NG5SRVlGSy9CdndhU3FuN01PTnlUMEpGUUhPTHFmei9uTEpKcTRRUCUl"
+		Filename="uds-0607g.krg" />
+</UpdateFiles>
+;:10K0Ip/aEqnjtSeDlj3+jhBxUv8aIqO/NapP/uOX7JX21lmdFFmnJylnVRN2yPle0u9K+D75gvrnnCGyuD3Z79YP%%

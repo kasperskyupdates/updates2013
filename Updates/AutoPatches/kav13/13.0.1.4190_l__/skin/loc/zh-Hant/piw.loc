@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "選擇產品授權"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "程式的授權由裝置提供商提供。您要使用此授權啟動程式嗎？\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "程式設定尚未完成，確定要結束設定精靈嗎?"
+ErrEmptyActivationCode.caption  = "未指定啟動碼"
+ErrEmptyActivationCode          = "請輸入啟動碼。"
+ErrEmptyKeyPath.caption         = "未指定產品授權"
+ErrEmptyKeyPath                 = "請指定產品授權"
+$LicInfoKeyNumber               = "編號："
+$LicInfoKeyProductName          = "程式名稱："
+$LicInfoKeyType                 = "產品授權類型："
+$LicInfoExpirationDate          = "到期時間："
+$LicErrReason                   = "原因："
+$ActiveKey                      = "使用中的授權"
+$ReservedKey                    = "備用授權"
+ConfirmFeedback                 = "您同意向<a KsnInfo onclick(dialog(\"KsnInfo\"))>卡巴斯基安全網路</a>體系提交資訊嗎?"
+$KsnTerms                       =  "卡巴斯基安全網路(KSN) - 是線上服務的基礎，為檔案、網頁資源和軟體的安全情況提供即時資訊。使用卡巴斯基安全網路的資料可以加快對最新威脅的回應速度，增強防護元件的效能，降低誤報率。\n您加入卡巴斯基安全網路後，將自動向卡巴斯基實驗室傳送有關病毒感染和其它問題資訊，包括載入程式和可執行程式的延伸統計資訊等，詳見<a KsnInfo onclick(dialog(\"KsnInfo\"))>卡巴斯基安全網路資料收集宣告</a>。\n\n<b>卡巴斯基安全網路不會收集和處理任何個人資訊。</b>"
+
+$ToAcquireNewLicText            = "\n\n要獲得新的產品授權，請聯絡您的經銷商或<a Buy onclick(buy())>卡巴斯基實驗室銷售部</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\n請手動更新訂購狀態或聯絡技術支援" : "\n請使用啟動碼稍後啟動程式（1-2 小時後）或聯絡技術支援") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url($KeyProviderLinkForText))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN +((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? "啟動精靈" : "設定精靈")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "一般資訊"
+InitBegin.Descr                       = "歡迎使用"+ $ProductName_GEN +"設定精靈。"
+CheckHosts.Name                       = "正在偵測卡巴斯基實驗室伺服器是否可用"
+CheckHosts.Descr                      = "偵測到可疑的重新導向連接"
+ResetArea.Name                        = "還原設定"
+ResetArea.Descr                       = "以下列出的設定是由使用者輸入的或程式執行期間累積的。"
+ActivationBegin.Name                  = $IsSubscription ? "訂購管理" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "移除授權" : "新增授權") : "啟動程式")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "管理產品授權" : "啟動程式以繼續。")
+ActivationProgress.Name               = "線上啟動"
+ActivationProgress.Descr              = "正在啟動，請稍候..."
+ActivationServerForm.Name             = "線上註冊"
+ActivationServerForm.Descr            = "請填寫此表。"
+ActivationChooseKey.Name              = "使用授權檔案啟動"
+ActivationChooseKey.Descr             = "使用產品授權啟動程式."
+ActivationEnd.Name                    = "啟動程式"
+ActivationEnd.Descr                   = "完成啟動。"
+MigrationKeyIsFound.Name         = "目前產品授權有效"
+MigrationKeyIsFound.Descr        = "您是否希望使用目前產品授權對應的程式？"
+MigrationBegin.Name              = "轉換至" + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "將轉換至" + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "搜尋不相容的軟體"
+MigrationSearchProgress.Descr    = "正在搜尋不相容的軟體，請稍候..."
+MigrationSafeRemoval.Name        = "發現不相容的軟體"
+MigrationSafeRemoval.Descr       = "需要移除不相容的軟體才能繼續安裝"
+MigrationSafeProgress.Name       = "移除不相容的軟體"
+MigrationSafeProgress.Descr      = "正在移除不相容的軟體，請稍候..."
+MigrationAddRemove.Name          = "發現不相容的軟體"
+MigrationAddRemove.Descr         = "請移除不相容的軟體"
+MigrationUnsafeRemoval.Name      = "發現不相容的軟體"
+MigrationUnsafeRemoval.Descr     = "需要移除不相容的軟體才能繼續安裝"
+MigrationUnsafeProgress.Name     = "移除不相容的軟體"
+MigrationUnsafeProgress.Descr    = "正在移除不相容的軟體，請稍候..."
+MigrationReboot.Name             = "重新啟動作業系統"
+MigrationReboot.Descr            = "需要重新啟動才能繼續切換至新程式"
+MigrationProgress.Name           = "轉換至" + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "正在切換至新程式，請稍候..."
+MigrationRebootApp.Name          = bMigrationDone ? "程式將重新啟動": "切換至新程式時出錯"
+MigrationRebootApp.Descr         = bMigrationDone ? "程式應重新啟動": "切換至" + s_MUProductTitleLong(env("ProductType")) + "已失敗"
+MigrationFinish.Name             = "切換" + s_ProductTitleLong(env("ProductType")) + "已完成"
+MigrationFinish.Descr            = "切換" + s_ProductTitleLong(env("ProductType")) + "已完成"
+DNS.Name                              = "進階設定"
+DNS.Descr                             = $ProductName_GEN + " 進階操作設定"
+EnumExe.Name                          = "分析系統"
+EnumExe.Descr                         = "正在分析系統資訊，請稍候..."
+InitFinish.Name                       = "正在完成" + $ProductName + "設定"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "您必須重新啟動電腦，以完成程式設定。" : "您可以立即啟動" + $ProductName + "。"
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "偵測到可疑的卡巴斯基實驗室伺服器位址重新導向行為。這可能是由惡意軟體活動引起的，這將導致更新和啟動失敗。可疑的 Hosts 檔案項目:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "移除記錄（建議）"
+Skip			= "略過"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "上一步(&B)"
+Back.Descr      = "返回到程式啟動方式選擇步驟"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "新增授權(&A)" : "啟動(&A)"
+Activate.Descr  = "安裝選擇的產品授權"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "完成(&F)"
+Finish.Descr    = "關閉啟動精靈"
+Next.Name       = "下一步(&N)"
+Next.Descr      = "繼續設定"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "您可以繼續使用目前產品授權對應的程式。這會導致程式轉換為" + s_MUProductTitleLong(env("ProductType")) + "。"
+Text3   = "您要繼續使用目前產品授權對應的程式嗎？"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "程式類型："
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "到期時間："
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + "（" + f_n_days_remaining(DaysTillExpiration) + "剩餘）"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "是，並切換到" + s_MUProductTitleLong(env("ProductType")) + "。"
+NotUseFoundLicense = "否，繼續使用" + switch(env("ProductType"), "ProductTitleLong", "") + "。"
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "您正將所用程式轉換為" + s_MUProductTitleLong(env("ProductType")) + "。版權擁有者由於您先前安裝" + s_ProductTitleLong(env("ProductType")) + "時接受的產品授權協議條款，為您提供了一個非專屬授權來使用" + s_MUProductTitleLong(env("ProductType")) + "。"
+Text3   = "注意：轉換操作可能需要重新啟動電腦。"
+LicenseWarning  = "請注意！卡巴斯基防毒軟體的正式產品授權到期時間早於卡巴斯基網路安全軟體的試用版產品授權到期時間。卡巴斯基防毒軟體的正式產品授權到期之後，您將無法從卡巴斯基網路安全軟體試用版上使用卡巴斯基防毒軟體。您要繼續切換至卡巴斯基網路安全軟體嗎？"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "正在搜尋電腦上不相容的軟體，這可能會需要些時間，請稍候..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "系統將移除以下軟體以執行切換："
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "正在移除不相容的軟體，請稍候..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "應移除以下軟體以執行切換："
+OpenAddRemove = "開啟「新增/移除程式」視窗"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "系統將移除以下軟體以執行切換："
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "正在移除不相容的軟體，請稍候..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "您應重新啟動電腦以繼續此切換，重新啟動之後精靈將繼續。"
+Reboot   = "立即重新啟動"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "正在重新設定程式，並轉換到" + s_MUProductTitleLong(env("ProductType")) + "，請稍候..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "要完成切換至" + s_MUProductTitleLong(env("ProductType")) + "此程式需要重新啟動。" : "切換至" + s_MUProductTitleLong(env("ProductType")) + "失敗。"
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "現在，您可以評估" + s_ProductTitleLong("kis") + "的全部功能，如家長監控、垃圾郵件防護、防火牆等。" : s_ProductTitleLong("kav") + "提供了基本的防護功能，確保您的電腦不被惡意軟體侵害。"
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "您可以"+if($IsRefreshSubAvail,"更新訂購狀態或")+"移除該授權。" : (f_IsActiveKeyWorkingCommercial() ? "您可以移除您使用中的授權或新增授權。" : "啟動" + $ProductName + "以啟用完整版的程式功能。"+ if($CorporateOnly, "您可以獲得<a Activate onclick(url($ActivationLink))>正式版</a>或啟動<a ActivateTrial onclick(url($ActivationTrialLink))>試用版</a>程式版本。"))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "稍後啟動(&L)"
+Later.Descr                 = "略過啟動，設定程式"
+ChooseKey.Name              = "使用授權檔啟動(&K)"
+ChooseKey.Descr             = "需要產品授權"
+ActivateBetaKAV.Name        = "啟動卡巴斯基防毒軟體測試版本(&B)"
+ActivateBetaKAV.Descr       = "卡巴斯基防毒軟體測試版包含全部功能，但不是最終版。"
+ActivateBetaKIS.Name        = "啟動卡巴斯基網路安全軟體測試版(&B)"
+ActivateBetaKIS.Descr       = "卡巴斯基網路安全軟體測試版包含全部功能，但不是最終版本。"
+ActivateTrial.Name          = "啟動試用版(&T)"
+ActivateTrial.Descr         = "試用版的有效期已在最終使用者產品授權協議中指明"
+ActivateCommercial.Name     = "線上啟動(&A)"
+ActivateCommercial.Descr    = "需要您購買時獲得的啟動碼"
+RemoveKey.Name              = $HasReserveKey ? "移除備用授權(&D)" : "移除授權(&D)"
+RemoveKey.Descr             = "若要取代授權，請先移除啟動的授權"
+RefreshSubscription.Name    = "更新訂購服務狀態(&R)"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "您可以手動更新訂購服務狀態。" : "已終止訂購服務狀態自動更新，您可以手動更新該狀態。"
+ActivateTrialKIS            = "啟動卡巴斯基網路安全軟體試用版"
+ActivateTrialKIS_Desc       = "產品授權協議中規定了卡巴斯基網路安全軟體試用版的有效期"
+RevertToCommercialKAV       = "返回卡巴斯基防毒軟體正式版"
+RevertToCommercialKAV_Desc  = "返回卡巴斯基防毒軟體正式版"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "更新訂購服務狀態"
+ActivateCommercial      = "啟動正式版本"
+ActivateCommercial_Desc = (LockActivationCode)? "輸入啟動碼：" : "輸入<a onclick(url(\"" + $ActCodeHint + "\"))>啟動碼</a>："
+ActivationCode_Desc     = (LockActivationCode)? "您的啟動碼已自動新增。請按「下一步」 按鈕。" : "如果您還沒有啟動碼，您可以<a onclick(buy())>線上購買</a>"
+ActivateBetaKAV         = "啟動卡巴斯基防毒軟體測試版(&B)"
+ActivateBetaKIS         = "啟動卡巴斯基網路安全軟體測試版(&V)"
+ActivateTrial           = "啟動試用版本(&T)"
+ActivateTrial_Desc      = "購買之前試用程式的全部功能。"
+ActivateTrialKIS           = "啟動卡巴斯基網路安全軟體試用版"
+ActivateTrialKIS_Desc      = "購買之前試用卡巴斯基網路安全軟體的全部功能。"
+RevertToCommercialKAV      = "返回卡巴斯基防毒軟體正式版"
+RevertToCommercialKAV_Desc = "停止使用卡巴斯基網路安全軟體試用版，返回卡巴斯基防毒軟體正式版。"
+Later                   = "稍後啟動(&A)"
+Later_Desc              = "啟動之前，無法使用程式的全部功能。"
+RemoveKey               = "移除授權"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "授權檔案："
+KeyInfo         = "產品授權資訊"
+ConnectingInfo.Name     = "啟動錯誤："
+ConnectingInfo.Val      = "詳細資訊"
+TryAgain                = "啟動"
+Descr1                  = "若要重新啟動，請執行以下操作："
+Descr2                  = "檢查網路連接設定並重新啟動。"
+Descr3                  = "到<a onclick(url(\"" + $ActivationLink + "\"))> 線上啟動中心</a> ，根據說明操作。\n在收到產品授權後，指定它的位置並按「下一步」："
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "建立日期："
+InstallDate.Name    = "安裝日期："
+ExpirationDate.Name = "到期時間："
+SubscrptnExpDate.Name = "訂購服務到期時間："
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection,"用於 " + p_KeyInfo.LicenseCount + " 台" + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount))) + " " + s_LicKeyType(p_KeyInfo.KeyType)
+
+[s_LicenseOperationsError]
+1       = "系統錯誤：" + s_SystemError(ErrorCode)
+2       = "無法新增\"" + KeyFile + "\"授權：" + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "無法移除\"" + KeyFile + "\"：" + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "錯誤代碼：" + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "該授權已經被新增" + $LicErrHelpLink
+0x0947901d  = "您的產品授權已到期，資料庫更新功能無法使用" + $LicErrHelpLink
+0x89479002  = "產品授權遺失" + $LicErrHelpLink
+0x89479003  = "數位簽章遺失或損壞" + $LicErrHelpLink
+0x89479004  = "資料損壞" + $LicErrHelpLink
+0x89479005  = "產品授權損壞" + $LicErrHelpLink
+0x89479006  = "產品授權已經到期" + $LicErrHelpLink
+0x89479007  = "未指定產品授權" + $LicErrHelpLink
+0x89479008  = "授權檔案無效" + $LicErrHelpLink
+0x89479009  = "儲存資料失敗" + $LicErrHelpLink
+0x8947900a  = "讀取資料失敗" + $LicErrHelpLink
+0x8947900b  = "I/O 錯誤" + $LicErrHelpLink
+0x8947900c  = "資料庫遺失" + $LicErrHelpLink
+0x8947900d  = "現在啟動的和備用的授權均已新增" + $LicErrHelpLink
+0x8947900e  = "產品授權庫沒有初始化" + $LicErrHelpLink
+0x8947900f  = "資料庫損壞或已經手動更新" + $LicErrHelpLink
+0x89479010  = "資料庫已損壞" + $LicErrHelpLink
+0x89479011  = "無法註冊到期的產品授權為備用產品授權" + $LicErrHelpLink
+0x89479012  = "系統錯誤" + $LicErrHelpLink
+0x89479013  = "授權黑名單損壞" + $LicErrHelpLink
+0x89479014  = "數位簽章與卡巴斯基實驗室的數位簽章不相符" + $LicErrHelpLink
+0x89479015  = "無法使用 Beta 版產品授權啟動正式版程式" + $LicErrHelpLink
+0x89479016  = "只能使用 Beta 版產品授權啟動 Beta 版程式" + $LicErrHelpLink
+0x89479017  = "本產品授權對該程式不適用。其他程式的產品授權不能用於啟動" + $ProductName + "。請檢查您已安裝的程式" + $LicErrHelpLink
+0x89479018  = "授權已被封鎖" + $LicErrHelpLink
+0x89479019  = "這台電腦已經使用過了試用產品授權，不能再次使用試用授權。" + $LicErrHelpLink
+0x8947901a  = "產品授權損壞" + $LicErrHelpLink
+0x8947901b  = "數位簽章遺失或損壞，或與卡巴斯基實驗室數位簽章不相符" + $LicErrHelpLink
+0x8947901c  = "不能為已到期正式版本的產品授權新增授權" + $LicErrHelpLink
+0x8947901e  = "產品授權建立或啟動日期無效。請檢查您的系統日期設定" + $LicErrHelpLink
+0x8947901f  = "當使用試用版產品授權時，無法新增其他的試用版產品授權" + $LicErrHelpLink
+0x89479020  = "授權黑名單遺失或損壞" + $LicErrHelpLink
+0x89479021  = "更新描述遺失或損壞" + $LicErrHelpLink
+0x89479022  = "此產品的內部資料無效" + $LicErrHelpLink
+0x89479023  = "不能使用不正確的啟動碼新增備用授權" + $LicErrHelpLink
+0x89479024  = "完成使用者表單資料錯誤" + $LicErrHelpLink
+0x89479025  = "傳送啟動伺服器請求錯誤。\n可能原因：網路連接問題或啟動伺服器暫時故障。\n請稍後再次嘗試啟動（1-2小時後）。\n如果問題仍然存在，請聯絡您的網路供應商" + $LicErrHelpLink
+0x89479026  = "請求包含錯誤的啟動碼" + $LicErrHelpLink
+0x89479027  = "不能獲得回應狀態" + $LicErrHelpLink
+0x89479028  = "儲存暫存檔錯誤" + $LicErrHelpLink
+0x89479029  = "啟動碼輸入錯誤或系統日期錯誤。請檢查系統日期設定。" + $LicErrHelpLink
+0x8947902a  = "啟動碼對該程式不適用或該授權已到期。其他程式的產品授權不能用於啟動" + $ProductName + "。請檢查您已安裝的程式或<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "接收產品授權失敗，指定的啟動碼不正確。" + $LicErrHelpLink
+0x8947902c  = "啟動伺服器回覆錯誤400。" + $OlaErrHelpLink
+0x8947902d  = "啟動伺服器回覆錯誤401。" + $OlaErrHelpLink
+0x8947902e  = "啟動伺服器回覆錯誤403。" + $OlaErrHelpLink
+0x8947902f  = "啟動伺服器上的所需資源無法使用。\n啟動伺服器回覆錯誤 404。\n請檢查網際網路連接設定" + $OlaErrHelpLink
+0x89479030  = "啟動伺服器回覆錯誤 405 " + $OlaErrHelpLink
+0x89479031  = "啟動伺服器回覆錯誤 406 " + $OlaErrHelpLink
+0x89479032  = "需要代理認證。請檢查區域網路設定。" + $LicErrHelpLink
+0x89479033  = "請求逾時" + $LicErrHelpLink
+0x89479034  = "啟動伺服器回覆錯誤 409 " + $OlaErrHelpLink
+0x89479035  = "啟動伺服器上的所需資源無法使用。\n啟動伺服器回覆錯誤 410。\n請檢查網際網路連接設定" + $OlaErrHelpLink
+0x89479036  = "啟動伺服器回覆錯誤 411 " + $OlaErrHelpLink
+0x89479037  = "啟動伺服器回覆錯誤 412 " + $OlaErrHelpLink
+0x89479038  = "啟動伺服器回覆錯誤 413 " + $OlaErrHelpLink
+0x89479039  = "啟動伺服器回覆錯誤 414 " + $OlaErrHelpLink
+0x8947903a  = "啟動伺服器回覆錯誤 415 " + $OlaErrHelpLink
+0x8947903b  = "使用者端發生未知錯誤" + $OlaErrHelpLink
+0x8947903c  = "伺服器內部錯誤" + $LicErrHelpLink
+0x8947903d  = "不支援該功能" + $LicErrHelpLink
+0x8947903e  = "Gateway無回應。請檢查您的網路設定" + $LicErrHelpLink
+0x8947903f  = "資源暫時無法使用" + $LicErrHelpLink
+0x89479040  = "等待請求逾時。請檢查您的網路設定" + $LicErrHelpLink
+0x89479041  = "伺服器不支援該協定。" + $OlaErrHelpLink
+0x89479042  = "伺服器出現未知錯誤。" + $OlaErrHelpLink
+0x89479043  = "未知HTTP錯誤。" + $OlaErrHelpLink
+0x89479044  = "無效的資源識別碼。" + $LicErrHelpLink
+0x89479045  = "「產品授權」錯誤資訊 " + $LicErrHelpLink
+0x89479046  = "錯誤的網址" + $LicErrHelpLink
+0x89479047  = "不正確的目的資料夾" + $LicErrHelpLink
+0x89479048  = "記憶體分配錯誤" + $LicErrHelpLink
+0x89479049  = "轉換參數為ANSI字串錯誤(網址、資料夾、代理)" + $LicErrHelpLink
+0x8947904a  = "建立工作執行緒錯誤" + $LicErrHelpLink
+0x8947904b  = "工作執行緒已執行" + $LicErrHelpLink
+0x8947904c  = "工作執行緒未執行" + $LicErrHelpLink
+0x8947904d  = "在啟動伺服器上沒有發現授權檔案" + $LicErrHelpLink
+0x8947904e  = "授權被封鎖" + $LicErrHelpLink
+0x8947904f  = "啟動伺服器內部錯誤" + $LicErrHelpLink
+0x89479050  = "在啟動請求中沒有足夠的資料" + $LicErrHelpLink
+0x89479051  = "不正確的使用者 ID 或密碼" + $LicErrHelpLink
+0x89479052  = "不正確的啟動碼" + $LicErrHelpLink
+0x89479053  = "選擇授權檔案的產品授權到期日期早於目前產品授權的到期日期" + $LicErrHelpLink
+0x89479054  = "作業系統日期錯誤。請檢查系統日期" + $LicErrHelpLink
+0x89479055  = "試用授權已經到期" + $LicErrHelpLink
+0x89479056  = "啟動碼已到期" + $LicErrHelpLink
+0x89479057  = "<b>輸入的啟動碼已經超過了允許啟動的最大數量</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "正式版產品授權有效時，不能將非正式版產品授權的授權新增為備用授權" + $LicErrHelpLink
+0x8947905c  = "需要啟動碼" + $LicErrHelpLink
+0x8947905d  = "客戶ID或密碼不正確" + $LicErrHelpLink
+0x8947905e  = "不正確的啟動碼" + $LicErrHelpLink
+0x89479062  = "無法連接到啟動伺服器" + $LicErrHelpLink
+0x89479064  = "<b>啟動伺服器無法使用。</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "無法啟動程式。設定程式並重新啟動作業系統後，嘗試重新啟動。", "請檢查網路連接設定後重新啟動。") + $LicErrHelpLink
+0x89479065  = "您的產品授權已到期。請<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "不能使用已到期授權取代目前授權" + $LicErrHelpLink
+0x89479067  = "無法新增到期時間早於目前授權的授權作為備用" + $LicErrHelpLink
+0x89479068  = "不存在更新的訂購產品授權" + $LicErrHelpLink
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "啟動程式因為系統錯誤而完成" + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "啟動錯誤：" + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "啟動錯誤：" + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "啟動錯誤：伺服器回覆 HTTP程式碼 " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "啟動失敗" + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "內部啟動伺服器錯誤，請重試或聯絡技術支援服務"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "啟動碼和該程式不相容，用於其他程式的啟動碼不能啟動" + $ProductName + "，請檢查已安裝的程式。"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "授權被封鎖"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "客戶ID或密碼不正確"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "啟動碼錯誤"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "需要啟動碼"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "啟動日期已到期"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "啟動次數超過限制"
+#OLA_ERR_SRV_REGION_MISMATCH                = "啟動碼對該國家無效。"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "該啟動碼不適用於該當地程式。"
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "該啟動碼僅適用於較新版本的程式。若要使用目前版本的程式，請按以下連結以獲得對應的啟動碼。"
+#OLA_ERR_SRV_SERVER_ERROR_643               = "啟動伺服器回覆錯誤 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "啟動伺服器回覆錯誤 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "啟動伺服器回覆錯誤 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "啟動伺服器回覆錯誤 646"
+default                                     = "啟動過程回覆錯誤" + #OLA_SERVER_ERROR + "：" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft IE 瀏覽器工作在離線模式下"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "網路連接失敗"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "啟動伺服器無法使用"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Proxy伺服器無法使用"
+#OLA_ERR_INTERNET_TIMEOUT                    = "回應時間逾時"
+#OLA_ERR_INTERNET_INVALID_URL                = "啟動伺服器位址錯誤"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "協定錯誤"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "無法建立伺服器連接"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "操作被取消"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "無法建立伺服器連接"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "終止伺服器連接"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "伺服器連接被重設"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "伺服器回應錯誤"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "伺服器的SSL憑證已到期，請檢查本機電腦時間。"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "伺服器的SSL憑證和伺服器不相符"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "無法執行憑證撤銷檢查。請在 Microsoft Internet Explorer 中關閉該項檢查（Internet 選項->進階->檢查伺服器憑證撤銷）並嘗試重新啟動"
+#OLA_ERR_INTERNET_CERT_INVALID               = "無效的 SSL 憑證"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL 憑證已取消"
+#OLA_ERR_INTERNET_INVALID_CA                 = "無效的憑證中心"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "卡巴斯基實驗室需要註冊資料以通知您各種促銷活動、銷售和優惠。"
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "繼續(&C)"
+Activate.Descr  = "傳送資料到啟動伺服器"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "設定精靈正在連接卡巴斯基實驗室啟動伺服器。這可能需要一些時間，具體取決於您的網際網路連接速度。 "
+ConnectingInfo.Name     = "正在連接到啟動伺服器..."
+ConnectingInfo.Val      = if(bConnected, "成功")
+SendingCodeInfo.Name    = "正在傳送啟動碼..."
+SendingCodeInfo.Val     = if(bSentCode, "成功")
+RetrievingKeyInfo.Name  = "正在等待伺服器回應..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "成功")
+Status                  = "您已經成功啟動" + $ProductName + "副本"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "到期時間："
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + "（" + f_n_days_remaining(DaysTillExpiration) + "剩餘）"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "啟動成功完成。" : "該程式已在您的電腦上啟動。"
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "下一步(&N)"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "開始啟動程式": (((PiwFlags & #fPiwActivation) && !bSilent)?"產品授權資訊":"請選擇防護模式")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "該精靈將幫助您正確地設定電腦安全。\n\n在設定過程中，精靈會分析有關您的系統以及安裝在您的電腦上的應用程式的相關資訊，以更好地防護您的電腦。\n\n按一下「下一步」開始設定" + $ProductName_GEN + "。"
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "安裝即將完成..." : ((PiwFlags & #fPiwReset) ? ("修復完成！") : ("安裝完成！"))
+ResetDescr          = "設定精靈已成功完成對" + $ProductName + "設定的還原。"
+Reboot              = "重新啟動電腦(&R)"
+StartProduct        = "啟動" + $ProductName + "(&S)"
+RebootPiwWarning    = $IsInstallNeedReboot ? ("感謝您安裝" + $ProductName + "。若要完成安裝，您必須重新啟動電腦。請儲存您的資料，關閉所有應用程式，按「完成」按鈕。") : "請注意，程式第一次啟動時，需要完成產品的其它設定。可能會佔用幾分鐘時間。"
+
+[ConfigureWizard.EnumExe]
+Info = "在系統分析期間，程式將為 Microsoft Windows 作業系統中信任的應用程式建立一個清單。\n\n目前未包含在作業系統中的應用程式，在該電腦上首次啟動時將被單獨分析。"
+
+[s_LicKeyType]
+#ektBeta         = "Beta 授權"
+#ektTrial        = "試用產品授權"
+#ektTest         = "測試授權"
+#ektOEM          = "OEM 授權"
+#ektCommercial   = "正式產品授權"
+#ektSubscription = "正式訂購授權"
+#ektSubscriptionProtection = "受防護的正式訂購授權"
+default          = "未知類型"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "未知錯誤"
+#ekirValid                      = "產品授權有效"
+#ekirExpired                    = "產品授權已經到期"
+#ekirCorrupted                  = "無效的產品授權"
+#ekirNotSigned                  = "數位簽章遺失或損壞"
+#ekirWrongProduct               = "本產品授權對該程式不適用。其他程式的產品授權不能用來啟動" + $ProductName + "，請檢查您的產品。"
+#ekirBlackListed                = "授權 "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" 被封鎖"
+#ekirIllegalUpdate              = "資料庫日期與產品授權有效期不符合"
+#ekirInconsistentUpdate         = "資料庫已損壞"
+#ekirKeyCreationDateInvalid     = "不正確的產品授權建立日期"
+#ekirTrialAlreadyInUse          = "當使用某個試用版產品授權的授權時不能新增其他試用版產品授權的授權"
+#ekirInvalidBlacklist           = "授權黑名單損壞"
+#ekirCantBeUsedAsReserved       = "無法註冊產品授權為備份的產品授權"
+#ekirKeyInstallDateInvalid      = "不正確的產品授權啟動日期"
+#ekirTrialPeriodIsOver          = "試用產品授權已到期"
+#ekirConflictsWithCommercial    = "新授權檔案與目前正式版產品授權衝突"
+#ekirExpiredAsReserve           = "該產品授權的到期時間早於目前產品授權"
+#ekirGracePeriod                = "產品授權在寬限期內"
+#ekirSuspended                  = "訂購服務已暫停"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "程式需要重新安裝"
+#ekirLicenseOnlyForMigration    = "切換至其他程式以啟動正式版"
+default                         = "授權檔案不正確"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "稍後決定"
+#edtUnlimited = "已啟動"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "從" + date(SubscriptionInfo.ExpDate)+ "暫停使用"
+
+[LicenseKeysDiscartedDetails]
+@ = "產品授權資訊"
+
+[LicenseExpirationWindow]
+@ = $ProductName + "：產品授權通知"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "注意！"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "您正在使用的是" + $ProductName_GEN + "的試用版。"
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "產品授權黑名單遺失或損壞。請執行<a Update onclick(f_StartUpdater())>更新</a>繼續操作。"
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "您的產品授權" + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + "。要保持最新的防護狀態，請<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>。\n\n如果您已經有產品授權，請<a Activate onclick(f_Activate())>啟動程式</a>。"
+1       = (SubscriptionStatus==#ssExpired)? (("訂購已到期。" + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, "防護已封鎖。"))+($IsBestBuyLink ? "訂購續約無法使用。" : "電腦面臨風險。\n\n若要續約訂購，<a onclick(url($KeyProviderLinkForText))>請聯絡您的服務提供商</a>。")) :("您還有" + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? "剩餘時間去續約訂購。" : (LicInfo.KeyInfo.KeyType == #ektSubscription ? "剩餘時間，之後更新將被封鎖。" : "在關閉防護前。" ) ) + "若要續約訂購，<a onclick(url($KeyProviderLinkForText))>請聯絡您的服務提供商</a>。")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>目前使用中的授權被封鎖。\n更新無法使用，因此您的電腦面臨著感染病毒的風險。</b>\n\n如果您已合法購買此程式，請聯絡技術支援或零售商。\n\n如果您使用的是盜版軟體，請<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>。\n\n如果您已經擁有產品授權，請<a Activate onclick(f_Activate())>啟動程式</a>。\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "今天到期" : "到期於" + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "已到期"
+
+[s_LicenseRenewBuyText]
+0 = "獲得產品授權"
+default = "更新產品授權"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "選擇要還原的設定："
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  "設定精靈"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "一般資訊"
+InitBegin.Descr                       = "歡迎使用"+ $ProductName_GEN +"設定精靈。"
+CheckHosts.Name                       = "檢查卡巴斯基實驗室伺服器的可用性"
+CheckHosts.Descr                      = "偵測到可疑重新導向"
+ResetArea.Name                        = "還原設定"
+ResetArea.Descr                       = "以下列出的設定是由使用者輸入的或程式執行期間積累的。"
+EnumExe.Name                          = "分析系統"
+EnumExe.Descr                         = "正在分析系統資訊，請稍候..."
+ResetFinish.Name                       = "正在完成" + $ProductName + "設定"
+ResetFinish.Descr                      = "準備啟動" +  $ProductName + "。"
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "還原完成。"
+ResetDescr          = "設定精靈已成功完成對" + $ProductName + "設定的還原。"
+
+[BestBuyUpgradeMessage]
+@ = "切換到另一個程式"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="開始使用卡巴斯基網路安全軟體"
+RestartButton = "執行卡巴斯基網路安全軟體"
+
+[BestBuyUpgradeMessagePage]
+Header = "恭喜！"
+Message = "您的卡巴斯基防毒軟體已成功升級到卡巴斯基網路安全軟體。\n您已獲得更多功能防護您的電腦。"
+Description = "感謝您選擇卡巴斯基實驗室程式\n請享受新增的防護。"
+
+[ForcedUpgradeMessagePage]
+Header = "幾乎完成"
+Message = "感謝您選擇卡巴斯基實驗室程序！請享受新增的防護。"
+Description = "由於不相容軟體沒有移除，一些卡巴斯基網路安全軟體的新功能被停用，以確保已安裝應用程式和作業系統的正常執行。\n\n 您可以手動移除不相容軟體並在卡巴斯基網路安全軟體的設定視窗啟用所有新功能。"
+Notification = "程式將重啟以完成升級。"

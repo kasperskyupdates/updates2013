@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Selectarea fişierului-cheie"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Cheia pentru această copie a aplicaţiei a fost oferită de către distribuitorul echipamentului. Vrei să activezi aplicaţia folosind această cheie?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Configurarea aplicaţiei nu este finalizată încă. Sigur doreşti să ieşi din Expertul de configurare?"
+ErrEmptyActivationCode.caption  = "Codul de activare nu este specificat"
+ErrEmptyActivationCode          = "Introdu codul de activare"
+ErrEmptyKeyPath.caption         = "Fişierul cheie nu este specificat"
+ErrEmptyKeyPath                 = "Specifică fişierul cheie"
+$LicInfoKeyNumber               = "Număr:"
+$LicInfoKeyProductName          = "Nume aplicaţie:"
+$LicInfoKeyType                 = "Tip licenţă:"
+$LicInfoExpirationDate          = "Data expirării:"
+$LicErrReason                   = "Motiv:"
+$ActiveKey                      = "Cheie activă"
+$ReservedKey                    = "Cheie suplimentară"
+ConfirmFeedback                 = "Eşti de acord să trimiţi informaţii către <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) este o infrastructură de servicii online care oferă informaţii actualizate privind securitatea fişierelor, a resurselor Web şi a software-ului. Utilizând date de la KSN creşte reacţia la ameninţările recente, se îmbunătăţeşte performanţa unor componente de protecţie şi se reduce riscul alarmelor false.\nDacă participaţi la KSN, informaţiile despre infectarea cu viruşi şi alte probleme, precum şi statisticile extinse privind aplicaţiile încărcate sau executate (conform listei specificate în <a KsnInfo onclick(dialog(\"KsnInfo\"))>Declaraţia KSN privind colectarea datelor</a>), se trimit automat la Kaspersky Lab. \n\n<b>Kaspersky Security Network nu colectează sau procesează informaţii personale despre utilizator.</b>"
+
+$ToAcquireNewLicText            = "\n\nPentru a achiziţiona o licenţă nouă, contactează distribuitorul sau <a Buy onclick(buy())>Departamentul de vânzări Kaspersky Lab</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nÎncearcă să actualizezi manual starea abonamentului sau contactează Asistenţa tehnică" : "\nÎncearcă să activezi aplicaţia cu ajutorul codului de activare mai târziu (peste 1–2 ore) sau contactează Asistenţa tehnică") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Expert de activare" : " Expert de configurare")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Informaţii generale"
+InitBegin.Descr                       = "Bine ai venit la expertul de configurare " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Se verifică disponibilitatea serverelor Kaspersky Lab"
+CheckHosts.Descr                      = "S-a detectat o redirecţionare suspectă"
+ResetArea.Name                        = "Restaurare setări"
+ResetArea.Descr                       = "Setările listate mai jos conţin date introduse de utilizator sau acumulate \nîn timpul funcţionării aplicaţiei."
+ActivationBegin.Name                  = $IsSubscription ? "Subscription management" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Ştergere cheie" : "Adăugare cheie") : "Activare aplicaţie")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Licenţiere" : "Activează aplicaţia pentru a continua.")
+ActivationProgress.Name               = "Activare online"
+ActivationProgress.Descr              = "Activare în curs, aşteaptă…"
+ActivationServerForm.Name             = "Activare online"
+ActivationServerForm.Descr            = "Completează acest formular."
+ActivationChooseKey.Name              = "Activare folosind fişierul cheie"
+ActivationChooseKey.Descr             = "Activează aplicaţia utilizând fişierul cheie."
+ActivationEnd.Name                    = "Activare aplicaţie"
+ActivationEnd.Descr                   = "Activare terminată."
+MigrationKeyIsFound.Name         = "Este disponibilă o cheie pentru licenţa curentă"
+MigrationKeyIsFound.Descr        = "Doreşti să foloseşti aplicaţia conform licenţei curente?"
+MigrationBegin.Name              = "Comutare la " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Vei fi comutat pentru a utiliza " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Căutare de software incompatibil"
+MigrationSearchProgress.Descr    = "Aşteaptă căutarea de software incompatibil..."
+MigrationSafeRemoval.Name        = "S-a găsit software incompatibil"
+MigrationSafeRemoval.Descr       = "Este necesară eliminarea software-ului incompatibil pentru a continua"
+MigrationSafeProgress.Name       = "Eliminare software incompatibil"
+MigrationSafeProgress.Descr      = "Aşteaptă eliminarea software-ului incompatibil..."
+MigrationAddRemove.Name          = "S-a găsit software incompatibil"
+MigrationAddRemove.Descr         = "Elimină software-ul incompatibil"
+MigrationUnsafeRemoval.Name      = "S-a găsit software incompatibil"
+MigrationUnsafeRemoval.Descr     = "Este necesară eliminarea software-ului incompatibil pentru a continua"
+MigrationUnsafeProgress.Name     = "Eliminare software incompatibil"
+MigrationUnsafeProgress.Descr    = "Aşteaptă eliminarea software-ului incompatibil..."
+MigrationReboot.Name             = "Este necesară repornirea sistemului de operare"
+MigrationReboot.Descr            = "Este necesară repornirea pentru a continua comutarea la aplicaţia nouă"
+MigrationProgress.Name           = "Comutare la " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Aşteaptă comutarea la noua aplicaţie..."
+MigrationRebootApp.Name          = bMigrationDone ? "Aplicaţia va fi repornită" : "Eroare la comutarea la noua aplicaţie"
+MigrationRebootApp.Descr         = bMigrationDone ? "Aplicaţia trebuie repornită" : "Comutarea la " + s_MUProductTitleLong(env("ProductType")) + " a eşuat"
+MigrationFinish.Name             = "Comutarea la " + s_ProductTitleLong(env("ProductType")) + " este finalizată"
+MigrationFinish.Descr            = "Comutarea la " + s_ProductTitleLong(env("ProductType")) + " este finalizată"
+DNS.Name                              = "Setări complexe"
+DNS.Descr                             = $ProductName_GEN + " setări avansate de operare"
+EnumExe.Name                          = "Analiză sistem"
+EnumExe.Descr                         = "Aşteaptă până când sunt colectate informaţiile despre sistemul tău."
+InitFinish.Name                       = "Se termină configurarea " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Trebuie să reporneşti computerul pentru a finaliza configurarea aplicaţiei." : "Poţi porni acum " + $ProductName + "."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "S-a detectat o redirecţionare suspectă a serverelor Kaspersky Lab. Acest lucru poate fi cauzat de activitate periculoasă de tip malware şi poate determina nereuşita actualizărilor şi activării. Înregistrări suspecte de fişiere hosts:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Şterge înregistrări (recomandat)"
+Skip			= "Omitere"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Înapoi"
+Back.Descr      = "Revino la selectarea metodei de activare a aplicaţiei"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Adăugare cheie" : "&Activare"
+Activate.Descr  = "Instalare fişier cheie selectat"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Terminare"
+Finish.Descr    = "Închidere expert de activare"
+Next.Name       = "&Următorul"
+Next.Descr      = "Treci la configurare"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Poţi continua să utilizezi aplicaţia conform licenţei curente. În acest caz, aplicaţia va comuta la " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Doreşti să continui să utilizezi aplicaţia conform licenţei curente?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Tip de aplicaţie:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Data expirării:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " rămase)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Da, şi comută la " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Nu, şi lasă " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Urmează să fii comutat la " + s_MUProductTitleLong(env("ProductType")) + ". Deţinătorul drepturilor de autor îţi oferă o licenţă fără exclusivitate pentru a utiliza " + s_MUProductTitleLong(env("ProductType")) + " în aceiaşi termeni acceptaţi anterior la instalarea " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Notă: Această comutare necesită acţiuni care pot duce la repornire."
+LicenseWarning  = "Atenţie! Licenţa comercială pentru Kaspersky Anti-Virus expiră înaintea licenţei trial pentru Kaspersky Internet Security. După expirarea licenţei comerciale pentru Kaspersky Anti-Virus, nu vei mai putea să revii la utilizarea Kaspersky Anti-Virus de la versiunea trial pentru Kaspersky Internet Security. Vrei să continui comutarea la Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Căutare software incompatibil pe computerul tău. Procesul poate să dureze. Te rugăm să aştepţi..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Următorul software va fi eliminat pentru a putea efectua comutarea:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Aşteaptă ştergerea software-ului incompatibil..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Următorul software trebuie eliminat pentru a putea efectua comutarea:"
+OpenAddRemove = "Deschide fereastra Adăugare/Eliminare programe"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Următorul software va fi eliminat pentru a putea efectua comutarea:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Aşteaptă ştergerea software-ului incompatibil..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Trebuie să reporneşti computerul pentru a continua comutarea. Expertul va continua după repornire."
+Reboot   = "Reporneşte acum"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Aşteaptă reconfigurarea aplicaţiei şi comutarea la " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Pentru a finaliza comutarea la " + s_MUProductTitleLong(env("ProductType")) + " aplicaţia va fi repornită." : "Comutarea la " + s_MUProductTitleLong(env("ProductType")) + " e eşuat."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Acum ai posibilitatea să evaluezi caracteristici precum " + s_ProductTitleLong("kis") + " Control parental, Anti-Spam, Firewall şi altele." : s_ProductTitleLong("kav") + " asigură protecţia de bază a computerului împotriva programelor malware."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Poţi "+if($IsRefreshSubAvail,"actualiza starea abonamentului sau ")+"şterge cheia." : (f_IsActiveKeyWorkingCommercial() ? "Poţi şterge cheia activă sau adăuga o cheie." : "Activează " + $ProductName + " pentru a permite funcţionalitatea completă a aplicaţiei."+ if($CorporateOnly, " Poţi obţine o <a Activate onclick(url($ActivationLink))>comercială</a> sau activa o versiune <a ActivateTrial onclick(url($ActivationTrialLink))>trial</a> a aplicaţiei."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Activare &ulterioară"
+Later.Descr                 = "Omite activarea şi continuă cu configurarea aplicaţiei"
+ChooseKey.Name              = "Activare folosind fişierul &cheie"
+ChooseKey.Descr             = "Fişierul cheie este necesar"
+ActivateBetaKAV.Name        = "Activare versiune &beta Kaspersky Anti-Virus"
+ActivateBetaKAV.Descr       = "Versiunea beta a programului Kaspersky Anti-Virus are funcţionalitate completă, dar nu este un produs definitivat."
+ActivateBetaKIS.Name        = "Activare versiune &beta Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "Versiunea beta a programului Kaspersky Internet Security are funcţionalitate completă, dar nu este un produs definitivat."
+ActivateTrial.Name          = "Activare versiune &trial"
+ActivateTrial.Descr         = "Perioada de valabilitate pentru versiunea trial este specificată în acordul de licenţă pentru utilizatorul final"
+ActivateCommercial.Name     = "&Activare online"
+ActivateCommercial.Descr    = "Este necesar codul de activare primit în momentul achiziţiei"
+RemoveKey.Name              = $HasReserveKey ? "&Ştergere cheie suplimentară" : "&Ştergere cheie"
+RemoveKey.Descr             = "Pentru a înlocui cheia trebuie mai întâi să elimini cheia activă"
+RefreshSubscription.Name    = "&Actualizare stare abonament"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Poţi actualiza starea abonamentului manual." :  "Actualizarea automată a stării abonamentului s-a terminat. Poţi actualiza manual starea."
+ActivateTrialKIS            = "Activare versiune trial Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "Perioada de valabilitate pentru versiunea trial a programului Kaspersky Internet Security este specificată în acordul de licenţă"
+RevertToCommercialKAV       = "Revenire la versiunea comercială a programului Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Revenire la versiunea comercială a programului Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Actualizare stare abonament"
+ActivateCommercial      = "Activare versiune &comercială"
+ActivateCommercial_Desc = (LockActivationCode)? "Introducere cod de activare: " : "Introducere <a onclick(url(\"" + $ActCodeHint + "\"))>cod de activare</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Codul tău de activare s-a adăugat automat. Fă clic pe butonul \"Următorul\"." : "Dacă nu ai un cod de activare, îl poţi achiziţiona <a onclick(buy())>online</a>"
+ActivateBetaKAV         = "Activare versiune &beta Kaspersky Anti-Virus"
+ActivateBetaKIS         = "Activare versiune &beta Kaspersky Internet Security"
+ActivateTrial           = "Activare versiune &trial"
+ActivateTrial_Desc      = "Evaluează o versiune complet funcţională a aplicaţiei înainte de a o achiziţiona."
+ActivateTrialKIS           = "Activare versiune trial Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "Evaluează o versiune complet funcţională a programului Kaspersky Internet Security înainte de a-l achiziţiona."
+RevertToCommercialKAV      = "Revenire la versiunea comercială a programului Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Încetează utilizarea versiunii trial a programului Kaspersky Internet Security şi revino la versiunea comercială a programului Kaspersky Anti-Virus."
+Later                   = "Activare &ulterioară"
+Later_Desc              = "Funcţionalitatea completă a aplicaţiei va fi disponibilă  după activare."
+RemoveKey               = "Ştergere fişier cheie"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Fişier cheie:"
+KeyInfo         = "Informaţii licenţă"
+ConnectingInfo.Name     = "Eroare activare: "
+ConnectingInfo.Val      = "detalii"
+TryAgain                = "Activare"
+Descr1                  = "Pentru a reîncerca activarea, efectuează următoarele acţiuni:"
+Descr2                  = "Verifică setările conexiunii la Internet şi reîncearcă activarea aplicaţiei."
+Descr3                  = "Salt la <a onclick(url(\"" + $ActivationLink + "\"))> Centrul de activare online</a> şi urmează instrucţiunile. \nDupă primirea unui fişier cheie, specifică locaţia acestuia şi fă clic pe Următorul:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Data creării:"
+InstallDate.Name    = "Data activării:"
+ExpirationDate.Name = "Data expirării:"
+SubscrptnExpDate.Name = "Dată expirare abonament:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," pentru " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Eroare de sistem. " + s_SystemError(ErrorCode) +
+2       = "Nu se poate adăuga \"" + KeyFile + "\" cheia: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Imposibil de şters \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Cod eroare: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Această cheie a fost deja adăugată" + $LicErrHelpLink
+0x0947901d  = "Licenţa a expirat. Actualizarea bazei de date nu este disponibilă" + $LicErrHelpLink
+0x89479002  = "Licenţă negăsită" + $LicErrHelpLink
+0x89479003  = "Semnătura digitală lipseşte sau este alterată" + $LicErrHelpLink
+0x89479004  = "Datele sunt alterate" + $LicErrHelpLink
+0x89479005  = "Fişierul cheie este alterat" + $LicErrHelpLink
+0x89479006  = "Licenţa a expirat" + $LicErrHelpLink
+0x89479007  = "Niciun fişier cheie specificat" + $LicErrHelpLink
+0x89479008  = "Fişierul cheie este nevalid" + $LicErrHelpLink
+0x89479009  = "Salvarea datelor nu a reuşit" + $LicErrHelpLink
+0x8947900a  = "Citirea datelor nu a reuşit" + $LicErrHelpLink
+0x8947900b  = "Eroare I/O" + $LicErrHelpLink
+0x8947900c  = "Bazele de date lipsesc" + $LicErrHelpLink
+0x8947900d  = "Cheile activă şi suplimentară au fost deja adăugate" + $LicErrHelpLink
+0x8947900e  = "Biblioteca de licenţiere nu este iniţializată" + $LicErrHelpLink
+0x8947900f  = "Bazele de date sunt alterate sau au fost actualizate manual" + $LicErrHelpLink
+0x89479010  = "Bazele de date sunt alterate" + $LicErrHelpLink
+0x89479011  = "Imposibil de înregistrat fişierul cheie expirat ca cheie suplimentară" + $LicErrHelpLink
+0x89479012  = "Eroare de sistem" + $LicErrHelpLink
+0x89479013  = "Lista neagră de chei este alterată" + $LicErrHelpLink
+0x89479014  = "Semnătura digitală nu se potriveşte cu semnătura digitală Kaspersky Lab" + $LicErrHelpLink
+0x89479015  = "Nu se poate activa o versiune comercială a aplicaţiei sub o licenţă beta" + $LicErrHelpLink
+0x89479016  = "Versiunea beta a aplicaţiei poate fi activată doar sub o licenţă beta" + $LicErrHelpLink
+0x89479017  = "Licenţa nu este valabilă pentru această aplicaţie. Nu se poate activa " + $ProductName + " sub licenţa pentru altă aplicaţie. Verifică aplicaţia instalată de tine" + $LicErrHelpLink
+0x89479018  = "Cheia este blocată" + $LicErrHelpLink
+0x89479019  = "S-a utilizat deja această licenţă pentru versiunea trial. Nu se poate utiliza de două ori aceeaşi licenţă pentru versiune trial" + $LicErrHelpLink
+0x8947901a  = "Fişierul cheie este alterat" + $LicErrHelpLink
+0x8947901b  = "Semnătura digitală lipseşte, este alterată sau nu se potriveşte cu semnătura digitală Kaspersky Lab" + $LicErrHelpLink
+0x8947901c  = "Nu se poate adăuga cheia pentru o licenţă necomercială dacă aceasta a expirat" + $LicErrHelpLink
+0x8947901e  = "Data creării sau înregistrării fişierului cheie este nevalidă. Verifică setările pentru data sistemului" + $LicErrHelpLink
+0x8947901f  = "Nu se poate adăuga cheia pentru o licenţă trial în timp ce este activă o altă cheie pentru o licenţă trial" + $LicErrHelpLink
+0x89479020  = "Lista neagră a cheilor fie lipseşte, fie este alterată" + $LicErrHelpLink
+0x89479021  = "Descrierea actualizării lipseşte sau este alterată" + $LicErrHelpLink
+0x89479022  = "Datele interne sunt nevalide pentru această aplicaţie" + $LicErrHelpLink
+0x89479023  = "Nu se poate adăuga o cheie suplimentară utilizând un cod de activare incorect" + $LicErrHelpLink
+0x89479024  = "Eroare la completarea datelor în formularul utilizator" + $LicErrHelpLink
+0x89479025  = "Eroare la trimiterea cererii către serverul de activare.\nMotive probabile: Probleme la conexiunea la Internet sau probleme temporare la serverul de activare.\nÎncearcă mai târziu să activezi codul (peste 1–2 ore).\nDacă problema persistă, contactează furnizorul de Internet" + $LicErrHelpLink
+0x89479026  = "Solicitarea conţine un cod de activare incorect" + $LicErrHelpLink
+0x89479027  = "Imposibil de obţinut starea răspunsului" + $LicErrHelpLink
+0x89479028  = "Eroare la salvarea fişierului temporar" + $LicErrHelpLink
+0x89479029  = "Codul de activare s-a introdus incorect sau data sistemului este incorectă. Verifică setările de dată ale sistemului" + $LicErrHelpLink
+0x8947902a  = "Codul de activare nu este potrivit pentru această aplicaţie sau cheia a expirat. Nu se poate activa " + $ProductName + " sub licenţa pentru altă aplicaţie. Verifică aplicaţia instalată de tine sau <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Primirea unei chei nu a reuşit. S-a specificat un cod de activare incorect" + $LicErrHelpLink
+0x8947902c  = "Serverul de activare a returnat eroarea 400" + $OlaErrHelpLink
+0x8947902d  = "Serverul de activare a returnat eroarea 401" + $OlaErrHelpLink
+0x8947902e  = "Serverul de activare a returnat eroarea 403" + $OlaErrHelpLink
+0x8947902f  = "O resursă necesară este indisponibilă pe serverul de activare.\nServerul de activare a returnat eroarea 404.\nVerifică setările pentru conexiunea ta la Internet" + $OlaErrHelpLink
+0x89479030  = "Serverul de activare a returnat eroarea 405" + $OlaErrHelpLink
+0x89479031  = "Serverul de activare a returnat eroarea 406" + $OlaErrHelpLink
+0x89479032  = "Este necesară autentificarea proxy. Verifică setările LAN" + $LicErrHelpLink
+0x89479033  = "Solicitare întreruptă" + $LicErrHelpLink
+0x89479034  = "Serverul de activare a returnat eroarea 409" + $OlaErrHelpLink
+0x89479035  = "O resursă necesară este indisponibilă pe serverul de activare.\nServerul de activare a returnat eroarea 410.\nVerifică setările pentru conexiunea ta la Internet" + $OlaErrHelpLink
+0x89479036  = "Serverul de activare a returnat eroarea 411" + $OlaErrHelpLink
+0x89479037  = "Serverul de activare a returnat eroarea 412" + $OlaErrHelpLink
+0x89479038  = "Serverul de activare a returnat eroarea 413" + $OlaErrHelpLink
+0x89479039  = "Serverul de activare a returnat eroarea 414" + $OlaErrHelpLink
+0x8947903a  = "Serverul de activare a returnat eroarea 415" + $OlaErrHelpLink
+0x8947903b  = "Eroare necunoscută pe client" + $OlaErrHelpLink
+0x8947903c  = "Eroare internă server" + $LicErrHelpLink
+0x8947903d  = "Funcţionalitatea nu este acceptată" + $LicErrHelpLink
+0x8947903e  = "Răspuns incorect de la gateway. Verifică setările reţelei tale" + $LicErrHelpLink
+0x8947903f  = "Resursa este temporar indisponibilă" + $LicErrHelpLink
+0x89479040  = "Aşteptarea solicitării a fost întreruptă. Verifică setările reţelei tale" + $LicErrHelpLink
+0x89479041  = "Protocolul nu este acceptat de server" + $OlaErrHelpLink
+0x89479042  = "Eroare necunoscută pe server" + $OlaErrHelpLink
+0x89479043  = "Eroare HTTP necunoscută" + $OlaErrHelpLink
+0x89479044  = "Identificator de resursă nevalid" + $LicErrHelpLink
+0x89479045  = "Informaţii incorecte în câmpul \"cheie\"" + $LicErrHelpLink
+0x89479046  = "Adresă URL incorectă" + $LicErrHelpLink
+0x89479047  = "Director destinaţie incorect" + $LicErrHelpLink
+0x89479048  = "Eroare de alocare memorie" + $LicErrHelpLink
+0x89479049  = "Eroare la convertirea parametrilor în şir ANSI (adresă URL, director, agent)" + $LicErrHelpLink
+0x8947904a  = "Eroare la crearea firului de execuţie" + $LicErrHelpLink
+0x8947904b  = "Firul de execuţie rulează deja" + $LicErrHelpLink
+0x8947904c  = "Firul de execuţie nu rulează" + $LicErrHelpLink
+0x8947904d  = "Cheia nu se găseşte pe serverul de activare" + $LicErrHelpLink
+0x8947904e  = "Cheia este blocată" + $LicErrHelpLink
+0x8947904f  = "Eroare internă la serverul de activare" + $LicErrHelpLink
+0x89479050  = "Date insuficiente în solicitarea de activare" + $LicErrHelpLink
+0x89479051  = "ID utilizator sau parolă incorect(ă)" + $LicErrHelpLink
+0x89479052  = "Cod de activare incorect" + $LicErrHelpLink
+0x89479053  = "Licenţa pentru fişierul cheie selectat expiră înaintea licenţei curente" + $LicErrHelpLink
+0x89479054  = "Dată incorectă a sistemului de operare. Verifică data sistemului" + $LicErrHelpLink
+0x89479055  = "Licenţa versiunii trial a expirat" + $LicErrHelpLink
+0x89479056  = "Perioada de activare a expirat" + $LicErrHelpLink
+0x89479057  = "<b>Codul de activare introdus a depăşit limita de activări permise</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Nu se poate adăuga cheia pentru o licenţă necomercială ca o cheie suplimentară, în timp ce o licenţă comercială este în vigoare" + $LicErrHelpLink
+0x8947905c  = "Cod de activare necesar" + $LicErrHelpLink
+0x8947905d  = "ID client sau parolă incorecte" + $LicErrHelpLink
+0x8947905e  = "Cod de activare incorect" + $LicErrHelpLink
+0x89479062  = "Imposibil de conectat la serverul de activare" + $LicErrHelpLink
+0x89479064  = "<b>Serverul de activare nu este disponibil.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Imposibil de activat aplicaţia acum. Reîncearcă activarea după configurarea aplicaţiei şi repornirea sistemului de operare.", "Verifică setările conexiunii la Internet şi reîncearcă activarea.") + $LicErrHelpLink
+0x89479065  = "Licenţa ta a expirat. Te rugăm să <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Cheia activă nu poate fi înlocuită cu o cheie expirată" + $LicErrHelpLink
+0x89479067  = "Nu se poate adăuga drept cheie suplimentară o cheie care expiră mai devreme decât cheia activă" + $LicErrHelpLink
+0x89479068  = "Cheia de abonament actualizată lipseşte" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Procedura de activare s-a finalizat cu eroare de sistem " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Eroare activare: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Eroare activare: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Eroare activare: serverul a returnat cod HTTP" + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Activarea a eşuat " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Eroare internă la serverul de activare. Încearcă din nou sau contactează Asistenţa tehnică"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Codul de activare nu este compatibil cu această aplicaţie. Nu este posibil să activezi " + $ProductName + " cu ajutorul codului de activare pentru altă aplicaţie. Verifică aplicaţia instalată"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Cheia este blocată"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "ID client sau parolă incorecte"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Cod de activare greşit"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Codul de activare este necesar"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Perioada de activare a expirat"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Numărul de activări pentru acest cod a fost depăşit"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Codul de activare nu este valid pentru această regiune"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Imposibil de utilizat acest cod de activare pentru această localizare a aplicaţiei."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Codul de activare este valabil pentru o versiune nouă a acestei aplicaţii. Pentru a utiliza versiunea curentă este necesară obţinerea unui alt cod. Pentru detalii, fă clic pe legătura de mai jos."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Serverul de activare a returnat eroarea 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Serverul de activare a returnat eroarea 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Serverul de activare a returnat eroarea 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Serverul de activare a returnat eroarea 646"
+default                                     = "Procedura de activare a returnat o eroare " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Modul offline este activat în Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Conexiunea Internet nu a reuşit"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Server de activare indisponibil"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Server proxy indisponibil"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Intervalul de timp pentru răspuns a expirat"
+#OLA_ERR_INTERNET_INVALID_URL                = "Adresă server de activare incorectă"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Protocol incorect"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Imposibil de configurat conexiunea la server"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operaţiune revocată"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Imposibil de configurat conexiunea la server"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Conexiunea la server s-a întrerupt"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Conexiunea la server s-a resetat"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Răspuns incorect de la server"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Certificatul SSL al serverului a expirat. Verifică ora locală a computerului"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Numele serverului de certificate SSL nu corespunde cu serverul"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Imposibil de efectuat verificarea revocării certificatului. Dezactivează această verificare în Internet Explorer (Instrumente->Opţiuni Internet ->Avansat->Verificare revocare certificat server) şi încearcă din nou activarea"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Certificat SSL nevalid"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Certificatul SSL a fost revocat"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Centru de certificare incorect"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Datele de înregistrare sunt necesare pentru Kaspersky Lab ca să te informeze cu privire la diferite evenimente promoţionale, reduceri sau oferte speciale."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Continuare"
+Activate.Descr  = "Trimiterea datelor la serverul de activare"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Expertul de configurare se conectează la serverul de activare al Kaspersky Lab. Aceasta poate dura un timp, în funcţie de viteza conexiunii Internet."
+ConnectingInfo.Name     = "Conectare la serverul de activare..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Trimitere cod de activare..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Aşteptare răspuns de la server..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Copia ta de " + $ProductName + " a fost activată cu succes"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Data expirării:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " rămase)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Activarea s-a finalizat cu succes." : "Aplicaţia este deja activată pe computerul tău."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Următorul"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Treci la activarea aplicaţiei": (((PiwFlags & #fPiwActivation) && !bSilent)?"Treci la informaţiile de licenţă":"Treci la selectarea modului de protecţie")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Acest Expert te va asista ca să configurezi corect securitatea computerului tău.\n\nÎn timpul configurării, Expertul va colecta informaţii despre sistemul tău şi despre aplicaţiile instalate pe computerul tău. Aceste informaţii vor fi folosite doar în scopul oferirii unei protecţii optime a computerului.\n\nFă clic pe Următorul pentru a începe procesul de configurare pentru " + $ProductName_GEN + "."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Instalarea este aproape finalizată..." : ((PiwFlags & #fPiwReset) ? ("Repararea este finalizată.") : ("Instalarea este finalizată."))
+ResetDescr          = "Expertul în configurare a restaurat cu succes setările " + $ProductName + "."
+Reboot              = "&Repornire computer"
+StartProduct        = "Por&nire " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Îţi mulţumim pentru că instalezi " + $ProductName + ". Pentru a termina instalarea, trebuie să reporneşti computerul. Salvează datele, închide toate aplicaţiile şi apasă pe butonul 'Terminare'.") : "Reţine că la prima pornire a aplicaţiei se va finaliza configurarea suplimentară a produsului. Aceasta poate dura câteva minute."
+
+[ConfigureWizard.EnumExe]
+Info = "În timpul analizei sistemului, se construieşte o listă de aplicaţii de încredere incluse în sistemul de operare Microsoft Windows. \n\nProgramele neincluse în sistemul de operare sunt analizate separat la prima lor pornire pe computer."
+
+[s_LicKeyType]
+#ektBeta         = "Cheie beta"
+#ektTrial        = "Versiune trial"
+#ektTest         = "Cheie de testare"
+#ektOEM          = "Cheie OEM"
+#ektCommercial   = "Comercializare"
+#ektSubscription = "Comercială cu abonament"
+#ektSubscriptionProtection = "Comercială cu abonament pentru protecţie"
+default          = "Program potenţial periculos"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Eroare necunoscută"
+#ekirValid                      = "Licenţa este validă"
+#ekirExpired                    = "Licenţa a expirat"
+#ekirCorrupted                  = "Licenţa nu este valabilă"
+#ekirNotSigned                  = "Semnătura digitală lipseşte sau este alterată."
+#ekirWrongProduct               = "Licenţa nu este pentru această aplicaţie. Nu este posibil să activezi " + $ProductName + " sub licenţa pentru altă aplicaţie. Verifică aplicaţia instalată de tine."
+#ekirBlackListed                = "Cheia "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" este blocată"
+#ekirIllegalUpdate              = "Data bazei de date nu corespunde perioadei de validitate a licenţei"
+#ekirInconsistentUpdate         = "Bazele de date sunt alterate"
+#ekirKeyCreationDateInvalid     = "Dacă creare cheie nevalidă"
+#ekirTrialAlreadyInUse          = "Nu se poate adăuga cheia pentru o licenţă trial cât timp este activă altă cheie pentru o licenţă trial"
+#ekirInvalidBlacklist           = "Lista neagră de chei este alterată"
+#ekirCantBeUsedAsReserved       = "Nu se poate înregistra licenţa drept una suplimentară"
+#ekirKeyInstallDateInvalid      = "Dată activare nevalidă"
+#ekirTrialPeriodIsOver          = "Licenţa pentru versiunea trial a expirat"
+#ekirConflictsWithCommercial    = "Noul fişier cheie este în conflict cu actuala licenţă comercială"
+#ekirExpiredAsReserve           = "Această licenţă expiră mai devreme decât licenţa actuală"
+#ekirGracePeriod                = "Licenţă în perioada de graţie"
+#ekirSuspended                  = "Abonamentul este suspendat"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Aplicaţia trebuie reinstalată"
+#ekirLicenseOnlyForMigration    = "Comută la altă aplicaţie pentru a activa versiunea comercială"
+default                         = "Fişierul cheie este incorect"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Va fi determinat mai târziu"
+#edtUnlimited = "Activă"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Suspendat din " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Informaţii licenţă"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": notificare licenţă"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Atenţie!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Utilizezi o versiune trial de " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Lista neagră de licenţe lipseşte sau este alterată. Execută <a Update onclick(f_StartUpdater())>actualizarea</a> pentru a continua operaţiunea."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Licenţa ta " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Pentru a menţine protecţia la zi, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nDacă ai obţinut deja licenţa, <a Activate onclick(f_Activate())>activează aplicaţia</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Abonament expirat." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Protecţia este dezactivată."))+($IsBestBuyLink ? " Reînnoirea abonamentului indisponibilă." : " Securitatea computerului este în pericol. \n\nPentru a reînnoi abonamentul, <a onclick(url($KeyProviderLinkForText))>contactează furnizorul tău de servicii</a>.")) :("Mai ai " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " pentru a reînnoi abonamentul. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " până la dezactivarea actualizării. " : " până la dezactivarea protecţiei." ) ) + " Pentru a reînnoi abonamentul, <a onclick(url($KeyProviderLinkForText))>contactează furnizorul tău de servicii</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Cheia activă este blocată.\nCaracteristica de actualizate este dezactivată şi de aceea computerul tău poate fi expus riscului de infectare.</b>\n\nDacă ai achiziţionat aplicaţia în mod legal, contactează Asistenţa tehnică sau un distribuitor.\n\nDacă utilizezi o copie ilegală, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nDacă ai obţinut deja o licenţă, <a Activate onclick(f_Activate())>activează aplicaţia</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "expiră astăzi" : "expiră în " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "a expirat"
+
+[s_LicenseRenewBuyText]
+0 = "obţinere licenţă"
+default = "reînnoire licenţă"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Selectează setările de restaurat:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " Expert de configurare"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Informaţii generale"
+InitBegin.Descr                       = "Bine ai venit la expertul de configurare " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Se verifică disponibilitatea serverelor Kaspersky Lab"
+CheckHosts.Descr                      = "S-a detectat o redirecţionare suspectă"
+ResetArea.Name                        = "Restaurare setări"
+ResetArea.Descr                       = "Setările listate mai jos conţin date introduse de utilizator sau acumulate \nîn timpul funcţionării aplicaţiei."
+EnumExe.Name                          = "Analiză sistem"
+EnumExe.Descr                         = "Aşteaptă până când sunt colectate informaţiile despre sistemul tău..."
+ResetFinish.Name                       = "Se termină configurarea " + $ProductName
+ResetFinish.Descr                      = $ProductName + " este pregătit de pornire."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Restaurare finalizată."
+ResetDescr          = "Expertul în configurare a restaurat cu succes setările " + $ProductName + "."
+
+[BestBuyUpgradeMessage]
+@ = "Comutare la o altă aplicație"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Utilizarea produsului Kaspersky Internet Security"
+RestartButton = "Executare Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Felicitări!"
+Message = "S-a făcut upgrade cu succes pentru produsul Kaspersky Anti-Virus la Kaspersky Internet Security.\nAcum ai la dispoziție și mai multe caracteristici pentru protejarea computerului."
+Description = "Îți mulțumim pentru că ai ales software Kaspersky Lab! Bucură-te de protecția suplimentară."
+
+[ForcedUpgradeMessagePage]
+Header = "Aproape am terminat"
+Message = "Îți mulțumim pentru că ai ales software Kaspersky Lab! Bucură-te de protecția suplimentară."
+Description = "Deoarece s-a eliminat software-ul incompatibil, unele caracteristici noi ale produsului Kaspersky Internet Security sunt dezactivate pentru a asigura funcţionarea corectă a aplicaţiilor instalate şi a sistemului de operare.\n\nPuteţi elimina manual software-ul incompatibil şi puteţi activa caracteristicile noi în fereastra de setări din Kaspersky Internet Security."
+Notification = "Aplicaţia va fi repornită pentru a finaliza upgrade."

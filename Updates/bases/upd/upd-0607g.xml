@@ -1,0 +1,28 @@
+<UpdateFiles
+	UpdateDate="29102009 1737"
+	BlackDate="29102009 1033"
+	ObjectType="2=Updater;3=BASE">
+	<FileDescription
+		ComponentID="Updater"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="updcfg.xml" />
+	<FileDescription
+		ComponentID="Updater"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="statcfg.xml" />
+	<Registry
+		ComponentID="Updater"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAfo3HipAAHZqLsulCw7Vs/RKGBZk9QXx99MyuqZXP+/YkBSzyotwWnqdI3lL4ahPFbNj52uSAVAINLqw1YXkGZK/Ckqtv5EBAB4JDQAAAAIAAigHAFVwZGF0ZXIDAAIoBABCQVNFAQAACT2l1S0NCjs6MTBhUmlNMitqRzRrSXFqL0ZzL1ZzWjhGZ2x2a0dIY1BjT1MzWDV6MU50R3JRZE5XektwNWlFdWZPL0ZnSHhnQ05COHdnQmdBSDVpKzFQV1ZTTys3NVNlRCUl"
+		Filename="upd-0607g.pbv" />
+	<Registry
+		ComponentID="Updater"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwENAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAgABACAAkoWYMpHdKzTB9pOBh5Fs01QcRpW6AHMegqFixMvcHP4gAI6BP8t4++u5U1TfXeImGrK4EgxS/LwVy6+f8D143/2cAQAeCQ0AAAABAAAJ8aRzYg0KOzoxMGFJQlZjbHdPYmtweU5scUVueC90b0lNQU14THFZNitnQURoVEFkVDV6NkN4VzkxRVluT3ZxL3c4RDJKendDa1VmNGE3NXcxejJkOUw5Z0RGNEYzTW9aJSU="
+		Filename="upd-0607g.krg" />
+</UpdateFiles>
+;:104PsWHBns8c35V2cQ/waKcxhbpKq1OmxhRR09w0abBFMx7aqAqJDatSlNcEhyMVCKXWKQfEdH/sx3D/ouis4UKT%%

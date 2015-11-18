@@ -1,0 +1,458 @@
+﻿;
+; License Manager
+;
+LicenseNumber = '授权许可：'
+LicenseState = '授权许可状态：'
+LicenseType = '授权许可类型：'
+LicenseActivationDate = '激活日期：'
+LicenseExpirationDate = '截止日期：'
+LicenseExpirationDateLocal = '截止日期（本地时间）：'
+LicenseRemainingDays = '剩余：'
+LicenseManagerTitle = '授权许可管理'
+
+; License states
+LicenseActive = '激活'
+LicenseNotificationInfo = LicenseActive
+LicenseNotificationWarning = LicenseActive
+LicenseNotificationCritical = LicenseActive
+LicenseExpired = '授权许可已过期'
+LicenseProblems = '无效'
+LicenseBlocked = '已阻止'
+LicenseLimited = LicenseBlocked
+NoActivationCodeProvided = '不存在'
+SubscriptionActive = LicenseActive
+SubscriptionNotificationInfo = SubscriptionActive
+SubscriptionNotificationWarning = SubscriptionActive
+SubscriptionNotificationCritical = SubscriptionActive
+SubscriptionActiveExpirationDateUnknown = SubscriptionActive
+SubscriptionExpired = '订阅已过期'
+SubscriptionSuspended = '订阅已暂停'
+SubscriptionUpdateFailed = '无数据'
+SubscriptionBlocked = LicenseBlocked
+SubscriptionLimited = LicenseBlocked
+PreinstalledCodeAvailable = NoActivationCodeProvided
+WaitCodeActivationInfo = NoActivationCodeProvided
+WaitCodeActivationCritical = NoActivationCodeProvided
+WaitReservedCodeActivationInfo = '授权许可已过期'
+PreinstalledCodeActivationProblem = NoActivationCodeProvided
+
+;Buttons
+ButtonBuy = '购买激活码(&B)'
+ButtonRenew = '续费授权许可(&B)'
+ButtonUpgrade = '购买激活码(&B)'
+ButtonInputCode = '输入激活码(&E)'
+ButtonInputReserveCode = '输入激活码(&E)'
+ButtonUpdateBases = '更新数据库(&U)'
+ButtonUpdateBlackList = '从服务器下载黑名单(&D)'
+ButtonSupport = '原因和可能的解决方案'
+ButtonUpdateStatus = '更新订阅状态'
+ButtonProviderWeb = '访问订阅提供者网站'
+ButtonActivateReserveCode = '立即激活'
+ButtonCheckReserveCode = '检查激活码'
+ButtonDeleteReserveCode = '删除激活码'
+ButtonDeletePreinstalledCode = '删除激活码'
+ButtonRollback = '返回卡巴斯基反病毒软件 2013'
+ButtonActivateNewCode = '激活程序(&A)'
+ButtonActivatePreinstalledCode = ButtonActivateNewCode
+
+;License type
+LicenseTypeBeta = 'Beta测试授权'
+LicenseTypeTrial = '试用授权许可'
+LicenseTypeTest = '做测试之用'
+LicenseTypeOEM = 'OEM合作伙伴授权许可'
+LicenseTypeCommercial = '商用授权许可'
+LicenseTypeSubscription = '带有订阅的商业版'
+LicenseTypeSubscriptionProtection = '带有保护订阅的商业版'
+LicenseTypeUnknown = '未知类型'
+
+;License type description
+LicenseComputers = ' 用于 ' + $LicensePcCount + ' ' + {$LicensePcCount: '台计算机'}
+NonSubscriptionLicenseTypeDescription = '用于'  + LicenseComputers +  '的' + $LicenseType +  '；' +  '有效期' + $LicenseLifespan
+SubscriptionLicenseTypeDescription    = $LicenseType + LicenseComputers
+OemCommercialLicenseTypeDescription   = $LicenseType +  '；' + '有效期' + $LicenseLifespan
+
+ActivationManagerLicenseTypeDescription = '用于 ' + $LicensePcCount + ' ' + {$LicensePcCount: '台计算机'} + '的' + $LicenseType
+
+ActivationManager_LicenseFromOtherProduct_LicenseTypeDescription = '用于 ' + $LicenseFromOtherProduct_PcCount + ' ' + {$LicenseFromOtherProduct_PcCount: '台计算机'} + '的' + $LicenseFromOtherProduct_LicenseType
+ActivationManager_LicenseFromOtherProduct_ActivationText = '是，安装' + $LicenseFromOtherProductProductName + '并通过添加找到的密钥进行激活'
+
+LicenseRemainingDaysText = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '天'}
+LicenseRemainingDaysToBeDefinedLater = '将在稍后确定'
+
+;
+; Activation Wizard
+;
+ButtonNextText = '下一步 >'
+ButtonBackText = '< 上一步'
+ButtonCancelText = '取消'
+ButtonFinishText = '完成'
+
+CommonTextForLinks = '原因和可能的解决方案'
+ButtonShowHelpText = '帮助'
+
+ActivationKISWizardString =  '激活 '
+ProlongationActivationWizardString = '续费授权许可 '
+
+SelectionOfActivationTypeHeader = '选择激活方式'
+ProlongationOfActivationHeader = '输入激活码'
+
+SelectCommercialActivation = '激活商用版本'
+EnterActivationCode = '输入激活码：'
+SerialNumberHelpString = '这是什么？'
+TextForPurchasingLicenseWithTrial = '如果您没有激活码，您可以在卡巴斯基实验室在线商店购买。'
+ActivationCodeInputError = '输入的激活码不正确'
+ActivationCodeIncorrectSymbol = '无效字符'
+
+TextForPurchasingLicense = '如果您没有激活码，您可以在卡巴斯基实验室在线商店购买。'
+
+ButtonTextForPurchasingLicense = '购买激活码'
+SelectionTrialLicense = '激活试用版'
+TextForTrialLicense = '您可以在购买授权许可之前试用程序的全部功能。'
+
+CheckActivationCodeString = '正在检查激活码'
+TextForWaitingActivation = '请稍候'
+ReasonTextForWaitingActivationUnknown = '正在验证激活数据...'
+ReasonTextForWaitingActivationConnecting = '正在连接服务器...'
+ReasonTextForWaitingActivationSending = '正在发送激活数据...'
+ReasonTextForReceiveServerResponse = '正在从服务器接收数据...'
+ReasonTextForWaitingActivationCompleted = '激活完成'
+
+; wizard page: key for other product 
+KeyForOtherProductPageHeader = '激活码对应于另外一个程序'
+KeyForOtherProductOfflinePageHeader = '授权许可文件对应于其他程序'
+KeyForOtherProductPageInfoBlockOfflineActivation = '授权许可文件对应于程序： '
+KeyForOtherProductPageInfoBlockActivationCode = '激活码： '
+KeyForOtherProductPageInfoBlockProductName = '对应于程序： '
+KeyForOtherProductPageChoiceText = '您要激活' + $ProductName + '吗？'
+KeyForOtherProductPageChoice1 = '是，继续该向导并输入其它激活码'
+KeyForOtherProductPageChoice2 = '否，安装' + $ActivationCodeProduct + '并使用已输入的激活码激活程序'
+KeyForOtherProductPageOfflineChoice2 = '否，安装 ' + $ActivationCodeProduct + ' 并使用选定授权许可文件'
+KeyForOtherProductPageChoice3 = '将输入的激活码注册为新注册码'
+
+ActivationCodeIntendedForProductTextCaption = '激活码对应于：'
+SelectionTextForChangeProductType = '立即安装并激活新程序'
+SelectionTextForChangeProductTypeLater = '稍后切换至新程序'
+ActivationCodeIntendedForProductDescription = '切换时，程序将分析您的系统以查找不兼容的软件，这些软件需要被删除，此后需要重启计算机。'
+ActivationCodeIntendedForProductLaterDescription = '输入的激活码将会被保存。当前激活的授权许可过期后，系统会建议您切换到新程序。您无需再次输入激活码。'
+
+ActivationResultSucceedHeader = '谢谢'
+ActivationResultLicenseExpiredHeader = '激活错误'
+ActivationResultConnectionErrorHeader = '激活失败'
+
+StateTextForActivationResultLicenseExpired = '授权许可已过期'
+StateTextForActivationResultConnectionError = '连接激活服务器出错'
+
+InfoTextForActivationResultLicenseExpired = '输入其它密钥'
+	
+LicenseTypeInfoOnSucceedActivation = '授权许可类型：'
+SucceedActivationPeriodText = '有效期：'
+
+RegistrationFormHeader = '正在注册...'
+
+TextForCheckInternetAndTryingActivation = '请检查您的网络连接，并重新激活程序。'
+
+ButtonTextForCheckInternetAndTryingActivation = '重试激活'
+TextForActivationWithKeyFile = '如果程序激活失败'
+DescriptionForActivationWithKeyFile = '请从连接互联网的计算机访问<a href="CenterOfOnlineActivation"><font color ="#5495DF">在线激活中心</font></a>，并使用您的激活码获取授权许可文件。收到授权许可文件之后，请指定该文件在您计算机上的位置并点击“下一步”。'
+
+ActivationKeyFileText = '授权许可文件：'
+ButtonTextForBrowseKeyFile = '浏览...'
+
+ActivationReservedCodeHeader = '注意'
+ActivationReservedCodeTextPart1 = '单击“下一步”后，程序将被新的激活码激活，并开始您新授权许可的生命周期。'
+ActivationReservedCodeTextPart2 = '您可以使用当前授权许可的剩余有效期在其他计算机上使用程序。'
+
+ActivationWizard_Activation_Title = '激活 ' + $ProductNameFull
+ActivationWizard_AddToReserve_Title = '添加新激活码'
+ActivationWizard_SubscriptionUpdate_Title = '正在更新订阅状态'
+ActivationWizard_CheckReserveCode_Title = '正在检查激活码'
+ActivationWizard_Purchasing = '卡巴斯基在线商店'
+
+ActivationSuccessfullyCompleted = '激活成功'
+RegistrationCompleted = '注册成功'
+SubscriptionStatusSuccessfullyUpdated = '订阅状态成功更新'
+CheckReserveCodeSuccessfullyCompleted = '新激活码验证成功'
+AddCodeToReserveSuccessfullyCompleted = '激活码添加成功'
+SelectKeyFileDialogTitle = '选择密钥文件'
+CodeUsefullInFuture = '应用程序的当前授权许可已生效，无需再次激活该应用程序。已获得的激活码可以用来在今后激活应用程序或者激活应用程序的另一个副本。'
+CodeUsefullInFutureErr = '成功获得授权许可。不可能自动激活应用程序，因为检查激活状态发生错误。请打开授权许可窗口以解决问题，或者联系技术支持以寻求帮助。解决该问题后，您将可以使用获得的授权许可手动激活应用程序。'
+
+ActivationHasLicense_Header = '当前授权许可的密钥可用'
+ActivationHasLicense_TypeOfProgram = '程序类型： '
+ActivationHasLicense_TypeOfLicense = '授权许可类型： '
+ActivationHasLicense_DateOfExpirations = '到期日期： '
+ActivationHasLicense_ActionText = '您是否使用当前授权许可对应的程序？'
+ActivationHasLicense_UseNewLicenseText = '否，继续该向导并输入新激活码'
+ActivationHasLicense_ReturnToPrevProduct = '是，使用' + $LicenseFromOtherProductProductName
+
+ActivationSubscriptionReplace_Header = '注意'
+ActivationSubscriptionReplace_Text = '输入的激活码无法作为新激活码保存，但是可用于立即激活程序，您可以使用当前授权许可的剩余时间在其他计算机上使用程序。'
+ActivationSubscriptionReplace_Check = '立即应用输入的激活码重新激活程序'
+
+ActivationWizard_SystemError = '系统错误： ' + $SystemErrorDescription
+ActivationWizard_CannotAddKeyFile = $LicenseError
+ActivationWizard_CannotDeleteKeyFile = '无法删除"' + $KeyFile + '": ' + $LicenseError
+ActivationWizard_KeyInvalid = $KeyInvalidReason
+ActivationWizard_LicenseError = $LicenseError
+ActivationWizard_DefaultError = '未定义的错误'
+ActivationWizard_ServerNotAvailable = '无法设置服务器连接'
+
+ActivationWizard_FormProcessingError = '处理注册表单时发生错误'
+
+LicenseError_0x09479001  = '该密钥已经被添加'
+LicenseError_0x0947901D  = '授权许可已过期，数据库更新不可用'
+LicenseError_0x89479002  = '无法找到授权许可'
+LicenseError_0x89479003  = '数字签名丢失或已损坏'
+LicenseError_0x89479004  = '数据已损坏'
+LicenseError_0x89479005  = '密钥文件已损坏'
+LicenseError_0x89479006  = '授权许可已过期'
+LicenseError_0x89479007  = '未指定密钥文件'
+LicenseError_0x89479008  = '无效的密钥文件'
+LicenseError_0x89479009  = '无法保存数据'
+LicenseError_0x8947900A  = '无法读取数据'
+LicenseError_0x8947900B  = 'I/O 错误'
+LicenseError_0x8947900C  = '无法找到数据库'
+LicenseError_0x8947900D  = '现有的和备份的密钥文件均已注册'
+LicenseError_0x8947900E  = '授权许可库未初始化'
+LicenseError_0x8947900F  = '数据库受损或者已被手动更新'
+LicenseError_0x89479010  = '数据库受损'
+LicenseError_0x89479011  = '无法将过期授权许可密钥添加为备份密钥'
+LicenseError_0x89479012  = '系统错误'
+LicenseError_0x89479013  = '密钥黑名单文件受损'
+LicenseError_0x89479014  = '数字签名与卡巴斯基实验室数字签名不匹配'
+LicenseError_0x89479015  = '无法使用 Beta 版授权许可激活商业版程序'
+LicenseError_0x89479016  = 'Beta 版授权许可只能用于注册 Beta 版的程序'
+LicenseError_0x89479017  = '本授权许可对该程序不适用'
+LicenseError_0x89479018  = '授权许可已被阻止'
+LicenseError_0x89479019  = '该试用授权许可已经在使用中'
+LicenseError_0x8947901A  = '密钥文件已损坏'
+LicenseError_0x8947901B  = '数字签名已丢失、已损坏或者与卡巴斯基实验室数字签名不匹配'
+LicenseError_0x8947901C  = '无法为已过期的非商业授权许可添加密钥'
+LicenseError_0x8947901E  = '密钥文件创建或注册日期无效，请检查系统日期设置'
+LicenseError_0x8947901F  = '无法添加试用版授权许可的密钥，因为正在使用其他试用版授权许可的密钥'
+LicenseError_0x89479020  = '密钥黑名单文件丢失或受损'
+LicenseError_0x89479021  = '更新订阅丢失或已损坏'
+LicenseError_0x89479022  = '内部数据对于该程序无效'
+LicenseError_0x89479023  = '无法使用不正确的激活码添加附加密钥'
+LicenseError_0x89479024  = '完成用户表单数据时出错'
+LicenseError_0x89479025  = '发送激活服务器请求时出错。'
+LicenseError_0x89479026  = '请求中包含不正确的激活码'
+LicenseError_0x89479027  = '无法获得响应状态'
+LicenseError_0x89479028  = '保存临时文件时出错'
+LicenseError_0x89479029  = '错误地输入了激活码或者系统日期不正确'
+LicenseError_0x8947902A  = '激活码不适用于该程序或该授权许可已过期。'
+LicenseError_0x8947902B  = '未能收到密钥文件，指定的激活码不正确。'
+LicenseError_0x8947902C  = '激活服务器返回错误 400'
+LicenseError_0x8947902D  = '激活服务器返回错误 401'
+LicenseError_0x8947902E  = '激活服务器返回错误 403'
+LicenseError_0x8947902F  = '激活服务器上的必需资源不可用'
+LicenseError_0x89479030  = '激活服务器返回错误 405'
+LicenseError_0x89479031  = '激活服务器返回错误 406'
+LicenseError_0x89479032  = '需要代理服务器身份验证，请检查您的网络设置。'
+LicenseError_0x89479033  = '请求时间超时'
+LicenseError_0x89479034  = '激活服务器返回错误 409'
+LicenseError_0x89479035  = '激活服务器上的必需资源不可用'
+LicenseError_0x89479036  = '激活服务器返回错误 411'
+LicenseError_0x89479037  = '激活服务器返回错误 412'
+LicenseError_0x89479038  = '激活服务器返回错误 413'
+LicenseError_0x89479039  = '激活服务器返回错误 414'
+LicenseError_0x8947903A  = '激活服务器返回错误 415'
+LicenseError_0x8947903B  = '客户端计算机发生未知错误'
+LicenseError_0x8947903C  = '内部服务器错误'
+LicenseError_0x8947903D  = '不支持该功能'
+LicenseError_0x8947903E  = '网关响应无效，请检查您的网络设置'
+LicenseError_0x8947903F  = '资源暂时不可用'
+LicenseError_0x89479040  = '网关响应超时，请检查您的网络设置'
+LicenseError_0x89479041  = '服务器不支持该协议'
+LicenseError_0x89479042  = '服务器上发生未知的错误'
+LicenseError_0x89479043  = '未知的 http 错误'
+LicenseError_0x89479044  = '无效的资源标识符'
+LicenseError_0x89479045  = '“密钥”字段数据错误'
+LicenseError_0x89479046  = 'URL 不正确'
+LicenseError_0x89479047  = '目标文件夹不正确'
+LicenseError_0x89479048  = '内存分配错误'
+LicenseError_0x89479049  = '将参数转换为 ANSI 字符串（url、文件夹、代理）时发生错误'
+LicenseError_0x8947904A  = '创建工作线程时出错'
+LicenseError_0x8947904B  = '工作线程已运行'
+LicenseError_0x8947904C  = '工作线程未运行'
+LicenseError_0x8947904D  = '激活服务器上未找到密钥文件'
+LicenseError_0x8947904E  = '授权许可已被阻止'
+LicenseError_0x8947904F  = '激活服务器内部错误'
+LicenseError_0x89479050  = '激活请求中的数据不足'
+LicenseError_0x89479051  = '用户 ID 或密码不正确'
+LicenseError_0x89479052  = '激活码不正确'
+LicenseError_0x89479053  = '选定密钥文件的授权许可过期时间早于现有授权许可' 
+LicenseError_0x89479054  = '系统日期不正确'
+LicenseError_0x89479055  = '试用授权许可过期'
+LicenseError_0x89479056  = '激活时间已过期'
+LicenseError_0x89479057  = '您输入的激活码已超过允许激活的次数'
+LicenseError_0x89479058  = $OnlineActivationServerError
+LicenseError_0x89479059  = '商业版授权许可生效时，不能将非商业版授权许可的密钥添加为备用密钥'
+LicenseError_0x8947905C  = '需要激活码'
+LicenseError_0x8947905D  = '用户 ID 或密码不正确'
+LicenseError_0x8947905E  = '激活码不正确'
+LicenseError_0x89479062  = '无法连接至激活服务器'
+LicenseError_0x89479064  = '激活服务器不可用。'
+LicenseError_0x89479065  = '授权许可已过期'
+LicenseError_0x89479066  = '无法使用过期授权许可密钥替换现有活动密钥'
+LicenseError_0x89479067  = '无法添加过期时间早于当前授权许可密钥的额外密钥'
+LicenseError_0x89479068  = '您的订阅已是最新'
+LicenseError_0x8947906B  = '授权许可已在您的计算机上使用'
+
+OLA_SYSTEM_ERROR   = '激活失败，系统错误： ' + $OnlineActSrvErrorSpecific
+OLA_INTERNET_ERROR = '激活错误： ' + $OnlineActSrvErrorSpecificToInternetErrCodes
+OLA_HTTP_ERROR     = '激活错误：服务器返回 HTTP 代码 ' + $OnlineActSrvErrorSpecific
+OLA_SERVER_ERROR   = $OnlineActSrvErrorSpecificToServerErrCodes
+OLA_DEFAULT        = '激活失败' + $OnlineActSrvError + ' : ' + $OnlineActSrvErrorSpecific
+
+OLA_ERR_INTERNET_CANNOT_CONNECT           = '无法设置服务器连接'
+
+; cURL errors
+; see error descriptions at http://curl.haxx.se/libcurl/c/libcurl-errors.html
+OLA_ERR_INTERNET_URL_MALFORMAT              = 'URL 不正确'
+OLA_ERR_INTERNET_COULDNT_RESOLVE_PROXY      = '无法解析代理服务器地址'
+OLA_ERR_INTERNET_COULDNT_RESOLVE_HOST       = '无法解析服务器地址'
+OLA_ERR_INTERNET_COULDNT_CONNECT            = '无法建立服务器连接'
+OLA_ERR_INTERNET_REMOTE_ACCESS_DENIED       = '资源访问被拒绝'
+OLA_ERR_INTERNET_OPERATION_TIMEDOUT         = '等待超时'
+OLA_ERR_INTERNET_HTTP_POST_ERROR            = 'HTTP_POST_ERROR'
+OLA_ERR_INTERNET_SSL_CONNECT_ERROR          = '无法建立 SSL 连接'
+OLA_ERR_INTERNET_TOO_MANY_REDIRECTS         = '重定向过多'
+OLA_ERR_INTERNET_PEER_FAILED_VERIFICATION   = '服务器验证失败'
+OLA_ERR_INTERNET_GOT_NOTHING                = '服务器未响应'
+OLA_ERR_INTERNET_SEND_ERROR                 = '无法将数据发送至服务器'
+OLA_ERR_INTERNET_RECV_ERROR                 = '无法从服务器接收数据'
+OLA_ERR_INTERNET_SSL_CERTPROBLEM            = '本地安全证书问题'
+OLA_ERR_INTERNET_SSL_CIPHER                 = '无法使用指定密文'
+OLA_ERR_INTERNET_SSL_CACERT                 = '不受信任的服务器证书'
+OLA_ERR_INTERNET_BAD_CONTENT_ENCODING       = '未知的传输加密'
+OLA_ERR_INTERNET_LOGIN_DENIED               = '访问指定的登录被拒绝'
+OLA_ERR_INTERNET_SSL_CACERT_BADFILE         = '无法读取受信任的证书'
+OLA_ERR_INTERNET_SSL_SHUTDOWN_FAILED        = '无法断开 SSL 连接'
+OLA_ERR_INTERNET_AGAIN                      = 'Socket 未准备好做传输之用'
+OLA_ERR_INTERNET_SSL_CRL_BADFILE            = '无法读取证书撤销列表 (CRL)'
+OLA_ERR_INTERNET_SSL_ISSUER_ERROR           = '无法验证证书发布者'
+OLA_ERR_INTERNET_GENERAL_TRANSPORT_LAYER_ERROR = '传输错误'
+
+OLA_ERR_SRV_UNKNOWN_SERVER_ERROR			 = '激活服务器上出现未知错误，请重试或联系技术支持'
+OLA_ERR_SRV_INTERNAL_SERVER_ERROR            = '内部激活服务器错误，请重试或联系技术支持'
+OLA_ERR_SRV_WRONG_APPLICATION_ID             = '激活码不适用于该程序。'
+OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED   = '授权许可已被阻止'
+OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD    = '用户 ID 或密码不正确'
+OLA_ERR_SRV_WRONG_ACTIVATION_CODE            = '激活码不正确'
+OLA_ERR_SRV_LICENSE_NOT_FOUND                = '不正确的激活码'
+OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED         = '需要激活码'
+OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED        = '激活时间已过期'
+OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED    = '已超过该激活码可激活的次数'
+OLA_ERR_SRV_REGION_MISMATCH                  = '激活码在该区域无效'
+OLA_ERR_SRV_LOCALIZATION_MISMATCH            = '激活码无法用于该语言版本的程序。'
+OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION = '该激活码仅适用于较新版本的程序。'
+OLA_ERR_SRV_SERVER_ERROR_643                 = '激活服务器返回错误代码 643'
+OLA_ERR_SRV_SERVER_ERROR_644                 = '激活服务器返回错误代码 644'
+OLA_ERR_SRV_SERVER_ERROR_645                 = '激活服务器返回错误代码 645'
+OLA_ERR_SRV_SERVER_ERROR_646                 = '激活服务器返回错误代码 646'
+OLA_ERR_SRV_INVALID_ACTIVATION_CODE_FORMAT   = '输入的激活码不正确。'
+OLA_ERR_SRV_MACHINE_TIME_IS_NOT_SYNCHRONIZED = '您计算机上的系统日期已更改。请修复日期，然后再次尝试激活程序'
+OLA_ERR_SRV_INVALID_APPLICATION_VERSION      = '输入的激活码适用于其他版本的程序'
+OLA_ERR_SRV_SUBSCRIPTION_EXPIRED             = '订阅已过期，请输入其他激活码'
+OLA_ERR_SRV_ACTIVATION_COUNT_LIMIT_IS_REACHED = '您已超过已输入的激活码所允许激活的最大数量'
+OLA_ERR_SRV_INVALID_LICENSE_TICKET_SIGNATURE = '授权许可问题，请删除活动密钥，然后使用同一个激活码再次尝试激活程序。'
+OLA_ERR_SRV_SUBSCRIPTION_IS_NOT_ACTIVE       = '您的服务提供商尚未激活该订阅，请稍后更新订阅状态或联系您的服务提供商。'
+OLA_ERR_SRV_SERVICE_IS_UNDER_MAINTENANCE     = '服务器当前已关闭，请稍后再试。'
+	
+OLA_ERR_SRV_DEFAULT                          = '激活失败' + $OnlineActSrvError + ':' + $OnlineActSrvErrorSpecific
+
+KeyInvalidReason_ekirUnknown                 = '未知错误'
+KeyInvalidReason_ekirValid                   = '授权许可有效'
+KeyInvalidReason_ekirExpired                 = '授权许可已过期'
+KeyInvalidReason_ekirCorrupted               = '无效密钥'
+KeyInvalidReason_ekirNotSigned               = '数字签名丢失或已损坏'
+KeyInvalidReason_ekirWrongProduct            = '密钥不适合该程序。'
+KeyInvalidReason_ekirBlackListed             = '授权许可已被阻止'
+KeyInvalidReason_ekirIllegalUpdate           = '数据库日期和授权许可有效期不符合'
+KeyInvalidReason_ekirInconsistentUpdate      = '数据库受损'
+KeyInvalidReason_ekirKeyCreationDateInvalid  = '密钥创建日期不正确'
+KeyInvalidReason_ekirTrialAlreadyInUse       = '无法添加试用版授权许可的密钥，因为正在使用其他试用版授权许可的密钥'
+KeyInvalidReason_ekirInvalidBlacklist        = '密钥黑名单文件受损'
+KeyInvalidReason_ekirCantBeUsedAsReserved    = '无法将激活码注册为新激活码'
+KeyInvalidReason_ekirKeyInstallDateInvalid   = '激活日期不正确'
+KeyInvalidReason_ekirTrialPeriodIsOver       = '试用授权许可已过期'
+KeyInvalidReason_ekirConflictsWithCommercial = '新的密钥文件与当前的商用版授权许可冲突'
+KeyInvalidReason_ekirExpiredAsReserve        = '该授权许可有效期早于当前授权许可的有效期'
+KeyInvalidReason_ekirLimited                 = '您已超过使用您的授权许可可以激活' + $ProductName + '的计算机最大数量。'
+KeyInvalidReason_ekirReinstallProduct		 = '程序需要重新安装'
+KeyInvalidReason_default                     = '无效的密钥文件'
+
+; Protection level
+LicenseProtectionLevel = '保护： '
+ProtectionLevelUnknown = '未知'
+ProtectionLevelNoFeatures = '已禁用'
+ProtectionLevelLimited = '受限'
+ProtectionLevelExpiredState = ProtectionLevelLimited
+ProtectionLevelFull = '已完全启用'
+
+; Updater level
+LicenseUpdaterLevel = '更新： '
+UpdaterLevelUnknown = '未知'
+UpdaterLevelNotAllowed = '不可用'
+UpdaterLevelUpdateBlacklistOnly = '仅黑名单'
+UpdaterLevelAllowed = '已允许'
+UpdaterLevelLimited = '已受限'
+
+LicenseInstallationDate = '安装日期：'
+LicenseInvalidReason = '原因无效：'
+LicenseTicketSequenceId = '激活 ID：'
+LicenseTicketId = '激活 ID (工单 ID)：'
+
+SubscriptionToleranceDays = '容许时间（天）：'
+SubscriptionBufferDays = '缓冲期（天）：'
+SubscriptionGraceDays = '宽限期（天）：'
+SubscriptionExpirationDateType = '订阅日期类型：'
+SubscriptionStatus = '订阅状态：'
+ProductActiveLicenseState = '授权状态（活动）：'
+ProductReserveCodeState = '授权状态（新）：'
+SubscriptionCurrentTicket = '当前工单：'
+SubscriptionCurrentKey = '当前密钥：'
+TicketValidFrom = '    有效期自 (UTC)：'
+KeyCreationDate = '    创建日期 (UTC):'
+KeyOrTicketValidTo = '    有效期至 (UTC)：'
+
+; strings in the following section refer to subscription and its expiration date
+SubscriptionExpirationDateUnknown = '未知'
+SubscriptionExpirationDateUndefined = '将在稍后确定'
+SubscriptionExpirationDateUnlimited = '未定义'
+SubscriptionExpirationDateLimited = $SubscriptionExpirationDateTimeWithSecond
+SubscriptionExpirationDateSuspended = '暂停自 '
+
+; strings in the following section refer to a time period
+SubscriptionPeriodOfValidityUnknown = '未知'
+SubscriptionPeriodOfValidityUndefined = '将在稍后确定'
+SubscriptionPeriodOfValidityUnlimited = '未定义'
+SubscriptionPeriodOfValidityLimited = '直到 ' + $SubscriptionExpirationDate
+SubscriptionPeriodOfValiditySuspended = '暂停自 ' + $SubscriptionExpirationDate
+
+LicenseExpirationDateShort = $LicenseExpirationDate
+LicenseExpirationDateTimeWithSeconds = $LicenseExpirationDateTimeWithSeconds
+
+TicketValidFromDescription = $TicketValidFromDate
+TicketValidToDescription = $TicketValidToDate
+
+LicenseActivationDateDescription = $ActivationDate
+LicenseInstallationDateDescription = $InstallationDate
+
+AdditionalLicenseInformationCaption = '授权许可信息'
+LicenseEulaLinkName = '最终用户授权许可协议'
+
+; MessageBoxes
+DeleteLicenseMessageBoxCaption = '删除授权许可'
+DeleteActiveLicenseQuestion = '您确定要删除该激活的授权许可吗？'
+DeleteReserveCodeQuestion = '您是否确定要删除这个新激活码？'
+DeletePreinstalledCodeQuestion = '是否确实要删除预设的激活码？'
+DeleteActiveLicenseWarning = '计算机保护将被禁用'
+DeleteActiveLicenseAndReserveLicenseWarning = '计算机保护已禁用，之前添加的新激活码也将被删除。'
+DeleteLicenseConfirmation = '删除密钥'
+ActivateReserveLicenseNow = '立即使用新激活码激活'
+
+; BestBuy license info labels:
+BestBuyActivationCode = '激活码：'
+BestBuySerialNumber = '序列号：'

@@ -1,0 +1,284 @@
+﻿[Global]
+$Scan_Title             = "Analizar"
+$Scan_Objects           = ($IsKAT ? "Análisis automático" : "Análisis personalizado")
+$Scan_My_Computer       = "Análisis completo"
+$Scan_Qscan             = "Búsqueda de procesos ocultos"
+$Scan_Vulnerabilities   = "Análisis de vulnerabilidades"
+$Scan_Startup           = "Análisis de áreas críticas"
+$Scan_IdleScan          = "Análisis en inactividad"
+$QuickScan              = "Análisis personalizado"
+$Active_Disinfect       = "Desinfectar amenazas activas"
+$NewAll                 = "todos" : "nuevos"
+$ScanQuarantine         = "Análisis de cuarentena"
+$Rollback_AVZ           = "Deshacer"
+$Scan                   = "Analizar"
+AskUpdateBeforeFullScan = s_ProdState(#ProdStateBasesOld) + ". ¿Desea ejecutar ahora una actualización?"
+DeleteItemsConfirm      = "¿Está seguro de querer eliminar el elemento o los elementos seleccionados?"
+$BrowseSaveLink		    = "Guardar como"
+
+[s_ScanObjectName]
+#OBJECT_TYPE_MEMORY                 = "Memoria del sistema"
+#OBJECT_TYPE_STARTUP                = "Objetos del inicio"
+#OBJECT_TYPE_HIDDEN_STARTUP         = "Objetos del inicio"
+#OBJECT_TYPE_MAIL                   = "Mi correo"
+#OBJECT_TYPE_ALL_DRIVES             = "Todas las unidades"
+#OBJECT_TYPE_ALL_REMOVABLE_DRIVES   = "Todas las unidades extraíbles"
+#OBJECT_TYPE_ALL_FIXED_DRIVES       = "Todos los discos duros"
+#OBJECT_TYPE_ALL_NETWORK_DRIVES     = "Todas las unidades de red"
+#OBJECT_TYPE_BOOT_SECTORS           = "Sectores de arranque del disco"
+#OBJECT_TYPE_QUARANTINE             = "Objetos en cuarentena"
+#OBJECT_TYPE_SYSTEM_RESTORE         = "Zona de respaldo del sistema"
+#OBJECT_TYPE_VULN_PATHES            = "Aplicaciones instaladas"
+default                             = c_ScanObjects(hashMD5short(ScanObjects), getDisplayName(ObjectType == #OBJECT_TYPE_MY_COMPUTER ? "%mycomputer%" : ScanObjects))
+
+[ScanGroup_Body]
+Start.Name   = "Iniciar análisis"
+Stop.Name    = "Detener análisis"
+
+[ScanGroup_Body_Active]
+NowScanning.Name            = "Análisis:"
+OnDetection.Name            = "En caso de detectar una amenaza:"
+ShutdownWhenFinished.Name   = "Cuando finalice:"
+ShutdownWhenFinished.Val    = EnableStopMode ? s_ODSStopModes(StopMode) : "No apagar el equipo"
+
+[ScanGroup_Body_Active_NowScanning]
+Skip                        = "Ignorar"
+
+[ScanGroup_Body_Inactive]
+Level.Name          = "Nivel de seguridad:"
+OnDetection.Name    = "En caso de detectar una amenaza:"
+Scheduler.Name      = "Modo de ejecución: "
+LastStart           = "Última ejecución:"
+LastError           = "Última ejecución:"
+
+[ScanShutdownMenu]
+EnableStopMode = "Terminar sesión"
+
+[s_ODSStopModes]
+#stop_Shutdown  = "Apagar el equipo"
+#stop_Sleep     = "Cambiar a estado de espera"
+#stop_Hibernate = "Cambiar al modo de hibernación"
+#stop_Restart   = "Reinicie el equipo"
+
+[MainWindow.Scan_Filters_Menu]
+ByTime      = "Agrupar por hora"
+AllItems    = "No agrupar"
+ByVerdict   = "Agrupar por resultado"
+
+[MainWindow_Body.Scan.DragDropArea]
+Description = "Para realizar un análisis personalizado de un objeto, arrástrelo aquí o <a ChooseObjects $LinkKLInText onclick(dialog(\"MainWindow_Body.Scan.DialogCheckedFile\"))>búsquelo</a>."
+
+[ScanDialog_EventLog]
+Time    = "Hora"
+Object  = "Objeto"
+Status  = "Categoría"
+Reason  = "Motivo"
+
+[ScanSettings.Optimization_FileTypesGroup]
+CheckNew = "Analizar solamente archivos n&uevos y modificados"
+
+[ScanSettings_Tab]
+Scope       = "Cobertura"
+Additional  = "Avanzado"
+RunMode     = "Modo de ejecución"
+
+[ScanSettings_Tab_Scope]
+FileTypesGroup  = "Tipos de archivos"
+FileTypesGroup1 = "Optimización del análisis"
+
+[ScanSettings_Tab_Scope_FileTypesGroup]
+All         = "&Todos los archivos"
+Infectable  = "A&nalizar archivos por formato"
+Predefined  = "Archivos analizados por e&xtensión"
+
+[ScanSettings_Tab_Scope_FileTypesGroup1]
+CheckNew        = "Analizar solamente archivos n&uevos y modificados"
+SkipTimeCheck   = "Omitir o&bjetos analizados más de"
+SkipTimeLabel   = "seg"
+
+[ScanSettings_Tab_Additional]
+Methods     = "Métodos de análisis"
+Tecnologies = "Tecnologías de análisis"
+Feedback    = "Participación"
+
+[ScanSettings_Tab_Additional_Feedback]
+UseKLSRL    = "Acepto participar en Kaspersky Security Network"
+
+[ScanSettings_Tab_Additional_Methods]
+Sign            = "&Análisis de firmas"
+Heur            = "Análisis &heurístico"
+Vulnerability   = "Análisis de firmas de &vulnerabilidades"
+Rootkit         = "Búsqueda de pr&ocesos ocultos"
+RootkitDeep     = "Análisis &detallado"
+
+[ScanSettings_Tab_Additional_Tecnologies]
+Swift   = "Tecnología iS&wift"
+Check   = "&Tecnología iChecker"
+
+[ScanSettings_Tab_RunMode]
+Schedule = "Planificación"
+
+[ScanSettings_Tab_RunMode_Schedule]
+Manual  = "&Manual"
+Fixed   = "Median&te planificación"
+
+[MainReport.Scan_Objects]
+;@.Title = ""
+
+;------------- ScanProgressWindow -----------
+
+[ScanProgressWindow]
+Footer.Cancel = (name == "Scan_Objects" || origin == #poTemporary) && f_IsStateActive(state) ? "Detener" : "Cerrar"
+
+[ScanProgressWindow_Footer]
+Reports = "Informe detallado"
+
+[ScanProgressWindow_Body_Status]
+Duration.Name   = "Duración: "
+ShutdownWhenFinished.Name   = "Cuando finalice, "
+ShutdownWhenFinished.Val    = EnableStopMode ? capitalize(s_ODSStopModes(StopMode), false) : "no apagar el equipo"
+Scanned    = "" + NumScaned + " objetos analizados, "
+Detected   = NumThreats ? "" + NumThreats + " detectados" :  "no se detectaron amenazas"
+
+[ScanProgressWindow_Body_ActiveInfo]
+Object.Name     = "Objeto: "
+SkipScanObject  = "Ignorar"
+
+;------------- Password request Dialog -----------
+
+[PasswordRequestDialog]
+@       = "Escriba la contraseña"
+
+[PasswordRequestDialog_Footer]
+SkipAll = "Ignorar todo"
+Skip    = "Ignorar"
+Ok      = "Aceptar"
+
+[PasswordRequestDialog_Body]
+Archive.Name    = "Comprimido:"
+Password.Name   = "Contraseña:"
+
+[AskResumeScan]
+@="Iniciar análisis"
+
+[AskResumeScan_Body]
+Info.Text       = "La tarea \"" + $ProfileName + "\" ha sido detenida"
+Resume.Name     = "Reanudar el análisis"
+Resume.Descr    = "El análisis se reanudará en el punto donde fue interrumpido"
+Restart.Name    = "Iniciar un nuevo análisis"
+Restart.Descr   = "El análisis se iniciará de nuevo"
+
+[s_TaskTypeModification]
+privctrl
+default     = "\ (modificación)"
+
+;------------- AskScanSettingsDlg -------------
+
+[AskScanSettingsDlg]
+$AskScanSettingsDlgTaskName = "Análisis antivirus"
+@.ApplyToAll       = "Realizar siempre en tales casos"
+
+[AskScanSettingsDlg_Body_Descr]
+Name  = "Unidad extraíble conectada"
+Descr = "Se recomienda que la analice en busca de software malicioso"
+
+[AskScanSettingsDlg_Body_Action]
+Question            = "¿Quiere analizar la unidad extraíble?"
+ProcessFull.Name    = "Análisis completo"
+ProcessFull.Descr   = "Se analizarán todos los archivos de las unidades extraíbles"
+ProcessQuick.Name   = "Análisis rápido"
+ProcessQuick.Descr  = "Solo se analizarán archivos potencialmente infectables"
+Skip.Name			= "No analizar"
+Skip.Descr			= "La unidad extraíble no se analizará"
+
+[s_DriveScanModes]
+#dsmSkip	= "&No analizar"
+#dsmAskUser = "Preguntar al us&uario"
+#dsmFull	= "Análisis &completo"
+#dsmQuick	= "Análisis rá&pido"
+
+[MainWindow_Body.Scan]
+Header      = "Análisis antivirus"
+Descr       = "Analice su equipo para comprobar que no hay virus, troyanos, gusanos, u otras amenazas."
+Scan_Vulnerabilities.Name.Caption = f_IsStateActive(state) ? "Análisis de vulnerabilidades en curso " + Completion + "%" : "Abrir ventana de Análisis de vulnerabilidades"
+Scan_Vulnerabilities.Descr = "Busca vulnerabilidades en el equipo y en software de terceros."
+
+[ScanTask_Status_Active]
+Remain = "Finalización: "
+
+[ScanTask_Status_Active_Object]
+Object = ", objeto: "
+
+[VulnerabilityMonitor]
+@ = "Análisis de vulnerabilidades"
+
+[VulnerabilityMonitor_Header]
+Name = "Análisis de vulnerabilidades del sistema y de aplicaciones de terceros"
+Desc = "Buscar en su sistema y en sus aplicaciones vulnerabilidades que puedan permitir ataques maliciosos."
+
+[VulnerabilityMonitor_Body_Never]
+Text1 = "No se ha iniciado nunca el análisis de vulnerabilidades"
+Text2 = "Haga clic en el botón Ejecutar para iniciar el análisis"
+
+[VulnerabilityMonitor_Body_Progress]
+Progress = "El análisis de vulnerabilidades está en curso: " + Completion + "%"
+
+[VulnerabilityMonitor_Body_Progress_Remain]
+Remain = "Finalización: "
+
+[VulnerabilityMonitor_Body_Navigator]
+AVZ.Cont = "Vulnerabilidades del sistema"
+Vuln.Cont = "Aplicaciones vulnerables"
+
+[VulnerabilityMonitor_List]
+rowedit.Do  = "Detalles..."
+rowedit.Do2 = "Agregar a las exclusiones..."
+
+[VulnerabilityMonitor_Body_Result_Info]
+ShowCured = "Ver vulnerabilidades corregidas"
+
+[VulnerabilityMonitor_Body_Tab_AVZ]
+ShowAll   = "Mostrar ocultos"
+
+[VulnerabilityMonitor_ListRow]
+FileLabel = "Archivo:"
+
+[AvzVulnerabilityMonitor_List]
+rowedit.Do       = "Reparar"
+rowedit.Do2      = "Deshacer"
+rowedit.Help     = "Detalles"
+rowedit.Hide     = "Ocultar"
+
+[s_VulnerabilityDescr]
+#eProtStateCrit
+#eProtStateWarn     = "Se recomienda corregir"
+def                 = "No es necesario corregir"
+
+;------------- Restore Object Dialog -----------
+
+[AskRestoreObjectDlg]
+@.TaskName      = $ScanQuarantine
+
+[AskRestoreObjectDlg_Body_Descr]
+Descr           = "El archivo en cuarentena no está infectado. Se recomienda que lo restaure."
+ObjectL         = "Ubicación original:"
+
+[AskRestoreObjectDlg_Body_Action]
+SaveAs.Name     = "Restaurar..."
+SaveAs.Descr    = "Restaurar el archivo en la ubicación de origen."
+Skip.Name		= "Cancelar"
+Skip.Descr		= "No restaurar"
+
+;------------- QB Size Exceeded Dialog -----------
+
+[AskQBSizeExceededDlg]
+@.TaskName     = "Cuarentena y Respaldo"
+
+[AskQBSizeExceededDlg_Body_Descr]
+Descr          = "Se ha superado el tamaño máximo de la cuarentena y de la copia de respaldo. Borre la cuarentena y la copia de respaldo para continuar."
+
+[AskQBSizeExceededDlg_Body_Action]
+Clean.Name     = "Borrar"
+Clean.Descr    = "Borrar cuarentena y copia de respaldo hasta el tamaño requerido"
+Cancel.Name	   = "Cancelar"
+Cancel.Descr   = "No borrar la cuarentena y la copia de respaldo hasta el tamaño requerido"

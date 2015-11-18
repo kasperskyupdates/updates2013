@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'معالج الترحيل'
+UpgradeCaption = 'ترقية'
+
+RebootPageCheckboxRebootText = 'إعادة تمهيد الكمبيوتر'
+OpenRemoveProgramsPanel = 'فتح شريط الأدوات'
+
+WizardBeginDescriptionKis = 'سيتم تحويلك إلى Kaspersky Internet Security 2013.\n\nيمنحك مالك حقوق الملكية ترخيصًا غير حصري لاستخدام Kaspersky Internet Security بنفس الشروط التي قبلتها عندما قمت بتثبيت Kaspersky Internet Security في الأصل. \n\nملاحظة: قد يؤدي هذا التحويل إلى إعادة التمهيد.'
+
+WizardBeginDescriptionKav = 'سيتم تحويلك إلى Kaspersky Anti-Virus 2013.\n\nيمنحك مالك حقوق الملكية ترخيصًا غير حصري لاستخدام Kaspersky Anti-Virus بنفس الشروط التي قبلتها عندما قمت بتثبيت Kaspersky Internet Security في الأصل. \n\nملاحظة: قد يؤدي هذا التحويل إلى إعادة التمهيد.'
+
+WizardContinueDescriptionKis = 'متابعة التحويل إلى Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'متابعة التحويل إلى Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nانتباه! تنتهي صلاحية الترخيص الحالي لـ Kaspersky Internet Security. بعد انتهاء صلاحية ترخيص Kaspersky Anti-Virus، سيكون من المستحيل الرجوع إلى برنامج Kaspersky لمكافحة الفيروسات.'
+
+PleaseWait = 'الرجاء الانتظار'
+RemovalProgressDescription   = 'حذف البرنامج غير المتوافق'
+RemovalApplicationsDescription = 'ستتم إزالة البرنامج التالي لأداء التبديل:'
+ManualRemovalApplicationsDescription = 'يجب أن تقوم يدويًا بإزالة البرامج التالية غير المتوافقة لإتمام التبديل:'
+SearchRemovalApplicationsDescription   = 'البحث عن برامج غير متوافقة'
+RestartProductDescription = 'سيتم إعادة تمهيد التطبيق لإكمال التبديل.'
+RebootOsDescription = 'يجب أن تقوم بإعادة تمهيد الكمبيوتر لمتابعة التبديل.\nسوف يتابع المعالج عمله بعد إعادة التمهيد.'
+
+MigrationProgressDescriptionKis = 'إعادة تكوين التطبيق والتبديل إلى برنامج Kaspersky لأمان الإنترنت'
+UpgradeProgressDescriptionKis   = 'إعادة تكوين التطبيق والتبديل إلى برنامج Kaspersky لأمان الإنترنت'
+MigrationProgressDescriptionKav = 'إعادة تكوين التطبيق والتبديل إلى برنامج Kaspersky لمكافحة الفيروسات'
+
+MigrationKis = 'التبديل إلى برنامج Kaspersky لأمان الإنترنت'
+MigrationKav = 'التبديل إلى برنامج Kaspersky لمكافحة الفيروسات'
+MigrationUnknown = 'انتقال '
+
+SearchRemovalApplicationsHeader = 'الترقية إلى Kaspersky Internet Security'
+RemovalProgressHeader = 'حذف البرنامج غير المتوافق'
+RemovalApplicationsHeader = 'تم العثور على برنامج غير متوافق'
+RebootOsHeader = 'يلزم إعادة تمهيد الكمبيوتر'
+RestartProductHeader = 'سيتم إعادة تمهيد التطبيق'
+
+MigrationAbortedHeader = $MigrationType + ' مستحيل'
+MigrationAbortedDescription = $MigrationType + ' فشل. حاول إزالة البرنامج غير المتوافق يدويًا ثم أعد تشغيل المعالج.'
+
+BestBuyGiftInformation = 'ستتم ترقية Kaspersky Anti-Virus إلى Kaspersky Internet Security.\nستحصل الآن على مزيد من المزايا لحماية الكمبيوتر.'
+BestBuyGiftDescription = 'نشكرك على اختيار برامج Kaspersky Lab! ونتمنى لك الاستمتاع بالحماية الإضافية.'
+BestBuyUpgradeNotification = 'أثناء الترقية، سيتم إجراء تحليل للنظام الخاص بك بحثًا عن البرامج غير المتوافقة وذلك لضمان عمل التطبيقات المثبتة ونظام التشغيل بشكل سليم.'
+BestBuyFreeUpgrade = 'التبديل إلى برنامج Kaspersky لأمان الإنترنت'
+
+BestBuyTryAbortHeader = 'الترقية في الخلفية'
+BestBuyTryAbortInformation = 'سوف تستمر عملية الترقية في الخلفية'
+BestBuyTryAbortDescription = 'نظرًا لعدم إزالة البرنامج غير المتوافق، تم تعطيل بعض مزايا Kaspersky Internet Security الجديدة لضمان عمل التطبيقات المُثبَّتة ونظام التشغيل على نحو سليم.\n\nيمكنك إزالة البرنامج غير المتوافق يدويًا وتمكين جميع المزايا الجديدة من نافذة إعدادات Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'العودة إلى الترقية'
+Congratulation = 'تهانينا لك!'
+
+RunKisButtonText = 'بدء تشغيل Kaspersky Internet Security'
+
+ProductUpgraded = 'لقد تمت ترقية Kaspersky Anti-Virus بنجاح إلى Kaspersky Internet Security.\nيمكنك الآن الاستمتاع بمزيد من المزايا لحماية الكمبيوتر.'

@@ -1,0 +1,50 @@
+﻿KsnNoInternet    = 'Compruebe sus parámetros de conexión a Internet.'
+KsnNoLicense     = 'No se puede usar esta función debido al estado de la clave actual.'
+KsnNoAgreement   = 'Para conectarse al servicio, debe aceptar los términos del contrato de KSN.'
+
+KsnNotConnected   = 'El acceso a Kaspersky Security Network está desactivado.'
+
+Ksn_LastInfo = 'En las últimas 24 horas: '
+Ksn_UsersProtected = 'Participantes protegidos del KSN: '
+Ksn_ThreatsDetected = 'Amenazas neutralizadas: '
+
+ThreatSafe    = 'Datos seguros:'
+ThreatMalware = 'Datos peligrosos:'
+ThreatPending = 'Procesando'
+
+CloudProtection    = 'Tecnología de Protección en la nube'
+CloudProtectionBig = 'Protección en la nube'
+CloudHeader1 = 'Experimente la Protección en la nube avanzada'
+CloudHeader2 = 'con Kaspersky Security Network'
+
+OnlineServices = 'Kaspersky Security Network es:'
+AboutWorldNetwork   =  'Una red de seguridad que conecta a usuarios de todo el mundo'
+AboutProtectionLevel =  'Capa de protección adicional'
+AboutSoftInfo        =  'Información actualizada sobre la reputación de aplicaciones y sitios web'
+AboutWebInfo         =  'En espera las 24 horas del día, los 7 días de la semana'
+AboutReaction        =  'Reacción inmediata ante nuevas amenazas'
+
+LicenseManagerAction = 'Información de licencia'
+KsnAgreementAction = 'Participar en Kaspersky Security Network'
+
+StatisticsHeader = 'Estadísticas actuales del KSN'
+
+LastConnectedText = 'Sincronizado: '
+
+WaitPlease = 'Espere'
+RequestProcessing = 'Enviando solicitud al servidor...'
+
+ReadMore = 'Más información'
+
+AboutCloudProtection = 'Acerca de la Protección en la nube'
+
+KsnAboutMain	= 'Kaspersky Security Network (KSN) es un servicio de información sobre amenazas global e inmediato que conecta a millones de participantes usuarios de Karspersky de todo el mundo. Cuando nuestro software encuentra datos sospechosos o sin comprobar en el equipo de un participante de KSN, estos se envían inmediatamente a nuestro equipo de analistas. Nuestros laboratorios trabajan las 24 horas del día, 7 días a la semana en el análisis de estas amenazas potenciales y en la publicación de actualizaciones de protección en tiempo real para todos los usuarios.'
+KsnAboutDetails = 'Al unirse a KSN, disfrutará de una capa de protección adicional en la que las amenazas potenciales dirigidas a su PC se envían directamente al laboratorio para su análisis inmediato. Cuantos mayor sea el número de participantes de KSN, más sólida será la protección en la nube de todos los usuarios. Para obtener más información detallada, <a href="more info"><font color =\"#5495DF\">haga clic aquí</font></a> para visitar nuestro sitio Web.'
+KsnAboutNote	= '*Kaspersky Lab no realiza ninguna recopilación, procesamiento o almacenamiento de datos personales enviados por los usuarios. Los datos descritos anteriormente se facilitan de forma voluntaria. Además, los usuarios pueden activar/desactivar su participación en KSN en cualquier momento.'
+
+ThreatSafeCount    = ' ' + {$SafeThreatsCount: 'objeto', 'objetos'}
+ThreatMalwareCount = ' ' + {$MalwareThreatsCount: 'objeto', 'objetos'}
+ThreatPendingCount = ' ' + {$PendingThreatsCount: 'objeto', 'objetos'}
+
+Connected    = 'CONECTADO'
+Disconnected = 'DESCONECTADO'

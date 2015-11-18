@@ -1,0 +1,1218 @@
+﻿[Global]
+ErrDifferPswrds.caption         = "No coinciden las contraseñas"
+ErrDifferPswrds                 = "Introduzca la misma contraseña en los dos cuadros de texto."
+ErrNoPasswordEntered.caption    = "No especificó la contraseña "
+ErrNoPasswordEntered            = "Introduzca la contraseña o desactive la casilla de verificación \"Proteger con contraseña el acceso a la configuración de la aplicación\""
+ErrPswrdWrong.caption           = "Contraseña incorrecta"
+ErrPswrdWrong                   = "Intente escribir la contraseña una vez más."
+ErrRetrFolder.caption           = "Ruta vacía"
+ErrRetrFolder                   = "Seleccione la carpeta destino de las actualizaciones."
+ErrProxyHostIsMissing.caption   = "Dirección vacía"
+ErrProxyHostIsMissing           = "Escriba el nombre DNS o la dirección IP del equipo proxy."
+ErrSkinPath.caption			    = "No se ha especificado la ruta a la carpeta \"Skin\""
+ErrSkinPath					    = "Especifique la carpeta para \"Skin\""
+SendTroublesErrorDescr          = s_SendTroublesErrorDescr(OperationCode)
+CantCloseTroublesDlg            = "No se puede cerrar el cuadro de diálogo hasta que no se haya enviado el paquete"
+SaveTroublesInfo                = "¿Desea guardar un archivo comprimido con información del sistema, rastros y volcados de memoria en el disco?"
+$SaveTroublesInfo               = "¿Desea guardar un archivo comprimido con información del sistema, rastros y volcados de memoria en el disco?"
+SettingsLoadError               = "No se puede cargar la configuración: " + s_SystemError(p_Err)
+SettingsOperationError          = "No se pueden guardar los parámetros: " + s_SystemError(p_Err)
+SchedulerDaysEmpty.caption      = "No se ha especificado ningún día de la semana"
+SchedulerDaysEmpty              = "Especifique al menos un día de la semana."
+PasswordSettSelOpEmpty.caption  = "No especificó operaciones separadas"
+PasswordSettSelOpEmpty          = "Especifique al menos una operación."
+NothingToSend.caption           = "No se especificaron archivos"
+NothingToSend                   = "Especifique al menos un archivo de volcado de memoria o un archivo de rastro."
+ErrDeletingTraces               = "Algunos archivos están siendo utilizados por otras aplicaciones y no se pueden eliminar."
+ObjectOrThreatMissing           = "Seleccione el objeto o especifique una exclusión."
+HipsThreatMissing               = "El tipo de amenaza debe ser driver.start o driver.*"
+ExclNetParams                   = "Parámetros no especificados"
+$BrowseForConfig                = "Especifique un archivo de configuración"
+$TrustedZone                    = "Zona de confianza"
+$TrustedZoneSettings            = "Zona de confianza..."
+$ScanObjectList                 = "Lista de objetos"
+$ScanObjectListDefault          = "Predeterminado"
+$ScanObjectListCustom           = "Personalizado"
+$TrafficSettings                = "Supervisión del tráfico de red"
+$TestMailSubject                = "Mensaje de prueba"
+$TestMailBody                   = "Este mensaje se envió desde la ventana de configuración."
+InvalidFilePathOrMask			= "La ruta o máscara especificada es incorrecta."
+$Scan_Vulnerabilities_Objects   = "Análisis de vulnerabilidades (objetos)"
+DaysWarning						= "No todos los meses tienen 29, 30 o 31 días"
+DaysWarning.caption				= "Atención"
+$SaveSslCertificate				= "Guardar certificado"
+SaveSslCertificateError         = "Error al guardar el certificado: " + s_SystemError(p_Err)
+AdditionalParams                = "Parámetros generales"
+$SafeBankingLink				= "Pago seguro.lnk"
+
+;------------- Scheduler -----------
+
+[SchedulerView]
+$ScheduleSettings   = "Configuración de la planificación"
+;@                   = "Расписание: " + $ProfileName
+Period              = "Fre&cuencia:"
+Time                = "&Hora de ejecución:"
+RunIfSkipped        = "Ejecutar tareas i&gnoradas"
+RunLock             = "Ejecutar análi&sis planificado cuando el salvapantallas esté activo o el ordenador esté bloqueado"
+
+[SchedulerView_Type]
+Minutely            = "Por minutos"
+Hours               = "Por horas"
+Days                = "Por días"
+Weeks               = "Cada semana"
+AtSpecTime          = "A la hora especificada"
+Monthly             = "Cada mes"
+AtAppStartup        = "Después de iniciar la aplicación"
+AfterEveryUpdate    = "Después de cada actualización"
+
+[SchedulerView_Once]
+DateText = "Fecha y hora de ejec&ución:"
+
+[SchedulerView_AtStartup]
+AtStartup       = "Iniciar t&ras:"
+AtStartupLalel  = "minuto(s)"
+
+[SchedulerView_Minutely]
+MinuteEvery = "E&jecutar cada:"
+MinuteLalel = "minuto(s)"
+
+[SchedulerView_Hourly]
+HourEvery   = "E&jecutar cada:"
+HourLalel   = "hora(s)"
+
+[SchedulerView_Daily]
+DayEvery    = "E&jecutar cada:"
+DayLalel    = "día(s)"
+
+[s_IsWorkingDay]
+5       = 0
+6       = 0
+default = 1
+
+[SchedulerView_Weekly]
+WeekDays        = "Ejecutar los días:"
+WeekDay0Text    = "Lun"
+WeekDay1Text    = "Mar"
+WeekDay2Text    = "Mié"
+WeekDay3Text    = "Jue"
+WeekDay4Text    = "Vie"
+WeekDay5Text    = "Sáb"
+WeekDay6Text    = "Dom"
+
+[SchedulerView_Monthly]
+MonthEvery  = "Ejecutar ca&da:"
+MonthLalel  = "del mes"
+
+[SchedulerView_PostponeStart]
+PostponeDescription = "&Posponer ejecución después del inicio de la aplicación durante:"
+TimeSpanUnits       = "minuto(s)"
+
+; Scheduler switches
+
+[Global]
+$g_firstdayofweek = firstdayofweek()
+$SchedulerExactTime = " a las " + timeshort(Time)
+$SchedulerWeekDays    = if($g_firstdayofweek <= 0 && WeekDay0, "Lun ") + if($g_firstdayofweek <= 1 && WeekDay1, "Mar ") + if($g_firstdayofweek <= 2 && WeekDay2, "Mié ") + if($g_firstdayofweek <= 3 && WeekDay3, "Jue ") + if($g_firstdayofweek <= 4 && WeekDay4, "Vie ") + if($g_firstdayofweek <= 5 && WeekDay5, "Sáb ") + if(WeekDay6, "Dom ") + if($g_firstdayofweek > 0 && WeekDay0, "Lun ") + if($g_firstdayofweek > 1 && WeekDay1, "Mar ") + if($g_firstdayofweek > 2 && WeekDay2, "Mié ") + if($g_firstdayofweek > 3 && WeekDay3, "Jue ") + if($g_firstdayofweek > 4 && WeekDay4, "Vie ") + if($g_firstdayofweek > 5 && WeekDay5, "Sab ")
+
+
+[SchedulerEvery]
+#schEveryDays       = "&Cada día " + DaysCount + ""
+#schEveryWeekday    = "Cada día de la &semana"
+#schEveryHoliday    = "Cada &fin de semana"
+
+[SchedulerType]
+#schtMinutely       = "Cada " + MinutesCount + " &minuto(s)"
+#schtHourly         = "Cada " + HoursCount + " &hora(s)"
+#schtDaily          = switch(Every, "SchedulerEvery") + $SchedulerExactTime
+#schtWeekly         = $SchedulerWeekDays + if(UseTime, "a las " + timeshort(Time))
+#schtExactTime      = "&Una vez" + if(Time, " a las " + datetime_notz(Time))
+#schtMonthly        = "El &día " + DaysCount + " de cada mes" + $SchedulerExactTime
+#schtOnStartup      = "Al &iniciar la aplicación"
+#schtAfterUpdate    = "Después de cada act&ualización de las bases"
+def                 = "No definido"
+
+[SchedulerDescription]
+#schmManual     = "Manual"
+#schmEnabled    = noAmpersand(switch(Type, "SchedulerType"))
+#schmAuto       = "Automático"
+def             = "Modo desconocido"
+
+[HeuristicParams]
+LevelLow    = "análisis superficial"
+LevelMed    = "análisis medio"
+LevelHigh   = "análisis avanzado"
+
+[PauseTaskGroup]
+@           = "Suspender tarea"
+SheduleBtn  = "&Planificación..."
+Schedule    = "Mediante planifi&cación"
+AppStart    = "Al i&niciar la aplicación"
+AppStartBtn = "&Seleccionar..."
+
+[PauseTaskScheduleSettings]
+@ = "Suspensión de la tarea"
+
+[PauseTaskScheduleSettings_Body]
+FromLabel   = "Suspender la tarea a las"
+ToLabel     = "Reanudar la tarea a las"
+
+[PauseTaskAppSettings]
+@ = "Aplicaciones"
+
+[ScanAction]
+#SCAN_ACTION_REPORT     = "Autorizar descarga"
+#SCAN_ACTION_ASKUSER    = Interactive ? "Preguntar al usuario" : "Acción automática"
+#SCAN_ACTION_DETECT     = "Bloquear descarga"
+#SCAN_ACTION_POSTPONE   = Interactive ? "Preguntar al finalizar" : "Acción automática"
+#SCAN_ACTION_DISINFECT  = if(!TryDelete && !TryDisinfect, (persistent ? "Bloquear" : "Informar")) + if(TryDisinfect, "Desinfectar") + if(TryDelete, TryDisinfect ? ", eliminar si no se puede desinfectar" : "Eliminar")
+#SCAN_ACTION_ASKDETECT  = Interactive ? "Preguntar al usuario" : "Acción automática"
+default                 = "Indefinido" + " (código: " + @ + ")"
+
+[ScanActionMenu]
+AskFinish       = Interactive ? "Preguntar al terminar" : "Acción automática"
+AskDetect       = Interactive ? "Preguntar al usuario" : "Acción automática"
+DontAsk         = "Seleccionar acción:"
+TryDisinfect    = "Desinfectar"
+TryDelete       = TryDisinfect ? "Eliminar si falla la desinfección" : "Eliminar"
+
+[Treat_Group]
+AskDetect       = Interactive ? "Preguntar al usuario" : "Acción automática"
+DontAsk         = "Seleccionar acción:"
+Action			= (TryDisinfect && TryDelete) ? "Desinfectar y, si no es posible, eliminar" : (TryDisinfect ? "Desinfectar" :(TryDelete ? "Eliminar": "Bloquear"))
+TryDisinfect    = "&Desinfectar"
+TryDelete    	= TryDisinfect ? "&Eliminar si falla la desinfección" : "&Eliminar"
+
+[Treat_Group_ods]
+AskFinish       = Interactive ? "Preguntar al &finalizar" : "Acción a&utomática"
+AskDetect       = Interactive ? "&Preguntar en caso de detección" : "Acción a&utomática"
+DontAsk         = "&Seleccionar acción:"
+Action			= (TryDisinfect && TryDelete) ? "Desinfectar, si no es posible: eliminar" : (TryDisinfect ? "Desinfectar" :(TryDelete ? "Eliminar": "Informar") )
+Report          = "&Informar"
+TryDisinfect    = "&Desinfectar objetos cuando sea posible"
+TryDelete       = TryDisinfect ? "&Eliminar si falla la desinfección" : "&Eliminar"
+
+[WMTreat_Group]
+Ask     = Interactive ? "Preguntar al usuari&o" : "Acción aut&omática"
+Block   = "&Bloquear descarga"
+Allow   = "Autori&zar descarga"
+
+[SchedulerModeMenu]
+Auto    = "Automático"
+Manual  = "Manual"
+
+[Firewall_Networks]
+Text = "Descripción de la regla (haga clic en los subrayados para modificar):"
+
+[Firewall_Networks_NetList]
+Network     = "Zona"
+Severity    = "Categoría"
+Stealthed   = "Invisibilidad"
+Desc        = "Descripción"
+
+[FwZoneSeverity]
+#Fw_znTrusted   = "De confianza"
+#Fw_znNetBIOS   = "Red local"
+#Fw_znUntrusted = "Internet"
+
+;-------------------------------- OptionsWindow --------------------------------
+
+[OptionsWindow]
+@ = "Configuración"
+Footer.Link1 = "Restaurar"
+
+[OptionsWindow_Main_Navigator_WorkArea]
+@                    = sz(p,p)
+Protection.tt = "Centro de protección"
+Scan.tt       = $Scan_Title
+Updater.tt    = "Centro de Actualización"
+Appearance.tt = "Configuración avanzada"
+
+[OptionsWindow_Protection_Navigator_Btns]
+Caption               = "Centro de protección"
+Protection.Descr.Text = "Parámetros generales"
+
+[OptionsWindow_Cont.Protection]
+@.Caption.TaskName      = "Parámetros generales de protección"
+@.Caption.TaskDesc      = "De forma predeterminada, " + $ProductName + " se inicia automáticamente al arrancar el sistema para proteger su equipo durante su sesión de trabajo."
+@.Enable                = "&Activar la protección" 
+
+[OptionsWindow_Cont.File_Monitoring]
+@.Caption.TaskDesc = "Esta función analiza todos los archivos abiertos, guardados y activos para garantizar la máxima protección en todo momento."
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Cont.Mail_Monitoring]
+@.Caption.TaskDesc = "Esta función analiza los mensajes entrantes y salientes en busca de objetos peligrosos. Se admiten los protocolos siguientes: POP3, SMTP, IMAP, MAPI y NNTP."
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Cont.Web_Monitoring]
+@.Caption.TaskDesc  = "Esta característica protege el tráfico Web entrante y evita la ejecución de scripts peligrosos en el equipo." 
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Cont.IM_Monitoring]
+@.Caption.TaskDesc   = "Esta característica protege el tráfico de los siguientes programas de mensajería instantánea: ICQ, MSN, Yahoo!, Jabber, Google Talk, Mail.Ru Agent e IRC."
+@.Enable			 = "&Activar " + $IMAntivirus
+
+[OptionsWindow_Cont.HipsTask]
+@.Caption.TaskDesc        = "Esta función clasifica todas las aplicaciones y restringe su comportamiento en función del grupo."
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Cont.SW2]
+@.Caption.TaskName             = "System Watcher"
+@.Caption.TaskDesc             = "Esta característica controla las actividades de la aplicación en el sistema le permite deshacer cambios de acciones maliciosas."
+@.Enable                       = "&Activar System Watcher"
+
+[OptionsWindow_Navigator_SystemWatcher_AutoExploitPrevention]
+Enable                  = "Activar protección frente a vulnerabilidades"
+
+[OptionsWindow_Navigator_SystemWatcher_Body]
+Level                   = "Análisis heurístico"
+Action                  = "Deshacer acciones de software malicioso"
+
+[AutomaticExploitPreventionSettings]
+@ = "Configuración frente a vulnerabilidades"
+
+[AutomaticExploitPreventionSettings_Body]
+Descr = "En caso de intento de realización de una operación no autorizada:"
+
+[AutomaticExploitPreventionSettings_Cont]
+ActionAsk	= Interactive ? "&Preguntar al usuario" : "Seleccionar la acción au&tomáticamente"
+ActionAllow	= "&Autorizar acción"
+ActionBlock	= "&Bloquear acción"
+
+[OptionsWindow_Cont.Firewall]
+@.Caption.TaskDesc        = "Esta función filtra toda la actividad de red en función a las reglas específicas."
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Cont.ids]
+@.Caption.TaskDesc             = "Esta función detecta ataques y actividades de red peligrosas, y defiende al equipo frente a estos."
+@.Enable                       = "Acti&var el Sistema de prevención de intrusiones"
+
+[OptionsWindow_Cont.Anti_Spam]
+@.Caption.TaskDesc       = "Esta característica filtra el correo no deseado (o spam) de acuerdo con las reglas de su cliente de correo electrónico."
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Cont.AdBlocker]
+@.Caption.TaskDesc       = "Esta función bloquea anuncios y banners en el navegador Web y en algunas aplicaciones."
+@.Enable = "&Activar " + switch(name, "ProfileName")
+
+[OptionsWindow_Scan_Navigator_Btns]
+Caption         = $Scan_Title
+Scan.Descr.Text = "Parámetros generales"
+
+[OptionsWindow_Navigator_WorkArea_Scan]
+Caption.TaskName = "Parámetros generales de análisis"
+
+[OptionsWindow_Cont.Scan_My_Computer]
+@.Caption.TaskName = "Parámetros de Análisis completo"
+
+[OptionsWindow_Cont.Scan_Startup]
+@.Caption.TaskName = "Parámetros de Análisis de áreas críticas"
+
+[OptionsWindow_Cont.Scan_Objects]
+@.Caption.TaskName = "Configuración de análisis personalizado"
+
+[OptionsWindow_Cont.Scan_Vulnerabilities]
+@.Caption.TaskName = "Parámetros de Análisis de vulnerabilidades"
+@.Caption.TaskDesc = "Buscar en su sistema y en sus aplicaciones vulnerabilidades que puedan permitir ataques maliciosos."
+
+[OptionsWindow_Updater_Navigator_Btns]
+Caption            = "Actualización"
+Updater.Descr.Text = "Parámetros de actualización"
+
+[OptionsWindow_Updater_Navigator_WorkArea]
+Updater.Caption.TaskName = "Configuración de la actualización de la aplicación"
+
+[OptionsWindow_Navigator_WorkArea_Profiles]
+Caption.TaskName       = "Parámetros de Perfil para juegos"
+Caption.TaskDesc       = "Puede configurar y activar el perfil para juegos, un modo especial que desactiva automáticamente parte de la funcionalidad de " + $ProductName_GEN + " (como las notificaciones) cuando se inician aplicaciones como juegos en el modo de pantalla completa."
+
+[OptionsWindow_Navigator_WorkArea_Profiles_Body]
+EnableGaming  = "Usar Perfil para jue&gos"
+Options       = "Opciones del perfil"
+
+[OptionsWindow_Navigator_WorkArea_Profiles_Body_Options]
+SuppressInteractive = "Seleccionar una acción respecto a la detección de amenazas &automáticamente"
+SuppressUpdates     = "No ejecutar la a&ctualización"
+SuppressSheduleScan = "No ejecutar tareas de análisis &planificadas"
+SuppressManualScan  = "Suspender las tareas de análisis ejecutadas &manualmente"
+
+[OptionsWindow_Appearance_Navigator_Btns]
+Caption                    = "Configuración avanzada"
+Appearance.Descr.Text      = "Parámetros generales"
+SelfProt.Descr.Text        = "Autoprotección"
+Battery.Descr.Text         = "Ahorro de batería"
+Compatibility.Descr.Text   = "Compatibilidad"
+Threats.Descr.Text         = "Amenazas y Exclusiones"
+Traffic.Descr.Text         = "Red"
+Notifications.Descr.Text   = "Notificaciones"
+Reports.Descr.Text         = "Informes y cuarentena"
+Feedback.Descr.Text        = "Participación"
+Gui.Descr.Text             = "Apariencia"
+Profiles.Descr.Text        = "Perfil para juegos"
+Manage.Descr.Text          = "Administrar parámetros"
+
+[OptionsWindow_Cont.SelfProt]
+@.Caption.TaskName      = "Parámetros de autoprotección"
+@.Caption.TaskDesc      = "Puede activar la autoprotección y desactivar el control de servicios externos para aumentar la seguridad del equipo."
+@.Enable                = "Ac&tivar la Autoprotección"
+
+[OptionsWindow_Cont.Battery]
+@.Caption.TaskName       = "Parámetros de ahorro de batería"
+@.Enable                 = "Desactivar tareas de análisis planificadas mientras el equipo funcione por &batería"
+
+[OptionsWindow_Cont.Compatibility]
+@.Caption.TaskName = "Parámetros de compatibilidad"
+@.Caption.TaskDesc = "Puede configurar la compatibilidad de " + $ProductName_GEN + " con otras aplicaciones para evitar conflictos y pérdidas de rendimiento."
+@.Enable           = "Activar tecnología de &desinfección avanzada"
+
+[OptionsWindow_Cont.ParCtl]
+@.Caption.TaskDesc        = "Restringir y controlar el tiempo del usuario en el equipo, el acceso a Internet, las descargas de archivos, la mensajería instantánea, la navegación por sitios Web, el inicio de aplicaciones, etc."
+
+[OptionsWindow_Cont.Manage]
+@.Caption.TaskName        = "Administrar su configuración de " + $ProductName_GEN + ""
+@.Caption.TaskDesc        = "Esta función permite guardar y gestionar su configuración de " + $ProductName_GEN + ", exportarla a otro equipo o volver, cuando lo desee, a la configuración predeterminada."
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body]
+EnableProt      = "Ac&tivar la protección"
+RunOnStartup    = "Autoejecución"
+Interaction     = "Protección interactiva"
+Pswd            = "Protección con contraseña"
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_Interaction]
+Disable = "Seleccionar la acción a&utomáticamente"
+DontDel = "No eliminar objetos que estén posi&blemente infectados"
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_Pswd]
+Pswd = "&Proteger con contraseña el acceso a la configuración de la aplicación"
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_RunOnStartup]
+RunOnStartup    = "&Ejecutar " + $ProductName + " al arrancar el equipo"
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_Manage]
+Load    = "Parámetros de carga"
+Reset   = "Restaurar configuración predeterminada"
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_Manage_Save]
+Descr   = "Especificar una ruta para guardar el archivo de configuración:"
+Save    = "&Guardar..."
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_Manage_Load]
+Descr   = "Especificar un archivo de configuración guardado anteriormente:"
+Load    = "Ca&rgar..."
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_Manage_Reset]
+Descr   = "Seleccionar la configuración cuyos valores predeterminados desea restaurar:"
+
+[OptionsWindow_Navigator_WorkArea_Threats]
+Caption.TaskName = "Configuración de detección de objetos y reglas de exclusión"
+Caption.TaskDesc = "Puede elegir las categorías de los objetos que desea detectar y agregar reglas de exclusión para resolver los problemas de compatibilidad."
+
+[OptionsWindow_Navigator_WorkArea_Threats_Body]
+Exclusions  = "Exclusiones"
+
+[OptionsWindow_Navigator_WorkArea_Threats_Body_Threats]
+Descr           = "<b>Está activada la detección de los siguientes tipos de objetos:</b>"
+MalwareDescr    = "- virus, gusanos, troyanos" + if(DetectTypeMask2 & 0x0001, " y herramientas maliciosas") + ";"
+UnwantedDescr   = if(DetectTypeMask3 & 0x0001, "- software publicitario" + if(DetectTypeMask4 & 0x0001, ", herramientas de marcación automática") + if(DetectTypeMask5 & 0x0001, " y otras amenazas") + ";", \
+                     if(DetectTypeMask4 & 0x0001, "- herramientas de marcación automática" + if(DetectTypeMask5 & 0x0001, " y otras amenazas") + ";", \
+                        if(DetectTypeMask5 & 0x0001, "- etc.;")))
+PackersDescr    = if(PackerTypeMask & #DETPACKER_SUSPICIOUS, "- programas de compresión desconocidos" + if(PackerTypeMask & #DETPACKER_MULTIPACKED, " y archivos multicomprimidos") + ";", \
+                      if(PackerTypeMask & #DETPACKER_MULTIPACKED, "- archivos multicomprimidos;"))
+
+[OptionsWindow_Navigator_WorkArea_Threats_Body_Exclusions]
+DescrExcludes = "Reglas: " + AVService.Excludes.size("Activar") + " (total " + AVService.Excludes.size() + ")"
+DescrProcMon  = "Aplicaciones de confianza: " + ProcMon.aItems.size("bActivar") + " (total " + ProcMon.aItems.size() + ")"
+
+[OptionsWindow_Navigator_WorkArea_Notifications]
+Caption.TaskName = "Configuración de notificación"
+Caption.TaskDesc = "Las notificaciones le permiten recibir información útil sobre seguridad de equipos y responder con rapidez a eventos importantes."
+
+[OptionsWindow_Navigator_WorkArea_Notifications_Body]
+WDescr = "Cuando ejecute aplicaciones en el modo de pantalla completa, las notificaciones no se mostrarán aunque tenga activada la visualización en \"Notificar acerca de los eventos\"."
+
+[OptionsWindow_Navigator_WorkArea_Notifications_Body_NotifyGroup]
+Enable                  = "Activar &notificaciones de eventos"
+Sound                   = "Notificaciones de audio"
+Email                   = "Notificaciones por correo electrónico"
+
+[OptionsWindow_Navigator_WorkArea_Notifications_Body_NotifyGroup_Sound]
+UseNotificationsSound   = "Activar notificaciones de au&dio"
+EnableClassicSounds     = "Usar los sonidos predeterminados de &Windows"
+
+[OptionsWindow_Navigator_WorkArea_Notifications_Body_NotifyGroup_Email]
+UseNotificationsMail    = "Activar n&otificaciones de correo"
+MailSettings            = "Con&figuración..."
+
+[OptionsWindow_Navigator_WorkArea_Traffic]
+Caption.TaskName = "Parámetros de Control del tráfico de red y del Servidor proxy"
+
+[OptionsWindow_Navigator_WorkArea_Traffic_Body]
+Ports       = "Puertos vigilados"
+Crypted     = "Análisis de conexiones cifradas"
+Proxy       = "Servidor proxy"
+NetDetails  = "Análisis de paquetes de red"
+
+[OptionsWindow_Navigator_WorkArea_Traffic_Body_Ports]
+All     = "Vigilar &todos los puertos de red"
+Custom  = "&Vigilar solo los puertos seleccionados"
+Select  = "&Seleccionar..."
+
+[OptionsWindow_Navigator_WorkArea_Traffic_Body_Crypted]
+ChkAll  = "Analizar c&onexiones cifradas"
+Cert    = "Instalar certi&ficado..."
+Warn    = "Algunos sitios Web pueden no estar disponibles cuando está activado el análisis de SSL, incluso después de instalar el certificado de Kaspersky Lab."
+
+[OptionsWindow_Navigator_WorkArea_Traffic_Body_Proxy]
+Desc  = "Si se conecta a Internet mediante un servidor proxy, se le pedirá que especifique la configuración de conexión del servidor proxy para obtener un rendimiento adecuado de algunos componentes de protección."
+Proxy = "Configuración Servidor Pro&xy..."
+
+[OptionsWindow_Navigator_WorkArea_Traffic_Body_NetDetails]
+Enable = "&Mostrar acceso \"Análisis de paquetes de red\""
+
+[OptionsWindow_Navigator_WorkArea_Reports]
+Caption.TaskName = "Configuración de informes y cuarentena"
+Caption.TaskDesc = "Puede seleccionar los tipos de eventos que se deben registrar en los informes, especificar los parámetros de almacenamiento de informes y eliminar los informes seleccionados."
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body]
+LogNotImp   = "R&egistrar los eventos sin gravedad"
+EventLog    = "Almacenamiento de informes"
+QB          = "Almacenamiento de objetos en cuarentena"
+Clear       = "Eliminar informes"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_Clear]
+Descr       = "Seleccionar informes de los que se desee borrar información:"
+Clear       = "Bor&rar..."
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_EventLog]
+LogFile     = "Re&gistrar los eventos del sistema de archivos"
+LogReg      = "Registrar los &eventos del Registro"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_EventLog_Period]
+PeriodLable = "día(s)"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_EventLog_Period_Period]
+Period      = "&Conservar informes un máximo de"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_EventLog_Size]
+SizeLable   = "MB"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_EventLog_Size_Size]
+Size        = "Tamaño &máximo de archivo:"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_QB_Period]
+PeriodLable = "día(s)"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_QB_Period_Period]
+Period      = "Conservar ob&jetos un máximo de:"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_QB_Size]
+SizeLable   = "MB"
+
+[OptionsWindow_Navigator_WorkArea_Reports_Body_QB_Size_Size]
+Size        = "Tamaño má&ximo:"
+
+[OptionsWindow_Navigator_WorkArea_Appearance]
+Caption = "Configurar parámetros generales de " + $ProductName + "" 
+
+[OptionsWindow_Navigator_WorkArea_Appearance_Body]
+Performance = "Compatibilidad"
+Manage      = "Administrador de configuraciones"
+
+[OptionsWindow_Navigator_WorkArea_Protection_Body_VK]
+@               = "Teclado virtual"
+EnableVK        = "Abrir el Teclado &Virtual tecleando \"CTRL+ALT+MAYÚS+P\""
+
+[OptionsWindow_Navigator_WorkArea_Appearance_Body_SelfProt]
+SelfProtDescr   = "Al activar la autoprotección, puede bloquear intentos externos de modificar o eliminar archivos, procesos de memoria y registros del Registro del sistema de " + $ProductName_GEN + "."
+ServiceControl  = "Control externo"
+
+[OptionsWindow_Navigator_WorkArea_Appearance_Body_SelfProt_ServiceControl]
+ServiceControl      = "De&sactivar el control remoto de servicios"
+ServiceControlDescr = "Cuando está activada, la configuración bloquea todos los intentos de control de servicios de forma remota."
+
+[OptionsWindow_Navigator_WorkArea_Appearance_Body_Battery_TaskDesc]
+Paragraph1 = "Las tareas de análisis de virus y de actualización pueden llevar tiempo y consumir batería."
+Paragraph2 = "Si está utilizando " + $ProductName + " en un equipo portátil, seleccione esta opción para evitar ejecutar análisis programados y actualizaciones mientras se esté recibiendo alimentación de la batería."
+
+[OptionsWindow_Navigator_WorkArea_Appearance_Body_Compatibility]
+Abs         = "Facilitar &recursos para otras aplicaciones"
+AbsDescr    = "Esta función pospone las tareas de análisis programados en caso de sobrecarga de la CPU y los subsistemas de disco."
+
+[OptionsWindow_Navigator_WorkArea_Appearance_Body_Compatibility_AdvDisDescr]
+Descr  = "Esta función permite la realización de un procedimiento de desinfección especial y exhaustivo (tecnología de desinfección avanzada) del software malicioso activo que se haya detectado."
+WarningDescr = "Atención. La desinfección avanzada requiere un número considerable de recursos del equipo, lo que puede ralentizar su rendimiento general."
+
+[OptionsWindow_Navigator_WorkArea_Feedback]
+Caption.TaskName = "Comentarios para Kaspersky Security Network"
+
+[OptionsWindow_Navigator_WorkArea_Feedback_Body]
+Ksn     = "Ac&epto participar en Kaspersky Security Network"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch]
+Caption = "Configurar la supervisión de la actividad de aplicaciones"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body]
+Enable = "Acti&var el Control de aplicaciones"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_HipsTask]
+Trust = "Restringir aplicaciones"
+Misc = "Avanzado"
+Groups = "Reglas del grupo"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_HipsTask_Btns]
+Descr     = "Configurar reglas de aplicaciones, proteger datos personales y otros recursos:"
+Resources = "Protección de la i&dentidad"
+Programs  = "A&plicaciones"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_HipsTask_Trust]
+Sign = "Con&fiar en aplicaciones con firma digital"
+KSN = "Cargar reg&las para aplicaciones de Kaspersky Security Network (KSN)"
+UpdateKSN = "Act&ualizar reglas de aplicaciones anteriormente desconocidas desde KSN"
+Others = "Para aplicaciones desconocidas:"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_HipsTask_Trust_Others]
+UseRating = "Utilizar el análisis &heurístico para determinar el grupo"
+SetStatus = "Mover al &siguiente grupo automáticamente:"
+AnalyzeTimeout = "Tiempo &máximo para determinar el grupo de la aplicación:"
+AnalyzeTimeoutSec = "seg."
+
+[OptionsWindow_Navigator_WorkArea_ParCtl_Body_Users_ListArea_Toolbar]
+Edit.Label = "Configurar"
+
+[DefaultAppStatus]
+Trusted   = "De confianza"
+LoRest    = "Restricción mínima"
+HiRest    = "Restricción máxima"
+Untrusted = "No fiable"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_HipsTask_Misc]
+ClearTimeout = "Eliminar reglas de aplicaciones que &no se hayan iniciado\ndurante más de"
+ClearTimeOutDays = "día(s)"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_HipsTask_Groups]
+Groups = "Con&figurar reglas..."
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_Firewall]
+Groups = "Reglas para red"
+Networks = "Redes"
+
+[OptionsWindow_Navigator_WorkArea_SystemWatch_Body_Firewall_Groups]
+Description = "Las reglas de tráfico de red permiten o bloquean la transferencia de datos en función de la dirección, protocolo de transferencia, direcciones de destino y puertos."
+Groups = "C&onfiguración"
+
+[RollbackAction]
+ActionOff	= "&No deshacer"
+ActionAuto	= "&Deshacer automáticamente"
+ActionAsk	= "Preguntar al us&uario"
+
+[OptionsWindow_Navigator_WorkArea_OnlineSecurity]
+Caption = "Configurar la protección contra ataques de red"
+
+[OptionsWindow_Navigator_WorkArea_OnlineSecurity_Body]
+Enable = "Ac&tivar la Protección de privacidad"
+
+[OptionsWindow_Navigator_WorkArea_OnlineSecurity_Body_antiphishing]
+Enable = "&Activar Antifraudes"
+
+[OptionsWindow_Navigator_WorkArea_OnlineSecurity_Body_ids]
+Enable = "Acti&var el Sistema de prevención de intrusiones"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_IM_Monitoring]
+Directions		= "Cobertura de protección"
+FilterMethods	= "Métodos de análisis"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_IM_Directions]
+All         = "Mensajes e&ntrantes y salientes"
+Incoming    = "Solo &mensajes entrantes"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_IM_Filter_Methods]
+EnableWMUFCheck			= "&Comprobar si las URL figuran en la base de datos de direcciones URL maliciosas"
+EnableAntiphishingCheck = "Comprobar si las URL están presentes en la base de datos de URL &fraudulentas"
+UseHeuristic			= "Análisis &heurístico"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_AdBlocker]
+Enable = "Activar &Anti-Banner"
+Use = "Métodos de análisis"
+Misc = "Configuración de reglas"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_AdBlocker_Use]
+UseDatabase   = "&Utilizar la lista de publicidades comunes"
+ResolveIp     = "Resolver direcciones &IP a nombres de dominio"
+UseHeuristics = "U&tilizar análisis heurístico"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_AdBlocker_Misc]
+UseBlacklist = "Utilizar la lista de direcciones URL &bloqueadas"
+UseWhiltelist = "Utilizar la lista de direcciones URL &permitidas"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_ParCtl]
+Enable  	= "Activar el &Control Parental"
+Profiles        = "Perfiles de funcionamiento"
+
+[OptionsWindow_Navigator_WorkArea_ContentFilter_Body_ParCtl_Profiles]
+ComboLabel     = "&Perfil de usuario actual (" + username(UserId) + "):"
+ProfileText    = "Haga clic en \"" + $ParCtl + "\" en el menú contextual de la aplicación para cambiar rápidamente entre perfiles."
+
+[OptionsWindow_Navigator_WorkArea_Updater_Body]
+NullStr = !$IsRD ? "Modo de ejecución y origen de actualizaciones" : "Actualizar origen"
+Misc    = "Avanzado"
+
+[OptionsWindow_Navigator_WorkArea_Updater_Body_CheckVer]
+CheckNewVer = "&Notificar cuando haya actualizaciones y versiones nuevas disponibles"
+
+[OptionsWindow_Navigator_WorkArea_Gui]
+Caption.TaskName = $ProductName + ": configuración de pantalla"
+Caption.TaskDesc = "Puede configurar la visualización de elementos activos de la interfaz de " + $ProductName_GEN + " (icono de la aplicación que aparece en el menú de tareas de Microsoft Windows y notificaciones emergentes)."
+
+[OptionsWindow_Navigator_WorkArea_Template_Body]
+Enable = "Activar " + switch(ctl.parent.parent.id, "ProfileNameHK")
+Level = "Nivel de seguridad"
+Action = "Acción al detectar una amenaza"
+
+[OptionsWindow_Navigator_WorkArea_3level_Level]
+DescriptionCustom = "Haga clic en <Predeterminado> para restablecer la configuración predeterminada"
+DefaultBtn = "Prede&terminado"
+Settings   = "Co&nfiguración..."
+
+[OptionsWindow_Navigator_WorkArea_3level_Action]
+OnDetection.Name    = "En caso de detectar una amenaza:"
+
+[OptionsWindow_Navigator_WorkArea_3level_SystemWatcher_Level]
+UseBSS       = "Usar firmas Behavior Stream Signatures (&BSS)"
+
+[OptionsWindow_Navigator_WorkArea_3level_SystemWatcher_Level_ReactionTypeBtns]
+ActionLabel = "Al detectar actividad de software malicioso:"
+Auto        = Interactive ? "&Preguntar al usuario" : "Seleccionar la acción au&tomáticamente"
+Manual      = "Seleccionar acc&ión"
+
+[OptionsWindow_Navigator_WorkArea_3level_SystemWatcher_Level_ReactionTypeBtns_ManualActionType]
+MoveFileToQuarantine = "Eliminar"
+TerminateApp         = "Terminar con el software malicioso"
+Ignore               = "Omitir"
+UserAsk				 = "Preguntar al usuario"
+
+[OptionsWindow_Navigator_WorkArea_3level_SystemWatcher_Action]
+HistoryFileLimit = "Limitar los datos que se van a almacenar para deshacerse:"
+SizeLable        = "MB"
+
+[OptionsWindow_Navigator_WorkArea_3level_SystemWatcher_Action_ReactionTypeBtns]
+ActionLabel = "Al detectar la posibilidad de deshacer acciones de software malicioso:"
+Auto        = Interactive ? "P&reguntar al usuario" : "Seleccionar la acción a&utomáticamente"
+Manual      = "&Seleccionar acción:"
+
+[OptionsWindow_Navigator_WorkArea_3level_SystemWatcher_Action_ReactionTypeBtns_ManualActionType]
+MakeRollback      = "Deshacer"
+DonotMakeRollback = "No deshacer"
+RequestActionType = "Preguntar al usuario"
+
+[OptionsWindowLevelDescription]
+default = switch(level,"uni_level_description")
+
+[uni_level_description]
+#SETTINGS_LEVEL_DEFAULT	= "- Protección máxima\n- Recomendada para la mayoría de usuarios"
+#SETTINGS_LEVEL_LOW	= "- Protección mínima\n- Rendimiento máximo"
+#SETTINGS_LEVEL_HIGH	= "- Protección máxima\n- Recomendada para aquellos usuarios que trabajen en un entorno de riesgo"
+
+[SettingsWindowName]
+File_Monitoring = "FileMonSettings"
+Mail_Monitoring = "MailMonSettings"
+Web_Monitoring  = "WebMonSettings2"
+IM_Monitoring   = "IMMonSettings"
+Anti_Spam       = "AntiSpamSettings"
+
+[OptionsWindow_Navigator_WorkArea_Scan_CreateShortcuts]
+Scan_Startup.Label = "Análisis de áreas críticas"
+
+[OptionsWindow_Navigator_WorkArea_Scan_Vulnerabilities_Body]
+StartupMode = "Modo de ejecución"
+ObjectList  = "Cobertura del análisis"
+
+[custom_scan_footer]
+Settings = "Modo de ejecución" + if(name != "Scan_Objects", " y cobertura del análisis")
+
+[custom_scan_footer_StartupMode]
+Settings  = "&Modo de ejecución..."
+
+[custom_scan_footer_ObjectList]
+Settings = "C&obertura del análisis..."
+
+[ScanObjectsList]
+@   = "Cobertura del análisis"
+
+[OptionsWindow_Navigator_WorkArea_Scan_Body]
+IdleScan = "Análisis en segundo plano"
+RemovableDisksAutoScan = "Analizar las unidades extraíbles al conectarlas"
+CreateShortcuts = "Ejecución rápida de tareas de análisis"
+
+[CreateShortcut]
+Label = switch(name, "ProfileName")
+CreateShortcut = s_HotKeyCreateShortcut(ctl.parent.id)
+
+[s_HotKeyCreateShortcut]
+; "&" should lift depends on lanquage
+Scan_My_Computer     = "Crear acceso &directo..."
+Scan_Startup         = "Crear acceso direc&to..."
+Scan_Vulnerabilities = "C&rear acceso directo..."
+
+[OptionsWindow_Navigator_WorkArea_Scan_IdleScan]
+Description    = "El análisis en inactividad permite ejecutar tareas con un consumo alto de recursos, tales como las actualizaciones automáticas, análisis del sistema, análisis de objetos de inicio o análisis de la unidad del sistema, mientras el equipo está inactivo. Además, puede activar el análisis de procesos ocultos en segundo plano."
+EnableIdleScan = "E&jecutar Análisis en inactividad"
+Scan_Qscan_Enable = "Realizar búsqueda de pr&ocesos ocultos"
+
+[OptionsWindow_Navigator_WorkArea_Scan_RemovableDisksAutoScan]
+Size			= "Tamaño má&ximo de unidad:"
+SizeLabel		= "MB"
+
+[custom_Anti_Spam_footer]
+Training = "Aprendizaje antispam"
+
+[custom_Anti_Spam_footer_Training]
+$AntiSpamNeedTrain = "Se necesita información"
+$AntiSpamFilled    = "Completado"
+Description        = "El asistente de aprendizaje le permite entrenar el antispam con ejemplos reales de correos electrónicos de su buzón para lograr una mejor detección antispam."
+StatusLabel        = "Bases antispam: "
+Start              = "&Ejecutar..."
+
+[OptionsWindow_Navigator_WorkArea_Gui_Body]
+Tray    = "Icono en el área de notificaciones de la barra de tareas"
+Locale  = "Idioma de la interfaz"
+
+[OptionsWindow_Navigator_WorkArea_Gui_Body_Tray]
+Tray            = "A&nimar el icono en la barra de sistema durante la ejecución de tareas"
+Transparency    = "Ac&tivar ventanas de notificación semitransparentes"
+Login           = "Mostrar \"Protected by Kaspersky Lab\" en la pantalla del inicio de Microsoft &Windows"
+
+[OptionsWindow_Navigator_WorkArea_Gui_Body_News]
+News            = "Activar avisos &de noticias"
+
+[OptionsWindow_Navigator_WorkArea_Gui_Body_Skin]
+Enable = "Utilizar un aspecto a&lternativo"
+
+[OptionsWindow_Navigator_WorkArea_Proxy_Body_Settings]
+Auto    = "Detectar aut&omáticamente la configuración del servidor proxy"
+Manual  = "Usar parámetros &especificados del servidor proxy"
+UseAuth = "Utilizar autenticación del servi&dor proxy"
+Bypass  = "&No usar servidor proxy para direcciones locales"
+
+[OptionsWindow_Navigator_WorkArea_Proxy_Body_Settings_Address]
+AddressLabel    = "Di&rección:"
+Sep             = ":"
+
+[OptionsWindow_Navigator_WorkArea_Proxy_Body_Settings_Port]
+PortLabel = "P&uerto:"
+
+[OptionsWindow_Navigator_WorkArea_Proxy_Body_Settings_Login]
+LoginLabel = "&Nombre de usuario:"
+
+[OptionsWindow_Navigator_WorkArea_Proxy_Body_Settings_Pass]
+PassLabel = "&Contraseña:"
+
+[TrafficMonitor_Proxy]
+@           = "Configuración del servidor proxy"
+
+[TrafficMonitor_Proxy_Body]
+UseProxy    = "Usar servidor pro&xy"
+
+
+[OptionsWindow_Navigator_WorkArea_Updater_Body_Settings]
+Settings        = "O&rigen de actualizaciones"
+
+[OptionsWindow_Navigator_WorkArea_Updater_Body_StartupMode]
+Settings        = "&Modo de ejecución..."
+
+[OptionsWindow_Navigator_WorkArea_Threats_List_row]
+Malware     = "Software malicioso (malware)"
+Unwanted    = "Adware, marcadores automáticos y otros"
+Packers     = "Programas de compresión"
+
+[OptionsWindow_Navigator_WorkArea_Threats_List_row_Malicious]
+Viruses     = "Virus y gusanos"
+Trojans     = "Troyanos"
+Malicious   = "Otras herramientas"
+
+[OptionsWindow_Navigator_WorkArea_Threats_List_row_Unwanted]
+AdWare      = "Publicitario (Adware)"
+PornWare    = "Marcadores automáticos (auto-dialers)"
+RiskWare	= "Otro"
+
+[OptionsWindow_Navigator_WorkArea_Threats_List_row_Packers]
+Suspic  = "Programas de compresión desconocidos"
+Multi   = "Archivos multicomprimidos"
+Grey    = "Compresores \"Grises\""
+
+[KsnInfo]
+@ = "Kaspersky Security Network"
+
+[TrafficMonitor_Ports]
+@ = "Puertos de red"
+
+[TrafficMonitor_Ports_Body]
+Info = "Información"
+
+[TrafficMonitor_Ports_Body_Info]
+Text = "Recomendamos reiniciar su navegador y otros programas de red para aplicar los cambios."
+
+[TrafficMonitor_Ports_Body_List]
+Desc    = "Descripción"
+Port    = "Puerto"
+
+[TrafficMonitor_PortEdit]
+@           = "Puerto de red"
+
+[TrafficMonitor_PortEdit_Body]
+PortLabel   = "Puerto:"
+DescLabel   = "Descripción:"
+
+[TrafficMonitor_Includes_List]
+Text = "Contro&lar todos los puertos de las aplicaciones especificadas:"
+
+[TrafficMonitor_Includes_List_Body]
+ImagePath	= "Ruta" 
+Description = "Descripción"
+
+[TrafficMonitor_Includes_List_Edit_Dlg]
+@					= "Aplicación"
+
+[TrafficMonitor_Includes_List_Edit_Dlg_Body]
+ImagePathLebel		= "Ruta:"
+DescriptionLebel	= "Descripción:"
+
+
+[Global]
+$ExclusionMasksDescr_Object             = if(Triggers & #AVS_fObjectMask, "Objeto: <a ExclusionObjectEdit onclick(dialog(\"ExclusionObjectEdit\"))>" + (Object.Mask ? Object.Mask : "<b>seleccionar objeto...</b>") + "</a>\n")
+$ExclusionMasksDescr_Verdict            = if(Triggers & #AVS_fVerdictMask, "Tipo de amenaza: <a ExclusionVerdictEdit onclick(dialog(\"ExclusionVerdictEdit\"))>" + (VerdictMask ? VerdictMask + if(Triggers & #AVS_fVerdictPath, " " + VerdictPath.Mask) : "<b>introducir nombre de amenaza...</b>") + "</a>\n")
+$ExclusionMasksDescr_Components         = if(!$IsRD, "Componentes de protección: <a AnyTaskList onclick(iterate(bmask(Triggers, #AVS_fTaskList)))>" + (Triggers & #AVS_fTaskList ? "especificado" : "cualquiera") + "</a>" + if(Triggers & #AVS_fTaskList, ": <a ExclusionTasksEdit onclick(dialog(\"ExclusionTasksEdit\")) onok(if(!TaskList.size(), balloon(\"TasksNotSpecified\")))>" + (TaskList.size() ? TaskList.format("if(s_TaskTypeExcludable(e), \"\n\" + s_TaskTypeExcludable(e))") : "<b>seleccionar componentes...</b>") + "</a>"))
+$ExclusionMasksDescr                    = "El objeto no será analizado si se cumplen las siguientes condiciones:\n" + $ExclusionMasksDescr_Object + $ExclusionMasksDescr_Verdict + $ExclusionMasksDescr_Components
+$TrustedAppDescr                        = if(nTriggers & #BL_fExclNet, $TrustedAppNetDescr)
+$TrustedAppNetDescr                     = "No analizar el tráfico de red: <a SSLOnly onclick(SSLOnly = !SSLOnly)>" + (SSLOnly ? "cifrado" : "(todo)") + "</a>\n    Direcciones IP remotas <a ExclNetHost onclick(iterate(bmask(nTriggers, #BL_fExclNetHost)))>" + (nTriggers & #BL_fExclNetHost ? "especificadas" : "(cualquiera)") + "</a>" + $TrustedAppDescr_ExclNetHost_Specify + "\n    Puertos remotos <a ExclNetPort onclick(iterate(bmask(nTriggers, #BL_fExclNetPort)))>" + (nTriggers & #BL_fExclNetPort ? "especificados" : "(cualquiera)") + "</a>" + $TrustedAppDescr_ExclNetPort_Specify + "\n"
+$TrustedAppDescr_ExclNetHost_Specify    = if(nTriggers & #BL_fExclNetHost, ": <a ExclNetHost_Specify onclick(dialog(\"ExclNetHostsEdit\"))>" + (Hosts.size() ? f_formatIpAddr(Hosts) : "<b>especificar</b>") + "</a>")
+$TrustedAppDescr_ExclNetPort_Specify    = if(nTriggers & #BL_fExclNetPort, ": <a ExclNetPort_Specify onclick(dialog(\"ExclNetPortsEdit\"))>" + (Ports.size() ? f_formatPortsSimple(Ports) : "<b>especificar</b>") + "</a>")
+ObjectNotSpecified.caption              = "Objeto sin especificar"
+ObjectNotSpecified                      = "Especifique exactamente el nombre o máscara del nombre del objeto."
+WrongExclusionPath.caption              = "Objeto no válido"
+WrongExclusionPath                      = "El nombre del objeto contiene caracteres no aceptados (<>:\"|) o coincide con el nombre de una unidad de sistema"
+VerdictNotSpecified.caption             = "Resultado sin especificar"
+VerdictNotSpecified                     = "Especifique el nombre exacto de la amenaza la máscara del tipo de amenaza."
+TasksNotSpecified.caption               = "Componentes de protección sin especificar"
+TasksNotSpecified                       = "Especifique los componentes necesarios de la protección."
+AdressNotSpecified.caption              = "Dirección sin especificar"
+AdressNotSpecified                      = "Especifique exactamente la dirección o máscara de dirección."
+WordNotSpecified.caption                = "Frase sin especificar"
+WordNotSpecified                        = "Especifique una frase o máscara de frase."
+PathNotSpecified.caption                = "No se ha especificado la ruta"
+PathNotSpecified                        = "Introduzca la ruta de la aplicación."
+
+[ExclusionEdit]
+@           = "Regla de exclusión"
+
+[ExclusionEdit_Body]
+PropLabel   = "Propiedades:"
+NameLabel   = "Comentario:"
+RuleLabel   = "Descripción de la regla (haga clic en los subrayados para modificar):"
+
+[ExclusionEdit_PropList_row]
+ObjectMask  = "Objeto"
+VerdictMask = "Tipo de amenaza"
+
+[ExclusionObjectEdit]
+@       = "Nombre de objeto"
+
+[ExclusionObjectEdit_Body]
+Text    = "Especificar nombre de archivo, nombre de carpeta o máscara de nombre de objeto:"
+Recurse = "Incluir subcarpetas"
+
+[ExclusionVerdictEdit]
+@               = "Tipo de amenaza"
+
+[ExclusionVerdictEdit_Body]
+Text            = "Escriba el nombre o la máscara del tipo de amenaza de acuerdo con la clasificación de la Enciclopedia del virus:"
+VerdictObject   = "Configuración avanzada"
+
+[ExclusionTasksEdit]
+@ = "Componentes de protección"
+
+[RunAsGroup_PwdGroup]
+PwdLbl = "Contraseña:"
+
+;-------------------------------- PasswordEdit --------------------------------
+
+[PasswordEdit]
+@       = "Protección con contraseña"
+
+[PasswordEdit_Body]
+Pswd    = "Contraseña"
+Sett    = "Aplicar contraseña a"
+
+[PasswordEdit_Pswd]
+OldPswdText     = "Contraseña &anterior:"
+NewPswdText     = "&Nueva contraseña:"
+ConfPswdText    = "&Confirme contraseña:"
+
+[PasswordEdit_Sett]
+@           = "Aplicar contraseña a: "
+
+[PasswordEdit_Sett_SelectedOperations]
+WhenSaveSetting     = "Configuración de la a&plicación"
+ParentalContlrol    = "Administración de &Control Parental"
+WhenExitApp         = "Sa&lir de la aplicación"
+OnUninstall         = "&Eliminación de la aplicación"
+
+;------------- SendTroublesDialog --------------
+
+[SendTroublesDialog]
+@ = SendDumps ?  "Fallo al iniciar la aplicación anterior" : "Cargando información al servidor para Soporte Técnico"
+
+[SendTroublesDialog_Body_Header]
+Name    = SendDumps ?  "Error al iniciar la aplicación anterior" : "Los volcados de memoria y archivos de trazas están listos para enviarse."
+Descr   = SendDumps ? "Está lista para enviarse información acerca del estado de la aplicación en el momento en el que se produjo el error." : "Puede cargar el volcado de memoria y los archivos de trazas siguientes en los servidores de Kaspersky Lab:"
+
+[SendTroublesDialog_Body_List]
+Size        = "Tamaño:"
+PackSize    = "Tráfico"
+Path        = "Archivo"
+
+[SendTroublesDialog_Footer]
+DoNotSend   = "No enviar"
+Send        = "Enviar"
+Close       = "Cerrar"
+
+[SendTroublesDialog_Body_Footer]
+Clear   = "Eliminar"
+HelpUs  = SendDumps ? "Para ayudarnos a mejorar la aplicación, envíenos estos archivos a Kaspersky Lab para analizarlos. Nos permitirá eliminar esos errores en versiones futuras de la aplicación." : "Los archivos se comprimirán antes de enviarse."
+
+[SendTroublesDialog_SeeDetails]
+ViewDetails     = "Para mostrar los datos que contiene este informe de error, "
+ViewDetailsL    = "haga clic aquí"
+
+
+[s_SendTroublesDialog_SysInfo]
+#tSysInfo   = "Información del sistema"
+#tAvzInfo   = "Información de la aplicación (informe AVZ)"
+def = @1
+
+[s_TroubleGroupName]
+#tDump	= "Volcados de memoria de la aplicación"
+#tBSOD	= "Volcados de memoria del sistema operativo"
+#tTrace	= "Depuración"
+#tDumpZip = "Volcados de memoria de la aplicación comprimidos"
+def	= "Información del sistema"
+
+[s_SendTroublesState]
+1
+2   = "Preparando datos: " + SendPercent + "%"
+3   = "Generando el paquete: " + SendPercent + "%"
+4   = "Enviando el paquete a Kaspersky Lab: " + SendPercent + "%"
+
+[s_SendTroublesErrorDescr]
+0       = ""
+1       = "Fallo al recuperar los archivos del paquete"
+2       = "Fallo al preparar el archivo de información del sistema"
+3       = "Fallo al preparar el paquete de archivos de solución de problemas"
+4       = "Fallo al cargar paquetes al servidor FTP de Kaspersky Lab: " + strVal1 + "\nEs posible que haya especificado un número de petición incorrecto.\nTambién puede enviar datos usted mismo mediante su Cuenta Kaspersky en el sitio Web de Soporte Técnico."
+default = "Se produjo un error no especificado mientras se enviaba el paquete de solución de problemas"
+
+[SrfDialog]
+@           = "Introducir número de solicitud"
+@.Example   = "Introduzca su número de solicitud, de 9 dígitos (por ejemplo: 123456789)"
+
+;------------- SchedulerDlg --------------
+
+[SchedulerDlg_Tab]
+Schedule = "Modo de envío"
+
+[SchedulerDlg_Tab_Schedule]
+Auto    = "&Automático"
+Manual  = "&Manual"
+Fixed   = "Mediante plani&ficación"
+
+[Notifications_Mail_Settings]
+@               = "Parámetros de notificaciones por correo"
+
+[Notifications_Mail_Settings_Body]
+FromGroup       = "De"
+ToGroup         = "A"
+SendModeGroup   = "Modo de envío"
+
+[AdressFrom_Group]
+AdressFromText  = "Di&rección:"
+SMTPServerText  = "Ser&vidor SMTP:"
+AccountText     = "No&mbre de usuario:"
+PasswordText    = "Co&ntraseña:"
+
+[AdressFrom_Group_SMTPServer]
+PortText        = "Pue&rto:"
+PortEdit        = "25"
+
+[To_Group]
+AdressToText = "&Dirección:"
+
+[AdressTo_Group_Mail]
+SendTestMail = "&Prueba"
+
+[SendMode_Group]
+ScheduleImmediatly  = "&Inmediatamente al producirse el evento"
+ScheduleManual      = if(ctl. value && Mode == #schmManual, "Median&te planificación \n(planificación no especificada)" ,"&" + $SchedulerDescription)
+ScheduleChange      = "&Cambiar..."
+
+[MailSchedulerDlg]
+@               = "Planificación para el envío de notificaciones por correo electrónico"
+
+
+[OptionsWindow_Navigator_WorkArea_Scan_Objects_Body]
+ApplyGroup = "Otros parámetros de tarea"
+
+[NotificationSettings]
+@ = "Notificaciones"
+
+[NotificationSettings_Body_List]
+Event   = "Evento"
+Ballon  = "Pantalla"
+Sound   = "Sonido"
+Email   = "Correo"
+
+[ThreatsSettings]
+@ = "Objetos para detección"
+
+[ExclusionsSettings]
+@ = "Zona de confianza"
+
+[ExclusionsSettings_Tab]
+ExclusionMasks  = "Reglas de exclusión"
+TrustedApps     = "Aplicaciones de confianza"
+
+[ExclusionsSettings_Tab_ExclusionMasks]
+RuleLabel = "Descripción de la regla (haga clic en los subrayados para modificar):"
+
+[ExclusionsSettings_Tab_ExclusionMasks_List]
+Object  = "Objeto"
+Threat  = "Tipo de amenaza"
+
+[ExclusionsSettings_Tab_TrustedApps_List]
+App         = "Aplicación"
+Path        = "Ruta"
+Triggers    = "Exclusiones"
+
+[ExclusionsSettings_Tab_TrustedApps_List_Triggers]
+ExclOpenFiles   = "Archivos"
+ExclBehavior    = "Actividad"
+ExclBehaviorChildren = "Actividad de las subaplicaciones"
+ExclNet         = "Tráfico de red"
+
+[TrustedAppEdit]
+@ = "Exclusiones de la aplicación"
+
+[TrustedAppEdit_Body]
+ExclOpenFiles   = "No analizar archivos abiertos"
+ExclBehavior    = "No supervisar la actividad de la aplicación"
+NoInherit            = "No heredar restricciones del proceso principal (aplicación)"
+ExclBehaviorChildren = "No vigilar la actividad de las subaplicaciones"
+ExclNet         = "No analizar el tráfico de red"
+
+[Protection.reset_items]
+TrustedZone = "Amenazas y Exclusiones"
+
+[TrustedZone_reset]
+Threats     = "Objetos para detección"
+Excludes    = "Reglas de exclusión"
+TrustedApp  = "Aplicaciones de confianza"
+
+[Hips.reset_items]
+Applications    = "Aplicaciones"
+Rules           = "Reglas"
+Resources       = "Recursos"
+
+[Firewall.reset_items]
+Networks        = "Redes"
+
+[File_Monitoring.reset_items]
+ScanObjects = "Cobertura de protección"
+
+[Mail_Monitoring.reset_items]
+DetectMasksList = "Filtrado de tipos de adjuntos"
+
+[Web_Monitoring.reset_items]
+TrustedSites = "Direcciones URL de confianza"
+WebToolBar   = "Navegación Segura"
+httpscan     = "Configuración HTTP"
+Geo_Security = "Filtrado Geográfico"
+OnlineBanking = "Servicios bancarios online"
+
+[Anti_Spam.reset_items]
+WhiteAddrs  = "Lista de remitentes autorizados"
+WhiteWords  = "Lista de frases autorizadas"
+BlackAddrs  = "Lista de remitentes prohibidos"
+BlackWords  = "Lista de frases prohibidas"
+
+[AdBlocker.reset_items]
+ublist  = "Lista de URL bloqueadas"
+wlist   = "Lista de URL permitidas"
+
+[Updater.reset_items]
+Sources = "Orígenes"
+
+[SettingsReset]
+@ = "Restaurar la configuración"
+
+[SettingsReset_Body]
+Descr = "Advertencia. La configuración de la aplicación ha cambiado. ¿Está seguro de querer restablecer la configuración recomendada?"
+
+[SettingsReset_Body_Additional]
+Descr = "Parámetros de restauración avanzados:"
+
+[ExclNetHostsEdit]
+@ = "Direcciones IP remotas"
+
+[ExclNetHostEdit]
+@           = "Dirección IP"
+@.Example   = "Ejemplo: 123.134.0.56"
+
+[ExclNetPortsEdit]
+@           = "Puertos remotos"
+@.Example   = "Ejemplo: 33,56,80"
+
+[ClearReports]
+@       = "Limpiar informes"
+
+[ClearReports_Body]
+Intro   = "Especifique qué informes deben borrarse:"
+Rtp     = "Informe general de &protección (" + f_ObjSize(getRepDbSize(#dbRTP)) + ")"
+Scan    = "Informe de &tareas de análisis (" + f_ObjSize(getRepDbSize(#dbScan)) + ")"
+Update  = "Informe de &actualizaciones (" + f_ObjSize(getRepDbSize(#dbUpdate)) + ")"
+NetLogs = "Informe de procesado de reglas de &Firewall (" + f_ObjSize(getRepDbSize(#dbNetworkPacketRules)) + ")"
+ParCtrl = "Informe de &Control Parental (" + f_ObjSize( \
+getRepDbSize(#dbImMessages)+ \
+getRepDbSize(#dbWebControl)+ \
+getRepDbSize(#dbPersonalInfoControl)+ \
+getRepDbSize(#dbKeywordsControl)+ \
+getRepDbSize(#dbMailMessages)+ \
+getRepDbSize(#dbComputerControl)+ \
+getRepDbSize(#dbAppControl)+ \
+getRepDbSize(#dbFileDownload)+ \
+getRepDbSize(#dbInternetControl)+ \
+getRepDbSize(#dbImMessagesStatistics)+ \
+getRepDbSize(#dbImMessagesStatisticsDetail)+ \
+getRepDbSize(#dbWebSiteStatistics)+ \
+getRepDbSize(#dbWebSiteStatisticsDetail)+ \
+getRepDbSize(#dbFileDownloadStatistics)+ \
+getRepDbSize(#dbFileDownloadStatisticsDetail)+ \
+getRepDbSize(#dbAppControlStatistics)+ \
+getRepDbSize(#dbAppControlStatisticsDetail)) + ")"
+SW = "Datos de System &Watcher (" + f_ObjSize( \
+getRepDbSize(#dbSwObjects)+ \
+getRepDbSize(#dbSwContexts)+ \
+getRepDbSize(#dbSwEvents)) + ")"
+
+[ClearStatistics]
+@       = "Borrar archivos de informe"
+
+[ClearStatistics_Body]
+Intro   = "Especifique qué informes deben borrarse:"
+App     = "Informe de actividad de la aplicación (" + f_ObjSize(getRepDbSize(#dbAppStatistic)) + ")"
+Bl      = "Informe de \"Detectados\" (" + f_ObjSize(getRepDbSize(#dbBLStatistic)) + ")"
+Update  = "Informe de actualizaciones(" + f_ObjSize(getRepDbSize(#dbUpdStatistic)) + ")"
+
+[NewsSettings]
+@	= "Notificaciones de noticias"
+
+[NewsSettings_Body]
+Intro	= "Kaspersky Lab utiliza un agente de noticias para informarle de todas las noticias importantes relacionadas con " + $ProductName_GEN + " y la protección contra amenazas dirigidas al equipo en general."
+Check	= "Recibir siempre las noticias de Kaspersky Lab"

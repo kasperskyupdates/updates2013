@@ -1,0 +1,115 @@
+;;;
+;;; 
+;;;
+;;;
+;;; 
+;;;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = PnpFilter                         ;This is determined by the work this filter driver does
+ClassGuid   = {7134321E-9CA6-4167-BBEA-EED58D2F3B85}
+Provider    = %KasperskyLab%
+DriverVer= 08/08/2013,8.10.0.39            ;mm/dd/yy
+CatalogFile = klkbdflt.cat
+DriverPackageType=ClassFilter
+
+[Manufacturer]
+%KLName%=klkbdfltModelSection,ntamd64
+
+[klkbdfltModelSection]
+%klkbdfltName%=DefaultInstall,klkbdflt
+
+[klkbdfltModelSection.ntamd64]
+%klkbdfltName%=DefaultInstall,klkbdflt
+
+[DestinationDirs]
+DefaultDestDir = 12
+klkbdflt.DriverFiles = 12                        ;%windir%\system32\drivers
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+klkbdflt.sys = 1
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %klkbdfltServiceDesc%
+CopyFiles           = klkbdflt.DriverFiles
+
+[DefaultInstall.ntamd64]
+OptionDesc          = %klkbdfltServiceDesc%
+CopyFiles           = klkbdflt.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %klkbdfltServiceName%,,klkbdflt.Service
+
+[DefaultInstall.ntamd64.Services]
+AddService          = %klkbdfltServiceName%,,klkbdflt.Service
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = klkbdflt.DriverFiles
+DelReg     = klkbdflt.DelRegistry
+
+[DefaultUninstall.ntamd64]
+DelFiles   = klkbdflt.DriverFiles
+DelReg     = klkbdflt.DelRegistry
+
+[DefaultUninstall.Services]
+DelService = klkbdflt
+
+[DefaultUninstall.ntamd64.Services]
+DelService = klkbdflt
+
+;
+; Services Section
+;
+
+[klkbdflt.Service]
+DisplayName      = %klkbdfltDisplayName%
+Description      = %klkbdfltServiceDesc%
+ServiceBinary    = %12%\klkbdflt.sys                 ;%windir%\system32\drivers\klkbdflt.sys
+ServiceType      = 1                            ;SERVICE_KERNEL_DRIVER
+StartType        = 3                            ;SERVICE_DEMAND_START
+ErrorControl     = 1                            ;SERVICE_ERROR_NORMAL
+LoadOrderGroup   = "Pnp Device Filter"
+AddReg           = klkbdflt.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[klkbdflt.AddRegistry]
+
+[klkbdflt.DelRegistry]
+;HKLM,System\CurrentControlSet\Services\%klkbdfltServiceName%
+;HKLM,System\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318},UpperFilters,0x00018002,%klkbdfltServiceName%
+
+;
+; Copy Files
+;
+
+[klkbdflt.DriverFiles]
+klkbdflt.sys,,,2
+
+;;
+;; String Section
+;;
+
+[Strings]
+klkbdfltDisplayName    = "Kaspersky Lab KLKBDFLT"
+KasperskyLab           = "Kaspersky Lab"
+klkbdfltServiceDesc    = "Kaspersky Lab Keyboard Class Filter"
+klkbdfltServiceName    = "klkbdflt"
+Disk1                  = "klkbdflt Source"
+KLName                 = "KL"
+klkbdfltName           = "klkbdflt"
+

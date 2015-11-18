@@ -1,0 +1,33 @@
+﻿BasesAndModulesActual    = 'Basis data dan aplikasi terbarui' 
+BasesAndModulesVeryOld   = 'Basis data dan aplikasi tidak terbarui'
+BasesAndModulesOld       = 'Basis data dan aplikasi tidak terbarui'
+BasesAndModulesCorrupted = 'Basis data rusak'
+BasesAndModulesUpdatedAndRebootNeeded         = 'Basis data dan aplikasi diperbarui.\nKomputer memerlukan reboot' 
+BasesAndModulesUpdatedAndProductRestartNeeded = 'Basis data dan aplikasi diperbarui.\nAplikasi diperlukan restart' 
+BasesAndModulesSomeBasesNeedUpdate = 'Pembaruan diperlukan untuk beberapa komponen proteksi'
+BasesAndModulesOldInGracePeriod = 'Basis data belum diperbarui untuk waktu yang lama'
+
+
+BasesAndModulesOriginal  = 'Basis data dan alikasi tidak pernah diperbarui'
+BasesAndModulesUpdating  = 'Memperbarui basis data dan aplikasi (' + $Update_PercentCompleted + '%)...'
+BasesAndModulesRollbacking = 'Memutar kembali ke basis data yang sebelumnya (' + $Update_PercentCompleted + '%)...'
+BasesAndModulesDescription_kav = 'Standarnya, Kaspersky Anti-Virus selalu melakukan pemeriksaan pembaruan, dan akan otomatis mengunduh dan memasang basis data yang disetujui. Anda juga bisa melakukan pembaruan manual kapan saja.'
+BasesAndModulesDescription_kis = 'Standarnya Kaspersky Internet Security selalu melakukan pemeriksaan pembaruan, dan akan otomatis mengunduh dan memasang basis data yang disetujui. Anda juga bisa melakukan pembaruan manual kapan saja.'
+
+LastUpdate = 'Pembaruan terakhir:'
+LastUpdateTime = $Update_LastUpdateTime
+LastUpdateFailed = 'gagal'
+BasesSignatures = 'Persetujuan:'
+BasesRunmode = 'Modus berjalan:'
+UpdateStatus = 'Status:'
+DownloadStatus = 'diunduh:'
+UpdateDownloadProgress = $Updater_DownloadedSize + ' KB (' + $Updater_DownloadedSpeed + ' KB/sec)'
+UpdateDownloadProgressNoSpeed = $Updater_DownloadedSize + ' KB (' + ' menghitung kecepatan... )'
+UpdateSource = 'Sumber:'
+
+UpdateAction = 'Perbarui'
+CancelUpdateAction = 'Berhenti'
+UpdaterSettingsAction = 'Pengaturan'
+UpdaterReportAction   = 'Laporan'
+NotCompleted = 'tidak dilakukan' ;refers to update
+VirusListLinkText = 'Meninjau aktivitas virus'

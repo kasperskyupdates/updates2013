@@ -1,0 +1,59 @@
+<UpdateFiles
+	UpdateDate="06102015 0923"
+	BlackDate="06102015 0602"
+	ObjectType="2=AH;3=BASE"
+	ApplyPeriod="168">
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="fwpresets.xms" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		SysArch="i386"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="ah.stt"
+		Body="MTIxNTsyMDE1MTAwNjA5MjMNCg==" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		SysArch="i386"
+		ServerFolder="i386"
+		LocalPath="%BaseFolder%"
+		Filename="idsbase.kdz" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="desc"
+		AppName="!KAV|KIS|PURE|KSOSFS|KSOSPC [13-*].*.*.*"
+		Filename="ahold-0607g.xml"
+		FileDate="06102015 0923"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		SysArch="x64"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="ah.stt"
+		Body="MTIxNTsyMDE1MTAwNjA5MjMNCg==" />
+	<FileDescription
+		ComponentID="AH"
+		UpdateType="base"
+		SysArch="x64"
+		ServerFolder="x64"
+		LocalPath="%BaseFolder%"
+		Filename="idsbase.kdz" />
+	<Registry
+		ComponentID="AH"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Filename="ah-0607g.pbv"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJASNtHipAAAutRdr4Or7MOq1KvvyViKjpGMds3nRJ+vP8ZPNgINGjZOot8hftrFKue5okRmZzO6I4gMreLzoxAduF31Mxfh4BAB4JBwAAAAIAAigCAEFIAwACKAQAQkFTRQEAAAmX1J+xDQo7OjEwSzdFL1laWTZuVUJBNCs1NVIzQktJQnV2dkxCUlVsRlhLNFU4S0o0MTlkTnlkY1NMYmdaaEdKZkVBODBuRlY3d1NBc2NuSkR3d1h5TFhiZ0IveHY2dkklJQ==" />
+	<Registry
+		ComponentID="AH"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Filename="ah-0607g.krg"
+		Body="S0xyZwEHAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqBgABACAA2dCphjtshuH3gQo3CjZB68E+RUZ/M9D7QzXLnESb50AgAHxNYRSfzHcShf9Fd1LpGtoOpOL05NkrP26RdgTAQlaMIADv1z9bMn2Al/Fsy6UTcNZZf2ZZRvHNVcurNgDqhuaQKCAA3lQuLcpqPiyOGf3Uner8VC28/0j1TZXjah5NU0IiIIcgAKUFtbDfM2f3aDa5//XBE1+inBtLwnVfs3N4PsYMvU31IAAmiEvSwcnk/Ol++u/496KUEAKFFRSf8N+36FS0aN25ogEAHgkHAAAAAQAACb/MGhYNCjs6MTBhOUwyQ3ZxSHFySGh3Vm50MnBrZXBHa0R1VXRWMUtLRUxNTzhKL2pIUElnUXR1NFF0MW50eURBZ1lwSVRVU282TmtZa2o3dzN5eXBudlR3WjErNWE4ZiUl" />
+</UpdateFiles>
+;:10q0txOdB/AAT/siPZfaFxtPG5CL+de+21wa4pzQvcbDwN2ZCDi3ZxQ+qPQbKAeABWG0uiv7BmpdswOrqaiskFSl%%

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+
+  <component clsid="0x625104A2" name="app_ctrl.process_monitor.ProcessMonitor" module="ProcessMonitor" tracer_prefix="pmn">
+    <interface iid="0x5553FB2B" name="IProcessMonitor"/>
+    <interface iid="0x34DFA642" name="IProcessMonitorConstruct"/>
+    <interface iid="0xA4BFE852" name="IProcessMonitorSettings"/>
+	<interface iid="0x5BC37E10" name="IProcessCustomContextRegistrar"/>
+  </component>
+
+  <component clsid="0x1F8F4F7B" name="app_ctrl.process_monitor.ApplicationManager" module="ProcessMonitor" tracer_prefix="pmn">
+    <interface iid="0xBBCD45AA" name="IApplicationManager"/>
+    <interface iid="0x163BDB22" name="IApplicationProvider"/>
+    <interface iid="0x6B550A8"  name="IModuleInfoProvider"/>
+    <interface iid="0x3BF386B0" name="IModuleInfoProvider2"/>
+    <interface iid="0x578BF585" name="IModuleInfoCacheControl"/>
+  </component>
+
+  <component clsid="0xC4198457" name="app_ctrl.process_monitor.ModuleHashProvider" module="ProcessMonitor" tracer_prefix="pmn">
+    <interface iid="0xD0A92E78" name="IModuleMD5HashProvider"/>
+    <interface iid="0x9156751B" name="IHashMD5"/>
+  </component>
+
+  <component clsid="0x4190457B" name="app_ctrl.process_monitor.ApplicationSecurityRatingProvider" module="ProcessMonitor" tracer_prefix="pmn">
+    <interface iid="0x4C63FB06" name="IApplicationSecurityRatingProvider"/>
+    <interface iid="0xF3FA78C3" name="IApplicationSecurityRatingProvider2"/>
+  </component>
+  
+</root>

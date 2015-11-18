@@ -1,0 +1,177 @@
+﻿;
+; Shared keys
+;
+ScanNeverRun = 'Nunca ejecutado'
+DurationSinceLastCompletedScanName = 'Terminado: '
+DurationSinceLastInterruptedScanName = 'Detenido: '
+RemainingTimeName = 'Restante(s): '
+ScannedObjectCountName = 'Analizados: '
+ScannedObjectCountText = $ScannedObjectCountFmt + ' ' + {$ScannedObjectCount: 'archivo', 'archivos'}
+DurationSinceLastStopText = $DurationSinceLastStop
+DetectedThreatCountName = 'Amenazas: '
+NeutralizedThreatCountName = 'Neutralizados: '
+ObjectsAreAbsent = 'ninguna'
+FileKsnStatistics_UserCountLess10 = 'menos de 10 usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_UserCountLess100 = 'menos de 100 usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_UserCountLess1000 = 'menos de 1000 usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_UserCountMore1000 = 'más de 1000 usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_UserCountMore10000 = 'más de 10 000 usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_UserCountMore100000 = 'más de 100 000 usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_UserCountMoreMillion = 'más de un millón de usuarios de KSN han utilizado esta aplicación'
+FileKsnStatistics_Untrusted = 'aplicación no fiable'
+
+FileKsnStatistics_FirstRequestDate_Today        = 'El archivo se ha conocido hoy'
+FileKsnStatistics_FirstRequestDate_Yesterday    = 'El archivo se conoció ayer'
+FileKsnStatistics_FirstRequestDate_LessWeek     = 'El archivo se conoció hace menos de una semana'
+FileKsnStatistics_FirstRequestDate_LessTwoWeek  = 'El archivo se conoció hace menos de dos semanas'
+FileKsnStatistics_FirstRequestDate_LessMonth    = 'El archivo se conoció hace menos de un mes'
+FileKsnStatistics_FirstRequestDate_MoreMonth    = 'El archivo se conoció hace más de un mes'
+FileKsnStatistics_FirstRequestDate_MoreHalfYear = 'El archivo se conoció hace más de seis meses'
+FileKsnStatistics_FirstRequestDate_MoreYear     = 'El archivo se conoció hace más de un año' 
+
+;
+; MessageBox buttons texts
+;
+YesButtonText = 'Sí'
+NoButtonText = 'No'
+AcceptResumeButtonText = 'Reanudar análisis'
+RejectResumeButtonText = 'Nuevo análisis'
+
+;
+; Full scan
+;
+FullScan_Title = 'Análisis completo'
+FullScan_Description = 'Analiza todo el equipo.\nSe recomienda que realice un Análisis completo inmediatamente después de instalar la aplicación. Tenga en cuenta que puede tardar.'
+
+FullScan_StopConfirmation = '¿Está seguro de que desea detener el análisis completo?'
+FullScan_ResumeConfirmation = 'El Análisis completo anterior no se terminó. ¿Desea reanudarlo?'
+
+FullScan_ActionOnFinish = 'Cuando finalice: '
+
+;
+; Critical area scan
+;
+CriticalAreaScan_Title = 'Análisis de áreas críticas'
+CriticalAreaScan_Description = 'Análisis rápido de los objetos que se cargan con el sistema operativo en el inicio. No lleva mucho tiempo.'
+
+CriticalAreaScan_StopConfirmation = '¿Está seguro de que desea detener el análisis de áreas críticas?'
+CriticalAreaScan_ResumeConfirmation = 'El Análisis de áreas críticas anterior no se terminó. ¿Desea reanudarlo?'
+
+;
+; Vulnerability scan
+;
+VulnerabilityScan_Title = 'Análisis de vulnerabilidades'
+VulnerabilityScan_Description = 'Analiza el sistema y aplicaciones\nen busca de vulnerabilidades que puedan permitir ataques maliciosos.'
+
+VulnerabilityScan_NeverRun = 'Nunca ejecutado'
+VulnerabilityScan_CountName = 'Vulnerabilidades: '
+VulnerabilityScan_ShowObjectListButtonText = 'Vulnerabilidades detectadas'
+VulnerabilityScan_StopConfirmation = '¿Está seguro de que desea detener el análisis de vulnerabilidades?'
+
+;
+; Custom area scan 
+;
+CustomAreaScan_Description = 'Para realizar un análisis personalizado de un objeto, \n arrástrelo aquí o <a href=\"SelectScanArea\"><font color ="#5495df">búsquelo</font></a>.'
+
+;
+; TaskManager Titles
+; 
+TaskManager_CustomScan = 'Análisis personalizado'
+TaskManager_FullScan = 'Análisis completo'
+TaskManager_QScan = 'Búsqueda de procesos ocultos'
+TaskManager_IdleScan = 'Análisis en inactividad'
+TaskManager_ActiveThreatCure = 'Desinfección avanzada'
+TaskManager_VulnerabilityScan = 'Análisis de vulnerabilidades'
+TaskManager_CriticalAreaScan = 'Análisis de áreas críticas'
+
+;
+; TaskManager Captions
+;
+TaskManager_CaptionScan = 'Analizando:'
+TaskManager_CaptionObjects = 'Objetos:'
+TaskManager_CaptionObject = 'Objeto:'
+TaskManager_CaptionRemain = 'Restante(s):'
+TaskManager_CaptionComplete = 'Terminado:'
+TaskManager_CaptionStopped = 'Detenido:'
+TaskManager_CaptionChacked = 'Analizados:'
+TaskManager_CaptionThreats = 'Amenazas:'
+TaskManager_CaptionStatistics = 'Información de KSN:'
+TaskManager_CaptionDetails = 'Detalles'
+TaskManager_CaptionOnComplete = 'Cuando finalice:'
+TaskManager_CaptionVulnerabilities = 'Vulnerabilidades:'
+TaskManager_CaptionVulnerabilitieList = 'Vulnerabilidades detectadas'
+TaskManager_Absend = 'ninguna' ;refers to threats. Treats: none
+
+;
+; TaskManager Message box
+;
+TaskManager_ConfirmationMessageFull = '¿Está seguro de que desea detener el análisis completo?'
+TaskManager_ConfirmationMessageCriticalArea = '¿Está seguro de que desea detener el análisis de áreas críticas?'
+TaskManager_ConfirmationMessageCustomArea = '¿Está seguro de que desea detener el análisis personalizado?'
+TaskManager_ConfirmationMessageVulnerability = '¿Está seguro de que desea detener el análisis de vulnerabilidades?'
+TaskManager_ConfirmationMessageIdle = '¿Está seguro de que desea detener el análisis en inactividad?'
+TaskManager_ConfirmationMessageQScan = '¿Seguro que desea detener la búsqueda de procesos ocultos?'
+TaskManager_Confirm = 'Sí'
+TaskManager_Decline = 'No'
+
+;
+; TaskManager Actions
+;
+Nothing = 'mantenga el equipo encendido'
+Shutdown = 'apagar el equipo'
+Suspend = 'cambiar el equipo a estado de espera'
+Sleep = 'cambiar el equipo al modo de hibernación'
+Reboot = 'reinicie el equipo'
+
+TaskManager_SkipLink = 'Ignorar'
+
+;
+; Errors
+;
+
+SinceTaskFailDescription = 'Fallo: '
+
+Error_NoError = 'Sin errores'
+Error_Unexpected = 'Error no definido'
+Error_NotEnoughtMemory = 'No hay memoria suficiente'
+Error_NotSupported = 'No compatible'
+Error_NotImplemented = 'No implementado'
+Error_AccessDenied = 'Acceso denegado o no se encuentra el objeto'
+Error_NotFound = 'Objeto no encontrado'
+Error_Locked = 'Objeto bloqueado'
+Error_Canceled = 'Operación cancelada'
+Error_MediaError = 'Error de dispositivo'
+Error_BadSignature = 'Firma no válida'
+Error_BadVersion = 'Versión no válida'
+Error_WriteProtect = 'Protección contra escritura'
+Error_NoLicense = 'Protección contra escritura'
+Error_OutOfSpace = 'Espacio insuficiente'
+Error_NotReady = 'Dispositivo no preparado'
+Error_ObjectIncompatible = 'Formato no válido'
+Error_ObjectReadOnly = 'Permisos insuficientes'
+Error_ObjectNotInitialized = 'Error de inicialización'
+Error_ObjectBadInternalState = 'Estado del objeto incorrecto'
+Error_ObjectPasswordProtection = 'Objeto protegido por contraseña'
+Error_ObjectRead = 'Error de lectura'
+Error_ObjectWrite = 'Error de escritura'
+Error_ObjectInvalid = 'Objeto no válido'
+Error_ObjectAlreadyExists = 'El objeto ya existe'
+Error_ObjectIsLocked = 'El objeto está en uso por otra aplicación'
+Error_ObjectDataCorrupted = 'Las bases de datos están dañadas'
+Error_ModuleIsBad = 'Módulo no válido'
+Error_ModuleNotFound = 'Módulo no encontrado'
+Error_ModuleNotVerified = 'El módulo no ha sido autenticado'
+Error_ModuleCannotBeLoaded = 'El componente no puede ser cargado'
+Error_SynchronizationFailed = 'Error de sincronización'
+Error_SynchronizationTimeout = 'Agotado el tiempo de espera'
+Error_ProxyStateInvalid = 'Error de la interacción de los componentes'
+Error_TaskInterrupted = 'La tarea ha sido detenida'
+Error_CannotBeRunInSafeMode = 'La tarea no se puede iniciar en modo seguro'
+Error_TaskDisabled = 'Tarea desactivada'
+Error_WrongLogin = 'Nombre de usuario o contraseña incorrectos'
+Error_CannotBeRunInSafeModeFromAnotherAccount = 'No es posible ejecutar una tarea con la cuenta de otro usuario en modo seguro'
+Error_DriverNotFound = 'No se encuentra el controlador'
+Error_DatabaseLoading = 'Error al cargar las bases de datos'
+Error_UndefinedError = 'Error desconocido'
+
+DefaultErrorDescription = 'Código de error: ' + $DefaultErrorValue

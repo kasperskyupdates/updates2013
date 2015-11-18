@@ -1,0 +1,114 @@
+<UpdateFiles
+	UpdateDate="28102015 1516"
+	BlackDate="28102015 0603"
+	ObjectType="2=PAS5;3=BASE">
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="pas5.stt"
+		Body="MjY3MTE7MjAxNTEwMjgxNTE1DQo=" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="base1.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="base10.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="base11.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="base12.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="base13.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="data.check.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="data.set.idn.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="data.set.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="lexbase.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="lua.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcflt00.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcflt01.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcflt02.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcflt03.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcflt04.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcflt06.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="mcfltu.keb" />
+	<FileDescription
+		ComponentID="PAS5"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="upd_terms-full.keb" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAegjHipAAG0AaLPelFWJ44eQhA441czAzQleN3MiEzqkYmiktGaIX4zJdB+F81ssA0S2D7VuhirM/y6NRgak06X5lbWJ/NYBAB4JzwAAAAIAAigEAFBBUzUDAAIoBABCQVNFAQAACdbl5U0NCjs6MTA0MEdrSVlVcHZmMFRQWnUwdjg5UlIrR2x1b1AxZ2hNT1M2TEZMSDlHdGh3MDFDVk9RL0lTL3dqM09FNGpNSTY5QXdaelN1Mm05eFErSSsrNDRtQTlWUyUl"
+		Filename="pas5-0607g.pbv" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwHPAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqEwABACAA3FN+qHHMwvhdZn9jsJCA4NKGwjghCGhJPqqBNkt6wAUgAIySUJZE5MjgmN04eLTIBya4Ka/xMYF2/dC8qVgNupDhIAB9IGgVZS9UOaD/i85Tyqu0O+4WY/H+UrC1IzNsz1yyNiAAT9hxVreoSsTFbGDXUjM4qNOpNyfM++p3dbxFe19JMb4gALaJzkjLXhsaKroosjz27ZWGEHD897gVbbUMTpP5bxN7IACzkAOaeN2wLO/VptD4wmiUoxym8JZrSaWzslAw5jFn8yAAIjismsJC7FqWzNKbhjpXsbT0pXOOAUYTrqAtjodBTW8gALZ2tqwl2UtOgO9zuCRz/cTiX9dqKlwRkbD1Uhx6zPklIABjhHEJQzj3xNYtbXkSOo8ALDO3/7lbAOVNFpfzUDxavSAA2Pxcxb8UAJkyjar4VYBOixqdzY63uQrbn53REaAmFqggAEYFrYGQ+Jae70rEPSYQ2rOnNTE7HIhtbZoyq9h6C4s5IADQAZgBSeLJAhfrWmqErFr5Kvl/BnhBQVNyeAFghD0m7iAA5V36fpsWwb2SQmDcyJ5j01Vk9X0I6+8D0kVT0hYXd0UgAHe+CMDi6el6eXG+nF6PrryD99UctuJl7pMutEQajILCIABbPA313I4esTuje9/BqoagJLE3UMw/zWocwTHU8KLRwiAAHO1YBpD9bYpC+r/jKew8YUHz9+pz4b9uaNS2Avp+VJ8gAA/C8E0Cw3XDTO7susxi5mF4MgMMjOOzM1pI79MDYhVNIACnJWNFU7+LwSDy36IpdedUQJBsFtqTJwUbzKq/vFK9VyAAbTiXJwTpl11403lRt8LqF9ragV5eGjqN+2LnM2SeC+8BAB4JzwAAAAEAAAkF5MZODQo7OjEwNEVXRkpzU283OTRPaCtHUHhuMEptZ2I4Umt1TjN0OHhUb2JUbWtqZDc2MjVtNzdRbVhkUC8wZFdBaEdGRHlrb2IyblNjaUQ4Y3o2cXpoaThvYU5tMmwlJQ=="
+		Filename="pas5-0607g.krg" />
+</UpdateFiles>
+;:10a4DMRsOmtsJJeb/0CeVbvoNwqdC+7RSCsFrSGGCyaelwtoNobITT9QWpJkO82VHXcPKtyktOtG4QfQd4Hhv0hA%%

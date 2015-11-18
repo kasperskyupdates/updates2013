@@ -1,0 +1,141 @@
+﻿ActiveThreatsGroupName = 'Zagrożenie'
+AVBasesGroupName = 'Bazy danych'
+ProtectionComponentsGroupName = 'Składnik ochrony'
+LicenseGroupName = 'Licencja'
+RecommendationsGroupName = 'Zalecenie'
+HiddenComponentsGroupName = 'Zignorowany problem'
+
+AVBasesUpdatingTitle = 'Trwa aktualizacja baz danych oraz aplikacji (' + $Update_PercentCompleted + '%)...'
+BasesUpdateStatus = 'Stan: ' + $Update_Status
+
+ManualUpdate_ProblemTitle = 'Aktualizacja automatyczna jest wyłączona'
+ManualUpdate_ProblemDescription = 'Zalecane jest włączenie automatycznej aktualizacji lub określenie terminarza pobierania uaktualnień.'
+
+AntispamNeedsTraining_ProblemTitle = 'Wymagane uczenie modułu Anti-Spam'
+AntispamNeedMoreSpamToTrain_ProblemDescription = 'Wymagane uczenie przy użyciu ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'wiadomości typu spam', 'wiadomości typu spam', 'wiadomości typu spam'} + '.'
+AntispamNeedMoreHamToTrain_ProblemDescription = 'Wymagane uczenie przy użyciu ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'czystej wiadomości', 'czystych wiadomości', 'czystych wiadomości'} + '.'
+AntispamNeedMoreHamAndSpamToTrain_ProblemDescription = 'Wymagane uczenie przy użyciu ' + $AntispamTrainingSpamLettersCountRequest + {$AntispamTrainingSpamLettersCountRequest: 'wiadomości typu spam', 'wiadomości typu sam', 'wiadomości typu sam'} + ' oraz ' + $AntispamTrainingHamLettersCountRequest + ' ' + {$AntispamTrainingHamLettersCountRequest: 'czystej wiadomości', 'czystych wiadomości', 'czystych wiadomości'} + '.'
+AntispamNeedsTraining_ProblemDescription = 'Zalecane jest skorzystanie z kreatora uczenia w celu skonfigurowania filtrowania wiadomości.'
+
+ThreatsNeedReboot_ProblemTitle = 'W celu zakończenia procesu leczenia wymagane jest ponowne uruchomienie komputera'
+ThreatsNeedReboot_ProblemDescription = 'Proces leczenia będzie automatycznie kontynuowany po ponownym uruchomieniu komputera.'
+
+ThreatsProcessing_ProblemTitle = 'Trwa wczytywanie...'
+ThreatsProcessing_ProblemDescription = 'Proszę czekać'
+
+ThreatsMalwareUntreated_ProblemTitle = 'Wykryto ' + $ThreatName
+ThreatsMalwareUntreated_ProblemDescription = 'Obiekt: ' + $ObjectName
+
+ThreatsSuspiciousUntreated_ProblemTitle = $ObjectName
+ThreatsSuspiciousUntreated_ProblemDescription = 'Oprogramowanie mogące wywołać szkody'
+
+ThreatsRiskwareUntreated_ProblemTitle = $ObjectName
+ThreatsRiskwareUntreated_ProblemDescription = 'Legalne oprogramowanie, które może zostać wykorzystane przez cyberprzestępców do uszkodzenia komputera i prywatnych danych.'
+
+BasesCorrupted_ProblemTitle = 'Bazy danych są uszkodzone'
+BasesCorrupted_ProblemDescription = 'Zalecana jest ponowna aktualizacja baz danych.'
+
+BasesVeryOld_ProblemTitle = 'Bazy danych są bardzo stare'
+BasesVeryOld_ProblemDescription = 'Zalecana jest aktualizacja baz danych aplikacji.'
+
+BasesUpdatedAndRebootNeeded_ProblemTitle = 'Wymagane jest ponowne uruchomienie komputera'
+BasesUpdatedAndRebootNeeded_ProblemDescription = 'W celu zakończenia instalacji nowych składników aplikacji wymagane jest ponowne uruchomienie komputera.'
+
+BasesUpdatedAndRestartNeeded_ProblemTitle     = 'Wymagane jest ponowne uruchomienie aplikacji'
+BasesUpdatedAndRestartNeeded_ProblemDescription_KIS = 'Moduły aplikacji ' + ProductName_KIS + ' zostały uaktualnione. Zalecane jest ponowne uruchomienie aplikacji.'
+BasesUpdatedAndRestartNeeded_ProblemDescription = 'Moduły aplikacji ' + ProductName + ' zostały uaktualnione. Zalecane jest ponowne uruchomienie aplikacji.'
+
+BasesOld_ProblemTitle = 'Bazy danych są nieaktualne'
+BasesOld_ProblemDescription = 'Zalecana jest aktualizacja baz danych.'
+
+BasesOldInGracePeriod_ProblemTitle = 'Bazy danych wymagają aktualizacji'
+BasesOldInGracePeriod_ProblemDescription = 'Problem zostanie rozwiązany po aktualizacji.'
+
+SomeBasesNeedUpdate_ProblemTitle = 'Bazy danych wymagają aktualizacji'
+SomeBasesNeedUpdate_ProblemDescription = 'Bazy danych niektórych składników ochrony wymagają aktualizacji.'
+
+ProtectionMalfunction_ProblemTitle = 'Niektóre składniki ochrony są uszkodzone'
+ProtectionMalfunction_ProblemDescription     = 'Zalecana jest ponowna instalacja aplikacji.'
+
+HighRiskTasksDisabled_ProblemTitle = 'Ochrona plików jest wyłączona'
+HighRiskTasksDisabled_ProblemDescription     = 'Istnieje ryzyko infekcji komputera, uszkodzenia lub utraty danych. Zalecane jest włączenie Ochrony plików.'
+HighRiskTasksDisabled_ProblemTitle_FileAV    = 'Ochrona plików jest wyłączona'
+
+ProtectionPaused_ProblemTitle = 'Ochrona komputera jest wstrzymana'
+ProtectionPaused_ProblemDescription = 'Istnieje ryzyko infekcji komputera, uszkodzenia lub utraty danych. Zalecane jest włączenie ochrony.'
+
+ProtectionDisabled_ProblemTitle = 'Ochrona komputera jest wyłączona'
+ProtectionDisabled_ProblemDescription = 'Istnieje ryzyko infekcji komputera, uszkodzenia lub utraty danych. Zalecane jest włączenie ochrony.'
+
+SelfProtectionDisabled_ProblemTitle_KIS = 'Autoochrona ' + ProductName_KIS + ' jest wyłączona'
+SelfProtectionDisabled_ProblemTitle = 'Autoochrona ' + ProductName + ' jest wyłączona'
+SelfProtectionDisabled_ProblemDescription = 'W przypadku ataku wirusa aplikacja może ulec uszkodzeniu. Zalecane jest włączenie autoochrony.'
+
+TasksDisabled_ProblemTitle_FileAV   = 'Ochrona plików jest wyłączona.'
+TasksDisabled_ProblemTitle_AC       = 'Kontrola aplikacji jest wyłączona.'
+TasksDisabled_ProblemTitle_NAB      = 'Blokowanie ataków sieciowych jest wyłączone.'
+TasksDisabled_ProblemTitle_IMAV    = 'Ochrona komunikatorów jest wyłączona.'
+TasksDisabled_ProblemTitle_MAV      = 'Ochrona poczty jest wyłączona.'
+TasksDisabled_ProblemTitle_WAV      = 'Ochrona WWW jest wyłączona.'
+TasksDisabled_ProblemTitle_Firewall = 'Zapora sieciowa jest wyłączona.'
+TasksDisabled_ProblemTitle_SW       = 'Kontrola systemu jest wyłączona.'
+
+TaskHidden_ProblemTitle_AC       = 'Kontrola aplikacji jest wyłączona.'
+TaskHidden_ProblemTitle_NAB      = 'Blokowanie ataków sieciowych jest wyłączone.'
+TaskHidden_ProblemTitle_IMAV    = 'Ochrona komunikatorów jest wyłączona.'
+TaskHidden_ProblemTitle_MAV      = 'Ochrona poczty jest wyłączona.'
+TaskHidden_ProblemTitle_WAV      = 'Ochrona WWW jest wyłączona.'
+TaskHidden_ProblemTitle_Firewall = 'Zapora sieciowa jest wyłączona.'
+TaskHidden_ProblemTitle_SW       = 'Kontrola systemu jest wyłączona.'
+
+TasksDisabled_ProblemDescription = 'Aplikacja nie może zapewnić kompletnej ochrony komputera. Zalecane jest włączenie składników ochrony.'
+TaskHidden_ProblemDescription = 'Wiadomość o rozłączonym składniku ochrony jest ukryta. Program nie będzie w stanie zapewnić kompleksowej ochrony Twojego komputera. Zalecane jest włączenie składnika ochrony.'
+
+AutorunDisabled_ProblemTitle = 'Automatyczne uruchamianie aplikacji jest wyłączone'
+AutorunDisabled_ProblemDescription     = 'Zalecane jest włączenie automatycznego uruchamiania aplikacji podczas ładowania systemu operacyjnego.'
+
+ProtectionSafeMode_ProblemTitle = 'Wymagane jest ponowne uruchomienie komputera'
+ProtectionSafeMode_ProblemDescription_KIS = 'Funkcjonalność programu ' + ProductName_KIS + ' podczas działania w trybie awaryjnym jest ograniczona. Niektóre składniki ochrony nie są uruchomione.'
+ProtectionSafeMode_ProblemDescription = 'Funkcjonalność programu ' + ProductName + ' podczas działania w trybie awaryjnym jest ograniczona. Niektóre składniki ochrony nie są uruchomione.'
+
+FirewallBlockAll_ProblemTitle = 'Blokowanie ruchu sieciowego jest włączone'
+FirewallBlockAll_ProblemDescription = 'Żadna z aplikacji nie jest w stanie połączyć się z Internetem. Zaleca się wyłączenie blokowania.'
+
+FirewallUnBlock_ActionLabel = 'Wyłącz'
+OpenSupport_ActionLabel = 'Odwiedź stronę Pomocy technicznej'
+OpenLicenseManager_ActionLabel = 'Szczegóły'
+UpdateBases_ActionLabel = 'Uaktualnij'
+ChangeInstallProduct_ActionLabel = 'Zmień/zainstaluj aplikację'
+OpenActivationWizard_ActionLabel = 'Aktywuj'
+OpenPurchase_ActionLabel = 'Odwiedź sklep internetowy'
+OpenForum_ActionLabel = 'Przejdź na stronę forum'
+
+Reboot_ActionLabel = 'Uruchom ponownie'
+ThreatReport_ActionLabel = 'Wyświetl raport'
+ProcessThreat_ActionLabel = 'Napraw'
+OpenThreatFolder_ActionLabel = 'Otwórz folder źródłowy'
+AddThreatToExclusionList_ActionLabel = 'Dodaj do wykluczeń'
+DiscardThreat_ActionLabel = 'Ignoruj'
+OpenThreatSecureList_ActionLabel = 'Opis zagrożenia'
+ProcessAllThreats_ActionLabel = 'Usuń zagrożenia'
+DiscardAllThreats_ActionLabel = 'Ignoruj wszystkie'
+
+UpdaterSettings_ActionLabel = 'Ustawienia aktualizacji'
+Restart_ActionLabel = 'Uruchom ponownie'
+StopUpdate_ActionLabel = 'Zatrzymaj'
+UpdaterReport_ActionLabel = 'Wyświetl raport'
+
+MalfunctionReport_ActionLabel = 'Szczegóły'
+EnableComponent_ActionLabel = 'Włącz'
+HideComponent_ActionLabel = 'Ignoruj ten problem'
+ShowComponent_ActionLabel = 'Nie ignoruj tego problemu'
+ResumeProtection_ActionLabel = 'Włącz'
+EnableProtection_ActionLabel = 'Włącz'
+EnableSelfProtection_ActionLabel = 'Włącz'
+EnableAutoRun_ActionLabel = 'Włącz'
+
+EnableAutoUpdate_ActionLabel = 'Włącz'
+SpamTrainingWizard_ActionLabel = 'Ucz'
+AntiSpamSettings_ActionLabel = 'Ustawienia'
+
+RebootConfirmation = 'Czy na pewno chcesz teraz uruchomić ponownie komputer?'

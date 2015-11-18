@@ -1,0 +1,148 @@
+<UpdateFiles
+	UpdateDate="28102015 1030"
+	BlackDate="28102015 0610"
+	ObjectType="2=SW2;3=BASE">
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="sw2.stt"
+		Body="MTI4NDsyMDE1MTAyODEwMjgNCg=="/>
+	<FileDescription
+		ComponentID="KAVSDK83"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="sw2.xms"/>
+	<FileDescription
+		ComponentID="KAVSDK83"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="klifpp.xms"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="pdm00.kdc"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="pdm01.kdc"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="pdmsafe.kdc"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sw2.esm"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sw2.mft"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		ReplaceMode="suffix"
+		LocalPath="%BaseFolder%"
+		Filename="pdm.kdl"/>
+	<FileDescription
+		ComponentID="KLIFPPCFG,SW2"
+		UpdateType="desc"
+		GenericApp="NOT(AND(OR(#KAV#,#KIS#,#KES#),OR(HR(8),HR(10),HR([12,13]))))"
+		ServerFolder=""
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Arch="mod"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder=""
+		Arch="mod"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-131071]"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder=""
+		Target="[131072-262143]"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Arch="mod"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder=""
+		Arch="mod"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-131071]"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder=""
+		Target="[131072-262143]"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-131071]"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		ServerFolder=""
+		Target="[131072-262143]"
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV_2345COM,KAV_ORANGE,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV12_ALFA,KAV12_ASUS,KAV12_KDDI,KAV12_NIFTY,KAV12_SONY,KAVMAC_NORDNET"
+		UpdateType="desc"
+		ServerFolder=""
+		FileDate="28102015 1030"
+		Filename="mod-sw2-0607g.xml"/>
+	<Registry
+		ComponentID="KAV_2345COM,KAV_ORANGE,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV12,KAV12_ALFA,KAV12_ASUS,KAV12_KDDI,KAV12_NIFTY,KAV12_SONY,KAV13,KAVMAC_NORDNET,KAVSDK83,KES10,KLIFPPCFG,SW2"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAR94HipAADfhm0sIWbB1leh0jnwRpz3uIo6CsoZ9GOrgKmoxHMc5bLmw2wvQRvZCrBEdUYOs7X/aPjoZotIHrg1o8p3XhWsBAB4JrwAAAAIAAigDAFNXMgMAAigEAEJBU0UBAAAJCAI8VA0KOzoxMDRJelo5SFFOYjF4K3lHUWloK051anR4bDFubGRYc2c1NVdSOVl5Ny84NVFMYUtiNWZrdCtZSndiOGU0NWlmb0JMNXBFMVdMbnZMMm1ZYml0QzJYaXdEJSU="
+		Filename="sw2-0607g.pbv"/>
+	<Registry
+		ComponentID="KAV_2345COM,KAV_ORANGE,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV12,KAV12_ALFA,KAV12_ASUS,KAV12_KDDI,KAV12_NIFTY,KAV12_SONY,KAV13,KAVMAC_NORDNET,KAVSDK83,KES10,KLIFPPCFG,SW2"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGvAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqCQABACAAG0WopxqwPAdFfvSkyC35qyF3FqTT0HMjnh0wQQSFHYogAGM2u0b3JBnNSZEsHQhHJBuatRZbTwZgN9jGqxAWuibzIADK3heemoGYwhYiaHzFH6AZyxBDrPO869zr/88OBgu1JCAAaHivaKssc2FT/YsRWDG5m7m41ttnQiV9LFq1PHDVACsgAOHjuPpC9ZMDN65xHzCnDnG8MPhtHL+uHc4C6PijO46QIAC4xgZpOEgPqltXvD2MtdGaRhEhqM0nGqeNp2Pnq4i9TCAAK8hAPnPOdH1SHMHnCJPZmwwrW33DKCsuhIMefSiR5oYgAHORrZmbU3AG/bnISPxca9KqD0lMCYxeIXVD2Jw1mkSjIADfX4MSN5Abkf3Q9poOJp01W2rVzz6AX4q1cYwninVbuAIAHgEBAB4JrwAAAAEAAAn5FONfDQo7OjEwNDJNczlqSXFPK3puLytxZ2MvbWFzQm1CaWdUYTVud3ludTE5akFGMS9acEtHV2dqbWNGcDMrSk5wVHV6Tm9mS2E3MXMxRGdwR2VwVnR2SFN4RkJ6NWslJQ=="
+		Filename="sw2-0607g.krg"/>
+</UpdateFiles>
+;:10KE/C4gMy80nOkRobzRgXCusVmt+T56fDqEp4/s5KbnBT76nU2DQTky5JGwAbGlpsfEEuLN98AicqanrFEwD2EL%%

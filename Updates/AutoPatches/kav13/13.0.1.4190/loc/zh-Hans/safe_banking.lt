@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = '安全支付'
+CustomActionDescription = '强烈建议您在执行网上银行操作和<br>网上购物时使用受保护的浏览器。'
+SafeRunButtonText = '运行'
+SkipButtonText = '跳过'
+RememberChoiceText = '记住我在该网站上的选择'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = '建立安全连接时获得的证书<br>与原始证书不匹配。'
+CertificateInfoDescription = '为了避免保存隐私数据出现问题并且由于安全原因，<br>强烈建议您不要访问该网站。'
+IgnoreInvalidCertificate = '忽略并打开网页'
+CertificateInvalidReasonCodeText = '错误：'
+CertificateInvalidReason0 = '未定义的错误'
+CertificateInvalidReason1 = '已撤销的证书'
+CertificateInvalidReason2 = '虚假证书'
+CertificateInvalidReason3 = '证书链已损坏'
+CertificateInvalidReason4 = '证书内指定的域和建立连接时访问的网站不匹配'
+CertificateInvalidReason5 = '检测到证书使用违规'
+CertificateInvalidReason6 = '证书时间违规'
+CertificateInvalidReason7 = '证书结构已被破坏'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = '未安装关键的系统更新'
+VulnerabilityInfoDescription = '如果未安装更新，受保护的浏览器将无法<br>为您的数据提供全面保护。'
+UpdaterDisabled = '更新下载已被禁用，强烈建议您启用更新下载。'
+UpdatesNotAllowed = '若要安装更新，请联系本机管理员。'
+UpdaterError = '系统升级初始化失败。'
+RunUpdater = '运行更新'
+IgnoreVulnerability = '忽略'
+NotifyAboutVulnerabilities = '通知我有关漏洞的信息'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = '网页已在受保护的浏览器中打开'
+SafeNavigateInfoDescription = '受保护的浏览器将为网上银行操作和安全网上购物<br>提供全面的保护。'
+SafeBankingGetMoreInfo = '更多知识'
+SafeBankingShowSettings = '显示设置'
+CancelSafeBrowserExecution = '在相同窗口中打开网页'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = '付款已成功完成'
+CompletedScenarioInfoDescription = '已转至标准浏览器，<br>您可以在该浏览器中继续操作。'
+SafeBankingGetMoreInfoText = '关于“安全支付”的更多信息'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = '已转至新的浏览器窗口'
+UnsafeNavigateInfoDescription = '您可以继续在那进行支付。'
+UnsafeNavigateInfoText = '关于“安全支付”的更多信息'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = '受保护的浏览器运行错误'
+SafeBrowserLaunchErrorDescription = '运行错误'
+SafeBrowserLaunchError0xA0010008 = '未找到目标浏览器'
+SafeBrowserLaunchError0xA0010009 = '安全支付插件未安装或被禁用'
+SafeBrowserLaunchError0xA001000A = '不能为受保护的浏览器创建进程'
+SafeBankingLearnMore = '更多知识'

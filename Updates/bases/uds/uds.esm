@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x49CEED28" name="CLSID_HIPS_REQUESTER" module="uds" category="UDS" module_category="UDS" bases_category="KSN" timeout="60">
+    <interface iid="0xBFBA043F" name="IHipsRequester"/>
+    <interface iid="0x95EC534F" name="IHipsRequester.v2"/>
+  </component>
+
+  <component clsid="0x99A069E0" name="CLSID_URGENT_DETECT" module="uds" category="UDS" module_category="UDS">
+    <interface iid="0xD866CC18" name="IUrgentDetect"/>
+    <interface iid="0xE11A28E3" name="IUrgentDetect.v2"/>
+    <interface iid="0x2B43C2ED" name="IUrgentDetectRemote"/>
+  </component>
+
+  <component clsid="0xB9FD38B9" name="CLSID_SUPP_EXTENTION" module="uds" category="UDS" module_category="UDS">
+    <interface iid="0xC7274D29" name="ISupportedExtentionsProvider"/>
+  </component>
+</root>

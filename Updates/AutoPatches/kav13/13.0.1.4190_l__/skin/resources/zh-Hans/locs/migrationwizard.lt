@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = '迁移向导'
+UpgradeCaption = '保护升级'
+
+RebootPageCheckboxRebootText = '重启计算机'
+OpenRemoveProgramsPanel = '打开工具栏'
+
+WizardBeginDescriptionKis = '您将切换到卡巴斯基安全部队 2013。\n\n版权持有人根据您最初安装卡巴斯基反病毒软件时接受的相同条款，为您授予使用卡巴斯基安全部队的非独占授权许可。\n\n注意：这一切换操作可能会导致重启。'
+
+WizardBeginDescriptionKav = '您将切换到卡巴斯基反病毒软件 2013。\n\n版权持有人根据您最初安装卡巴斯基安全部队时接受的相同条款，为您授予使用卡巴斯基反病毒软件的非独占授权许可。\n\n注意：这一切换操作可能会导致重启。'
+
+WizardContinueDescriptionKis = '继续切换至卡巴斯基安全部队 2013。'
+WizardContinueDescriptionKav = '继续切换至卡巴斯基反病毒软件 2013。'
+
+MigrationNocomebackWarning = '\n\n注意！卡巴斯基反病毒软件的当前授权许可过期时间早于卡巴斯基安全部队授权许可的时间，卡巴斯基反病毒软件的授权许可过期后，无法返回至卡巴斯基反病毒软件'
+
+PleaseWait = '请稍候'
+RemovalProgressDescription   = '正在删除不兼容软件'
+RemovalApplicationsDescription = '系统将卸载以下软件以执行切换：'
+ManualRemovalApplicationsDescription = '您应手动卸载以下不兼容软件才能执行切换：'
+SearchRemovalApplicationsDescription   = '正在搜索不兼容软件'
+RestartProductDescription = '程序将重启以完成切换.'
+RebootOsDescription = '您应重启计算机以继续此切换。\n重启之后向导将继续。'
+
+MigrationProgressDescriptionKis = '重新配置程序并切换至卡巴斯基安全部队'
+UpgradeProgressDescriptionKis   = '重新配置程序并切换至卡巴斯基安全部队'
+MigrationProgressDescriptionKav = '重新配置程序并切换至卡巴斯基反病毒软件'
+
+MigrationKis = '切换至卡巴斯基安全部队'
+MigrationKav = '切换至卡巴斯基反病毒软件'
+MigrationUnknown = '切换 '
+
+SearchRemovalApplicationsHeader = '升级至卡巴斯基安全软件'
+RemovalProgressHeader = '正在删除不兼容软件'
+RemovalApplicationsHeader = '发现不兼容的软件'
+RebootOsHeader = '需要重启计算机'
+RestartProductHeader = '应用程序将重启'
+
+MigrationAbortedHeader = $MigrationType + ' 不可能'
+MigrationAbortedDescription = $MigrationType + ' 失败。请尝试手动卸载不兼容的软件，然后重启向导.'
+
+BestBuyGiftInformation = '您的卡巴斯基反病毒软件将被迁移成卡巴斯基安全软件。\n您将有更多的功能来保护您的计算机。'
+BestBuyGiftDescription = '感谢您选择卡巴斯基实验室程序！请享受添加的保护。'
+BestBuyUpgradeNotification = '更新过程中，您的系统将被分析以查找不兼容软件，以便确保已安装应用程序和操作系统的正常运行。'
+BestBuyFreeUpgrade = '切换至卡巴斯基安全部队'
+
+BestBuyTryAbortHeader = '后台升级'
+BestBuyTryAbortInformation = '升级将在后台继续'
+BestBuyTryAbortDescription = '由于不兼容软件没有删除，一些卡巴斯基安全软件的新功能被禁用以便确保已安装应用程序和操作系统的正常运行。\n\n您可以手动删除不兼容软件并在卡巴斯基安全软件的设置窗口启用所有新功能。'
+BackToSubcriptionUpgradeButtonText = '返回升级'
+Congratulation = '恭喜！'
+
+RunKisButtonText = '运行卡巴斯基安全软件'
+
+ProductUpgraded = '您的卡巴斯基反病毒软件已成功升级到卡巴斯基安全软件。\n您已获得更多功能保护您的计算机。'

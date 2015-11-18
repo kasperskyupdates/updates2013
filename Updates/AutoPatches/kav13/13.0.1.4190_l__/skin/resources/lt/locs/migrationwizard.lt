@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Perkėlimo vedlys'
+UpgradeCaption = 'Atnaujinti versiją'
+
+RebootPageCheckboxRebootText = 'Perkrauti kompiuterį'
+OpenRemoveProgramsPanel = 'Atidaryti įrankių juostą'
+
+WizardBeginDescriptionKis = 'Bus perjungta „Kaspersky Internet Security 2013“.\n\nAutorių teisių turėtojas suteikia jums neišskirtinę licenciją naudoti „Kaspersky Internet Security“ tomis pačiomis sąlygomis, su kutiomis sutikote pirmą kartą įdiegę „Kaspersky Anti-Virus“.\n\nPastaba: dėl šio perjungimo galbūt reikės perkrauti.'
+
+WizardBeginDescriptionKav = 'You will be switched to „Kaspersky Anti-Virus 2013“.\n\nThe copyright holder grants you a non-exclusive license to use „Kaspersky Anti-Virus“ on the same terms that you accepted when you originally installed „Kaspersky Internet Security“.\n\nNote: This switch may result in a reboot.'
+
+WizardContinueDescriptionKis = 'Tęsti „Kaspersky Internet Security 2013“ perjungimą.'
+WizardContinueDescriptionKav = 'Tęsti „Kaspersky Anti-Virus 2013“ perjungimą.'
+
+MigrationNocomebackWarning = '\n\nDėmesio! Aktyvi „Kaspersky Anti-Virus“ licencija baigia galioti anksčiau už „Kaspersky Internet Security“ licenciją. Baigus galioti „Kaspersky Anti-Virus“ licencijai nebus galima grįžti prie „Kaspersky Anti-Virus“.'
+
+PleaseWait = 'Palaukite'
+RemovalProgressDescription   = 'Naikinama nesuderinama programinė įranga'
+RemovalApplicationsDescription = 'Norint atlikti perjungimą, bus pašalinta ši programinės įranga:'
+ManualRemovalApplicationsDescription = 'Kad galėtumėte perjungti, turite rankiniu būdu pašalinti šią nesuderinamą programinę įrangą:'
+SearchRemovalApplicationsDescription   = 'Nesuderinamos programinės įrangos ieška'
+RestartProductDescription = 'Taikomoji programa bus iš naujo paleista, kad būtų užbaigtas perjungimas.'
+RebootOsDescription = 'Norėdami tęsti perjungimą, turite perkrauti kompiuterį.\nvedlys tęs veiksmus po perkrovimo.'
+
+MigrationProgressDescriptionKis = 'Perkonfigūruojama taikomoji programa ir perjungiama „Kaspersky Internet Security“'
+UpgradeProgressDescriptionKis   = 'Perkonfigūruojama taikomoji programa ir perjungiama „Kaspersky Internet Security“'
+MigrationProgressDescriptionKav = 'Perkonfigūruojama taikomoji programa ir perjungiama „Kaspersky Anti-Virus“'
+
+MigrationKis = 'Perungti į „Kaspersky Internet Security“'
+MigrationKav = 'Perjungti į „Kaspersky Anti-Virus“'
+MigrationUnknown = 'Perjungti '
+
+SearchRemovalApplicationsHeader = 'Atnaujinti versiją į „Kaspersky Internet Security“'
+RemovalProgressHeader = 'Naikinama nesuderinama programinė įranga'
+RemovalApplicationsHeader = 'Rasta nesuderinamos programinės įrangos'
+RebootOsHeader = 'Būtina perkrauti kompiuterį'
+RestartProductHeader = 'Taikomoji programa bus paleista iš naujo'
+
+MigrationAbortedHeader = $MigrationType + ' negalimas'
+MigrationAbortedDescription = $MigrationType + ' nepavyko. Bandykite rankiniu būdu pašalinti nesuderinamą programinę įrangą ir paleisti vedlį iš naujo.'
+
+BestBuyGiftInformation = 'Jūsų Kaspersky Anti-Virus versija bus atnaujinta į Kaspersky Internet Security.\nNuo šiol savo kompiuteryje turėsite dar daugiau kompiuterio apsaugos funkcijų.'
+BestBuyGiftDescription = 'Dėkojame, kad pasirinkote „Kaspersky Lab“ programinę įrangą! Tikimės, kad liksite patenkinti papildoma apsauga.'
+BestBuyUpgradeNotification = 'Naujinimo metu, jūsų sistemoje bus ieškoma nesuderinama programinė įranga, siekiant užtikrinti tinkamą veikimą  įdiegtų taikomųjų programų ir operacinės sistemos.'
+BestBuyFreeUpgrade = 'Perungti į „Kaspersky Internet Security“'
+
+BestBuyTryAbortHeader = 'Upgrade in background'
+BestBuyTryAbortInformation = 'The upgrade will continue in the background'
+BestBuyTryAbortDescription = 'Kadangi nesuderinamos taikomos programos nebuvo pašalintos, kai kurios naujos „Kaspersky“ funkcijos yra išjungtos, siekiant užtikrinti tinkama veikimą įdiegtų programų ir operacinės sistemos.\n\nJūs galite pašalinti visas nesuderinamas programas rankiniu būdu ir įjungti visas naujas funkcijas „Kaspersky Internet Security“ nustatymų lange.'
+BackToSubcriptionUpgradeButtonText = 'Back to upgrade'
+Congratulation = 'Sveikiname!'
+
+RunKisButtonText = 'Paleisti Kaspersky Internet Security'
+
+ProductUpgraded = 'Jūsų Kaspersky Anti-Virus sėkmingai atnaujintas į Kaspersky Internet Security.\nnNuo šiol galite išbandyti dar daugiau kompiuterio apsaugos funkcijų.'

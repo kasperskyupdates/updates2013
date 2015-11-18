@@ -1,0 +1,4 @@
+﻿Description = 'Kaspersky Security Network (KSN) es una infraestructura de servicios en línea que proporciona información actualizada sobre la seguridad de los archivos, los recursos web y el software. Al utilizar datos de KSN, se acelera la reacción ante amenazas recientes, se mejora el rendimiento de ciertos componentes de protección y se reduce el riesgo de detección de falsos positivos. \nAl participar en KSN, se envía de manera automática a Kaspersky Lab información sobre infecciones por virus y otros problemas, así como estadísticas detalladas sobre las aplicaciones cargadas o ejecutadas (de acuerdo con la lista especificada en el <a href="useKsn"><font color ="#5495DF">informe de recopilación de datos de KSN</font></a>).'
+
+KSNNoPersonal = 'Kaspersky Security Network no recopila ni procesa datos personales de usuarios.'
+UseKSN = 'Ac&epto participar en Kaspersky Security Network'

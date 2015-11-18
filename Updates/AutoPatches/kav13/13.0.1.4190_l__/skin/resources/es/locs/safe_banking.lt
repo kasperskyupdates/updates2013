@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'Pago seguro'
+CustomActionDescription = 'Se recomienda encarecidamente que utilice un navegador en modo protegido <br>para realizar operaciones bancarias y compras en tiendas online.'
+SafeRunButtonText = 'Ejecutar'
+SkipButtonText = 'Ignorar'
+RememberChoiceText = 'Recordar mi elección para este sitio Web'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = 'El certificado que se ha obtenido al establecer una conexión segura <br>no coincide con el original.'
+CertificateInfoDescription = 'Se recomienda encarecidamente que no visite este sitio Web para evitar problemas <br>con la seguridad y el almacenamiento de sus datos confidenciales.'
+IgnoreInvalidCertificate = 'Omitir y abrir página Web'
+CertificateInvalidReasonCodeText = 'error:'
+CertificateInvalidReason0 = 'Error no definido'
+CertificateInvalidReason1 = 'Certificado revocado'
+CertificateInvalidReason2 = 'Certificado falso'
+CertificateInvalidReason3 = 'Se ha roto la cadena del certificado'
+CertificateInvalidReason4 = 'El dominio indicado en el certificado no coincide con el sitio Web con el que se estableció la conexión'
+CertificateInvalidReason5 = 'Infracciones de uso del certificado detectadas'
+CertificateInvalidReason6 = 'Infracción de tiempo del certificado'
+CertificateInvalidReason7 = 'La estructura del certificado está dañada'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = 'Las actualizaciones críticas del sistema no están instaladas'
+VulnerabilityInfoDescription = 'Si no están instaladas las actualizaciones, el navegador protegido <br>no podrá proteger por completo sus datos.'
+UpdaterDisabled = 'Se ha desactivado la descarga de actualizaciones. Se recomienda encarecidamente que active la descarga de actualizaciones.'
+UpdatesNotAllowed = 'Para instalar las actualizaciones, póngase en contacto con el administrador del equipo.'
+UpdaterError = 'No se han podido inicializar las actualizaciones del sistema.'
+RunUpdater = 'Ejecutar actualización'
+IgnoreVulnerability = 'Omitir'
+NotifyAboutVulnerabilities = 'Notificarme acerca de las vulnerabilidades'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = 'Página Web abierta en navegador protegido'
+SafeNavigateInfoDescription = 'El navegador protegido ofrece seguridad completa<br>para todas las operaciones bancarias y compras seguras online.'
+SafeBankingGetMoreInfo = 'Más información'
+SafeBankingShowSettings = 'Mostrar configuración'
+CancelSafeBrowserExecution = 'Abrir página Web en la misma ventana'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = 'Los pagos se han completado con éxito.'
+CompletedScenarioInfoDescription = 'Se ha redirigido al navegador estándar. <br>Puede continuar las operaciones en él.'
+SafeBankingGetMoreInfoText = 'Más información sobre Pago seguro'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = 'Redirigido a una nueva ventana de navegador'
+UnsafeNavigateInfoDescription = 'Puede continuar realizando sus pagos allí.'
+UnsafeNavigateInfoText = 'Más información sobre Pago seguro'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = 'Error de ejecución'
+SafeBrowserLaunchErrorDescription = 'Error al ejecutar el navegador protegido'
+SafeBrowserLaunchError0xA0010008 = 'No se encuentra el navegador de destino'
+SafeBrowserLaunchError0xA0010009 = 'El complemento Pago seguro no está instalado o se encuentra desactivado'
+SafeBrowserLaunchError0xA001000A = 'No se puede crear el proceso del navegador protegido'
+SafeBankingLearnMore = 'Más información'

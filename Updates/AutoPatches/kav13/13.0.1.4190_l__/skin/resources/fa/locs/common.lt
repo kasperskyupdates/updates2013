@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Kaspersky Internet Security Technical Preview'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Kaspersky Anti-Virus Technical Preview'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'به روز کردن' 
+Corrupted = 'آسیب دیده' 
+VeryOld = 'منسوخ' 
+Old = 'قدیمی' 
+OldInGracePeriod = 'مدتی طولانی به روز نشده است'
+UpdatedAndRebootNeeded = 'به روز شده است. راه اندازی مجدد کامپیوتر ضروری است' 
+UpdatedAndProductRestartNeeded = ' به روز شده است. شروع مجدد برنامه ضروری است' 
+SomeBasesNeedUpdate = 'به روز رسانی برای برخی از مولفه های محافظت لازم است'
+
+Schedule_Auto    = 'به طور خودکار' 
+Schedule_Manual  = 'دستی' 
+Schedule_Fixed   = 'طبق برنامه' 
+
+Back = 'بازگشت' 
+StopTask = 'توقف'
+
+News = 'اخبار'
+Reports = 'گزارشها'
+Settings = 'تنظیمات'
+Help = '&راهنما'
+OK = 'تأیید'
+Cancel = 'لغو'
+Retry = 'تلاش مجدد'
+
+Unknown = 'نامشخص'
+
+ShortDateTimeWithSecondsFormat = '%d/%m/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%d/%m/%Y %I:%M %p'
+ShortDateFormat = '%d/%m/%Y'
+
+ShortDateTimeNewsFormat = '%d/%m/%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'امروز، %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'دیروز، %H:%M'
+
+MonthName_1  = 'ژانویه'
+MonthName_2  = 'فوریه'
+MonthName_3  = 'مارس'
+MonthName_4  = 'آوریل'
+MonthName_5  = 'می'
+MonthName_6  = 'ژوئن'
+MonthName_7  = 'جولای'
+MonthName_8  = 'آگوست'
+MonthName_9  = 'سپتامبر'
+MonthName_10 = 'اکتبر'
+MonthName_11 = 'نوامبر'
+MonthName_12 = 'دسامبر'
+ 
+DateUnknown = 'نامشخص'
+
+After = 'در'
+Remaining = 'باقیمانده'
+Ago = 'قبل'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'روز'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'ساعت'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'دقیقه'}
+LessMinute_After = '<1 دقیقه'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'روز'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'ساعت'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'دقیقه'}
+LessMinute_Remaining = '<1 دقیقه'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'روز'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'ساعت'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'دقیقه'}
+LessMinute_Ago = '<1 دقیقه'
+
+Yesterday   = 'دیروز'
+Today       = 'امروز' 
+LessWeek    = 'کمتر از یک هفته قبل'
+LessTwoWeek = 'کمتر از دو هفته قبل'
+LessMonth   = 'کمتر از یک ماه قبل'
+MoreMonth   = 'ّبیشتر از یک ماه قبل'
+MoreHalfYear= 'بیشتر از شش ماه قبل'
+MoreYear    = 'بیشتر از یک سال قبل'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'تأیید'
+CancelButton = 'لغو'
+ApplyButton = 'اعمال'
+CloseButton = 'بستن'
+NextButton = 'بعدی >'
+BackButton = '< بازگشت'
+FinishButton = 'پایان'
+SaveButton = 'ذخیره'
+SkipButton = 'رد شدن'
+Continue = 'ادامه'
+Yes = 'بله'
+No = 'خیر'
+
+SettingsMore = '&تنظیمات...'
+
+DoNoyShowThisWindow = 'نمایش نده'
+
+; general system error codes
+
+SystemError_0x80000040 = 'خطای نامشخص'
+SystemError_0x8000004B = 'خطای نامشخص'
+SystemError_0x80000041 = 'حافظه کافی نیست'
+SystemError_0x80000042 = 'پشنیبانی نشده'
+SystemError_0x80000043 = 'اجرا نشده'
+SystemError_0x80000045 = 'دسترسی رد شد یا شی پیدا نشد'
+SystemError_0x8000004C = 'شی پیدا نشد'
+SystemError_0x800000C6 = 'شی پیدا نشد'
+SystemError_0x800000C5 = 'شی پیدا نشد'
+SystemError_0x8000004F = 'شی قفل است'
+SystemError_0x80000051 = 'عمل لغو شد'
+SystemError_0x80000059 = 'خطای دستگاه'
+SystemError_0x8000005A = 'امضای نامعتبر'
+SystemError_0x8000005B = 'نسخه نامعتبر'
+SystemError_0x8000005F = 'محافظت در برابر نوشتن'
+SystemError_0x80000061 = 'لایسنس وجود ندارد'
+SystemError_0x80000062 = 'بیشتر از ظرفیت'
+SystemError_0x80000063 = 'دستگاه آماده نیست'
+SystemError_0x800000C0 = 'قالب نامعتبر'
+SystemError_0x800000C1 = 'اختیارات کافی وجود ندارد'
+SystemError_0x800000C2 = 'خطای مقدار دهی اولیه'
+SystemError_0x800000C3 = 'خطای مقدار دهی اولیه'
+SystemError_0x800000C7 = 'وضعیت شی اشتباه است'
+SystemError_0x800000C8 = 'شی با رمز عبور محافظت شده است'
+SystemError_0x800000CA = 'خطای خواندن'
+SystemError_0x800000CC = 'خطای خواندن'
+SystemError_0x800000CB = 'خطای نوشتن'
+SystemError_0x800000CD = 'خطای نوشتن'
+SystemError_0x800000D0 = 'شی نامعتبر'
+SystemError_0x800000D1 = 'شی هم اکنون وجود دارد'
+SystemError_0x800000D5 = 'برنامه دیگری در حال استفاده از شی است'
+SystemError_0x800000D8 = 'پایگاه های داده آسیب دیده است'
+SystemError_0x800001C0 = 'ماژول نامعتبر'
+SystemError_0x800001C2 = 'اعتبار ماژول تأیید نشد'
+SystemError_0x800001C1 = 'ماژول پیدا نشد'
+SystemError_0x800001C4 = 'مولفه قابل بارگذاری نیست'
+SystemError_0x80000221 = 'وقفه'
+SystemError_0x80000240 = 'خطای تعامل مولفه ها'
+SystemError_0x90005000 = 'امضای دیجیتال نامعتبر است'
+SystemError_0x90005002 = 'دیجیتالی امضاء نشده'
+SystemError_0x80027006 = 'وظیفه متوقف شد'
+SystemError_0x80027007 = 'وظیفه متوقف شد'
+SystemError_0x80380fbb = 'وظیفه متوقف شد'
+SystemError_0x80017007 = 'این وظیفه در حالت امن قابل انجام نیست'
+SystemError_0x80017005 = 'وظیفه غیرفعال شد'
+SystemError_0x80017006 = 'نام کاربری یا رمز عبور اشتباه است'
+SystemError_0x80017008 = 'انجام وظیفه از طرف یک حساب کاربری دیگر در حالت امن ممکن نیست'
+SystemError_0x80017009 = 'درایور پیدا نشد'
+SystemError_0x80022005 = 'خطای بارگذاری پایگاه های داده'
+SystemError_default    = 'کد خطا ' + $ErrorCode
+
+LicenseManager = 'ارائه &مجوز'
+SubscriptionManager = 'مدیریت اشتراک'
+ProblemSolution = 'برای حل این مشکل به پنجره لایسنسدهی بروید'
+
+KBSuffix = 'کیلوبایت'
+MBSuffix = 'مگابایت'
+GBSuffix = 'گیگابایت'
+TBSuffix = 'ترابایت'
+
+; updating bases status
+Idle = 'غیرفعال' ;refers to connection
+Stopping = 'در حال توقف'
+ConnectingToServer = 'در حال اتصال به سرور'
+CreatingUpdateList = 'در حال پردازش فایل ها'
+Downloading = 'در حال دانلود فایل ها'
+Installing = 'در حال به روز رسانی فایل ها'
+RollbackRunning = 'بازگردانی به پایگاه های داده قبلی'
+
+FunctionalityDisabledForExpiredSubscription = 'به روز رسانی غیرفعال است'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'محافظت کامپیوتر شما غیرفعال است'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'day', 'days'} + ' باقی مانده است.'
+SubscriptionExpiresToday = 'امروز منقضی می شود'
+SubscriptionActivated = 'فعال شد'
+CheckReserveCodeManuallyHeader = 'فعالسازی خودکار برنامه با کد فعالسازی جدید ناموفق بود' ; TODO
+CheckReserveCodeManuallyText = 'سعی کنید برنامه را با کد فعالسازی جدید به طور دستی فعال کنید.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'نسخه بتای برنامه نصب می شود'
+LicensingStatus_Trial_ShortDescription = 'نسخه آزمایشی برنامه نصب می شود'
+LicensingStatus_OkSubscription_ShortDescription = 'اشتراک: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'لایسنس به زودی منقضی می شود'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'لایسنس به زودی منقضی می شود'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_InvalidKey_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_Reinstall_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'لیست سیاه کلیدها آسیب دیده است'
+LicensingStatus_CorruptedBases_ShortDescription = 'نمی توان ارتباط پایگاه های داده را با توافقنامه لایسنس نهایی کاربر تأیید کرد'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'دوره اعتبار لایسنس اجازه استفاده از پایگاه های داده فعلی را نمی دهد'
+LicensingStatus_Expired_ShortDescription = 'لایسنس منقضی شد'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'اشتراک در تاریخ زیر منقضی شده است ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'لایسنس آزمایشی منقضی شده است'
+LicensingStatus_ExpiredBeta_ShortDescription = 'نسخه بتا منقضی شده است'
+LicensingStatus_Blocked_ShortDescription = 'لایسنس مسدود شد'
+LicensingStatus_BlockedSubscription_ShortDescription = 'اشتراک مسدود شد'
+LicensingStatus_LicenseViolated_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'مشکل لایسنس شناسایی شد'
+LicensingStatus_Grace_ShortDescription = 'اشتراک در تاریخ زیر منقضی شده است ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'تاریخ شروع تعلیق اشتراک: ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'به روزرسانی وضعیت اشتراک به صورت خودکار انجام نشد'
+LicensingStatus_NotActivated_ShortDescription = 'برنامه فعال نیست'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'برنامه فعال نیست'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'برنامه فعال نیست'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'برنامه فعال نیست'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'کد فعال سازی جدید'
+ReserveCodeStatus_Ok_ShortDescription = 'کد فعال سازی جدید'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'کد فعالسازی جدید نامعتبر است'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'کد فعال سازی جدید فعال نشد'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'پیش بینی می شد فعالسازی خودکار صورت گیرد'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'نسخه بتای ' + $ProductNameFull + ' حاوی عملکرد کامل است ولی نسخه نهایی برنامه نیست و ممکن است دارای خطاها، اشکالات و نقایصی باشد. لطفاً مشکلات شناسایی شده را به بخشهای مربوطه در انجمن ما گزارش کنید.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'روز'} + ' باقی مانده است. در پایان این دوره، عملکرد برنامه بسیار محدود خواهد شد.' 
+LicenseEndsToday = 'امروز، آخرین روز اعتبار لایسنس شما است. در صورت تمدید نشدن لایسنس، عملکرد برنامه محدود می شود.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'اشتراک فعال شد. تاریخ انقضا: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'اشتراک تا ' + $SubscriptionExpirationDate + 'تمدید شد.'
+StateLimitedSubscriptionCanceledText = 'اشتراک لغو شد. تاریخ انقضا: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'اشتراک از تاریخ زیر تعلیق خواهد شد ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'اشتراک تمدید شد و هرگز منقضی نمی شود'
+StateUnlimitedSubscriptionResumedText = 'اشتراک ادامه می یابد'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'در ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'روز'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'روز'} + ' باقی مانده است. در پایان این دوره، عملکرد برنامه بسیار محدود خواهد شد.'
+LicensingStatus_ExpiresToday_Cause = 'امروز منقضی می شود. عملکرد برنامه بعد از انقضا محدود می شود.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'تاریخ ایجاد کلید نامعتبر. تاریخ سیستم کامپیوتر شما تغییر کرده است. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'تاریخ فعالسازی نامعتبر است. تاریخ سیستم کامپیوتر شما ممکن است تغییر کرده باشد. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'برنامه دچار اشکال شده است. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'توصیه می شود که لیست سیاه جدید را از سرور دانلود کنید.'
+LicensingStatus_CorruptedBases_Cause = 'یکی از دلایل آن می تواند یک به روزرسانی نامعتبر باشد. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'ممکن است یک نسخه غیرقانونی از برنامه را خریداری کرده باشید. محافظت متوقف شده است. کامپیوتر شما در خطر آلودگی، آسیب یا دزدی داده قرار دارد.'
+LicensingStatus_BlockedSubscription_Cause = 'ممکن است یک نسخه غیرمجاز برنامه را خریداری کرده باشید. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'You have exceeded the maximum number of computers on which ' + $ProductName + ' can be installed under your license. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'تعداد کامپیوتر هایی که می توان ' + $ProductName + ' را با اشتراک شما بر روی آنها نصب کرد، بیشتر از حداکثر مجاز است ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'روز'} + ' باقیمانده تا ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'ممکن است فاصله زمانی بین اتصال به سرورهای فعال سازی طولانی شده باشد. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'کد فعال سازی از پیش تنظیم شده در دسترس است. برنامه به محض برقراری اتصال اینترنت فعال خواهد شد.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'کد فعال سازی از پیش تنظیم شده در دسترس است. با استفاده از این کد فعال سازی یا حذف کد فعال سازی از پیش تنظیم شده می توانید برنامه را فعال کنید.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'برنامه بطور خودکار با استفاده از کد فعال سازی از پیش تنظیم شده، فعال نشد. همکاری شما نیاز است.'
+
+ReserveCodeStatus_NotProvided_Cause = 'می توانید یک کد فعالسازی جدید وارد کنید. بعد از اینکه لایسنس فعلی منقضی شد، برنامه با کد فعالسازی جدید فعال خواهد شد.'
+ReserveCodeStatus_Ok_Cause = 'یک کد فعالسازی جدید از پیش بر روی کامپیوتر شما تنظیم شده است. بعد از انقضای لایسنس فعلی، برنامه به طور خودکار با کد فعالسازی جدید فعال خواهد شد. هیچ تداخلی در امنیت شما رخ نخواهد داد.'
+ReserveCodeStatus_Invalid_Cause = 'بعد از انقضای لایسنس فعلی، به روزرسانی موجود نخواهد بود.'
+ReserveCodeStatus_ActivationProblem_Cause = 'برنامه با استفاده از کد فعالسازی جدید ' + $ReserveCode + ' بصورت خودکار فعال نشد. نیاز به کمک شما وجود دارد.'
+ReserveCodeStatus_WaitActivation_Cause = 'فعالسازی خودکار با کد فعال سازی جدید ' + $ReserveCode + ' پیش بینی می شود.'
+
+ResolveProblem_BuyCommercial         = 'توصیه می شود تا نسخه تجاری برنامه را خریداری و فعال کنید.'
+ResolveProblem_CheckSystemTime		= 'از صحیح بودن تاریخ سیستم مطمئن شوید.'
+ResolveProblem_ActivateAgain        = 'حذف کلید فعال و فعال سازی دوباره برنامه را امتحان کنید. همچنین می توانید با پشتیبانی فنی یا توزیع کننده برنامه تماس بگیرید.'
+ResolveProblem_CallSupport			= 'توصیه می شود برای یافتن دلیل مسدود شدن، با پشتیبانی فنی تماس بگیرید. برای بازگردانی عملکرد برنامه، یک لایسنس جدید تهیه کنید.'
+ResolveProblem_ContactSupport		= 'با پشتیبانی فنی تماس بگیرید.'
+ResolveProblem_ActialLicense		= 'برای ادامه محافظت از کامپیوتر خود، کد فعال سازی جدید را وارد کنید.'
+ResolveProblem_UpdateAgain			= 'توصیه می شود که پایگاه های داده را دوباره به روز کنید.'
+ResolveProblem_BuyNewLicense		= 'برای ادامه محافظت از کامپیوتر خود، یک لایسنس جدید دریافت کنید.'
+ResolveProblem_CallProvider			= 'برای ادامه اشتراک، با ارائه کننده سرویس تماس بگیرید.'
+ResolveProblem_ProviderWebSite		= 'برای ادامه اشتراک، با ارائه کننده سرویس تماس بگیرید.'
+ResolveProblem_RenewalNotAvailable	= 'تمدید اشتراک ممکن نیست.'
+ResolveProblem_BuyLicense			= 'برای از سرگیری محافظت از رایانه خود، باید یک لایسنس تجاری از Kaspersky Lab و یا توزیع کنندگان ما خریداری کنید. از نسخه آزمایشی فقط یکبار می توانید استفاده کنید.'
+ResolveProblem_Reinstall			= 'برنامه را دوباره نصب کنید'
+ResolveProblem_RenewLicense			= 'برای فعال کردن قابلیت های کامل، لایسنس را تمدید کنید.'
+ResolveProblem_RefreshSubscription	= 'لطفاً وضعیت اشتراک را به طور دستی به روز کنید.'
+ResolveProblem_Activate				= 'برای فعال سازی برنامه، کد فعال سازی را وارد کنید.'
+ResolveProblem_ActivateReserveCode  = 'برای فعال سازی دستی برنامه با کد فعال سازی جدید اقدام کنید.'
+ResolveProblem_ActivateCodeManual	= 'برنامه را به طور دستی فعال کنید.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'تنظیمات اتصال اینترنت خود را بررسی کرده و صبر کنید تا فعالسازی خودکار انجام شود، یا برنامه را دستی فعال کنید.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' باید یک کد فعالسازی جدید وارد کنید. بعد از انقضای لایسنس فعلی، برنامه با این کد فعالسازی، فعال خواهد شد.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' ضروری است با استفاده از کد فعال سازی قبل از انقضای لایسنس آزمایشی، برنامه فعال شود.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'برای ادامه استفاده از قابلیت های کامل برنامه، خریداری لایسنس تجاری از Kaspersky Lab یا توزیع کننده ما، ضروری است.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' ضروری است با استفاده از کد فعال سازی قبل از انقضای لایسنس آزمایشی، برنامه فعال شود.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' باید یک کد فعالسازی جدید وارد کنید. بعد از انقضای لایسنس فعلی، برنامه با این کد فعالسازی، فعال خواهد شد.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'وضعیت محافظت نامشخص است. '
+ProtectionLevelNoFeaturesLong = 'محافظت غیرفعال است.'
+ProtectionLevelLimitedLong = 'عملکرد برنامه محدود است. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'وضعیت به روز رسانی نامشخص است. '
+UpdaterLevelNotAllowedLong = 'به روز رسانی ممکن نیست. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'تعریف نشده'
+SubscriptionStateActive = 'فعال'
+SubscriptionStatePaused = 'تعلیق شد'
+SubscriptionStateCancelledSoft = 'تعلیق شد'
+SubscriptionStateCancelledHard = 'لغو شد'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'تعریف نشده'
+SubscriptionStatusReasonProviderInitiated = 'توسط ارائه دهنده سرویس فعال شده است'
+SubscriptionStatusReasonCreditCardAuthFailed = 'تأیید اعتبار کارت اعتباری پذیرفته نشد'
+SubscriptionStatusReasonCustomerInitiated = 'فعال شده توسط کاربر'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'تأیید اعتبار کارت اعتباری پذیرفته شد'
+
+ProductStatusRelease = 'نسخه مخصوص عرضه'
+ProductStatusBeta = 'نسخه بتا'
+
+LegalStatusBlocked = 'لایسنس مسدود شد'
+LegalStatusLimited = 'توافقنامه لایسنس رعایت نشده است'
+LegalStatusValid = 'لایسنس مورد استفاده'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'اعلان لایسنس مهمی وجود دارد.\n<a href="licensemanager">جزئيات...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'اشتراک منقضی شد. برای تمدید اشتراک، با ارائه دهنده خدمات خود تماس بگیرید.'
+
+LicensingState_WarningIsAvailable = 'اخطاری وجود دارد'
+ProtectionState_NotificationIsAvailable = 'اعلان لایسنس'
+LicensingState_ProblemIsAvailable = 'مشکلی پیش آمد'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'نرم افزار امنیتی Kaspersky شما پس از " + $LicenseDaysToExpiry + " روز منقضی می شود و رایانه شما بدون محافظت خواهد بود'
+LNCS_BBY_WillExpire_Description =	'برای ادامه پوشش، لطفاً در درگاه کاربری Geek Squad به طور آنلاین تمدید کنید'
+
+LNCS_BBY_AboutToExpire_Title =	    'نرم افزار امنیتی Kaspersky شما در حال انقضا است'
+LNCS_BBY_AboutToExpire_Description = 'فقط ' + $LicenseDaysToExpiry + ' روز تا پایان پوشش شما باقی مانده است و سپس محافظت از رایانه غیر فعال می شود. هم اکنون با تماس گرفتن آنلاین به تیم اشتراک نرم افزار Geek Squad در Geek Squad Renewal Center اشتراک خود را تمدید کنید'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'نرم افزار Kaspersky Security شما امروز منقضی می شود و کامپیوترتان بدون محافظت می ماند'
+LNCS_BBY_AboutToExpire_Today_Description = 'هم اکنون با تماس گرفتن آنلاین به تیم اشتراک نرم افزار Geek Squad در درگاه کاربری Geek Squad اشتراک خود را تمدید کنید'
+
+LNCS_BBY_LastDay_Title =	'هشدار! نرم افزار امنیتی Kaspersky شما امروز منقضی می شود'
+LNCS_BBY_LastDay_Description =	'اجازه ندهید رایانه شما بی محافظت باقی بماند. در درگاه کاربری Geek Squad به صورت آنلاین تمدید کنید'
+LNCS_BBY_LastDay_Balloon =	'هشدار! نرم افزار امنیتی Kaspersky شما امروز منقضی می شود. اجازه ندهید رایانه شما بدون محافظت باشد. آن را در این آدرس <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a> تمدید کنید.'
+
+LNCS_BBY_Grace_Title =			'هشدار! رایانه شما بدون محافظت است'
+LNCS_BBY_Grace_Description =	'اجازه ندهید رایانه شما بی محافظت باقی بماند. در درگاه کاربری Geek Squad به صورت آنلاین تمدید کنید.'
+LNCS_BBY_Grace_Description_Full =	'اجازه ندهید رایانه شما بی محافظت باقی بماند. در درگاه کاربری Geek Squad به صورت آنلاین تمدید کنید.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'هشدار! کامپیوتر شما بدون محافظت رها شده است. اجازه ندهید کامپیوتر شما بدون محافظت باقی بماند. در اینجا <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a> تمدید آنلاین انجام دهید.'
+
+LNCS_BBY_RenewFailure_Title =	    'نتوانستیم نرم افزار امنیتی Kaspersky شما را تمدید کنیم'
+LNCS_BBY_RenewFailure_Description = 'به صورت آنلاین در درگاه کاربری Geek Squad تمدید کنید'
+LNCS_BBY_RenewFailure_Description_Full = 'به صورت آنلاین در درگاه کاربری Geek Squad تمدید کنید.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'ما نتوانستیم نرم افزار امنیتی Kaspersky شما را تمدید کنیم. لطفاً در اینجا <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a> تمدید آنلاین انجام دهید.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'احتمال لغو برنامه محافظت Kaspersky وجود دارد زیرا کارت اعتباری شما که در این پرونده وجود دارد بزودی منقضی می شود'
+LNCS_BBY_CCAboutToExpire_Description =	'به صورت آنلاین در درگاه کاربری Geek Squad تمدید کنید'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'به صورت آنلاین در درگاه کاربری Geek Squad تمدید کنید.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'اشتراک منقضی شد'
+LNCS_BBY_Expired_Description =	'تمدید اشتراک قابل انجام نیست.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Anti-Virus بهره ببرید و $5 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Anti-Virus بهره ببرید و $10 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Anti-Virus بهره ببرید و $15 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Anti-Virus بهره ببرید و $20 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Internet Security بهره ببرید و $5 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Internet Security بهره ببرید و $10 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Internet Security بهره ببرید و $15 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'از مزایای تمدید زودهنگام نرم افزار Kaspersky Internet Security بهره ببرید و $20 صرفه جویی کنید.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">همین حالا تمدید کنید</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'نرم افزار Kaspersky Anti-Virus شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'نرم افزار Kaspersky Anti-Virus شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'نرم افزار Kaspersky Anti-Virus شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'نرم افزار Kaspersky Anti-Virus شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'نرم افزار Kaspersky Internet Security شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'نرم افزار Kaspersky Internet Security شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'نرم افزار Kaspersky Internet Security شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'نرم افزار Kaspersky Internet Security شما در حال منقضی شدن است!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">اینجا را کلیک کنید</a> تا5 دلار از قیمت تمدید سالیانه کم شود.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">اینجا را کلیک کنید</a> تا10 دلار از قیمت تمدید سالیانه کم شود.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">اینجا را کلیک کنید</a> تا15 دلار از قیمت تمدید سالیانه کم شود.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">اینجا را کلیک کنید</a> تا20 دلار از قیمت تمدید سالیانه کم شود.'
+
+LNCS_BBY_StatusUpdate = 'تغییر وضعیت محصول ممکن است ۲۴ ساعت طول بکشد. چند ساعت پس از تکمیل مرحله تمدید در پورتال Geek Squad، «تأیید وضعیت اشتراک» را کلیک کنید تا به روز رسانی توسط محصول بررسی شود. '
+
+EndOfLicense_Header = 'گزارش عملکرد برنامه'
+WelcomPageTitle = 'خوش آمدید به ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'نسخه سیستم عامل از زمان نصب ' + $ProductName + ' تغییر کرده است'
+ReinstallWarningDescription = 'لطفاً ' + $ProductName + ' را نصب کنید'
+
+IncompatibleOsVersionTitle = $ProductName + ' متوقف شده است'
+IncompatibleOsVersionDescription = 'برای عملکرد بهتر ' + $ProductName + ' پس از نصب Microsoft Windows 8 باید بعضی مؤلفه های برنامه را دوباره نصب کنید. نصب بیشتر از 2 دقیقه طول نخواهد کشید.' + '\n\nدر حین پیکربندی ' + $ProductName + ' بر روی Microsoft Windows 8 حفاظت از کامپیوتر شما محدود خواهد بود.'
+
+ReinstallWarningOkButton = 'جزئیات'
+IncompatibleOsVersionOkButton = 'نصب و اجرا کنید'
+
+BrowserWaitingMessage = 'لطفا صبر کنید...'
+
+OsUpgradedTitle = 'به روزرسانی سیستم عامل'
+OsUpgradedDescription = 'به روزرسانی سیستم عامل با موفقیت کامل شد.'

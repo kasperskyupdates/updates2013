@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'Sicherer Zahlungsverkehr'
+CustomActionDescription = 'Es wird ausdrücklich empfohlen, für Online-Bankgeschäfte und <br>Online-Einkäufe den sicheren Browser zu verwenden.'
+SafeRunButtonText = 'Start'
+SkipButtonText = 'Überspringen'
+RememberChoiceText = 'Auswahl für diese Website merken'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = 'Das beim Aufbau der geschützten Verbindung empfangene Zertifikat <br>stimmt nicht mit dem Originalzertifikat überein'
+CertificateInfoDescription = 'Vor einem Besuch dieser Website wird ausdrücklich gewarnt, um Sicherheitsprobleme <br>und Probleme beim Speichern sensibler Informationen zu vermeiden.'
+IgnoreInvalidCertificate = 'Ignorieren und Webseite öffnen'
+CertificateInvalidReasonCodeText = 'Fehler:'
+CertificateInvalidReason0 = 'Unbekannter Fehler'
+CertificateInvalidReason1 = 'Zertifikat wurde gesperrt'
+CertificateInvalidReason2 = 'Gefälschtes Zertifikat'
+CertificateInvalidReason3 = 'Verstoß in der Zertifikatkette'
+CertificateInvalidReason4 = 'Die im Zertifikat angegebene Domain entspricht nicht der Website, mit der eine Verbindung hergestellt wird'
+CertificateInvalidReason5 = 'Verstöße in der Zertifikatverwendung wurden erkannt'
+CertificateInvalidReason6 = 'Verstoß bei der Gültigkeitsdauer des Zertifikats'
+CertificateInvalidReason7 = 'Verstoß in der Zertifikatstruktur'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = 'Kritische System-Updates sind nicht installiert'
+VulnerabilityInfoDescription = 'Wenn diese Updates nicht installiert sind, kann der sichere Browser <br>Ihre Daten nicht in vollem Umfang schützen.'
+UpdaterDisabled = 'Der Update-Download wurde deaktiviert. Es wird ausdrücklich empfohlen, den Update-Download zu aktivieren.'
+UpdatesNotAllowed = 'Wenden Sie sich an den Computeradministrator, damit die Updates installiert werden.'
+UpdaterError = 'Initialisierungsfehler beim System-Update.'
+RunUpdater = 'Update starten'
+IgnoreVulnerability = 'Ignorieren'
+NotifyAboutVulnerabilities = 'Ich möchte über Schwachstellen benachrichtigt werden'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = 'Die Webseite wurde im sicheren Browser geöffnet'
+SafeNavigateInfoDescription = 'Im sicheren Browser sind alle Online-Bankgeschäfte und <br>Online-Einkäufe vollkommen sicher.'
+SafeBankingGetMoreInfo = 'Erfahren Sie mehr'
+SafeBankingShowSettings = 'Einstellungen anzeigen'
+CancelSafeBrowserExecution = 'Webseite im gleichen Fenster öffnen'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = 'Es wurde in den normalen Browser weitergeleitet.'
+CompletedScenarioInfoDescription = 'Der Modus Sicherer Browser wurde beendet. <br>Sie können Ihre Arbeit im normalen Browser fortsetzen.'
+SafeBankingGetMoreInfoText = 'Erfahren Sie mehr über den Sicheren Zahlungsverkehr'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = 'Sie wurden zu einem neuen Browserfenster weitergeleitet'
+UnsafeNavigateInfoDescription = 'Sie können Ihre Zahlungsvorgänge in diesem Fenster fortsetzen.'
+UnsafeNavigateInfoText = 'Erfahren Sie mehr über den Sicheren Zahlungsverkehr'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = 'Startfehler'
+SafeBrowserLaunchErrorDescription = 'Der sichere Browser konnte nicht gestartet werden'
+SafeBrowserLaunchError0xA0010008 = 'Der gewünschte Browser wurde nicht gefunden'
+SafeBrowserLaunchError0xA0010009 = 'Das Plug-in Sicherer Zahlungsverkehr wurde nicht installiert oder deaktiviert'
+SafeBrowserLaunchError0xA001000A = 'Es konnte kein Prozess für den sicheren Browser angelegt werden'
+SafeBankingLearnMore = 'Erfahren Sie mehr'

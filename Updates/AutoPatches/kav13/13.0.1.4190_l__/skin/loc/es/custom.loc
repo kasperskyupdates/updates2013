@@ -1,0 +1,120 @@
+﻿[Global]
+;------------- Links -------------
+$LinkHelpBase               = "http://www.kaspersky-help.com/?hl=" + product.Gui.SkinLoc
+$LinkProdInfo               = "&pid=" + env("ProductType") + "&version=" + env("ProductVersion") + "&hotfix="
+$ProductInfo                = $LinkProdInfo + global.ProductHotfix
+$ProductInfo2               = $LinkProdInfo + product.ProductHotfix
+$LicAdditionalInfo          = "&serial=" + f_KeySerNum(product.LicInfo.KeyInfo.ID.KeySerNum)+ "&ktype=" + product.LicInfo.KeyInfo.KeyType + "&kcount=" + product.LicInfo.KeyInfo.LicenseCount + "&kcreat=" + f_get_safe_date(product.LicInfo.KeyInfo.KeyCreationDate) + "&kexp=" + f_get_safe_date(product.LicInfo.LicenseExpirationDate) + "&kinst=" + f_get_safe_date(product.LicInfo.LicenseActivationDate)
+$ProductUpgradeLink         = "http://www.kaspersky.com/sp/compare"
+$KnowledgeBaseLink          = $LinkHelpBase + "&link=kb&syst=" + global.OSVersion + $ProductInfo + $LicAdditionalInfo + "&installid=" + env("PCID")
+$SpecialAlertLink           = ($VirusListLink + "&function=search&VN=")
+$VirusListThreatLink        = ($VirusListLink + "&function=search&VN=" + DetectName + "&sha1=" + Hash)
+$VirusListThreatLink_New    = ($VirusListLink + "&function=search&VN=<DetectName>&sha1=<Hash>")
+$VirusListPhishingLink      = ($VirusListLink + "&function=find&gloss=phishing")
+$VirusListMalwareLink       = ($VirusListLink + "&function=find&gloss=malware")
+$SettingsUrlExampleLink     = "Ejemplo: http://www.kaspersky.com/*"
+$AVZScanHelpdeskLinkText    = \"http://avptool.virusinfo.info/\" + Gui.SkinLoc + \"/AVPTool_helpdesk.htm\"
+$AVZToolUpdateLink          = "http://z-oleg.com/secur/"
+$AVZVirusInfoLink           = "http://virusinfo.info"
+$BestBuyOneClickSupportLink = "http://usa.kaspersky.com/downloads/bestbuy-download"
+$OneClickSupportLink        = $IsBestBuyLink ? $BestBuyOneClickSupportLink : $LinkHelpBase + "&link=fast_track&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$ForumDefURL                = $LinkHelpBase + "&link=forum&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$HelpURLSettingsAppCtl      = $LinkHelpBase + "&link=st_appcontrol&syst=" + global.OSVersion + $ProductInfo + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsFirewall    = $LinkHelpBase + "&link=st_firewall&syst=" + global.OSVersion + $ProductInfo + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsParCtl      = $LinkHelpBase + "&link=parental_control&syst=" + global.OSVersion + $ProductInfo + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsWebMonitoring = $LinkHelpBase + "&link=st_webav&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsSW2         = $LinkHelpBase + "&link=system_watcher&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsSW2_AEP     = $LinkHelpBase + "&link=exploit_prevention&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsIdleScan    = $LinkHelpBase + "&link=idle_scan&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsGeoSecurity = $LinkHelpBase + "&link=geo_security&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsWebMonBlockURL = $LinkHelpBase + "&link=green_zone&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLSettingsVirtualKeyboard = $LinkHelpBase + "&link=secure_input&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$HelpURLOnlineBankingError  = $LinkHelpBase + "&link=error&type=OB&syst=" + global.OSVersion + $ProductInfo2 + "&installid=" + env("PCID") + "&error="
+$HelpURLSettingsOnlineBanking = $LinkHelpBase + "&link=safe_money&syst=" + global.OSVersion + $ProductInfo2 + $LicAdditionalInfo + "&installid=" + env("PCID")
+$WhatIsCustomerIdLink       = $LinkHelpBase + "&link=activationcode2&syst=" + global.OSVersion +  $ProductInfo
+$ActCodeHint                = $LinkHelpBase + "&link=activationcode&syst=" + global.OSVersion + $ProductInfo + $LicAdditionalInfo + "&installid=" + env("PCID")
+$Activation_Error_url 		= $LinkHelpBase + "&link=error&type=OLA&error=" + ErrorCode + "&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$Activation_Error_url2      = $Activation_Error_url + "&serror=" + OnlineActSrvError + "&sserror=" + OnlineActSrvErrorSpecific
+$KeyErrorLink               = $LinkHelpBase + "&link=error&type=KEY&error=" + LicInfo.InvalidReason + "&syst=" + global.OSVersion + $ProductInfo+"&installid=" + env("PCID") + $LicAdditionalInfo
+$ProfileErrorUrlText        = $LinkHelpBase + "&link=error&type=components_failure&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$Rdisk_CopyError_url 		= $LinkHelpBase + "&link=error&type=rdisk_c&error=" + ErrorCode + "&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$Rdisk_DownloadError_url 	= $LinkHelpBase + "&link=error&type=rdisk_d&error=" + ErrorCode + "&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$Rdisk_UpdateIsoError_url 	= $LinkHelpBase + "&link=error&type=rdisk_u&error=" + ErrorCode + "&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID") + $LicAdditionalInfo
+$Rdisk_BurnIsoError_url 	= $LinkHelpBase + "&link=error&type=rdisk_b&error=" + ErrorCode + "&serror=" + OperationCode + "&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID")
+$Rdisk_MakeUSBError_url		= $LinkHelpBase + "&link=error&type=rdisk_usb&error=" + ErrorCode + "&serror=" + OperationCode + "&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID")
+
+$AvzScriptHelpLinkSuffix 	= "&print=true2"
+$KB932716LinkText           = \"http://support.microsoft.com/kb/932716\"
+$RescueDiskDetailsLink      = $LinkHelpBase + "&link=rdisk_details&syst=" + global.OSVersion + $ProductInfo + $LicAdditionalInfo + "&installid=" + env("PCID")
+
+
+;------------- Redirect.kaspersky.com links ------------
+; NOTE: when adding link with new target to Redirect.kaspersky.com, be sure to reflect changes
+; here: http://substend.avp.ru:9090/wiki/index.php/Redirect.kaspersky.com
+; and in specification KAV_KIS_2013_Interceptorlinks
+
+$RedirectorBase				= "http://redirect.kaspersky.com/"
+$RedirectorBaseWithSkinLoc  = $RedirectorBase + "?hl=" + Gui.SkinLoc
+$KsnInfoLink                = $RedirectorBase + "?target=ksninfo&act-local=<localization>&act-pcid=<act-pcid>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-pid=<act-pid>&act-pv=<act-pv>&ppcs-id=<ppcs-id>&act-ksn=<act-ksn>&rpe=1"
+$MyAccountLink              = $RedirectorBaseWithSkinLoc + "&target=my&rpe=1&syst=" + global.OSVersion + $ProductInfo + "&serial=" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "&ktype=" + LicInfo.KeyInfo.KeyType + "&kcount=" + LicInfo.KeyInfo.LicenseCount + "&kcreat=" + f_get_safe_date(LicInfo.KeyInfo.KeyCreationDate) + "&kexp=" + f_get_safe_date(LicInfo.LicenseExpirationDate) + "&kinst=" + f_get_safe_date(LicInfo.LicenseActivationDate) + "&installid=" + env("PCID") + "&installdate=" + env("InstallDate") + "&KasperskyId=" + global.Kaspersky_ID
+$ActivationLink             = $RedirectorBaseWithSkinLoc + "&target=activation&rpe=1"
+$SupportLink                = $RedirectorBaseWithSkinLoc + "&target=support&rpe=1"
+$VirusListLink              = $RedirectorBaseWithSkinLoc + "&target=securelist&rpe=1"
+$RescueDiskLink             = $RedirectorBaseWithSkinLoc + "&target=rescuedisk" + $ProductInfo + "&rpe=1"
+$AvzScriptHelpLinkPrefix    = $RedirectorBaseWithSkinLoc + "&target=avz&rpe=1"
+$SubscriptionProviderLink	= $RedirectorBaseWithSkinLoc + "&target=corpsite&rpe=1"
+$TracesLink                 = $RedirectorBase + "?target=traces&rpe=1"
+$UcpAccountLink				= $RedirectorBase + "?target=ucp&hl=<Localization>&kasperskyid=<KasperskyId>&ppcs-id=<PpcsId>&act-pid=<ApplicationType>&act-pv=<ApplicationVersion>&act-serial=<KeySerialNumber>&lic-id=<LicenseId>&act-lic-type=<LicenseType>&act-lic-status=<LicenseStatusId>&act-lic-lifespan=<LicenseTerm>&act-lic-daystillexpiration=<LicenseDaysToExpiration>&act-lic-dayssinceinstall=<LicenseDaysSinceActivation>&act-lic-dse=<LicenseDaysAfterExpiration>"
+
+$IncompatibleOsVersionLink  = $LinkHelpBase + "&link=error&type=os_upgrade&error=<os_upgrade_description>&syst=" + global.OSVersion + $ProductInfo + "&installid=" + env("PCID")
+
+;------------- Fonts ------------
+$ComponentDescSize          = 7
+$DescriptionBlueSize        = 8
+
+;------------- Texts ------------
+$CopyrightText = "© 2012 Kaspersky Lab ZAO. Todos los derechos reservados."
+
+
+;------------- common enums ------------
+[ProductTitle]
+kis     = "Kaspersky Internet Security"
+kat     = "Kaspersky Virus Removal Tool"
+def     = s_ProductTitle_Inclination_KAV(@1)
+
+[s_ProductTitle_Inclination_KAV]
+GEN     = "Kaspersky Anti-Virus"
+DAT     = "Kaspersky Anti-Virus"
+INS     = "Kaspersky Anti-Virus"
+PRE     = "Kaspersky Anti-Virus"
+def     = "Kaspersky Anti-Virus"
+
+[ProductTitleLong]
+kavpe   = switch("kav", "ProductTitleLong", @1) + " PE"
+def     = switch(@, "ProductTitle", @1) + (IsRelease ? " 2013" : "")
+
+
+[f_GetInterceptorLink]
+ret = "http://www.kaspersky-help.com/?hl=" + Gui.SkinLoc + \
+	"&link=" + @0 + \
+	"&syst=" + global.OSVersion + \
+	"&pid=" + env("ProductType") + \
+	"&version=" + env("ProductVersion") + \
+	"&hotfix=" + product.ProductHotfix + \
+	"&serial=" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum)+ \
+	"&ktype=" + LicInfo.KeyInfo.KeyType + \
+	"&kcount=" + LicInfo.KeyInfo.LicenseCount + \
+	"&kcreat=" + f_get_safe_date(LicInfo.KeyInfo.KeyCreationDate) + \
+	"&kexp=" + f_get_safe_date(LicInfo.LicenseExpirationDate) + \
+	"&kinst=" + f_get_safe_date(LicInfo.LicenseActivationDate)
+
+;---------------------------------------
+; This section is required to fill product name's title in 
+; HTML templates (no skin engine is used)
+[HttpUtils_ProductName]
+$HttpUtils_Product_Name_KIS="Kaspersky Internet Security 2013"
+$HttpUtils_Product_Name_KAV="Kaspersky Anti-Virus 2013"
+$HttpUtils_Product_Name_WKS="Kaspersky Anti-Virus 2013 for Windows Workstations"
+$HttpUtils_Product_Name_KIS_BETA="Kaspersky Internet Security Technical Preview"
+$HttpUtils_Product_Name_KAV_BETA="Kaspersky Anti-Virus Technical Preview"
+$HttpUtils_Product_Name_WKS_BETA="Kaspersky Anti-Virus for Windows Workstations Technical Preview"

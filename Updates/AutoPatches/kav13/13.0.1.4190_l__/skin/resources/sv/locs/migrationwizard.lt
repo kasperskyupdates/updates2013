@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migreringsguiden'
+UpgradeCaption = 'Uppgradera'
+
+RebootPageCheckboxRebootText = 'Starta om datorn'
+OpenRemoveProgramsPanel = 'Öppna verktygspanel'
+
+WizardBeginDescriptionKis = 'Övergång kommer att ske till Kaspersky Internet Security 2013.\n\nCopyright-innehavaren ger dig en icke-exklusiv licens att använda Kaspersky Internet Security på samma villkor som de du accepterade när du ursprungligen installerade Kaspersky Anti-Virus.\n\nObs! Den här övergången kan kräva en omstart.'
+
+WizardBeginDescriptionKav = 'Övergång kommer att ske till Kaspersky Internet Security 2012.\n\nCopyright-innehavaren ger dig en icke-exklusiv licens att använda Kaspersky Anti-Virus på samma villkor som de du accepterade när du ursprungligen installerade Kaspersky Anti-Virus.\n\nObs! Den här övergången kan kräva en omstart.'
+
+WizardContinueDescriptionKis = 'Fortsätt övergången till Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Fortsätt övergången till Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nVarning! Den aktiva licensen för Kaspersky Anti-Virus går ut innan licensen för Kaspersky Internet Security. När licensen för Kaspersky Anti-Virus går ut kommer det inte att vara möjligt att återgå till Kaspersky Anti-Virus.'
+
+PleaseWait = 'Vänta'
+RemovalProgressDescription   = 'Tar bort inkompatibel programvara.'
+RemovalApplicationsDescription = 'Följande programvara kommer att tas bort innan övergången:'
+ManualRemovalApplicationsDescription = 'Du bör ta bort följande icke-kompatibla programvara för att övergången ska kunna göras manuellt:'
+SearchRemovalApplicationsDescription   = 'Söker efter inkompatibel programvara'
+RestartProductDescription = 'Programmet kommer att startas om så att övergången avslutas.'
+RebootOsDescription = 'Datorn måste startas om för att övergången ska kunna fortsätta.\nGuiden fortsätter efter omstarten.'
+
+MigrationProgressDescriptionKis = 'Gör nya inställningar för programmet och växla till Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Gör nya inställningar för programmet och växla till Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Gör nya inställningar för programmet och växla till Kaspersky Anti-Virus'
+
+MigrationKis = 'Växla till Kaspersky Internet Security'
+MigrationKav = 'Växla till Kaspersky Anti-Virus'
+MigrationUnknown = 'Växla'
+
+SearchRemovalApplicationsHeader = 'Uppgradera till Kaspersky Internet Security'
+RemovalProgressHeader = 'Tar bort inkompatibel programvara.'
+RemovalApplicationsHeader = 'Icke-kompaitibel programvara har upptäckts'
+RebootOsHeader = 'Datorn måste startas om'
+RestartProductHeader = 'Programmet kommer att startas om'
+
+MigrationAbortedHeader = $MigrationType + ' är inte möjlig'
+MigrationAbortedDescription = $MigrationType + ' misslyckades. Försök att ta bort icke-kompatibel programvara manuellt och starta sedan om guiden.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus uppgraderas till Kaspersky Internet Security.\nDu får ytterligare alternativ som skyddar din dator.'
+BestBuyGiftDescription = 'Tack för att du valde programvara från Kaspersky Lab! Dra nytta av det ökade skyddet.'
+BestBuyUpgradeNotification = 'Under uppdateringen analyseras ditt system för att hitta inkompatibel programvara för att säkerställa korrekt drift av operativsystemet och de installerade programmen.'
+BestBuyFreeUpgrade = 'Växla till Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Uppgraderingen i bakgrunden'
+BestBuyTryAbortInformation = 'Uppgraderingen fortsätter i bakgrunden'
+BestBuyTryAbortDescription = 'Eftersom den inkompatibla programvaran inte togs bort, har vissa nya funktioner i Kaspersky Internet Security inaktiverats för att säkerställa korrekt drift av operativsystemet och de installerade programmen.\n\nDu kan ta bort den inkompatibla programvaran manuellt och aktivera alla de nya funktionerna i inställningsfönstret i Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Återgå till uppgraderingen'
+Congratulation = 'Gratulerar!'
+
+RunKisButtonText = 'Starta Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus har uppgraderats till Kaspersky Internet Security.\nDu har nu ännu fler funktioner som skyddar din dator.'

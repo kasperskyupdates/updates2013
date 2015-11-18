@@ -1,0 +1,197 @@
+<UpdateFiles
+	UpdateDate="28102015 0953"
+	BlackDate="28102015 0610"
+	ObjectType="2=QSCAN;3=BASE">
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/win"
+		OS="Win"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.mft"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/win"
+		OS="Win"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.kdc"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/win"
+		OS="Win"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.esm"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/mac"
+		OS="Mac"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.kdl"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/mac"
+		OS="Mac"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.mft"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/mac"
+		OS="Mac"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.kdc"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		ServerFolder="i386/mac"
+		OS="Mac"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.esm"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		App="RD 10.*.*.*"
+		ReplaceMode="suffix"
+		ServerFolder="i386/u"
+		OS="Linux"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.kdl"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		App="RD 10.*.*.*"
+		ReplaceMode="suffix"
+		ServerFolder="i386/u"
+		OS="Linux"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.mft"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		App="RD 10.*.*.*"
+		ReplaceMode="suffix"
+		ServerFolder="i386/u"
+		OS="Linux"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="qscan.kdc"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="base"
+		App="RD 10.*.*.*"
+		ReplaceMode="suffix"
+		ServerFolder="i386/u"
+		OS="Linux"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="kavsys.kdl"/>
+	<FileDescription
+		ComponentID="QSCAN"
+		UpdateType="desc"
+		GenericApp="NOT(AND(OR(#KAV#,#KIS#,#KES#),OR(HR(8),HR(10),HR([12,13]))))"
+		ServerFolder=""
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Arch="mod"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder=""
+		Arch="mod"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-131071]"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		ServerFolder=""
+		Target="[131072-262143]"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Arch="mod"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder=""
+		Arch="mod"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-131071]"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		ServerFolder=""
+		Target="[131072-262143]"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		ServerFolder="mod"
+		Target="[0-262116]"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		ServerFolder=""
+		Target="[262117-262143]"
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<FileDescription
+		ComponentID="KAV_2345COM,KAV_NORDNET,KAV_ORANGE,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV12_ALFA,KAV12_ASUS,KAV12_KDDI,KAV12_NIFTY,KAV12_SONY"
+		UpdateType="desc"
+		ServerFolder=""
+		FileDate="28102015 0953"
+		Filename="mod-qscan-0607g.xml"/>
+	<Registry
+		ComponentID="KAV_2345COM,KAV_NORDNET,KAV_ORANGE,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV12,KAV12_ALFA,KAV12_ASUS,KAV12_KDDI,KAV12_NIFTY,KAV12_SONY,KAV13,KES10,QSCAN"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAVhKHipAAFmAgiiLK2JHmjOqIW3u47sDZ6R6SYSa9cmYtFiUx7kAY4OIldypidsRjNu5WfWFg2mFx3gRAJg8OF/v1g5tV+gBAB4JpwAAAAIAAigFAFFTQ0FOAwACKAQAQkFTRQEAAAnKQd6KDQo7OjEwYTg4WERBOEFFcHJDSUp1RW1uU2NLdVQ5Q3Zta0thNUwvTWhuSTJSRnVWeHJyM2xJZVphbEt6SjVYcm9DRENqT1J4K3lOZEZDL01pWis2a1VhejB3WnYlJQ=="
+		Filename="qscan-0607g.pbv"/>
+	<Registry
+		ComponentID="KAV_2345COM,KAV_NORDNET,KAV_ORANGE,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV12,KAV12_ALFA,KAV12_ASUS,KAV12_KDDI,KAV12_NIFTY,KAV12_SONY,KAV13,KES10,QSCAN"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGnAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqCwABACAAGxnldWFjHzyxxjXB6cEDxGAI6iUPlGEdaq8V0kY0HlogANRRZa2iQTLNLnoazI6knklk0mXU+MAL4ApcDzl/8cTJIAAxPLkhcnjP1g5bJbUZsssyI0muBJXtVpQHiQOXFHdD7SAAX2LY4ZNdMx9VjNEFnwyoWMC3PX7uE6ccZnVYMcZxM9cgAGaQbWV20WySFh5+FrDiiG3ms12D0DPEy+KpbMmBk2jRIADU+prhZFfWt1r7CBQ+Do6lAVyjQQ7gIRJCrFklnQu75CAAjWoUT8OTADCYqbr8pBtTP9wWdXwrFXFPbC+pYOZIlUggABsZ5XVhYx88scY1wenBA8RgCOolD5RhHWqvFdJGNB5aIAB8h9Pif7zxWE7jlKKm2UdZFQ24pppuDeP1OZlL62Y0wyAA5aKlSHHB63fC29GRNkO38yy4XHjzRr6ysnE6xxVDxVogAEZF/3A0/CoYIV1GcFr73oD2HpIf8beQSV5LuI38BN+AAQAeCacAAAABAAAJYmv/zA0KOzoxMEtGVWlDMWZpdUlIaUhack56ZDZZRnRyZmZ0d29GS1RJL01zaFBaK0RqeGM5WXp0ZEJzRjBjTUN4QmNzQnNsVElXMml3TFIyamtsT1c2YWk2OWg5RjhjJSU="
+		Filename="qscan-0607g.krg"/>
+</UpdateFiles>
+;:10qABy2KIUyrgMzHGAQ2QZZKQAYnYOHU2Ciwg7GFFKBGekql62aQNfuGg7AQp0HC8kqWf0JVKdRaedZg4m65b5ks%%

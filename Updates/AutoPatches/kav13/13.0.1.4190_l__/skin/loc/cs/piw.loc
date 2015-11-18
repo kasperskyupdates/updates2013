@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Výběr souboru klíče"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Soubor pro tuto kopii aplikace poskytl prodejce vybavení. Chcete aplikaci aktivovat s použitím tohoto klíče?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Konfigurace aplikace ještě není dokončena. Opravdu chcete Průvodce konfigurací ukončit?"
+ErrEmptyActivationCode.caption  = "Není zadán aktivační kód"
+ErrEmptyActivationCode          = "Zadejte aktivační kód"
+ErrEmptyKeyPath.caption         = "Není určen soubor klíče"
+ErrEmptyKeyPath                 = "Zadejte soubor klíče"
+$LicInfoKeyNumber               = "Číslo:"
+$LicInfoKeyProductName          = "Název aplikace:"
+$LicInfoKeyType                 = "Typ licence:"
+$LicInfoExpirationDate          = "Datum vypršení platnosti:"
+$LicErrReason                   = "Důvod:"
+$ActiveKey                      = "Aktivní klíč"
+$ReservedKey                    = "Další klíč"
+ConfirmFeedback                 = "Souhlasíte s odesláním informací do <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) je infrastruktura internetových služeb, která nabízí aktuální informace o zabezpečení souborů, webových prostředků a softwaru. Použití dat ze služby KSN urychluje reakci na nové hrozby, zlepšuje výkon některých součástí ochrany a snižuje riziko falešně pozitivních případů.\nPokud se do služby KSN zapojíte, budou se společnosti Kaspersky Lab automaticky odesílat informace o virových nákazách a jiných problémech, stejně tak jako rozšířená statistika o stahovaných a spouštěných aplikacích (podle seznamu uvedeného v <a KsnInfo onclick(dialog(\"KsnInfo\"))>Prohlášení o shromažďování dat v systému KSN</a>). \n\n<b>Kaspersky Security Network neshromažďuje ani nezpracovává žádné osobní informace uživatele.</b>"
+
+$ToAcquireNewLicText            = "\n\nChcete-li si pořídit novou licenci, kontaktujte svého distributora nebo <a Buy onclick(buy())>obchodní oddělení Kaspersky Lab</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nPokuste se aktualizovat stav předplatného ručně, nebo se obraťte na technickou podporu" : "\nZkuste aktivovat aplikaci pomocí aktivačního kódu později (za 1-2 hodiny) nebo kontaktujte technickou podporu") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Průvodce aktivací" : " Průvodce konfigurací")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Všeobecné informace"
+InitBegin.Descr                       = "Vítejte v " + $ProductName_GEN + " průvodci konfigurací."
+CheckHosts.Name                       = "Probíhá kontrola dostupnosti serverů Kaspersky Lab"
+CheckHosts.Descr                      = "Bylo zjištěno podezřelé přesměrování"
+ResetArea.Name                        = "Obnovit nastavení"
+ResetArea.Descr                       = "Níže uvedená nastavení obsahují data zadaná uživatelem nebo shromážděná \nběhem činnosti aplikace."
+ActivationBegin.Name                  = $IsSubscription ? "Správa předplatného" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Odstranit klíč" : "Přidat klíč") : "Aktivovat aplikaci")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Správa licence" : "Chcete-li pokračovat, aktivujte aplikaci.")
+ActivationProgress.Name               = "Aktivovat online"
+ActivationProgress.Descr              = "Probíhá aktivace, čekejte prosím..."
+ActivationServerForm.Name             = "Aktivovat online"
+ActivationServerForm.Descr            = "Vyplňte tento formulář."
+ActivationChooseKey.Name              = "Aktivace pomocí souboru klíče"
+ActivationChooseKey.Descr             = "Aktivovat aplikaci prostřednictvím souboru klíče."
+ActivationEnd.Name                    = "Aktivace aplikace"
+ActivationEnd.Descr                   = "Aktivace dokončena."
+MigrationKeyIsFound.Name         = "Je k dispozici klíč pro aktuální licenci."
+MigrationKeyIsFound.Descr        = "Chcete použít aplikaci stanovenou aktuální licencí?"
+MigrationBegin.Name              = "Přepnout na " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Budete přepnuti na používání " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Vyhledat nekompatibilní software"
+MigrationSearchProgress.Descr    = "Čekejte, vyhledává se nekompatibilní software..."
+MigrationSafeRemoval.Name        = "Nalezen nekompatibilní software"
+MigrationSafeRemoval.Descr       = "Než budete pokračovat, je nutné nekompatibilní software odebrat"
+MigrationSafeProgress.Name       = "Odebrat nekompatibilní software"
+MigrationSafeProgress.Descr      = "Čekejte, probíhá odebírání nekompatibilního softwaru..."
+MigrationAddRemove.Name          = "Nalezen nekompatibilní software"
+MigrationAddRemove.Descr         = "Odeberte nekompatibilní software"
+MigrationUnsafeRemoval.Name      = "Nalezen nekompatibilní software"
+MigrationUnsafeRemoval.Descr     = "Než budete pokračovat, je nutné nekompatibilní software odebrat"
+MigrationUnsafeProgress.Name     = "Odebrat nekompatibilní software"
+MigrationUnsafeProgress.Descr    = "Čekejte, probíhá odebírání nekompatibilního softwaru..."
+MigrationReboot.Name             = "Je třeba restartovat operační systém"
+MigrationReboot.Descr            = "Pro pokračování v přechodu na novou aplikaci je zapotřebí restartovat počítač"
+MigrationProgress.Name           = "Přepnout na " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Čekejte prosím. Probíhá přechod na novou aplikaci..."
+MigrationRebootApp.Name          = bMigrationDone ? "Aplikace bude restartována" : "Chyba při přechodu na novou aplikaci"
+MigrationRebootApp.Descr         = bMigrationDone ? "Aplikaci je třeba restartovat" : "Přechod na produkt " + s_MUProductTitleLong(env("ProductType")) + " se nezdařil"
+MigrationFinish.Name             = "Přechod na produkt " + s_ProductTitleLong(env("ProductType")) + " byl dokončen"
+MigrationFinish.Descr            = "Přechod na produkt " + s_ProductTitleLong(env("ProductType")) + " byl dokončen"
+DNS.Name                              = "Rozšířené nastavení"
+DNS.Descr                             = $ProductName_GEN + " pokročilé nastavení provozu"
+EnumExe.Name                          = "Analýza systému"
+EnumExe.Descr                         = "Počkejte, než budou shromážděny informace o vašem systému..."
+InitFinish.Name                       = "Dokončování konfigurace " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Pro dokončení konfigurace aplikace musíte restartovat počítač." : "Nyní můžete spustit " + $ProductName + "."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Bylo zjištěno podezřelé přesměrování serverů společnosti Kaspersky Lab. To mohlo být způsobeno aktivitou malwaru a může vést k selhání aktualizací či aktivace. Podezřelé položky souboru hosts:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Odstranit záznamy (doporučeno)"
+Skip			= "Přeskočit"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Zpět"
+Back.Descr      = "Návrat zpět k výběru způsobu aktivace aplikace"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Přidat klíč" : "&Aktivovat"
+Activate.Descr  = "Instalace vybraného souboru klíče"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Dokončit"
+Finish.Descr    = "Uzavřít průvodce aktivací"
+Next.Name       = "&Další"
+Next.Descr      = "Pokračovat konfigurací"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Můžete dále používat aplikaci stanovenou aktuální licencí. V tomto případě aplikace přejde na " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Chcete dále používat aplikaci stanovenou aktuální licencí?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Typ aplikace:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Datum vypršení platnosti:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " zbývá)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Ano a přepnout na " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Ne a ponechat " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Právě probíhá přepojení na " + s_MUProductTitleLong(env("ProductType")) + ". Držitel autorských práv udílí tuto nevýlučnou licenci na používání aplikace " + s_MUProductTitleLong(env("ProductType")) + " za stejných podmínek, s jakými jste souhlasili při předchozí instalaci aplikace " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Poznámka: Toto přepnutí vyžaduje akce, které mohou vyžadovat restartování počítače."
+LicenseWarning  = "Pozor! Platnost komerční licence aplikace Kaspersky Anti-Virus vyprší před skončením platnosti zkušební licence aplikace Kaspersky Internet Security. Po skončení platnosti komerční licence aplikace Kaspersky Anti-Virus se nebude možné vrátit k používání aplikace Kaspersky Anti-Virus ze zkušební verze aplikace Kaspersky Internet Security. Chcete pokračovat v přechodu na Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Vyhledávání nekompatibilního softwaru v počítači. To může chvíli trvat. Čekejte..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Za účelem provedení přechodu bude odebrán následující software:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Počkejte, odstraňuje se nekompatibilní software..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Za účelem provedení přechodu je třeba odebrat následující software:"
+OpenAddRemove = "Otevřít okno Přidat nebo odebrat programy"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Za účelem provedení přechodu bude odebrán následující software:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Počkejte, odstraňuje se nekompatibilní software..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Než budete pokračovat v přechodu, je třeba restartovat počítač. Po restartu bude průvodce pokračovat."
+Reboot   = "Restartovat nyní"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Čekejte, dokud aplikace neprovede novou konfiguraci a nebudete přepnuti do " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Chcete-li dokončit přepnutí na " + s_MUProductTitleLong(env("ProductType")) + " aplikace se restartuje." : "Přepnutí na " + s_MUProductTitleLong(env("ProductType")) + " selhalo."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Teď můžete hodnotit takové funkce " + s_ProductTitleLong("kis") + " jako rodičovskou kontrolu, součást Anti-Spam, bránu Firewall a další." : s_ProductTitleLong("kav") + " nabízí základní ochranu počítače před malware."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Můžete "+if($IsRefreshSubAvail,"aktualizovat stav předplatného nebo ")+"odstranit klíč." : (f_IsActiveKeyWorkingCommercial() ? "Můžete odstranit svůj aktivní klíč nebo přidat klíč." : "Aktivovat " + $ProductName + " pro povolení všech funkcí aplikace."+ if($CorporateOnly, " Můžete získat <a Activate onclick(url($ActivationLink))>komerční</a> verzi nebo aktivovat <a ActivateTrial onclick(url($ActivationTrialLink))>zkušební</a> verzi aplikace."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktivovat &později"
+Later.Descr                 = "Přeskočit aktivaci a pokračovat konfigurací aplikace"
+ChooseKey.Name              = "Aktivovat pomocí souboru &klíče"
+ChooseKey.Descr             = "Je vyžadován soubor klíče"
+ActivateBetaKAV.Name        = "Aktivovat &beta verzi produktu Kaspersky Anti-Virus"
+ActivateBetaKAV.Descr       = "Beta verze produktu Kaspersky Anti-Virus je plně funkční, nicméně nejde o hotový produkt."
+ActivateBetaKIS.Name        = "Aktivovat &beta verzi služby Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "Beta verze služby Kaspersky Internet Security je plně funkční, nicméně nejde o hotový produkt."
+ActivateTrial.Name          = "Aktivovat &zkušební verzi"
+ActivateTrial.Descr         = "Doba platnosti zkušební verze je stanovena v licenční smlouvě s koncovým uživatelem"
+ActivateCommercial.Name     = "&Aktivovat online"
+ActivateCommercial.Descr    = "Je vyžadován aktivační kód získaný během nákupu"
+RemoveKey.Name              = $HasReserveKey ? "&Odstranit další klíč" : "&Odstranit klíč"
+RemoveKey.Descr             = "Chcete-li nahradit tento klíč, měli byste nejdříve odstranit aktivní klíč."
+RefreshSubscription.Name    = "&Aktualizovat stav předplatného"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Můžete ručně aktivovat předplatné." :  "Automatická aktualizace stavu předplatného byla ukončena. Stav můžete aktualizovat ručně."
+ActivateTrialKIS            = "Aktivovat zkušební verzi služby Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "Doba platnosti zkušební verze služby Kaspersky Internet Security je stanovena v licenční smlouvě"
+RevertToCommercialKAV       = "Návrat ke komerční verzi produktu Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Návrat ke komerční verzi produktu Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Aktualizovat stav předplatného"
+ActivateCommercial      = "Aktivovat &komerční verzi"
+ActivateCommercial_Desc = (LockActivationCode)? "Zadejte aktivační kód: " : "Zadejte <a onclick(url(\"" + $ActCodeHint + "\"))>aktivační kód</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Váš aktivační kód byl přidán automaticky. Klepněte na tlačítko \"Další\"." : "Pokud nemáte aktivační kód, můžete si jej zakoupit <a onclick(buy())>online</a>."
+ActivateBetaKAV         = "Aktivovat &beta verzi produktu Kaspersky Anti-Virus"
+ActivateBetaKIS         = "Aktivovat beta &verzi služby Kaspersky Internet Security"
+ActivateTrial           = "Aktivovat &zkušební verzi"
+ActivateTrial_Desc      = "Před zakoupením vyhodnoťte plně funkční verzi aplikace."
+ActivateTrialKIS           = "Aktivovat zkušební verzi služby Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "Před zakoupením vyhodnoťte plně funkční verzi služby Kaspersky Internet Security."
+RevertToCommercialKAV      = "Návrat ke komerční verzi produktu Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Přestaňte používat zkušební verzi služby Kaspersky Internet Security a vraťte se ke komerční verzi aplikace Kaspersky Anti-Virus."
+Later                   = "Aktivovat &později"
+Later_Desc              = "Všechny funkce aplikace nebudou dostupné, dokud je neaktivujete."
+RemoveKey               = "Odstranit soubor klíče"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Soubor klíče:"
+KeyInfo         = "Licenční informace"
+ConnectingInfo.Name     = "Chyba aktivace: "
+ConnectingInfo.Val      = "podrobnosti"
+TryAgain                = "Aktivovat"
+Descr1                  = "Chcete-li se pokusit o novou aktivaci, proveďte následující kroky:"
+Descr2                  = "Zkontrolujte nastavení připojení k síti Internet a pokuste se o novou aktivaci aplikace."
+Descr3                  = "Přejděte na <a onclick(url(\"" + $ActivationLink + "\"))> Centrum aktivace online</a> a postupujte podle pokynů.\nJakmile získáte soubor klíče, zadejte jeho umístění a klepněte na tlačítko Další:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Datum vytvoření:"
+InstallDate.Name    = "Datum aktivace:"
+ExpirationDate.Name = "Datum vypršení platnosti:"
+SubscrptnExpDate.Name = "Datum vypršení platnosti předplatného:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," pro " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Systémová chyba: " + s_SystemError(ErrorCode)
+2       = "Nelze přidat klíč \"" + KeyFile +"\": " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Nelze odstranit klíč \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Kód chyby: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Tento klíč již byl přidán" + $LicErrHelpLink
+0x0947901d  = "Platnost licence vypršela. Aktualizace databáze není k dispozici" + $LicErrHelpLink
+0x89479002  = "Licence nebyla nalezena" + $LicErrHelpLink
+0x89479003  = "Elektronický podpis chybí nebo je poškozen" + $LicErrHelpLink
+0x89479004  = "Data jsou poškozena" + $LicErrHelpLink
+0x89479005  = "Soubor klíče je poškozen" + $LicErrHelpLink
+0x89479006  = "Platnost licence vypršela" + $LicErrHelpLink
+0x89479007  = "Není zadán soubor klíče" + $LicErrHelpLink
+0x89479008  = "Soubor klíče je neplatný" + $LicErrHelpLink
+0x89479009  = "Uložení dat selhalo" + $LicErrHelpLink
+0x8947900a  = "Čtení dat selhalo" + $LicErrHelpLink
+0x8947900b  = "Vstupní/výstupní chyba" + $LicErrHelpLink
+0x8947900c  = "Chybí databáze" + $LicErrHelpLink
+0x8947900d  = "Aktivní a další klíče byly již přidány." + $LicErrHelpLink
+0x8947900e  = "Licenční knihovna není inicializována" + $LicErrHelpLink
+0x8947900f  = "Databáze jsou poškozené nebo byly aktualizovány ručně" + $LicErrHelpLink
+0x89479010  = "Databáze jsou poškozené" + $LicErrHelpLink
+0x89479011  = "Soubor klíč, jehož platnost vypršela, nemůže být zaregistrován jako další klíč" + $LicErrHelpLink
+0x89479012  = "Systémová chyba" + $LicErrHelpLink
+0x89479013  = "Černá listina klíčů je poškozená" + $LicErrHelpLink
+0x89479014  = "Elektronický podpis neodpovídá podpisu společnosti Kaspersky Lab" + $LicErrHelpLink
+0x89479015  = "Na základě licence beta nelze aktivovat komerční verzi aplikace." + $LicErrHelpLink
+0x89479016  = "Verzi beta této aplikace lze aktivovat pouze na základě licence beta." + $LicErrHelpLink
+0x89479017  = "Licence neplatí pro tuto aplikaci. Produkt " + $ProductName + " nelze aktivovat na základě licence pro jinou aplikaci. Zkontrolujte svoji nainstalovanou aplikaci." + $LicErrHelpLink
+0x89479018  = "Klíč je zablokován." + $LicErrHelpLink
+0x89479019  = "Tato zkušební licence se již používá. Nelze použít tentýž zkušební klíč dvakrát" + $LicErrHelpLink
+0x8947901a  = "Soubor klíče je poškozen" + $LicErrHelpLink
+0x8947901b  = "Digitální podpis chybí, je poškozen nebo neodpovídá digitálnímu podpisu společnosti Kaspersky Lab" + $LicErrHelpLink
+0x8947901c  = "Nelze přidat klíč pro nekomerční licenci, jestliže vypršela její platnost." + $LicErrHelpLink
+0x8947901e  = "Datum vytvoření nebo registrace souboru klíče je neplatné. Zkontrolujte nastavení data v systému" + $LicErrHelpLink
+0x8947901f  = "Další klíč pro zkušební licenci, dokud je aktivní jiný klíč pro zkušební licenci" + $LicErrHelpLink
+0x89479020  = "Černá listina klíčů chybí nebo je poškozená" + $LicErrHelpLink
+0x89479021  = "Popis aktualizace chybí nebo je poškozen" + $LicErrHelpLink
+0x89479022  = "Interní data pro tuto aplikaci jsou neplatná" + $LicErrHelpLink
+0x89479023  = "Nelze přidat další klíč pomocí nesprávného aktivačního kódu." + $LicErrHelpLink
+0x89479024  = "Chyba zadání dat do uživatelského formuláře" + $LicErrHelpLink
+0x89479025  = "Chyba při zasílání požadavku na aktivační server.\nPravděpodobné příčiny: Problém s internetovým připojením nebo dočasný problém na aktivačním serveru.\nZkuste kód aktivovat později (za 1-2 hodiny).\nPokud problém přetrvává, kontaktujte poskytovatele internetu" + $LicErrHelpLink
+0x89479026  = "Požadavek obsahuje nesprávný aktivační kód" + $LicErrHelpLink
+0x89479027  = "Nelze získat stav odpovědi" + $LicErrHelpLink
+0x89479028  = "Chyba při ukládání dočasného souboru" + $LicErrHelpLink
+0x89479029  = "Aktivační kód byl vložen nesprávně nebo je chybné systémové datum. Zkontrolujte nastavení data v systému" + $LicErrHelpLink
+0x8947902a  = "Aktivační kód není vhodný pro tuto aplikaci nebo vypršela platnost klíče. Není možné aktivovat produkt " + $ProductName + " na základě licence pro jinou aplikaci. Zkontrolujte  nainstalovanou aplikaci nebo <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink.
+0x8947902b  = "Příjem souboru klíče selhal. Byl zadán nesprávný aktivační kód" + $LicErrHelpLink
+0x8947902c  = "Aktivační server vrátil chybu 400" + $OlaErrHelpLink
+0x8947902d  = "Aktivační server vrátil chybu 401" + $OlaErrHelpLink
+0x8947902e  = "Aktivační server vrátil chybu 403" + $OlaErrHelpLink
+0x8947902f  = "Potřebný prostředek aktivačního serveru je nedostupný.\nAktivační server vrátil chybu 404.\nZkontrolujte nastavení připojení k internetu" + $OlaErrHelpLink
+0x89479030  = "Aktivační server vrátil chybu 405" + $OlaErrHelpLink
+0x89479031  = "Aktivační server vrátil chybu 406" + $OlaErrHelpLink
+0x89479032  = "Je požadováno ověření proxy serveru. Zkontrolujte nastavení sítě LAN" + $LicErrHelpLink
+0x89479033  = "Časový limit žádosti vypršel" + $LicErrHelpLink
+0x89479034  = "Aktivační server vrátil chybu 409" + $OlaErrHelpLink
+0x89479035  = "Potřebný prostředek aktivačního serveru je nedostupný.\nAktivační server vrátil chybu 410.\nZkontrolujte nastavení připojení k internetu" + $OlaErrHelpLink
+0x89479036  = "Aktivační server vrátil chybu 411" + $OlaErrHelpLink
+0x89479037  = "Aktivační server vrátil chybu 412" + $OlaErrHelpLink
+0x89479038  = "Aktivační server vrátil chybu 413" + $OlaErrHelpLink
+0x89479039  = "Aktivační server vrátil chybu 414" + $OlaErrHelpLink
+0x8947903a  = "Aktivační server vrátil chybu 415" + $OlaErrHelpLink
+0x8947903b  = "Neznámá chyba na straně klienta" + $OlaErrHelpLink
+0x8947903c  = "Interní chyba serveru" + $LicErrHelpLink
+0x8947903d  = "Funkce není podporována" + $LicErrHelpLink
+0x8947903e  = "Neplatná odezva brány. Zkontrolujte nastavení sítě" + $LicErrHelpLink
+0x8947903f  = "Prostředek je dočasně nedostupný" + $LicErrHelpLink
+0x89479040  = "Časový limit čekající žádosti vypršel. Zkontrolujte nastavení sítě" + $LicErrHelpLink
+0x89479041  = "Server nepodporuje tento protokol" + $OlaErrHelpLink
+0x89479042  = "Neznámá chyba na straně serveru" + $OlaErrHelpLink
+0x89479043  = "Neznámá chyba protokolu HTTP" + $OlaErrHelpLink
+0x89479044  = "Neplatný identifikátor prostředku" + $LicErrHelpLink
+0x89479045  = "Nesprávné informace v poli \"klíč\"" + $LicErrHelpLink
+0x89479046  = "Nesprávná adresa URL" + $LicErrHelpLink
+0x89479047  = "Nesprávná cílová složka" + $LicErrHelpLink
+0x89479048  = "Chyba přidělení paměti" + $LicErrHelpLink
+0x89479049  = "Chyba převodu parametrů na řetězec ANSI (adresa URL, složka, agent)" + $LicErrHelpLink
+0x8947904a  = "Chyba při vytváření pracovního podprocesu" + $LicErrHelpLink
+0x8947904b  = "Pracovní podproces je již spuštěn" + $LicErrHelpLink
+0x8947904c  = "Pracovní podproces není spuštěn" + $LicErrHelpLink
+0x8947904d  = "Soubor klíče nebyl na aktivačním serveru nalezen" + $LicErrHelpLink
+0x8947904e  = "Klíč je zablokován." + $LicErrHelpLink
+0x8947904f  = "Interní chyba aktivačního serveru" + $LicErrHelpLink
+0x89479050  = "Nedostatečná data v požadavku na aktivaci" + $LicErrHelpLink
+0x89479051  = "Nesprávné ID uživatele nebo heslo" + $LicErrHelpLink
+0x89479052  = "Nesprávný aktivační kód" + $LicErrHelpLink
+0x89479053  = "Licence pro vybraný soubor klíče vyprší dříve, než aktuální licence" + $LicErrHelpLink
+0x89479054  = "Nesprávné datum operačního systému. Zkontrolujte systémové datum" + $LicErrHelpLink
+0x89479055  = "Platnost zkušební licence vypršela" + $LicErrHelpLink
+0x89479056  = "Aktivační doba vypršela" + $LicErrHelpLink
+0x89479057  = "<b>U zadaného aktivačního kódu byl překročen maximální počet povolených aktivací</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Nelze přidat klíč pro nekomerční licenci jako další klíč, i když komerční licence je platná." + $LicErrHelpLink
+0x8947905c  = "Je vyžadován aktivační kód" + $LicErrHelpLink
+0x8947905d  = "Nesprávné ID zákazníka nebo heslo" + $LicErrHelpLink
+0x8947905e  = "Nesprávný aktivační kód" + $LicErrHelpLink
+0x89479062  = "Nelze se připojit k aktivačnímu serveru" + $LicErrHelpLink
+0x89479064  = "<b>Aktivační server není dostupný.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Aplikaci nelze nyní aktivovat. Zkuste aplikaci aktivovat znovu po konfiguraci aplikace a restartování operačního systému.", "Zkontrolujte nastavení připojení k internetu a pokuste se o novou aktivaci.") + $LicErrHelpLink
+0x89479065  = "Vaše licence vypršela. Prosím, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Aktivní klíč nelze nahradit klíčem, jehož platnost vypršela." + $LicErrHelpLink
+0x89479067  = "Nelze jako další klíč přidat klíč, jehož platnost vyprší dříve než platnost aktivního klíče." + $LicErrHelpLink
+0x89479068  = "Chybí aktualizovaný předplatní klíč" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Proces aktivace byl dokončen se systémovou chybou " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Chyba aktivace: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Chyba aktivace: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Chyba aktivace: server vrátil kód HTTP " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktivace se nezdařila " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Vnitřní chyba aktivačního serveru. Zkuste to znovu, nebo se obraťte na technickou podporu"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Aktivační kód není kompatibilní s touto aplikací." + $ProductName + " nelze aktivovat pomocí aktivačního kódu pro jinou aplikaci. Zkontrolujte nainstalovanou aplikaci"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Klíč je zablokován."
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Nesprávné ID zákazníka nebo heslo"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Špatný aktivační kód"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Je vyžadován aktivační kód"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Aktivační doba vypršela"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Překročen povolený počet aktivací pro tento kód"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Aktivační kód je neplatný pro tuto oblast"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Pro lokalizaci této aplikace nelze tento aktivační kód použít."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Aktivační kód platí pro novější verzi aplikace. Pro používání stávající verze je nutné získat jiný kód. Podrobnosti získáte klepnutím na následující odkaz."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Aktivační server vrátil chybu 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Aktivační server vrátil chybu 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Aktivační server vrátil chybu 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Aktivační server vrátil chybu 646"
+default                                     = "Aktivační procedura vrátila chybu " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "V aplikaci Microsoft Internet Explorer je aktivován režim offline"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Selhalo připojení k Internetu"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Aktivační server je nedostupný"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Server proxy je nedostupný"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Doba odezvy uplynula"
+#OLA_ERR_INTERNET_INVALID_URL                = "Nesprávná adresa aktivačního serveru"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Nesprávný protokol"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Připojení k serveru nelze nastavit"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operace byla zrušena"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Připojení k serveru nelze nastavit"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Připojení k serveru bylo ukončeno"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Připojení k serveru bylo resetováno"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Nesprávná odezva serveru"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Platnost certifikátu SSL tohoto serveru vypršela. Zkontrolujte místní čas počítače"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Název serveru certifikátu SSL neodpovídá tomuto serveru"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Nelze provést kontrolu odvolání certifikátu. Zakažte tuto kontrolu v programu Microsoft Internet Explorer (Nástroje->Možnosti Internetu->Pokročilé->Zjišťovat odvolání certifikátů serveru) a zopakujte pokus o aktivaci"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Neplatný certifikát SSL"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "Certifikát SSL byl odvolán"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Nesprávné certifikační centrum"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Společnost Kaspersky Lab potřebuje registrační údaje k tomu, aby vás mohla informovat o různých propagačních akcích, výprodejích a speciálních nabídkách."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Pokračovat"
+Activate.Descr  = "Odeslání dat na aktivační server"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Průvodce konfigurací se připojuje k aktivačnímu serveru společnosti Kaspersky Lab. Tato operace může trvat určitou dobu, která závisí na rychlosti připojení k internetu."
+ConnectingInfo.Name     = "Připojování k aktivačnímu serveru..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Odesílání aktivačního kódu..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Čekám na odpověď serveru..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Vaše kopie " + $ProductName + " byla úspěšně aktivována"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Datum vypršení platnosti:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " zbývá)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktivace byla úspěšně dokončena." : "Aplikace je již ve vašem počítači aktivována."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Další"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Pokračovat aktivací aplikace": (((PiwFlags & #fPiwActivation) && !bSilent)?"Pokračovat k licenčním informacím":"Pokračovat k výběru režimu ochrany")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Průvodce vám pomůže řádně konfigurovat zabezpečení počítače.\n\nBěhem konfigurace průvodce shromáždí informace o vašem systému a aplikacích instalovaných v počítači. Tyto informace se použijí pouze pro účely optimálního nastavení vašeho počítače.\n\nStiskněte Další pro spuštění " + $ProductName_GEN + " konfiguračního procesu."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Instalace je téměř dokončena..." : ((PiwFlags & #fPiwReset) ? ("Oprava je dokončena.") : ("Instalace je dokončena."))
+ResetDescr          = "Průvodce konfigurací provedl úspěšné obnovení nastavení aplikace " + $ProductName + "."
+Reboot              = "&Restartovat počítač"
+StartProduct        = "Spu&stit " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Děkujeme vám za instalaci aplikace " + $ProductName + ". Instalaci dokončíte restartováním počítače. Uložte si všechna data, ukončete všechny aplikace a klepněte na tlačítko Dokončit.") : "Nezapomeňte, že další konfigurace produktu proběhne při prvním spuštění aplikace. To může trvat několik minut."
+
+[ConfigureWizard.EnumExe]
+Info = "Během analýzy systému bude vytvořen seznam důvěryhodných aplikací obsažených v operačním systému Microsoft Windows. \n\nProgramy nezahrnuté v operačním systému jsou analyzovány samostatně při prvním spuštění v počítači."
+
+[s_LicKeyType]
+#ektBeta         = "Klíč beta"
+#ektTrial        = "Zkušební"
+#ektTest         = "Testovací klíč"
+#ektOEM          = "Klíč OEM"
+#ektCommercial   = "Komerční"
+#ektSubscription = "Komerční s předplatným"
+#ektSubscriptionProtection = "Komerční s předplatným ochrany"
+default          = "Neznámý typ"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Neznámá chyba"
+#ekirValid                      = "Licence je platná"
+#ekirExpired                    = "Platnost licence vypršela"
+#ekirCorrupted                  = "Licence je neplatná"
+#ekirNotSigned                  = "Elektronický podpis chybí nebo je poškozen"
+#ekirWrongProduct               = "Licence neplatí pro tuto aplikaci. Produkt " + $ProductName + " nelze aktivovat na základě licence pro jinou aplikaci. Zkontrolujte nainstalovanou aplikaci."
+#ekirBlackListed                = "Klíč "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" je zablokován"
+#ekirIllegalUpdate              = "Datum databáze neodpovídá době platnosti licence"
+#ekirInconsistentUpdate         = "Databáze jsou poškozené"
+#ekirKeyCreationDateInvalid     = "Nesprávné datum vytvoření klíče"
+#ekirTrialAlreadyInUse          = "Pokud je aktivní klíč pro zkušební licenci, nelze přidat další klíč pro zkušební licenci"
+#ekirInvalidBlacklist           = "Černá listina klíčů je poškozená"
+#ekirCantBeUsedAsReserved       = "Licenci nelze registrovat jako další licenci"
+#ekirKeyInstallDateInvalid      = "Nesprávné datum aktivace"
+#ekirTrialPeriodIsOver          = "Platnost zkušební licence vypršela"
+#ekirConflictsWithCommercial    = "Nový soubor klíče je v konfliktu s aktuální komerční licencí"
+#ekirExpiredAsReserve           = "Platnost této licence vyprší dříve než platnost aktuální licence"
+#ekirGracePeriod                = "Licence během období odkladu"
+#ekirSuspended                  = "Předplatné je pozastaveno"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Měli byste aplikaci nainstalovat znovu"
+#ekirLicenseOnlyForMigration    = "Přejít na jinou aplikaci pro aktivaci komerční verze"
+default                         = "Soubor klíče je nesprávný"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Bude určeno později"
+#edtUnlimited = "Aktivní"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Pozastaveno od " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Licenční informace"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": licenční upozornění"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Pozor!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Používáte zkušební verzi aplikace " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Černá listina souborů klíčů chybí nebo je poškozená. Spusťte <a Update onclick(f_StartUpdater())>aktualizaci</a> pro pokračování v činnosti."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Vaše licence " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Aby vaše ochrana zůstala aktuální, prosíme <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nPokud jste si již zakoupili licenci, prosíme <a Activate onclick(f_Activate())>aktivujte aplikaci</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Předplatné vypršelo." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Ochrana je zakázána."))+($IsBestBuyLink ? " Obnovení předplatného není k dispozici." : " Zabezpečení počítače je ohroženo. \n\nChcete-li obnovit předplatné, <a onclick(url($KeyProviderLinkForText))>kontaktujte poskytovatele služby</a>.")) :("Zbývá vám " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " do obnovení předplatného. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " do zakázání aktualizace. " : " do zakázání ochrany." ) ) + " Chcete-li obnovit předplatné, <a onclick(url($KeyProviderLinkForText))>kontaktujte poskytovatele služby</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Aktivní klíč je zablokován.\nFunkce aktualizace je zakázána, takže váš počítač může být vystaven riziku infekce.</b>\n\nPokud jste aplikaci legálně zakoupili, kontaktujte prosím technickou podporu nebo prodejce.\n\nPokud používáte nelegální kopii, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nPokud jste si licenci již pořídili, prosím <a Activate onclick(f_Activate())>aktivujte aplikaci</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "vyprší dnes" : "vyprší za " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "vypršela"
+
+[s_LicenseRenewBuyText]
+0 = "získat licenci"
+default = "obnovit licenci"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Vyberte nastavení pro obnovení:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " – průvodce konfigurací"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Všeobecné informace"
+InitBegin.Descr                       = "Vítejte v " + $ProductName_GEN + " průvodci konfigurací."
+CheckHosts.Name                       = "Probíhá kontrola dostupnosti serverů Kaspersky Lab"
+CheckHosts.Descr                      = "Bylo zjištěno podezřelé přesměrování"
+ResetArea.Name                        = "Obnovit nastavení"
+ResetArea.Descr                       = "Níže uvedená nastavení obsahují data zadaná uživatelem nebo shromážděná \nběhem činnosti aplikace."
+EnumExe.Name                          = "Analýza systému"
+EnumExe.Descr                         = "Počkejte, než budou shromážděny informace o vašem systému..."
+ResetFinish.Name                       = "Dokončování konfigurace " + $ProductName
+ResetFinish.Descr                      = "Produkt " + $ProductName + " je připraven ke spuštění."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Obnovení dokončeno."
+ResetDescr          = "Průvodce konfigurací provedl úspěšné obnovení nastavení aplikace " + $ProductName + "."
+
+[BestBuyUpgradeMessage]
+@ = "Přejít na jinou aplikaci"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Začít používat aplikaci Kaspersky Internet Security"
+RestartButton = "Spustit aplikaci Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Blahopřejeme!"
+Message = "Aplikace Kaspersky Anti-Virus byla úspěšně upgradována na aplikaci Kaspersky Internet Security.\nNyní můžete používat ještě více funkcí ochrany svého počítače."
+Description = "Děkujeme, že jste si vybrali software společnosti Kaspersky Lab! Nyní se budete moci těšit z rozšířené ochrany."
+
+[ForcedUpgradeMessagePage]
+Header = "Téměř hotovo"
+Message = "Děkujeme, že jste si vybrali software společnosti Kaspersky Lab! Nyní se budete moci těšit z rozšířené ochrany."
+Description = "Jelikož nebyl odebrán nekompatibilní software, některé nové funkce aplikace Kaspersky Internet Security jsou zakázány, aby bylo možné zajistit správné fungování nainstalovaných aplikací a operačního systému.\n\nNekompatibilní software lze ručně odebrat, a povolit tak všechny nové funkce v okně nastavení aplikace Kaspersky Internet Security."
+Notification = 'Za účelem dokončení přechodu bude aplikace restartována.'

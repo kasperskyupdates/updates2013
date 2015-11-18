@@ -1,0 +1,1058 @@
+﻿;------------- Global ------------
+
+[Locale]
+Value = 2052
+
+[Global]
+$Click_msg 							= "可用解决方案"
+$Protection                         = "实时保护"
+$License                            = "授权许可"
+$LicenseOver                        = "授权许可已经过期"
+$LicenseDescr                       = "授权许可允许您访问全功能版本的" + $ProductName_GEN + "，并且使您可以更新程序和咨询技术支持"
+$SelfProtection                     = "自我保护"
+$GroupTask                          = "（组任务）"
+$GroupUnk                           = "未知组"
+$Help                               = "帮助"
+$Home                               = "状态"
+$Events                             = "事件"
+$Statistics                         = "统计"
+$Start                              = "启动"
+$Pause                              = "暂停"
+$Stop                               = "停止"
+$High                               = "高"
+$Medium                             = "推荐"
+$Low                                = "低"
+$Custom                             = "自定义"
+$Unrestricted                       = "未限制"
+$Customize                          = "设置..."
+$Settings                           = "设置..."
+$Settings_2                         = "设置"
+$Settings1                          = "设置(&S)..."
+$Settings2                          = "设置(&G)..."
+$Settings3                          = "设置(&T)..."
+$SettingsS                              = "设置"
+$AllowAll                           = "允许所有"
+$BlockAll                           = "阻止所有"
+$Details                            = "详细信息..."
+$Enabled                            = "启用"
+$Disabled                           = "已禁用"
+$Enable                             = "启用"
+$Disable                            = "禁用"
+$Browse                             = "浏览..."
+$ResetLevel                         = "根据默认"
+$Reset                              = "恢复"
+$Configure                          = "设置..."
+$Cancel                             = "取消"
+$Unknown                            = "未知"
+$LevelSettStd                       = "标准"
+$LevelSettCustom                    = "其它"
+$NullObj                            = "未知"
+$AppNameNullObj						= $NullObj
+$AppPIDNullObj                      = "不存在"
+$Application                        = "应用程序"
+$Total                              = "合计"
+$Reports                            = "报告"
+$Close                              = "关闭(&C)"
+$Duration                           = "持续时间："
+$ChartPeriod                        = "周期："
+$NotSpec                            = "未知软件"
+$RemainsDays = s_LeftForm(f_numdeclension(LicInfo.DaysTillExpiration)) + " " + LicInfo.DaysTillExpiration + " " + s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration))
+
+; well used lables
+$Add                                = "添加(&A)"
+$Edit                               = "编辑(&E)"
+$Delete                             = "删除(&L)"
+$MoveUp                             = "上移(&U)"
+$MoveDown                           = "下移(&D)"
+$Export                             = "导出(&X)..."
+$Import                             = "导入(&M)..."
+$Yes                                = "是"
+$No                                 = "否"
+$ForumDefName                       = "卡巴一族论坛"
+$ForumDefDescr                      = "分享您的经验，还可以从我们的专家和其他用户那里获得建议。"
+$KnowledgeBaseLinkText              = "知识库"
+$NewsFromKL                         = "卡巴斯基实验室新闻"
+$CurObject                          = "对象"
+
+$ScanInProgressText = ("智能查杀" + depend(f_ScanCommonCompletion()))
+$UpdateInProgressText = ("免疫更新" + if(f_IsStateActive(Updater.state), (Updater.Completion + "%")))
+
+$CannotAddObjectDescr = "指定在本地磁盘或网络磁盘的绝对路径，可以使用 ? 和 *。"
+
+$AcceptEulaButtonText				= "同意并激活"
+$ShowKsnGrace						= false
+
+$LearnMore                          = "更多知识"
+
+; dialog panel buttons
+Ok                                  = 确定
+Yes                                 = 是
+YesToAll			    = 全部执行
+No                                  = 否
+Cancel                              = 取消
+Apply                               = 应用
+Next                                = 下一步(&N)>
+Back                                = <上一步(&B)
+Finish                              = 完成(&F)
+Close                               = 关闭(&C)
+StopTaskOnClose                     = "您确定要停止任务吗？"
+FolderNotEmpty                      = "指定文件夹不为空。所有数据将丢失。\n您确定要删除该文件夹吗？"
+FolderNotExist                      = "指定文件夹不存在。\n您想创建指定名称的文件夹吗？"
+RestartProductWarning               = "需要重新启动" + $ProductName + "。\n立即重新启动吗？"
+RestartComputerWarning              = "需要重新启动计算机。\n立即重启计算机吗？"
+ErrorSendEmail                      = "电子邮件未发送。"
+UpdateNoKeysUnavailable             = $ProductName + "未激活。\n更新功能不可用。"
+ProductFunctionErrLicUnavailable    = if(global.EulaVerified,  $ProductName + "未激活。\n此功能不可用。", "未接受许可协议。\n此功能不可用。")
+UpdateNotAvailable                  = "管理员控制更新。"
+LicenseKeysDiscarted                = "授权许可文件与此程序不兼容。<a LicenseKeysDiscartedDetails onclick(dialog(\"LicenseKeysDiscartedDetails\"))>详细信息...</a>"
+LicenseRemoveKeyWarning             = "您确定要删除该密钥吗？"
+ActivateOnExistingCommercKeyWarning = "注意！当前授权许可仍有超过两周的有效期。如果现在使用新的激活码更新授权许可，您将会失去当前授权许可剩余的有效期。\n建议您在当前授权许可到期前两周内续费授权许可。"
+DiscardThreatsWarning               = "您确定要删除该报告项吗？"
+DiscardObjectWarning                = "您确定要从隔离中删除对象吗？"
+TimeUnknown                         = "未知"
+NoRunAsAccount.caption              = "未指定用户名"
+NoRunAsAccount                      = "请输入用户名"
+Duplicate.caption                   = "元素已存在"
+Duplicate                           = "您试图添加的组件已存在于列表中。"
+ExportAll                           = "您确定仅导出选中项吗？选择“否”，则导出全部列表。"
+ImportAll                           = "您确定将导入的项目添加到列表中吗？选择“否”，则列表项目将被覆盖。"
+addrBookNoProfile                   = "安装配置不存在"
+NotFound                            = "未发现"
+KAVMailQBSubj                       = "已隔离的对象"
+KAVMailQBBody                       = "该文件将被发送到卡巴斯基实验室分析。"
+WantApplyScanSettings               = "您确定要将这些设置应用到所有病毒扫描任务吗？"
+Attention                           = "注意！"
+DiscardVulnerab                     = "清除已检测的漏洞列表吗？"
+InvalidSymbol						= "非法字符"
+InputError							= "输入错误"
+OnlyNumbersAllowed					= "该字段仅支持数字字符"
+OutOfRange							= "值超限。请输入介于 %d 和 %d 之间的值。"
+ActivateCodeInputError				= "输入的激活码不正确。请确保正确输入了激活码。"
+ReinstallProductWarning             = "操作系统版本自安装" + $ProductName + "后已更改，请重新安装" + $ProductName + "。"
+DeleteProductWarning                = "未接受授权许可协议。您确定要将" + $ProductName + " 从系统中删除吗？"
+ProductExitConfirm                  = "您确定要退出" + $ProductName_GEN + "吗？"
+UninstallAVPToolWarning             = "程序将被关闭和卸载。\n您确定要卸载该程序吗？"
+BrowseObjectNetPathUnavailableWarning = "选定的网络路径不可用，您确定要使用它吗?"
+RegRoot								= 计算机
+OLATimestampErrorMsg                = "您计算机的系统时间和激活服务器时间不一致，为了正确激活请调整您的系统时间。\n服务器时间：" + datetime(ServerTime) + "。本地时间：" + datetime(UserTime) + "。"
+
+; Week Plan control
+WeekPlanMonday                      = 周一
+WeekPlanTuesday                     = 周二
+WeekPlanWednesday                   = 周三
+WeekPlanThuesday                    = 周四
+WeekPlanFriday                      = 周五
+WeekPlanSaturday                    = 周六
+WeekPlanSunday                      = 周日
+
+WeekPlanCheck                       = 允许
+WeekPlanDeny                        = 阻止
+WeekPlanAllow                       = 允许
+
+g_eulaAccepted						= false
+
+;------------- FileSize types --------------
+
+[FileSizeTypes]
+B   = "字节"
+KB  = "KB"
+MB  = "MB"
+GB  = "GB"
+
+[f_SizeType]
+ret = (@ <= 1024)? "字节" : ( (@<=1024*1024)? "KB" : ( (@<=1024*1024*1024)? "MB" : "GB" ) )
+
+;------------- Browse Dialogs ------------
+
+[BrowseForObject]
+@ = "浏览对象"
+
+[BrowseForObject_Body]
+PathLabel   = "对象："
+Recursive   = "包含子文件夹"
+
+[BrowseForFolder]
+@           = "选择文件夹"
+@.PathLabel = "文件夹："
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForFile]
+@           = "选择文件或文件夹"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForFile_Body]
+NameLabel   = "资源名称："
+PathLabel   = "对象："
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForScanObject]
+@           				= "选择扫描对象"
+
+[BrowseForScanObject_Body]
+PathLabel   				= "对象(&O)："
+Recursive   				= "包含子文件夹(&C)"
+CannotAddObject.caption		= "无法添加要扫描的对象"
+CannotAddObject				= $CannotAddObjectDescr
+
+[BrowseForUpdateSource]
+@           = "选择更新源"
+
+[BrowseForUpdateSource_Body]
+PathLabel   = "来源（U）："
+
+[BrowseForRegistry]
+@           = "请指定注册表对象"
+
+[BrowseForRegistry_Body]
+NameLabel   = "资源名称："
+PathLabel   = "对象："
+ValueLabel  = "值(&V)："
+
+[BrowseForAppMenu]
+AppList = $IsKAV ? "应用程序" : "应用程序(&A)..."
+Browse  = $Browse
+
+;------------- numdeclension ------
+
+[f_numdeclension]
+ret = if((@%100) >= 11 && (@%100) < 20, 0, switch(@%10, "numdeclension_10"))
+
+[numdeclension_10]
+1       = 1
+2       =
+3       =
+4       = 2
+default = 0
+
+;------------- Days ---------------
+
+[s_days]
+1   = "天"
+2   = "天"
+3   = "天"
+4   = "天"
+def = "天"
+
+[s_daysRemaining]
+1 = s_days(@)
+def = s_days(@)
+
+[s_daysPast]
+1 = s_days(@)
+def = s_days(@)
+
+[s_remains]
+1       = "剩余"
+default = "剩余"
+
+;------------- Hours ---------------
+
+[s_hours]
+1   = "小时"
+2   = "小时"
+3   = "小时"
+4   = "小时"
+def = "小时"
+
+;------------- Minutes ---------------
+
+[s_minutes]
+-1  = "<1 分钟"
+1   = "分钟"
+2   = "分钟"
+3   = "分钟"
+4   = "分钟"
+def = "分钟"
+
+
+;------------- Grid Groups --------
+
+[s_date]
+0       = "今天"
+-1      = "昨天"
+-2      = "周日"
+-3      = "周六"
+-4      = "周五"
+-5      = "周四"
+-6      = "周三"
+-7      = "周二"
+-8      = "周一"
+-10     = "本周"
+-11     = "上周"
+-12     = "两周前"
+-13     = "三周前"
+-99     = "本月"
+-100    = "上个月"
+-1000   = "本年"
+default = ""
+
+[Grid.Groups]
+$items          = " (" + count + ")"
+$AppRating      = if(val, "，级别：" + c_AppRating(val, appRating(val)))
+date            = "日期：" + s_date(val) + $items
+dateonly        = "日期：" + s_date(val)
+size            = "大小：" + val + $items
+Action          = "操作：" + (val ? s_Action(val) : $NullObj) + $items
+Verdict         = "结果：" + (val ? s_Verdict(val) : $NullObj) + $items
+ObjectType      = "对象：" + (val ? s_ObjectType(val) : $NullObj) + $items
+DetectType      = "类型：" + (val ? s_RepDetectType(val) : $NullObj) + $items
+DetectName      = "名称：" + (val ? val : $NullObj) + $items
+PIDGroup        = "进程：" + s_PIDGroup(val) + $items
+DetectDanger    = "危险：" + (val ? s_DetectDanger(val) : $NullObj) + $items
+Exact           = "概率：" + (val ? s_Exact(val) : $NullObj) + $items
+dettype         = "类型：" + (val ? s_DetectType(val) : $NullObj) + $items
+detobjtype      = "对象：" + s_DetectObjectTypes(val) + $items
+threatstatus    = s_ThreatStatus(val) + $items
+
+[f_scanEventsGroup]
+ret = "   （事件：" + count + "，对象：" + @.statistics.NumScaned + "，时间：" + timestamp(f_workTime(@)) + "）"
+
+[f_workTime]
+ret = @.statistics.FinishTime == 0xFFFFFFFF ? 0xFFFFFFFF : ((@.state & #StateFlagOperational ? utctime() : @.statistics.FinishTime) - @.statistics.StartTime)
+
+[f_PIDGroupAppText]
+$name = objfile(f_AppImagePath(@.Module))
+ret = ($name ? $name : $UnknownApp) + "  PID(" + @.NativePid + ")"
+
+[StyledCaptionWindowT_Caption]
+Close.tt    = "关闭"
+Minimize.tt = "最小化"
+
+[StyledCaptionWindowT_Caption.Icon.menu]
+Close    = "关闭(&C)\tAlt+F4"
+Minimize = "最小化"
+
+[Grid.Find]
+@       = "搜索"
+
+[Grid.FindBody.Btns]
+Mark    = "全部标记"
+Find    = "查找下一个"
+
+[Grid.Export]
+@ = "保存"
+
+[Grid.Filter]
+@       = "自定义过滤"
+
+[Grid.Filter_Body]
+Label   = "显示行："
+And     = "和"
+Or      = "或"
+
+[Grid.Filter.Condition]
+None                = ""
+Equals              = "等于"
+DoNotEqual          = "不等于"
+GreaterThan         = "大于"
+GreaterThanOrEqual  = "大于等于"
+LessThan            = "小于"
+LessThanOeEqual     = "小于等于"
+Blanks              = "空"
+NonBlanks           = "非空"
+Like                = "类似"
+NotLike             = "不类似"
+
+[Grid.FindBody]
+ColumnLbl   = "列："
+FindLbl     = "查找内容："
+MatchCase   = "区分大小写"
+WholeWord   = "全字匹配"
+
+[Grid.ColumnCmb]
+All = "（所有）"
+
+[Grid.HdrPopup]
+SortDown    = "降序排列"
+SortUp      = "升序排列"
+Find        = "搜索..."
+Group       = "根据该字段分组"
+Filter      = "根据该字段过滤..."
+Remove      = "删除该字段"
+
+[Grid.FltPopup]
+Custom  = "（自定义）"
+All     = "（所有）"
+
+[Grid.Footer.Template]
+Add = "添加"
+
+[Grid.Footer2.Template]
+Add         = "添加"
+Edit        = "编辑"
+Delete      = "删除"
+MoveUp      = "上移"
+MoveDown    = "下移"
+Import      = "导入"
+Export      = "导出"
+
+[Grid.Toolbar.Template]
+Add         = "添加"
+Edit        = "编辑"
+Allow       = "允许"
+Deny        = "阻止"
+Ask         = "提示"
+Delete      = "删除"
+MoveUp      = "上移"
+MoveDown    = "下移"
+Import      = "导入"
+Export      = "导出"
+
+;------------- Profile Enums ------------
+
+[f_GetTimeIntervalRemaining]
+ret = if(@ > 86400, @/86400 + " " + s_daysRemaining(f_numdeclension(@/86400)), if(@ > 3600, @/3600 + " " + s_hours(f_numdeclension(@/3600)), if(@ > 60, @/60 + " " + s_minutes(f_numdeclension(@/60)), s_minutes(-1))))
+
+[f_GetTimeIntervalPast]
+ret = if(@ > 86400, @/86400 + " " + s_daysPast(f_numdeclension(@/86400)), if(@ > 3600, @/3600 + " " + s_hours(f_numdeclension(@/3600)), if(@ > 60, @/60 + " " + s_minutes(f_numdeclension(@/60)), s_minutes(-1))))
+
+[f_GetTimeInterval]
+ret = if(@ > 60, " ", if(@ > 0, "剩余")) + if(@ >= 0, f_GetTimeIntervalRemaining(@), f_GetTimeIntervalPast(-@)) + if(@ <= 0, "之前")
+
+[f_GetTimeIntervalByState]
+ret = if(f_IsStateActive(@1), if(@ > 60 || @ < -60, " ", "剩余")) + if(@ >= 0, f_GetTimeIntervalRemaining(@), f_GetTimeIntervalPast(-@)) + if(!f_IsStateActive(@1), "之前")
+
+[s_ProfileState]
+#StateRunning       = "正在运行"
+#StatePaused        = "已暂停"
+#StateStopped       = "停止时间：" + if(!@2, s_ProfileStateRes(@, @1))
+#StateCompleted     = "完成时间：" + if(!@2, s_ProfileStateRes(@, @1))
+#StateStarting      = "正在启动"
+#StatePausing       = "正在暂停"
+#StateResuming      = "正在还原"
+#StateStopping      = "停止"
+#StateFailed
+#StateMalfunction   = "故障"
+#StateDisabled      = $Disabled
+#StateNotStarted    = "从不运行"
+default             = "未定义: " + state
+
+[s_ProfileStateRes]
+#StateFailed
+#StateStopped       = !statistics.FinishTime || statistics.FinishTime == 0xFFFFFFFF ? "未知" : f_GetTimeIntervalByState(statistics.FinishTime - utctime(), @)
+#StateCompleted     = f_GetTimeIntervalByState(lastCompleted - utctime(), @) + if(@1, s_ProfileStateComplDescr(type, statistics))
+
+[s_ProfileDescription]
+Protection  = "保护计算机数据，防御恶意程序、互联网欺骗和非法访问。"
+av          = "在计算机中的文件、电子邮件、网页和下载的文件被访问时对其进行扫描"
+cf          = "过滤垃圾邮件，分析已打开的网页内容"
+os          = "保护计算机数据，防御网络攻击和互联网欺骗。"
+sw          = "监控您的计算机中所有应用程序和进程的活动。"
+ods         = "扫描计算机及单个文件夹和文件以查找恶意对象"
+updater     = "定期更新 " + $ProductName_GEN + " 数据库和程序模块可确保进行有效保护"
+avz         = "若要手动清除，请执行如下操作："
+
+[s_ProfileStateComplDescr]
+updater = "，更新大小：" + f_ObjSize(@1.DownloadedBytesCount) + "，平均速度：" + f_ObjSize(@1.Speed*1024) + "/sec"
+
+;------------- Tray ------------
+
+[Tray]
+$FullProdName = $ProductName + " " + env("ProductVersion")
+$IsEulaNowVerifing = !EulaVerified && g_eulaAccepted
+$ProdStateText = if($IsEulaNowVerifing, $FullProdName, $FullProdName + s_ProdyctTrayStatus(ProdStateId))
+@ = if(TaskManagerState, TaskManagerState == 1 ? ($ProductName + " " + env("ProductVersion") + s_ProdyctTrayStatus(ProdStateId)) : "部分程序服务已经从计算机的内存中被卸载")
+
+[s_ProdyctTrayStatus]
+$NotTaskRunStatus = (s_ProdStateSeverity(@) != #eProtStateCrit && $IsNeedReboot ? "\n需要重新启动" : (s_ProdStateSeverity(@) == #eProtStateCrit ? ("\n" + s_ProdState(@)) : if(bindok("AVService.BasesDate"), "\n数据库发布日期：" + datetime(AVService.BasesDate))))
+def = if($IsUpdateActive, "\n" + $UpdateInProgressText, if($IsScanActive, "\n" + $ScanInProgressText, $NotTaskRunStatus))
+
+[Tray.menu]
+LaunchQMLTaskManager	  = "任务管理器"
+Updater                   = "免疫更新" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_My_Computer          = "全盘扫描" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_Startup              = "关键区域扫描" + if(f_IsStateActive(state), " " + Completion + "%")
+Scan_Qscan                = $Scan_Qscan + if(f_IsStateActive(state), " " + Completion + "%")
+News      	              = "新闻" + (UnreadNewsCount ? " (" + UnreadNewsCount + ")" : "")
+;RunningTask               = $ProfileName + if(f_IsStateActive(state), " " + Completion + "%")
+Tools                     = "工具"
+VirtualKeyboard           = "安全键盘"
+EnableParCtl              = $ParCtl_IsCurUserEnabled ? "禁用上网管理" : "启用上网管理"
+kis                       = "打开" + $ProductName
+DisableProtect            = (s_IsStateRunning(Protection.state) ? "暂停保护..." : "恢复保护") + if(s_IsStateTransitional(Protection.state), " (" + s_ProfileState(Protection.state) + ")")
+Settings                  = "设置"
+About                     = "关于"
+RestartOS				  = $LinkRestartComputer
+Unload                    = "退出"
+
+[Tray.menu_Tools]
+NetMonitor                = "网络监控"
+VirtualKeyboard           = "安全键盘"
+
+[TrayNewsMenu.menu]
+KAV     = $ProductName
+News    = "新闻..."
+Hide    = "隐藏"
+
+;------------- Main Window ------------
+
+[MainWindow.Antivirus]
+Header = "安全级别"
+
+[RunAsGroup]
+@               = "用户帐号"
+Enable          = "使用以下帐号运行任务(&R)"
+Account.Name    = "帐号(&M)："
+Pswd.Name       = "密码(&W)："
+
+[s_ToastCategoryText]
+#ToastCategoryIgnore     = ""
+#ToastCategoryProtection = "保护组件"
+#ToastCategoryThreats    = "威胁类型"
+#ToastCategoryWeb        = "互联网"
+#ToastCategoryBases      = "数据库"
+#ToastCategoryLicence    = "授权许可"
+#ToastCategoryMessage    = "重要消息"
+
+[s_ToastDescriptionText]
+#eNotifyNone                = switch(Severity,"EventTypesSeverity")
+#eNotifyThreats             = switch(Severity,"EventTypesThreats")
+#eNotifySuspicious          = "恶意程序变种"
+#eNotifyLicensing           = if($IsVerdictProductStatusId, s_ToastLicenseDescription($Verdict2ProductStatusId),switch(Severity,"EventTypesLicence"))
+#eNotifyProduct             = if($IsVerdictProductStatusId, s_ToastDescriptionProductState($Verdict2ProductStatusId), if(Severity == 4, switch(Severity,"EventTypesProduct")))
+#eNotifyUpdater             = switch(Severity,"EventTypesUpdater")
+#eNotifyBases               = switch(Severity,"EventTypesBases")
+#eNotifyProtocoller         = "扫描加密连接"
+#eNotifySSL                 = "扫描加密连接"
+#eNotifySelfProtection      = "程序的自我保护被禁用。启用..."
+#eNotifyPswdArchive         = "检测到密码保护的压缩文件"
+#eNotifyThreatNotCured      = "无法清除"
+#eNotifyThreatDeleted       = "已删除的感染对象"
+#eNotifyThreatQuarantined   = "对象已隔离"
+#eNotifyRuleTriggered       = "已触发的应用程序控制规则"
+#eNotifyAttackBlocked       = "检测到网络攻击"
+#eNotifyBan                 = "已阻止的攻击计算机"
+#eNotifyThreatsUntreated    = "未处理的威胁对象"
+#eNotifyUpdateNeedReboot    = "更新后需要重启。重启..."
+#eNotifyParCtl              = $ParCtl
+#eNotifyAppGroupChanged     = "限制组的应用程序"
+#eNotifyAppGroupChanged2Trusted = "已将应用程序放入受信任的应用程序组"
+#eNotifyStatisticsReportReady = "生成报告通知"
+#eNotifyHiddenObject        = "检测到隐藏的对象"
+#eNotifyBlockedBySelfProtection = "自我保护阻止的行为"
+#eNotifyProductNotAutoRun     = "程序不能自动运行"
+#eNotifyUpdateNotAuto         = "自动更新已禁用"
+#eNotifyNewsUnread	          = "有未读新闻。详情..."
+#eNotifySomeBasesNeedUpdate   = "需要更新某些保护组件"
+#eNotifyNoProtection          = s_ToastDescriptionProductState($Verdict2ProductStatusId)
+#eNotifyMalwareThreatsUntreated = "有未处理的恶意软件"
+#eNotifyEulaNotAccepted     = "您必须接受最终用户许可协议"
+#eNotifyIpm                 = switch(Severity, "EventTypesNotification")
+
+[EventTypes]
+#eNotifyNone                = switch(Severity,"EventTypesSeverity")
+#eNotifyThreats             = switch(Severity,"EventTypesThreats")
+#eNotifySuspicious          = "恶意程序变种"
+#eNotifyLicensing           = switch(Severity,"EventTypesLicence")
+#eNotifyProduct             = switch(Severity,"EventTypesProduct")
+#eNotifyUpdater             = switch(Severity,"EventTypesUpdater")
+#eNotifyBases               = switch(Severity,"EventTypesBases")
+#eNotifyProtocoller         = "扫描加密连接"
+#eNotifySSL                 = "扫描加密连接"
+#eNotifySelfProtection      = "程序的自我保护被禁用"
+#eNotifyPswdArchive         = "检测到密码保护的压缩文件"
+#eNotifyThreatNotCured      = "无法清除"
+#eNotifyThreatDeleted       = "已删除的感染对象"
+#eNotifyThreatQuarantined   = "对象已隔离"
+#eNotifyRuleTriggered       = "已触发的应用程序控制规则"
+#eNotifyAttackBlocked       = "检测到网络攻击"
+#eNotifyBan                 = "已阻止的攻击计算机"
+#eNotifyThreatsUntreated    = "未处理的威胁对象"
+#eNotifyUpdateNeedReboot    = "需要重启"
+#eNotifyParCtl              = $ParCtl
+#eNotifyAppGroupChanged     = "应用程序被置于受限制组中"
+#eNotifyAppGroupChanged2Trusted = "应用程序被置于受信任应用程序组中"
+#eNotifyStatisticsReportReady = "生成报告通知"
+#eNotifyHiddenObject        = "检测到隐藏的对象"
+#eNotifyBlockedBySelfProtection = "自我保护阻止的行为"
+#eNotifyProductNotAutoRun     = "程序不能自动运行"
+#eNotifyUpdateNotAuto         = "自动更新已禁用"
+#eNotifyNewsUnread	          = "未读新闻"
+#eNotifySomeBasesNeedUpdate   = "需要更新某些保护组件"
+#eNotifyNoProtection          = "关键的保护组件已禁用"
+#eNotifyMalwareThreatsUntreated = "有未处理的恶意软件"
+#eNotifyIpm                   = switch(Severity,"EventTypesIpm")
+
+def = @
+
+[EventTypesIpm]
+1   = "紧急授权许可通知"
+2   = "非常重要的授权许可通知"
+3   = "重要的授权许可通知"
+4   = "其他授权许可通知"
+
+[EventTypesSeverity]
+0   = "所有事件"
+1   = "紧急事件"
+2   = "功能失败"
+3   = "重要事件"
+4   = "其他事件"
+
+[EventTypesThreats]
+1   = "检测到恶意软件"
+3   = "检测到广告程序和其他软件"
+4   = "已清除威胁"
+
+[EventTypesLicence]
+1   = "授权许可已经过期"
+2   = "授权许可不存在或已损坏"
+3   = "授权许可将要过期"
+4	= "有重要的授权许可通知"
+
+[EventTypesProduct]
+2   = "任务未被执行"
+3   = "其他重要通知"
+4   = "保护组件被关闭"
+
+[s_ToastLicenseDescription]
+#ProdStateKeyTrial                      = ""
+#ProdStateKeyReservedActivationProblem  = "未能应用储备激活码"
+#ProdStatePreinstalledCodeWaitActivationCritical = "无法自动激活应用程序"
+#ProdStatePreinstalledCodeActivationProblem      = "预设的激活码未应用"
+default                                 = s_ProtState(@)
+
+[s_ToastDescriptionProductState]
+#ProdStateProtectionNotRunning      = "保护已停止。恢复..."
+#ProdStateProtectionDisabled        = "保护已禁用。启用..."
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled             = "一些保护组件已被禁用。启用..."
+#ProdStateTasksMalfunction          = "一些保护组件启用失败。 启用..."
+default                             = ""
+
+[EventTypesUpdater]
+2   = "更新错误"
+4   = "更新完成"
+
+[EventTypesBases]
+1   = "数据库严重过期"
+2   = "数据库丢失或损坏"
+3   = "数据库已过期"
+4	= "需要更新某些保护组件"
+
+[EventTypesNotification]
+1   = "有一个重要通知"
+3   = "有一个重要通知"
+4   = "有一个通知"
+
+[s_SystemError]
+0x80000040
+0x8000004B              = "意外错误"
+0x80000041              = "内存不足"
+0x80000042              = "不支持"
+0x80000043              = "未执行"
+0x80000045              = "访问被拒绝或对象未找到"
+0x8000004C
+0x800000C6
+#errOBJECT_NOT_FOUND    = "找不到对象"
+0x8000004F              = "对象被锁定"
+0x80000051              = "操作被取消"
+0x80000059              = "存储错误"
+0x8000005A              = "签名无效"
+0x8000005B              = "版本无效"
+0x8000005F              = "写保护"
+0x80000061              = "授权许可文件丢失"
+0x80000062              = "超出范围"
+0x80000063              = "找不到对象"
+0x800000C0              = "格式无效"
+0x800000C1              = "权限不足"
+0x800000C2
+0x800000C3              = "初始化错误"
+0x800000C7              = "对象状态错误"
+0x800000C8              = "对象受密码保护"
+0x800000CA
+0x800000CC              = "读取错误"
+0x800000CB
+0x800000CD              = "写入错误"
+0x800000D0              = "无效的对象"
+0x800000D1              = "对象已存在"
+0x800000D5              = "另一应用程序正在使用此对象"
+0x800000D8              = "数据库已损坏"
+0x800001C0              = "模块损坏"
+0x800001C2              = "模块未识别"
+0x800001C1              = "模块未找到"
+0x800001C4              = "组件无法加载"
+0x80000221              = "超时"
+#errPROXY_STATE_INVALID = "组件交互错误"
+0x90005000              = "数字签名无效"
+0x90005002              = "未进行数字签名"
+0x80027006
+0x80027007
+0x80380fbb              = "任务被停止"
+0x80017007              = "无法在安全模式下运行任务"
+0x80017005              = "任务被关闭"
+0x80017006              = "错误的用户名或密码"
+0x80017008              = "在安全模式下，无法在其他用户帐户下运行任务"
+0x80017009              = "未发现驱动程序"
+0x80022005              = "加载数据库错误"
+default                 = "错误代码：" + fmt("08X", @)
+
+[s_ComputersForm]
+1       = "计算机"
+default = "计算机"
+
+[SupportWindow]
+@               = "技术支持"
+@.Footer.Link1  = "最终用户授权许可协议"
+@.Footer.Link2  = "支持工具"
+
+[SupportWindow_Header]
+Caption = "技术支持"
+Desc    = "在该窗口，您可以获得更多系统信息、快速访问技术支持、访问知识库或用户论坛。访问这些资源需要连接互联网。"
+
+[SupportWindow_New_Body]
+
+[SupportWindow_New_Body_SysInfo]
+Desc = $ProductName_GEN + "技术支持"
+ProdVer.Name    = "程序版本："
+Signatures.Name = "数据库发布时间："
+OSVer.Name      = "操作系统："
+NoKeys.Name     = "授权许可："
+NoKeys.Val      = "程序未激活"
+ActiveLic.Name   = "授权许可："
+SubscrLic.Name   = "订阅："
+
+[SupportWindow_New_OneClickSprt]
+Arrow.Name         = "快速支持(推荐)"
+Arrow.Descr        = "您的计算机必须连接互联网后才能获取技术支持服务。"
+Forum.Descr        = "分享您的经验，还可以从我们的专家和其他用户那里获得建议。"
+KnowlegeBase.Name  = "知识库"
+KnowlegeBase.Descr = "使用" + $ProductName + "的建议以及常见问题回答。"
+
+[SupportWindow.Traces]
+@       = "支持工具"
+
+[SupportWindow.Traces_Body]
+Intro   = "注意! 仅应在卡巴斯基实验室技术支持专家指导下使用该窗口。"
+Trace   = "跟踪"
+Action  = "操作"
+
+[SupportWindow.Traces_Trace]
+Label       = "根据默认使用标准等级(500)追踪"
+StateLabel  = "状态："
+State       = tracer_state() ? "跟踪已启用" : "跟踪已关闭"
+LevelLabel  = "等级："
+OnOff       = tracer_state() ? "关闭(&D)" : "启用(&E)"
+
+[SupportWindow.Traces_Trace_Level]
+lvl100  = "紧急(100)"
+lvl200  = "高(200)"
+lvl300  = "诊断(300)"
+lvl400  = "重要(400)"
+lvl500  = "标准(500)"
+lvl600  = "低(600)"
+
+[SupportWindow.Traces_Action]
+AvzReport.Name  = "创建系统状态报告"
+AvzReport.Descr = "创建系统状态报告(AVZ 报告)"
+AvzScript.Name  = "执行 AVZ 脚本"
+AvzScript.Descr = "执行 AVZ 脚本"
+Send.Name       = "将信息上传至服务器以获取技术支持"
+Send.Descr      = "向卡巴斯基实验室服务器上传所收集的内存文件转储和记录"
+GotoFolder      = "查看(&V)..."
+
+[MainWindow]
+@ = $RemoteComputer + $ProductNameLong + if(!IsRelease, "技术预览")
+
+[MainWindow_Header]
+Settings        = "设置"
+Reports         = "报告"
+Quarantine      = "隔离区"
+News      	= "消息" + (UnreadNewsCount ? " (" + UnreadNewsCount + ")" : "")
+AlphaWarning    = "!!! 严禁销售 !!!"
+
+[MainWindow_Navigator_info_area]
+Fix = "立即修复"
+
+[MainWindow_Footer_SubscrLic_Desc]
+#ssExpDateUnknown      = "未定义状态"
+#ssUnlimitedActivated  = "已激活"
+#ssUnlimitedProlonged  = "已激活"
+#ssExpired             = "已过期"
+#ssNotYetSuspended     = "暂停从" + date(LicInfo.LicenseExpirationDate)
+#ssSuspended           = "已暂停，" + ((LicInfo.KeyInfo.KeyType==#ektSubscriptionProtection)? "保护被关闭" : "更新功能被关闭")
+#ssUnlimitedResumed    = "已继续"
+#ssHasExpDateActivated
+#ssHasExpDateProlonged
+#ssHasExpDateCanceled  = $RemainsDays
+#ssGracePeriod         = "宽限期，" + s_remains(f_numdeclension(LicInfo.SubscriptionInfo.ToleranceDays)) + " " + f_n_days_remaining(LicInfo.SubscriptionInfo.ToleranceDays)
+
+
+[s_ProdStateKeyInvalid_Main]
+#ekirCorrupted              = "无效的授权许可"
+#ekirBlackListed            = "授权许可已被阻止"
+#ekirInconsistentUpdate     = "数据库受损"
+#ekirKeyCreationDateInvalid = "授权许可激活日期不正确"
+#ekirInvalidBlacklist       = "密钥黑名单已损坏"
+#ekirKeyInstallDateInvalid  = "不正确的程序激活日期"
+#ekirLicenseCountLimitExceeded = "已违反授权许可协议"
+default                     = "错误!"
+
+[MainWindow_Footer]
+Unload      = "退出"
+Events      = "报告"
+Detected    = "已检测到的威胁"
+Upgrade     = "更新到" + switch("kis", "ProductTitleLong")
+LicDescAt   = "："
+LicenseSubscr = (ActiveLicenseAutoActivationError.ErrorCode == 0 && !SubscriptionTolerancePassed)? "订阅服务提供商" : "更新订阅"
+
+[MainWindow_Footer_Right]
+$LicSubscriptionDesc = (!global.KeyState || (global.KeyState & (#eKeyGracePeriod|#eKeySuspended))) ? switch(SubscriptionStatus,"MainWindow_Footer_SubscrLic_Desc") : ((global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) ? "已过期" : s_ProdStateKeyInvalid_Main(LicInfo.InvalidReason))
+$LicNonSubscriptionDesc = global.KeyState & #eNoKeys ? "未安装" : ($IsWaitingPreinstalledCodeActivation ? "已计划激活" : (LicInfo.InvalidReason == #ekirValid ? $RemainsDays : (global.KeyState & (#eKeyExpired|#eKeyTrialExpired) ? "已过期" : s_ProdStateKeyInvalid_Main(LicInfo.InvalidReason))))
+LicDesc     = ($IsSubscription)? "订阅：" + ($LicSubscriptionDesc) : "授权许可：" + ($LicNonSubscriptionDesc)
+BackToKAV   = "反病毒"
+License     = global.LicenseRenewAvailable ? "续费授权许可" : "购买授权许可"
+
+[MainWindow_Footer_Left]
+Cabinet     = "我的卡巴斯基帐号"
+Support     = "技术支持"
+FullProtection  = "完整保护防御病毒"
+
+[ProfileHome_Progress]
+LastStart.Name  = "最近启动状态："
+LastError.Name  = "最近启动状态："
+Completion.Name = "状态："
+
+[ProfileHome_Progress_Compl]
+Details         = "详细信息"
+
+[Product_Notification_OptionsMenu]
+NotifyDisable       = "禁用此项通知"
+NotifyDisableAll    = "关闭所有通知"
+
+;------------- ProductInfo --------------
+
+[ProductInfo]
+@ = "关于"
+Close = "关闭"
+
+[ProductInfo_Body_About]
+Copyright   = $CopyrightText
+Warning     = "警告！本程序的全部知识产权属于卡巴斯基实验室 ZAO。"
+Warning2    = "注册商标和服务标记归各自所有者所属。"
+
+;------------- Help -----------------------
+
+[f_n_days_ex]
+ret = @? "" + f_n_days_past(@) : "今天"
+
+[s_DefaultTextForValidReason]
+#ektBeta        = "程序的Beta版本将于 "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+"后过期。\n\n要确保保护不中断，请<a onclick(buy())>点击此处购买</a>。"
+#ektTrial       = "您的产品试用期将于 "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+"后结束。\n\n要确保保护不中断，请<a onclick(buy())>点击此处购买</a>。"
+#ektTest        = "程序的测试版本将于 "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+"后过期。\n\n要确保保护不中断，请<a onclick(buy())>点击此处购买</a>。"
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= $ProductName + "授权许可将于 "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+"后过期。\n\n要继续享受最新保护，请<a onclick(buy())>点击此处续费更新授权许可</a>。 \n如果您已经购买了产品，请<a onclick(f_Activate())>立即激活</a>。"
+default         = $ProductNotificationText
+
+[s_DefaultExpirationText]
+#ektBeta        = "请注意！您的"+$ProductName+" Beta版本已过期。计算机保护已禁用。\n\n要启用保护，请<a onclick(buy())>点击此处购买</a>。"
+#ektTrial       = "请注意！您的试用期已结束。计算机保护已禁用。\n\n要启用保护，请<a onclick(buy())>点击此处购买</a>。"
+#ektTest        = "请注意！您的"+$ProductName+"测试版本已过期。计算机保护已禁用。\n\n要启用保护，请<a onclick(buy())>点击此处购买</a>。"
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= $ProductName + "授权许可已过期。\n\n要继续获得最新保护，请<a onclick(buy())>在此处续费</a>。\n如果您已经续费该授权许可，请<a onclick(f_Activate())>立即使用激活码</a>。"
+default         = $ProductNotificationText
+
+[s_ProfileStateEnableText]
+#StatePaused
+#StateStopped
+#StateCompleted
+#StateNotStarted
+#StateStarting
+#StateResuming
+#StateDisabled      = "启用"
+#StateRunning
+#StateFailed
+#StatePausing
+#StateStopping
+#StateMalfunction   = "禁用"
+
+[s_OnOff]
+1		= "启用"
+default	= "禁用"
+
+[MainWindow_Navigator_Btns]
+Protection.Desc      = "实时保护计算机和数据安全"
+AppCtrl.Text         = "安全堡垒"
+AppCtrl.Text2        = ""
+AppCtrl.Desc         = "在安全环境下运行应用程序、浏览网站"
+Scan.Desc            = "扫描文件和计算机病毒"
+Updater.Text         = ("免疫更新" + if(f_IsStateActive(Updater.state), (Updater.Completion + "%")))
+Updater.Desc         = "更新数据库和程序模块"
+AddSvc.Text          = "系统优化"
+AddSvc.Desc          = "提供更多安全工具以更好的保护您的计算机"
+Upgrade.Text         = "保护升级"
+Upgrade.Desc         = "增加程序功能"
+
+[MainWindow_Body.Upgrade]
+Header               = "升级至卡巴斯基安全部队 2013"
+Descr	             = "卡巴斯基安全部队 2013 包含一系列高级工具，以更好地控制和保护用户在线浏览和隐私数据安全。"
+
+[Upgrade_Dock1]
+Hips.Name         = "应用程序控制"
+ParCtl.Name       = "上网管理"
+
+[Upgrade_Dock2]
+IDS.Name          = "反网络攻击"
+Firewall.Name     = "防火墙"
+
+[Upgrade_Dock3]
+AntiBanner.Name   = "反广告"
+AntiSpam.Name     = "反垃圾邮件"
+GeoSec.Name       = "地域过滤"
+
+[s_MainWindow_ProfileDoWork_Caption]
+Scan_Objects         = f_IsStateActive(state) ? "正在进行自定义扫描 " + Completion + "%" : "开始自定义扫描"
+Scan_My_Computer     = f_IsStateActive(state) ? "正在进行全盘扫描 " + Completion + "%" : "开始全盘扫描"
+Scan_Startup         = f_IsStateActive(state) ? "正在进行关键区域扫描 " + Completion + "%" : "开始关键区域扫描"
+Scan_Vulnerabilities = f_IsStateActive(state) ? "正在进行漏洞扫描 " + Completion + "%" : "开始漏洞扫描"
+Updater              = f_IsStateActive(state) ? "正在更新 " + Completion + "%" : "开始更新"
+Rollback             = f_IsStateActive(state) ? "正在恢复 " + Completion + "%" : "恢复到上一次更新"
+def                  = switch(@, "ProfileName") + if(f_IsStateActive(state), " " + Completion + "%")
+
+[s_MainWindow_ProfileDoWork_CaptionDetails]
+Scan_Objects         = f_IsStateActive(state) ? "正在执行自定义扫描 " + Completion + "%" : switch(@, "ProfileName")
+Scan_My_Computer     = f_IsStateActive(state) ? "正在执行全盘扫描 " + Completion + "%" : switch(@, "ProfileName")
+Scan_Startup         = f_IsStateActive(state) ? "正在执行关键区域扫描 " + Completion + "%" : switch(@, "ProfileName")
+Updater              = f_IsStateActive(state) ? "正在更新 " + Completion + "%" : switch(@, "ProfileName")
+Rollback             = f_IsStateActive(state) ? "正在恢复 " + Completion + "%" : switch(@, "ProfileName")
+def                  = switch(@, "ProfileName") + if(f_IsStateActive(state), " " + Completion + "%")
+
+[s_MainWindow_ScanDoWork]
+Updater              = "您确定要取消更新吗？"
+Scan_Objects         = "您确定要取消扫描吗？"
+def                  = s_MainWindow_ScanDoWork("Scan_Objects")
+
+[DialogPanelClassic]
+Copyright            = $CopyrightText
+
+[PromoPage]
+@ = $ProductNameLong
+
+[PromoPage_Footer]
+Show       = "不再显示该窗口(&D)"
+Continue   = $Close
+BuyLic     = "获取授权许可(&P)"
+
+[PromoPage_Info]
+TrialHint      = if(global.KeyState & #eNoKeys, "注意！程序未激活。", "授权许可即将到期。")
+PleaseBuyMe    = "为全面保护您的计算机，请<a onclick(buy())>获取商业授权许可</a>。"
+WeAreBest      = s_Promo_WeAreBest(env("ProductType"))
+
+[s_Promo_WeAreBest]
+kis = "网民财产，神圣不可侵犯！" + s_ProductTitleLong(@) + "彻底保护您的网上银行、网上支付和网络购物安全，让您实现安全交易，安全浏览。"
+kav = "病毒越来越多，威胁越来越大。关键时刻，还得靠卡巴斯基！"
+
+[s_PromoPage_Feature1_Name]
+kis = "产品特点"
+kav = "产品特点"
+
+[s_PromoPage_Feature1_Desc]
+kis = "全面保护网上交易和网上银行安全；抵御各类已知和未知的恶意程序；智能的垃圾邮件和广告拦截功能；运行速度更快，占用系统资源更少，电脑运行更平稳；双向防火墙，阻断网络威胁入侵。"
+kav = "先进的脱壳查杀技术，精确查杀各类病毒及变种；云安全技术快速检测新型恶意程序；独创系统监控功能，第一时间发现并阻止各种未知恶意程序的恶意行为。"
+
+[s_PromoPage_Feature2_Name]
+kis = "全面保护网银交易"
+kav = "网银购买"
+
+[s_PromoPage_Feature2_Desc]
+kis = "安全浏览器和安全桌面提供安全快捷的运行环境，贴心保护网银交易；智能反钓鱼技术，保护个人财产和隐私；安全键盘阻止木马通过键盘记录和截屏盗取帐号和密码；独创系统监控功能，发现并阻止各种未知恶意程序的恶意行为。"
+kav = "网银用户专属购买通道\n" + "1毛钱1天 超值优惠\n" + "支持支付宝和工行、招行、建行、农行、中行等18家网上银行支付"
+
+[s_PromoPage_Feature3_Name]
+kis = "网银购买"
+kav = "购买" + s_ProductTitleLong("kis")
+
+[s_PromoPage_Feature3_Desc]
+kis = "网银用户专属购买通道\n" + "1毛钱1天 超值优惠\n" + "支持支付宝和工行、招行、建行、农行、中行等18家网上银行支付"
+kav = "为了更全面保护您的计算机，建议您购买" + s_ProductTitleLong("kis", "") + "，更加强大的功能，更好地保护电脑安全，确保您的工作、网上银行、在线购物以及在线游戏安全。"
+
+[NewsReaderTemplate_Body]
+Caption = "卡巴斯基实验室新闻"
+
+[News_List]
+Title   = "主题"
+Date    = "日期"
+
+[EulaRequestPage]
+Banner.Caption = "欢迎使用" + $ProductNameLong
+
+[EulaRequestPageDescription]
+Caption			= "注意！" 
+Description1		= if(env("OemCommercial") == "1", "感谢您的购买。\n马上激活您的程序","您的计算机面临病毒和间谍软件的风险。\n 请使用<b>30天免费授权许可</b>激活<b>" + $ProductNameLong + "</b>。")
+Description2		= "通过点击下面的 \"同意并激活\" 按钮，您接受 <a onclick(l_page = $EulaPage)>最终用户授权许可协议</a> 的条款并" + if(env("OemCommercial") == "1", "", "立即使用30天免费授权许可" + "激活程序。")
+
+[EulaDlgFooterFooter_EulaRequest]
+KsnCheckText		= "我想要参与到 <a onclick(l_page = $KsnPage)>卡巴斯基安全网络 (KSN)</a>\n来为我的计算机提供更好的保护。"
+DeclineButton		= "稍后提醒我"
+
+[DeclinedEulaPage]
+Banner.Caption = "您确定要取消激活\n" + $ProductNameLong + "吗？"
+
+[DeclinedEulaPageDescription]
+Description		= "卡巴斯基安全部队的一流保护使您远离如今复杂且进化的威胁。无论您在网银交易、购物、还是在线社交网络中，您都可以自由享受英特网的魅力。"
+BackButton.Text = "返回到激活"
+
+[EulaDlgFooterFooter_DeclinedEula]
+RemovalHint = "您可以使用 Microsoft Windows 常用工具在任何时间删除此应用程序"
+Postpone	= "稍后提醒我"
+
+[EulaDlgFooterFooter_MoreInfo]
+Back = "返回"
+
+[EulaInfoPage]
+Eula			= "最终用户授权许可协议"
+back.Text		= "返回"
+
+[KsnInfoPage]
+Ksn				= "KSN 协议"
+back.Text		= "返回"
+
+[ThankYouPage]
+Banner.Caption	= "谢谢！"
+
+[ThankYouPageDescription]
+Caption					= "您的计算机将被保护"
+Description1			= "当这个窗口关闭时<b>" + $ProductNameLong +  "</b>已经自动被一个<b>30天免费授权许可</b> 激活。"
+Description2			= "立即购买以扩展您的保护到\n<b>全年</b>！"
+LearnMoreButton.Text	= "更多信息"
+
+[EulaDlgFooterFooter_ThankYou]
+Close = "关闭"
+
+[QMLMainWindow]
+@ = $RemoteComputer + $ProductNameLong + if(!IsRelease, "技术预览")
+
+[Mail_Notifications]
+Subject_Text           = "通知来自" + $ProductName_GEN
+Product_Label          = "应用程序"
+Operating_System_Label = "操作系统"
+Computer_Label         = "计算机"
+Domain_Label           = "域"
+Notifications_Label    = "通知"
+
+[SecuredDesktopDialog]
+@="注意！"
+
+[s_SecuredDesktopDialog_Messages]
+0="该操作将降低您计算机的保护，您确定继续？"
+1="选定的操作不是推荐操作，您确定继续？"
+
+[SecuredDesktopDialog_BottomArea]
+CheckBox = "30 分钟内信任我的操作。"
+
+[SecuredDesktopDialog_TableArea]
+ProgramNameLabel = "程序名称："
+PublisherLabel = "制造厂商："
+PublisherValue = "卡巴斯基实验室"
+ActionLabel = "操作："
+
+[s_SecuredDesktopDialog_Actions]
+0="编辑设置"
+1="选择操作"
+2="删除授权许可"
+
+[MessageDialog]
+@ = msg.Caption

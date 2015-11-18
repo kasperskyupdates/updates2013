@@ -1,0 +1,13 @@
+﻿Description = 'As notificações permitem receber informações atempadas sobre a segurança do computador e reagir rapidamente a eventos importantes.'
+
+NotificateEvents = 'Notificar &sobre os eventos:'
+
+MailNotifications = 'Notificações por e-mail'
+SendMailNotifications = 'Activar notificações por &e-mail'
+
+SoundNotifications = 'Notificações áudio'
+UseSoundNotifications = 'Activar notificações áu&dio'
+UseStandardSounds = 'Usar esquema de sons predefinido do &Windows'
+
+NotificationsWarning = 'Ao executar aplicações em modo de ecrã inteiro, as notificações não serão apresentadas mesmo se tiver activado a respectiva apresentação, seleccionando "Notificar sobre os eventos".'
+MailSettingsMore = 'Con&figuração...'

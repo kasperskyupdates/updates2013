@@ -1,0 +1,42 @@
+<UpdateFiles
+	UpdateDate="28102015 1123"
+	BlackDate="28102015 0603"
+	ObjectType="2=BB;3=BASE">
+	<FileDescription
+		ComponentID="RM"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="regmonitor.ini"
+		FileSize="14176" />
+	<FileDescription
+		ComponentID="BB,BB2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="pdmkl.dat"
+		FileSize="254612" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAXEgHipAAHXZjC80E7Jnu4HcGNT9VF/bpdzGbU//bmkPFHd6peWQWzuUd5ShqUaayV4ZbByfT9rTihdTtOddI4KQOz+BRpABAB4JCwAAAAIAAigCAFJNAwACKAQAQkFTRQEAAAmA/LEvDQo7OjEwNEFXY3BoT2VXcis0eG1YQ3Z0MVQwNnRkcHV0L2k5d1lraXhUa1ZHa2tFb1Q1UzBUcnNTQWtwQ0FSOFdOSllEM3ZRKzRlN3dha2I2UkFpVXprQ3JOWU0lJQ=="
+		Filename="rm-0607g.pbv" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwELAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAQABACAA27D6gPGCOvXdPx+BcWumNDwzZ0MM0869hLqEorybKHYBAB4JCwAAAAEAAAmUCfwyDQo7OjEwNDlzRTRwYWRTZDdFd0ZzQm8zRTRBRkVaZXFZbUhWWFhzWjdMcytjMC9uQ2hJaVJkcStkZzU1SFl2OVdmRkQyNGx3eEM2dDlUcFJiem4wbEI0R3NxR3klJQ=="
+		Filename="rm-0607g.krg" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAWh5HipAAGqEk+K7LXJAF2CxLjp4Uaz7+rMopcweYNzbn9Y7qghvFlYw8h4wCqUCEG5RjsCfveQynOLWnH1yQiRDYpExMmQBAB4JDAAAAAIAAigCAEJCAwACKAQAQkFTRQEAAAn1km37DQo7OjEwYTgvZ3lkUlRQWW95cHFpUC85OG96VnVERGplYUxHWGx5QmJaaC9pWnNacVZkdUViV3pTWVdvZ2MrdXVGT0ZSSFdPQ2FpRWtrTUdYSis0K2JTamRPSnklJQ=="
+		Filename="bb-0607g.pbv" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwEMAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAQABACAAUT7yy2al0Zj8smPu58zsAJVI5QcTRN6dHTrFvgJaJ7ABAB4JDAAAAAEAAAlMU5cVDQo7OjEwYTM1ZEN1bnI1TXhRNnVQb1RDS05ONGFUZmVOTlEzZ1lTbGVwK2ludjIvNFdKWkE5eVYzTTBuOXQyN2dBdjM5S0lxVE12aS8wM3FGSXlwbXJqYmZYUFclJQ=="
+		Filename="bb-0607g.krg" />
+</UpdateFiles>
+;:10qG2LfW3UqE2g+jZW8dvN/ScX27SGHWC4raNNjTruTURZoccr4XsclfBgsWrMbnczXg1ipIcYJEyKZLLvQ1DF4i%%

@@ -1,0 +1,95 @@
+<UpdateFiles
+	UpdateDate="28102015 1030"
+	BlackDate="28102015 0610"
+	ObjectType="2=SW2;3=BASE">
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="sw2.xms"/>
+	<FileDescription
+		ComponentID="KLIFPPCFG,SW2"
+		UpdateType="base"
+		OS="Win"
+		LocalPath="%DataFolder%"
+		Filename="klifpp.xms"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="klswapiproxy.kdl"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="klavasyswatch.dll"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="swmon.esm"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="swmon.kdl"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="swmon_drv.esm"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		LocalPath="%BaseFolder%"
+		Filename="swmon_drv.kdl"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		SysArch="i386"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="swmon32.dat"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		SysArch="i386"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="swmon_32.dll"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		SysArch="x64"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="swmon64.dat"/>
+	<FileDescription
+		ComponentID="SW2"
+		UpdateType="base"
+		App="KES 10.*.*.*"
+		SysArch="x64"
+		Arch="i386"
+		LocalPath="%BaseFolder%"
+		Filename="swmon_64.dll"/>
+	<Registry
+		ComponentID="KLIFPPCFG,SW2"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAYIoHipAADfhm0sIWbB1leh0jnwRpz3uIo6CsoZ9GOrgKmoxHMc5bLmw2wvQRvZCrBEdUYOs7X/aPjoZotIHrg1o8p3XhWsBAB4JrwAAAAIAAigDAFNXMgMAAigEAEJBU0UBAAAJIdEQkw0KOzoxMHFNY2hjcUJZWW5yQ2I1WGUyeUNYWjhraFAzZDRVSDJWaXluYVQ2dmlWUUpHczZxUFpUTjgzazNXTXNvQnpibnorYXBrZ0c1WVJKNW1SaDE2ckpHWlNaJSU="
+		Filename="sw2-0607g.pbv"/>
+	<Registry
+		ComponentID="KLIFPPCFG,SW2"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGvAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqDAABACAAG0WopxqwPAdFfvSkyC35qyF3FqTT0HMjnh0wQQSFHYogAMF8ZrD/0ToNPPKeVpF/LeVrCDoJh++NqR8QPQSb7OtnIACxMrUMvk6+Kum4xI6LHgNAhlnHGT2Um1pnva7wYB9UXiAAyt4XnpqBmMIWImh8xR+gGcsQQ6zzvOvc6//PDgYLtSQgABj3FpRusl1/6MN9GIGGaip28htfyQbu0+OTq4/EQqiIIAAe6TxF9yneCSeb5zxxy283n53wac7a7lh2tSiCZg7AZSAAONXwBJWEHg1r4dwuA3Ultzc9IbemaxFsh8JSDRVrMK8gADCuMKyjoutnTkBC2SsmmkYHQ46zmDKa6a1xucyVJNJwIACTVdCasSlyw1rvGuTJ+S8mRlFErTywvq6krCJxi/5XKCAACLYx/dG/mVFg8duCKOW3p2YjwSeyaYin4hGeoQJjccsgAIuIQ6zVjgI+EOUeRgeBcWpdvWIfqs/BtvTX5auODum2IABfwjvATb8p03cIdizyKSNCLB3tbVaQXzpnGV4IGOhh6wIAHgEBAB4JrwAAAAEAAAlbHRhkDQo7OjEwNFFYb1VraVRCMjcxUkhXWGRyM2RIT1BZMzFBYlRyTDIyRHVmcVJyYVNWcVlIZEFtd084SVRXcVhvZHlUeDhoaEdrdk8rYnI0UEpTeDlJcEJ5bE54a0MlJQ=="
+		Filename="sw2-0607g.krg"/>
+</UpdateFiles>
+;:10KAmxfJLTxhkpRgwe1zHhZxrP9jGGldIXpm29NfoA+iDtdpLWjDuI+a5LBSx+1yqo+JODJ1pVGlb6FF23QNIUd/%%

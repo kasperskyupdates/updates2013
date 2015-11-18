@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Průvodce migrací'
+UpgradeCaption = 'Upgrade'
+
+RebootPageCheckboxRebootText = 'Restartovat počítač'
+OpenRemoveProgramsPanel = 'Otevřít panel nástrojů'
+
+WizardBeginDescriptionKis = 'Budete převedeni na aplikaci Kaspersky Internet Security 2013.\n\nDržitel autorských práv vám uděluje nevýlučnou licenci na používání softwaru Kaspersky Internet Security za stejných podmínek, které jste přijali při původní instalaci aplikace Kaspersky Anti-Virus.\n\nPoznámka: V důsledku tohoto přechodu může dojít k restartu počítače.'
+
+WizardBeginDescriptionKav = 'Budete převedeni na aplikaci Kaspersky Anti-Virus 2013.\n\nDržitel autorských práv vám uděluje nevýlučnou licenci na používání softwaru Kaspersky Anti-Virus za stejných podmínek, které jste přijali při původní instalaci aplikace Kaspersky Internet Security.\n\nPoznámka: V důsledku tohoto přechodu může dojít k restartu počítače.'
+
+WizardContinueDescriptionKis = 'Pokračovat v přechodu na aplikaci Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Pokračovat v přechodu na aplikaci Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nPozor! Platnost aktuální licence aplikace Kaspersky Anti-Virus vyprší před licencí aplikace Kaspersky Internet Security. Po vypršení platnosti licence aplikace Kaspersky Anti-Virus nebude možné se vrátit k aplikaci Kaspersky Anti-Virus.'
+
+PleaseWait = 'Čekejte...'
+RemovalProgressDescription   = 'Probíhá odstraňování nekompatibilního softwaru'
+RemovalApplicationsDescription = 'Za účelem provedení přechodu bude odebrán následující software:'
+ManualRemovalApplicationsDescription = 'Abyste mohli uskutečnit přechod, musíte ručně odebrat následující nekompatibilní software:'
+SearchRemovalApplicationsDescription   = 'Vyhledává se nekompatibilní software'
+RestartProductDescription = 'Za účelem dokončení přechodu bude aplikace restartována.'
+RebootOsDescription = 'Než budete pokračovat v přechodu, je třeba restartovat počítač.\nPo restartu bude průvodce pokračovat.'
+
+MigrationProgressDescriptionKis = 'Překonfigurování aplikace a přechod na produkt Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Překonfigurování aplikace a přechod na produkt Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Překonfigurování aplikace a přechod na produkt Kaspersky Anti-Virus'
+
+MigrationKis = 'Přechod na aplikaci Kaspersky Internet Security'
+MigrationKav = 'Přechod na aplikaci Kaspersky Anti-Virus'
+MigrationUnknown = 'Přepnout '
+
+SearchRemovalApplicationsHeader = 'Upgradovat na Kaspersky Internet Security'
+RemovalProgressHeader = 'Probíhá odstraňování nekompatibilního softwaru'
+RemovalApplicationsHeader = 'Byl nalezen nekompatibilní software'
+RebootOsHeader = 'Je vyžadován restart počítače'
+RestartProductHeader = 'Aplikace se restartuje'
+
+MigrationAbortedHeader = $MigrationType + ' není možný'
+MigrationAbortedDescription = $MigrationType + ' se nezdařil. Pokuste se ručně odebrat nekompatibilní software a poté znovu spusťte průvodce.'
+
+BestBuyGiftInformation = 'Aplikace Kaspersky Anti-Virus bude úspěšně upgradována na aplikaci Kaspersky Internet Security.\nNyní můžete používat ještě více funkcí ochrany svého počítače.'
+BestBuyGiftDescription = 'Děkujeme, že jste si vybrali software společnosti Kaspersky Lab! Nyní se budete moci těšit z rozšířené ochrany.'
+BestBuyUpgradeNotification = 'Během upgradováni proběhne analýza vašeho systému z hlediska nekompatibilního softwaru, aby bylo zajištěno správné fungování nainstalovaných aplikací a operačního systému.'
+BestBuyFreeUpgrade = 'Přechod na aplikaci Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Upgrade na pozadí'
+BestBuyTryAbortInformation = 'Upgrade bude pokračovat na pozadí'
+BestBuyTryAbortDescription = 'Jelikož nebyl odebrán nekompatibilní software, některé nové funkce aplikace Kaspersky Internet Security jsou zakázány, aby bylo možné zajistit správné fungování nainstalovaných aplikací a operačního systému.\n\nNekompatibilní software lze ručně odebrat, a povolit tak všechny nové funkce v okně nastavení aplikace Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Zpět na upgrade'
+Congratulation = 'Blahopřejeme!'
+
+RunKisButtonText = 'Spustit aplikaci Kaspersky Internet Security'
+
+ProductUpgraded = 'Aplikace Kaspersky Anti-Virus byla úspěšně upgradována na aplikaci Kaspersky Internet Security.\nNyní můžete používat ještě více funkcí ochrany svého počítače.'

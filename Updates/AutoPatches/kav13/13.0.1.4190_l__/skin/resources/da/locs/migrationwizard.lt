@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migreringsguide'
+UpgradeCaption = 'Opgradering'
+
+RebootPageCheckboxRebootText = 'Genstart computeren'
+OpenRemoveProgramsPanel = 'Åbn værktøjslinje'
+
+WizardBeginDescriptionKis = 'Du bliver skiftet over til Kaspersky Internet Security 2013.\n\nRettighedsindehaveren tildeler dig en ikke-eksklusiv licens til at bruge Kaspersky Internet Security på de samme vilkår, som du har accepteret tidligere, da du installerede Kaspersky Anti-Virus.\n\nBemærk: Dette skift kan medføre en genstart.'
+
+WizardBeginDescriptionKav = 'Du bliver skiftet over til Kaspersky Anti-Virus 2013.\n\nRettighedsindehaveren tildeler dig en ikke-eksklusiv licens til at bruge Kaspersky Anti-Virus på de samme vilkår, som du har accepteret tidligere, da du installerede Kaspersky Internet Security.\n\nBemærk: Dette skift kan medføre en genstart.'
+
+WizardContinueDescriptionKis = 'Fortsæt med at skifte til Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Fortsæt med at skifte til Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nBemærk! Den aktuelle licens til Kaspersky Anti-Virus udløber, før licensen til Kaspersky Internet Security. Når licensen til Kaspersky Anti-Virus er udløbet, er det umuligt at vende tilbage til Kaspersky Anti-Virus.'
+
+PleaseWait = 'Vent'
+RemovalProgressDescription   = 'Sletter inkompatibel software'
+RemovalApplicationsDescription = 'Følgende software bliver fjernet for at udføre skiftet:'
+ManualRemovalApplicationsDescription = 'Du skal fjerne følgende inkompatible softwareprogrammer manuelt for at udføre skiftet:'
+SearchRemovalApplicationsDescription   = 'Søger efter inkompatibel software'
+RestartProductDescription = 'Programmet genstartes for at fuldføre skiftet.'
+RebootOsDescription = 'Du skal genstarte computeren for at fortsætte med at skifte.\nGuiden fortsætter efter genstarten.'
+
+MigrationProgressDescriptionKis = 'Rekonfigurere programmet og skifte til Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Rekonfigurere programmet og skifte til Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Rekonfigurere programmet og skifte til Kaspersky Anti-Virus'
+
+MigrationKis = 'Skift til Kaspersky Internet Security'
+MigrationKav = 'Skift til Kaspersky Anti-Virus'
+MigrationUnknown = 'Skift'
+
+SearchRemovalApplicationsHeader = 'Opgraderer til Kaspersky Internet Security'
+RemovalProgressHeader = 'Sletter inkompatibel software'
+RemovalApplicationsHeader = 'Inkompatibel software fundet'
+RebootOsHeader = 'Det er nødvendigt at genstarte computeren'
+RestartProductHeader = 'Programmet bliver genstartet'
+
+MigrationAbortedHeader = $MigrationType + ' er ikke mulig'
+MigrationAbortedDescription = $MigrationType + ' mislykkedes. Prøv at fjerne den inkompatible software manuelt, og genstart derefter guiden.'
+
+BestBuyGiftInformation = 'Din Kaspersky Anti-Virus vil blive opgraderet til Kaspersky Internet Security.\nDu får nu endnu flere funktioner, der beskytter din computer.'
+BestBuyGiftDescription = 'Tak, fordi du valgte Kaspersky Lab-software! God fornøjelse med den ekstra beskyttelse.'
+BestBuyUpgradeNotification = 'Dit system analyseres for inkompatibel software, mens der opdateres, for at sikre, at installerede programmer og operativsystemet fungerer korrekt.'
+BestBuyFreeUpgrade = 'Skift til Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Opgraderingen i baggrunden'
+BestBuyTryAbortInformation = 'Opgraderingen forsætter i baggrunden'
+BestBuyTryAbortDescription = 'Den inkompatible software blev ikke fjernet, derfor er nogle nye funktioner i Kaspersky Internet Security deaktiveret for at sikre, at installerede programmer og operativsystemet fungerer korrekt.\n\nDen inkompatible software kan fjernes manuelt, og de nye funktioner kan aktiveres i vinduet indstillinger i Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Tilbage til opgraderingen...'
+Congratulation = 'Tillykke!'
+
+RunKisButtonText = 'Start Kaspersky Internet Security'
+
+ProductUpgraded = 'Din Kaspersky Anti-Virus er blevet opgraderet til Kaspersky Internet Security.\nDu får nu endnu flere funktioner, der beskytter din computer.'

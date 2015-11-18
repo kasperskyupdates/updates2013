@@ -1,0 +1,81 @@
+interfaces url_advisor_xpcom_gecko35/url_advisor.xpt appversion<35.*
+binary-component url_advisor_xpcom_gecko35/url_advisor.dll appversion<35.*
+
+interfaces url_advisor_xpcom_gecko34/url_advisor.xpt appversion<34.*
+binary-component url_advisor_xpcom_gecko34/url_advisor.dll appversion<34.*
+
+interfaces url_advisor_xpcom_gecko33/url_advisor.xpt appversion<33.*
+binary-component url_advisor_xpcom_gecko33/url_advisor.dll appversion<33.*
+
+interfaces url_advisor_xpcom_gecko32/url_advisor.xpt appversion<32.*
+binary-component url_advisor_xpcom_gecko32/url_advisor.dll appversion<32.*
+
+interfaces url_advisor_xpcom_gecko31/url_advisor.xpt appversion<31.*
+binary-component url_advisor_xpcom_gecko31/url_advisor.dll appversion<31.*
+
+interfaces url_advisor_xpcom_gecko30/url_advisor.xpt appversion<30.*
+binary-component url_advisor_xpcom_gecko30/url_advisor.dll appversion<30.*
+
+interfaces url_advisor_xpcom_gecko29/url_advisor.xpt appversion<29.*
+binary-component url_advisor_xpcom_gecko29/url_advisor.dll appversion<29.*
+
+interfaces url_advisor_xpcom_gecko28/url_advisor.xpt appversion<28.*
+binary-component url_advisor_xpcom_gecko28/url_advisor.dll appversion<28.*
+
+interfaces url_advisor_xpcom_gecko27/url_advisor.xpt appversion<27.*
+binary-component url_advisor_xpcom_gecko27/url_advisor.dll appversion<27.*
+
+interfaces url_advisor_xpcom_gecko26/url_advisor.xpt appversion<26.*
+binary-component url_advisor_xpcom_gecko26/url_advisor.dll appversion<26.*
+
+interfaces url_advisor_xpcom_gecko25/url_advisor.xpt appversion<25.*
+binary-component url_advisor_xpcom_gecko25/url_advisor.dll appversion<25.*
+
+interfaces url_advisor_xpcom_gecko24/url_advisor.xpt appversion<24.*
+binary-component url_advisor_xpcom_gecko24/url_advisor.dll appversion<24.*
+
+interfaces url_advisor_xpcom_gecko23/url_advisor.xpt appversion<23.*
+binary-component url_advisor_xpcom_gecko23/url_advisor.dll appversion<23.*
+
+interfaces url_advisor_xpcom_gecko22/url_advisor.xpt appversion<22.*
+binary-component url_advisor_xpcom_gecko22/url_advisor.dll appversion<22.*
+
+interfaces url_advisor_xpcom_gecko21/url_advisor.xpt appversion<21.*
+binary-component url_advisor_xpcom_gecko21/url_advisor.dll appversion<21.*
+
+interfaces url_advisor_xpcom_gecko20/url_advisor.xpt appversion<20.*
+binary-component url_advisor_xpcom_gecko20/url_advisor.dll appversion<20.*
+
+interfaces url_advisor_xpcom_gecko19/url_advisor.xpt appversion<19.*
+binary-component url_advisor_xpcom_gecko19/url_advisor.dll appversion<19.*
+
+interfaces url_advisor_xpcom_gecko18/url_advisor.xpt appversion<18.*
+binary-component url_advisor_xpcom_gecko18/url_advisor.dll appversion<18.*
+
+interfaces url_advisor_xpcom_gecko17/url_advisor.xpt appversion<17.*
+binary-component url_advisor_xpcom_gecko17/url_advisor.dll appversion<17.*
+
+interfaces url_advisor_xpcom_gecko16/url_advisor.xpt appversion<16.*
+binary-component url_advisor_xpcom_gecko16/url_advisor.dll appversion<16.*
+
+interfaces url_advisor_xpcom_gecko15/url_advisor.xpt appversion<15.*
+binary-component url_advisor_xpcom_gecko15/url_advisor.dll appversion<15.*
+
+interfaces url_advisor_xpcom_gecko14/url_advisor.xpt appversion<14.*
+binary-component url_advisor_xpcom_gecko14/url_advisor.dll appversion<14.*
+
+interfaces url_advisor_xpcom_gecko13/url_advisor.xpt appversion<13.*
+binary-component url_advisor_xpcom_gecko13/url_advisor.dll appversion<13.*
+
+interfaces url_advisor_xpcom_gecko12/url_advisor.xpt appversion<12.*
+binary-component url_advisor_xpcom_gecko12/url_advisor.dll appversion<12.*
+
+interfaces url_advisor_xpcom_gecko11/url_advisor.xpt appversion<11.*
+binary-component url_advisor_xpcom_gecko11/url_advisor.dll appversion<11.*
+
+interfaces url_advisor_xpcom_gecko10/url_advisor.xpt appversion<10.*
+binary-component url_advisor_xpcom_gecko10/url_advisor.dll appversion<10.*
+
+interfaces url_advisor_xpcom_gecko9/url_advisor.xpt appversion<9.*
+binary-component url_advisor_xpcom_gecko9/url_advisor.dll appversion<9.*
+

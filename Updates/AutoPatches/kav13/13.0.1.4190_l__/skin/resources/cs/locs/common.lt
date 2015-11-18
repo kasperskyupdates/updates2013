@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Technický náhled aplikace Kaspersky Internet Security'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Technický náhled aplikace Kaspersky Anti-Virus'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'aktuální' 
+Corrupted = 'poškozeno' 
+VeryOld = 'zastaralé' 
+Old = 'neaktuální' 
+OldInGracePeriod = 'se dlouhou dobu neaktualizovalo'
+UpdatedAndRebootNeeded = 'aktualizováno. Je vyžadován restart počítače' 
+UpdatedAndProductRestartNeeded = 'aktualizováno. Je vyžadován restart počítače' 
+SomeBasesNeedUpdate = 'některé ochranné komponenty vyžadují aktualizaci'
+
+Schedule_Auto    = 'automaticky' 
+Schedule_Manual  = 'ručně' 
+Schedule_Fixed   = 'podle plánu' 
+
+Back = 'Zpět' 
+StopTask = 'Zastavit'
+
+News = 'Novinky'
+Reports = 'Zprávy'
+Settings = 'Nastavení'
+Help = 'Ná&pověda'
+OK = 'OK'
+Cancel = 'Storno'
+Retry = 'Opakovat'
+
+Unknown = 'neznámý'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'dnes, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'včera, %H:%M'
+
+MonthName_1  = 'Leden'
+MonthName_2  = 'Únor'
+MonthName_3  = 'Březen'
+MonthName_4  = 'Duben'
+MonthName_5  = 'Květen'
+MonthName_6  = 'Červen'
+MonthName_7  = 'Červenec'
+MonthName_8  = 'Srpen'
+MonthName_9  = 'Září'
+MonthName_10 = 'Říjen'
+MonthName_11 = 'Listopad'
+MonthName_12 = 'Prosinec'
+ 
+DateUnknown = 'neznámý'
+
+After = 'v'
+Remaining = 'zbývá'
+Ago = 'před'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'den', 'dny', 'dnů'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'hodina', 'hodiny', 'hodin'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minutou', 'minutami', 'minutami'}
+LessMinute_After = '<1 minutou'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'den', 'dny', 'dnů'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'hodina', 'hodiny', 'hodin'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minutou', 'minutami', 'minutami'}
+LessMinute_Remaining = '<1 minutou'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'den', 'dny', 'dnů'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'hodina', 'hodiny', 'hodin'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minutou', 'minutami', 'minutami'}
+LessMinute_Ago = '<1 minutou'
+
+Yesterday   = 'včera'
+Today       = 'dnes' 
+LessWeek    = 'před méně než týdnem'
+LessTwoWeek = 'méně než před dvěma týdny'
+LessMonth   = 'méně než před měsícem'
+MoreMonth   = 'před více než měsícem'
+MoreHalfYear= 'před více než půl rokem'
+MoreYear    = 'více než před rokem'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = Remaining + ' ' + $TimePeriod
+Time_Ago       = Ago + ' ' + $TimePeriod
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Storno'
+ApplyButton = 'Použít'
+CloseButton = 'Zavřít'
+NextButton = 'Další >'
+BackButton = '< Zpět'
+FinishButton = 'Dokončit'
+SaveButton = 'Uložit'
+SkipButton = 'Přeskočit'
+Continue = 'Pokračovat'
+Yes = 'Ano'
+No = 'Ne'
+
+SettingsMore = 'Nas&tavení...'
+
+DoNoyShowThisWindow = 'Nezobrazovat'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Nedefinovaná chyba'
+SystemError_0x8000004B = 'Nedefinovaná chyba'
+SystemError_0x80000041 = 'Nedostatek paměti'
+SystemError_0x80000042 = 'Není podporováno'
+SystemError_0x80000043 = 'Není implementováno'
+SystemError_0x80000045 = 'Přístup byl odepřen nebo objekt nebyl nalezen'
+SystemError_0x8000004C = 'Objekt nebyl nalezen'
+SystemError_0x800000C6 = 'Objekt nebyl nalezen'
+SystemError_0x800000C5 = 'Objekt nebyl nalezen'
+SystemError_0x8000004F = 'Objekt je zablokován'
+SystemError_0x80000051 = 'Operace byla zrušena'
+SystemError_0x80000059 = 'Chyba zařízení'
+SystemError_0x8000005A = 'Neplatný podpis'
+SystemError_0x8000005B = 'Neplatná verze'
+SystemError_0x8000005F = 'Ochrana proti zápisu'
+SystemError_0x80000061 = 'Chybí licence'
+SystemError_0x80000062 = 'Nedostatek místa'
+SystemError_0x80000063 = 'Zařízení není připraveno'
+SystemError_0x800000C0 = 'Neplatný formát'
+SystemError_0x800000C1 = 'Nemáte dostatečná práva'
+SystemError_0x800000C2 = 'Chyba inicializace'
+SystemError_0x800000C3 = 'Chyba inicializace'
+SystemError_0x800000C7 = 'Nesprávný stav objektu'
+SystemError_0x800000C8 = 'Objekt je chráněný heslem'
+SystemError_0x800000CA = 'Chyba čtení'
+SystemError_0x800000CC = 'Chyba čtení'
+SystemError_0x800000CB = 'Chyba zápisu'
+SystemError_0x800000CD = 'Chyba zápisu'
+SystemError_0x800000D0 = 'Neplatný objekt'
+SystemError_0x800000D1 = 'Objekt již existuje'
+SystemError_0x800000D5 = 'Objekt je používán jinou aplikací'
+SystemError_0x800000D8 = 'Databáze jsou poškozené'
+SystemError_0x800001C0 = 'Neplatný modul'
+SystemError_0x800001C2 = 'Modul nebyl ověřen'
+SystemError_0x800001C1 = 'Modul nebyl nalezen'
+SystemError_0x800001C4 = 'Komponent nemůže být načten'
+SystemError_0x80000221 = 'Vypršel časový limit'
+SystemError_0x80000240 = 'Chyba interakce komponentů'
+SystemError_0x90005000 = 'Neplatný digitální podpis'
+SystemError_0x90005002 = 'Bez digitálního podpisu'
+SystemError_0x80027006 = 'Úloha byla zastavena'
+SystemError_0x80027007 = 'Úloha byla zastavena'
+SystemError_0x80380fbb = 'Úloha byla zastavena'
+SystemError_0x80017007 = 'Úlohu nelze spustit v nouzovém režimu'
+SystemError_0x80017005 = 'Úloha zakázána'
+SystemError_0x80017006 = 'Nesprávné uživatelské jméno nebo heslo'
+SystemError_0x80017008 = 'V nouzovém režimu nelze úlohu spustit pod jiným uživatelským účtem'
+SystemError_0x80017009 = 'Ovladač nebyl nalezen'
+SystemError_0x80022005 = 'Chyba při načítání databáze'
+SystemError_default    = 'Kód chyby: ' + $ErrorCode
+
+LicenseManager = '&Správa licence'
+SubscriptionManager = 'Správa předplatného'
+ProblemSolution = 'Chcete-li vyřešit problém, přejděte do okna Správa licence'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'neaktivní' ;refers to connection
+Stopping = 'zastavování'
+ConnectingToServer = 'připojování k serveru'
+CreatingUpdateList = 'zpracování souborů'
+Downloading = 'stahování souborů'
+Installing = 'probíhá aktualizace souborů'
+RollbackRunning = 'probíhá vracení k předchozím databázím'
+
+FunctionalityDisabledForExpiredSubscription = 'aktualizace je zakázána'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'ochrana počítače je zakázána'
+SubscriptionRemainingDaysCount = 'zbývá ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'den', 'dny', 'dnů'} + '.'
+SubscriptionExpiresToday = 'vyprší dnes'
+SubscriptionActivated = 'aktivováno'
+CheckReserveCodeManuallyHeader = 'Automatická aktivace aplikace pomocí nového aktivačního kódu se nezdařila' ; TODO
+CheckReserveCodeManuallyText = 'Zkuste aktivovat aplikaci s novým aktivačním kódem ručně.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Je nainstalována beta verze aplikace'
+LicensingStatus_Trial_ShortDescription = 'Je nainstalována zkušební verze aplikace'
+LicensingStatus_OkSubscription_ShortDescription = 'Předplatné: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Platnost licence brzy vyprší'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Platnost licence brzy vyprší'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_InvalidKey_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_Reinstall_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Černá listina klíčů je poškozená'
+LicensingStatus_CorruptedBases_ShortDescription = 'Nelze ověřit shodu databází s licenční smlouvou s koncovým uživatelem'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Platnost doby licence neumožňuje používání stávajících databází'
+LicensingStatus_Expired_ShortDescription = 'Platnost licence vypršela'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Předplatné vypršelo dne ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Platnost zkušební licence vypršela'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Platnost beta verze vypršela'
+LicensingStatus_Blocked_ShortDescription = 'Licence je zablokovaná'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Předplatné je blokováno'
+LicensingStatus_LicenseViolated_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Detekován problém s licencí'
+LicensingStatus_Grace_ShortDescription = 'Předplatné vypršelo dne ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Předplatné pozastaveno od ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Automatická aktualizace stavu předplatného se nezdařila'
+LicensingStatus_NotActivated_ShortDescription = 'Aplikace není aktivována'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Aplikace není aktivována'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Aplikace není aktivována'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Aplikace není aktivována'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Nový aktivační kód'
+ReserveCodeStatus_Ok_ShortDescription = 'Nový aktivační kód'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Nový aktivační kód je neplatný'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Nový aktivační kód nebyl aktivován'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Očekává se automatická aktivace'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Beta verze aplikace ' + $ProductNameFull + ' je plně funkční, ale není to dokončená verze produktu a může obsahovat chyby, vady nebo nedostatky. Jakékoli problémy oznamte v odpovídající sekci našeho fóra.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'den', 'dny', 'dnů'} + ' do konce platnosti. Poté dojde k výraznému omezení fungování aplikace.' 
+LicenseEndsToday = 'Toto je poslední den platnosti vaší licence. Pokud ji neobnovíte, bude fungování aplikace omezeno.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Předplatné je aktivováno. Datum vypršení platnosti: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Předplatné obnoveno do ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Předplatné bylo zrušeno. Datum uplynutí platnosti: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Předplatné bude pozastaveno od ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Předplatné obnoveno, jeho platnost nikdy neskončí'
+StateUnlimitedSubscriptionResumedText = 'Předplatné je obnoveno'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'za ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'den', 'dny', 'dnů'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'den', 'dny', 'dnů'} + ' do konce platnosti. Poté dojde k výraznému omezení fungování aplikace.'
+LicensingStatus_ExpiresToday_Cause = 'Vyprší dnes. Funkčnost aplikace bude omezen po vypršení platnosti.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Neplatné datum vytvoření klíče. Systémové datum v počítači bylo změněno. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Neplatné datum aktivace. Systémové datum v počítači bylo pravděpodobně změněno. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Integrita aplikace je narušena. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Doporučujeme stáhnout novou černou listinu ze serveru.'
+LicensingStatus_CorruptedBases_Cause = 'Jedním z možných důvodů je neplatná aktualizace. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Pravděpodobně jste zakoupili nelegální kopii aplikace. Ochrana byla pozastavena. Počítač je vystaven riziku infekce, poškození či krádeže dat.'
+LicensingStatus_BlockedSubscription_Cause = 'Možná jste získali nelegální kopii aplikace. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Překročili jste maximální počet počítačů, na kterých lze produkt ' + $ProductName + ' na základě vaší licence nainstalovat. ' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Překročili jste maximální počet počítačů, na kterých může být nainstalován produkt ' + $ProductName + ' s vaším předplatným. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'den', 'dny', 'dnů'} + ' do ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'Mezi připojeními k aktivačním serverům pravděpodobně uběhla příliš dlouhá doba. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Přednastavený aktivační kód je k dispozici. Aplikace bude aktivována, jakmile bude k dispozici připojení k internetu.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Je k dispozici předem nastavený aktivační kód. Aplikaci můžete aktivovat pomocí tohoto aktivačního kódu, nebo tento přednastavený aktivační kód můžete odstranit.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Nedošlo k automatické aktivaci aplikace pomocí přednastaveného aktivačního kódu. Je nutný zásah uživatele.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Můžete zadat nový aktivační kód. Jakmile vyprší platnost aktuální licence, bude aplikace aktivována pomocí tohoto aktivačního kódu.'
+ReserveCodeStatus_Ok_Cause = 'Počítač obsahuje nový aktivační kód. Jakmile vyprší platnost aktuální licence, bude aplikace automaticky aktivována pomocí tohoto nového aktivačního kódu. Nedojde k žádnému narušení vašeho zabezpečení.'
+ReserveCodeStatus_Invalid_Cause = 'Jakmile vyprší platnost aktuální licence, aktualizace nebudou k dispozici.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Automatická aktivace aplikace pomocí nového aktivačního kódu ' + $ReserveCode + ' se nezdařila. Je nutný váš zásah.'
+ReserveCodeStatus_WaitActivation_Cause = 'Očekává se automatická aktivace pomocí nového aktivačního kódu ' + $ReserveCode +'.'
+
+ResolveProblem_BuyCommercial         = 'Doporučujeme zakoupit a aktivovat komerční verzi aplikace.'
+ResolveProblem_CheckSystemTime		= 'Ujistěte se, že systémové datum je správné.'
+ResolveProblem_ActivateAgain        = 'Zkuste odstranit aktivní klíč a aktivovat aplikaci znovu. Můžete se také obrátit na technickou podporu nebo prodejce aplikace.'
+ResolveProblem_CallSupport			= 'Doporučujeme kontaktovat technickou podporu a zjistit důvody blokování. Chcete-li obnovit funkčnost aplikace, zakupte novou licenci.'
+ResolveProblem_ContactSupport		= 'Kontaktujte technickou podporu.'
+ResolveProblem_ActialLicense		= 'Chcete-li obnovit ochranu počítače, zadejte nový aktivační kód.'
+ResolveProblem_UpdateAgain			= 'Doporučujeme vám znovu aktualizovat databáze.'
+ResolveProblem_BuyNewLicense		= 'Chcete-li obnovit ochranu počítače, pořiďte si novou licenci.'
+ResolveProblem_CallProvider			= 'Chcete-li obnovit předplatné, kontaktujte poskytovatele služby.'
+ResolveProblem_ProviderWebSite		= 'Chcete-li obnovit předplatné, kontaktujte poskytovatele služby.'
+ResolveProblem_RenewalNotAvailable	= 'Obnovení předplatného není k dispozici.'
+ResolveProblem_BuyLicense			= 'Chcete-li obnovit ochranu počítače, musíte si pořídit komerční licenci od společnosti Kaspersky Lab nebo našich distributorů. Zkušební verzi lze využít pouze jednou.'
+ResolveProblem_Reinstall			= 'Přeinstalujte aplikaci.'
+ResolveProblem_RenewLicense			= 'Chcete-li dosáhnout plné funkčnosti, obnovte licenci.'
+ResolveProblem_RefreshSubscription	= 'Aktualizujte stav předplatného ručně.'
+ResolveProblem_Activate				= 'Chcete-li aktivovat licenci, zadejte aktivační kód.'
+ResolveProblem_ActivateReserveCode  = 'Zkuste aktivovat aplikaci s novým aktivačním kódem ručně.'
+ResolveProblem_ActivateCodeManual	= 'Aktivujte aplikaci ručně.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Zkontrolujte nastavení připojení k internetu a počkejte na automatickou aktivaci, nebo aktivujte aplikaci ručně.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Je nezbytné zadat nový aktivační kód. Jakmile vyprší platnost aktuální licence, bude aplikace aktivována pomocí tohoto aktivačního kódu.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Před uplynutím platnosti zkušební licence je nezbytné aktivovat aplikaci pomocí aktivačního kódu.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'Chcete-li obnovit plné fungování aplikace, je nezbytné u společnosti Kaspersky Lab nebo u prodejců zakoupit komerční licenci.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Před uplynutím platnosti zkušební licence je nezbytné aktivovat aplikaci pomocí aktivačního kódu.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Je nezbytné zadat nový aktivační kód. Jakmile vyprší platnost aktuální licence, bude aplikace aktivována pomocí tohoto aktivačního kódu.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Stav ochrany není definován. '
+ProtectionLevelNoFeaturesLong = 'Ochrana je zakázána. '
+ProtectionLevelLimitedLong = 'Fungování aplikace je omezeno. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Stav aktualizace není definován. '
+UpdaterLevelNotAllowedLong = 'Aktualizace není k dispozici. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'nedefinováno'
+SubscriptionStateActive = 'aktivní'
+SubscriptionStatePaused = 'pozastaveno'
+SubscriptionStateCancelledSoft = 'pozastaveno'
+SubscriptionStateCancelledHard = 'zrušeno'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'nedefinováno'
+SubscriptionStatusReasonProviderInitiated = 'aktivováno poskytovatelem služeb'
+SubscriptionStatusReasonCreditCardAuthFailed = 'autorizace kreditní karty byla zamítnuta'
+SubscriptionStatusReasonCustomerInitiated = 'aktivováno uživatelem'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'autorizace kreditní karty byla přijata'
+
+ProductStatusRelease = 'verze vydání'
+ProductStatusBeta = 'beta verze'
+
+LegalStatusBlocked = 'licence je zablokovaná'
+LegalStatusLimited = 'porušení licenční smlouvy'
+LegalStatusValid = 'licence je platná'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Existuje důležité upozornění k licenci.\n<a href="licensemanager">Podrobnosti...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Předplatné vypršelo. Chcete-li předplatné obnovit, obraťte se na svého poskytovatele služeb.'
+
+LicensingState_WarningIsAvailable = 'vyskytlo se varování'
+ProtectionState_NotificationIsAvailable = 'Licence – upozornění'
+LicensingState_ProblemIsAvailable = 'došlo k problému'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Platnost vaší licence k softwaru Kaspersky Security vyprší za ' + $LicenseDaysToExpiry + ' dnů. Váš počítač poté již nebude chráněn'
+LNCS_BBY_WillExpire_Description =	'Chcete-li i nadále využívat ochranného krytí, obnovte licenci online na The Geek Squad Renewal Center.'
+
+LNCS_BBY_AboutToExpire_Title =	    'Platnost licence k softwaru Kaspersky Security brzy vyprší'
+LNCS_BBY_AboutToExpire_Description = 'Počítač bude chráněn už jen ' + $LicenseDaysToExpiry + ' dnů/dny. Obraťte se na tým pro předplatné softwaru Geek Squad na The Geek Squad Renewal Center a obnovte platnost softwaru.'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Dnes končí platnost vašeho softwaru Kaspersky Security a váš počítač již nebude chráněn'
+LNCS_BBY_AboutToExpire_Today_Description = 'Kontaktujte online pracovníky týmu pro předplatné softwaru Geek Squad Subscription na The Geek Squad Renewal Center.'
+
+LNCS_BBY_LastDay_Title =	'Pozor! Platnost vaší licence k softwaru Kaspersky Security dnes vyprší'
+LNCS_BBY_LastDay_Description =	'Nenechávejte svůj počítač bez ochrany. Obnovte si software online na The Geek Squad Renewal Center.'
+LNCS_BBY_LastDay_Balloon =	'Pozor! Platnost vaší licence k softwaru Kaspersky Security dnes vyprší. Neponechávejte svůj počítač bez ochrany. Proveďte obnovení online na adrese <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Pozor! Váš počítač není chráněn'
+LNCS_BBY_Grace_Description =	'Nenechávejte svůj počítač bez ochrany. Obnovte si software online na The Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Nenechávejte svůj počítač bez ochrany. Obnovte si software online na The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Pozor! Váš počítač není chráněn. Neponechávejte počítač bez ochrany. Proveďte obnovení online na adrese <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Software Kaspersky Security nelze obnovit'
+LNCS_BBY_RenewFailure_Description = 'Obnovte software online naThe Geek Squad Renewal Center.'
+LNCS_BBY_RenewFailure_Description_Full = 'Obnovte software online naThe Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Nepodařilo se nám obnovit software Kaspersky Security. Obnovte jej online na <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Funkčnost plánu ochrany od společnosti Kaspersky je ohrožena, jelikož platnost uložené kreditní karty brzy skončí'
+LNCS_BBY_CCAboutToExpire_Description =	'Obnovte software online naThe Geek Squad Renewal Center.'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Obnovte software online naThe Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Předplatné vypršelo'
+LNCS_BBY_Expired_Description =	'Obnovení předplatného není k dispozici.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Využijte včasného obnovení antivirového softwaru Kaspersky a ušetřete 5 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Využijte včasného obnovení antivirového softwaru Kaspersky a ušetřete 10 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Využijte včasného obnovení antivirového softwaru Kaspersky a ušetřete 15 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Využijte včasného obnovení antivirového softwaru Kaspersky a ušetřete 20 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Využijte včasného obnovení softwaru Kaspersky Internet Security a ušetřete 5 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Využijte včasného obnovení softwaru Kaspersky Internet Security a ušetřete 10 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Využijte včasného obnovení softwaru Kaspersky Internet Security a ušetřete 15 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Využijte včasného obnovení softwaru Kaspersky Internet Security a ušetřete 20 USD.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Obnovit nyní</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Končí platnost vašeho antivirového softwaru Kaspersky!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Končí platnost vaše antivirového softwaru Kaspersky!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Končí platnost vaše antivirového softwaru Kaspersky!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Končí platnost vaše antivirového softwaru Kaspersky!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Končí platnost vašeho softwaru Kaspersky Internet Security!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Končí platnost vašeho softwaru Kaspersky Internet Security!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Končí platnost vašeho softwaru Kaspersky Internet Security!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Končí platnost vašeho softwaru Kaspersky Internet Security!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikněte sem</a> a ušetříte 5 USD z roční ceny při obnovení.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikněte sem</a> a ušetříte 10 USD z roční ceny při obnovení.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikněte sem</a> a ušetříte 15 USD z roční ceny při obnovení.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klikněte sem</a> a ušetříte 20 USD z roční ceny při obnovení.'
+
+LNCS_BBY_StatusUpdate = 'Změna stavu produktu může trvat až 24 hodin. Několik hodin po dokončení procesu obnovení na The Geek Squad Renewal Center klikněte na položku "Ověřit stav předplatného"; systém poté zkontroluje aktualizaci produktu.'
+
+EndOfLicense_Header = 'Sestava týkající se výkonnosti aplikace'
+WelcomPageTitle = 'Vítejte v aplikaci ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Verze operačního systému byla od instalace produktu ' + $ProductName + ' změněna'
+ReinstallWarningDescription = 'Nainstalujte znovu produkt ' + $ProductName
+
+IncompatibleOsVersionTitle = 'Aplikace ' + $ProductName + ' je pozastavena'
+IncompatibleOsVersionDescription = 'Pro správné fungování aplikace ' + $ProductName + ' po instalaci systému Microsoft Windows 8 byste měli některé součásti aplikace přeinstalovat. Instalace nezabere více než 2 minuty.' + '\n\nBěhem konfigurace produktu ' + $ProductName + ' v systému Microsoft Windows 8 bude ochrana počítače omezena.'
+
+ReinstallWarningOkButton = 'Podrobnosti'
+IncompatibleOsVersionOkButton = 'Instalovat a spustit'
+
+BrowserWaitingMessage = 'Čekejte...'
+
+OsUpgradedTitle = 'Aktualizace operačního systému'
+OsUpgradedDescription = 'Aktualizace operačního systému byla úspěšně dokončena.'

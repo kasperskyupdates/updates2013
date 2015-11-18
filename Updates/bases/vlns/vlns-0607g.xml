@@ -1,0 +1,71 @@
+<UpdateFiles
+	UpdateDate="28102015 0354"
+	BlackDate="27102015 0604"
+	ObjectType="2=VLNS;3=BASE">
+	<FileDescription
+		ComponentID="VLNS"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="vlns.mft" />
+	<FileDescription
+		ComponentID="VLNS"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="vlns000.kdc" />
+	<FileDescription
+		ComponentID="VLNS"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="vlnsscn.kdc" />
+	<FileDescription
+		ComponentID="VLNS"
+		UpdateType="desc"
+		GenericApp="NOT(AND(OR(#KAV#,#KIS#),HR([12,13])))"
+		Filename="mod-vlns-0607g.xml"
+		FileDate="28102015 0354" />
+	<FileDescription
+		ComponentID="KAV_2345COM,KAV12_ASUS,KAV12_KDDI,KAV_NORDNET,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV_ORANGE,KAV12_ALFA,KAV12_NIFTY,KAV12_SONY"
+		UpdateType="desc"
+		Filename="mod-vlns-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="28102015 0354" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Target="[145001-262143]"
+		Filename="mod-vlns-0607g.xml"
+		FileDate="28102015 0354" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		Target="[260001-262143]"
+		Filename="mod-vlns-0607g.xml"
+		FileDate="28102015 0354" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Target="[0-145000]"
+		ServerFolder="mod"
+		Filename="mod-vlns-0607g.xml"
+		FileDate="28102015 0354" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		Target="[0-260000]"
+		ServerFolder="mod"
+		Filename="mod-vlns-0607g.xml"
+		FileDate="28102015 0354" />
+	<Registry
+		ComponentID="VLNS"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAW0cHipAABmegi6PWfN4WBNe5+ECPG337SPNWwOA3EO6O2ngXMMGMuCOJgOzPLC9z9EfGlrr1rUeXbb8IGAPVTlXg5I0/jEBAB4JawAAAAIAAigEAFZMTlMDAAIoBABCQVNFAQAACWiG0xsNCjs6MTA0QWNyOW9sVnVQUWYvVTUrNm1nQ09kYWx0SVMxckhFeFJYbmhtMUJ2c0hKUmNkUmxxajBSMEJxWm5IQ0JYTEtubExxNm5WVXhybHRiTVVpckdjQnh6cSUl"
+		Filename="vlns-0607g.pbv" />
+	<Registry
+		ComponentID="VLNS"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwFrAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqBQABACAAzeMItDFe02j78RjI+MO0DXjR5piQioedUIda9sm25PMgAHTx3v2xFDsEWTV6+WFlvZOfVuvP6wDsxPmI1qy5o2PmIABh7Lvisur5U1YfmKtW7jKY8dr0i1HQnCXAgSi9hASMcyAA3K5cz25RUGRwu1SahoMyTUGvA8JCRW2pspKdhNwd+FggAGjqFhoVViy1cDyjbhwVn+UMl/c6M+wC6pqlj9kK+SdAAQAeCWsAAAABAAAJK7B7hA0KOzoxMGFQZjkwaEVOL0JJb1hTZDB6MEhkTmQwTnNLVmdpMnFieC9oTDZ4S1JDc1RWWTF4L1puZndZY3ZPRGxwZXg2SEVwMkh0TFZzVW5UZmh2UW81aHpMdEhJJSU="
+		Filename="vlns-0607g.krg" />
+</UpdateFiles>
+;:10a4lswqhjsGdO9CcDoOf/OKBqNiIu+zhC/a4a/0ZA8CCxKxErfnu4wQLZU2PomwiQ4ySq/HMGYH37hAcZzJHbjY%%

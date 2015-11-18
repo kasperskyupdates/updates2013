@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'ネット決済保護'
+CustomActionDescription = '銀行取引の操作やオンラインショッピングには、<br>保護されたブラウザーをご使用ください。'
+SafeRunButtonText = '実行'
+SkipButtonText = 'スキップ'
+RememberChoiceText = 'この Web サイトでの設定を保存する'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = '安全な接続を確立するときに入手した証明書が<br>元の証明書と一致しません。'
+CertificateInfoDescription = 'セキュリティ問題を回避するためにこの Web サイトを訪問せず、機密データを保存することを強くお勧めします。'
+IgnoreInvalidCertificate = '無視し、Web サイトを開きます'
+CertificateInvalidReasonCodeText = 'エラー：'
+CertificateInvalidReason0 = '未定義のエラー'
+CertificateInvalidReason1 = '取り消された証明書'
+CertificateInvalidReason2 = '偽の証明書'
+CertificateInvalidReason3 = '証明書チェーンが壊れています'
+CertificateInvalidReason4 = '証明書に指定されたドメインは、接続を確立する Web サイトと一致していません。'
+CertificateInvalidReason5 = '証明書使用違反が検知されました'
+CertificateInvalidReason6 = '証明書時刻違反'
+CertificateInvalidReason7 = '証明書構造が壊れています'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = '重要なシステム更新がインストールされていません'
+VulnerabilityInfoDescription = '更新をインストールしない場合、保護されたブラウザーは<br>データを完全に保護できなくなります。'
+UpdaterDisabled = '更新のダウンロードが無効化されています。アップデートのダウンロードを有効にすることを強くお勧めします。'
+UpdatesNotAllowed = '更新をインストールするには、このコンピューターの管理者にお問い合わせください。'
+UpdaterError = 'システム更新の初期化が失敗しました。'
+RunUpdater = 'アップデートの実行'
+IgnoreVulnerability = '無視'
+NotifyAboutVulnerabilities = 'ぜい弱性について通知する'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = '保護されたブラウザーで Web サイトを開きました'
+SafeNavigateInfoDescription = '保護されたブラウザーを使用すると、<br>安全に銀行取引やオンラインショッピングを行えます。'
+SafeBankingGetMoreInfo = '詳細'
+SafeBankingShowSettings = '設定を表示'
+CancelSafeBrowserExecution = '同じウィンドウで Web サイトを開く'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = '通常のブラウザーに移動します。'
+CompletedScenarioInfoDescription = '保護されたブラウザーでの操作を終了しました。<br>通常のブラウザーで操作を続行できます。'
+SafeBankingGetMoreInfoText = 'ネット決済保護の詳細'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = '新しいブラウザーウィンドウに移動します'
+UnsafeNavigateInfoDescription = '新しいウィンドウで支払いを続けることができます。'
+UnsafeNavigateInfoText = 'ネット決済保護の詳細'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = '実行エラー'
+SafeBrowserLaunchErrorDescription = '保護されたブラウザーの実行が失敗しました'
+SafeBrowserLaunchError0xA0010008 = '対象のブラウザーが見つかりません'
+SafeBrowserLaunchError0xA0010009 = 'ネット決済保護プラグインがインストールされていないか、無効になっています'
+SafeBrowserLaunchError0xA001000A = '保護されたブラウザーのプロセスを作成できません'
+SafeBankingLearnMore = '詳細'

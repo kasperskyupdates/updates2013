@@ -1,0 +1,1015 @@
+<UpdateFiles
+	UpdateDate="28102015 1353"
+	BlackDate="28102015 0603"
+	ObjectType="2=INFO;3=BASE">
+	<FileDescription
+		Filename="news-nb.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nb"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-za.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-ZA"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-tr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="tr"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-it-ch.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it-CH"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-my.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-MY"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-es.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-ES"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-in.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-IN"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ro-ro.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ro-RO"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-pl-pl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pl-PL"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-da.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="da"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-fr-xferrari.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-FR-xferrari"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de-at.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-AT"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-in.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-IN"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-ma.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-MA"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-fr-xprls.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-FR-xprls"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ru-ru-xalfa.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU-xalfa"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-zh-hans.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="zh-Hans"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ru-ru-xprls.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU-xprls"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-gb.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-GB"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ru-ru-xferrari.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU-xferrari"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-zh-hans-cn.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="zh-Hans-CN"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-it-it-xferrari.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it-IT-xferrari"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ja-jp-xkddi.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ja-JP-xkddi"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-vi-vn.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="vi-VN"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-sz-xone.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-SZ-xone"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-ch-xone.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-CH-xone"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ru-ru-x_kav_yandex.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU-x_kav_yandex"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-fr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-FR"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-tr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-TR"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-it.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-int-xnasq.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-INT-xnasq"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-nl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nl"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-nl-be.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nl-BE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-vi.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="vi"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-nb-no.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nb-NO"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-hu.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-HU"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-us-xprls.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-US-xprls"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de-de-xcbild.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-DE-xcbild"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-cz.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-CZ"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-sv-se.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="sv-SE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-ch.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-CH"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-nl-nl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nl-NL"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-es-xprls.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-ES-xprls"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de-ch.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-CH"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fi-fi.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fi-FI"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ro.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ro"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-pt-pt.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pt-PT"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-de.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-DE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-sk.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-SK"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-gb.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-GB"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ja-jp.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ja-JP"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-ca.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-CA"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-mx.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-MX"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ar.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ar"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ar-ae.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ar-AE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ru-ru.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de-de.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-DE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-cz.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-CZ"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-sk.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-SK"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-in.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-IN"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-pl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pl"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-ae.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-AE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-hu.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-HU"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-it-it-xprls.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it-IT-xprls"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-da-dk.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="da-DK"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-nl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-NL"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-pt.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pt"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-ru.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-RU"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-pt-za.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pt-ZA"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ru.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-au.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-AU"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-my.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-MY"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-za.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-ZA"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-tr-tr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="tr-TR"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-ja.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ja"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-ro.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-RO"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-au.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-AU"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-en-us.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-US"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-pt-br.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pt-BR"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es-es-xferrari.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-ES-xferrari"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-es.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-be.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-BE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de-de-xchip.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-DE-xchip"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-sv.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="sv"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-it-it.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it-IT"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fr-ca.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-CA"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-de-ae.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-AE"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news-fi.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fi"
+		LocalPath="%BaseFolder%" />
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="nor"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="nor" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="en"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="en" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="tur"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="tur" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="it"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="it" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="fr"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="fr" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="esp"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="esp" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="de"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="de" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="ro"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="ro" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="pl"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="pl" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="da"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="da" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="ru"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="ru" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="sch"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="sch" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="jp"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="jp" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="vi"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="vi" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="nl"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="nl" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="sv"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="sv" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="fi"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="fi" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="pt"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="pt" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="la"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="la" />
+	</FileDescription>
+	<FileDescription
+		Filename="news.kln"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KAVMAC 8.0.*.*;KIS 9.0.0.*;KAV 9.0.0.*;KTS 9.*.*.*"
+		ServerFolder="ar"
+		LocalPath="%BaseFolder%">
+		<LocLang
+			Lang="ar" />
+	</FileDescription>
+	<FileDescription
+		Filename="csln-de.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-de-de.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="de-DE"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-en.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-en-au.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-AU"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-en-ca.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-CA"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-en-gb.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-GB"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-en-nz.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-NZ"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-en-us.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="en-US"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-es.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-es-es.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-ES"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-es-mx.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="es-MX"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-fr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-fr-ca.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-CA"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-fr-fr.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="fr-FR"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-it.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-it-it.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="it-IT"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-ja-jp-xkddi.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ja-JP-xkddi"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-nl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nl"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-nl-nl.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="nl-NL"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-pt-br.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="pt-BR"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-ru-ru.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csln-ru-ru-x_kav_yandex.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*"
+		Lang="ru-RU-x_kav_yandex"
+		LocalPath="%DataFolder%" />
+	<FileDescription
+		Filename="csver-all.xms"
+		ComponentID="INFO"
+		UpdateType="base"
+		App="KIS 11.0.*.*;KAV 11.0.*.*;KIS 12.0.*.*;KAV 12.0.*.*;KTS 12.0.*.*;KIS 13.0.*.*;KAV 13.0.*.*"
+		LocalPath="%DataFolder%" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAQl8HipAAHMOO2ZWmEuGYNl7orL6wpCQarSvUofJugnr7g97GYXZI4eivRFyitrUdeu5Skmwgxml8lgfCtjXv5dpjANwWpwBAB4JTAAAAAIAAigEAElORk8DAAIoBABCQVNFAQAACc+J6C0NCjs6MTA0MTN5d0pxNTd4VytvUTJPQVBURFpxMTVLTTN3SjNXanVISmZpT2pzclEzSzBaUHNLaGhoQWtVQkppSyt0Tms0NWZNaG9FOTNxWElmcmx2ZDFjNktlciUl"
+		Filename="info-0607g.pbv" />
+	<Registry
+		ComponentID="CORE"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwFMAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqhgABACAA+nSBQ2fX4ai3HATZ3dPAB/512z8pf754BJjCAU0AYC8gAHNPrrLCXGZPQL6z82xZOzOUp+baqtQDtRKNwpr5mm1QIACr968UIb8wNDk1pH6KVNzKoApLsT2sEAmF2/ITPqH2UyAAb5jbd6S2EpYyacqrz6P+aWexXLplRgggNNrIEBYaZKogANs2jWKWlJbaQ6GxAd3hUzEBKZpdUpaO7vWypqdizUlUIAD/pOMkSqDWg30Vq5Xfx73CzKcH6+A6JRXCYKeGBxlReCAAOqLvbdLf9YHDnYl9NZfDFyLn8nJHkJ3XGfLnCj8YQdwgAOvBbOaLprtf3Ae57hJXi2fhkYkLCZ1g+k2UqQLisfPNIACMU02jGfQ1JGSDu9/fcUWlbK6fho/Utas7tK86MseGHCAArfV7O0jTzOTkiz9KzPFJ0VgYb8cp3kd8vgX8qLkFzxUgAHLod32IHhS7mCzdDbw1h/LekQWUQKAg3mqBGZQbtC3AIAAHi3URPiQ7ufWbhbSzdEORWeNz+o3rYwBjV9X/3LWxcSAApypI3JqbCqG3LYoFZT863AA2c88Ou9uM91siYNLHEKsgABeebfON7WJ+cYIp8sPnR0zu83m5aotOppVutz1+C5YPIADXo+rulIdhIT8SJ09QyIkWuai0K5N/SXmkCPj0hzVZXyAARh+rdCB/AQnXqpO7930hPYpmzbEEr+dpynl+H5DlMcggAGxBkxl4N3r5JbSFfOdYT3NrHsCoYq4d2P7TIEaZmGkyIADP9sXZcKtOU4YurordXYWVqkJAgKqJKh1Ta7rixObVdiAAf4CjbGwpSsyXE+y07jaPTFalkqDKVe/UnVvwoJmRKUAgALhP2zmROpINPDARq0xAWQRSJl46CZE8Y/PstDJidhZaIADro9wKgwbbr72Ur11x/dTJybicPzkC06QL+Seoicvn3SAAx/K8wJepDT75L6zPJDCZQz+Ht15UFA0pM9Ir5s6Vm4YgAMWuelUx/TVgfjrdFLPxak/ksEDBalJL9kveUIKPdYrjIADxMwsPqSdhRtPJY5nx31OvgQz3m4pT6ndR7yoUGtCDkyAA5Ez89bcVsEBwm2BxFGxFzawF7ju+wof1DqoPxSnbz1AgAL2y8cUMXo8rM9qQV9IoBbuGTdabE3C75NqyCdgdUWNmIABb2AaykYUCjl1KAcis77W0J5ds00hGkNjT4Vq6MGiviyAAS/ohsc8rfCgpryzqWLEtHnkBEwdwA6lu486vtAlWlVUgABGmHm/XIOkl0uQPq/W7zeuP78qZijUuDjA/FlXcibGLIADf3KnX91jgxPPssVZ87I81Hrx4upBzgdvdp57CJEp9/pqQ8AwgADZ2aCPJI1yRMX64O+Y5QFAYzm/xo2+hJLUzcUfSh9SNIADNwSdBrstlQTS5c7fN7/akrVOqprA9TiS6X9lKJCDtaSAAXiBev6ELEXvefuFrsJa6l57L6h2raRTMYfrNL+K5q9sgAL/1hjmih9tpU9ULuDRMnlv939LcDULg8AvfS/iQHgsNIADi9Z5x8l9aO82lZgN5Rl2zn13Gy4623xL0qggHlvOvpiAA3NfdMWZ+jnptC/wxhDVVzZHr2hC0nSmYOY3z85TM84sgADhI2/EbKE2qIUfO1mtIVZBlMr/SEZmKz8Apa/7QUKqUIAD9xyl7OQ6fnSJK6f47qZeozIEuqGlfsemTrWHOKs+pDiAAy0L5CyI1P57pZulWILMft3zrza/jJ9xkpjuYcPuxHJAgAB1e1J6C9Izazg/DRP+B9CXtuGzMj9CxhohJ9hWZg+A3IADUqiZwn37sfSQjvoBAw3VCIEv6uCg2JGXvDDmCpEPJGyAAYGZZ4ZGrz8P0pL2lcNR0uG4nTVyFmGRioEAs1DyfnfMgAC1t6t9n2U1nvrZZ22IVzXaGNGQLjZ/cQQ+85i2fZVLTIADb4P90+ua6DKULFFgf2p2Ub34muTh1wzQ9VqYcZrw8/yAAovhz+xPE858G70OKV25HOnShum53EE2WQWvueihmuY0gAIpAsKdYwAeCdcs6mhCW46cUaIBAxwUfFeVELS6KzDHIIAC9yOv65m7sW7G2eerCxcktWJm/+Mi3RCEGwotaiJwqFyAAk0u5XhfhI9JBuheVrIJ9dj7yvFw/CfehldwKjcjiMTggAAewMM8y8D8rbscZxC1tKtkvhEGtZjOyqevr6mMKNCNLIAAqWeE1wWI1OLF3OEZyjhnC6qzi5iTMX/H0x3Ezssdx9SAAIM0ljezxDaponQbGI1A4YctHf+kz8uJEnVZDcXA0XZUgAKGsIzn+MCP57emj9zALna9p6EvDDHEiPxxD31ROtRLxIACyBcnI7xVoUYZoEMI7UdFnYyaKy1rM3U5D0pt4JyMtlyAAE4SBvbse3iEfa+ZzePB+vHPSmVdr6nVjQsFS9JK5c8IgALctCpLiSZLAzaRxwHTl48szwPKQd4qj2SKIbk9JNh5hIABZXly9nX3Zst/CLr6NjqwwNZZ8gwtpVBKM5Dm1pyKf6iAAanHrVvlg1M6fj7T6vf6k+gnOtlhiVh0fM3i+uCUqab8gAL0slXYrd/7AUFauv+KcXRquNu7/MgqSGnhWOpv//yzaIABLHiWnhITVTvg+4nwWMYnm/Ej5x7oamU2xlnyFzjx5xyAALWJbzn3LtyE7NfMOECCP60eto9DASFf5q9Lwbwetd3yprh36IAC06KoXzYglyIOWxbiLt6UA07qgv2vEm0ebZYF54X72hyAAhTxu/2U/L74/IkHE4syIxGApnoKGlWX7yRpckDIT11MgAKxZJmiKJVGcbCRMP1uf4ZIF1XFERoMmG8Q3Tz4hIPrtIABO5su4k7JDweF8LrzCZle0qPNLwq8K3gsMOY38AKowKSAASr0kxMnbgDKa8rdQxuObQxl8r+VWjSgu8ekgFC/zNXMgANJoSRr+VfGZMR2AfC0KcjGGn1hj9gEpWnA4tezy29XsIAAMidv/D95fQ4U6Tocn1vaCnRqxLPX0RKZfgsSRjFRQiCAAs/ADla23d/yJtv6aekOWhSXdmPey28TyhgzMsYy3vGMgACN/TDt/Hd5tAcu5+xiYAQIIcZDbkt4hF/EVTQimeU11IADLQ/F6LCuMALwHK2OaT0HKzkEd3Q4O/alqXv83AnEvrCAABXJR9w+9KJ8AQrYVEexMcEoCT+dEITGkZjfZEkfRAmAgADvO9179l4Dy/PSz9X/JAkhsNsymlG2XYlhV95+lQq8XIABzBhqGfePkEwrXW4cb0UzAoRl4OM9c1pwhlxiervjG8iAAfG/GH8FWQH/B4tgiwbQDoHvJMQFp8NrIhuUkA0ktQJwgAEXGIKcujAGXpgB78QyIWVt6uFZbU9/5uiMp3eIhIPd7IAA/PJ05FAAjGtlnc1nIVjkaQpwsfsSZJhMO8qw6dJwCayAAhYbKEcPwlkV3QowGEHvCMb0NwEd5MdMkQWk7sQYQ6bYgADIGxUeug6b7nmxqNWVZUVNViEiJhJYWnb/2jxgTj3vXIABpX08vn+MGAymIXttjbhL/YIF1jtFdVa28eJ2E1F7+ayAA9YILze+V08Fk9S9rXiRGEZfDmDzYEhfvH8wDNcX7iDQgAJkgzxq8CsxqrPkA+7HF2qGN/C2dsote2YpsJpzduPGCIACeMdZT7FGpoyY1go3He1RgNuLlW0EKaaTFyEJKGq7YcSAAmtilRA/MoVwVb1IcR+o4I9luHbkE+tY03A2VXy+oWx8gAAnM11MSFJrULDhVwx83N23VB9ov9serkVSq1tFVJb9LIAAmhlf2dGbg04sQIiQP6iisClAYHwzA082NCiNstu2vByAA+gHX0kVSccDq2bLcmnMWZywU2NpKVHgMYU3bYgtMIEwgALpH9+dnXYGznhD7FNHiWKN5N6TkyS7sxeNl8ui1uZT/IACaquLxfy2DqgIOJ/zmNC4aM6YHGYCtC7fNCwna2eq6zyAAuslO5BhYSGxIE1HMV340X+xJigbcWON0YdsyGKbOXDsgAFmPqcxoTD9/Yvh+H9SxuLe48k2NkFtWVGMVpVbYNcJa7JYHDCAAlwagbCWbYW+UGkEcdMQUZh34VKACeVBRUBbfiAZjNCcgAFgcE6RQvK00uPXGep1l1QhYHcxrJ+ly1a1ueUEhOb7xIAAdKKGtOjiH7TGLXjg0vC/cN1G600argfP9lcaits2j6CAARTDt0TkmKHz6/zSW6HgWSGTSmw0w+2xdB068OgK7eKQgABAMHwqE+O2dC/+OCB80ObnVIhnPetjroi1W6NifpFKXIADKnv1w4MVsDgVn1BuxHnaaxwbal6FcWMi5Uh5hhlZLASAAYaS9jbjLRxZpLlPL1NQpkRFcXJlbSgAn8LUGUbZQLvIgAOxXxoYlxp55Cphp24DrwnTTWkE7e73KhnTNO8rFfWcpIADm5cmUSuU3urNwoRSlqzIMPR6oYU5m3bAkURTNe13PgSAAsei4Y29Nyd/NUGygaRl3sz9cPlbB8k35P+FMNmHeVnEgAG4rH39gbMpNsnj3VOP00iIj6WQiFT60sAREWqU4gxAeIACxTMHVs39J5ZTGGF49mUIeeYOubYTGtKNBqP5RBxWNViAALntS1MjA3X/74i/y27Xn6nWizk29NyBjlRbat3DMWqQgAFYBMjat7ovVdZmP03+Vzq9daQwxHODoNDBy8q/tjJFfIAAfOFfuK82ANLVa8etHYunio1F9Ts9Y6KNnT2LrPUGKRiAAY1+TSd75/ssZicwY6FTFrsTIUM8EfbpCh7v4L7kJlTAgAE9z1BrrSaqiYcjx4KNzNJC8QzfuwNaDg1tjDrfsWMwlIADtaZSe8Bb4MEB6gGAgXJ5OhzY9baifOCG7u03Qy+qCJiAAWr+hkVCUcrZ7vxl/HYKqZF4kcj4atJbCwPRchTEHcIsgADSqk19EzuZMlQr3+Q+uq1OjQ4BOXNQDsvJtyE4IUAgwIACplrM72IZzk/cjt/k2gHF+1YIAhfjBVi4b55vVbvyWaSAAdkmiwOLgK2mryt/CxdhA3XXRV/DyaP2Km65pSm+5JgggAARrxbEI/GQ6o5PO5OYVizGC19ChNGC7GXSuf+1ziyNUIACmQKPTO5KVSEIKUoumH7yyknQ8sBEEKebin/Ta5zKlhCAA38vTFM1J7KZD/JyVNfs0GES/lHm2UgPeHx5ltnQIFPYgADCNljHh9gvLyhYYqLdtyJAEaa0mBfQJrE8vIjnLXc7zIABXTkLwGgHpY/8gF1yNFzxvMQMHlgCmFSGdMYP8cLnJySAACUOgtySLZFnG8aJkjWBv4DHRlnsKeRVI6Mpf/yVlgU8gALYT7eq9y+wv72Ybmaz3G+jDug97VsFPgBAH9D+7xhbpIAAOMvr6cnOUN2kef+pbUyZgQVTqFvdd+9ryW5Bb0T9gI/5p4c8gAOSJQVLij+jOs63poh6w4cN/XhBTAbpm+weamWI19XPAIABL6qj/LZudSm46umNAgYDFqGCxFvUlYuASTMgQ6/g1PyAA2Jf+NIz7fdOYlPF29bkH56DhIPQQ4YUqjWWURVc2BvggAO10pPfT4830kEg2+hU9t8wboyXDWnp/f8SCLya2dfErIAAkZOxVhWmYTlhl4rJbEjnfwwQj4QgVTC6KYgUW45xpICAAR4nRgRH9pu/mk1/oiQ5xC3p+yUcTi/S4JLGg9WyOEI0gABUE6L2kMJhddaty/Eb47IgdhBsfkrO1F37edAfstP/tIAB0nmOmyC+LaRp8VMS4SUDWOi2v7l6KJhzvY+sBxeHkWiAAopm7YMJEBuphfJfHPb/eSl9rxZudsgstdaC37Sb3l+QgABDjB0OOwQKlLKe4FsbLWrQ040m6CJkDgAsUFZ+8iRC8IAD6ld+WMH7Y5ZCbzYwimEGmaYj7GL/5rK2aZhFz3VaTrSAAE106f0+AP3815sxtsE915D2/TDXnao/S47Go9cC9xM4gAP5eD+gCK9bpGhGjQoVGH2+e1tel+SUEEHQzYjcOHkefIACC6htaev2Phh8+WoASQZ0HPGxgLjy6GLvSZrqvZRQqAAEAHglMAAAAAQAACbVaKigNCjs6MTBxMkRrNTVabk5WVlVaUzFvT0hiQ0x5TTdnQlMwd2xKMmQ5SXdFTTBaWmcwTU55ZmRjS0JKOUx3N2Npak5xWXBWdXorSUZqZldVbTZYNGVEOStZclZXdyUl"
+		Filename="info-0607g.krg" />
+</UpdateFiles>
+;:10qHYoSdAbQEJPxe47NKPVB9Sc1nse1ZdkzXQMhINMH36kXcOqCtd06x1/F1mHKPvmqmsoPd9UgxwbLvcP4AUIzh%%

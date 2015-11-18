@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "라이센스 키 파일 선택"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "이 애플리케이션용 라이센스는 장비 공급업체에서 제공한 것입니다. 이 라이센스를 사용해 애플리케이션을 활성화하시겠습니까?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "애플리케이션 구성을 아직 완료하지 못했습니다. 구성 마법사를 종료하시겠습니까?"
+ErrEmptyActivationCode.caption  = "활성화코드를 입력하지 않았습니다"
+ErrEmptyActivationCode          = "활성화코드를 입력해 주십시오"
+ErrEmptyKeyPath.caption         = "라이센스 키 파일이 지정되지 않았습니다"
+ErrEmptyKeyPath                 = "라이센스 키 파일을 선택해 주십시오"
+$LicInfoKeyNumber               = "번호:"
+$LicInfoKeyProductName          = "애플리케이션 이름:"
+$LicInfoKeyType                 = "라이센스 형태:"
+$LicInfoExpirationDate          = "만료 날짜:"
+$LicErrReason                   = "오류 원인:"
+$ActiveKey                      = "사용 중인 라이센스"
+$ReservedKey                    = "추가 라이센스"
+ConfirmFeedback                 = "<a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>로 정보를 제공하는데 동의하시겠습니까?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN)는 <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network 데이터 수집 성명</a>에 따라 \n컴퓨터에서 실행된 애플리케이션에 대한 정보 및 바이러스 감염, 기타 오류에 대한 정보 등을 \nKaspersky Lab으로 자동 전송하는 시스템입니다. \n이 정보를 바탕으로 빠르게 퍼지는 신종 보안위협에 대해 더욱 긴밀히 대응할 것이며 애플리케이션의 품질과 서비스를 더욱 향상 시킬 것입니다.\n\n<b>Kaspersky Security Network는 고객님의 개인 정보는 수집하지 않습니다.</b>"
+
+$ToAcquireNewLicText            = "\n\n새로운 라이센스를 구매하려면, <a Buy onclick(buy())>Kaspersky Lab</a>으로 문의해 주시기 바랍니다"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\n월과금 라이센스 상태를 직접 업데이트하거나 고객 지원으로 문의해 주시기 바랍니다" : "\n잠시 후(1-2 시간)에 다시 활성화하거나 고객 지원으로 문의해 주시기 바랍니다") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " 활성화 마법사" : " 구성 마법사")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "일반 정보"
+InitBegin.Descr                       = $ProductName_GEN + " 구성 마법사."
+CheckHosts.Name                       = "Kaspersky Lab 서버 상태 확인 중"
+CheckHosts.Descr                      = "의심스러운 리디렉션이 탐지되었습니다"
+ResetArea.Name                        = "설정 초기화"
+ResetArea.Descr                       = "사용자가 입력하였거나 애플리케이션 사용 중 모아진 데이터 등을 초기 설정으로 \n복원할 수 있습니다."
+ActivationBegin.Name                  = $IsSubscription ? "월과금 라이센스 관리" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "라이센스 삭제" : "라이센스 추가") : "애플리케이션 활성화")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "라이센스 관리" : "계속하려면 애플리케이션을 활성화해 주십시오.")
+ActivationProgress.Name               = "인터넷으로 활성화"
+ActivationProgress.Descr              = "활성화가 진행 중입니다, 잠시만 기다려 주십시오..."
+ActivationServerForm.Name             = "인터넷으로 활성화"
+ActivationServerForm.Descr            = "다음 폼을 채워 주십시오."
+ActivationChooseKey.Name              = "라이센스 키 파일로 활성화"
+ActivationChooseKey.Descr             = "라이센스 키 파일을 사용해 애플리케이션 인증."
+ActivationEnd.Name                    = "애플리케이션 활성화"
+ActivationEnd.Descr                   = "활성화를 완료했습니다."
+MigrationKeyIsFound.Name         = "이미 등록된 라이센스가 있습니다"
+MigrationKeyIsFound.Descr        = "등록된 라이센스를 사용하시겠습니까?"
+MigrationBegin.Name              = s_MUProductTitleLong(env("ProductType")) + "로 전환"
+MigrationBegin.Descr             = "" + s_MUProductTitleLong(env("ProductType")) + " 사용으로 전환됩니다."
+MigrationSearchProgress.Name     = "비-호환 애플리케이션 검색"
+MigrationSearchProgress.Descr    = "비-호환 애플리케이션을 검색하는 동안 잠시만 기다려 주십시오..."
+MigrationSafeRemoval.Name        = "비-호환 애플리케이션이 발견됨"
+MigrationSafeRemoval.Descr       = "계속하려면 비-호환 애플리케이션을 제거해야 합니다"
+MigrationSafeProgress.Name       = "비-호환 애플리케이션 제거"
+MigrationSafeProgress.Descr      = "비-호환 애플리케이션을 제거하는 동안 잠시만 기다려 주십시오..."
+MigrationAddRemove.Name          = "비-호환 애플리케이션이 발견됨"
+MigrationAddRemove.Descr         = "비-호환 애플리케이션을 제거해 주십시오"
+MigrationUnsafeRemoval.Name      = "비-호환 애플리케이션이 발견됨"
+MigrationUnsafeRemoval.Descr     = "계속하려면 비-호환 애플리케이션을 제거해야 합니다"
+MigrationUnsafeProgress.Name     = "비-호환 애플리케이션 제거"
+MigrationUnsafeProgress.Descr    = "비-호환 애플리케이션을 제거하는 동안 잠시만 기다려 주십시오..."
+MigrationReboot.Name             = "운영체제를 다시 시작해야 합니다"
+MigrationReboot.Descr            = "새 애플리케이션으로 전환을 계속하려면 운영체제를 재부팅해야 합니다"
+MigrationProgress.Name           = s_MUProductTitleLong(env("ProductType")) + "로 전환"
+MigrationProgress.Descr          = "새 애플리케이션으로 전환 중. 잠시만 기다려 주십시오..."
+MigrationRebootApp.Name          = bMigrationDone ? "애플리케이션이 재시작됩니다" : "전환 오류"
+MigrationRebootApp.Descr         = bMigrationDone ? "애플리케이션을 재시작해야 합니다" : "" + s_MUProductTitleLong(env("ProductType")) + "로의 전환 실패"
+MigrationFinish.Name             = s_ProductTitleLong(env("ProductType")) + "로의 전환 완료"
+MigrationFinish.Descr            = s_ProductTitleLong(env("ProductType")) + "로의 전환이 완료되었습니다"
+DNS.Name                              = "고급 설정"
+DNS.Descr                             = $ProductName_GEN + " 고급 설정"
+EnumExe.Name                          = "시스템 분석"
+EnumExe.Descr                         = "시스템 정보를 수집하는 동안 잠시만 기다려 주십시오..."
+InitFinish.Name                       = $ProductName + " 구성 완료"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "애플리케이션 구성을 완료하려면 컴퓨터를 재부팅해야 합니다." : "" + $ProductName + "를 지금 시작할 수 있습니다."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "의심스러운 Kaspersky Lab 서버 리디렉션이 탐지되었습니다. 악성 프로그램에 감염되었기 때문일 수 있습니다. 업데이트 및 제품 활성화가 안될 수 있습니다. hosts 파일의 의심스러운 항목:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "레코드 삭제 (권장)"
+Skip			= "건너뛰기"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "뒤로(&B)"
+Back.Descr      = "애플리케이션 활성화 방법 선택 창으로 다시 이동합니다"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "라이센스 추가(&M)" : "활성화(&A)"
+Activate.Descr  = "선택한 라이센스 키 파일 설치"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "마침(&F)"
+Finish.Descr    = "활성화 마법사 닫기"
+Next.Name       = "다음(&N)"
+Next.Descr      = "구성을 계속 진행합니다"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "이미 등록된 라이센스가 있습니다. 이 경우 애플리케이션은 " + s_MUProductTitleLong(env("ProductType")) + "로 전환됩니다."
+Text3   = "등록된 라이센스를 사용하시겠습니까?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "애플리케이션 형태:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "만료 날짜:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " 남음)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "예, " + s_MUProductTitleLong(env("ProductType")) + "로 전환하겠습니다."
+NotUseFoundLicense = "아니오, " + switch(env("ProductType"), "ProductTitleLong", "") + " 그대로 사용하겠습니다."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "" + s_MUProductTitleLong(env("ProductType")) + "로 전환할 예정입니다. \n" + s_MUProductTitleLong(env("ProductType")) + "을 사용하려면 알맞은 라이센스가 있어야 합니다."
+Text3   = "알림: 이 전환 과정은 재부팅을 요구할 수 있습니다."
+LicenseWarning  = "주의! Kaspersky Anti-Virus에서 사용했던 상업용 라이센스가 Kaspersky Internet Security 체험판 라이센스 기간 전에 만료됩니다. Kaspersky Anti-Virus에서 사용했던 상업용 라이센스가 만료된 이후에는 Kaspersky Internet Security 체험판에서 다시 Kaspersky Anti-Virus로 되돌아 갈 수 없습니다. 전환을 계속하시겠습니까?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "컴퓨터에 비-호환 소프트웨어가 있는지 검색하고 있습니다. 잠시만 기다려 주십시오..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "전환하기 전에 다음 비-호환 애플리케이션을 제거해야 합니다:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "비-호환 애플리케이션을 삭제하는 동안 잠시만 기다려 주십시오..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "전환하려면 다음 비-호환 애플리케이션을 제거해야 합니다:"
+OpenAddRemove = "프로그램 추가/제거 창 열기"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "전환하려면 비-호환 애플리케이션을 제거해야 합니다:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "비-호환 애플리케이션을 제거하는 동안 잠시만 기다려 주십시오..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "전환을 계속하려면 컴퓨터를 재부팅해야 합니다. 재부팅한 이후에 마법사를 계속 진행합니다."
+Reboot   = "지금 리부팅"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "애플리케이션을 재구성하고 " + s_MUProductTitleLong(env("ProductType")) + "로 전환할 때까지 \n잠시만 기다려 주십시오..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "" + s_MUProductTitleLong(env("ProductType")) + "로의 전환을 완료하려면, 애플리케이션을 다시 시작해야 \n합니다." : s_MUProductTitleLong(env("ProductType")) + "로의 전환 실패."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "자녀 보호 서비스, 안티 스팸, 방화벽 등과 같은 " + s_ProductTitleLong("kis") + " 기능을 \n체험해 볼 수 있습니다." : s_ProductTitleLong("kav") + "는 악성 프로그램으로부터 컴퓨터를 보호할 수 있는 기본적인 기능을 제공합니다."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? " "+if($IsRefreshSubAvail,"월과금 라이센스를 업데이트하거나 ")+"라이센스를 삭제할 수 있습니다." : (f_IsActiveKeyWorkingCommercial() ? "라이센스를 삭제 또는 추가할 수 있습니다" : "최신 데이터베이스로 업데이트하려면 " + $ProductName_GEN + "를 활성화해야 합니다."+ if($CorporateOnly, " 활성화 서버에서 <a Activate onclick(url($ActivationLinkkor))>상업용</a> 또는 <a ActivateTrial onclick(url($ActivationTrialLink))>체험판</a> 라이센스를 받을 수 있습니다."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "나중에 활성화(&L)"
+Later.Descr                 = "활성화를 하지 않고, 애플리케이션 구성을 계속 진행합니다"
+ChooseKey.Name              = "라이센스 키 파일을 사용해 활성화(&K)"
+ChooseKey.Descr             = "라이센스 키 파일이 필요합니다"
+ActivateBetaKAV.Name        = "Kaspersky Anti-Virus 베타 버전으로 활성화(&B)"
+ActivateBetaKAV.Descr       = "Kaspersky Anti-Virus 베타 버전은 정식 애플리케이션을 출시하기 전에 배포하는 테스트 버전입니다."
+ActivateBetaKIS.Name        = "Kaspersky Internet Security 베타 버전으로 활성화(&B)"
+ActivateBetaKIS.Descr       = "Kaspersky Internet Security 베타 버전은 정식 애플리케이션을 출시하기 전에 배포하는 테스트 버전입니다."
+ActivateTrial.Name          = "체험판으로 활성화(&T)"
+ActivateTrial.Descr         = "정식 버전과 동일한 기능을 체험할 수 있습니다"
+ActivateCommercial.Name     = "인터넷으로 활성화(&A)"
+ActivateCommercial.Descr    = "구매했을 때 받은 활성화코드가 필요합니다"
+RemoveKey.Name              = $HasReserveKey ? "추가 라이센스 삭제(&D)" : "라이센스 삭제(&D)"
+RemoveKey.Descr             = "라이센스를 교체하려면, 먼저 활성화된 라이센스를 삭제해야 합니다"
+RefreshSubscription.Name    = "월과금 라이센스를 업데이트해 주십시오(&R)"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "월과금 라이센스 상태를 직접 업데이트할 수 있습니다." :  "자동 월과금 라이센스 상태 업데이트가 종료되었습니다. 상태를 직접 업데이트할 수 있습니다."
+ActivateTrialKIS            = "Kaspersky Internet Security 체험판으로 활성화"
+ActivateTrialKIS_Desc       = "Kaspersky Internet Security를 정식 버전과 동일한 기능으로 체험할 수 있습니다"
+RevertToCommercialKAV       = "Kaspersky Anti-Virus 상업용 버전으로 되돌아가기"
+RevertToCommercialKAV_Desc  = "Kaspersky Anti-Virus 상업용 버전으로 되돌아가기"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "월과금 라이센스 상태 업데이트"
+ActivateCommercial      = "상업용 버전으로 활성화(&C)"
+ActivateCommercial_Desc = (LockActivationCode)? "활성화코드 입력: " : "<a onclick(url(\"" + $ActCodeHint + "\"))>활성화코드</a> 입력:"
+ActivationCode_Desc     = (LockActivationCode)? "활성화코드가 자동으로 추가되었습니다. \"다음\" 버튼을 눌러 주십시오." : "활성화코드가 없다면, <a onclick(buy())>온라인</a>으로 구매해야 합니다."
+ActivateBetaKAV         = "Kaspersky Anti-Virus 베타 버전으로 활성화(&B)"
+ActivateBetaKIS         = "Kaspersky Internet Security 베타 버전으로 활성화(&V)"
+ActivateTrial           = "체험판으로 활성화(&T)"
+ActivateTrial_Desc      = "정식 버전과 동일한 기능을 체험할 수 있습니다."
+ActivateTrialKIS           = "Kaspersky Internet Security 체험판으로 활성화"
+ActivateTrialKIS_Desc      = "Kaspersky Internet Security를 정식 버전과 동일한 기능으로 체험할 수 있습니다."
+RevertToCommercialKAV      = "Kaspersky Anti-Virus 상업용 버전으로 되돌아가기"
+RevertToCommercialKAV_Desc = "Kaspersky Internet Security 체험판 사용을 중지하고 Kaspersky Anti-Virus 상업용 버전으로 되돌아가기."
+Later                   = "나중에 활성화(&A)"
+Later_Desc              = "애플리케이션을 활성화해야 전체 제품 기능을 사용할 수 있습니다."
+RemoveKey               = "라이센스 키 파일 삭제"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "라이센스 키 파일:"
+KeyInfo         = "라이센스 정보"
+ConnectingInfo.Name     = "활성화 오류: "
+ConnectingInfo.Val      = "자세히"
+TryAgain                = "활성화"
+Descr1                  = "다시 활성화하려면 아래와 같이 처리해 주시기 바랍니다:"
+Descr2                  = "인터넷 연결 설정을 확인한 후 애플리케이션을 다시 활성화해 주십시오."
+Descr3                  = "* 개인용 제품에서는 라이센스 키 파일로의 인증을 더 이상 지원하지 않습니다.\n  반드시 인터넷 연결 후 활성화해 주시기 바랍니다.\n* 만일 이전 버전에서 구입한 라이센스 키 파일을 가지고 있다면, 라이센스 키 \n  파일을 선택하고 '다음' 버튼을 눌러 주십시오:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "생성 날짜:"
+InstallDate.Name    = "활성화 날짜:"
+ExpirationDate.Name = "만료 날짜:"
+SubscrptnExpDate.Name = "월과금 라이센스 만료 날짜:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," / " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)) + " 용, ")
+
+[s_LicenseOperationsError]
+1       = "시스템 오류: " + s_SystemError(ErrorCode)
+2       = "\"" + KeyFile + "\" 라이센스를 추가할 수 없습니다: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "\"" + KeyFile + "\" 라이센스를 삭제할 수 없습니다: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "오류 코드: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "이 라이센스는 이미 추가된 것입니다."
+0x0947901d  = "라이센스가 만료되었습니다. 데이터베이스 업데이트 기능을 이용할 수 없습니다."
+0x89479002  = "라이센스를 찾을 수 없습니다."
+0x89479003  = "디지털 서명이 없거나 손상되었습니다."
+0x89479004  = "데이터가 손상되었습니다."
+0x89479005  = "라이센스 키 파일이 손상되었습니다."
+0x89479006  = "라이센스가 만료되었습니다."
+0x89479007  = "라이센스 키 파일을 지정하지 않았습니다."
+0x89479008  = "라이센스 키 파일이 유효하지 않습니다."
+0x89479009  = "데이터 저장 실패."
+0x8947900a  = "데이터 읽기 실패."
+0x8947900b  = "I/O 오류."
+0x8947900c  = "데이터베이스가 없습니다."
+0x8947900d  = "사용 중인 라이센스 키 파일과 추가한 라이센스 키 파일 모두 이미 등록했습니다."
+0x8947900e  = "라이센스 인증 모듈을 시작할 수 없습니다."
+0x8947900f  = "데이터베이스가 손상되었거나 사용자가 직접 업데이트했습니다."
+0x89479010  = "데이터베이스가 손상되었습니다."
+0x89479011  = "만료된 라이센스 키 파일을 추가 라이센스 키로 등록할 수 없습니다."
+0x89479012  = "시스템 오류."
+0x89479013  = "라이센스 확인용 블랙리스트 파일이 손상되었습니다."
+0x89479014  = "디지털 서명이 Kaspersky Lab 디지털 서명과 일치하지 않습니다."
+0x89479015  = "정식 제품에는 베타 라이센스를 등록할 수 없습니다."
+0x89479016  = "베타 버전에는 베타 라이센스만 등록할 수 있습니다."
+0x89479017  = "이 애플리케이션에 적용할 수 없는 라이센스입니다. \n라이센스와 동일한 애플리케이션이 설치되어 있는지 확인해 주십시오."
+0x89479018  = "차단된 라이센스입니다."
+0x89479019  = "이 체험판 라이센스는 이미 사용하고 있습니다. \n같은 체험판 라이센스를 두번 이상 사용할 수 없습니다."
+0x8947901a  = "라이센스 키 파일이 손상되었습니다"
+0x8947901b  = "디지털 서명이 없거나 손상 또는 Kaspersky Lab의 디지털 서명과 일치하지 않습니다."
+0x8947901c  = "만료된 라이센스 키 파일은 추가할 수 없습니다."
+0x8947901e  = "키 생성 또는 활성화 날짜가 유효하지 않습니다. 컴퓨터 날짜가 정확한지 확인해 주십시오."
+0x8947901f  = "체험판 라이센스를 사용하는 동안 다른 체험판 라이센스를 등록할 수 없습니다"
+0x89479020  = "라이센스 확인용 블랙리스트 파일이 없거나 손상되었습니다."
+0x89479021  = "업데이트 설명 파일이 없거나 손상되었습니다."
+0x89479022  = "이 애플리케이션의 내부 데이터가 유효하지 않습니다."
+0x89479023  = "잘못된 활성화코드를 추가 라이센스로 등록할 수 없습니다."
+0x89479024  = "사용자 폼 데이터 완료 오류."
+0x89479025  = "활성화 서버 데이터 전송 오류.\n예상 원인: 인터넷 연결 문제 또는 일시적인 활성화 서버 문제.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)."
+0x89479026  = "활성화코드가 유효하지 않습니다."
+0x89479027  = "응답 상태를 알 수 없습니다."
+0x89479028  = "임시 파일 저장 오류."
+0x89479029  = "활성화코드를 잘못 입력하였거나 컴퓨터 날짜가 잘못되었습니다. \n컴퓨터 날짜가 정확한지 확인해 주십시오."
+0x8947902a  = "이 애플리케이션에서 사용할 수 없는 라이센스이거나 만료된 라이센스입니다. \n라이센스와 동일한 애플리케이션이 설치되어 있는지 확인해 주십시오. 또는 라이센스를 <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "해 주시기 바랍니다</a>."
+0x8947902b  = "라이센스 키 파일 가져오기 실패. 잘못된 활성화코드가 지정되었습니다."
+0x8947902c  = "활성화 서버 오류: 오류 번호 - 400.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x8947902d  = "활성화 서버 오류: 오류 번호 - 401.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x8947902e  = "활성화 서버 오류: 오류 번호 - 403.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x8947902f  = "활성화 서버 오류: 오류 번호 - 404.\n인터넷 연결 설정을 확인해 주시기 바랍니다.\n또는 잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479030  = "활성화 서버 오류: 오류 번호 - 405.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479031  = "활성화 서버 오류: 오류 번호 - 406.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479032  = "프록시 서버 인증을 해야 합니다. LAN 설정을 확인해 주십시오."
+0x89479033  = "요청 대기 시간 초과."
+0x89479034  = "활성화 서버 오류: 오류 번호 - 409.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479035  = "활성화 서버 오류: 오류 번호 - 410.\n인터넷 연결 설정을 확인해 주시기 바랍니다.\n또는 잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479036  = "활성화 서버 오류: 오류 번호 - 411.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479037  = "활성화 서버 오류: 오류 번호 - 412.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479038  = "활성화 서버 오류: 오류 번호 - 413.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x89479039  = "활성화 서버 오류: 오류 번호 - 414.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x8947903a  = "활성화 서버 오류: 오류 번호 - 415.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x8947903b  = "클라이언트에서 발생한 알 수 없는 오류.\n잠시 후에 다시 활성화해 주시기 바랍니다(1-2 시간 후)." + $OlaErrHelpLink
+0x8947903c  = "내부 서버 오류"
+0x8947903d  = "지원하지 않는 기능입니다."
+0x8947903e  = "잘못된 게이트웨이 응답. 네트워크 설정을 확인해 주십시오."
+0x8947903f  = "일시적으로 리소스를 이용할 수 없습니다."
+0x89479040  = "요청 대기 시간 초과. 네트워크 설정을 확인해 주십시오."
+0x89479041  = "서버에서 지원하지 않는 프로토콜입니다.\n나중에 활성화코드를 다시 입력해 주시기 바랍니다." + $OlaErrHelpLink
+0x89479042  = "알 수 없는 오류.\n나중에 활성화코드를 다시 입력해 주시기 바랍니다." + $OlaErrHelpLink
+0x89479043  = "알 수 없는 http 오류.\n나중에 활성화코드를 다시 입력해 주시기 바랍니다." + $OlaErrHelpLink
+0x89479044  = "유효하지 않는 리소스 확인자"
+0x89479045  = "\"라이센스 키\" 칸의 정보가 부정확합니다."
+0x89479046  = "부정확한 URL"
+0x89479047  = "부정확한 대상 폴더"
+0x89479048  = "메모리 할당 오류"
+0x89479049  = "ANSI 스트링으로 파라미터를 변환하는 동안 오류 발생 (URL, 폴더, 에이전트)"
+0x8947904a  = "작업자 쓰레드 생성 오류."
+0x8947904b  = "작업자 쓰레드가 이미 실행 중입니다."
+0x8947904c  = "작업자 쓰레드가 실행 중이지 않습니다."
+0x8947904d  = "라이센스 키 파일을 활성화 서버에서 찾을 수 없습니다."
+0x8947904e  = "차단된 라이센스입니다."
+0x8947904f  = "활성화 서버 내부 오류."
+0x89479050  = "활성화에 필요한 데이터가 충분하지 않습니다."
+0x89479051  = "부정확한 사용자 ID 또는 암호."
+0x89479052  = "부정확한 활성화코드"
+0x89479053  = "선택한 라이센스 키 파일이 현재 활성화되어 있는 라이센스 보다 일찍 만료됩니다."
+0x89479054  = "운영체제 날짜가 부정확합니다. 지금 컴퓨터 날짜를 확인해 주십시오."
+0x89479055  = "체험판 라이센스가 만료되었습니다."
+0x89479056  = "활성화 기간이 만료되었습니다."
+0x89479057  = "<b>입력한 활성화코드는 허용된 인증 횟수를 초과했습니다!</b>"
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "추가 라이센스로 이 라이센스를 등록할 수 없습니다(NFR)."
+0x8947905c  = "활성화코드가 필요합니다"
+0x8947905d  = "부정확한 고객 ID 또는 암호"
+0x8947905e  = "부정확한 활성화코드."
+0x89479062  = "활성화 서버에 접속할 수 없습니다."
+0x89479064  = "<b>활성화 서버를 이용할 수 없습니다.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "지금 애플리케이션을 활성화할 수 없습니다. 애플리케이션 초기 환경설정을 완료하고 운영체제를 재시작한 후에 활성화를 다시 시도해 주십시오.", "인터넷 연결 설정을 확인한 후 활성화를 다시 시도해 주십시오.")
+0x89479065  = "라이센스가 만료되었습니다. 라이센스를 <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "해 주시기 바랍니다</a>."
+0x89479066  = "현재 사용 중인 라이센스를 만료된 라이센스로 교체할 수 없습니다."
+0x89479067  = "현재 사용 중인 라이센스보다 일찍 만료되는 라이센스는 등록할 수 없습니다."
+0x89479068  = "업데이트한 월과금 라이센스 키가 없습니다" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "시스템 오류로 활성화를 완료하지 못했습니다 " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "활성화 오류: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "활성화 오류: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "활성화 오류: 서버가 HTTP 코드를 반송했습니다 " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "활성화 실패 " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "내부 활성화 서버 오류. 다시 시도하거나 고객 지원으로 문의하십시오"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "이 애플리케이션에 적용할 수 없는 라이센스입니다. \n라이센스와 동일한 애플리케이션이 설치되어 있는지 확인해 주십시오"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "라이센스가 차단되었습니다"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "부정확한 고객 ID 또는 암호"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "부정확한 활성화코드"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "활성화코드가 필요합니다"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "활성화 기간이 만료되었습니다"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "입력한 활성화코드는 허용된 인증 횟수를 초과했습니다"
+#OLA_ERR_SRV_REGION_MISMATCH                = "이 지역에서는 사용할 수 없는 활성화코드입니다"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "이 활성화코드는 이 언어에서 사용할 수 없습니다."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "이 활성화코드는 이 애플리케이션의 최신 버전에서 사용할 수 있습니다. 보다 자세한 정보는 아래 링크를 참고해 주시기 바랍니다."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "활성화 서버 오류 코드 리턴: 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "활성화 서버 오류 코드 리턴: 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "활성화 서버 오류 코드 리턴: 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "활성화 서버 오류 코드 리턴: 646"
+default                                     = "활성화 과정에서 오류 발생 " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft Internet Explorer가 오프라인 모드로 시작되었습니다"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "인터넷 접속 실패"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "활성화 서버를 이용할 수 없습니다"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "프록시 서버를 이용할 수 없습니다"
+#OLA_ERR_INTERNET_TIMEOUT                    = "응답 시간제한이 만료되었습니다"
+#OLA_ERR_INTERNET_INVALID_URL                = "부정확한 활성화 서버 주소"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "부정확한 프로토콜"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "서버에 접속할 수 없습니다"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "동작이 취소되었습니다"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "서버에 접속할 수 없습니다"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "서버 접속이 끊겼습니다"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "서버 접속이 초기화되었습니다"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "부정확한 서버 응답"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "서버의 SSL 인증서가 만료되었습니다. 로컬 컴퓨터 시간을 확인해 주십시오"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL 인증서 서버 이름이 서버와 일치하지 않습니다"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "인증서 해지 확인을 실행할 수 없습니다. Internet Explorer에서 이 기능이 중지하고 활성화를 다시 시도해 주시기 바랍니다 (인터넷 옵션->고급->서버 인증서 해지 확인)."
+#OLA_ERR_INTERNET_CERT_INVALID               = "잘못된 SSL 인증서"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL 인증서가 해지되었습니다"
+#OLA_ERR_INTERNET_INVALID_CA                 = "부정확한 인증 센터"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Kaspersky Lab에 등록하면 다양한 서비스 관련 소식을 받아 볼 수 있습니다."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "계속(&C)"
+Activate.Descr  = "활성화 서버로 데이터 전송"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "구성 마법사가 Kaspersky Lab 활성화 서버에 접속하고 있습니다. 인터넷 연결 속도에 따라 약간의 시간이 걸릴 수 있습니다."
+ConnectingInfo.Name     = "활성화 서버에 접속 중..."
+ConnectingInfo.Val      = if(bConnected, "완료")
+SendingCodeInfo.Name    = "활성화코드 전송 중..."
+SendingCodeInfo.Val     = if(bSentCode, "완료")
+RetrievingKeyInfo.Name  = "라이센스 인증 중..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "완료")
+Status                  = $ProductName + "를 성공적으로 활성화했습니다"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "만료 날짜:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " 남음)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "활성화를 성공적으로 완료했습니다." : "애플리케이션이 이미 활성화되어 있습니다."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "다음(&N)"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "애플리케이션 활성화 단계를 진행합니다.": (((PiwFlags & #fPiwActivation) && !bSilent)?"라이센스 정보 단계를 진행합니다.":"실시간 감시 모드 선택 단계를 진행합니다.")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "이 마법사는 애플리케이션 환경 설정을 신속하게 구성할 수 있도록 도와줄 것입니다.\n\n또한 환경 설정을 하는 동안 시스템에 대한 정보와 컴퓨터에 설치된 애플리케이션에 대한 \n정보를 수집해 최적화된 구성을 하는데 사용됩니다.\n\n" + $ProductName_GEN + " 구성을 시작하려면 \"다음\"을 눌러 주십시오."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "재부팅 후 설치가 완료됩니다..." : ((PiwFlags & #fPiwReset) ? ("복원을 완료했습니다.") : ("설치를 완료했습니다."))
+ResetDescr          = "구성 마법사가 " + $ProductName + " 설정 복원을 성공했습니다."
+Reboot              = "컴퓨터 재부팅(&R)"
+StartProduct        = $ProductName + " 시작(&A)"
+RebootPiwWarning    = $IsInstallNeedReboot ? ($ProductName + "를 설치해 주셔서 감사합니다. 설치를 모두 완료하려면 컴퓨터를 재부팅해야 합니다. 열려진 모든 파일을 닫고 '끝내기' 버튼을 눌러 주십시오.") : "처음으로 애플리케이션을 시작하면 추가적인 제품 \n구성을 완료해야 합니다. \n이 과정은 수 분이 소요될 수 있습니다."
+
+[ConfigureWizard.EnumExe]
+Info = "Microsoft Windows 운영 체제에 포함된 애플리케이션을 신뢰하는 애플리케이션 목록에 추가합니다. \n\n운영 체제에 포함 안된 프로그램은 처음으로 실행될 때 개별적으로 분석됩니다."
+
+[s_LicKeyType]
+#ektBeta         = "베타 라이센스"
+#ektTrial        = "체험판 라이센스"
+#ektTest         = "테스트 라이센스"
+#ektOEM          = "OEM 라이센스"
+#ektCommercial   = "상업용 라이센스"
+#ektSubscription = "상업용 월과금 라이센스"
+#ektSubscriptionProtection = "상업용 라이센스(protection subscription)"
+default          = "알 수 없는 형태"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "알 수 없는 오류"
+#ekirValid                      = "라이센스가 유효합니다"
+#ekirExpired                    = "라이센스가 만료되었습니다"
+#ekirCorrupted                  = "라이센스가 유효하지 않습니다"
+#ekirNotSigned                  = "디지털 서명이 없거나 손상되었습니다"
+#ekirWrongProduct               = "이 애플리케이션에 적용할 수 없는 라이센스입니다. 라이센스와 동일한 애플리케이션이 설치되어 있는지 확인해 주십시오."
+#ekirBlackListed                = f_KeySerNum(KeyInfo.ID.KeySerNum)+"은(는) 블랙리스트에 등록된 라이센스입니다"
+#ekirIllegalUpdate              = "데이터베이스 날짜가 라이센스 유효 기간과 일치하지 않습니다"
+#ekirInconsistentUpdate         = "데이터베이스가 손상되었습니다"
+#ekirKeyCreationDateInvalid     = "부정확한 라이센스 키 생성 날짜"
+#ekirTrialAlreadyInUse          = "체험판 라이센스를 사용하는 동안 다른 체험판 라이센스를 등록할 수 없습니다"
+#ekirInvalidBlacklist           = "라이센스 확인용 블랙리스트 파일이 손상되었습니다"
+#ekirCantBeUsedAsReserved       = "추가 라이센스로 등록할 수 없습니다"
+#ekirKeyInstallDateInvalid      = "부정확한 라이센스 활성화 날짜"
+#ekirTrialPeriodIsOver          = "체험판 라이센스가 만료되었습니다"
+#ekirConflictsWithCommercial    = "새로운 라이센스는 설치된 상업용 라이센스와 호환되지 않습니다"
+#ekirExpiredAsReserve           = "이 라이센스는 현재 사용 중인 라이센스보다 일찍 만료됩니다"
+#ekirGracePeriod                = "라이센스 유예 기간"
+#ekirSuspended                  = "월과금 라이센스가 일시 중지되었습니다"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "애플리케이션을 다시 설치해야 합니다"
+#ekirLicenseOnlyForMigration    = "상업용 버전으로 활성화해 다른 애플리케이션으로 전환"
+default                         = "라이센스 키 파일이 손상되었습니다"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "나중에 결정"
+#edtUnlimited = "사용 중"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "일시 중지됨 / " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "라이센스 정보"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": 라이센스 알림"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "주의!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = $ProductName_GEN + " 체험판 버전을 사용하고 있습니다."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "라이센스 확인용 블랙리스트 파일이 없거나 손상되었습니다. 동작을 계속하려면 <a Update onclick(f_StartUpdater())>업데이트</a>를 실행해 주십시오."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "라이센스가 " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". 최신 데이터베이스로 유지/업데이트 하려면, 라이센스를 <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>해 주시기 바랍니다.\n\n이미 라이센스를 가지고 있다면, <a Activate onclick(f_Activate())>애플리케이션을 활성화</a>해 주십시오."
+1       = (SubscriptionStatus==#ssExpired)? (("월과금 라이센스가 만료되었습니다." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " 감시를 중지합니다."))+($IsBestBuyLink? "월과금 라이센스를 갱신할 수 없습니다." : "컴퓨터가 위험합니다. \n\n월과금 라이센스를 갱신하려면 <a onclick(url($KeyProviderLinkForText))>월과금 라이센스 구입처</a>로 문의해 주십시오.")) :("월과금 라이센스 갱신 남은 날짜: " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink? " 일. " : (LicInfo.KeyInfo.KeyType == #ektSubscription? " 업데이트 기능이 중지될 때까지 남았습니다. " : " 감시 기능이 중지될 때까지 남았습니다." ) ) + " 월과금 라이센스를 갱신하려면, <a onclick(url($KeyProviderLinkForText))>월과금 라이센스 구입처</a>로 문의해 주십시오.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>블랙리스트에 등록된 라이센스입니다.\n업데이트 기능이 중지되며 신종 바이러스에 감염될 수 있습니다.</b>\n\n정품 애플리케이션을 구입하려면, Kaspersky Lab 또는 판매 대리점으로 연락해 주시기 바랍니다.\n\n불법 라이센스를 사용하고 있다면, 라이센스를 <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "해 주시기 바랍니다</a>.\n\n이미 라이센스를 가지고 있다면, <a Activate onclick(f_Activate())>애플리케이션을 활성화</a>해 주시기 바랍니다.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "오늘 만료됩니다" : "만료됩니다. 남은 날짜: " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "만료되었습니다"
+
+[s_LicenseRenewBuyText]
+0 = "라이센스 구매"
+default = "라이센스 갱신"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "복원할 설정 선택:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " 구성 마법사"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "일반 정보"
+InitBegin.Descr                       = "" + $ProductName_GEN + " 구성 마법사."
+CheckHosts.Name                       = "Kaspersky Lab 서버 상태 확인 중"
+CheckHosts.Descr                      = "의심스러운 리디렉션이 탐지되었습니다"
+ResetArea.Name                        = "복원 설정"
+ResetArea.Descr                       = "아래 목록에 있는 설정은 애플리케이션을 사용하는 동안 변경된 데이터입니다."
+EnumExe.Name                          = "시스템 분석"
+EnumExe.Descr                         = "시스템에 대한 정보를 수집하는 동안 잠시만 기다려 주십시오..."
+ResetFinish.Name                       = $ProductName + " 구성 완료"
+ResetFinish.Descr                      = $ProductName + ": 시작 준비 완료."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "복원 완료."
+ResetDescr          = "구성 마법사가 " + $ProductName + " 설정 복원을 성공했습니다."
+
+[BestBuyUpgradeMessage]
+@ = "다른 애플리케이션으로 전환"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Kaspersky Internet Security 시작"
+RestartButton = "Kaspersky Internet Security 실행"
+
+[BestBuyUpgradeMessagePage]
+Header = "감사합니다!"
+Message = "Kaspersky Anti-Virus를 Kaspersky Internet Security로 성공적으로 업그레이드했습니다.\n이제 사용자 컴퓨터를 보호하는 더 많은 기능을 사용할 수 있습니다."
+Description = "Kaspersky Lab 소프트웨어를 선택해 주셔서 감사합니다! 보호 기능이 추가로 제공됩니다."
+
+[ForcedUpgradeMessagePage]
+Header = "완료"
+Message = "Kaspersky Lab 소프트웨어를 선택해 주셔서 감사합니다! 보호 기능이 추가로 제공됩니다."
+Description = "호환되지 않는 소프트웨어를 제거하지 않았기 때문에 설치된 애플리케이션과 운영 체제가 정상적으로 작동하도록 Kaspersky Internet Security의 일부 기능이 중지됩니다.\n\n나중에 호환되지 않는 소프트웨어를 수동으로 제거하고 Kaspersky Internet Security의 설정 창에서 새 기능을 사용하면 됩니다."
+Notification = "마이그레이션을 완료하기 위해 애플리케이션은 재시작됩니다."

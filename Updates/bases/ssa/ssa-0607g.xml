@@ -1,0 +1,129 @@
+<UpdateFiles
+	UpdateDate="18112014 0654"
+	BlackDate="18112014 0602"
+	ObjectType="2=SSA;3=BASE">
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="ssa.stt"
+		Body="NTM1ODsyMDE0MTExODA2NTQNCg==" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="backup.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="bt.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="keylogger.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="neural.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="neurald.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="neurale.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="neuralm.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="ports.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="prt.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="repair.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="rootkit.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sa-res.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sa.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="scripts.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="scu.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sr.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="srdb.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="syscheck.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="sysipu.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="tsw-auto.avz" />
+	<FileDescription
+		ComponentID="SSA"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="tsw.avz" />
+	<Registry
+		ComponentID="SSA"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAfRpHipAADtSypYBA2H2HoIx9qeavetmSIOtgfAHk6Y9gvTVx1I3d/iWjg1DuCeTjTkwaUaKS64q9cU46zaaX/TQK0e+Q1IBAB4JbgAAAAIAAigDAFNTQQMAAigEAEJBU0UBAAAJbFnilA0KOzoxMEsyZHRaUnhudEJZaExma1h2SGpadnBQMTkrL3BXaVF1TkZCMzVVb2hwOWJqM0U2dWQ3V3BPYVRIVnZRWGVOTFl1UHdvMGtuVWM1eVVXMU8wUDZlVk52JSU="
+		Filename="ssa-0607g.pbv" />
+	<Registry
+		ComponentID="SSA"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwFuAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqFgABACAAVdWwWaSQR5asUYaCDZToxx7K0s1D2dw0fc0tMg9bRj4gAAnUcRCaGnbhlRqTGlmiPoMbq1rK+D2qeMxxq6EDrnoUIACzYWrCJMW53mM0+lqrCijwWh7NhiJw+BuQHr3oZORRbSAAaVH3qKruwnUV9LHuXpD0Yg4jAVwyZC/bpPj/9mIOJnkgAFVBS6I3GJreFEsgKQ1Ww/mVM0765696zXrrjicgpqKVIABJgxaI1LD6JFVBKt1wJgyI1X3Ttt6j9aH1qxTRVLiDKCAAEnGmd7y1muDskMAYCXaOJ2+Q1AF2LrInRQMmd1tQPCogAHRRWFbntsrp3CxF9MvzbXTFsx1kj+pJERg2ugYO2XhaIABmFUYJ59mYw/TIOERbNGCGiNaVn/hNNhCeyfTciktKDyAASzXe0Dl7Bji3muOALJaq+Fy4w/Qrtlr7cLNHNL1reB8gAEJJQ0tejSdNTsV1bU4xft1T9exKE76p4OLtvypB+qc4IADDmY4jkUtk+WwWbF4k9+uNm9yWGKOC37HkJs1iuUhVlCAAWpKipo1pRcAWBemlYW8Zlhc6X3Dx5MTNcjNAPLAiG+ogAOycNggvDMCSr1osfqX2Di3GGT+DprTF5TQ1aTGStrBCIACYfxMCURHgdicOvPy5NuTfsSfNHnyRWvYQMgQ58ZpGCyAAbceSLachcMAvsx/WQ4LvwZoAlpFF0wspDQDk/WrXGbcgACGaVbnVoTgbGHeKBza5dmEStMOyp9d3Dn5443AtGwUrIADS5WgWML7Ez0c60ndCFlD3c6uOHQ/LYO+HLycztk1T4iAAVyGQ2Ct4P810+fbg06V/vFCf5MpCepzaIYhp2CXipd8gAJHbTCMzmAGX6wATOlvrEL4fKJJrvc07ssoeMH0z42LOIACO3vcvvYP6k4RHR4rxrg/9ywOHcFAtNbqt05lIatzI4CAA0RjM4ZnS/+9k1N0uktcMrHzYdZijSzl0J4717f4q3V0BAB4JbgAAAAEAAAk/9Ny1DQo7OjEwS00ycmp3aG9tdmUwTWxUemJaTDBzL2hYRUdyallFcDNjWUhockY1eHdqem9vTk11T0ZCeVNWcERNMjc0OWZnK2NnRFFwZlQvRFFhbVF0SEZsVWpJbXAlJQ=="
+		Filename="ssa-0607g.krg" />
+</UpdateFiles>
+;:104MlsEurCncGr66C1uiC81UE4j6Mi+iZE0QMjTqfXeK08IjntuRjAbmPOK3ORD2PmrsQLnUZUvqtrqRJqWgx0Wl%%

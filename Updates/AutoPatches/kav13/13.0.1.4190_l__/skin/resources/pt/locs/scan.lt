@@ -1,0 +1,9 @@
+﻿;
+; TaskManager buttons
+;
+TaskManager = 'Gerir Tarefas'
+
+LicenseErrorMessageBoxTitle = 'Verificação'
+LicenseErrorMessageBoxText = 'As restrições da licença actual não permitem iniciar a verificação'
+LicenseErrorMessageBoxDescription = 'Aceda à janela de gestão de licenças para solucionar este problema'
+LicenseErrorMessageBoxLicenseManage = 'Gestão de licenças'

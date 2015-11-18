@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Valg af nøglefilen"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Nøglen til denne kopi af programmet blev udstedt af leverandøren. Vil du aktivere programmet med denne nøgle?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Programkonfigurationen er endnu ikke fuldført. Vil du afslutte konfigurationsguiden?"
+ErrEmptyActivationCode.caption  = "Aktiveringskoden er ikke angivet"
+ErrEmptyActivationCode          = "Angiv aktiveringskoden"
+ErrEmptyKeyPath.caption         = "Nøglefilen er ikke angivet"
+ErrEmptyKeyPath                 = "Angiv nøglefilen"
+$LicInfoKeyNumber               = "Nummer:"
+$LicInfoKeyProductName          = "Programnavn:"
+$LicInfoKeyType                 = "Licenstype:"
+$LicInfoExpirationDate          = "Udløbsdato:"
+$LicErrReason                   = "Årsag:"
+$ActiveKey                      = "Aktiv nøgle"
+$ReservedKey                    = "Yderligere nøgle"
+ConfirmFeedback                 = "Er du indforstået med at sende oplysninger til <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) er en infrastruktur af onlinetjenester, der giver adgang til opdaterede oplysninger om sikkerheden af filer, webresurser og software. Brug af data fra KSN giver en hurtigere reaktion på nye trusler, forbedrer visse beskyttelseskomponenters ydeevne og mindsker risikoen for forkerte registreringer.\nHvis du deltager i KSN, bliver oplysninger om virusinfektioner og andre problemer samt udvidet statistik om indlæste og eksekverede programmer (i henhold til listen, der er angivet i <a KsnInfo onclick(dialog(\"KsnInfo\"))>Erklæring om indsamling af data via KSN</a>), automatisk sendt til Kaspersky Lab. \n\n<b>Kaspersky Security Network indsamler og behandler ingen personlige brugeroplysninger.</b>"
+
+$ToAcquireNewLicText            = "\n\nFor at anskaffe en ny licens skal du kontakte din distributør eller <a Buy onclick(buy())>Kaspersky Labs salgsafdeling</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nPrøv at opdatere abonnementets status manuelt, eller kontakt teknisk support" : "\nPrøv at aktivere programmet med aktiveringskoden senere (om et par timer), eller kontakt Teknisk support") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Aktiveringsguide" : " Konfigurationsguide")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Generelle oplysninger"
+InitBegin.Descr                       = "Velkommen til " + $ProductName_GEN + " Konfigurationsguide."
+CheckHosts.Name                       = "Kontrollerer, om Kaspersky Labs servere er tilgængelige"
+CheckHosts.Descr                      = "Der er fundet en mistænkelig omdirigering"
+ResetArea.Name                        = "Gendan indstillinger"
+ResetArea.Descr                       = "Nedenstående indstillinger omfatter data, der er angivet af brugeren, eller som er indsamlet \nunder programafviklingen."
+ActivationBegin.Name                  = $IsSubscription ? "Administration af abonnement" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Slet nøgle" : "Tilføj nøgle") : "Aktiver programmet")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Licensering" : "Aktiver programmet for at fortsætte.")
+ActivationProgress.Name               = "Aktiver online"
+ActivationProgress.Descr              = "Aktiveringen er i gang. Vent et øjeblik..."
+ActivationServerForm.Name             = "Aktiver online"
+ActivationServerForm.Descr            = "Udfyld denne formular."
+ActivationChooseKey.Name              = "Aktivering med nøglefilen"
+ActivationChooseKey.Descr             = "Aktiver programmet med nøglefilen."
+ActivationEnd.Name                    = "Programaktivering"
+ActivationEnd.Descr                   = "Aktiveringen er gennemført."
+MigrationKeyIsFound.Name         = "En nøgle til den aktuelle licens er tilgængelig"
+MigrationKeyIsFound.Descr        = "Vil du bruge  programmet, der hører til den aktuelle licens?"
+MigrationBegin.Name              = "Skift til " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Du bliver skiftet over til at bruge " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Søg efter inkompatibel software"
+MigrationSearchProgress.Descr    = "Vent, mens der søges efter inkompatibel software..."
+MigrationSafeRemoval.Name        = "Inkompatibel software fundet"
+MigrationSafeRemoval.Descr       = "Det er nødvendigt at fjerne den inkompatible software for at fortsætte"
+MigrationSafeProgress.Name       = "Fjern inkompatibel software"
+MigrationSafeProgress.Descr      = "Vent, mens den inkompatible software fjernes..."
+MigrationAddRemove.Name          = "Inkompatibel software fundet"
+MigrationAddRemove.Descr         = "Fjern inkompatibel software"
+MigrationUnsafeRemoval.Name      = "Inkompatibel software fundet"
+MigrationUnsafeRemoval.Descr     = "Det er nødvendigt at fjerne den inkompatible software for at fortsætte"
+MigrationUnsafeProgress.Name     = "Fjern inkompatibel software"
+MigrationUnsafeProgress.Descr    = "Vent, mens den inkompatible software fjernes..."
+MigrationReboot.Name             = "Genstart af operativsystem påkrævet"
+MigrationReboot.Descr            = "Det er nødvendigt at genstarte for at fortsætte med at skifte til det nye program"
+MigrationProgress.Name           = "Skift til " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Vent, mens der skiftes til det nye program..."
+MigrationRebootApp.Name          = bMigrationDone ? "Programmet genstartes" : "Fejl under skift til nyt program"
+MigrationRebootApp.Descr         = bMigrationDone ? "Programmet skal genstartes" : "Skift til " + s_MUProductTitleLong(env("ProductType")) + " mislykkedes"
+MigrationFinish.Name             = "Skift " + s_ProductTitleLong(env("ProductType")) + " fuldført"
+MigrationFinish.Descr            = "Skift " + s_ProductTitleLong(env("ProductType")) + " fuldført"
+DNS.Name                              = "Avancerede indstillinger"
+DNS.Descr                             = $ProductName_GEN + " avancerede funktionsindstillinger"
+EnumExe.Name                          = "Systemanalyse"
+EnumExe.Descr                         = "Vent, mens der indsamles oplysninger om systemet..."
+InitFinish.Name                       = "Fuldfører konfigurationen af " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Du skla genstarte computeren for at fuldføre programkonfigurationen." : "Du kan starte " + $ProductName + " nu."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Mistænkelig videredirigering af Kaspersky Lab-servere er blevet opdaget. Dette kan skyldes malwareaktivitet og kan medføre, at opdateringer og aktivering mislykkes. Mistænkelige værtsfilposter:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Slet posterne (anbefales)"
+Skip			= "Spring over"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Tilbage"
+Back.Descr      = "Gå tilbage til valg af metoden til programaktivering"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Tilføj nøgle" : "&Aktiver"
+Activate.Descr  = "Installation af valgte nøglefil"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Afslut"
+Finish.Descr    = "Luk aktiveringsguiden"
+Next.Name       = "&Næste"
+Next.Descr      = "Fortsæt til konfiguration"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Du kan fortsætte med at bruge programmet, der hører til den aktuelle licens. I dette tilfælde skifter programmet til " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Vil du fortsætte med at bruge programmet, der hører til den aktuelle licens?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Programtype:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Udløbsdato:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " tilbage)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Ja, og skift til " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Nej, og bevar " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Du er ved at skifte over til " + s_MUProductTitleLong(env("ProductType")) + ". Rettighedsindehaveren tildeler dig en ikke-eksklusiv licens til at bruge " + s_MUProductTitleLong(env("ProductType")) + " på de samme vilkår, som du har accepteret tidligere, da du installerede " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Bemærk: Dette skift kræver handlinger, der kan medføre genstart."
+LicenseWarning  = "Bemærk! Den kommercielle licens til Kaspersky Anti-Virus udløber, før prøvelicensen til Kaspersky Internet Security. Når den kommercielle licens til Kaspersky Anti-Virus udløber, vil det ikke være muligt at vende tilbage til at bruge Kaspersky Anti-Virus fra fra prøveversionen af Kaspersky Internet Security. Vil du fortsætte med at skifte til Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Søger efter den inkompatible software på computeren. Dette kan tage et stykke tid. Vent..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Følgende software bliver fjernet for at udføre skiftet:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Vent et øjeblik, mens den inkompatible software slettes..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Følgende software skal fjernes for at udføre skiftet:"
+OpenAddRemove = "Åbn vinduet Tilføj/fjern programmer"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Følgende software bliver fjernet for at udføre skiftet:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Vent et øjeblik, mens den inkompatible software slettes..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Du skal genstarte computeren for at fortsætte skiftet. Guiden fortsætter efter genstarten."
+Reboot   = "Genstart nu"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Vent, mens programmet rekonfigureres, og du skiftes over til " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "For at fuldføre skiftet til " + s_MUProductTitleLong(env("ProductType")) + " bliver programmet genstartet." : "Skift til " + s_MUProductTitleLong(env("ProductType")) + " mislykkedes."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Nu kan du evaluere " + s_ProductTitleLong("kis") + "-funktioner som Forældrekontrol, Anti-Spam, Firewall m.m." : s_ProductTitleLong("kav") + " giver din computer grundlæggende beskyttelse mod malware."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Du kan "+if($IsRefreshSubAvail,"opdatere din abonnementsstatus eller ")+"slette nøglen." : (f_IsActiveKeyWorkingCommercial() ? "Du kan slette din aktive nøgle eller tilføje en nøgle." : "Aktiver din kopi af " + $ProductName + " for at aktivere programmets fulde funktion."+ if($CorporateOnly, " Du kan købe en <a Activate onclick(url($ActivationLink))>kommerciel</a> version af programmet eller aktivere en <a ActivateTrial onclick(url($ActivationTrialLink))>prøveversion</a>."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktiver &senere"
+Later.Descr                 = "Spring aktiveringen over, og fortsæt til konfigurationen af programmet"
+ChooseKey.Name              = "Aktivering med &nøglefilen"
+ChooseKey.Descr             = "Nøglefilen skal bruges"
+ActivateBetaKAV.Name        = "Aktiver &betaversionen af Kaspersky Anti-Virus"
+ActivateBetaKAV.Descr       = "Betaversionen af Kaspersky Anti-Virus indeholder den fulde funktionalitet, men det er ikke et færdigt produkt."
+ActivateBetaKIS.Name        = "Aktiver &betaversionen af Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "Betaversionen af Kaspersky Internet Security indeholder den fulde funktionalitet, men det er ikke et færdigt produkt."
+ActivateTrial.Name          = "Aktiver &røveversion"
+ActivateTrial.Descr         = "Prøveversionens gyldighedsperiode er angivet i licensaftalen"
+ActivateCommercial.Name     = "&Aktiver online"
+ActivateCommercial.Descr    = "Den aktiveringskode, du modtog ved købet, skal bruges"
+RemoveKey.Name              = $HasReserveKey ? "&Slet yderligere nøgle" : "&Slet nøgle"
+RemoveKey.Descr             = "For at udskifte nøglen skal du først slette den aktive nøgle"
+RefreshSubscription.Name    = "&pdater abonnementets status"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Du kan opdatere abonnementets status manuelt." :  "Den automatiske opdatering af abonnementets status blev afbrudt. Du kan opdatere status manuelt."
+ActivateTrialKIS            = "Aktiver prøveversionen af Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "Gyldighedsperioden for prøveversionen af Kaspersky Internet Security er angivet i licensaftalen"
+RevertToCommercialKAV       = "Vend tilbage til den kommercielle version af Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Vend tilbage til den kommercielle version af Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Opdater abonnementets status"
+ActivateCommercial      = "Aktiver &kommerciel version"
+ActivateCommercial_Desc = (LockActivationCode)? "Angiv aktiveringskoden: " : "Angiv <a onclick(url(\"" + $ActCodeHint + "\"))>aktiveringskoden</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Din aktiveringskode blev tilføjet automatisk. Klik på \"Næste\"." : "Hvis du ikke har en aktiveringskode, kan du købe den <a onclick(buy())>online</a>"
+ActivateBetaKAV         = "Aktiver &betaversionen af Kaspersky Anti-Virus"
+ActivateBetaKIS         = "Aktiver &betaversionen af Kaspersky Internet Security"
+ActivateTrial           = "Aktiver &røveversion"
+ActivateTrial_Desc      = "Evaluer en fuldt funktionsdygtig version af programmet, før du køber det."
+ActivateTrialKIS           = "Aktiver prøveversionen af Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "Evaluer en fuldt funktionsdygtig version af Kaspersky Internet Security, før du køber det."
+RevertToCommercialKAV      = "Vend tilbage til den kommercielle version af Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Stop med at bruge prøveversionen af Kaspersky Internet Security, og vend tilbage til den kommercielle version af Kaspersky Anti-Virus."
+Later                   = "Aktiver &senere"
+Later_Desc              = "Programmets fulde funktionalitet er ikke tilgængelig, før det er aktiveret."
+RemoveKey               = "Slet nøglefil"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Nøglefil:"
+KeyInfo         = "Licensoplysninger"
+ConnectingInfo.Name     = "Aktiveringsfejl: "
+ConnectingInfo.Val      = "detaljer"
+TryAgain                = "Aktiver"
+Descr1                  = "Hvis du vil prøve at aktivere igen, skal du udføre følgende handlinger:"
+Descr2                  = "Kontroller indstillingerne for internetforbindelsen, og prøv at aktivere programmet igen."
+Descr3                  = "Gå til <a onclick(url(\"" + $ActivationLink + "\"))> Onlineaktiveringscenteret,</a> og følg anvisningerne.\nNår du har modtaget en nøglefil, skal du angive dens placering og klikke på Næste:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Oprettelsesdato:"
+InstallDate.Name    = "Aktiveringsdato:"
+ExpirationDate.Name = "Udløbsdato:"
+SubscrptnExpDate.Name = "Abonnementets udløbsdato:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," til " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Systemfejl: " + s_SystemError(ErrorCode)
+2       = "Kan ikke tilføje nøglen \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Kan ikke slette \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Fejlkode: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Denne nøgle er allerede blevet tilføjet" + $LicErrHelpLink
+0x0947901d  = "Licensen er udløbet. Databaseopdatering er ikke tilgængelig" + $LicErrHelpLink
+0x89479002  = "Licensen blev ikke fundet" + $LicErrHelpLink
+0x89479003  = "Den digitale signatur mangler eller er ødelagt" + $LicErrHelpLink
+0x89479004  = "Dataene er ødelagt" + $LicErrHelpLink
+0x89479005  = "Nøglefilen er ødelagt" + $LicErrHelpLink
+0x89479006  = "Licensen er udløbet" + $LicErrHelpLink
+0x89479007  = "Der er ikke angivet en nøglefil" + $LicErrHelpLink
+0x89479008  = "Nøglefilen er ugyldig" + $LicErrHelpLink
+0x89479009  = "Dataene kunne ikke gemmes" + $LicErrHelpLink
+0x8947900a  = "Dataene kunne ikke læses" + $LicErrHelpLink
+0x8947900b  = "I/O-fejl" + $LicErrHelpLink
+0x8947900c  = "Databaserne mangler" + $LicErrHelpLink
+0x8947900d  = "Aktiv og yderligere nøgle er allerede blevet tilføjet" + $LicErrHelpLink
+0x8947900e  = "Licensbiblioteket er ikke indlæst" + $LicErrHelpLink
+0x8947900f  = "Databaser er ødelagt eller er blevet opdateret manuelt" + $LicErrHelpLink
+0x89479010  = "Databaser er ødelagt" + $LicErrHelpLink
+0x89479011  = "En udløbet nøglefil kan ikke registreres som en yderligere nøgle" + $LicErrHelpLink
+0x89479012  = "Systemfejl" + $LicErrHelpLink
+0x89479013  = "Sortlisten over nøgler er beskadiget" + $LicErrHelpLink
+0x89479014  = "Den digitale signatur stemmer ikke overens med Kaspersky Lab digitale signatur" + $LicErrHelpLink
+0x89479015  = "Kan ikke aktivere en kommerciel version af programmet med en betalicens" + $LicErrHelpLink
+0x89479016  = "Betaversionen af programmet kan kun aktiveres med en betalicens" + $LicErrHelpLink
+0x89479017  = "Licensen gælder ikke for dette program. Det er ikke muligt at aktivere " + $ProductName + " under en licens til et andet program. Kontroller dit installerede program." + $LicErrHelpLink
+0x89479018  = "Nøglen er blokeret" + $LicErrHelpLink
+0x89479019  = "Denne prøvelicens er allerede blevet brugt. Den samme prøvelicens kan ikke bruges to gange" + $LicErrHelpLink
+0x8947901a  = "Nøglefilen er ødelagt" + $LicErrHelpLink
+0x8947901b  = "Den digitale signatur mangler, er ødelagt eller stemmer ikke overens med Kaspersky Lab digitale signatur" + $LicErrHelpLink
+0x8947901c  = "Kan ikke tilføje en nøgle til en ikke-kommerciel licens, hvis den er udløbet" + $LicErrHelpLink
+0x8947901e  = "Nøglefilens oprettelses- eller aktiveringsdato er ugyldig. Kontroller systemets datoindstillinger" + $LicErrHelpLink
+0x8947901f  = "Kan ikke tilføje en nøgle for en prøvelicens, mens en anden nøgle til en prøvelicens er aktiv" + $LicErrHelpLink
+0x89479020  = "Sortlisten over nøgler mangler eller er beskadiget" + $LicErrHelpLink
+0x89479021  = "Opdateringsbeskrivelsen mangler eller er ødelagt" + $LicErrHelpLink
+0x89479022  = "De interne data til dette produkt er ugyldige" + $LicErrHelpLink
+0x89479023  = "Kan ikke tilføje en yderligere nøgle ved hjælp af en ugyldig aktiveringskode" + $LicErrHelpLink
+0x89479024  = "Fejl ved udfyldelse af brugerformulardata" + $LicErrHelpLink
+0x89479025  = "Fejl ved afsendelse af anmodning til aktiveringsserveren.\nMulige årsager: Problemer med internetforbindelsen eller midlertidige problemer med aktiveringsserveren.\nPrøv at aktivere koden igen senere (om et par timer).\nHvis det stadig giver problemer, skal du kontakte internetudbyderen" + $LicErrHelpLink
+0x89479026  = "Der indgår en forkert aktiveringskode i anmodningen" + $LicErrHelpLink
+0x89479027  = "Der kan ikke hentes en responsstatus" + $LicErrHelpLink
+0x89479028  = "Fejl under forsøget på at gemme en midlertidig fil" + $LicErrHelpLink
+0x89479029  = "Aktiveringskoden er ikke indtastet korrekt, eller systemdatoen er forkert. Kontroller systemdatoindstillingerne"+ $LicErrHelpLink
+0x8947902a  = "Aktiveringskoden passer ikke til dette program, eller nøglen er udløbet. Det er ikke muligt at aktivere " + $ProductName + " ved hjælp af nøglen til et andet program. Kontroller dit produkt, eller <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " licens</a>" + $LicErrHelpLink
+0x8947902b  = "En nøgle kunne ikke modtages. Der blev angivet en forkert aktiveringskode" + $LicErrHelpLink
+0x8947902c  = "Aktiveringsserveren melder fejl 400" + $OlaErrHelpLink
+0x8947902d  = "Aktiveringsserveren melder fejl 400" + $OlaErrHelpLink
+0x8947902e  = "Aktiveringsserveren melder fejl 400" + $OlaErrHelpLink
+0x8947902f  = "Den nødvendige resurse er ikke tilgængelig på aktiveringsserveren.\nAktiveringsserveren har returneret fejl 404.\nKontroller dine indstillinger for internetforbindelsen" + $OlaErrHelpLink
+0x89479030  = "Aktiveringsserveren melder fejl 400" + $OlaErrHelpLink
+0x89479031  = "Aktiveringsserveren melder fejl 400" + $OlaErrHelpLink
+0x89479032  = "Der kræves proxy-godkendelse. Kontroller LAN-indstillingerne" + $LicErrHelpLink
+0x89479033  = "Anmodning fik timeout" + $LicErrHelpLink
+0x89479034  = "Aktiveringsserveren melder fejl 400" + $OlaErrHelpLink
+0x89479035  = "Den nødvendige resurse er ikke tilgængelig på aktiveringsserveren.\nAktiveringsserveren har returneret fejl 410.\nKontroller dine indstillinger for internetforbindelsen" + $OlaErrHelpLink
+0x89479036  = "Aktiveringsserveren melder fejl 401" + $OlaErrHelpLink
+0x89479037  = "Aktiveringsserveren melder fejl 411" + $OlaErrHelpLink
+0x89479038  = "Aktiveringsserveren melder fejl 403" + $OlaErrHelpLink
+0x89479039  = "Aktiveringsserveren melder fejl 411" + $OlaErrHelpLink
+0x8947903a  = "Aktiveringsserveren melder fejl 405" + $OlaErrHelpLink
+0x8947903b  = "Ukendt fejl på klienten." + $OlaErrHelpLink
+0x8947903c  = "Intern serverfejl" + $LicErrHelpLink
+0x8947903d  = "Funktionaliteten understøttes ikke" + $LicErrHelpLink
+0x8947903e  = "Ugyldigt gatewayrespons. Kontroller dine netværksindstillinger" + $LicErrHelpLink
+0x8947903f  = "Resursen er ikke tilgængelig i øjeblikket" + $LicErrHelpLink
+0x89479040  = "Ventende anmodning fik timeout. Kontroller dine netværksindstillinger" + $LicErrHelpLink
+0x89479041  = "Protokollen understøttes ikke af serveren" + $OlaErrHelpLink
+0x89479042  = "Ukendt fejl på serveren." + $OlaErrHelpLink
+0x89479043  = "Ukendt HTTP-fejl" + $OlaErrHelpLink
+0x89479044  = "Ugyldig resurseidentifikation" + $LicErrHelpLink
+0x89479045  = "Oplysningerne i feltet \"nøgle\" er forkerte" + $LicErrHelpLink
+0x89479046  = "URL'en er forkert" + $LicErrHelpLink
+0x89479047  = "Destinationsmappen er forkert" + $LicErrHelpLink
+0x89479048  = "Hukommelsestildelingsfejl" + $LicErrHelpLink
+0x89479049  = "Fejl under konvertering af parametre til ANSI-streng (URL-adresse, mappe, agent)" + $LicErrHelpLink
+0x8947904a  = "Fejl under oprettelse af arbejdstråden" + $LicErrHelpLink
+0x8947904b  = "Arbejdstråden kører allerede" + $LicErrHelpLink
+0x8947904c  = "Arbejdstråden kører ikke" + $LicErrHelpLink
+0x8947904d  = "Nøglefilen blev ikke fundet på aktiveringsserveren" + $LicErrHelpLink
+0x8947904e  = "Nøglen er blokeret" + $LicErrHelpLink
+0x8947904f  = "Intern fejl på aktiveringsserveren" + $LicErrHelpLink
+0x89479050  = "Ikke tilstrækkeligt med data i aktiveringsanmodningen" + $LicErrHelpLink
+0x89479051  = "Bruger-id eller adgangskoden er forkert" + $LicErrHelpLink
+0x89479052  = "Aktiveringskoden er forkert" + $LicErrHelpLink
+0x89479053  = "Licensen til den valgte nøglefil udløber før den aktuelle licens" + $LicErrHelpLink
+0x89479054  = "Forkert dato i operativsystemet. Kontrollér systemdatoen" + $LicErrHelpLink
+0x89479055  = "Prøvelicensen er udløbet" + $LicErrHelpLink
+0x89479056  = "Aktiveringsperioden er udløbet" + $LicErrHelpLink
+0x89479057  = "<b>Den indtastede aktiveringskode har overskredet grænsen for tilladte aktiveringer</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Kan ikke tilføje nøgle til en ikke-kommerciel licens som yderligere nøgle, mens en kommerciel licens er gyldig" + $LicErrHelpLink
+0x8947905c  = "Der skal angives en aktiveringskode" + $LicErrHelpLink
+0x8947905d  = "Forkert kunde-id eller adgangskode" + $LicErrHelpLink
+0x8947905e  = "Aktiveringskoden er forkert" + $LicErrHelpLink
+0x89479062  = "Der kunne ikke oprettes forbindelse til aktiveringsserveren" + $LicErrHelpLink
+0x89479064  = "<b>Aktiveringsserveren er ikke tilgængelig.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Kan ikke aktivere programmet nu. Prøv at aktivere igen, efter programmet er konfigureret, og operativsystemet er genstartet.", "Kontrollér indstillingerne for internetforbindelsen, og prøv at aktivere igen.") + $LicErrHelpLink
+0x89479065  = "Licensen er udløbet. <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "En aktiv licens kan ikke erstattes af en udløbet nøgle" + $LicErrHelpLink
+0x89479067  = "Kan ikke tilføje en nøgle, der udløber tidligere end den aktive nøgle, som yderligere nøgle" + $LicErrHelpLink
+0x89479068  = "Den opdaterede abonnementsnøgle mangler" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Aktiveringsprocessen blev fuldført med systemfejl " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktiveringsfejl: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktiveringsfejl: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktiveringsfejl: serveren meldte HTTP-koden "+ OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktivering mislykkedes " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Intern serveraktiveringsfejl. Prøv igen, eller kontakt den tekniske support"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Aktiveringskoden passer ikke til dette program. Det er ikke muligt at aktivere " + $ProductName + " vha. aktiveringskoden til et andet program. Kontroller det installerede program"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Nøglen er blokeret"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Forkert kunde-id eller adgangskode"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Forkert aktiveringskode"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Der skal angives en aktiveringskode"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Aktiveringsperioden er udløbet"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Antallet af aktiveringer for denne kode er overskredet"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Aktiveringskoden er ugyldig for dette område"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Denne aktiveringskode kan ikke anvendes til denne sprogversion af programmet."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Aktiveringskoden er gyldig for en nyere version af dette program. For at bruge den nuværende version er det nødvendigt at skaffe en anden kode. Klik på linket nedenfor for at få yderligere oplysninger."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Aktiveringsserveren melder fejl 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Aktiveringsserveren melder fejl 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Aktiveringsserveren melder fejl 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Aktiveringsserveren melder fejl 646"
+default                                     = "Aktiveringsprocessen meldte en fejl " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Offline-tilstand er aktiveret i Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Fejl på internetforbindelsen"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Aktiveringsserveren er ikke tilgængelig"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Proxyserveren er ikke tilgængelig"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Svartiden udløb"
+#OLA_ERR_INTERNET_INVALID_URL                = "Adressen til aktiveringsserveren er forkert"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Protokollen er forkert"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Kan ikke oprette forbindelse til serveren"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Udførelsen blev annulleret"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Kan ikke oprette forbindelse til serveren"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Serverforbindelsen blev afbrudt"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Serverforbindelsen blev nulstillet"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Serversvaret var forkert"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Serverens SSL-certifikat er udløbet. Kontroller computerens tidsindstillinger"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL-certifikatets servernavn stemmer ikke overens med serveren"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Tilbagekaldelsen af certifikat kan ikke kontrolleres. Deaktiver denne kontrol i Internet Explorer (Funktioner->Internetindstillinger->Avanceret->Kontroller, om servercertifikater er tilbagekaldt), og prøv derefter at gennemføre aktiveringen igen."
+#OLA_ERR_INTERNET_CERT_INVALID               = "SSL-certifikatet er ugyldigt"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL-certifikatet blev tilbagekaldt"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Certificeringscenteret er forkert"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Registreringsdataene er nødvendige for, at Kaspersky Lab kan orientere dig om forskellige kampagner, udsalg og specialtilbud."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Fortsæt"
+Activate.Descr  = "Data sendes til aktiveringsserveren"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Konfigurationsguiden opretter forbindelse til Kaspersky Lab aktiveringsserver. Det kan tage lidt tid afhængigt af hastigheden på internetforbindelsen."
+ConnectingInfo.Name     = "Opretter forbindelse til aktiveringsserver..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Sender aktiveringskode..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Venter på svar fra server..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Din kopi af " + $ProductName + " er blevet aktiveret"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Udløbsdato:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " tilbage)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktiveringen lykkedes." : "Programmet er allerede aktiveret på din computer."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Næste"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Fortsæt til programaktivering": (((PiwFlags & #fPiwActivation) && !bSilent)?"Fortsæt til licensoplysninger":"Fortsæt til valg af beskyttelsestilstand")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Denne guide hjælper dig med at konfigurere din computers sikkerhed.\n\nUnder konfigurationen indsamler guiden oplysninger om systemet og de programmer, der er installeret på computeren. Oplysningerne bruges udelukkende med det formål at beskytte computeren optimalt.\n\nKlik på Næste for at starte konfigurationsprocessen til " + $ProductName_GEN + "."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Installationen er næsten fuldført..." : ((PiwFlags & #fPiwReset) ? ("Reparationen er fuldført.") : ("Installationen er fuldført."))
+ResetDescr          = "Konfigurationsguiden har gendannet indstillingerne for " + $ProductName + "."
+Reboot              = "&Genstart computeren"
+StartProduct        = "&Start " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Tak fordi du installerede " + $ProductName + ". Computeren skal genstartes for at fuldføre installationen. Gem alle data, luk alle programmer og klik så på Udfør.") : "Vær opmærksom på at der udføres yderligere produktkonfiguration første gang programmet startes. Det kan tage flere minutter."
+
+[ConfigureWizard.EnumExe]
+Info = "Under systemanalysen oprettes en liste over programmer, der er tillid til, i Microsoft Windows-operativsystemet. \n\nProgrammer, der ikke er en del af operativsystemet, bliver analyseret separat, når de startes på computeren for første gang."
+
+[s_LicKeyType]
+#ektBeta         = "Betanøgle"
+#ektTrial        = "Prøve"
+#ektTest         = "Prøvenøgle"
+#ektOEM          = "OEM-nøgle"
+#ektCommercial   = "Gyldig"
+#ektSubscription = "Fuld version med abonnement"
+#ektSubscriptionProtection = "Kommerciel med beskyttelsesabonnement"
+default          = "Ukendt type"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Ukendt fejl"
+#ekirValid                      = "Licensen er gyldig"
+#ekirExpired                    = "Licensen er udløbet"
+#ekirCorrupted                  = "Licensen er ugyldig"
+#ekirNotSigned                  = "Den digitale signatur mangler eller er ødelagt"
+#ekirWrongProduct               = "Licensen gælder ikke for dette program. Det er ikke muligt at aktivere " + $ProductName + " under en licens til et andet program. Kontroller dit installerede program."
+#ekirBlackListed                = "Nøglen "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" er blokeret"
+#ekirIllegalUpdate              = "Databasedata svarer ikke til licensens gyldighedsperiode"
+#ekirInconsistentUpdate         = "Databaser er ødelagt"
+#ekirKeyCreationDateInvalid     = "Forkert nøgleoprettelsesdato"
+#ekirTrialAlreadyInUse          = "Kan ikke tilføje nøglen for en prøvelicens, mens en anden nøgle for en prøvelicens er aktiv"
+#ekirInvalidBlacklist           = "Sortlisten over nøgler er beskadiget"
+#ekirCantBeUsedAsReserved       = "Kan ikke registrere licensen som en yderligere licens"
+#ekirKeyInstallDateInvalid      = "Forkert aktiveringsdato"
+#ekirTrialPeriodIsOver          = "Prøvelicensen er udløbet"
+#ekirConflictsWithCommercial    = "Ny nøglefil er i konflikt med den aktuelle kommercielle licens"
+#ekirExpiredAsReserve           = "Denne licens udløber før den aktuelle licens"
+#ekirGracePeriod                = "Licens i henstandsperiode"
+#ekirSuspended                  = "Abonnementet er suspenderet"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Programmet skal geninstalleres"
+#ekirLicenseOnlyForMigration    = "Skift et andet program for at aktivere den kommercielle version"
+default                         = "Nøglefilen er forkert"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Bestemmes senere"
+#edtUnlimited = "Aktiv"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Suspenderet fra " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Licensoplysninger"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": licensbesked"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Bemærk!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Du bruger en prøveversion af " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Sortlisten med nøglefiler mangler eller er beskadiget. Kør <a Update onclick(f_StartUpdater())>update</a> for at fortsætte."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Licensen " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a> for at holde din beskyttelse ajourført.\n\nHvis du allerede har anskaffet licensen, skal du <a Activate onclick(f_Activate())>aktivere programmet</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Abonnement udløbet." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Beskyttelse er deaktiveret."))+($IsBestBuyLink ? " Abonnementsfornyelse er ikke tilgængelig." : " Computerens sikkerhed er truet. \n\nFor at forny abonnementet skal du <a onclick(url($KeyProviderLinkForText))>kontakte din tjenesteudbyder</a>.")) :("Du har " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " tilbage til at forny abonnementet. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " tilbage, indtil opdatering deaktiveres. " : " tilbage. indtil beskyttelse deaktiveres." ) ) + " For at forny abonnementet skal du <a onclick(url($KeyProviderLinkForText))>kontakte din tjenesteudbyder</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Den aktive nøgle er blokeret.\nOpdateringsfunktionen er deaktiveret, så din computer kan være udsat for infektionsrisiko.</b>\n\nHvis du har købt programmet lovligt, skal du kontakte teknisk support eller en forhandler.\n\nHvis du bruger en ulovlig kopi, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " en licens</a>.\n\nHvis du allerede har anskaffet en licens, skal du <a Activate onclick(f_Activate())>aktivere programmet</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "udløber i dag" : "udløber om " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "er udløbet"
+
+[s_LicenseRenewBuyText]
+0 = "køb licens"
+default = "forny licensen"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Vælg indstillinger til gendannelse:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " konfigurationsguide"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Generelle oplysninger"
+InitBegin.Descr                       = "Velkommen til " + $ProductName_GEN + " Konfigurationsguide."
+CheckHosts.Name                       = "Kontrollerer, om Kaspersky Labs servere er tilgængelige"
+CheckHosts.Descr                      = "Der er fundet en mistænkelig omdirigering"
+ResetArea.Name                        = "Gendan indstillinger"
+ResetArea.Descr                       = "Nedenstående indstillinger omfatter data, der er angivet af brugeren, eller som er indsamlet \nunder programafviklingen."
+EnumExe.Name                          = "Systemanalyse"
+EnumExe.Descr                         = "Vent, mens der indsamles oplysninger om systemet..."
+ResetFinish.Name                       = "Fuldfører konfigurationen af " + $ProductName
+ResetFinish.Descr                      = $ProductName + " er klar til at starte."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Gendannelse fuldført."
+ResetDescr          = "Konfigurationsguiden har gendannet indstillingerne for " + $ProductName + "."
+
+[BestBuyUpgradeMessage]
+@ = "Skift til et andet program"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Begynd med at bruge Kaspersky Internet Security"
+RestartButton = "Start Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Tillykke!"
+Message = "Din Kaspersky Anti-Virus er blevet opgraderet til Kaspersky Internet Security.\nDu får nu endnu flere funktioner, der beskytter din computer."
+Description = "Tak, fordi du valgte Kaspersky Lab-software!\nGod fornøjelse med den ekstra beskyttelse."
+
+[ForcedUpgradeMessagePage]
+Header = "Næsten udført"
+Message = "Tak, fordi du valgte Kaspersky Lab-software! God fornøjelse med den ekstra beskyttelse."
+Description = "Den inkompatible software blev ikke fjernet, derfor er nogle nye funktioner i Kaspersky Internet Security deaktiveret for at sikre, at installerede programmer og operativsystemet fungerer korrekt.\n\nDen inkompatible software kan fjernes manuelt, og de nye funktioner kan aktiveres i vinduet indstillinger i Kaspersky Internet Security."
+Notification = "Programmet genstartes for at fuldføre opgraderingen."

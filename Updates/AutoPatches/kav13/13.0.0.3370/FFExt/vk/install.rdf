@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:localized>
+		<Description>
+			<em:locale>zh-Hant</em:locale>
+			<em:name>安全键盘</em:name>
+			<em:creator>卡巴斯基实验室</em:creator>
+			<em:homepageURL>http://www.kaspersky.com.hk</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>zh-Hans</em:locale>
+			<em:name>安全键盘</em:name>
+			<em:creator>卡巴斯基实验室</em:creator>
+			<em:homepageURL>http://www.kaspersky.com.cn</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>tr</em:locale>
+			<em:name>Sanal Klavye</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/tr</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>sv</em:locale>
+			<em:name>Virtuellt Tangentbord</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.se</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>sr-Cyrl</em:locale>
+			<em:name>Kaspersky виртуелна тастатура</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ru</em:locale>
+			<em:name>Виртуальная клавиатура</em:name>
+			<em:creator>Лаборатория Касперского</em:creator>
+			<em:homepageURL>http://www.kaspersky.ru</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ro</em:locale>
+			<em:name>Tastatură virtuală</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.ro</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>pt-BR</em:locale>
+			<em:name>Teclado Virtual</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://brazil.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>pt</em:locale>
+			<em:name>Teclado virtual</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.pt</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>pl</em:locale>
+			<em:name>Klawiatura wirtualna</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.pl</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>nl</em:locale>
+			<em:name>Virtueel Toetsenbord</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/nl</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>nb</em:locale>
+			<em:name>Virtuelt tastatur</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>lv</em:locale>
+			<em:name>Virtuālā klaviatūra</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>lt</em:locale>
+			<em:name>Virtual Keyboard</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ko</em:locale>
+			<em:name>Virtual Keyboard</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ja</em:locale>
+			<em:name>セキュリティキーボード</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.co.jp</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>it</em:locale>
+			<em:name>Tastiera Virtuale</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.it</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>id</em:locale>
+			<em:name>Kaspersky Virtual Keyboard</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>hu</em:locale>
+			<em:name>Virtuális billentyűzet</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>fr</em:locale>
+			<em:name>Clavier virtuel</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/fr</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>fi</em:locale>
+			<em:name>Virtuaalinen näppäimistö</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>fa</em:locale>
+			<em:name>صفحه کلید مجازی</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>es-MX</em:locale>
+			<em:name>Teclado Virtual</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>www.latam.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>es</em:locale>
+			<em:name>Teclado virtual</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.es</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>el</em:locale>
+			<em:name>Εικονικό πληκτρολόγιο</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>de</em:locale>
+			<em:name>Virtuelle Tastatur</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com/de/</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>da</em:locale>
+			<em:name>Virtuelt Tastatur</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.dk</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>cs</em:locale>
+			<em:name>Virtuální klávesnice</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>ar</em:locale>
+			<em:name>لوحة المفاتيح الظاهرية</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:localized>
+		<Description>
+			<em:locale>en</em:locale>
+			<em:name>Virtual Keyboard</em:name>
+			<em:creator>Kaspersky Lab</em:creator>
+			<em:homepageURL>http://www.kaspersky.com</em:homepageURL>
+		</Description>
+		</em:localized>
+
+		<em:id>virtual_keyboard@kaspersky.com</em:id>
+		<em:version>13.0.0.3382</em:version>
+		<em:iconURL>chrome://virtual_keyboard/skin/virtual_keyboard_extension_icon.png</em:iconURL>
+		<em:targetApplication>
+			<Description>
+			<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+			<em:minVersion>9.0</em:minVersion>
+			<em:maxVersion>14.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>

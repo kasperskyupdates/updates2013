@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Expert de migrare'
+UpgradeCaption = 'Upgrade'
+
+RebootPageCheckboxRebootText = 'Repornire computer'
+OpenRemoveProgramsPanel = 'Deschidere bară de instrumente'
+
+WizardBeginDescriptionKis = 'Vei fi comutat la Kaspersky Internet Security 2013.\n\nDeţinătorul drepturilor de autor îţi acordă o licenţă fără exclusivitate pentru a utiliza Kaspersky Internet Security în aceiaşi termeni pe care i-ai acceptat când ai instalat iniţial Kaspersky Anti-Virus.\n\nNotă: Această comutare poate impune o repornire.'
+
+WizardBeginDescriptionKav = 'Vei fi comutat la Kaspersky Anti-Virus 2013.\n\nDeţinătorul drepturilor de autor îţi acordă o licenţă neexclusivă de a utiliza Kaspersky Anti-Virus în aceiaşi termeni pe care i-ai acceptat când ai instalat iniţial Kaspersky Internet Security.\n\nNotă: Această comutare poate impune o repornire.'
+
+WizardContinueDescriptionKis = 'Continuă comutarea la Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Continuă comutarea la Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nAtenţie! Licenţa actuală pentru Kaspersky Anti-Virus expiră înaintea licenţei pentru Kaspersky Internet Security. După ce expiră licenţa Kaspersky Anti-Virus, va fi imposibil să revii la Kaspersky Anti-Virus.'
+
+PleaseWait = 'Aşteaptă'
+RemovalProgressDescription   = 'Se şterge software-ul incompatibil'
+RemovalApplicationsDescription = 'Următorul software va fi eliminat pentru a efectua comutarea:'
+ManualRemovalApplicationsDescription = 'Trebuie să elimini manual următorul software incompatibil pentru a efectua comutarea:'
+SearchRemovalApplicationsDescription   = 'Căutare de software incompatibil'
+RestartProductDescription = 'Aplicaţia va fi repornită pentru a finaliza comutarea.'
+RebootOsDescription = 'Trebuie să reporneşti computerul pentru a continua comutarea.\nExpertul va continua după repornire.'
+
+MigrationProgressDescriptionKis = 'Se reconfigurează aplicaţia şi se comută la Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Se reconfigurează aplicaţia şi se comută la Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Se reconfigurează aplicaţia şi se comută la Kaspersky Anti-Virus'
+
+MigrationKis = 'Comutare la Kaspersky Internet Security'
+MigrationKav = 'Comutare la Kaspersky Anti-Virus'
+MigrationUnknown = 'Comutare '
+
+SearchRemovalApplicationsHeader = 'Actualizare la Kaspersky Internet Security'
+RemovalProgressHeader = 'Se şterge software-ul incompatibil'
+RemovalApplicationsHeader = 'A fost găsit software incompatibil'
+RebootOsHeader = 'Este necesară repornirea computerului'
+RestartProductHeader = 'Aplicaţia va fi repornită'
+
+MigrationAbortedHeader = $MigrationType + ' nu este posibilă'
+MigrationAbortedDescription = $MigrationType + ' a eşuat. Încearcă eliminarea manuală a software-ului incompatibil, apoi reporneşte expertul.'
+
+BestBuyGiftInformation = 'Se va realiza upgrade produsului Kaspersky Anti-Virus la Kaspersky Internet Security.\nAcum vei avea la dispoziție și mai multe caracteristici pentru protejarea computerului.'
+BestBuyGiftDescription = 'Îți mulțumim pentru că ai ales software Kaspersky Lab! Bucură-te de protecția suplimentară.'
+BestBuyUpgradeNotification = 'În timpul actualizării, sistemul va fi analizat pentru a detecta software-ul incompatibil cu scopul de a asigura funcţionarea corectă a aplicaţiilor instalate şi a sistemului de operare.'
+BestBuyFreeUpgrade = 'Comutare la Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Fundalul upgrade'
+BestBuyTryAbortInformation = 'Upgrade va continua în fundal'
+BestBuyTryAbortDescription = 'Deoarece s-a eliminat software-ul incompatibil, unele caracteristici noi ale produsului Kaspersky Internet Security sunt dezactivate pentru a asigura funcţionarea corectă a aplicaţiilor instalate şi a sistemului de operare.\n\nPuteţi elimina manual software-ul incompatibil şi puteţi activa caracteristicile noi în fereastra de setări din Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Înapoi upgrade...'
+Congratulation = 'Felicitări!'
+
+RunKisButtonText = 'Pornire Kaspersky Internet Security'
+
+ProductUpgraded = 'S-a făcut upgrade cu succes pentru produsul Kaspersky Anti-Virus la Kaspersky Internet Security.\nAcum ai la dispoziție și mai multe caracteristici pentru protejarea computerului.'

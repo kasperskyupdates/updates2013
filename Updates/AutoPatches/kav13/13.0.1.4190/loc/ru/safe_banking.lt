@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'Безопасные платежи'
+CustomActionDescription = 'Для выполнения банковских операций и оплаты покупок <br>в интернет-магазинах настоятельно рекомендуется <br>использовать защищенный браузер.'
+SafeRunButtonText = 'Запустить'
+SkipButtonText = 'Пропустить'
+RememberChoiceText = 'Запомнить выбор для этого веб-сайта'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = 'Полученный при установке защищенного соединения сертификат <br>не соответствует оригинальному сертификату'
+CertificateInfoDescription = 'Настоятельно не рекомендуется посещать этот веб-сайт во избежание проблем <br>с безопасностью и сохранением конфиденциальной информации.'
+IgnoreInvalidCertificate = 'Проигнорировать и открыть веб-страницу'
+CertificateInvalidReasonCodeText = 'ошибка:'
+CertificateInvalidReason0 = 'Неопределенная ошибка'
+CertificateInvalidReason1 = 'Сертификат отозван'
+CertificateInvalidReason2 = 'Поддельный сертификат'
+CertificateInvalidReason3 = 'Нарушена цепочка сертификатов'
+CertificateInvalidReason4 = 'Домен, указанный в сертификате, не соответствует веб-сайту, с которым устанавливается соединение'
+CertificateInvalidReason5 = 'Обнаружены нарушения использования сертификата'
+CertificateInvalidReason6 = 'Нарушение времени действия сертификата'
+CertificateInvalidReason7 = 'Нарушена структура сертификата'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = 'Не установлены критически важные <br>системные обновления'
+VulnerabilityInfoDescription = 'При неустановленных обновлениях защищенный браузер <br>не сможет обеспечить полноценную защиту ваших данных.'
+UpdaterDisabled = 'Получение обновлений отключено. Настоятельно рекомендуется включить получение обновлений.'
+UpdatesNotAllowed = 'Для установки обновлений необходимо обратиться к администратору компьютера.'
+UpdaterError = 'Ошибка инициализации обновлений системы.'
+RunUpdater = 'Запустить обновление'
+IgnoreVulnerability = 'Проигнорировать'
+NotifyAboutVulnerabilities = 'Уведомлять меня об уязвимостях'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = 'Веб-страница была открыта в защищенном браузере'
+SafeNavigateInfoDescription = 'В защищенном браузере все банковские операции и оплата покупок <br>в интернет-магазинах полностью безопасны.'
+SafeBankingGetMoreInfo = 'Узнать больше'
+SafeBankingShowSettings = 'Посмотреть параметры'
+CancelSafeBrowserExecution = 'Открыть веб-страницу в этом же окне'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = 'Выполнено перенаправление в обычный браузер'
+CompletedScenarioInfoDescription = 'Работа в режиме защищенного браузера завершена. <br>Вы можете продолжить работу в обычном браузере.'
+SafeBankingGetMoreInfoText = 'Узнать больше о Безопасных платежах'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = 'Выполнено перенаправление в новое окно браузера'
+UnsafeNavigateInfoDescription = 'Платежные операции вы можете продолжить в нем.'
+UnsafeNavigateInfoText = 'Узнать больше о Безопасных платежах'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = 'Ошибка запуска'
+SafeBrowserLaunchErrorDescription = 'Не удалось запустить защищенный браузер'
+SafeBrowserLaunchError0xA0010008 = 'Нужный браузер не найден'
+SafeBrowserLaunchError0xA0010009 = 'Плагин Безопасные платежи не установлен или отключен'
+SafeBrowserLaunchError0xA001000A = 'Не удалось создать процесс защищенного браузера'
+SafeBankingLearnMore = 'Узнать больше'

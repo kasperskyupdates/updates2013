@@ -1,0 +1,467 @@
+﻿ProductName     = 'カスペルスキー アンチウイルス'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'カスペルスキー インターネット セキュリティ'
+ProductName_KIS_Full = 'カスペルスキー インターネット セキュリティ ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'カスペルスキー インターネット セキュリティ テクニカルプレビュー'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'カスペルスキー アンチウイルス'
+ProductName_KAV_Full = 'カスペルスキー アンチウイルス ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'カスペルスキー アンチウイルス テクニカルプレビュー'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = '最新' 
+Corrupted = '破損' 
+VeryOld = '長期間未アップデート' 
+Old = '未アップデート' 
+OldInGracePeriod = '長期間未アップデート'
+UpdatedAndRebootNeeded = 'アップデートが完了しました。コンピューターの再起動が必要です' 
+UpdatedAndProductRestartNeeded = 'アップデートが完了しました。本製品を再起動する必要があります' 
+SomeBasesNeedUpdate = '一部の保護機能をアップデートする必要があります'
+
+Schedule_Auto    = '自動開始' 
+Schedule_Manual  = '手動開始' 
+Schedule_Fixed   = 'カスタム' 
+
+Back = '戻る' 
+StopTask = '停止'
+
+News = 'ニュース'
+Reports = 'レポート'
+Settings = '設定'
+Help = 'ヘルプ(&H)'
+OK = 'OK'
+Cancel = 'キャンセル'
+Retry = '再試行'
+
+Unknown = '不明'
+
+ShortDateTimeWithSecondsFormat = '%Y 年 %m 月 %d 日 %I:%M:%S %p'
+ShortDateTimeFormat = '%Y 年 %m 月 %d 日 %I:%M %p'
+ShortDateFormat = '%Y 年 %m 月 %d 日'
+
+ShortDateTimeNewsFormat = '%Y 年 %m 月 %d 日 %H:%M'
+ShortDateTimeNewsTodayFormat = '今日の %H:%M'
+ShortDateTimeNewsYesterdayFormat = '昨日の %H:%M'
+
+MonthName_1  = '1 月'
+MonthName_2  = '2 月'
+MonthName_3  = '3 月'
+MonthName_4  = '4 月'
+MonthName_5  = '5 月'
+MonthName_6  = '6 月'
+MonthName_7  = '7 月'
+MonthName_8  = '8 月'
+MonthName_9  = '9 月'
+MonthName_10 = '10 月'
+MonthName_11 = '11 月'
+MonthName_12 = '12 月'
+ 
+DateUnknown = '不明'
+
+After = '後'
+Remaining = '残り'
+Ago = '前'
+
+Days_After = $DayCount + ' 日'
+Hours_After = $HourCount + ' 時間'
+Minutes_After = $MinuteCount + ' 分'
+LessMinute_After = '数秒'
+
+Days_Remaining = $DayCount + ' 日'
+Hours_Remaining = $HourCount + ' 時間'
+Minutes_Remaining = $MinuteCount + ' 分'
+LessMinute_Remaining = '数秒'
+
+Days_Ago = $DayCount + ' 日'
+Hours_Ago = $HourCount + ' 時間'
+Minutes_Ago = $MinuteCount + ' 分'
+LessMinute_Ago = '数秒'
+
+Yesterday   = '昨日'
+Today       = '今日' 
+LessWeek    = '1 週間以内'
+LessTwoWeek = '2 週間以内'
+LessMonth   = '1か月以内'
+MoreMonth   = '1か月以上前'
+MoreHalfYear= '半年以上前'
+MoreYear    = '1 年以上前'
+
+Time_After     = $TimePeriod + After
+Time_Remaining = Remaining + $TimePeriod
+Time_Ago       = $TimePeriod + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'キャンセル'
+ApplyButton = '適用'
+CloseButton = '閉じる'
+NextButton = '進む >'
+BackButton = '< 戻る'
+FinishButton = '終了'
+SaveButton = '保存'
+SkipButton = 'スキップ'
+Continue = '続行'
+Yes = 'はい'
+No = 'いいえ'
+
+SettingsMore = '設定(&S)...'
+
+DoNoyShowThisWindow = '表示しない'
+
+; general system error codes
+
+SystemError_0x80000040 = '未定義のエラー'
+SystemError_0x8000004B = '未定義のエラー'
+SystemError_0x80000041 = 'メモリが不足しています'
+SystemError_0x80000042 = 'サポートされていません'
+SystemError_0x80000043 = '実装されていません'
+SystemError_0x80000045 = 'アクセスがブロックされているか、オブジェクトが見つかりません'
+SystemError_0x8000004C = 'オブジェクトが見つかりません'
+SystemError_0x800000C6 = 'オブジェクトが見つかりません'
+SystemError_0x800000C5 = 'オブジェクトが見つかりません'
+SystemError_0x8000004F = 'オブジェクトがロックされています'
+SystemError_0x80000051 = '操作がキャンセルされました'
+SystemError_0x80000059 = 'デバイスエラー'
+SystemError_0x8000005A = '無効なデータベース'
+SystemError_0x8000005B = '無効なバージョン'
+SystemError_0x8000005F = '書き込み保護'
+SystemError_0x80000061 = '有効なライセンスの情報がありません'
+SystemError_0x80000062 = 'ディスク領域が不足しています'
+SystemError_0x80000063 = 'デバイスが準備できていません'
+SystemError_0x800000C0 = '無効なフォーマット'
+SystemError_0x800000C1 = '権限がありません'
+SystemError_0x800000C2 = '初期化エラー'
+SystemError_0x800000C3 = '初期化エラー'
+SystemError_0x800000C7 = '無効なオブジェクトの状態'
+SystemError_0x800000C8 = 'オブジェクトがパスワードで保護されています'
+SystemError_0x800000CA = '読み取りエラー'
+SystemError_0x800000CC = '読み取りエラー'
+SystemError_0x800000CB = '書き込みエラー'
+SystemError_0x800000CD = '書き込みエラー'
+SystemError_0x800000D0 = '無効なオブジェクト'
+SystemError_0x800000D1 = '既存のオブジェクト'
+SystemError_0x800000D5 = 'オブジェクトは他のアプリケーションで使用されています'
+SystemError_0x800000D8 = '定義データベースが破損しています'
+SystemError_0x800001C0 = '無効なモジュール'
+SystemError_0x800001C2 = 'モジュールが認証されていません'
+SystemError_0x800001C1 = 'モジュールが見つかりません'
+SystemError_0x800001C4 = 'コンポーネントが読み込めません'
+SystemError_0x80000221 = 'タイムアウト'
+SystemError_0x80000240 = 'コンポーネントの通信エラー'
+SystemError_0x90005000 = '無効なデジタル署名'
+SystemError_0x90005002 = 'デジタル署名がありません'
+SystemError_0x80027006 = 'タスクが停止しています'
+SystemError_0x80027007 = 'タスクが停止しています'
+SystemError_0x80380fbb = 'タスクが停止しています'
+SystemError_0x80017007 = 'セーフ モードではタスクを開始できません'
+SystemError_0x80017005 = 'タスクが無効です'
+SystemError_0x80017006 = '無効なユーザー名またはパスワード'
+SystemError_0x80017008 = 'セーフ モードでは他のユーザーでタスクを開始できません'
+SystemError_0x80017009 = 'ドライバーが見つかりません'
+SystemError_0x80022005 = 'データベースのロードエラー'
+SystemError_default    = 'エラーコード： ' + $ErrorCode
+
+LicenseManager = 'ライセンス(&L)'
+SubscriptionManager = '定額制サービスの管理'
+ProblemSolution = '［ライセンス］ウィンドウを開いて、この問題を解決してください'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = '非アクティブ' ;refers to connection
+Stopping = '停止'
+ConnectingToServer = 'サーバーに接続中'
+CreatingUpdateList = 'ファイルの処理中'
+Downloading = 'ファイルのダウンロード中'
+Installing = 'ファイルのアップデート中'
+RollbackRunning = 'ロールバック'
+
+FunctionalityDisabledForExpiredSubscription = 'アップデートが無効です'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'プロテクションが無効です'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' 日残っています。'
+SubscriptionExpiresToday = '今日で有効期限が切れます'
+SubscriptionActivated = '有効'
+CheckReserveCodeManuallyHeader = '新しいアクティベーションコードを使用して、自動的にアクティベーションを実行できませんでした' ; TODO
+CheckReserveCodeManuallyText = '新しいアクティベーションコードを使用して、アクティベーションを手動で実行してください。' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'ベータ版をご利用中です'
+LicensingStatus_Trial_ShortDescription = '試用版をご利用中です'
+LicensingStatus_OkSubscription_ShortDescription = '定額制サービス： ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'まもなくライセンスの有効期限が切れます'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'まもなくライセンスの有効期限が切れます'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_InvalidKey_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_Reinstall_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'ライセンス情報のブラックリストが破損しています'
+LicensingStatus_CorruptedBases_ShortDescription = '定義データベースとエンドユーザーライセンス契約が一致していません'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'ライセンスの有効期限が切れているため現在の定義データベースを使用できません'
+LicensingStatus_Expired_ShortDescription = 'ライセンスの有効期限が切れています'
+LicensingStatus_ExpiredSubscription_ShortDescription = '定額制サービスの有効期限が切れました。有効期限：' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = '試用版の有効期限が切れています'
+LicensingStatus_ExpiredBeta_ShortDescription = 'ベータ版の有効期限が切れています'
+LicensingStatus_Blocked_ShortDescription = 'ライセンスがブロックされています'
+LicensingStatus_BlockedSubscription_ShortDescription = '定額制サービスがブロックされています'
+LicensingStatus_LicenseViolated_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'ライセンスの問題が検出されました'
+LicensingStatus_Grace_ShortDescription = '定額制サービスの有効期限が切れました。有効期限： ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = '定額制サービスが中断されました。中断日：' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = '定額制サービスの契約状態を自動的に確認できません'
+LicensingStatus_NotActivated_ShortDescription = 'アクティベートされていません'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'アクティベートされていません'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'アクティベートされていません'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'アクティベートされていません'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = '新しいアクティベーションコード'
+ReserveCodeStatus_Ok_ShortDescription = '新しいアクティベーションコード'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = '新しいアクティベーションコードが無効です'
+ReserveCodeStatus_ActivationProblem_ShortDescription = '新しいアクティベーションコードのアクティベーションが実行されていません'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'アクティベーションが自動的に行われます'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = ProductName_KIS + ' のベータ版は、すべての保護機能をご利用いただけますが、製品版のバージョンではないため、正しく動作しない可能性があります。問題がありましたら、カスペルスキーが運営するベータ版フォーラムまでご報告ください。'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' 日残っています。この期間を過ぎると、機能が大きく制限されます。' 
+LicenseEndsToday = 'この日付がライセンスの最終日になります。ライセンスを更新されない場合、本製品の機能が制限されます。' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = '定額制サービスの契約状態は有効です。有効期限： ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = '定額制サービスが ' + $SubscriptionExpirationDate + ' まで延長されました。'
+StateLimitedSubscriptionCanceledText = '定額制サービスが解約されました。有効期限： ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = '定額制サービスが中断されます。中断予定日：' + $SubscriptionExpirationDate
+StateUnlimitedSubscriptionProlongedText = '定額制サービスが延長され、有効期限が切れることがなくなりました'
+StateUnlimitedSubscriptionResumedText = '定額制サービスが再開されました'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = '残り ' + $LicenseRemainingDaysCount + ' 日'
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' 日残っています。この期間を過ぎると、機能が大きく制限されます。'
+LicensingStatus_ExpiresToday_Cause = '有効期限が本日切れます。有効期限が切れると製品の機能が制限されます。'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = '無効なライセンス情報の作成日時です。システムの日付と時刻が変更されています。' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = '無効なアクティベーション日。システムの日付と時刻を確認してください。システムの日付と時刻が変更された可能性があります。' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = '本製品に不整合があります。' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'アップデートを実行し、ライセンスのブラックリストを取得しなおしてください。'
+LicensingStatus_CorruptedBases_Cause = '無効なアップデートが原因の可能性があります。' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = '本製品の違法コピーを使用した可能性があります。保護は停止します。コンピューターは感染、損傷、データ盗難の危険があります。'
+LicensingStatus_BlockedSubscription_Cause = '本製品の違法コピーを利用したため、ライセンス情報がブロックされている可能性があります。' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'このライセンスで ' + $ProductName + ' のアクティベーションを実行できるコンピューターの台数を超えています。' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'この定額制サービスで ' + $ProductName + ' のアクティベーションを実行できるコンピューターの台数を超えています。' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $FunctionalityDisabledAfterGrace + 'まで ' + $LicenseGraceDaysCount + ' 日残っています。'
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'アクティベーションサーバーに接続していなかった期間が長すぎた可能性があります。' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = '設定済みのアクティベーションコードを使用できます。インターネットに接続すると、アクティベーションが自動的に実行されます。'
+LicensingStatus_PreinstalledCodeAvailable_Cause = '設定済みのアクティベーションコードを使用できます。\nインターネットに接続すると、アクティベーションが自動的に実行されます。'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = '設定済みのアクティベーションコードを使用して自動的に本製品をアクティベートすることができませんでした。手動で実行する必要があります。'
+
+ReserveCodeStatus_NotProvided_Cause = '新しいアクティベーションコードを入力できます。現在のライセンスの有効期限が切れると、新しいアクティベーションコードでアクティベーションが実行されます。'
+ReserveCodeStatus_Ok_Cause = '新しいアクティベーションコードがコンピューター上にあります。現在のライセンスの有効期限が切れると、この新しいアクティベーションコードを使用してアクティベーションが自動的に実行されます。セキュリティが中断されることはありません。注意！［今すぐアクティベーションウィザードを開始する］を選択すると、現在のライセンスの残りの有効期間が失われます。'
+ReserveCodeStatus_Invalid_Cause = '現在のライセンスの有効期限が切れると、アップデートができなくなります。'
+ReserveCodeStatus_ActivationProblem_Cause = '新しいアクティベーションコード ' + $ReserveCode + ' を使用して本製品をアクティベートすることができませんでした。手動で行う必要があります。'
+ReserveCodeStatus_WaitActivation_Cause = '新しいアクティベーションコード' + $ReserveCode + 'によるアクティベーションが自動的に行われます。'
+
+ResolveProblem_BuyCommercial         = '製品版を購入してアクティベーションを実行することを推奨します。'
+ResolveProblem_CheckSystemTime		= 'システムの日付と時刻が正しいことを確認してください。'
+ResolveProblem_ActivateAgain        = '有効なライセンスの情報を削除し、再度アクティベーションを実行してください。テクニカルサポートへのお問い合わせもお試しください。'
+ResolveProblem_CallSupport			= 'ライセンス情報がブロックされている理由を確認するには、サポートセンターまでお問い合わせください。引き続きご利用頂くには、ライセンスのご購入が必要です。'
+ResolveProblem_ContactSupport		= 'テクニカルサポートまでお問い合わせください。'
+ResolveProblem_ActialLicense		= 'プロテクションを再開するには、新しいアクティベーションコードを入力してください。'
+ResolveProblem_UpdateAgain			= '定義データベースのアップデートを再試行してください。'
+ResolveProblem_BuyNewLicense		= '引き続きご利用いただくには、ライセンスのご購入が必要です。'
+ResolveProblem_CallProvider			= '定額制サービスを再開するには、サービスプロバイダーまでお問い合わせください。'
+ResolveProblem_ProviderWebSite		= '定額制サービスを再開するには、サービスプロバイダーまでお問い合わせください。'
+ResolveProblem_RenewalNotAvailable	= '定額制サービスを確認できません。'
+ResolveProblem_BuyLicense			= '引き続きご利用いただくには、ライセンスのご購入が必要です。'
+ResolveProblem_Reinstall			= '本製品を再インストールしてください。'
+ResolveProblem_RenewLicense			= 'すべての保護機能を有効にするには、ライセンスを購入してください。'
+ResolveProblem_RefreshSubscription	= '定額制サービスの契約状態を手動で確認してください。'
+ResolveProblem_Activate				= 'アクティベーションコードを入力してアクティベーションを実行してください。'
+ResolveProblem_ActivateReserveCode  = '新しいアクティベーションコードを使用してアクティベーションを手動で実行してください。'
+ResolveProblem_ActivateCodeManual	= 'アクティベーションを手動で実行してください。'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'インターネット接続の設定を確認し、自動的にアクティベーションが実行されるのを待つか、手動でアクティベーションを実行してください。'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + '新しいアクティベーションコードを入力する必要があります。現在のライセンスの有効期限が切れると、このアクティベーションコードでアクティベーションが実行されます。'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + '試用版ライセンスの有効期限が切れる前に、アクティベーションコードを入力してアクティベーションを実行する必要があります。'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = '引き続きご利用いただくには、ライセンスのご購入が必要です。'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + '試用版ライセンスの有効期限が切れる前に、アクティベーションコードを入力してアクティベーションを実行する必要があります。'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + '新しいアクティベーションコードを入力する必要があります。現在のライセンスの有効期限が切れると、このアクティベーションコードでアクティベーションが実行されます。'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'プロテクションの状態が未定義です。'
+ProtectionLevelNoFeaturesLong = 'プロテクションが無効です。'
+ProtectionLevelLimitedLong = '本製品の機能が制限されています。'
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'アップデートの状態が未定義です。'
+UpdaterLevelNotAllowedLong = '定義データベースをアップデートできません。'
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = '未定義'
+SubscriptionStateActive = '有効'
+SubscriptionStatePaused = '中断されました'
+SubscriptionStateCancelledSoft = '中断されました'
+SubscriptionStateCancelledHard = 'キャンセルされました'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = '未定義'
+SubscriptionStatusReasonProviderInitiated = 'サービスプロバイダによりアクティベーションが実行されました'
+SubscriptionStatusReasonCreditCardAuthFailed = 'クレジットカード認証が拒否されました'
+SubscriptionStatusReasonCustomerInitiated = 'ユーザーによりアクティベーションが実行されました'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'クレジットカード認証が承認されました'
+
+ProductStatusRelease = 'リリース版'
+ProductStatusBeta = 'ベータ版'
+
+LegalStatusBlocked = 'ライセンスがブロックされています'
+LegalStatusLimited = 'ライセンス契約に違反しています'
+LegalStatusValid = 'ライセンスは有効です'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = '重要なライセンス通知があります。\n<a href="licensemanager">詳細...</a>。'
+LNCS_SubscriptionGrace_Balloon = '定額制サービスの有効期限が切れました。定額制サービスを更新するには、サービスプロバイダーまでお問い合わせください。'
+
+LicensingState_WarningIsAvailable = '警告があります'
+ProtectionState_NotificationIsAvailable = 'ライセンスの通知'
+LicensingState_ProblemIsAvailable = '問題があります'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'ご使用中のカスペルスキー製品は' + $LicenseDaysToExpiry + ' 日で有効期限が切れ、コンピューターは保護されなくなります。'
+LNCS_BBY_WillExpire_Description =	'保護を継続するには、ライセンスを更新してください'
+
+LNCS_BBY_AboutToExpire_Title =	    'ご使用中のカスペルスキー製品はまもなく有効期限が切れます'
+LNCS_BBY_AboutToExpire_Description = '保護は残り' + $LicenseDaysToExpiry + '日のみで、以後 PC は保護されなくなります。Geek Squad Renewal Center の Geek Squad Subscription Software Team に連絡して、ライセンスを更新してください'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'ご使用中のカスペルスキー製品はまもなく有効期限が切れ、コンピューターは保護されなくなります。'
+LNCS_BBY_AboutToExpire_Today_Description = 'Geek Squad Renewal Center の Geek Squad Subscription Software Team に連絡して、ライセンスを更新してください'
+
+LNCS_BBY_LastDay_Title =	'警告！ご使用中のカスペルスキー製品は今日で有効期限が切れます'
+LNCS_BBY_LastDay_Description =	'コンピューターは保護されなくなります。Geek Squad Renewal Center でオンラインで更新してください'
+LNCS_BBY_LastDay_Balloon =	'警告！ご使用中のカスペルスキー製品は今日で有効期限が切れます。PC は保護されなくなります。<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Geek Squad Renewal Center</a> でオンラインで更新してください。'
+
+LNCS_BBY_Grace_Title =			'警告！コンピューターは保護されていません'
+LNCS_BBY_Grace_Description =	'保護が無効の状態のまま放置するのは非常に危険です。Geek Squad Renewal Center でオンライン更新を行ってください'
+LNCS_BBY_Grace_Description_Full =	'保護が無効の状態のまま放置するのは非常に危険です。Geek Squad Renewal Center でオンライン更新を行ってください。<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'警告！コンピューターは保護されていません。保護が無効の状態のまま放置するのは非常に危険です。<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Geek Squad Renewal Center</a> でオンラインで更新してください。'
+
+LNCS_BBY_RenewFailure_Title =	    'ご使用中のカスペルスキー製品を更新できませんでした'
+LNCS_BBY_RenewFailure_Description = 'Geek Squad Renewal Center でオンラインで更新してください'
+LNCS_BBY_RenewFailure_Description_Full = 'Geek Squad Renewal Center でオンライン更新を行ってください。<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'ご使用中のカスペルスキー製品を更新できませんでした。<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Geek Squad Renewal Center</a> でオンラインで更新してください。'
+
+LNCS_BBY_CCAboutToExpire_Title =	'ファイル上のクレジットカードの有効期限がまもなく切れるので、Kaspersky Protection Plan が取り消される危険があります'
+LNCS_BBY_CCAboutToExpire_Description =	'Geek Squad Renewal Center でオンラインで更新してください'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Geek Squad Renewal Center でオンライン更新を行ってください。<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'定額制サービスの有効期限が切れています'
+LNCS_BBY_Expired_Description =	'定額制サービスを更新できません。'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'カスペルスキー アンチウイルスのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'カスペルスキー アンチウイルスのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'カスペルスキー アンチウイルスのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'カスペルスキー アンチウイルスのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'カスペルスキー インターネット セキュリティのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'カスペルスキー インターネット セキュリティのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'カスペルスキー インターネット セキュリティのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'カスペルスキー インターネット セキュリティのライセンスを更新してください：' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">更新</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'カスペルスキー インターネット セキュリティ アンチウイルスの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'カスペルスキー インターネット セキュリティ アンチウイルスの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'カスペルスキー インターネット セキュリティ アンチウイルスの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'カスペルスキー インターネット セキュリティ アンチウイルスの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'カスペルスキー インターネット セキュリティ インターネット セキュリティの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'カスペルスキー インターネット セキュリティ インターネット セキュリティの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'カスペルスキー インターネット セキュリティ インターネット セキュリティの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'カスペルスキー インターネット セキュリティ インターネット セキュリティの有効期限がまもなく切れます。' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">ここ</a>をクリックしてライセンスを購入してください。'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">ここ</a>をクリックしてライセンスを購入してください。'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">ここ</a>をクリックしてライセンスを購入してください。'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br>a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">ここ</a>をクリックしてライセンスを購入してください。'
+
+LNCS_BBY_StatusUpdate = '製品のステータスの変更には 24 時間ほどかかる場合があります。Geek Squad Renewal Center で更新処理を実行し、数時間後に［契約状態の確認］をクリックして強制的に製品の状態をアップデートしてください。'
+
+EndOfLicense_Header = '製品のパフォーマンスのレポート'
+WelcomPageTitle = $ProductName + ' へようこそ'
+
+; incompatible
+ReinstallWarningTitle = $ProductName + 'のインストール以降、オペレーティングシステムのバージョンが変更されました。'
+ReinstallWarningDescription = $ProductName + 'を再インストールしてください。'
+
+IncompatibleOsVersionTitle = $ProductName + 'の機能は一時的に停止しています。'
+IncompatibleOsVersionDescription = 'Microsoft Windows 8 のインストール後、' + $ProductName + 'の一部のコンポーネントを再インストールする必要があります。\n\n再インストールは本製品を正しく動作させるのに必要であり、短時間で完了します。' + '\n\nこの再設定作業中は、コンピューターの保護が限定されます。'
+
+ReinstallWarningOkButton = '詳細'
+IncompatibleOsVersionOkButton = 'インストールと実行'
+
+BrowserWaitingMessage = 'お待ちください...'
+
+OsUpgradedTitle = 'オペレーティングシステムの更新'
+OsUpgradedDescription = 'オペレーティングシステムの更新が完了しました。'

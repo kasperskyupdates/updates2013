@@ -1,0 +1,467 @@
+﻿ProductName     = '卡巴斯基反病毒软件'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = '卡巴斯基安全部队'
+ProductName_KIS_Full = '卡巴斯基安全部队 ' + ProductGeneration
+ProductName_KIS_Beta_Full = '卡巴斯基安全部队技术预览'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = '卡巴斯基反病毒软件'
+ProductName_KAV_Full = '卡巴斯基反病毒软件 ' + ProductGeneration
+ProductName_KAV_Beta_Full = '卡巴斯基反病毒软件技术预览'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = '最新' 
+Corrupted = '受损' 
+VeryOld = '严重过期' 
+Old = '过期' 
+OldInGracePeriod = '已很久没有更新'
+UpdatedAndRebootNeeded = '已更新。需要重启计算机' 
+UpdatedAndProductRestartNeeded = '已更新。需要重启程序' 
+SomeBasesNeedUpdate = '需要更新某些保护组件'
+
+Schedule_Auto    = '自动' 
+Schedule_Manual  = '手动' 
+Schedule_Fixed   = '按计划' 
+
+Back = '后退' 
+StopTask = '停止'
+
+News = '新闻'
+Reports = '报告'
+Settings = '设置'
+Help = '帮助(&H)'
+OK = '确定'
+Cancel = '取消'
+Retry = '重试'
+
+Unknown = '未知'
+
+ShortDateTimeWithSecondsFormat = '%Y/%m/%d %I:%M:%S %p'
+ShortDateTimeFormat = '%Y/%m/%d %I:%M %p'
+ShortDateFormat = '%Y/%m/%d'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = '今天， %H:%M'
+ShortDateTimeNewsYesterdayFormat = '昨天， %H:%M'
+
+MonthName_1  = '一月'
+MonthName_2  = '二月'
+MonthName_3  = '三月'
+MonthName_4  = '四月'
+MonthName_5  = '五月'
+MonthName_6  = '六月'
+MonthName_7  = '七月'
+MonthName_8  = '八月'
+MonthName_9  = '九月'
+MonthName_10 = '十月'
+MonthName_11 = '十一月'
+MonthName_12 = '十二月'
+ 
+DateUnknown = '未知'
+
+After = '后'
+Remaining = '剩余'
+Ago = '前'
+
+Days_After = $DayCount + ' ' + {$DayCount : '天'}
+Hours_After = $HourCount + ' ' + {$HourCount : '小时'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : '分钟'}
+LessMinute_After = '< 1 分钟'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : '天'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : '小时'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : '分钟'}
+LessMinute_Remaining = '< 1 分钟'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : '天'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : '小时'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : '分钟'}
+LessMinute_Ago = '< 1 分钟'
+
+Yesterday   = '昨天'
+Today       = '今天' 
+LessWeek    = '一周之内'
+LessTwoWeek = '两周之内'
+LessMonth   = '一个月之内'
+MoreMonth   = '一个月前'
+MoreHalfYear= '半年前'
+MoreYear    = '一年前'
+
+Time_After     = $TimePeriod + ' ' + After
+Time_Remaining = Remaining + ' ' + $TimePeriod
+Time_Ago       = $TimePeriod + Ago
+
+;Buttons
+ConfirmButton    = '确定'
+CancelButton = '取消'
+ApplyButton = '应用'
+CloseButton = '关闭'
+NextButton = '下一步 >'
+BackButton = '< 上一步'
+FinishButton = '完成'
+SaveButton = '保存'
+SkipButton = '跳过'
+Continue = '继续'
+Yes = '是'
+No = '否'
+
+SettingsMore = '设置(&S)...'
+
+DoNoyShowThisWindow = '以后不再显示'
+
+; general system error codes
+
+SystemError_0x80000040 = '未定义的错误'
+SystemError_0x8000004B = '未定义的错误'
+SystemError_0x80000041 = '内存不足'
+SystemError_0x80000042 = '不支持'
+SystemError_0x80000043 = '未执行'
+SystemError_0x80000045 = '访问被拒绝或对象未找到'
+SystemError_0x8000004C = '对象未找到'
+SystemError_0x800000C6 = '对象未找到'
+SystemError_0x800000C5 = '对象未找到'
+SystemError_0x8000004F = '对象已锁定'
+SystemError_0x80000051 = '操作被取消'
+SystemError_0x80000059 = '设备错误'
+SystemError_0x8000005A = '无效签名'
+SystemError_0x8000005B = '无效版本'
+SystemError_0x8000005F = '写保护'
+SystemError_0x80000061 = '授权许可缺失'
+SystemError_0x80000062 = '空间不足'
+SystemError_0x80000063 = '设备未就绪'
+SystemError_0x800000C0 = '无效格式'
+SystemError_0x800000C1 = '权限不足'
+SystemError_0x800000C2 = '初始化错误'
+SystemError_0x800000C3 = '初始化错误'
+SystemError_0x800000C7 = '对象声明不正确'
+SystemError_0x800000C8 = '对象受密码保护'
+SystemError_0x800000CA = '读错误'
+SystemError_0x800000CC = '读错误'
+SystemError_0x800000CB = '写错误'
+SystemError_0x800000CD = '写错误'
+SystemError_0x800000D0 = '无效对象'
+SystemError_0x800000D1 = '对象已存在'
+SystemError_0x800000D5 = '另一个应用程序正在使用此对象'
+SystemError_0x800000D8 = '数据库受损'
+SystemError_0x800001C0 = '无效模块'
+SystemError_0x800001C2 = '模块未认证'
+SystemError_0x800001C1 = '模块未找到'
+SystemError_0x800001C4 = '组件无法载入'
+SystemError_0x80000221 = '超时'
+SystemError_0x80000240 = '组件交互错误'
+SystemError_0x90005000 = '无效数字签名'
+SystemError_0x90005002 = '没有数字签名'
+SystemError_0x80027006 = '任务已停止'
+SystemError_0x80027007 = '任务已停止'
+SystemError_0x80380fbb = '任务已停止'
+SystemError_0x80017007 = '无法在安全模式中启动任务'
+SystemError_0x80017005 = '任务已禁用'
+SystemError_0x80017006 = '用户名或密码不正确'
+SystemError_0x80017008 = '安全模式中无法使用其它用户帐号启动任务'
+SystemError_0x80017009 = '驱动程序未找到'
+SystemError_0x80022005 = '载入数据库时出错'
+SystemError_default    = '错误代码： ' + $ErrorCode
+
+LicenseManager = '授权许可管理(&L)'
+SubscriptionManager = '管理订阅'
+ProblemSolution = '转至“授权许可”窗口以解决该问题'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = '未激活' ;refers to connection
+Stopping = '正在停止'
+ConnectingToServer = '正在连接服务器'
+CreatingUpdateList = '正在处理文件'
+Downloading = '正在下载文件'
+Installing = '正在更新文件'
+RollbackRunning = '正在回滚至先前数据库'
+
+FunctionalityDisabledForExpiredSubscription = '更新已禁用'
+FunctionalityDisabledForExpiredSubscriptionProtection = '您计算机的保护已禁用'
+SubscriptionRemainingDaysCount = '剩余 ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '天'} + '。'
+SubscriptionExpiresToday = '今日到期'
+SubscriptionActivated = '已激活'
+CheckReserveCodeManuallyHeader = '无法使用新激活码自动激活程序' ; TODO
+CheckReserveCodeManuallyText = '请使用新激活码尝试手动激活程序。' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = '已安装 Beta 版程序'
+LicensingStatus_Trial_ShortDescription = '已安装试用版程序'
+LicensingStatus_OkSubscription_ShortDescription = '订阅： ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = '授权许可即将过期'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = '授权许可即将过期'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = '检测到授权许可问题'
+LicensingStatus_InvalidActivationDate_ShortDescription = '检测到授权许可问题'
+LicensingStatus_InvalidKey_ShortDescription = '检测到授权许可问题'
+LicensingStatus_Reinstall_ShortDescription = '检测到授权许可问题'
+LicensingStatus_BrokenBlacklist_ShortDescription = '授权许可黑名单受损'
+LicensingStatus_CorruptedBases_ShortDescription = '无法验证数据库与最终用户授权许可协议的一致性'
+LicensingStatus_BasesDateMismatch_ShortDescription = '授权许可有效时间不允许使用当前数据库'
+LicensingStatus_Expired_ShortDescription = '授权许可已过期'
+LicensingStatus_ExpiredSubscription_ShortDescription = '订阅已过期于'+ $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = '试用授权许可已过期'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Beta 版已过期'
+LicensingStatus_Blocked_ShortDescription = '授权许可已被阻止'
+LicensingStatus_BlockedSubscription_ShortDescription = '订阅已阻止'
+LicensingStatus_LicenseViolated_ShortDescription = '检测到授权许可问题'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = '检测到授权许可问题'
+LicensingStatus_SubscriptionViolated_ShortDescription = '检测到授权许可问题'
+LicensingStatus_Grace_ShortDescription = '订阅已过期于'+ $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = '订阅暂停自 ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = '自动续费订阅状态失败'
+LicensingStatus_NotActivated_ShortDescription = '程序未激活'
+LicensingStatus_WaitCodeActivation_ShortDescription = '程序未激活'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = '程序未激活'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = '程序未激活'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = '新激活码'
+ReserveCodeStatus_Ok_ShortDescription = '新激活码'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = '新激活码无效'
+ReserveCodeStatus_ActivationProblem_ShortDescription = '新激活码未激活'
+ReserveCodeStatus_WaitActivation_ShortDescription = '将进行自动激活'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Beta 版的 ' + $ProductNameFull + ' 包含全功能，但是这是未完成的版本，可能包含错误、故障或缺陷。请在我们论坛的相应版块报告任何问题。'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '天'} + '剩余，此时间段过后，程序功能将严重受限。' 
+LicenseEndsToday = '这是您授权许可有效的最后几天，如果您不续费，程序功能将受限。' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = '订阅已激活，截止日期：' + $SubscriptionExpirationDate + '。'
+StateLimitedSubscriptionProlongedText = '订阅已续费至' + $SubscriptionExpirationDate + '。'
+StateLimitedSubscriptionCanceledText = '订阅已取消，截止日期：' + $SubscriptionExpirationDate + '。'
+StateSubscriptionNotYetSuspendedText = '订阅将会被推迟至'+ $SubscriptionExpirationDate + '。'
+StateUnlimitedSubscriptionProlongedText = '订阅已续费且永不过期'
+StateUnlimitedSubscriptionResumedText = '订阅已恢复'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = '在' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: '天'}
+LicensingStatus_WillBeExpired_Cause = '剩余 ' + $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: '天'} + '。该时间过后，程序功能将严重受限。'
+LicensingStatus_ExpiresToday_Cause = '今天到期。届满后，应用程序的功能将受到限制。'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = '无效的授权许可创建日期，您计算机上的系统日期已更改。' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = '无效的激活日期，您计算机上的系统日期可能已被更改。' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = '程序完整性被破坏。 ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = '建议从服务器下载新的黑名单。'
+LicensingStatus_CorruptedBases_Cause = '一个可能的原因是无效更新。' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = '您可能购买了该程序的非法副本。 保护已暂停。您的计算机存在受感染、受损或数据被盗的风险。'
+LicensingStatus_BlockedSubscription_Cause = '您可能购买了该程序的非法副本。 ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = '您已超过使用您的授权许可可以安装' + $ProductName + '的计算机的最大数量。' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = '您已超过使用您的订阅可以安装' + $ProductName + '的计算机的最大数量。' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: '天'} + '剩余，距离' + $FunctionalityDisabledAfterGrace + '。'
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = '可能是由于两次连接激活服务器的时间间隔太久。 ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = '预设的激活码可用，程序将在互联网连接可用之后立即激活。'
+LicensingStatus_PreinstalledCodeAvailable_Cause = '预设的激活码已有效。你可以使用该激活码激活应用程序或删除预设的激活码。'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = '应用程序未能使用预设的激活码自动激活。若要激活程序，需要您的协助。'
+
+ReserveCodeStatus_NotProvided_Cause = '您可以输入新的激活码。当前激活的授权许可过期后，程序将使用该激活码激活。'
+ReserveCodeStatus_Ok_Cause = '新激活码已添加至您的计算机，当前活动授权许可过期后，程序将使用新激活码自动激活，这不会中断计算机保护。'
+ReserveCodeStatus_Invalid_Cause = '当前授权许可过期后，更新将不再可用。'
+ReserveCodeStatus_ActivationProblem_Cause = '使用新激活码' + $ReserveCode + '自动激活应用程序失败，若要激活程序，需要您的协助。'
+ReserveCodeStatus_WaitActivation_Cause = '计划使用新激活码 ' + $ReserveCode + ' 自动激活。'
+
+ResolveProblem_BuyCommercial         = '建议您购买并激活商业版的程序。'
+ResolveProblem_CheckSystemTime		= '请确保系统日期正确。'
+ResolveProblem_ActivateAgain        = '请尝试删除活动授权许可，然后再次激活程序。您也可以联系技术支持或程序分销商。'
+ResolveProblem_CallSupport			= '建议您联系技术支持以查找被阻止的原因。若要恢复程序功能，请获取新授权许可。'
+ResolveProblem_ContactSupport		= '请联系技术支持。'
+ResolveProblem_ActialLicense		= '若要恢复计算机保护，请输入新激活码。'
+ResolveProblem_UpdateAgain			= '建议您再次更新数据库。'
+ResolveProblem_BuyNewLicense		= '若要恢复计算机保护，请获取新授权许可。'
+ResolveProblem_CallProvider			= '若要恢复订阅，请联系您的服务提供商。'
+ResolveProblem_ProviderWebSite		= '若要恢复订阅，请联系您的服务提供商。'
+ResolveProblem_RenewalNotAvailable	= '订阅续费不可用。'
+ResolveProblem_BuyLicense			= '若要恢复计算机保护，您需要从卡巴斯基实验室或程序分销商处获取商业版授权许可，试用版只能使用一次。'
+ResolveProblem_Reinstall			= '请重新安装程序。'
+ResolveProblem_RenewLicense			= '若要启用完全功能，请续费授权许可。'
+ResolveProblem_RefreshSubscription	= '请手动更新订阅状态。'
+ResolveProblem_Activate				= '请输入激活码以激活程序。'
+ResolveProblem_ActivateReserveCode  = '请使用新激活码尝试手动激活程序。'
+ResolveProblem_ActivateCodeManual	= '手动激活程序。'
+ResolveProblem_CheckConnectionAndActivateCodeManual = '请检查您的互联网连接设置，然后等待自动激活程序或手动激活程序。'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + '需要输入新激活码。当前激活的授权许可过期后，程序将使用该激活码激活。'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + '试用版授权许可过期前需要使用激活码激活程序。'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = '要恢复该程序的全部功能，需要您在卡巴斯基实验室或我们的分销商处获取商业版授权许可。'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + '试用版授权许可过期前需要使用激活码激活程序。'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + '需要输入新激活码。当前激活的授权许可过期后，程序将使用该激活码激活。'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = '保护状态未定义。 '
+ProtectionLevelNoFeaturesLong = '保护已禁用。 '
+ProtectionLevelLimitedLong = '程序功能受限。'
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = '更新状态未定义。 '
+UpdaterLevelNotAllowedLong = '更新不可用。 '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = '未定义'
+SubscriptionStateActive = '活动'
+SubscriptionStatePaused = '暂停'
+SubscriptionStateCancelledSoft = '暂停'
+SubscriptionStateCancelledHard = '已取消'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = '未定义'
+SubscriptionStatusReasonProviderInitiated = '由服务提供商激活'
+SubscriptionStatusReasonCreditCardAuthFailed = '信用卡验证被拒绝'
+SubscriptionStatusReasonCustomerInitiated = '由该用户激活'
+SubscriptionStatusReasonCreditCardAuthSuccess = '信用卡验证已接受'
+
+ProductStatusRelease = '发布版本'
+ProductStatusBeta = 'Beta 版'
+
+LegalStatusBlocked = '授权许可被阻止'
+LegalStatusLimited = '违反了授权许可协议'
+LegalStatusValid = '授权许可有效'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = '有一个重要的授权许可通知。\n<a href="licensemanager">详情...</a>.'
+LNCS_SubscriptionGrace_Balloon = '订阅已过期。如果续费订阅，请联系您的服务提供商。'
+
+LicensingState_WarningIsAvailable = '一个警告'
+ProtectionState_NotificationIsAvailable = '授权许可通知'
+LicensingState_ProblemIsAvailable = '存在问题'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'您的卡巴斯基安全软件将于 ' + $LicenseDaysToExpiry + ' 天过期， 您的电脑将不受保护'
+LNCS_BBY_WillExpire_Description =	'若要继续获得保护， 请在 The Geek Squad Renewal Center在线续费'
+
+LNCS_BBY_AboutToExpire_Title =	    '您的卡巴斯基安全软件即将过期'
+LNCS_BBY_AboutToExpire_Description = '您的计算机获得的保护时间仅剩' + $LicenseDaysToExpiry + '天，该时间过后，您的计算机将不再受保护。请立即在 The Geek Squad Renewal Center在线续费。'
+
+LNCS_BBY_AboutToExpire_Today_Title = '您的卡巴斯基安全软件今天即将过期，此后您的计算机将失去保护。'
+LNCS_BBY_AboutToExpire_Today_Description = '请立即在 The Geek Squad Renewal Center在线续费。'
+
+LNCS_BBY_LastDay_Title =	'警告！您的卡巴斯基安全软件今天即将过期'
+LNCS_BBY_LastDay_Description =	'您的计算机没有受到保护，若要计算机得到保护，请在 The Geek Squad Renewal Center在线续费。'
+LNCS_BBY_LastDay_Balloon =	'警告！您的卡巴斯基安全软件今天过期。你的计算机将不受保护，若要计算机得到保护，请在线续费<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>。'
+
+LNCS_BBY_Grace_Title =			'警告！ 您的计算机未受到保护'
+LNCS_BBY_Grace_Description =	'您的计算机没有受到保护，若要计算机得到保护，请在 The Geek Squad Renewal Center在线续费。'
+LNCS_BBY_Grace_Description_Full =	'您的计算机没有受到保护，若要计算机得到保护，请在 The Geek Squad Renewal Center在线续费。<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'警告！ 您的计算机未受到保护。不要让您的计算机运行在无保护状态下。请在线续费<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>。'
+
+LNCS_BBY_RenewFailure_Title =	    '我们无法为您的卡巴斯基安全软件续费'
+LNCS_BBY_RenewFailure_Description = '请在 The Geek Squad Renewal Center在线续费'
+LNCS_BBY_RenewFailure_Description_Full = '请在 The Geek Squad Renewal Center在线续费。<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = '我们无法更新您的卡巴斯基安全软件。请到如下网站在线更新<a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>。'
+
+LNCS_BBY_CCAboutToExpire_Title =	'您的卡巴斯基保护计划正面临被取消的危险，因为您的信用卡信息即将过期'
+LNCS_BBY_CCAboutToExpire_Description =	'请在 The Geek Squad Renewal Center在线续费'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'请在 The Geek Squad Renewal Center在线续费。<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'订阅已过期'
+LNCS_BBY_Expired_Description =	'订阅续费不可用。'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = '尽早续订您的卡巴斯基反病毒软件可节省 $5。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = '尽早续订您的卡巴斯基反病毒软件可节省 $10。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = '尽早续订您的卡巴斯基反病毒软件可节省 $15。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = '尽早续订您的卡巴斯基反病毒软件可节省 $20。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = '尽早续订您的卡巴斯基安全部队可节省 $5。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = '尽早续订您的卡巴斯基安全部队可节省 $10。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = '尽早续订您的卡巴斯基安全部队可节省 $15。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = '尽早续订您的卡巴斯基安全部队可节省 $20。' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">立即续订</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = '您的卡巴斯基反病毒软件即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = '您的卡巴斯基反病毒软件即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = '您的卡巴斯基反病毒软件即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = '您的卡巴斯基反病毒软件即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = '您的卡巴斯基安全部队即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = '您的卡巴斯基安全部队即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = '您的卡巴斯基安全部队即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = '您的卡巴斯基安全部队即将过期！' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">点击这里</a> 为您的年度续费节省 $5。'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">点击这里</a> 为您的年度续费节省 $10。'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">点击这里</a> 为您的年度续费节省 $15。'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">点击这里</a> 为您的年度续费节省 $20。'
+
+LNCS_BBY_StatusUpdate = '可能需要长达24小时改变产品状态。完成更新几个小时时后在The Geek Squad Renewal Center单击 "更新订阅状态"以检查更新。'
+
+EndOfLicense_Header = '应用程序性能报告'
+WelcomPageTitle = '欢迎使用'+ $ProductName
+
+; incompatible
+ReinstallWarningTitle = '操作系统版本在' + $ProductName + '安装后开始改变'
+ReinstallWarningDescription = '请重新安装' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + '已暂停'
+IncompatibleOsVersionDescription = '在安装了Microsoft Windows 8后，为保证 ' + $ProductName + ' 的性能，您需要重新安装一些程序组件。该安装将不会超过2分钟。' + '在Microsoft Windows 8上配置'+ $ProductName + '期间，您的计算机保护将受到限制。'
+
+ReinstallWarningOkButton = '详细信息'
+IncompatibleOsVersionOkButton = '安装和运行'
+
+BrowserWaitingMessage = '请等待...'
+
+OsUpgradedTitle = '操作系统更新'
+OsUpgradedDescription = '操作系统更新成功完成。'

@@ -1,0 +1,405 @@
+﻿[Global]
+$Antivirus                      = "Antivirus"
+$AntivirusDesc                  = "Protección contra amenazas conocidas"
+$File_Monitoring                = "Antivirus de archivos"
+$Mail_Monitoring                = "Antivirus del correo"
+$Web_Monitoring                 = "Antivirus Internet"
+$IM_Monitoring					= $IMAntivirus
+$TipText_avs_NumGenericScaned   = "Archivos: "
+$TipText_avs_NumMailScaned      = "Correo: "
+$TipText_avs_NumScriptScaned    = "Tráfico Web: "
+MaskIsWrong                     = "La máscara de dirección indicada no es válida. Escriba una máscara de dirección válida"
+MailSignature					= "Análisis del mensaje realizado por " + $ProductName_INS + " 2013"
+IMVirusReplacementString		= "mensaje bloqueado. Motivo: virus "
+IMURLReplacementString			= "mensaje bloqueado. Motivo: URL fraudulenta o maliciosa"
+$WebToolbarDescr                = "Comprueba la seguridad de las URLs en páginas web de Microsoft Internet Explorer, Google Chrome y Mozilla Firefox."
+ScanObjectsEmpty				= "Seleccione los objetos incluidos en el análisis."
+
+[MainWindow.Antivirus_Filters_Menu]
+ByTime      = "Agrupar por hora"
+AllItems    = "No agrupar"
+ByApp       = "Agrupar por aplicación"
+ByVerdict   = "Agrupar por resultado"
+
+[AntivirusChartMenu]
+0 = "Objetos analizados"
+1 = "Objetos detectados"
+
+[FileMonSettings_Tab]
+Scope       = "General"
+Performance = "Rendimiento"
+Additional  = "Avanzado"
+
+[FileMonSettings_Tab_Scope]
+FileTypesGroup  = "Tipos de archivos"
+Area            = "Cobertura de protección"
+
+[FileMonSettings_Tab_Scope_FileTypesGroup]
+All         = "&Todos los archivos"
+Infectable  = "Anali&zar archivos por formato"
+Predefined  = "&Analizar archivos por extensión"
+
+[FileMonSettings_Tab_Performance]
+FirstTimeCheck  = "Métodos de análisis"
+FileTypesGroup  = "Optimización del análisis"
+
+[FileMonSettings_Tab_Performance_FirstTimeCheck]
+Sign    = "Análisis de firmas"
+Heur    = "Análisis &heurístico"
+
+[FileMonSettings_Tab_Performance_FileTypesGroup]
+CheckNew = "Analizar solamente archivos n&uevos y modificados"
+
+[FileMonSettings_Tab_Additional]
+ScanMode    = "Modo de análisis"
+Tecnologies = "Tecnologías de análisis"
+
+[FileMonSettings_Tab_Additional_ScanMode]
+CheckModeSmart  = "Modo &inteligente"
+CheckModeAll    = "En acceso y &modificación"
+CheckModeOpen   = "En acc&eso"
+CheckModeExec   = "En e&jecución"
+
+[FileMonSettings_Tab_Additional_Tecnologies]
+Swift   = "Tecnología iS&wift"
+Check   = "&Tecnología iChecker"
+
+[MalwareSettingsWindow.Threats]
+Check1  = "Casilla"
+Radio1  = "Radio"
+
+[CompoundFilesGroup]
+@           = "Análisis de archivos compuestos"
+Archive     = "Analizar a&rchivos" + if(ScanUnchangedObjects && !$IsRD && !$IsKAT, " <a Unchanged_ScanArchived onclick(iterate(ForUnchangedObjects.ScanArchived))>" + (ForUnchangedObjects.ScanArchived ? $NewAll) + "</a>")
+SFX         = "Analizar paquetes de &instalación " + if(ScanUnchangedObjects && !$IsRD && !$IsKAT, " <a Unchanged_ScanSFXArchived onclick(iterate(ForUnchangedObjects.ScanSFXArchived))>" + (ForUnchangedObjects.ScanSFXArchived ? $NewAll) + "</a>") + ""
+OLE         = "Anali&zar objetos OLE incorporados" + if(ScanUnchangedObjects && !$IsRD && !$IsKAT, " <a Unchanged_ScanOLE onclick(iterate(ForUnchangedObjects.ScanOLE))>" + (ForUnchangedObjects.ScanOLE ? $NewAll) + "</a>")
+Mail        = "Interpretar for&matos de correo"
+AskPwd      = "Analizar archivos comprimidos prot&egidos por contraseña"
+Advanced    = "&Avanzado..."
+
+[WebMonSettings_Body]
+Methods         = "Métodos de análisis"
+Restrictions    = "Optimización del análisis"
+GreenZone		= "Parámetros de Navegación Segura"
+Additions		= "Avanzado"
+
+[WebMonSettings_Methods]
+Heur        = "Análisis &heurístico"
+HeurParams  = "Nivel heurístico"
+EnableWMUFCheck          = "&Comprobar si las URL figuran en la base de datos de direcciones URL maliciosas"
+EnableAntiphishingCheck  = "Comprobar si las URL están presentes en la base de datos de URL &fraudulentas"
+
+[WebMonSettings_GreenZone]
+UseGeoSecurity		= "&Controlar peticiones por dominios de máximo nivel"
+GeoSecurityButton	= "Con&figuración..."
+UseCloudService		= "&Utilizar Cloud Service para filtrar URL"
+BrowserPluginCheck  = "&Marcar URL fraudulentas y maliciosas en Microsoft Internet Explorer y Mozilla Firefox"
+BrowserPluginButton = "C&onfiguración..."
+
+[GeoSecuritySettingsDlg]
+@ = "Lista de regiones"
+
+[GeoSecuritySettingsList]
+Domain	= "Dominio"
+Region	= "Región"
+
+
+[WebMonSettings_Restrictions]
+UseBufCacheTime     = "&Limitar tiempo de almacenamiento en caché de fragmentos"
+BufCacheTimeLabel   = "seg"
+EnableWhiteList		= "&No analizar tráfico Web de direcciones URL de confianza"
+Settings			= "S&eleccionar..."
+
+[WebMonSettings_Additions]
+Scripts             = "&Bloquear secuencias de comandos peligrosas en Microsoft IE"
+
+[WebMonSettingsWhiteList]
+@	= "Direcciones URL de confianza"
+
+[MailMonSettings_Tab]
+Scope		= "General"
+Filter		= "Filtrado de adjuntos"
+Extra		= "Avanzado"
+
+[MailMonSettings_Tab_Scope]
+Directions		= "Cobertura de protección"
+FilterMethods	= "Métodos de análisis"
+Notifications	= "Notificación de análisis"
+Methods         = "Métodos de análisis"
+CompoundFiles   = "Análisis de archivos compuestos"
+
+[MailMonSettings_Tab_Scope_Directions]
+All         = "Correo entrante y &saliente"
+Incoming    = "Solo &mensajes entrantes"
+
+[MailMonSettings_Tab_Scope_Notifications]
+None			= "No agregar al mensaje"
+All				= "Agregar a todos los analizados"
+Incoming		= "Agregar solo a infectados"
+
+[MailMonSettings_Tab_Scope_Methods]
+Heur = "Análisis &heurístico"
+
+[MailMonSettings_Tab_Scope_CompoundFiles]
+Archive         = "&Ignorar archivos adjuntos comprimidos"
+SkipSizeCheck   = "&No analizar comprimidos de más de"
+SkipSizeLabel   = "MB"
+
+[MailMonSettings_Tab_Extra]
+Plugins			= "Conectividad"
+
+[MailMonSettings_Tab_Extra_Plugins]
+MailTraffic     = "Tráfico P&OP3/SMTP/NNTP/IMAP"
+ClientOutlook   = "Avanzado: com&plemento para Microsoft Office Outlook"
+ClientTheBat    = "Avanzado: complemento para The &Bat!"
+
+[MailMonSettings_Tab_Filter]
+Skip    = "&Desactivar el filtrado"
+Rename  = "&Renombrar los tipos seleccionados de adjuntos"
+Delete  = "&Eliminar los tipos de adjuntos seleccionados"
+
+[MailAttachmentFilter_Edit]
+@           = "Máscara del nombre de archivo"
+@.Example   = "Ejemplo: *.exe"
+
+
+[WebTrustedSites_Edit]
+@           = "Máscara de dirección URL"
+@.Example   = "Ejemplo: *kaspersky.es/*"
+
+[CompoundFilesSettings]
+@ = "Archivos compuestos"
+
+[CompoundFilesSettings_Body]
+BackgroundScan  = "Análisis en segundo plano"
+SizeLimit       = "Límite de tamaño"
+
+[CompoundFilesSettings_Body_BackgroundScan]
+PostponeSizeCheck   = "Extraer archivos compuestos en se&gundo plano"
+Descr               = "Análisis asincrónico de archivos compuestos"
+Label2              = "Tamaño mí&nimo de archivo:"
+PostponeSizeLabel   = "MB"
+Label1              = "Los archivos compuestos con un tamaño menor a este se analizarán en modo normal"
+
+[CompoundFilesSettings_Body_SizeLimit]
+SkipSizeCheck   = "No descomprimir archivos com&puestos de gran tamaño"
+Label2          = "Tamaño &máximo de archivo:"
+SkipSizeLabel   = "MB"
+Label1          = "No se analizarán los archivos compuestos que superen este tamaño"
+
+;-------------- WebToolbar_Plugin.Settings_Dlg -------------
+[WebToolbar_Plugin.Settings_Dlg]
+@ = "Supervisor Kaspersky de vínculos URL"
+
+[WebToolbar_Plugin.Settings_DlgBody_Descr]
+Info		= "Supervisor Kaspersky de vínculos URL"
+ExtInfo		= $WebToolbarDescr
+
+[WebToolbar_Plugin.Settings_DlgBody_Settings]
+CheckEnable = "Comprobar direcciones URL"
+Settings	= "Configuración"
+
+[WebToolbar_Plugin.Settings_DlgBody_CheckSites]
+CheckAll     = "En todos los sitios Web excepto las " + f_MakeLink(true, "$CheckAllOnClick", "exclusiones" + if(WhiteList.size() > 0, " (" + WhiteList.size() + ")", "") + "...")
+CheckList    = "Solo sitios Web de la " + f_MakeLink(true, "$CheckListOnClick", "lista" + if(CheckList.size() > 0, " (" + CheckList.size() + ")", "") + "...")
+
+[WebToolbar_Plugin.Settings_DlgBody_TypeOnGrp]
+Check = "Comprobar direcciones URL"
+
+[WebToolbar_Plugin.Settings_DlgBody_TypeOnGrp_SubType]
+CheckEnable     = "Comprobar direcciones URL"
+
+;[WebToolbar_Plugin.Settings_DlgBody_TypeOnGrp_SubType_Type]
+;CheckAll     = "На всех веб-&адресах, кроме исключений"
+;CheckAllBtn  = "&Исключения..."
+;CheckList    = "Только на &указанных веб-адресах"
+;CheckListBtn = "У&казать..."
+
+[WebToolbar_Plugin.Settings_DlgBody_TypeOffGrp]
+Status1        = "Comprobador de URL " + ( ComponentEnabled && PluginEnabled ? "está activado" : "está desactivado")
+$Status2Plugin = "Puede " + ( PluginEnabled ? "desactivar" : "activar" ) + " la comprobación de direcciones URL en la <a>configuración</a> de Antivirus Internet"
+Status2        = ProductLoaded ? (ComponentEnabled ? $Status2Plugin : "Para comprobar direcciones URL, Antivirus Internet debe estar activado") : ("Para comprobar direcciones URL, " + $ProductNameLong + " debe estar activado")
+
+;-------- WebToolbar_Plugin.Settings_WhiteList_Dlg --------
+
+[WebToolbar_Plugin.Settings_WhiteList_Dlg]
+@ = "Exclusiones"
+
+;-------- WebToolbar_Plugin.Settings_CheckList_Dlg --------
+
+[WebToolbar_Plugin.Settings_CheckList_Dlg]
+@ = "Direcciones URL comprobadas"
+
+;---------- WebToolbar_Plugin.Settings_Url_Edit -----------
+
+[WebToolbar_Plugin.Settings_Url_Edit]
+@         = "Máscara de dirección URL"
+@.Example = $SettingsUrlExampleLink
+
+;-------- WebToolbar_Plugin.InProductSettings_Dlg ---------
+
+[WebToolbar_Plugin.InProductSettings_Dlg]
+@ = "Supervisor Kaspersky de vínculos URL"
+
+[WebToolbar_Plugin.InProductSettings_DlgBody_DescrGrp]
+Text = $WebToolbarDescr
+
+[WebToolbar_Plugin.InProductSettings_DlgBody_TypeOnGrp]
+Check = "Comprobar direcciones URL"
+
+
+;-----------WebMonSettings2-----------
+
+[WebMonSettings2_Body]
+General     = "General"
+GreenZone   = "Navegación Segura"
+GeoSecurity = "Filtrado Geográfico"
+TrustedAddr = "Direcciones URL de confianza"
+OnlineBanking = "Servicios bancarios online"
+
+[WebMonSettings2_Tab_General]
+CheckUrl	= "Supervisor Kaspersky de vínculos URL"
+AvSettings	= "Análisis heurístico"
+Additions   = "Avanzado"
+
+[WebMonSettings_CheckUrl]
+EnableWMUFCheck          = "&Comprobar si las URL figuran en la base de datos de direcciones URL maliciosas"
+EnableAntiphishingCheck  = "Comprobar páginas Web en busca de &fraudes"
+AntiphishingSettings	 = "&Avanzado..."
+
+[WebMonSettings_AvSettings]
+Heur        = "Utilizar Análisis &heurístico"
+HeurParams  = "Nivel heurístico"
+
+[WebMonSettings2_Additions]
+Scripts             = "&Bloquear secuencias de comandos peligrosas en Microsoft IE"
+UseBufCacheTime     = "&Limitar el tiempo de caché del tráfico para optimizar el análisis"
+BufCacheTimeLabel   = "seg"
+
+[WebMonSettings2_Tab_GreenZone]
+URLChecking  = "Supervisor Kaspersky de vínculos URL"
+URLBlocking  = "Bloquear sitios Web peligrosos"
+
+[WebMonSettings2_URL_Checking]
+Desc         = $WebToolbarDescr
+
+[WebMonSettings2_URL_Checking_Choices]
+CheckEnable	= "&Comprobar direcciones URL"
+Settings	= "C&onfiguración"
+
+[WebMonSettings2_URL_Checking_Choices_Type]
+Info		 = "Comprobar sitios web:"
+CheckAll	 = "Todo excepto l&as exclusiones"
+CheckAllBtn  = "E&xclusiones..."
+CheckList 	 = "S&olo los sitios web de la lista"
+CheckListBtn = "E&specificar..."
+
+[WebMonSettings2_URL_Blocking]
+Desc         = "Esta característica bloquea el acceso a sitios Web peligrosos conocidos."
+BlockURL     = "&Bloquear sitios Web peligrosos"
+
+[WebMonSettings2_Tab_GeoSecurity]
+Desc           = "Para ayudarle a evitar los sitios Web de los dominios regionales más infectados (según los datos de Kaspersky Lab), el módulo puede filtrar las regiones que desee."
+UseGeoSecurity = "&Habilitar filtrado por dominios regionales:"
+ListDescr      = ""
+
+[WebMonSettings2_Tab_GeoSecurity_List_List]
+Access  = "Acceder"
+Domain	= "Dominio"
+Region  = "Región"
+Rate    = "Tasa de infección"
+
+[s_GeoSecurityRegionRate]
+#GeoSecRateLow          = "tasa de infección baja"
+#GeoSecRateModerate     = "tasa de infección moderada"
+#GeoSecRateMiddle       = "tasa de infección media"
+#GeoSecRateHigh         = "tasa de infección alta"
+def                     = "tasa de infección desconocida"
+
+[WebMonSettings2_Tab_TrustedAddr]
+Desc            = "Antivirus Internet no analiza el tráfico Web de direcciones URL de confianza."
+EnableWhiteList = "&No analizar tráfico Web de direcciones URL de confianza:"
+
+[WebMonSettings2_Tab_TrustedAddr_List]
+Toolbar.Edit = "Modificar"
+
+[WebMonSettings2_Tab_OnlineBanking]
+Desc            = "El módulo controla las solicitudes de servicios de banca online y sugiere cambiar al modo Navegación Web Segura."
+EnableOnlineBanking = "&Habilitar control"
+UserIncludesList = "Datos confidenciales de procesamiento de sitios Web:"
+
+[WebMonSettings2_Tab_OnlineBanking_List]
+Toolbar.Edit = "Modificar"
+
+[MainReport.Network_Packets_View]
+AllItems    = "Todos los eventos"
+Blocked     = "Bloqueado"
+BlockedIn   = "Entrante bloqueado"
+BlockedOut  = "Saliente bloqueado"
+Allowed     = "Autorizado"
+AllowedIn   = "Entrante autorizado"
+AllowedOut  = "Saliente autorizado"
+CreateRule	= "Reglas creadas"
+
+[MainReport.Network_Packets_Log]
+Time        = "Hora del evento"
+App         = "Aplicación"
+Event       = "Evento"
+RuleName    = "Regla"
+NetSeverity = "Zona"
+LocalAddr   = "Dirección local"
+LocalPort   = "Puerto local"
+
+[MainReport.Network_Packets_Log_Descr]
+RemoteAddrPort = "Puerto y dirección externos:"
+Application   = "Programa:"
+Port          = "Puerto local:"
+
+[MainReport.AdBlocker_Events_Descr]
+Event.Name   = "Estado: "
+App.Name     = "Aplicación: "
+Reason.Name  = "Motivo: "
+
+;-------------- AntiphishingSettings_Dlg -------------
+
+[AntiphishingSettings_Dlg]
+@ = "Configuración del componente Antifraudes"
+
+[AntiphishingSettings_Heuristic]
+UseHeuristic = "Utilizar Análisis heurístico para comprobar páginas Web en busca de fraudes"
+
+;-------------- WebToolbar_Plugin.SettingsEx_Dlg -------------
+[WebToolbar_Plugin.SettingsEx_Dlg]
+@ = "Configuración del Supervisor Kaspersky de vínculos URL"
+
+[WebToolbar_Plugin.SettingsEx_DlgBody]
+CheckLinks	  = "Modo de comprobación"
+CategoriesSet = "Categorías de sitios Web"
+
+[WebToolbar_Plugin.SettingsEx_CheckLinks]
+CheckInfo	 = "Comprobar direcciones URL:"
+CheckAll     = "&Todas las URL"
+CheckRelated = "Solo las &URL contenidas en los resultados de búsqueda"
+
+[WebToolbar_Plugin.SettingsEx_Categories]
+UseCategories = "&Mostrar información sobre las categorías de contenidos de sitios Web"
+
+[WebToolbar_Plugin.SettingsEx_CategoriesSet]
+Description			= "Seleccione las categorías de contenidos de sitios Web cuya información se mostrará en el navegador al comprobar las direcciones URL:"
+SelectAll			= "Selec. todo"
+SelectNone			= "Borrar todo"
+
+CategoryPorno       = "Material &pornográfico, erótico"
+CategorySoftware    = "Soft&ware ilegal"
+CategoryDrugs       = "&Drogas"
+CategoryViolence    = "&Violencia"
+CategoryUncens      = "Vocabu&lario explícito"
+CategoryWeapons     = "&Armas"
+CategoryGambling    = "C&asinos y subastas"
+CategoryChat        = "&Foros y chats"
+CategoryWebMail     = "Co&rreo Web"
+CategoryShops       = "&Tiendas online"
+CategorySocialNets  = "&Redes sociales"
+CategoryProxy       = "Servidores pro&xy anónimos"
+CategoryCreditCards = "Sis&temas de pago"
+CategoryCasualGames = "J&uegos ocasionales"

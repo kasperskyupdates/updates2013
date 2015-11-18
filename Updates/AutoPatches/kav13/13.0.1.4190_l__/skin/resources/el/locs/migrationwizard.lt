@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Οδηγός μετεγκατάστασης'
+UpgradeCaption = 'Αναβάθμιση'
+
+RebootPageCheckboxRebootText = 'επανεκκίνηση του υπολογιστή'
+OpenRemoveProgramsPanel = 'Άνοιγμα γραμμής εργαλείων'
+
+WizardBeginDescriptionKis = 'Θα μεταφερθείτε στο Kaspersky Internet Security 2013.\n\nΟ κάτοχος των πνευματικών δικαιωμάτων σάς παραχωρεί μια μη αποκλειστική άδεια για τη χρήση του Kaspersky Internet Security υπό τους ίδιους όρους που είχατε αποδεχτεί παλιότερα κατά την πρώτη εγκατάσταση του Kaspersky Anti-Virus.\n\nΣημείωση: Αυτή η μετάβαση μπορεί να οδηγήσει σε επανεκκίνηση.'
+
+WizardBeginDescriptionKav = 'Θα μεταφερθείτε στο Kaspersky Anti-Virus 2013.\n\nΟ κάτοχος των πνευματικών δικαιωμάτων σάς παραχωρεί μια μη αποκλειστική άδεια για τη χρήση του Kaspersky Anti-Virus υπό τους ίδιους όρους που είχατε αποδειχτεί παλιότερα κατά την πρώτη εγκατάσταση του Kaspersky Internet Security.\n\nΣημείωση: Αυτή η μετάβαση μπορεί να οδηγήσει σε επανεκκίνηση.'
+
+WizardContinueDescriptionKis = 'Συνεχίστε τη μετάβαση στο Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Συνεχίστε τη μετάβαση στο Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nΠροσοχή! Η τρέχουσα άδεια για το Kaspersky Anti-Virus λήγει πριν από την άδεια για το Kaspersky Internet Security. Αφού λήξει η άδεια του Kaspersky Anti-Virus, θα είναι αδύνατο να επιστρέψετε στο Kaspersky Anti-Virus.'
+
+PleaseWait = 'Παρακαλώ περιμένετε'
+RemovalProgressDescription   = 'Διαγραφή μη συμβατού λογισμικού'
+RemovalApplicationsDescription = 'Για να εκτελεστεί η εναλλαγή, θα καταργηθεί το ακόλουθο λογισμικό:'
+ManualRemovalApplicationsDescription = 'Για να εκτελεστεί η εναλλαγή, πρέπει να καταργήσετε χειροκίνητα το ακόλουθο μη συμβατό λογισμικό:'
+SearchRemovalApplicationsDescription   = 'Αναζήτηση για μη συμβατό λογισμικό'
+RestartProductDescription = 'Η εφαρμογή θα επανεκκινηθεί για να ολοκληρωθεί η εναλλαγή.'
+RebootOsDescription = 'Για να ολοκληρωθεί η μετάβαση, θα πρέπει να επανεκκινήσετε τον υπολογιστή.\nΟ Οδηγός θα συνεχίσει μετά την επανεκκίνηση.'
+
+MigrationProgressDescriptionKis = 'Νέα ρύθμιση παραμέτρων της εφαρμογής και μετάβαση στο Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Νέα ρύθμιση παραμέτρων της εφαρμογής και μετάβαση στο Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Νέα ρύθμιση παραμέτρων της εφαρμογής και μετάβαση στο Kaspersky Anti-Virus'
+
+MigrationKis = 'Μετάβαση στο Kaspersky Internet Security'
+MigrationKav = 'Μετάβαση στο Kaspersky Anti-Virus'
+MigrationUnknown = 'Μετάβαση '
+
+SearchRemovalApplicationsHeader = 'Αναβάθμιση στο Kaspersky Internet Security'
+RemovalProgressHeader = 'Διαγραφή μη συμβατού λογισμικού'
+RemovalApplicationsHeader = 'Βρέθηκε μη συμβατό λογισμικό'
+RebootOsHeader = 'Απαιτείται επανεκκίνηση του υπολογιστή'
+RestartProductHeader = 'Η εφαρμογή θα επανεκκινηθεί'
+
+MigrationAbortedHeader = $MigrationType + ' δεν είναι δυνατός'
+MigrationAbortedDescription = $MigrationType + ' απέτυχε. Προσπαθήστε να καταργήσετε χειροκίνητα το μη συμβατό λογισμικό και έπειτα, επανεκκινήστε τον οδηγό.'
+
+BestBuyGiftInformation = 'Το Kaspersky Anti-Virus που διαθέτετε θα αναβαθμιστεί σε Kaspersky Internet Security.\nΠλέον θα έχετε στη διάθεσή σας περισσότερες λειτουργίες για την προστασία του υπολογιστή σας.'
+BestBuyGiftDescription = 'Ευχαριστούμε που επιλέξατε το λογισμικό της Kaspersky Lab! Ευχόμαστε να απολαύσετε την πρόσθετη προστασία που μόλις αποκτήσατε.'
+BestBuyUpgradeNotification = 'Κατά τη διάρκεια της αναβάθμισης, το σύστημά σας θα ελεγχθεί για μη συμβατό λογισμικό ούτως ώστε να διασφαλιστεί η σωστή λειτουργία των εγκατεστημένων εφαρμογών και του λειτουργικού συστήματος.'
+BestBuyFreeUpgrade = 'Μετάβαση στο Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Αναβάθμιση στο παρασκήνιο'
+BestBuyTryAbortInformation = 'Η αναβάθμιση θα συνεχιστεί στο παρασκήνιο'
+BestBuyTryAbortDescription = 'Δεδομένου ότι το μη συμβατό λογισμικό δεν έχει αφαιρεθεί, ορισμένες νέες λειτουργίες του Kaspersky Internet Security είναι απενεργοποιημένες προκειμένου να διασφαλιστεί η σωστή λειτουργία των εγκατεστημένων εφαρμογών και του λειτουργικού συστήματος.\n\nΜπορείτε να αφαιρέσετε χειροκίνητα το μη συμβατό λογισμικό και να ενεργοποιήσετε όλες τις νέες λειτουργίες στο παράθυρο ρυθμίσεων του Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Επιστροφή στην αναβάθμιση'
+Congratulation = 'Συγχαρητήρια!'
+
+RunKisButtonText = 'Εκτέλεση του Kaspersky Internet Security'
+
+ProductUpgraded = 'Το Kaspersky Anti-Virus που διαθέτετε αναβαθμίστηκε με επιτυχία στο Kaspersky Internet Security.\nΜπορείτε πλέον να απολαμβάνετε ακόμα περισσότερες λειτουργίες για την προστασία του υπολογιστή σας.'

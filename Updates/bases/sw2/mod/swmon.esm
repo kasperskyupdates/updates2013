@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<root>
+  <component clsid="0x42D77F78" name="SwMonitor" module="swmon.kdl" timeout="-1" category="SW2" module_category="SW2" bases_category="SW2">
+    <interface iid="0xB794EBB5" name="IInterceptorFactory"/>
+  </component>
+</root>
+  

@@ -1,0 +1,205 @@
+<UpdateFiles
+	UpdateDate="22102015 1118"
+	BlackDate="22102015 0708"
+	ObjectType="2=KSN;3=BASE">
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		AppName="!KAV|KIS|PURE|KSOSFS|KSOSPC [13-*].*.*.*"
+		LocalPath="%DataFolder%"
+		Filename="klsrl.xml" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAVMAC 8.*.*.*;KISMAC [13-14].*.*.*"
+		AppName="KSE 8.[3-6].*.*;KSH 8.[2-3].*.*"
+		LocalPath="%DataFolder%"
+		Filename="wnstat.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAV [12-13].0.*.*;KIS [12-13].0.*.*;KES [8-10].[1-2].*.*;KTS 12.*.*.*;KAVSDK 8.3.*.*;KSMG 1.0.0.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*;KLMS 8.0.1.*;KSVLASVM 3.[0-3].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%DataFolder%"
+		Filename="wnstat2.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAVMAC 8.*.*.*;KISMAC 13.*.*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_client.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAV 12.0.*.*;KIS 12.0.*.*;KES 8.1.*.*;KTS 12.*.*.*;SC 10.0.*.*"
+		AppName="KSE 8.[1-5].*.*;KSH 8.2.*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_client2.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSS 12.0.1.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_client_kss2.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAV 13.0.*.*;KIS 13.0.*.*"
+		AppName="PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*;KISMAC 14.*.*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_client3.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KES 10.1.*.*"
+		AppName="KES 10.2.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_kes.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSE 8.6.*.*"
+		AppName="KSH 8.3.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_kse.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="SC 10.0.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_sc.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSMMSDK 4.*.*.*;KFPMAC 1.*.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kh_sm.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSMMSDK 4.*.*.*;KFPMAC 1.*.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_sm.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KLMS 8.0.1.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_client_klms.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAV 12.0.*.*;KIS 12.0.*.*;KAVMAC 8.*.*.*;KES 8.1.*.*;KTS 12.*.*.*;KISMAC [13-14].*.*.*;KIS 13.0.0.*;KAV 13.0.0.*;KIS 13.0.[2-*].*;KAV 13.0.[2-*].*;SC 10.0.*.*;PURE 13.*.*.*;KSOSFS 13.*.*.*;KSOSPC 13.*.*.*;KSE 8.[1-5].*.*;KSH 8.2.*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_helper.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		ServerFolder="2013"
+		App="KAV 13.0.1.*;KIS 13.0.1.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_helper.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSS 12.0.1.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_helper_kss2.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		LocalPath="%DataFolder%"
+		Filename="ksncliwin32keys.dat" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSV 2.0.*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_client_ksv.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSV 2.0.*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_helper_ksv.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KLMS 8.0.1.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_helper_klms.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KES 10.[1-2].*.*"
+		LocalPath="%DataFolder%"
+		Filename="ksn_helper_kes.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSE 8.6.*.*"
+		AppName="KSH 8.3.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kh_kse.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAVSDK 8.1.*.*;KAVSDK 8.3.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_kavsdkl3.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KAVSDK 8.1.*.*;KAVSDK 8.3.*.*"
+		LocalPath="%DataFolder%"
+		Filename="kh_kavsdkl3.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSMG 1.0.0.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_ksmg.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSMG 1.0.0.*"
+		LocalPath="%DataFolder%"
+		Filename="kh_ksmg.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSVLASVM 3.[0-3].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_la.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSVLASVM 3.[0-3].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%DataFolder%"
+		Filename="kh_la.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSVLASVM 3.[0-3].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%DataFolder%"
+		Filename="kc_las.xms" />
+	<FileDescription
+		ComponentID="KSN"
+		UpdateType="base"
+		App="KSVLASVM 3.[0-3].*.*;KSVLA 3.[0-3].*.*"
+		LocalPath="%DataFolder%"
+		Filename="kh_las.xms" />
+	<Registry
+		ComponentID="KSN"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJARxzHipAAHv7UWjxCazxN4NUDun9LwJXO+WMVd4AXSfZ25dzr238KZqJAFQJcOACAnxmp7Kca7f8VU/pQfCHWzGEACm3MjoBAB4JpgAAAAIAAigDAEtTTgMAAigEAEJBU0UBAAAJ7dK3Fg0KOzoxMGEzUjVLZkhjVk9seVZuR0ZMcFVELzlsRmJJbzA4WTJRZ2R1UlpsWHZoTHo5WCtjSm9MUlh1a2NQemNJdFdEMHFhMmNDMWlzc1N2U210bThMZTdBUEFpJSU="
+		Filename="ksn-0607g.pbv" />
+	<Registry
+		ComponentID="KSN"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGmAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqHgABACAAu8pg6qAFMD33RZsRqmXFKhkg7XigkwUNaG33b+37VKIgAEJwF4HY3/9Hyen/kyOjXr4STmfaOXIyhjRNUiY3UfchIAAh/qiSM4cNS2qoY1m3LFyluQBWNcZl4a/joxtsGqGvQCAAB/eXj5BH2dM81cnsGoRqH+tkDQAprUyV+pSjKvg/1fMgADnWdm3BUlc+Jj8jeMMp+W+GfeuqygRlQg2/89rDBP8DIABd1K10/qL8vSb4V4jgAyaNfnOah3ylzNi0ydRamxZk+SAA5uXU12huneSD0SS9NfcqVC2L+D2YeJC1x+ykz3PuBfMgAGQnin8BOxyq5zLLeIoFbVVMaCu1S6BKHJhG4ELhji1kIADU2/5zwX6LHQ3jwTs96n+PThPSnB8FuWe0epKsue57+SAAn5fBwlpftub3AEnecAXInDtxmrsi14qcvPPL7prFXHEgAOjybzw0vshMORZGwzpaUOphUTefDfWZGW7enPJwY5YHIADLb4iaGkAFpFMBH9ZEOT6UKUGy72UwroWC3MHIrFkMIiAANALWHyRxljY6N+Ny1qOnKizGXH2fGbJwtmuJK4UnOYkgAMDqhgs+5ZEyuUhtHhZuDUccBl+vc7fAjIKyKBqhbF7oIADIcr2wt45P1pZGUVqeslORoSuj0f222ZHu4rZlVygPoyAAuHddpOu/QXtUNKBoMz+O3lSYcYUqIFePByGKZCoJC14gAOigwfOsn2U+wYdFD5yyyokIRJ7VOZmeG7ZaH/mubcZTIABhr3a1DS/kS3HncDfmjECs+PHRda26SbAcrG1Y263bUyAA4RBlJenQr37iQ+XqUzNFSvLco5NTI3Yb9b/DD1BM2KIgAEIHomkOAMVZsPc70srhAcwxNCKWVnnLuzITg5iDURXBIACeXUOt8YgwSFDDNbDwXMtWu0jJnStyP06LVkbPNg+LAyAAlLfArCJlskEmlGCNWBrWxwa1LlvIL+2M0M92RCcbLDsgACW3B4M7fg04OcHwqjDwzuRAKqDwcc+Io2db3ImBmId5IAAktWY3e2rTQ4giu3jpH/MQL1a+T6I2PvD7xcEk5MRJ5SAAZQj+/WPwETH1r95sblFi2N0fZy7K5UVW0QtadOI+5EIgAJk/rSnWVBFC4WgfdbSQuBAOkb2j5nCric69wmmCLZX9IAB+9oeNCrFn032O0DgdRu3t5S1RpM+sSin8RsNq88Xl5iAAXPMUOsgDWGuRLRUJzrMh5+HEsw3lfe/ZLebMOGwNWIcgAD3fV0BwOpFVUxNytsAfLU8c+0xtPRXekPyylPnwrkyAIAB+xrcrHjS3LXKktJmIpFXaB3uSt6GuilF0ER5oNxIBaMHNRH0BAB4JpgAAAAEAAAk0B4j6DQo7OjEwS05lMm10OXdPYzRLU2VCeXBJVjZBUlZnMkJpbnpURUVZaG9ZT0ZTZkZrYkRwcHk1aHBUUERkMFQ0TTZCWk8wTFNJQkNXZUtBZHR5Rm96SHhyU252UW4lJQ=="
+		Filename="ksn-0607g.krg" />
+</UpdateFiles>
+;:10KLW6osDD93hW8wRsyfdJx0G5TlvQIDffkqu+9eWBYFb5b1y7CopYLygIy+neJNq7q55BcVQzgN0SafBSOV+Ioc%%

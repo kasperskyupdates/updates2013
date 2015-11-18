@@ -1,0 +1,19 @@
+﻿Description_kav = 'Por predefinição, o Kaspersky Anti-Virus é automaticamente iniciado no arranque do sistema para proteger o seu computador durante a sessão de trabalho.'
+Description_kis = 'Por predefinição, o Kaspersky Internet Security é automaticamente iniciado no arranque do sistema para proteger o seu computador durante a sessão de trabalho.'
+
+EnableProtection = 'Activar &Protecção'
+
+InteractionSection = 'Protecção interactiva'
+DisableInteraction = 'Seleccionar acção &automaticamente'
+DontDeleteSuspicious = 'Não apagar objectos &possivelmente infectados'
+PasswordSettingsIsNotValid = 'Está activada a protecção por password, mas não existe uma password especificada.'
+
+PasswordSection = 'Protecção por Password'
+EnablePassword = 'Acesso &protegido por password às definições da aplicação'
+
+AutorunSection = 'Execução automática'
+Autorun_kav = 'Iniciar o &Kaspersky Anti-Virus no arranque do computador'
+Autorun_kis = 'Iniciar o &Kaspersky Internet Security no arranque do computador'
+
+VKSection = 'Teclado virtual'
+EnableVK = 'Abrir Teclado &virtual premindo "CTRL+ALT+SHIFT+P"'

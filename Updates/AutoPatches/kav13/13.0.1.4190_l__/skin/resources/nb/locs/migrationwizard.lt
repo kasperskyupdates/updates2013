@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migreringsveiviser'
+UpgradeCaption = 'Oppgradering'
+
+RebootPageCheckboxRebootText = 'Start datamaskinen på nytt'
+OpenRemoveProgramsPanel = 'Åpne verktøylinje'
+
+WizardBeginDescriptionKis = 'Du blir byttet over til Kaspersky Internet Security 2013.\n\nInnehaveren av opphavsretten gir deg en ikke-eksklusiv lisens til å bruke Kaspersky Internet Security med samme vilkår som du godtok når du først installerte Kaspersky Anti-Virus.\n\nMerknad: Dette byttet kan resultere i omstart.'
+
+WizardBeginDescriptionKav = 'Du blir byttet over til Kaspersky Anti-Virus 2013.\n\nInnehaveren av opphavsretten gir deg en ikke-eksklusiv lisens til å bruke Kaspersky Anti-Virus med samme vilkår som du godtok når du først installerte Kaspersky Internet Security.\n\nMerknad: Byttet kan resultere i omstart.'
+
+WizardContinueDescriptionKis = 'Fortsett byttet til Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Fortsett byttet til Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nNB! Den aktuelle lisensen for Kaspersky Anti-Virus utløper før lisensen for Kaspersky Internet Security. Etter at lisensen for Kaspersky Anti-Virus har utløpt blir det umulig å gå tilbake til Kaspersky Anti-Virus'
+
+PleaseWait = 'Vennligst vent'
+RemovalProgressDescription   = 'Sletter inkompatibel programvare'
+RemovalApplicationsDescription = 'Følgende programvare vil bli fjernet for å utføre byttet:'
+ManualRemovalApplicationsDescription = 'Du må fjerne følgende inkompatible programvare for å kunne utføre byttet:'
+SearchRemovalApplicationsDescription   = 'Søker etter inkompatibel programvare'
+RestartProductDescription = 'Programmet vil bil omstartet for å fullføre byttet.'
+RebootOsDescription = 'Du må gjenstarte datamaskinen for å fortsette med byttet.\nVeiviseren vil fortsette etter omstarten.'
+
+MigrationProgressDescriptionKis = 'Omkonfigurere programmet og bytte til Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Omkonfigurere programmet og bytte til Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Omkonfigurere programmet og bytte til Kaspersky Anti-Virus'
+
+MigrationKis = 'Bytte til Kaspersky Internet Security'
+MigrationKav = 'Bytte til Kaspersky Anti-Virus'
+MigrationUnknown = 'Bytte '
+
+SearchRemovalApplicationsHeader = 'Oppgrader til Kaspersky Internet Security'
+RemovalProgressHeader = 'Sletter inkompatibel programvare'
+RemovalApplicationsHeader = 'Fant inkompatibel programvare'
+RebootOsHeader = 'Omstart av datamaskin er nødvendig'
+RestartProductHeader = 'Programmet vil bli omstartet'
+
+MigrationAbortedHeader = $MigrationType + 'er umulig'
+MigrationAbortedDescription = $MigrationType + ' mislyktes. Forsøk å fjerne den inkompatible programvaren manuelt og omstart deretter veiviseren.'
+
+BestBuyGiftInformation = 'Kaspersky Antivirus vil oppgraderes til Kaspersky Internet Security.\nNå vil du ha enda flere funksjoner for å beskytte datamaskinen.'
+BestBuyGiftDescription = 'Takk for at du har valgt programvare fra Kaspersky Lab! Dra fordel av ekstra beskyttelse.'
+BestBuyUpgradeNotification = 'Under oppdatering analyseres systemet for inkompatibel programvare for å sikre at installerte programmer og operativsystemet fungerer riktig.'
+BestBuyFreeUpgrade = 'Bytte til Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Oppgrader i bakgrunnen'
+BestBuyTryAbortInformation = 'Oppgraderingen vil fortsette i bakgrunnen'
+BestBuyTryAbortDescription = 'Inkompatibel programvare ble ikke fjernet, så enkelte av funksjonene i Kaspersky Internet Security er deaktivert for å sikre at installerte programmer og operativsystemet fungerer riktig.\n\nDu kan fjerne inkompatibel programvare manuelt og aktivere alle de nye funksjonene i innstillingsvinduet til Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Tilbake til oppgradering'
+Congratulation = 'Gratulerer!'
+
+RunKisButtonText = 'Kjør Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus er oppgradert til Kaspersky Internet Security.\nNå kan du dra fordel av enda flere funksjoner for å beskytte datamaskinen.'

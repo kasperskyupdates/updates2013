@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Võtmefaili valik"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Selle rakendusekoopia litsentsivõti on pärit arvutitootjalt. Kas tahate aktiveerida rakenduse selle võtmefailiga?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.KeyExpirationDate)
+CancelWizardWarning             = "Rakenduse seadistamine pole veel lõppenud. Kas tahate kindlasti lõpetada seadistusviisardi töö?"
+ErrEmptyActivationCode.caption  = "Aktiveerimiskoodi pole määratud"
+ErrEmptyActivationCode          = "Sisestage aktiveerimiskood"
+ErrEmptyKeyPath.caption         = "Võtmefaili pole määratud"
+ErrEmptyKeyPath                 = "Palun määrake võtmefail"
+$LicInfoKeyNumber               = "Number:"
+$LicInfoKeyProductName          = "Rakenduse nimetus:"
+$LicInfoKeyType                 = "Litsentsi tüüp:"
+$LicInfoExpirationDate          = "Aegumise kuupäev:"
+$LicErrReason                   = "Põhjus:"
+$ActiveKey                      = "Aktiivne võti"
+$ReservedKey                    = "Lisavõti"
+ConfirmFeedback                 = "Kas olete nõus informatsiooni edastamisega teenusele <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) on online-teenuste infrastruktuur, mis sisaldab ajakohast informatsiooni failide, veebiressursside ja rakenduste turvalisuse kohta. Kaspersky Security Network andmete kasutamine tagab kiirema reaktsiooni uut tüüpi ohtudele, suurendab rakenduse mõnede kaitsekomponentide töö efektiivsust ning vähendab valetuvastuste riski. \nKui osalete KSN-is, saadetakse viiruste ja muude probleemide kohta käiv informatsioon, paigaldatud ja töötavate rakenduste laiendatud statistika (vastavalt loetelule, mis on toodud <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network andmete kogumise määruses</a>) automaatselt Kaspersky Lab-i.\n\n<b>Kaspersky Security Network ei kogu ega töötle kasutajate isiklikke andmeid.</b>"
+
+$ToAcquireNewLicText            = "\n\nUue litsentsi ostmiseks kontakteeruge edasimüüjaga või <a Buy onclick(buy())>Kaspersky Lab Sales Department</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nProovige tellimuse staatust uuendada käsitsi või pöörduge tehnilise toe poole" : "\nProovige rakendust aktiveerida aktiveerimiskoodiga hiljem (1-2 tunni pärast) või pöörduge tehnilise toe poole") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Aktiveerimisviisard" : " Seadistusviisard")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Üldine informatsioon"
+InitBegin.Descr                       = "Tere tulemast " + $ProductName_GEN + " seadistusviisardisse."
+CheckHosts.Name                       = "Kaspersky Lab´i serverite kättesaadavuse kontroll"
+CheckHosts.Descr                      = "Avastati kahtlane ümbersuunamine"
+ResetArea.Name                        = "Seadete taastamine"
+ResetArea.Descr                       = "Allpool loetletud seaded sisaldavad kasutaja poolt sisestatud või rakenduse \ntöö ajal kogutud andmeid."
+ActivationBegin.Name                  = $IsSubscription ? "Tellimuse haldus" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Võtme kustutamine" : "Võtme lisamine") : "Rakenduse aktiveerimine")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Litsentseerimine" : "Jätkamiseks tuleb rakendus aktiveerida.")
+ActivationProgress.Name               = "Online-aktiveerimine"
+ActivationProgress.Descr              = "Toimub aktiveerimine, palun oodake..."
+ActivationServerForm.Name             = "Online-aktiveerimine"
+ActivationServerForm.Descr            = "Palun täitke vorm."
+ActivationChooseKey.Name              = "Aktiveeri võtmefailiga"
+ActivationChooseKey.Descr             = "Aktiveerige rakendus võtmefailiga."
+ActivationEnd.Name                    = "Rakenduse aktiveerimine"
+ActivationEnd.Descr                   = "Aktiveerimine on lõpetatud."
+MigrationKeyIsFound.Name         = "Leiti kehtiva litsentsi võti"
+MigrationKeyIsFound.Descr        = "Kas tahate rakendust kasutada vastavalt kehtivale litsentsile?"
+MigrationBegin.Name              = "Kasuta rakendust " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Minnakse üle rakendusele " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Kokkusobimatute rakenduste otsing"
+MigrationSearchProgress.Descr    = "Oodake palun, kuni otsitakse kokkusobimatuid rakendusi..."
+MigrationSafeRemoval.Name        = "Leiti kokkusobimatud rakendused"
+MigrationSafeRemoval.Descr       = "Jätkamiseks tuleb kokkusobimatud rakendused eemaldada"
+MigrationSafeProgress.Name       = "Kokkusobimatute rakenduste eemaldamine"
+MigrationSafeProgress.Descr      = "Oodake palun, kuni kokkusobimatuid rakendusi eemaldatakse..."
+MigrationAddRemove.Name          = "Leiti kokkusobimatud rakendused"
+MigrationAddRemove.Descr         = "Palun eemaldage kokkusobimatud rakendused"
+MigrationUnsafeRemoval.Name      = "Leiti kokkusobimatud rakendused"
+MigrationUnsafeRemoval.Descr     = "Jätkamiseks tuleb kokkusobimatud rakendused eemaldada"
+MigrationUnsafeProgress.Name     = "Kokkusobimatute rakenduste eemaldamine"
+MigrationUnsafeProgress.Descr    = "Oodake palun, kuni kokkusobimatuid rakendusi eemaldatakse..."
+MigrationReboot.Name             = "Nõutav on operatsioonisüsteemi taaskäivitus"
+MigrationReboot.Descr            = "Uuele rakendusele üleminekuks tuleb arvuti taaskäivitada"
+MigrationProgress.Name           = "Üleminek rakendusele " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Palun oodake, kuni minnakse üle uuele rakendusele..."
+MigrationRebootApp.Name          = bMigrationDone ? "Rakendus taaskäivitatakse" : "Üleminekul uuele rakendusele tekkis viga"
+MigrationRebootApp.Descr         = bMigrationDone ? "Rakendus tuleb taaskäivitada" : "Üleminek rakendusele " + s_MUProductTitleLong(env("ProductType")) + " lõppes veaga"
+MigrationFinish.Name             = "Üleminek rakendusele " + s_ProductTitleLong(env("ProductType")) + " lõppes edukalt!"
+MigrationFinish.Descr            = "Üleminek rakendusele " + s_ProductTitleLong(env("ProductType")) + " lõppes edukalt!"
+DNS.Name                              = "Lisaseaded"
+DNS.Descr                             = "Rakenduse " + $ProductName_GEN + " lisaseaded"
+EnumExe.Name                          = "Süsteemianalüüs"
+EnumExe.Descr                         = "Oodake palun, kuni kogutakse infot süsteemi kohta..."
+InitFinish.Name                       = "Rakenduse seadistuse lõpetamine" + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Rakenduse seadistuse lõpetamiseks tuleb arvuti taaskäivitada." : $ProductName + " on tööks valmis."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Avastati Kaspersky Lab´i serverite aadresside kahtlane ümbersuunamine. See võib olla kahjurprogrammide tegevuse tagajärg ning võib nurjata uuendamised ja aktiveerimise. Kahtlased kirjed hosts-failis:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Kustuta kirjed (soovituslik)"
+Skip			= "Jäta vahele"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Tagasi"
+Back.Descr      = "Tagasi aktiveerimismooduse valiku juurde"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Lisa võti" : "&Aktiveeri"
+Activate.Descr  = "Valitud võtmefaili paigaldus"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Lõpeta"
+Finish.Descr    = "Sule aktiveerimisviisard"
+Next.Name       = "&Edasi"
+Next.Descr      = "Edasi seadistamise juurde"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Te saate kehtiva litsentsi poolt ettenähtud rakendust edasi kasutada. Sellisel juhul minnakse üle rakendusele " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Kas tahate rakenduse kasutamist jätkata vastavalt kehtivale litsentsile?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Rakenduse tüüp:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Aegumise kuupäev:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (on jäänud " + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Jah, ja mine üle rakendusele " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Ei, ja kasuta edasi rakendust " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Minnakse üle rakendusele " + s_MUProductTitleLong(env("ProductType")) + ". Õigusteomanik annab mitteeksklusiivse litsentsiga teile õiguse kasutada rakendust " + s_MUProductTitleLong(env("ProductType")) + " samadel tingimustel, millega te eelnevalt nõustusite rakenduse " + s_ProductTitleLong(env("ProductType")) + " paigaldusel"
+Text3   = "Märkus: Ülemineku protseduur võib vajada arvuti taaskäivitamist."
+LicenseWarning  = "Tähelepanu! Kaspersky Anti-Viruse kommertslitsentsi kehtivusaeg lõpeb enne Kaspersky Internet Security proovilitsentsi lõppu. Pärast Kaspersky Anti-Viruse kommertslitsentsi kehtivusaja lõppu ei saa Kaspersky Internet Security proovilitsentsi lõppemisel enam Kaspersky Anti-Virust kasutada. Kas tahate jätkata üleminekut rakendusele Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Otsitakse kokkusobimatut tarkvara. See võib võtta aega. Palun oodake ..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Enne üleminekut eemaldatakse loetletud tarkvara:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Oodake palun, kuni kokkusobimatuid rakendusi eemaldatakse..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Enne üleminekut tuleb eemaldada loetletud tarkvara:"
+OpenAddRemove = "Ava aken \"Programmide lisamine või eemaldamine\""      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Enne üleminekut eemaldatakse loetletud tarkvara:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Oodake palun, kuni kokkusobimatuid rakendusi eemaldatakse..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Ülemineku jätkamiseks tuleb arvuti taaskäivitada. Pärast taaskäivitust jätkab viisard oma tööd."
+Reboot   = "Taaskäivita arvuti kohe"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Oodake palun, kuni rakendust seadistatakse ja toimub üleminek rakendusele " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Ülemineku lõpetamiseks rakendusele " + s_MUProductTitleLong(env("ProductType")) + " taaskäivitatakse see." : "Üleminek rakendusele " + s_MUProductTitleLong(env("ProductType")) + " ebaõnnestus."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Nüüd saate hinnata rakenduse " + s_ProductTitleLong("kis") + " selliseid omadusi nagu Vanemakontroll, Rämpspostifilter, Tulemüür ja palju teisi võimalusi." : s_ProductTitleLong("kav") + " on lahendus arvuti baaskaitseks kahjurprogrammide eest."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Te saate "+if($IsRefreshSubAvail,"uuendada tellimuse staatust või ")+"kustutada litsentsi." : (f_IsActiveKeyWorkingCommercial() ? "Te saate kustutada võtme või ühendada litsentsid." : "Aktiveerige oma koopia rakendusest " + $ProductName + " ja saate juurdepääsu uuendustele ja tugiteenusele."+ if($CorporateOnly, " Aktiveerimisserverist on võimalik saada <a Activate onclick(url($ActivationLink))>kommerts-</a> või <a ActivateTrial onclick(url($ActivationTrialLink))>proovilitsents</a>."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktiveeri &hiljem"
+Later.Descr                 = "Jäta aktiveerimine vahele, seadista kohe"
+ChooseKey.Name              = "Aktiveeri &võtmefailiga"
+ChooseKey.Descr             = "Nõutav on võtmefail"
+ActivateBetaKAV.Name        = "Aktiveeri Kaspersky Anti-Viruse &beetaversioon"
+ActivateBetaKAV.Descr       = "Kaspersky Anti-Viruse beetaversioon on täisfunktsionaalne, kuid lõpetamata toode."
+ActivateBetaKIS.Name        = "Aktiveeri Kaspersky Internet Security &beetaversioon"
+ActivateBetaKIS.Descr       = "Kaspersky Internet Security beetaversioon on täisfunktsionaalne, kuid lõpetamata toode."
+ActivateTrial.Name          = "Aktiveeri &prooviversioon"
+ActivateTrial.Descr         = "Prooviversiooni kehtivusaeg on näidatud lõppkasutaja litsentsilepingus"
+ActivateCommercial.Name     = "Aktiveeri &internetis"
+ActivateCommercial.Descr    = "Nõutav on ostul saadud aktiveerimiskood"
+RemoveKey.Name              = $HasReserveKey ? "&Kustuta lisavõti" : "&Kustuta võti"
+RemoveKey.Descr             = "Võtme vahetamiseks kustutage esmalt aktiivne võti"
+RefreshSubscription.Name    = "&Uuenda tellimuse staatus"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Te saate uuendada tellimuse staatuse käsitsi." :  "Tellimuse staatuse automaatne uuendamine on katkenud. Te saate uuendada tellimuse staatuse käsitsi."
+ActivateTrialKIS            = "Aktiveeri Kaspersky Internet Security prooviversioon"
+ActivateTrialKIS_Desc       = "Kaspersky Internet Security prooviversiooni kehtivusaeg on toodud litsentsilepingus"
+RevertToCommercialKAV       = "Pöördu tagasi Kaspersky Anti-Viruse kommertsversiooni juurde"
+RevertToCommercialKAV_Desc  = "Pöördu tagasi Kaspersky Anti-Viruse kommertsversiooni juurde"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Uuenda tellimuse staatus"
+ActivateCommercial      = "Aktiveeri &kommertsversioon"
+ActivateCommercial_Desc = (LockActivationCode)? "Teie aktiveerimiskood: " : "Sisestage <a onclick(url(\"" + $ActCodeHint + "\"))>aktiveerimiskood</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Teie aktiveerimiskood lisati automaatselt. Klikake nupule \"Edasi\"." : "Kui teil aktiveerimiskoodi pole, siis saate litsentsi osta <a onclick(buy())>online</a>"
+ActivateBetaKAV         = "Aktiveeri Kaspersky Anti-Viruse &beetaversioon"
+ActivateBetaKIS         = "Aktiveeri Kaspersky Internet Security beeta&versioon"
+ActivateTrial           = "Aktiveeri &prooviversioon"
+ActivateTrial_Desc      = "Hinnake rakenduse tööd täisfunktsionaalse prooviversiooniga enne, kui ostate kommertsversiooni."
+ActivateTrialKIS           = "Aktiveeri Kaspersky Internet Security prooviversioon"
+ActivateTrialKIS_Desc      = "Hinnake rakenduse tööd täisfunktsionaalse prooviversiooniga enne, kui ostate kommertsversiooni."
+RevertToCommercialKAV      = "Pöördu tagasi Kaspersky Anti-Viruse kommertsversiooni juurde"
+RevertToCommercialKAV_Desc = "Katkesta Kaspersky Internet Security prooviversiooni kasutamine ja pöördu tagasi Kaspersky Anti-Viruse kommertsversiooni juurde."
+Later                   = "Aktiveeri &hiljem"
+Later_Desc              = "Rakenduse täisfunktsionaalseks tööks peab see olema aktiveeritud"
+RemoveKey               = "Kustuta võtmefail"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Võtmefail:"
+KeyInfo         = "Litsentsiinfo"
+ConnectingInfo.Name     = "Aktiveerimisviga: "
+ConnectingInfo.Val      = "täpsemalt"
+TryAgain                = "Aktiveeri"
+Descr1                  = "Enne teistkordset aktiveerimiskatset tehke järgmised toimingud:"
+Descr2                  = "Kontrollige internetiühenduse seadistusi ja proovige rakendust veel kord aktiveerida."
+Descr3                  = "Avage <a onclick(url(\"" + $ActivationLink + "\"))> aktiveerimiskeskus</a> ja järgige instruktsioone.\nVõtmefaili kättesaamisel määrake selle asukoht ja klikake nupule 'Edasi':"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Loomiskuupäev:"
+InstallDate.Name    = "Aktiveerimiskuupäev:"
+ExpirationDate.Name = "Aegumise kuupäev:"
+SubscrptnExpDate.Name = "Tellimuse aegumise kuupäev:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Süsteemiviga: " + s_SystemError(ErrorCode)
+2       = "Võtmefaili \"" + KeyFile + "\" pole võimalik lisada: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Ei saa kustutada \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Vea kood: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "See võti on juba lisatud" + $LicErrHelpLink
+0x0947901d  = "Litsentsi kehtivusaeg on läbi. Andmebaasi uuendamine pole kättesaadav" + $LicErrHelpLink
+0x89479002  = "Litsentsi ei leitud" + $LicErrHelpLink
+0x89479003  = "Digiallkiri on rikutud või seda ei leitud" + $LicErrHelpLink
+0x89479004  = "Andmed on rikutud" + $LicErrHelpLink
+0x89479005  = "Võtmefail on rikutud" + $LicErrHelpLink
+0x89479006  = "Litsentsi kasutusaeg on lõppenud" + $LicErrHelpLink
+0x89479007  = "Võtmefaili pole määratud" + $LicErrHelpLink
+0x89479008  = "Litsentsivõtme fail on vale" + $LicErrHelpLink
+0x89479009  = "Andmete salvestus ebaõnnestus" + $LicErrHelpLink
+0x8947900a  = "Andmete lugemine ebaõnnestus" + $LicErrHelpLink
+0x8947900b  = "Sisendi/väljundi viga" + $LicErrHelpLink
+0x8947900c  = "Andmebaase ei leitud" + $LicErrHelpLink
+0x8947900d  = "Aktiivne ja lisavõti on juba lisatud" + $LicErrHelpLink
+0x8947900e  = "Litsentsimisteek pole laaditud" + $LicErrHelpLink
+0x8947900f  = "Andmebaasid on rikutud või käsitsi uuendatud" + $LicErrHelpLink
+0x89479010  = "Andmebaasid on rikutud" + $LicErrHelpLink
+0x89479011  = "Kehtetut võtmefaili ei saa lisavõtmena registreerida" + $LicErrHelpLink
+0x89479012  = "Süsteemiviga" + $LicErrHelpLink
+0x89479013  = "Võtmete must nimekiri on rikutud" + $LicErrHelpLink
+0x89479014  = "Faili allkiri ei vasta Kaspersky Lab´i digiallkirjale" + $LicErrHelpLink
+0x89479015  = "Rakenduse kommertsversiooni pole võimalik beetalitsentsiga aktiveerida" + $LicErrHelpLink
+0x89479016  = "Rakenduse beetatestimisversiooni saab kasutada ainult beetalitsentsiga" + $LicErrHelpLink
+0x89479017  = "Litsents ei laiene sellele rakendusele. Rakendust " + $ProductName + " ei saa aktiveerida teise rakenduse litsentsiga. Palun kontrollige paigaldatud rakendust." + $LicErrHelpLink
+0x89479018  = "Võti on blokeeritud" + $LicErrHelpLink
+0x89479019  = "Seda proovilitsentsi on juba kasutatud. Üht proovilitsentsi ei saa kasutada kaks korda" + $LicErrHelpLink
+0x8947901a  = "Võtmefail on rikutud" + $LicErrHelpLink
+0x8947901b  = "Digiallkirja ei leitud, see on rikutud või ei vasta Kaspersky Lab´i omale" + $LicErrHelpLink
+0x8947901c  = "Lõppenud kehtivusajaga mittekommertslitsentsile pole võimalik võtit lisada" + $LicErrHelpLink
+0x8947901e  = "Võtmefaili loomis- või aktiveerimisaeg on vale. Kontrollige süsteemiaega" + $LicErrHelpLink
+0x8947901f  = "Proovilitsentsile pole teise proovilitsentsi kehtivusajal võimalik võtit lisada" + $LicErrHelpLink
+0x89479020  = "Võtmete must nimekiri on rikutud või seda ei leitud" + $LicErrHelpLink
+0x89479021  = "Uuenduste kirjeldus on rikutud või seda pole leitud" + $LicErrHelpLink
+0x89479022  = "Siseandmed ei sobi kokku praeguse rakendusega" + $LicErrHelpLink
+0x89479023  = "Lisavõtit pole võimalik vale aktiveerimiskoodiga lisada" + $LicErrHelpLink
+0x89479024  = "Viga andmevormi täitmisel" + $LicErrHelpLink
+0x89479025  = "Päringu saatmisel aktiveerimisserverisse tekkis viga.\nVõimalikud põhjused: probleemid internetiühendusega või ajutised probleemid aktiveerimisserveris.\nProovige rakendust aktiveerida hiljem (1-2 tunni pärast).\nVea kordumisel pöörduge oma internetipakkuja poole" + $LicErrHelpLink
+0x89479026  = "Päringus on näidatud vale aktiveerimiskood" + $LicErrHelpLink
+0x89479027  = "Pole võimalik saada vastuse staatust" + $LicErrHelpLink
+0x89479028  = "Viga ajutise faili salvestamisel" + $LicErrHelpLink
+0x89479029  = "Sisestati vale aktiveerimiskood või on arvuti süsteemiaeg vale. Kontrollige kuupäeva seadistusi arvutis" + $LicErrHelpLink
+0x8947902a  = "Aktiveerimiskood ei sobi sellele rakendusele või on võtme kehtivusaeg lõppenud. Rakendust " + $ProductName + " ei saa aktiveerida teise rakenduse litsentsiga. Palun kontrollige paigaldatud rakendust või <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Võtmefaili ei õnnestunud saada. Sisestati vale aktiveerimiskood." + $LicErrHelpLink
+0x8947902c  = "Aktiveerimisserver tagastas vea 400" + $OlaErrHelpLink
+0x8947902d  = "Aktiveerimisserver tagastas vea 401" + $OlaErrHelpLink
+0x8947902e  = "Aktiveerimisserver tagastas vea 403" + $OlaErrHelpLink
+0x8947902f  = "Vajalik ressurss aktiveerimisserveris pole kättesaadav.\nAktiveerimisserver tagastas vea 404.\nPalun kontrollige internetiühenduse parameetreid." + $OlaErrHelpLink
+0x89479030  = "Aktiveerimisserver tagastas vea 405" + $OlaErrHelpLink
+0x89479031  = "Aktiveerimisserver tagastas vea 406" + $OlaErrHelpLink
+0x89479032  = "Nõutav on puhverserveri autentimine. Palun kontrollige võrguparameetreid" + $LicErrHelpLink
+0x89479033  = "Päringu ooteaja lõpp" + $LicErrHelpLink
+0x89479034  = "Aktiveerimisserver tagastas vea 409" + $OlaErrHelpLink
+0x89479035  = "Vajalik ressurss aktiveerimisserveris pole kättesaadav.\nAktiveerimisserver tagastas vea 410.\nPalun kontrollige internetiühenduse parameetreid." + $OlaErrHelpLink
+0x89479036  = "Aktiveerimisserver tagastas vea 411" + $OlaErrHelpLink
+0x89479037  = "Aktiveerimisserver tagastas vea 412" + $OlaErrHelpLink
+0x89479038  = "Aktiveerimisserver tagastas vea 413" + $OlaErrHelpLink
+0x89479039  = "Aktiveerimisserver tagastas vea 414" + $OlaErrHelpLink
+0x8947903a  = "Aktiveerimisserver tagastas vea 415" + $OlaErrHelpLink
+0x8947903b  = "Kliendipoolne määramata viga" + $OlaErrHelpLink
+0x8947903c  = "Serveri siseviga" + $LicErrHelpLink
+0x8947903d  = "Funktsiooni ei toetata" + $LicErrHelpLink
+0x8947903e  = "Lüüsi vastus on vale. Kontrollige võrguparameetreid" + $LicErrHelpLink
+0x8947903f  = "Ressurss pole ajutiselt saadaval" + $LicErrHelpLink
+0x89479040  = "Lüüsi päringuvastuse ooteaja lõpp. Kontrollige võrguparameetreid" + $LicErrHelpLink
+0x89479041  = "Serveripoolse toetuseta protokoll" + $OlaErrHelpLink
+0x89479042  = "Serveripoolne määramata viga" + $OlaErrHelpLink
+0x89479043  = "Määramata HTTP-viga" + $OlaErrHelpLink
+0x89479044  = "Vale ressursiidentifikaator" + $LicErrHelpLink
+0x89479045  = "Valed andmed väljal \"võti\"" + $LicErrHelpLink
+0x89479046  = "Vale URL-aadress" + $LicErrHelpLink
+0x89479047  = "Vale sihtkaust" + $LicErrHelpLink
+0x89479048  = "Mälujaotusviga" + $LicErrHelpLink
+0x89479049  = "Viga parameetrite konverteerimisel ANSI-stringi (url, folder, agent)" + $LicErrHelpLink
+0x8947904a  = "Viga töölõime loomisel" + $LicErrHelpLink
+0x8947904b  = "Töölõim on juba käivitatud" + $LicErrHelpLink
+0x8947904c  = "Töölõim pole käivitatud" + $LicErrHelpLink
+0x8947904d  = "Aktiveerimisserverist ei leitud võtmefaili" + $LicErrHelpLink
+0x8947904e  = "Võti on blokeeritud" + $LicErrHelpLink
+0x8947904f  = "Aktiveerimisserveri siseviga" + $LicErrHelpLink
+0x89479050  = "Aktiveerimispäringus pole piisavalt andmeid" + $LicErrHelpLink
+0x89479051  = "Kasutaja ID või parool on vale" + $LicErrHelpLink
+0x89479052  = "Aktiveerimiskood on vale" + $LicErrHelpLink
+0x89479053  = "Väljavalitud võtmefaili litsentsi kehtivusaeg on lühem kui kehtiva litsentsi oma" + $LicErrHelpLink
+0x89479054  = "Arvuti süsteemiaeg on vale. Kontrollige palun arvuti kuupäevaseadistusi" + $LicErrHelpLink
+0x89479055  = "Proovilitsentsi kasutusaeg on lõppenud" + $LicErrHelpLink
+0x89479056  = "Rakenduse aktiveerimisaeg on lõppenud" + $LicErrHelpLink
+0x89479057  = "<b>Selle koodi aktiveerimiskordade lubatud hulk on ületatud!</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Kommertslitsentsi kehtivusajal pole võimalik lisavõtmena lisada mittekommertsversiooni võtit" + $LicErrHelpLink
+0x8947905c  = "Nõutav on aktiveerimiskood" + $LicErrHelpLink
+0x8947905d  = "Kasutaja ID või parool on vale" + $LicErrHelpLink
+0x8947905e  = "Aktiveerimiskood on vale" + $LicErrHelpLink
+0x89479062  = "Aktiveerimisserveriga pole võimalik ühendust luua" + $LicErrHelpLink
+0x89479064  = "<b>Aktiveerimisserver pole kättesaadav.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Praegu pole rakenduse aktiveerimine võimalik. Proovige aktiveerimist korrata pärast rakenduse seadistust ja operatsioonisüsteemi taaskäivitust.", "Kontrollige oma arvuti internetiühendust ja proovige rakendust veel kord aktiveerida.") + $LicErrHelpLink
+0x89479065  = "Litsentsi kehtivusaeg on lõppenud. Palun <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " litsents</a>" + $LicErrHelpLink
+0x89479066  = "Aktiivset võtit ei saa vahetada kehtetu võtmega" + $LicErrHelpLink
+0x89479067  = "Lisavõtmena pole võimalik lisada võtit, mille kehtivusaeg lõpeb enne aktiivse võtme kehtivusaega" + $LicErrHelpLink
+0x89479068  = "Puudub tellimuse uuendatud võtmefail" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Aktiveerimine lõppes süsteemiveaga " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktiveerimisviga: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktiveerimisviga: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktiveerimisviga: server tagastas HTTP-koodi " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Aktiveerimine lõppes veaga " + $OnlineActSrvError + ":" + $OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Aktiveerimisserveri siseviga. Korrake uuendamist veel kord või pöörduge tugiteenuse poole"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Aktiveerimiskood ei sobi selle rakendusega. Rakendust " + $ProductName + " ei saa aktiveerida teise rakenduse aktiveerimiskoodiga. Palun kontrollige paigaldatud rakendust"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Võti on blokeeritud"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Vale kasutajatunnus või parool"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Aktiveerimiskood on vale"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Nõutav on aktiveerimiskood"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Aktiveerimisperiood on lõppenud"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Aktiveerimiste arv selle koodiga on ületatud"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Aktiveerimiskood ei sobi sellele regioonile"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "See aktiveerimiskood pole ette nähtud rakenduse praegusele keeleversioonile"
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Aktiveerimiskood on ette nähtud selle rakenduse uuemale versioonile. Praeguse versiooni kasutamiseks on vajalik teine kood. Täpsemat teavet saab allpool olevalt lingilt."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Aktiveerimisserver tagastas vea 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Aktiveerimisserver tagastas vea 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Aktiveerimisserver tagastas vea 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Aktiveerimisserver tagastas vea 646"
+default                                     = "Aktiveerimine lõppes veaga " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft Internet Explorer on seadistatud offline töörežiimi"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Internetiühendus katkes"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Aktiveerimisserver pole kättesaadav"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Puhverserver pole kättesaadav"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Lõppes vastuse ooteaeg"
+#OLA_ERR_INTERNET_INVALID_URL                = "Aktiveerimisserveri aadress on vale"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Vale protokoll"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Ei saa ühendust serveriga"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operatsioon tühistati"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Ei saa ühendust serveriga"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Ühendus serveriga katkestati"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Ühendus serveriga hüljati"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Serveri vastus on vale"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Serveri SSL-sertifikaat on aegunud. Kontrollige oma arvuti kuupäeva"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL-sertifikaadis olev nimetus ei vasta serverile"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Sertifikaadi vastust ei saa kontrollida. Lülitage see suvand Microsoft Internet Exploreris välja (Internet Options->Advanced->Check for Server certificate revocation) ja korrake aktiveerimiskatset"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Vale SSL-sertifikaat"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL-sertifikaat kutsuti tagasi"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Vale sertifitseerimiskeskus"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Registreerimisandmeid on Kaspersky Labile vaja selleks, et informeerida teid kampaaniatest, soodusmüükidest ja eripakkumistest."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Jätka"
+Activate.Descr  = "Andmete saatmine aktiveerimisserverisse"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Seadistusviisard võtab ühendust Kaspersky Lab´i aktiveerimisserveriga. See võib võtta pisut aega, sõltuvalt teie internetiühenduse kiirusest."
+ConnectingInfo.Name     = "Ühendumine aktiveerimisserveriga..."
+ConnectingInfo.Val      = if(bConnected, "Korras")
+SendingCodeInfo.Name    = "Aktiveerimiskoodi edastamine..."
+SendingCodeInfo.Val     = if(bSentCode, "Korras")
+RetrievingKeyInfo.Name  = "Serveri vastuse ootamine..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "Korras")
+Status                  = "Teie koopia rakendusest " + $ProductName + " on edukalt aktiveeritud"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Aegumise kuupäev:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (on jäänud " + f_n_days_remaining(DaysTillExpiration) + ")"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktiveerimine on edukalt lõpetatud." : "Teie arvutis on rakendus juba aktiveeritud."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Edasi"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Edasi rakenduse aktiveerimise juurde": (((PiwFlags & #fPiwActivation) && !bSilent)?"Edasi litsentsiinfo juurde":"Edasi kaitserežiimi valiku juurde")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "See viisard aitab teil kiirelt ja õigesti seadistada teie arvuti kaitse.\n\nSeadistuse käigus kogutakse infot süsteemi ja arvutisse paigaldatud rakenduste kohta. Seda infot kasutatakse ainult teie arvuti optimaalseks kaitseks.\n\nAlustamaks rakenduse " + $ProductName_GEN + " seadistust, klikake Edasi."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Paigaldus on peaaegu lõpetatud..." : ((PiwFlags & #fPiwReset) ? ("Taastamine on lõpetatud.") : ("Paigaldus on lõpetatud."))
+ResetDescr          = "Rakenduse " + $ProductName + " seadistusviisard lõpetas oma töö. Rakenduse taastamine lõppes edukalt."
+Reboot              = "&Taaskäivita arvuti"
+StartProduct        = "&Käivita " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Täname teid rakenduse " + $ProductName + " paigalduse eest. Paigalduse lõpetamiseks tuleb teil taaskäivitada arvuti. Salvestage andmed, sulgege kõik rakendused ja klikake nupule 'Lõpeta'.") : "Tähelepanu! Rakenduse esmakäivitus võib võtta tavapärasest kauem aega, see on vajalik info kogumiseks ja rakenduse töö optimaalseks seadistamiseks.\nJärgmised käivitused toimuvad normaalrežiimis."
+
+[ConfigureWizard.EnumExe]
+Info = "Süsteemi analüüsil koostatakse nimekiri operatsioonisüsteemi Microsoft Windows usaldusväärsetest rakendustest. \n\nRakendusi, mis ei kuulu operatsioonisüsteemi koosseisu, analüüsitakse eraldi nende esmakäivitusel arvutis."
+
+[s_LicKeyType]
+#ektBeta         = "Beetavõti"
+#ektTrial        = "Proovivõti"
+#ektTest         = "Testvõti"
+#ektOEM          = "OEM-võti"
+#ektCommercial   = "Kommertsvõti"
+#ektSubscription = "Tellimuse kommertsvõti"
+#ektSubscriptionProtection = "Kaitsetellimuse kommertsvõti"
+default          = "Tundmatu tüüp"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Tundmatu viga"
+#ekirValid                      = "Litsents kehtib"
+#ekirExpired                    = "Litsentsi kasutusaeg on lõppenud"
+#ekirCorrupted                  = "Litsents on kehtetu"
+#ekirNotSigned                  = "Digiallkiri on rikutud või pole leitav"
+#ekirWrongProduct               = "Litsents ei laiene sellele rakendusele. Rakendust " + $ProductName + " ei saa aktiveerida teise rakenduse litsentsiga. Palun kontrollige paigaldatud rakendust."
+#ekirBlackListed                = "Võti "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" on blokeeritud"
+#ekirIllegalUpdate              = "Andmebaaside väljalaskeaeg ei vasta litsentsi kehtivusajale"
+#ekirInconsistentUpdate         = "Andmebaasid on rikutud"
+#ekirKeyCreationDateInvalid     = "Võtme loomiskuupäev on vale"
+#ekirTrialAlreadyInUse          = "Proovilitsentsile pole teise proovilitsentsi kehtivusajal võimalik võtit lisada"
+#ekirInvalidBlacklist           = "Võtmete must nimekiri on rikutud"
+#ekirCantBeUsedAsReserved       = "Litsentsi ei saa registreerida lisalitsentsina"
+#ekirKeyInstallDateInvalid      = "Aktiveerimiskuupäev on vale"
+#ekirTrialPeriodIsOver          = "Proovilitsentsi kasutusaeg on lõppenud"
+#ekirConflictsWithCommercial    = "Konflikt uue võtmefaili ja kehtiva kommertslitsentsi vahel"
+#ekirExpiredAsReserve           = "Selle litsentsi kehtivusaeg on lühem kui aktiivsel litsentsil"
+#ekirGracePeriod                = "Soodusperioodi litsents"
+#ekirSuspended                  = "Tellimus on peatatud"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Vajalik on rakenduse uus paigaldus"
+#ekirLicenseOnlyForMigration    = "Selle kommertslitsentsi aktiveerimiseks tuleb üle minna teisele rakendusele"
+default                         = "Vale võtmefail"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Määratakse hiljem"
+#edtUnlimited = "Aktiveeritud"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Peatatud alates " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Litsentsiinfo"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": litsentsiteade"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Tähelepanu!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Te kasutate rakenduse " + $ProductName_GEN + " prooviversiooni."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Litsentside must nimekiri puudub või on rikutud. Töö jätkamiseks käivitage <a Update onclick(f_StartUpdater())>uuendamine</a>."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Teie litsentsi kehtivusaeg " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Arvuti alalise kaitse ajakohasena hoidmiseks uuendage palun <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " litsents</a>.\n\nKui te olete litsentsi juba ostnud, siis <a Activate onclick(f_Activate())>aktiveerige rakendus</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Tellimus on lõppenud." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Alaline kaitse on välja lülitatud."))+($IsBestBuyLink? " Tellimuse pikendamine pole kättesaadav." : "Teie arvuti turvalisus on ohus. \n\nTellimuse uuendamiseks <a onclick(url($KeyProviderLinkForText))>võtke ühendust oma teenusepakkujaga</a>.")) :("Teil on jäänud " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " tellimuse pikendamiseni. " : (LicInfo.KeyInfo.KeyType == #ektSubscription? " uuenduste väljalülitamiseni. " : " alalise kaitse väljalülitamiseni." ) ) + " Tellimuse uuendamiseks <a onclick(url($KeyProviderLinkForText))>võtke ühendust oma teenusepakkujaga</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Kehtiv võti on blokeeritud.\nUuendamine pole võimalik ning teie arvuti võib nakatuda.</b>\n\nKui te olete rakenduse omandanud legaalselt, siis pöörduge tugiteenusesse või ostukohta.\n\nKui te kasutate litsentsimata koopiat, siis <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " litsents</a>.\n\nKui te olete võtme juba ostnud, siis <a Activate onclick(f_Activate())>aktiveerige rakendus</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "lõpeb täna" : "lõpeb " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "on aegunud"
+
+[s_LicenseRenewBuyText]
+0 = "ostke litsents"
+default = "uuenda litsents"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Valige parameetrid, mida taastada:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = "Rakenduse " + $ProductName_GEN + " seadistusviisard"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Üldine informatsioon"
+InitBegin.Descr                       = "Tere tulemast rakenduse " + $ProductName_GEN + " seadistusviisardisse."
+CheckHosts.Name                       = "Kaspersky Lab´i serverite kättesaadavuse kontroll"
+CheckHosts.Descr                      = "Avastati kahtlane ümbersuunamine"
+ResetArea.Name                        = "Taasta parameetrid"
+ResetArea.Descr                       = "Allpool loetletud seaded sisaldavad kasutaja poolt sisestatud või rakenduse \ntöö ajal kogutud andmeid."
+EnumExe.Name                          = "Süsteemianalüüs"
+EnumExe.Descr                         = "Oodake palun, kuni kogutakse infot süsteemi kohta..."
+ResetFinish.Name                       = "Rakenduse seadistuse lõpetamine" + $ProductName
+ResetFinish.Descr                      = $ProductName + " on käivituseks valmis."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Taastamine on edukalt lõpetatud."
+ResetDescr          = "Sedistusviisard taastas edukalt " + $ProductName + " seaded."
+
+[BestBuyUpgradeMessage]
+@ = "Üleminek teisele rakendusele"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Alusta Kaspersky Internet Security kasutamist "
+RestartButton = "Käivita Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "Palju õnne!"
+Message = "Teie Kaspersky Anti-Virus on edukalt uuendatud rakenduseks Kaspersky Internet Security.\nTeie arvuti kaitsele lisanduvad uued funktsioonid."
+Description = "Täname, et valisite Kaspersky Lab tarkvara! Nüüd on tei arvutil rohkem kaitsefunktsioone."
+
+[ForcedUpgradeMessagePage]
+Header = "Peaaegu valmis"
+Message = "Täname, et valisid Kaspersky Lab tarkvara! Nüüd on tei arvutil rohkem kaitsefunktsioone."
+Description = "Kuna kokkusobimatut tarkvara ei eemaldatud, siis on mõned uued Kaspersky Internet Security funktsioonid välja lülitatud tagamaks paigaldatud rakenduste ja operatsioonisüsteemi häireteta töö.\n\nTe võite kokkusobimatu tarkvara eemaldada käsitsi ja lülitada uued funktsioonid sisse Kaspersky Internet Security seadete aknas."
+Notification = "Täname, et valisite Kaspersky Lab tarkvara!\nRakendus taaskäivitatakse ülemineku lõpetamiseks."

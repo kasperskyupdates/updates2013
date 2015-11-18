@@ -1,0 +1,184 @@
+<UpdateFiles
+	UpdateDate="24092015 1131"
+	BlackDate="24092015 0602"
+	ObjectType="2=ARK;3=BASE">
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="mark.mft" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="mark.kdc" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		OS="Mac"
+		ServerFolder="i386/mac"
+		LocalPath="%BaseFolder%"
+		Filename="mark.mft" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		OS="Mac"
+		ServerFolder="i386/mac"
+		LocalPath="%BaseFolder%"
+		Filename="mark.kdl" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		OS="Mac"
+		ServerFolder="i386/mac"
+		LocalPath="%BaseFolder%"
+		Filename="mark.kdc" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="base"
+		Arch="i386"
+		OS="Mac"
+		ServerFolder="i386/mac"
+		LocalPath="%BaseFolder%"
+		Filename="mark.tar.gz" />
+	<FileDescription
+		ComponentID="ARK"
+		UpdateType="desc"
+		GenericApp="NOT(AND(OR(#KAV#,#KIS#,#KES#),OR(HR(8),HR(10),HR([12,13]))))"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV_2345COM,KAV12_ASUS,KAV12_KDDI,KAV_NORDNET,KAV_TEO,KAV_TIM,KAV_YANDEX,KAV_ORANGE,KAV12_ALFA,KAV12_NIFTY,KAV12_SONY"
+		UpdateType="desc"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV2006EXEC"
+		UpdateType="desc"
+		Target="[131001-262143]"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV2006EXEC"
+		UpdateType="desc"
+		Arch="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Target="[131001-262143]"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Arch="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Target="[131001-262143]"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Arch="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		Target="[262101-262143]"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV2006EXEC"
+		UpdateType="desc"
+		Target="[0-131000]"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV2006EXEC"
+		UpdateType="desc"
+		Arch="mod"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Target="[0-131000]"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KES10"
+		UpdateType="desc"
+		Arch="mod"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Target="[0-131000]"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV12"
+		UpdateType="desc"
+		Arch="mod"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<FileDescription
+		ComponentID="KAV13"
+		UpdateType="desc"
+		Target="[0-262100]"
+		ServerFolder="mod"
+		Filename="mod-ark-0607g.xml"
+		LocalPath="%BaseFolder%"
+		FileDate="24092015 1131" />
+	<Registry
+		ComponentID="ARK"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAUxHHipAAHiPcTkpPuE4GXy6HvIGa+vgTUJOYPLeyjGRwWqZwKp/WjvSVpkTfdU3VfNOunf6xE2NT9ONRMQ6yWrm0nPE9wMBAB4JkgAAAAIAAigDAEFSSwMAAigEAEJBU0UBAAAJP+8Dlg0KOzoxMEs3UXA4QUZ0emFRVzB3ZDBoZWI1N1BVRitHcTNONkhJUVJtaGdyZ09OQWJ1V0dvMitHM2FnMzJWTFRtdmNjbTFiTFY2cGRVN3dkVDZvcU9tWENBeDdmJSU="
+		Filename="ark-0607g.pbv" />
+	<Registry
+		ComponentID="ARK"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGSAABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqBgABACAAtfEm5l5hamgb5R6XsFDNoxo+5DmcffqGVRwhQLbkdq0gAF+AsK2Q4P/BKGnhehvUeXaXkfW9q9InWXDHOpglF2YOIADmjFK4apQCSUrMhG/QAVqq7+5zjE1KPrhGYZD9BholOyAA8MihIRUKAngepk2UJSOaLWSSfAKGyWU4yLYFfZ1pmkcgAAnDmhYyYTzr3gRCa3gJ797s2RFJla3qXggrqwyEV6hOIAC18SbmXmFqaBvlHpewUM2jGj7kOZx9+oZVHCFAtuR2rQEAHgmSAAAAAQAACZG/EWsNCjs6MTBLOFFJaU5FUmFDTEd2VS9OSG1ya2pNRjNLVWp5TlZ0N29FYnlEM0cwTXJUdnNhaVVVM0VFL1Q3L2JuODBNTkJ6VWkrNkRzNTE4R3o5NnhkcnUwdWZCSCUl"
+		Filename="ark-0607g.krg" />
+</UpdateFiles>
+;:10a6L/LhdXa8nSKCBaYm5+H6i2Jul4wVixF7D/VjhPK6lzn/r6zEU1JsizM9Xf19JDrJv6K7UnkRO6n2/W3VKVN2%%

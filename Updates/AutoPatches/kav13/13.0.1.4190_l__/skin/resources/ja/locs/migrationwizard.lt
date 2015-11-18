@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = '移行ウィザード'
+UpgradeCaption = 'アップグレード'
+
+RebootPageCheckboxRebootText = 'コンピューターを再起動する'
+OpenRemoveProgramsPanel = 'ツールバーを開く'
+
+WizardBeginDescriptionKis = 'カスペルスキー インターネット セキュリティ 2013 に移行します。\n\nカスペルスキー インターネット セキュリティを使用するための非独占的ライセンスが、カスペルスキー アンチウイルスのインストール時に受諾した条項の下で、著作権保有者によって許諾されます。\n\n注意：この移行に際しては、再起動が必要になる場合があります。'
+
+WizardBeginDescriptionKav = 'カスペルスキー アンチウイルス 2013 に移行します。\n\nカスペルスキー アンチウイルスを使用するための非独占的ライセンスが、カスペルスキー インターネット セキュリティのインストール時に受諾した条項の下で、著作権保有者によって許諾されます。\n\n注意：この移行に際しては、再起動が必要になる場合があります。'
+
+WizardContinueDescriptionKis = 'カスペルスキー インターネット セキュリティ 2013 への移行を続行します。'
+WizardContinueDescriptionKav = 'カスペルスキー アンチウイルス 2013 への移行を続行します。'
+
+MigrationNocomebackWarning = '\n\n注意！カスペルスキー インターネット セキュリティのライセンスよりも先にカスペルスキー アンチウイルスの現在のライセンスの有効期限が切れます。カスペルスキー アンチウイルスのライセンスの有効期限が切れると、カスペルスキー アンチウイルスに戻れなくなります。'
+
+PleaseWait = 'しばらくお待ちください'
+RemovalProgressDescription   = '競合するソフトウェアを削除しています'
+RemovalApplicationsDescription = '移行を行うために、次のソフトウェアは削除されます：'
+ManualRemovalApplicationsDescription = '移行を行うには次の競合するソフトウェアを手動で削除する必要があります：'
+SearchRemovalApplicationsDescription   = '競合するソフトウェアを検索しています'
+RestartProductDescription = '移行を完了させるために本製品が再起動します。'
+RebootOsDescription = '移行を続行するには、コンピューターを再起動する必要があります。\nウィザードは再起動後に再開します。'
+
+MigrationProgressDescriptionKis = '本製品を再設定して移行しています'
+UpgradeProgressDescriptionKis   = '本製品を再設定して移行しています'
+MigrationProgressDescriptionKav = '本製品を再設定して移行しています'
+
+MigrationKis = 'カスペルスキー インターネット セキュリティへの移行'
+MigrationKav = 'カスペルスキー アンチウイルスへの移行'
+MigrationUnknown = '移行'
+
+SearchRemovalApplicationsHeader = 'カスペルスキー インターネット セキュリティへのアップグレード中'
+RemovalProgressHeader = '競合するソフトウェアを削除しています'
+RemovalApplicationsHeader = '競合するソフトウェアを検出しました'
+RebootOsHeader = 'コンピューターの再起動が必要です'
+RestartProductHeader = '本製品は再起動します'
+
+MigrationAbortedHeader = $MigrationType + 'はできません'
+MigrationAbortedDescription = $MigrationType + 'が失敗しました。競合するソフトウェアを手動で削除してからウィザードを再開してください。'
+
+BestBuyGiftInformation = 'カスペルスキー アンチウイルスはカスペルスキー インターネット セキュリティにアップグレードされます。\n追加の保護機能が使用できるようになります。'
+BestBuyGiftDescription = 'カスペルスキー製品をお選びいただき、ありがとうございます！追加の保護機能が使用できるようになりました。'
+BestBuyUpgradeNotification = 'アップグレード中、システムを分析して競合するアプリケーションの有無を調査し、インストールしたアプリケーションとオペレーティングシステムが正常に動作するようにします。'
+BestBuyFreeUpgrade = 'カスペルスキー インターネット セキュリティへの移行'
+
+BestBuyTryAbortHeader = 'バックグラウンドでのアップグレード'
+BestBuyTryAbortInformation = 'アップグレードはバックグラウンドで続行されます'
+BestBuyTryAbortDescription = '競合するアプリケーションが削除されませんでした。カスペルスキー インターネット セキュリティの新しい機能の一部を無効にしました。これはインストール済みアプリケーションやオペレーティングシステムを正常に動作させるためです。\n\nカスペルスキー インターネット セキュリティの新しい機能のすべてを有効にするには、競合するアプリケーションェアを手動で削除し、設定ウィンドウで機能を有効にしてください。'
+BackToSubcriptionUpgradeButtonText = 'アップグレードに戻る'
+Congratulation = 'おめでとうございます！'
+
+RunKisButtonText = 'カスペルスキー インターネット セキュリティの開始'
+
+ProductUpgraded = 'カスペルスキー アンチウイルスはカスペルスキー インターネット セキュリティに正常にアップグレードされました。\nコンピューターを保護するための追加の機能を使用することができるようになりました。'

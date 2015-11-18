@@ -1,0 +1,2556 @@
+﻿[Global]
+$LinkMoreDetails                    = "Details..."
+$LinkTechnicalSupport               = "Support"
+$LinkGetFullLicense                 = "Purchase license"
+$LinkRenewLicense                   = "Renew license"
+$LinkRestartComputer                = "Reboot the computer"
+$LinkRestartProduct                 = "Restart application"
+$LinkAcceptEula                     = "Accept end user license agreement"
+$LinkTreatAll                       = "Neutralize all"
+$LinkDetails                        = "View detailed report"
+$LinkReadNews			    = (Data && Data.Announcement ? "Read next..." : "Read news...")
+$LinkFullReport                     = "Detailed report"
+$LinkActivate                       = "Activate"
+$LinkUpdateSubsriptionStatus        = "Update status"
+$LinkProtect                        = "Enable Self-Defense"
+$LinkAutoRun                        = "Enable autorun"
+$LinkRetry                          = "Retry"
+$LinkSettings                       = $Configure
+$LinkUpdateNow                      = "Update now"
+$LinkProductBundleDownload          = "Download now"
+$LinkProtectionTurnOn               = "Resume Protection"
+$LinkRestartService                 = "Restart service"
+$LinkRepairInstall                  = "Start application repair"
+$LinkSupport                        = "Support"
+$LinkSendReport                     = "Submit report"
+$LinkServicesTurnOn                 = "Resume all"
+$LinkServicesResume                 = "Resume paused"
+$LinkTrainNow                       = "Training Wizard"
+$LinkScanMyComputer                 = "Scan computer"
+$LinkShowMessages                   = "Show all messages"
+$LinkLearnMore                      = "Learn more about security threats"
+$LinkSkip                           = "Skip this message"
+$LinkShowNext                       = "Show next message"
+$LinkSomeSkipped                    = "Show skipped messages"
+$LicensingSubsystem                 = $IsSubscription? "Licensing" : "Licensing"
+$LicenseManager                     = "Licensing"
+$UnknownApp                         = "Unknown application"
+$System                             = "System"
+$BetaForumLinkCaption               = "Application beta version forum"
+$BetaForumLinkSuffix                = "16"
+$LinkProdStateSomeSkipped           = "Restore hidden messages"
+$LinkStartAntiSpamTrainingWizard    = "Training Wizard"
+$LinkFirewallUnBlock                = "Unblock network traffic"
+$UnlockFileMsg                      = ". Remove file write protection for further"
+$KavDescr_prot                      = switch("kis", "ProductTitleLong", "") + " contains fully functional versions of the " + $SystemWatch + ", " + $ids + " and " + $ContentFilter + " components, which together provide complete control over both the operating system and your data."
+CanDeleteArchive                    = "Are you sure you want to completely delete the archive file\n" + ArchiveObject + "?"
+CanDeleteArchive.caption            = $ProductName
+$LinkAutoUpdateTurnOn               = "Enable automatic update"
+$LinkRestartService                 = "Restart application"
+$Settings                           = "Settings"
+
+$ScanInfo = "Scanned, objects/sec"
+$Threats="Detected threats"
+$Reports="Reports"
+$FileAntivirus="File Anti-Virus"
+$FileAntivirusDesc="Scans all opened, saved and active files"
+$MailAntivirus="Mail Anti-Virus"
+$MailAntivirusDesc="Scans incoming and outgoing messages for dangerous objects"
+$WebAntivirus="Web Anti-Virus"
+$WebAntivirusDesc="Scans HTTP traffic for malicious and unwanted objects"
+$IMAntivirus="IM Anti-Virus"
+$IMAntivirusDesc="Scans incoming and outgoing IM messages for malicious and unwanted objects"
+$AppCtrlDescription="Classifies all applications and restricts their behavior"
+$SW2Desc="Monitors all application activity, detects malware actions and performs rollback"
+$Hips="Application Control"
+$Firewall="Firewall"
+$FirewallDesc="Filters all network activity to ensure security on local networks and the Internet"
+$Ids="Network Attack Blocker"
+$IdsDesc="Defends your computer against network activity and attacks that could be dangerous"
+$Antispam="Anti-Spam"
+$AntispamDesc="Filters unwanted mail (spam)"
+$NetMonitor="Network Monitor"
+$NetMonDesc="Gathers real-time information about network activities"
+$AdBlocker="Anti-Banner"
+$AdBlockerDescr="Blocks ads and banners in your web browser and in some applications"
+$ParCtl="Parental Control"
+$ParCtlDesc="Restricts and controls use of the computer and the Internet"
+$antiphishing="Anti-Phishing"
+$antiphishingDescr="Filters access to phishing websites and prevents phishing attacks"
+$antispy="Anti-Spy"
+$OnText="On"
+$OffText="Off"
+$prot_ok  = "Your computer is protected"
+$notInstall = "Component is not installed"
+$Databases="Application databases: "
+$ParctlDesc  = "Parental Control restricts and controls use of the computer and the Internet."
+$Extras     = "Additional"
+$Sniffer = "Network packet analysis"
+$TrustedBoot = "Trusted Platform Module"
+
+$Task_IeWizard = "Browser Configuration"
+$Task_TroubleshootWizard = "Microsoft Windows Troubleshooting"
+$Task_PrivacyCleanerWizard = "Privacy Cleaner"
+
+$JoinKaspNet = "You can help us fight viruses"
+$JoinKaspNetText = "Participate in Kaspersky Security Network"
+$JoinKaspNetDesc = "A service that collects data on computer infections, which speeds up reaction time to recent threats, enhances the performance of some protection components, and reduces the risk of false positive detections."
+
+; перенос в зависимости от языка м.б. разным
+$PersonalSecurity = "Files and private\ndata protection"
+$SystemSecurity = "System\nSecurity"
+$OnlineSecure = "Online Security"
+
+ProductRepairConfirmation =  "An update of the application databases and program modules may fix the problem. We recommend running an update. If that does not solve the problem, restore " + $ProductName + ". To restore the application it is necessary to uninstall " + $ProductName + " and run the Setup Wizard."
+ProductRepairConfirmation.caption = $ProductNameLong
+
+$ScanVulnerabilities = "Vulnerability Scan"
+
+$StatFrom = "Statistics from "
+$StatTo   = " through "
+$TrialPeriodDuration = "Trial period duration (days)"
+$OtherWare = "Other threats: "
+$RiskWares = "Other programs: "
+$Scaned    = "Scanned objects: "
+$Detected  = "Threats detected: "
+
+$KAVhint = "This component is included in " + switch("kis", "ProductTitleLong", "") + " only"
+
+$KSN          = "Kaspersky Security Network"
+
+$NetGroup       = " from the <b>" + capitalize(s_NetSeverity(Data.Severity), false)  + "</b> group."
+$AlertAppGroup  = if(strGroupPath, "from \"" + f_AppRootGroupName(strGroupPath) + "\" group ")
+$IfTrusted       = if(IsTrusted, " This trusted application can be used by a restricted application to perform a privileged operation.")
+$AlertAppGroupEx = $AlertAppGroup + if(bRestrictionDerrived, if(strGroupPath, ", ") + "run by a restricted application, ")
+
+$ThreatStatusRollbackMade = "; rolled back"
+
+$Quarantine = "Quarantine"
+$Storage    = "Storage"
+
+$SafeBrowsersAbsentError = "In the system there are no browsers which can be run in safe mode"
+$DefaultSafeBrowsersAbsentError = "Browser to be run in safe mode is not selected"
+
+ToastAlertDescription = s_ToastAlertDialogDescriptions(TaskType)
+ToastAlertCaption = s_ToastCategoryText(s_ToastAlertDialogCaption(TaskType))
+ToastAlertStatisticsId = s_ToastAlertStatisticsId(TaskType)
+ToastSimpleAlertCaption = s_ToastSimpleAlertCaption(nActionID)
+ToastSimpleAlertDescription = s_ToastSimpleAlertDescription(nActionID)
+ToastSimpleAlertStatisticsId = s_ToastSimpleAlertStatisticsId(nActionID)
+ToastBalloonDescription = s_ToastDescriptionText(EventID)
+ToastBalloonCaption = if(s_ToastDescriptionText(EventID), s_ToastCategoryText(s_ToastCategory(EventID)))
+ToastEOLDescription = "License has expired."
+ToastEOLCaption = "License"
+ToastMessageBoxDescription = "License notification. Click here to view."
+ToastMessageBoxCriticalDescription = "Critical license notification. Fix now!"
+ToastMessageBoxCaption = "Important message"
+ToastOemWelcomePageCaption = "Important message"
+ToastOemWelcomePageDescription = "It is required to activate " + $ProductName
+
+[f_ksnRating]
+ret = "<b>" + @ + "%</b>"
+
+[f_Period]
+ret = var l_delta; l_delta = utctime() - @; \
+if( dategroup(@, false) == 0, "<b>today.</b>", \
+if( dategroup(@, false) == -1, "<b>yesterday.</b>", \
+if( l_delta < 3600*24*7, "<b>less than a week</b> ago.", \
+if( l_delta < 3600*24*14, "<b>less than two weeks</b> ago.",\
+if( l_delta < 3600*24*30, "<b>less than a month</b> ago.",\
+if( l_delta < 3600*24*183, "<b>more than a month</b> ago.",\
+if( l_delta < 3600*24*365, "<b>more than half a year</b> ago.", "<b>more than a year</b> ago.")))))))
+
+[s_Customers]
+0 = "less than 10"
+1 = "less than 100"
+2 = "less than 1,000"
+3 = "more than 1,000"
+4 = "more than 10,000"
+5 = "more than 100,000"
+6 = "more than a million"
+
+[MainWindow.Protection_WorkArea_Statistics_StatList]
+DetectType  = "Threat type"
+Treated     = "Processed"
+Total       = "Total"
+
+[MainWindow.Protection_Filters_Menu]
+ByTime      = "Group by time"
+AllItems    = "Do not group"
+ByTask      = "Group by task"
+ByApp       = "Group by application"
+
+[MainWindow.Protection_Files_and_data]
+Link = "Digital Identity Protection"
+
+[MainWindow.Protection_System]
+Link = "Applications Activity"
+
+[MainWindow.Protection_LAN]
+Link = "Network Monitor"
+
+;-------------------------------- Tasks --------------------------------
+
+[Task.SecurityWizard]
+@.Icon = "Security Analyzer"
+
+[Task.IeWizard]
+@.Icon = "Browser Configuration"
+
+[Task.TroubleshootWizard]
+@.Icon = "Microsoft Windows Troubleshooting"
+
+[Task.PrivacyCleanerWizard]
+@.Icon  = "Privacy Cleaner"
+@.Desc  = "Start this Wizard if the system is unstable after malware has been detected and removed."
+
+[Task.RescueDiskWizard]
+@.Icon = "Kaspersky Rescue Disk"
+
+[Task.TrainWizard]
+@.Icon  = "Anti-Spam: training"
+@.Desc  = "This Wizard will help you to increase the spam detection rate and to decrease the number of false positives."
+
+[Task.VKeyboard]
+@.Icon  = "Virtual Keyboard"
+@.Desc  = "Virtual Keyboard protects entered information against keyloggers."
+
+[Task.NetMon]
+@.Icon = "Network\nMonitor"
+
+[Task.Sniffer]
+@.Icon = "Network packet analysis"
+
+[s_ProtectionBannerText]
+#eProtStateNormal   = "Your computer is protected"
+#eProtStateCrit
+#eProtStateWarn     = "Your computer security is at risk"
+
+[s_ProductEventSeverityText]
+#eNotifySeverityCritical
+#eNotifySeverityError       = "Critical event"
+#eNotifySeverityImportant   = "Important event"
+def                         = "Informational event"
+
+[s_SubscriptionStatus]
+#ssExpDateUnknown      = "To be determined later"
+#ssHasExpDateActivated = "Subscription is activated"
+#ssHasExpDateProlonged = "Subscription is renewed"
+#ssHasExpDateCanceled  = "Subscription is cancelled"
+#ssUnlimitedActivated  = "Subscription is activated"
+#ssUnlimitedProlonged  = "Subscription is renewed"
+#ssGracePeriod         = LicInfo.KeyInfo.KeyType == #ektSubscription ? "Subscription has expired. You have " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + " to renew your subscription" : "Subscription has expired. You have " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + " left until protection is disabled. To renew your subscription, please contact your subscription provider"
+#ssExpired             = LicInfo.KeyInfo.KeyType == #ektSubscription ? "Subscription has expired. Subscription renewal is unavailable" : "Subscription has expired. Protection is disabled. To renew your subscription, please contact your subscription provider"
+#ssNotYetSuspended     = "Subscription is suspended"
+#ssSuspended           = "Subscription is suspended. Protection is disabled"
+#ssUnlimitedResumed    = "Subscription is resumed"
+
+[s_SubscriptionExpDate]
+#ssExpDateUnknown      = "To be determined later"
+#ssUnlimitedActivated  = "Active"
+#ssUnlimitedProlonged  = "Active"
+#ssUnlimitedResumed    = "Active"
+def                    = date(LicInfo.SubscriptionCheckInfo.ExpDate)
+
+[KeysList]
+Caption1 = "License information"
+
+[AutoActivateError]
+Error    = "Activation by means of the preset activation code " + Ins_ActivationCode + "\nhas failed."
+Activate = "Please activate the application manually."
+
+[WaitingForKey]
+Text1        = "Internet connection is required"
+Text2        = "Preset activation code " + Ins_ActivationCode + " is available.\nThe application will be automatically activated by means of this activation code as soon as the Internet connection is available."
+
+[SubscrBlock]
+SubscriptionStatus  = "Subscription status:"
+SubscriptionFailed.Name  = "Subscription status:"
+SubscriptionFailed.Val   = SubscriptionTolerancePassed ? "Update is required" : "Update error"
+SubscriptionExpDate = (SubscriptionStatus != #ssSuspended && SubscriptionStatus != #ssNotYetSuspended)? "Subscription expiration date:" : "Suspend date:"
+SubscrTolerancePassed = "Automatic update of subscription has not been performed.\nPlease update subscription status manually."
+SubscrUpdateFailed    = "Automatic update of subscription status failed.\nPlease update subscription status manually."
+SubscrFailedReason    = "View error description."
+
+[LicenseExpireDate]
+Text1 = "Valid from " + date(LicInfo.LicenseActivationDate) + " through " + capitalize(datetime(LicInfo.LicenseExpirationDate), false)
+
+[ReserveLicenseExpireDate]
+Text1 = "Will be valid from " + capitalize(datetime(ResLicInfo.LicenseActivationDate),false) + " through " + capitalize(datetime(ResLicInfo.LicenseExpirationDate),false)
+;Text1 = "Будет активна c " + date(ResLicInfo.LicenseActivationDate)
+
+[LicenseExpireDays]
+TextBefore  = s_LeftForm(f_numdeclension(LicInfo.DaysTillExpiration))
+TextAfter   = s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration)) + "."
+
+[s_AgoForm]
+1   = "Passed "
+def = "Passed "
+
+[s_LeftForm]
+1       = "remaining"
+default = "remaining"
+
+[KeyLimitExceeded]
+Text1   = "You have exceeded the maximum number of computers on which " + $ProductName + " can be installed under your license."
+Text2   = "Protection of your computer is disabled. You need to acquire a new license in order to resume your computer protection."
+
+[LicenseKeys_Body]
+KeyLimitExceeded   = "You have exceeded the maximum number of computers on which " + $ProductName + " can be installed under your license."
+
+[LicenseKeys]
+@ = "License information"
+
+[LicenseManager]
+@ = $LicenseManager
+
+[LicenseManager_Footer]
+Eula    = "View End User License Agreement"
+
+[MainWindow.License_Body_NoKeys]
+Desc   = "Application is not activated."
+Desc2  = "To enable full functionality of the application,\nit is required to activate "+$ProductNameLong +"."
+
+[MainWindow.License_Body_Actions]
+ReasonsAndSolutions.Name  = "Error description and possible solutions"
+ReasonsAndSolutions.Descr = "Learn why an error has occurred and how to solve the problem"
+Update.Name               = f_IsStateActive(Updater.state)? "Stop update" : "Update databases"
+Update.Descr              = f_IsStateActive(Updater.state)? "Stop databases update" : "Run databases update"
+BuyRenew.Name             = global.LicenseRenewAvailable ? "Renew license" : "Purchase license"
+BuyRenew.Descr            = global.LicenseRenewAvailable ? "Visit online store to renew the license" : "Visit online store to purchase a license"
+ActivateLic.Name          = $IsActiveKeyTrial ? "Activate the application under a commercial license":"Activate the application under a new license"
+ActivateLic.Descr         = "Run " + $ProductName + " activation wizard"
+RevertToKAV.Name          = "Back to Kaspersky Anti-Virus"
+RevertToKAV.Descr         = "Return to Kaspersky Anti-Virus license"
+
+[MainWindow.License_Body_ActionsSubscr]
+ReasonsAndSolutions.Name  = "Error description and possible solutions"
+ReasonsAndSolutions.Descr = "Learn why an error has occurred and how to solve the problem"
+Update.Name               = f_IsStateActive(Updater.state)? "Stop update" : "Update databases"
+Update.Descr              = f_IsStateActive(Updater.state)? "Stop databases update" : "Run databases update"
+UpdateStatus.Name         = "Update subscription status"
+ContactProvider.Name      = "Contact your subscription provider"
+ContactProvider.Descr     = "Visit subscription provider website to renew your subscription"
+
+[MainWindow.License_Body_Top_Switcher]
+Cont = if(ctl.parent.parent.ShowActive.value, "1 of 2", "2 of 2")
+
+[LicButton]
+Cont = "Active"
+
+[LicButtonInactive]
+Cont = "Inactive"
+
+[MainWindow.License_Body_Top_ActiveView_NormalLic]
+ActiveLic       = f_KeyTypeDescription(LicInfo.KeyInfo) + if(!$IsSubscription," for " + LicInfo.KeyInfo.KeyLifeSpan + " " + s_daysRemaining(f_numdeclension(LicInfo.KeyInfo.KeyLifeSpan)))
+
+[MainWindow.License_Body_Top_ActiveView_SubscrLic]
+ActiveLicSubscr = s_LicKeyType(LicInfo.KeyInfo.KeyType) +"."
+
+[MainWindow.License_Body_Top_ReserveView_NormalLic]
+ReserveLic      = f_KeyTypeDescription(ResLicInfo.KeyInfo) + " for " + ResLicInfo.KeyInfo.KeyLifeSpan + " " + s_daysRemaining(f_numdeclension(ResLicInfo.KeyInfo.KeyLifeSpan))
+
+[MainWindow.License_Body_InfoSubscr]
+SubscrTolerancePassed = "Automatic update of subscription has not been performed.\nPlease update subscription status manually."
+SubscrUpdateFailed    = "Automatic update of subscription status failed.\nPlease update subscription status manually."
+SubscrFailedReason    = "View error description."
+
+[s_AboutExpirationText]
+#ektBeta        = "Attention! Beta license expires "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". You can purchase a fully functional version."
+#ektTrial       = "Attention! Trial license expires "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". You can purchase a fully functional version."
+#ektTest        = "Attention! Test license expires "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+". You can purchase a fully functional version."
+#ektOEM
+#ektCommercial
+#ektSubscriptionProtection
+#ektSubscription= "The license expires "+f_n_days_ex(global.LicInfo.DaysTillExpiration)+"."
+
+[s_ActivationSubscr_Description]
+#ssExpDateUnknown = "To determine the type of subscription, please update its status"
+def = "Update subscription status manually"
+
+[MainWindow.License_WorkArea_Home_Actions]
+$LicDelete      = "&Delete"
+$LicAdd         = "&Activate the\napplication"
+$LicAddDelete   = "&Merge/delete"
+$LicRefreshDelete = "&Update status\nor delete"
+
+SubscrProvider.Name = "Subscription provider"
+BuyRenew.Name   = global.LicenseRenewAvailable ? "Renew license" : "Purchase license"
+SeeEula.Name    = "View End User License Agreement"
+
+[MainWindow.Protection_WorkArea_Home_Stat]
+Summary = ctl.TotalCounter.ScannedTotal.value + " objects processed in total. Threats detected:"
+
+[combobox_menu_File_Monitoring]
+File_Monitoring.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $FileAntivirus
+Setting.Description = "Modify File Anti-Virus settings"
+Help.Description    = "Open help description for File Anti-Virus"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_HipsTask]
+HipsTask.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $Hips
+Setting.Description = "Modify Application Control settings"
+Help.Description    = "Open help description for Application Control"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_SW2]
+SW2.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $SW2
+Setting.Description = "Modify System Watcher settings"
+Help.Description    = "Open help description for System Watcher"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_Mail_Monitoring]
+Mail_Monitoring.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $MailAntivirus
+Setting.Description = "Modify Mail Anti-Virus settings"
+Help.Description    = "Open help description for Mail Anti-Virus"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_Web_Monitoring]
+Web_Monitoring.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $WebAntivirus
+Setting.Description = "Modify Web Anti-Virus settings"
+Help.Description    = "Open help description for Web Anti-Virus"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_IM_Monitoring]
+IM_Monitoring.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $IMAntivirus
+Setting.Description = "Modify IM Anti-Virus settings"
+Help.Description    = "Open help description for IM Anti-Virus"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_Firewall]
+Firewall.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $Firewall
+Setting.Description = "Modify Firewall settings"
+Help.Description    = "Open help description for Firewall"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_ids]
+ids.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $ids
+Setting.Description = "Modify Network Attack Blocker settings"
+Help.Description    = "Open help description for Network Attack Blocker"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_Anti_Spam]
+Anti_Spam.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $Antispam
+Setting.Description = "Modify Anti-Spam settings"
+Help.Description    = "Open help description for Anti-Spam"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_netmon]
+Firewall.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $NetMonitor
+Setting.Description = "Modify Network Monitor settings"
+Help.Description    = "Open help description for Network Monitor"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_antiphishing]
+antiphishing.Caption = (f_IsAntiphishStateRunning() ? "Disable " : "Enable ") + $antiphishing
+Setting.Description = "Modify Anti-Phishing settings"
+Help.Description    = "Open help description for Anti-Phishing"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[combobox_menu_AdBlocker]
+AdBlocker.Caption = (s_IsStateRunning(state) ? "Disable " : "Enable ") + $AdBlocker
+Setting.Description = "Modify Anti-Banner settings"
+Help.Description    = "Open help description for Anti-Banner"
+ErrorSupport.Caption = "Failure information"
+ErrorSupport.Description = f_GetProfileErrorText() + ". " + $Click_msg
+
+[EulaInfo]
+@ = "End User License Agreement"
+
+[DataAgreement]
+@ = "Regulation on data provisioning"
+
+[s_ProtState]
+#ProdStateAllOk = "Protection is enabled"
+#ProdStateThreatsRiskwareUntreated
+#ProdStateThreatsSuspiciousUntreated
+#ProdStateThreatsMalwareUntreated    = if(EventID == #eNotifyThreatsUntreated, switch(EventID,"EventTypes"), s_ProdState(@))
+def             = s_ProdState(@)
+
+[s_ProdState]
+#ProdStateProductNews	 	    = "Unread news available"
+#ProdStateProductNoEula             = "You must accept the end user license agreement"
+#ProdStateProductNeedRestart        = "It is required to restart " + $ProductName
+#ProdStateKeyTrial                  = "A trial version of the application is installed"
+#ProdStateProductNotAutoRun         = "Application autorun is disabled"
+#ProdStateProductNotProtected       = "Self-Defense is disabled"
+#ProdStateLicenseNotificationInfo
+#ProdStateLicenseNotificationWarning 
+#ProdStateLicenseNotificationCritical = "Important license notification is available"
+#ProdStateProductIsBeta             = "You are using a beta version of the application"
+#ProdStateKeyExpired                = $IsSubscription? "Subscription has expired" : "License has expired"
+#ProdStateKeyTrialExpired           = "Trial license has expired"
+#ProdStateKeyBlocked                = "Key is blocked"
+#ProdStateNoKeys
+#ProdStatePreinstalledCodeAvailable = "Application is not activated"
+#ProdStatePreinstalledCodeWaitActivationInfo = "Internet connection is required for activation"
+#ProdStatePreinstalledCodeWaitActivationCritical = "Failed to activate the application automatically by means of the preset activation code. Internet connection is not available."
+#ProdStateKeyWaitReservedActivationInfo
+#ProdStateKeyWaitReservedActivationCritical = "Internet connection is required for activation"
+#ProdStatePreinstalledCodeActivationProblem	= "Failed to activate the application automatically by means of the preset activation code"
+#ProdStateKeyReservedActivationProblem = "Failed to activate the application automatically by means of the new activation code"
+#ProdStateKeyInvalidReserveCode		= "New activation code is invalid"
+#ProdStateKeyInvalid                = s_ProdStateKeyInvalid(product.LicInfo.InvalidReason)
+#ProdStateKeyLimited                = "End user license agreement has been violated"
+#ProdStateKeyGracePeriod            = "Subscription has expired"
+#ProdStateKeyUpdateFailed           = "Failed to update the subscription status automatically"
+#ProdStateKeySuspended              = "Subscription is suspended from " + date(product.LicInfo.SubscriptionCheckInfo.ExpDate)
+#ProdStateHighRiskTasksNotRunning
+#ProdStateTasksNotRunning           = "Some protection components are not running"
+#ProdStateTasksMalfunction          = "Could not enable some protection components"
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled             = "Some components are disabled"
+#ProdStateProtectionSafeMode        = "System is running in safe mode"
+#ProdStateProtectionNotInstalled    = "Protection is not installed"
+#ProdStateBasesOldGrace
+#ProdStateBasesOld                  = "Databases are out of date"
+#ProdStateBasesVeryOldGrace
+#ProdStateBasesVeryOld              = "Databases are obsolete"
+#ProdStateUpdateNeedReboot          = "It is necessary to reboot after the update"
+#ProdStateBasesCorrupted            = "Databases are corrupted"
+#ProdStateSomeBasesNeedUpdate		= "Update is required for some protection components"
+#ProdStateUpdateNotAuto             = "Automatic update is disabled"
+#ProdStateProtectionNotRunning      = "Protection is not running"
+#ProdStateProtectionDisabled        = "Protection is disabled"
+#ProdStateThreatsMalwareUntreated   = "Malware has been detected"
+#ProdStateThreatsRiskwareUntreated  = "Legal software that can be used by criminals for damaging your computer or personal data has been detected"
+#ProdStateThreatsSuspiciousUntreated= "Software that may cause harm has been detected"
+#ProdStateThreatsNeedReboot         = "It is necessary to reboot the computer"
+#ProdStateAntiSpamNeedTraining      = "Anti-Spam: training required"
+#ProdStateFirewallBlockAll          = "Blocking network traffic is enabled"
+#ProdStateSomeSkipped               = "Some messages are hidden"
+#ProdStateAllOk                     = $IsRD || $IsKAT ? "No threats detected" : "Your computer is protected"
+def                                 = "PRODUCT_STATE(" + @ + ")"
+
+[s_ProdState_Threats]
+#eProtStateCrit
+#eProtStateWarn = s_ProdState(@1)
+def             = if(#ProdStateSomeSkipped==@1,s_ProdState(@1),if(global.UpdateState & (#eBasesVeryOldGrace|#eBasesOldGrace), "No active threats", "Databases are up to date. No active threats"))
+
+[s_ProdStateKeyInvalid]
+#ekirInvalidBlacklist       = "Black list of keys is corrupted"
+#ekirIllegalUpdate          = "Database date does not correspond to the license validity period"
+#ekirInconsistentUpdate     = "Databases are corrupted"
+#ekirKeyCreationDateInvalid = "Incorrect key creation date"
+#ekirKeyInstallDateInvalid  = "Incorrect application activation date"
+#ekirReinstallProduct		= "The application should be reinstalled"
+default                     = "Invalid key"
+
+[ProdState_Description]
+#ProdStateProductNoEula             = $ProductName + " must be uninstalled if you have not agreed to the terms of the End User License Agreement."
+#ProdStateProductNeedRestart        = "The application modules have been updated. You are strongly advised to restart the application"
+#ProdStateKeyTrial                  = "Attention! You are using a trial version of " + $ProductName_GEN + ". " + f_n_days_remaining(LicDaysTillExpiration) + " are left until the end of the trial period. We recommend that you purchase the commercial version of " + $ProductName + " to keep your protection up to date."
+#ProdStateProductNotAutoRun         = "Autorun of " + $ProductName_GEN + " at computer startup is disabled. It means that you will have to run the application manually after every computer reboot to ensure protection of your data. We recommend you enable autorun of the application."
+#ProdStateProductNotProtected       = "Self-Defense blocks attempts of other applications to modify the files" + if(!$IsKAT, " and registry keys") + " created during " + $ProductName + " installation. The feature is currently disabled and therefore the application may be rendered inoperable. We recommend you enable Self-Defense."
+#ProdStateProductIsBeta             = "This beta version of " + $ProductName_GEN + " contains full functionality but is not a finished version of the product. It may contain errors, failures, or defects. Please report problems that you find to the corresponding sections of our forum."
+#ProdStateLicenseNotificationInfo
+#ProdStateLicenseNotificationWarning
+#ProdStateLicenseNotificationCritical = ""
+#ProdStateKeyExpired                = "Attention! Your license has expired. This means that updates of application databases and modules, as well as technical support, are no longer available. To resume full application functionality, you must renew the license."
+#ProdStateKeyTrialExpired           = "Attention! Your trial license has expired. Protection of your computer has been disabled. To resume protection of your computer, you need to acquire a commercial license from Kaspersky Lab or our distributors. The trial version can be used only once."
+#ProdStateKeyBlocked                = "Attention! The active key is blocked. Only updates of the black list are available. You may have purchased an illegal copy of " + $ProductName_GEN + ". We recommend that you contact Technical Support to check why the license has been blocked. To restore the functionality of the application, please acquire a new license."
+#ProdStateNoKeys                    = $ProductName + " is not activated. To run the application in fully functional mode, you must activate it. To do so, apply the activation code that was provided during purchase. If you do not have an activation code, please contact your distributor or acquire a new license."
+#ProdStatePreinstalledCodeAvailable = $ProductName + " is not activated. To run the application in fully functional mode, you must activate it. To do so, apply the preset activation code or acquire a new license."
+#ProdStatePreinstalledCodeWaitActivationInfo
+#ProdStatePreinstalledCodeWaitActivationCritical         = "Preset activation code " + Ins_ActivationCode + " is available. The application will be activated as soon as an Internet connection is available."
+#ProdStateKeyWaitReservedActivationInfo
+#ProdStateKeyWaitReservedActivationCritical = "License expired. The application will be automatically activated by means of the new activation code as soon as the Internet connection is available."
+#ProdStatePreinstalledCodeActivationProblem = "Failed to activate the application automatically by means of the preset activation code " + Ins_ActivationCode + ". Your assistance is required."
+#ProdStateKeyReservedActivationProblem = "Activate the application by means of the new activation code manually."
+#ProdStateKeyInvalidReserveCode		= "Contact technical support, or delete the activation code and add it again."
+#ProdStateKeyInvalid                = s_ProdStateKeyInvalid_Description(LicInfo.InvalidReason)
+#ProdStateKeyLimited                = "You have exceeded the maximum number of computers on which " + $ProductName + " can be installed under your license. Protection is disabled. You need to acquire a license for the necessary number of computers to resume protection."
+#ProdStateKeyGracePeriod            = "Attention! Subscription has expired. A grace period is now in effect, during which you can renew your subscription."
+#ProdStateKeyUpdateFailed           = "Attention! Failed to update the subscription status automatically. Please update the subscription status manually."
+#ProdStateKeySuspended              = "Attention! Subscription is suspended from " + date(LicInfo.SubscriptionCheckInfo.ExpDate) + ". Protection of your computer is disabled. In order to enable computer protection it is necessary to resume subscription and to update its status manually."
+#ProdStateHighRiskTasksNotRunning
+#ProdStateTasksNotRunning           = "Some protection components are not running.  " + $ProductName + " cannot provide complete protection. We recommend you enable all protection components."
+#ProdStateTasksMalfunction          = "Some protection components failed to start automatically. " + $ProductName + " cannot provide complete protection. Information about errors can be found in the report for the corresponding protection component. If you cannot find out the error reason yourself, please contact Technical Support to investigate the problem."
+#ProdStateHighRiskTasksDisabled
+#ProdStateTasksDisabled             = "Some protection components are disabled. " + $ProductName + " cannot provide complete protection. We recommend you enable all protection components."
+#ProdStateProtectionSafeMode        = "Some protection components were disabled to ensure normal computer operation in safe mode. If you wish to resume the activity of all protection components, reboot the computer and select normal startup instead of safe mode."
+#ProdStateProtectionNotInstalled    = "Components providing protection are not installed. You can run scan tasks and update the application databases only. In order to provide full application functionality you need to install the protection components."
+#ProdStateBasesVeryOldGrace
+#ProdStateBasesVeryOld              = "The databases that the application uses to protect your computer are obsolete. " + if($IsRD || $IsKAT, s_BundleProductBasesStateText(env("ProductType")), "We recommend that you update the databases as soon as possible.")
+#ProdStateBasesOldGrace
+#ProdStateBasesOld                  = "The databases that the application uses to protect your computer are out of date.  " + if($IsRD || $IsKAT, s_BundleProductBasesStateText(env("ProductType")), "We recommend that you update the databases as soon as possible.")
+#ProdStateUpdateNeedReboot          = "Your computer should be rebooted in order to complete the installation of new databases and application modules. Otherwise the updates will not be applied and will not be used in application operation."
+#ProdStateBasesCorrupted            = "The databases that the application uses to protect your computer are corrupted. " + if($IsRD || $IsKAT, s_BundleProductBasesStateText(env("ProductType")), "Database corruption may have been caused by an invalid update. We recommend that you update the databases again or roll them back to their previous version.")
+#ProdStateSomeBasesNeedUpdate		= "Databases are updated only for enabled protection components. Some protection components were enabled recently and their databases have not yet been updated. We recommend that you update the databases for these protection components."
+#ProdStateUpdateNotAuto             = "Automatic update of the application is disabled. Automatic updates ensure that your antivirus databases and modules are up to date. We recommend that you enable automatic updates."
+#ProdStateProtectionNotRunning      = "Protection of your computer is not running. Information on the computer can be infected, damaged or stolen. We recommend you resume computer protection."
+#ProdStateProtectionDisabled        = "Protection of your computer is disabled. Information on the computer can be infected, damaged or stolen. We recommend you enable computer protection."
+#ProdStateThreatsMalwareUntreated   = "Malware has been detected on your computer. We recommend you neutralize it as soon as possible."
+#ProdStateThreatsRiskwareUntreated  = "Legal software that can be used by criminals for damaging your computer or personal data has been detected on your computer. We recommend you neutralize it as soon as possible."
+#ProdStateThreatsSuspiciousUntreated= "Software that may cause harm was detected on your computer."
+#ProdStateThreatsNeedReboot         = "To complete disinfection of the malicious object, reboot the computer. Please reboot the computer. Disinfection will then be completed automatically."
+#ProdStateAntiSpamNeedTraining      = "Train your Anti-Spam with " + (Anti_Spam.NeedMoreSpamToTrain ? (Anti_Spam.NeedMoreSpamToTrain + " spam") : (Anti_Spam.NeedMoreHamToTrain + " non-spam")) + " sample emails from your Inbox for better Anti-Spam detection."
+#ProdStateFirewallBlockAll          = "All network traffic is currently being blocked on your computer..."
+#ProdStateSomeSkipped               = if (Protection.state == #StateRunning, "Protection components are enabled on your computer. ") + if (HipsTask.state == #StateRunning, "Unauthorized attempts to access your data are blocked. Modification of system objects is monitored by " + $ProductName_GEN + ". ") + "Databases release date: " + datetime(AVService.BasesDate) + "."
+default                             = if (Protection.state == #StateRunning, "All protection components are enabled on your computer. ") + if (HipsTask.state == #StateRunning, "Unauthorized attempts to access your data are blocked. Modification of system objects is strictly monitored by " + $ProductName_GEN + ". ") + "Databases release date: " + datetime(AVService.BasesDate) + "."
+
+[s_BundleProductBasesStateText]
+rd = "It is recommended to use the latest version of Kaspersky Rescue Disk."
+kat = "It is recommended to use the latest version of Kaspersky Virus Removal Tool."
+
+[s_ProdStateKeyInvalid_Description]
+#ekirInvalidBlacklist       = "Attention! The black list of keys is corrupted. One possible cause of damage is an incorrect update. We recommend that you update the databases again or roll them back to their previous version."
+#ekirIllegalUpdate          = "Attention! Database date is later than the license expiration date. In this case protection of your computer and application updates are unavailable. To resume application operation you need to acquire a new license from Kaspersky Lab or our distributors."
+#ekirInconsistentUpdate     = "Attention! Application databases are corrupted. One possible cause of damage is an incorrect update. We recommend that you update the databases or roll them back to their previous version."
+#ekirKeyCreationDateInvalid = "Incorrect key creation date.\nSystem date has been changed."
+#ekirKeyInstallDateInvalid  = "Incorrect date of application activation.\nSystem date has been possibly changed."
+default                     = "The license is no longer valid. Computer protection has been disabled. Please contact Kaspersky Lab Technical Support or the distributor of the application."
+
+;-------------------------------- AvzTroubleshootWizard --------------------------------
+
+[Global]
+$AvzWizardErr = state == #StateFailed ? ("Wizard failure: " + s_ProfileError(type, lastErr))
+
+[AvzWizard_ProgressVul]
+CurObject.Name = "Object:"
+
+[AvzWizard_Error]
+Text        = state == #StateFailed ? "Wizard completed with error: " + s_AvzError(lastErr) : "Wizard completed successfully"
+Exit.Name   = "&Exit"
+Exit.Descr  = "Wizard completion"
+
+[s_AvzSeverity]
+0   = "Corrected"
+1   = "Additional actions"
+2   = "Recommended actions"
+3   = "Strongly recommended actions"
+
+[AvzTroubleshootWizard]
+@ = "Microsoft Windows Troubleshooting"
+
+[AvzTroubleshootWizardPages]
+Welcome.Name        = "Welcome to the post-infection Microsoft Windows troubleshooting wizard"
+Search.Name         = if (Rollback, "Changes search", "Problems search")
+Search.Body.Intro   = if (Rollback, "Please wait while the changes are analyzed\n\nThe analysis can take a few minutes.", "Please wait while searching for damaged and irregular settings caused by malware activity, system crashes, or incorrectly functioning system optimizers.\n\nThe search can take a few minutes.")
+Problems.Name       = if (Rollback, "Changes search completed", "Problems search completed")
+Fix.Name            = if (Rollback, "Changes rollback", "Problems elimination")
+Fix.Body.Intro      = if (Rollback, "Please wait while performing changes rollback.", "Please wait while restoring the damaged system settings.")
+Finish.Name         = $AvzWizardErr : if (Rollback, (ScriptMode == 5 ? "Changes rollback completed successfully" : "No changes available to roll back"), (ScriptMode == 2 ? "Microsoft Windows restored successfully" : "No problems detected"))
+
+[AvzTroubleshootWizard_Welcome]
+StartDescr    = "The wizard searches for damaged and irregular settings caused by such things as malware activity, system crashes, and incorrectly functioning system optimizers."
+Start         = "Search for problems caused by malware activity"
+Rollback      = "Roll back changes"
+
+[AvzTroubleshootWizard_Problems]
+Desc      = if (Rollback, "Select changes to roll back:", "Select problems to fix:")
+Fix.Name    = if (Rollback, "Roll back", "Fix")
+Fix.Descr   = if (Rollback, "Selected changes rollback", "Restoring the initial settings")
+
+[AvzTroubleshootWizard_Problems_List]
+Trouble = "Problem"
+SideEff = "Consequence"
+
+[AvzTroubleshootWizard_Finish]
+Intro           =  "Post-infection Microsoft Windows troubleshooting completed. If any problems occur, visit our Support Forum or contact Technical Support."
+Reboot     = "Reboot the computer"
+
+;-------------------------------- AvzPrivacyCleanerWizard --------------------------------
+
+[AvzPrivacyCleanerWizard]
+@ = "Privacy Cleaner"
+
+[AvzPrivacyCleanerWizardPages]
+Welcome.Name        = "Welcome to the Privacy Cleaner Wizard"
+Search.Name         = if (Rollback, "Changes search", "Activity signs search")
+Search.Body.Intro   = if (Rollback, "Please wait while analyzing the changes.\n\nThe analysis can take a few minutes.", "Please wait while searching for the lists of recently executed commands and opened files, cookies, caches, logs and other data which evidences the user's activity on the computer.\n\nThe search can take a few minutes.")
+Problems.Name       = if (Rollback, "Changes search completed", "Activity signs search completed")
+Fix.Name            = if (Rollback, "Changes rollback", "Cleaning activity traces")
+Fix.Body.Intro      = if (Rollback, "Please wait while performing changes rollback.", "Please wait while cleaning user activity traces.")
+Finish.Name         = $AvzWizardErr : if (Rollback, (ScriptMode == 5 ? "Changes rollback completed successfully" : "No changes available to roll back"), (ScriptMode == 2 ? "Activity traces cleaned successfully" : "No user activity traces detected"))
+
+[AvzPrivacyCleanerWizard_Welcome]
+Intro			= "Privacy cleaner wizard clears your PC history of recent commands and accessed files, cookies, caches, logs and other data, keeping your user activity private. You will have the option to select which data you would like to clear.\n\nNote that the removal of some of this data could cause some inconvenience.  For example, removal of cookies will reset settings saved by websites you have visited."
+Important               = "Please close your web browser before starting the diagnostics."
+Rollback		= "Roll back changes"
+Start		=  "Search for user activity traces"
+
+[AvzPrivacyCleanerWizard_Problems]
+Desc        = if (Rollback, "Select actions to roll back:", "Select activity traces to clean:")
+Fix.Name    = if (Rollback, "Roll back", "Clean")
+Fix.Descr   = if (Rollback, "Selected changes rollback", "Selected problems elimination")
+
+[AvzPrivacyCleanerWizard_Problems_List]
+Trouble = "Problem"
+SideEff = "Consequence"
+
+[AvzPrivacyCleanerWizard_Finish]
+Intro           =  "Privacy cleaner wizard completed. If any problems occur, visit the Support Forum or contact Technical Support."
+RunOnAppExit = "Clean activity traces every time on " + $ProductName + " exit"
+Reboot	 = "Reboot the computer"
+
+;-------------------------------- AvzSecurityTweakerWizard --------------------------------
+
+[AvzSecurityTweakerWizard]
+@ = "Browser Configuration"
+
+[AvzSecurityTweakerWizardPages]
+Welcome.Name        = "Welcome to the Browser Configuration Wizard"
+Search.Name         = if (Rollback, "Changes search", "Problems search")
+Search.Body.Intro   = if (Rollback, "Please wait while the browser settings changes are analyzed.\n\nThe analysis can take a few minutes.", "Please wait while analyzing the browser settings.\n\nThe analysis can take a few minutes.")
+Problems.Name       = if (Rollback, "Changes search completed", "Problems search completed")
+Fix.Name            = if (Rollback, "Changes rollback", "Problems elimination")
+Fix.Body.Intro      = if (Rollback, "Please wait while performing rollback of changes made in the browser settings.", "Please wait while fixing the problems in the browser settings.")
+Finish.Name         = $AvzWizardErr : if (Rollback, (ScriptMode == 5 ? "Changes rollback completed successfully" : "No changes available to roll back"), (ScriptMode == 2 ? "Problems fixed successfully" : "No problems detected in the browser settings"))
+
+[AvzSecurityTweakerWizard_Welcome]
+Intro       = "Browser Configuration Wizard performs a security analysis of web browser settings.\n\nNote that some settings changes may prevent you from browsing specific websites, for example, if the website uses ActiveX. To resolve this, you can add the website to the list of trusted websites."
+Warning     = "Please close all the browser windows before starting the diagnostics."
+Rollback	= "Roll back changes"
+Start = "Perform diagnostics for Microsoft Internet Explorer"
+
+[AvzSecurityTweakerWizard_Problems]
+Desc        = if (Rollback, "Select actions from the list to roll back:", "Select actions from the list to eliminate problems:")
+Fix.Name    = if (Rollback, "Roll back", "Fix")
+Fix.Descr   = if (Rollback, "Selected changes rollback", "Selected problems elimination")
+
+[AvzSecurityTweakerWizard_Problems_List]
+Trouble = "Problem"
+SideEff = "Consequence"
+
+[AvzSecurityTweakerWizard_Finish]
+Intro           = if (Rollback,"Changes rollback completed. If the problems were not resolved, visit the users support forum or contact our technical support team.", "Configuration wizard completed. If you are having problems using the Internet, you can roll back changes by running the wizard again and selecting \"Roll back changes\".")
+Reboot     = "Reboot the computer"
+
+;-------------------------------- AvzSecurityAnalyzerWizard --------------------------------
+
+[Global]
+AvzAlreadyRunning.caption   = "One of the Wizards is already running"
+AvzAlreadyRunning           = "Please close the currently running Wizard before starting a new one."
+
+[AvzSecurityAnalyzerWizard]
+@ = "Security Analyzer Wizard"
+
+[AvzSecurityAnalyzerWizardPages]
+Welcome.Name            = "General information"
+Welcome.Descr           = "Welcome to the Security Analyzer Wizard."
+Search.Name             = "Application vulnerability analysis"
+Search.Descr            = "Applications are being checked, please wait..."
+Search.Body.Intro       = "Search for vulnerable applications is in progress.\n\nSearch may take a few minutes. Please wait..."
+Vulnerab.Name           = "Vulnerable applications"
+Vulnerab.Descr          = "Scan for vulnerable applications completed."
+Problems.Name           = if (RunMode == 2, "Changes search completed", "Problems search completed")
+Problems.Descr          = if (RunMode == 2, "Changes available for rollback detected.", "Problems detected")
+Fix.Name                = if (RunMode == 2, "Changes rollback", "Vulnerability elimination")
+Fix.Descr               = if (RunMode == 2, "Rollback is in progress, please wait...", "Vulnerability elimination is in progress, please wait...")
+Fix.Body.Intro          = if (RunMode == 2, "Rollback is in progress.", "System and browser repair is in progress.")
+Finish.Name             = $AvzWizardErr : if (RunMode == 2, (ScriptMode == 5 ? "Changes rollback completed" : "No changes available for rollback detected"), (Danger > 1 ? "Script execution completed" : "No threats detected"))
+Finish.Descr            = "Security Analyzer has finished system analysis."
+
+[AvzSecurityAnalyzerWizard_Welcome]
+Intro       = "Security Analyzer Wizard inspects the computer, searching for application vulnerabilities, damaged and irregular operating system and browser settings. Such damaged settings can be caused by malware activity, system failures, and incorrectly functioning system utilities or optimization software."
+Scan     = "Start analysis"
+LastScanResult  = "Last scan results" + if(Scan_Vulnerabilities.state != #StateNotStarted," (" + s_ProfileState(Scan_Vulnerabilities.state, #false) + ")")
+Rollback  = "Rollback of changes in system settings"
+
+[AvzSecurityAnalyzerWizard_Vulnerab]
+Count           = Threats.size() ? "Number of vulnerable applications: " + Threats.size() + "" : "No vulnerable applications detected"
+Rescan.Name     = "Repeated analysis"
+Rescan.Descr    = "Rescan for vulnerable applications"
+Next.Name       = "System analysis"
+Next.Descr      = "Computer security diagnostics"
+
+[AvzSecurityAnalyzerWizard_Vulnerab_AppList]
+App     = "Application"
+Todo    = "Solution"
+Danger  = "Criticality"
+
+[AvzSecurityAnalyzerWizard_Problems]
+Fix.Name    = if (RunMode == 2, "Rollback", "Fix")
+Fix.Descr   = if (RunMode == 2, "Rollback of the selected changes", "Fixing selected problems")
+
+[AvzSecurityAnalyzerWizard_Solution_List]
+Trouble = "Problem"
+SideEff = "Consequence"
+
+[AvzSecurityAnalyzerWizard_Script]
+Web.Name    = "Find cure script"
+Web.Descr   = "Obtaining a cure script from the forum virusinfo.info"
+Fix.Name    = "Run cure script"
+Fix.Descr   = "Executing the script for eliminating security problems"
+
+[AvzSecurityAnalyzerWizard_Script_Info]
+Lable = "Enter the script text or paste it from the clipboard"
+
+[AvzSecurityAnalyzerWizard_ScriptError]
+Reedit.Name     = "Change script"
+Reedit.Descr    = "Correct errors in the script and run it again"
+
+[AvzSecurityAnalyzerWizard_Finish]
+Reboot     = "Reboot the computer"
+
+[s_VulDanger]
+1   = "Highly dangerous"
+2   = "Very dangerous"
+3   = "Moderately dangerous"
+4   = "Low hazard"
+def = "Not dangerous"
+
+;-------------------------------- AvzCollectSysInfo --------------------------------
+
+[AvzCollectSysInfoWizard]
+@ = "System data collection"
+
+[AvzCollectSysInfoWizardPages]
+Scan.Body.Intro = "Please wait while the data collection wizard analyzes the system.\n\nThe analysis includes running processes, loaded modules, system services and drivers, and autorun applications. Vulnerable applications are scanned and heuristic scanning is performed. \n\nAnalysis results are saved as logs in HTML and XML format."
+Scan.Name       = "Collecting system data"
+Error.Name      = "Wizard failure"
+Finish.Name     = "System data collected successfully"
+
+[AvzCollectSysInfoWizardPages_Finish]
+Intro = "The Wizard completed successfully."
+
+[AvzCollectSysInfoWizard.Scripts]
+sa.avz.1 = "Main analysis script"
+
+;-------------------------------- AvzRunScriptWizard --------------------------------
+
+[AvzRunScriptWizard]
+@ = "AVZ script execution"
+
+[AvzRunScriptWizardPages]
+Script.Name     = "Specify script to execute"
+Exec.Name       = "Executing script"
+Error.Name      = state == #StateFailed ? "Error" : "Script executed successfully"
+
+[s_AvzError]
+0x99c63001  = "Incorrect kernel handle"
+0x99c63002  = "Incorrect path to databases"
+0x99c63003  = "Error loading databases"
+0x99c63004  = "Abnormal termination"
+0x99c63005  = "Incorrect stream: stream pointer is absent"
+0x99c63006  = "Error reading data from stream"
+0x99c63007  = "XML syntax analysis error"
+0x99c63008  = "XML tag not found"
+0x99c63009  = "Incorrect mask defining conversion format"
+0x99c6300A  = "Incorrect callback function code"
+0x99c6300B  = "Invalid script handle"
+0x99c6300C  = "Incorrect script startup mode handle"
+0x99c6300D  = "Incorrect database handle"
+0x99c6300E  = "Error in script"
+def         = s_SystemError(@)
+
+;-------------------------------- AlertDialog --------------------------------
+
+[Global]
+$AlertDefault           = " (recommended)"
+$AlertTcpOut            = "outgoing TCP connection with remote computer " + f_NetAddr(Data.RemoteIP) + ", remote port: " + Data.RemotePort
+$AlertTcpIn             = "incoming TCP connection from remote computer " + f_NetAddr(Data.RemoteIP) + ", local port: " + Data.LocalPort
+$AlertUdpOut            = "sending UDP packet to remote computer " + f_NetAddr(Data.RemoteIP) + ", remote port: " + Data.RemotePort
+$AlertUdpIn             = "receiving UDP packet from remote computer " + f_NetAddr(Data.RemoteIP) + ", local port: " + Data.LocalPort
+$AlertIcmpOut           = "sending ICMP packet to remote computer " + f_NetAddr(Data.RemoteIP) + ", packet type: " + s_ICMPTypes(Data.IcmpType)
+$AlertIcmpIn            = "receiving ICMP packet from remote computer " + f_NetAddr(Data.RemoteIP) + ", packet type: " + s_ICMPTypes(Data.IcmpType)
+$AlertIcmp6Out          = "sending ICMPv6 packet to remote computer " + f_NetAddr(Data.RemoteIP) + ", packet type: " + s_ICMP6Types(Data.IcmpType)
+$AlertIcmp6In           = "receiving  ICMPv6 packet from remote computer " + f_NetAddr(Data.RemoteIP) + ", packet type: " + s_ICMP6Types(Data.IcmpType)
+$AlertSocketType        = "socket type: " + s_FwSocketType(Data.SocketType)
+$AlertAppLinkWithGroup  = $AlertAppLink + if(strGroupPath, " from group \"" + f_AppRootGroupName(strGroupPath) + "\"")
+$AlertActiveDetect      = if(nActionID == #AlertActionActiveDetect, "\n\nSpecial disinfection procedure is necessary, which <b>requires computer reboot</b>. We recommend you close all running applications before disinfection.")
+$AlertProtoOut          = "outgoing " + s_Protocols(Data.Proto) + " connection with remote computer " + f_NetAddr(Data.RemoteIP) + ", remote port: " + Data.RemotePort
+$AlertProtoIn           = "incoming " + s_Protocols(Data.Proto) + " connection from remote computer " + f_NetAddr(Data.RemoteIP) + ", local port: " + Data.LocalPort
+$AlertReservedCodeAutoActivationFailure = "Failed to activate the application automatically with the new activation code."
+
+[s_AlertDialogCaption]
+ods             = "Virus Scan"
+avs             = "Disinfection"
+oas
+wmuf            = "File Anti-Virus"
+mc              = "Mail Anti-Virus"
+httpscan        = s_WebAV_AlertCaption(ObjectType)
+antiphishing    = "Phishing attack"
+firewall
+hipstask
+hips
+hips_group      = if(ObjectType == #eNetwork, "Firewall", "Application Control")
+vul             = "Hosts file is modified"
+SW2		= "System Watcher"
+InstallKey      = $LicenseManager
+def             = "<" + toExpr(TaskType) + ">"
+
+[s_ToastSimpleAlertCaption]
+#AlertActionShowOlaForm    = "Important message"
+
+[s_ToastSimpleAlertDescription]
+#AlertActionShowOlaForm    = "Register in My Kaspersky Account"
+
+[s_ToastAlertDialogDescriptions]
+ods
+avs
+oas             = if($IsSpecialRiskwareAlert,"Application detected. Your decision is required.", s_ToastScanAlertDefaultDescription(s_AlertToastSeverityString(TaskType)))
+firewall
+hipstask
+hips
+hips_group      = if(ObjectType == #eNetwork, "Attempt to set up connection", s_ToastHipsAlertDefaultDescription(s_AlertToastSeverityString(TaskType)))
+pdm             = if(EventType == #PDM2_EVENT_DRIVER_INS, "Running software that may cause harm. Details...", s_ToastAlertDefaultDescription(f_AlertToastSeverity(DetectDanger, DetectStatus)))
+SW2		        = s_ToastBssAlertDefaultDescription(s_AlertToastSeverityString(TaskType))
+mc
+vul             = "Vulnerability detected. Your decision is required."
+wmuf            = "Malware download attempt. Details..."
+antiphishing    = "Address to a web page containing phishing URL. Details..."
+httpscan        = if($IsExactDetect, "Confirmation is required to download web page or file. Details...", "The linked URL contains a domain from a dangerous region. Details...")
+mc_tm           = if(!Valid, "Secure connection control. Your decision is required")
+
+[s_ToastScanAlertDefaultDescription]
+Critical        = "Your computer security is at risk"
+Warning         = "Object detected. Your decision is required."
+Reboot          = "Reboot is required to disinfect"
+
+[s_ToastHipsAlertDefaultDescription]
+Critical        = "Your computer security is at risk"
+Warning         = "Application Control. Your decision is required."
+HighRate        = "Running software that may cause harm"
+
+[s_ToastBssAlertDefaultDescription]
+Critical        = "Your computer security is at risk"
+Warning         = "Suspicious activity of the application was detected"
+
+[s_ToastAlertDefaultDescription]
+#eNotifySeverityCritical
+#eNotifySeverityError       = "Your computer security is at risk"
+#eNotifySeverityImportant   = "Application Control: your decision is required"
+
+[s_ToastAlertDialogCaption]
+ods
+avs
+oas
+hipstask
+hips
+hips_group
+pdm
+firewall
+mc
+vul
+mc_tm
+SW2             = if(s_ToastAlertDialogDescriptions(@), #ToastCategoryThreats)
+wmuf        
+antiphishing
+httpscan             = if(s_ToastAlertDialogDescriptions(@), #ToastCategoryWeb)
+
+[s_AlertDialogTaskName]
+oas
+ods
+avs             = "Virus Scan"
+wmuf
+mc
+httpscan
+antiphishing
+firewall
+hipstask
+hips_group
+vul
+
+[f_OasCategoryText]
+$oasCategory = f_OasSpecialCategoryExist()
+ret = if($oasCategory, s_OasCategoryLink($oasCategory))
+
+[f_OasSpecialCategoryExist]
+$isRadmin  = Categories.find("e == #ScanRemoteAdministration") != null
+$isPsw     = Categories.find("e == #ScanPasswordManagement") != null
+$isMonitor = Categories.find("e == #ScanMonitoring") != null
+$isAdware  = Categories.find("e == #ScanAdvertising") != null
+ret     = if($isRadmin, #ScanRemoteAdministration, if($isPsw, #ScanPasswordManagement, if($isMonitor, #ScanMonitoring, if($isAdware, #ScanAdvertising))))
+
+[s_OasCategoryLink]
+#ScanRemoteAdministration        = "<a onclick(url(\"" + $SpecialAlertLink + "not-a-virus:RemoteAdmin\"))>Remote administration software</a> detected"
+#ScanPasswordManagement          = "<a onclick(url(\"" + $SpecialAlertLink + "not-a-virus:PSWTool\"))>Password management software</a> detected"
+#ScanMonitoring                  = "<a onclick(url(\"" + $SpecialAlertLink + "not-a-virus:Monitor\"))>User activity monitoring software</a> detected"
+#ScanAdvertising                 = "<a onclick(url(\"" + $SpecialAlertLink + "not-a-virus:AdWare\"))>Adware</a> detected"
+
+[s_WebAV_AlertCaption]
+#ObjectRegion = "Geo Filter"
+def           = "Web Anti-Virus"
+
+[s_DetectTypeShort]
+; no more then 35 chars!
+#DETYPE_RISKWARE        = "other software"
+#DETYPE_PHISHING        = "malicious URL"
+default = s_DetectType(@)
+
+[s_AlertDialogObjectL]
+hips_group
+firewall
+hips
+hipstask        = if(ObjectType != #eNetwork, "<b>" + s_AlertDialog_HipsObjectL(Action) + "</b>")
+vul             = "Modified file: "
+antiphishing    = s_AlertDialog_AntiphishingObjectL(strInterceptor)
+SW2		        = "Process (PID: " + nPID + "):"
+httpscan
+mc              = ""
+default         = "Location:"
+
+
+[s_WebWare_CategoryByTask]
+mc       = "Message received by the application:"
+httpscan = if(ObjectType == #ObjectRegion,"Application performing the address:","Application performing the action:")
+
+[f_SoftwareCategory]
+ret = s_SoftwareCategory(TaskType)
+
+[s_SoftwareCategory]
+pdm             = s_SoftwareCategoryPdm(EventType)
+
+[s_SoftwareCategoryPdm]
+#PDM2_EVENT_KEYLOGGER         = if(0 == nPID, "Driver file:")
+#PDM2_EVENT_IRP_TABLE_CHANGED = "Driver file:"
+
+
+[s_VirwareType]
+antiphishing    = s_DetectType(#DETYPE_PHISHING)
+httpscan        = ObjectName
+default         = @1
+
+[s_ActionInTime]
+#PDM2_ACTION_BLOCKED_APP_START = "at previous session was trying to "
+def = "is trying to "
+
+[s_AlertDialogTroubleExByTasktype]
+; replaces s_AlertDialogTrouble
+$SwDetect = if($IsExactDetect && DetectStatus <= #DSTATUS_PARTIAL, "Dangerous activity of the application was detected, which is malware-specific.", "Suspicious activity of the application was detected, which is similar to malware.")
+$AepDetect = if(DetectedAction == #evtProcessStart, "The application is trying to run an executable file.", "The application is trying to perform a dangerous action.")
+ods             = f_ToBoldText(s_DetectGroupAD(DetectType) + ".", nActionID == #AlertActionActiveDetect)
+wmuf            = s_WmufDescr(strInterceptor)
+avs             = "Select method of processing " + s_DetectGroupDetR(DetectType) + "."
+mc              = "Detected email containing " + s_DetectGroupV(DetectType) + "."
+httpscan        = if(#DETYPE_PHISHING == DetectType, s_APhishingDescr(strInterceptor), s_WebAV_AlertDescr(ObjectType))
+vul             = "The hosts file maps IP addresses to domain names. Malware applications change the hosts file to block antivirus updates or user access to certain websites."
+SW2		        = if(Action == #PDM2_ACTION_ROLLBACK, s_PDM2_AlertDialog_Event(#PDM2_ACTION_ROLLBACK), if($IsExploitPreventionAlert, $AepDetect, $SwDetect))
+firewall
+hips
+hipstask
+hips_group      = if(ObjectType == #eNetwork, f_AlertDialogTroubleFw(), f_AlertDialogTroubleHips())
+oas             = if(DetectType == #DETYPE_URGENT, "got access to ", "is trying to get access to ") + s_DetectGroupD(DetectType) + "."
+InstallKey      = "Databases are not updated.\n Information on the computer can be infected, damaged or stolen."
+
+[f_AlertDialogTroubleFw]
+$AlertRowSocket = s_ActionV(Action, ObjectName, ObjectType) + ", using a <b>raw socket</b>. Such activity is malware-specific. Legal software generally does not use such networking methods."
+$AlertFirewall  = ObjectType == #eNetwork ? s_ActionFW(Action) + $NetGroup : s_ActionV(Action, ObjectName, ObjectType) + "."
+ret = $AlertAppGroupEx + "is trying to " + if(Data.SocketType==#fwstRaw, $AlertRowSocket, $AlertFirewall) + $IfTrusted
+
+[s_ActionFW]
+#evtNetworkAccess  = "establish a connection with an address"
+def                = f_isOut(Data.Direction) ? f_ActionFWNetOut(Data.Proto) : f_ActionFWNetIn(Data.Proto)
+
+[f_ActionFWNetOut]
+ret = "send " + s_NetProto(@) + " to a remote computer by the address"
+
+[f_ActionFWNetIn]
+ret = "get " + s_NetProto(@) + " from a remote computer by the address"
+
+[s_NetProto]
+#protoICMP   = "ICMP packet"
+#protoICMPV6 = "ICMPv6 packet"
+#protoTCP    = "TCP packet"
+#protoUDP    = "UDP packet"
+def          = s_Protocols(Data.Proto)
+
+[AlertNetAdressDescrEx]
+LocalAdress.Name   = "Local address:"
+RemoteAdress.Name  = "Remote address:"
+
+[s_NetDetailsL]
+#protoICMP
+#protoICMPV6 = "Packet type:"
+def          = f_isOut(Data.Direction) ? "Remote port:" : "Local port:"
+
+[s_NetDetailsR]
+#protoICMP
+#protoICMPV6 = s_ICMPTypes(Data.IcmpType)
+def          = f_isOut(Data.Direction) ? Data.RemotePort : Data.LocalPort
+
+[f_AlertNetAdressPacket]
+ret = "<b>" + (f_isOut(Data.Direction) ? s_AlertNetAdressDescrOut(@) : s_AlertNetAdressDescrIn(@)) + "</b>"
+
+[s_AlertNetAdressDescrOut]
+#protoTCP            = "outgoing TCP packet"
+#protoUDP            = "outgoing UDP packet"
+#protoICMP           = "outgoing ICMP packet"
+#protoICMPV6         = "outgoing ICMPv6 packet"
+def                  = "outgoing " + s_Protocols(Data.Proto) + " connection with a remote computer"
+
+
+[s_AlertNetAdressDescrIn]
+#protoTCP             = "incoming TCP packet"
+#protoUDP             = "incoming UDP packet"
+#protoICMP            = "incoming ICMP packet"
+#protoICMPV6          = "incoming ICMPv6 packet"
+def                   = "incoming " + s_Protocols(Data.Proto) + " connection from a remote computer"
+
+[s_FromGroup]
+#evtAddAppToGr = " previously from group '"
+def            = " from group '"
+
+[f_danger]
+action, pid
+ret = (#evtAddAppToGr == action && !pid) ? "A suspicious modification of the application detected: " : ( (pid ? "Starting " : "Detected ") + "software that may cause harm: " )
+
+[f_danger2]
+action, pid
+ret = (#evtAddAppToGr == action && !pid) ? "A suspicious modification of the application detected: " : ( (pid ? "Starting " : "Detected ") + "software that may cause harm: " )
+
+[f_hipsIconText]
+$l_AlertAppLinkWithGroup  = $AlertAppLink + if(strGroupPath, s_FromGroup(@) + f_AppRootGroupName(strGroupPath) + "'")
+ret = f_danger(@, @1) + $l_AlertAppLinkWithGroup + ". " + f_appDenyStartReason()
+ 
+[AlertDialog_Descr_RegInfo]
+ObjectL = "Registry key:"
+
+[AlertDialog_Descr_GeoSecurity]
+Descr       = "Application performing the address: \n<b>" + f_ProcessInfo(nPID).Module.sDescription + "</b>"
+
+[AlertDialog_Descr_GeoSecurity_L]
+RegionLabel = "Region:"
+DomainLabel = "Domain: "
+SiteLabel   = "URL: "
+
+[AlertDialog_Descr_Object]
+History = if(#eDriver == ObjectType, "Driver appearance log", "Dangerous activity log")
+
+[AlertDialog_Descr_SoftWare]
+History = "Driver appearance log"
+
+[AlertMailDescr]
+From.Name     = "Message from:"
+Subject.Name  = "Message subject:"
+Attach.Name   = "Attachment:" 
+
+[AlertDialog_Descr_AppParentage]
+Header  = "Application run sequence:"
+
+[AlertDialog_Descr_Aep]
+Warning = if(DetectedAction == #evtProcessStart, "You are strongly advised to block starting", "You are strongly advised to block it")
+
+[AppParentage]
+Executed = "Started by "
+
+[f_appDenyStartReason]
+ret = "no digital signature" + if(ObjectName == "KLAppUntrusted", ", high danger rating") + "."
+
+[f_BrowserOrApp]
+ret = l_ShortName = objfile(f_AppInfo(@).sImagePath); ( stricmp(l_ShortName, "iexplore.exe")==0 || stricmp(l_ShortName, "opera.exe")==0 || stricmp(l_ShortName, "firefox.exe")==0 ) ? "downloaded by browser " : "created "
+
+[f_appParentage]
+ret = l_appParentage = appParentage(@); if(l_appParentage.EventCreated.AppID, "Executable file " + f_BrowserOrApp(l_appParentage.EventCreated.AppID) + s_AppName(l_appParentage.EventCreated.AppID) + " " + datetimeDT(l_appParentage.EventCreated.Timestamp) + "\n")
+
+[AlertDialog_Descr_CreateObject]
+ObjectL = "File was created" + if(nOwnerCreated > 0, " " + datetimeDT(nOwnerCreated)) + " by the application:"
+
+[AlertDialogT_Header1]
+Help = "Help"
+TaskName
+
+[AlertDialogT_Inner_Container]
+ApplyToAll = (TaskType == "hipstask")? "Save rules changes" : ( (ApplyToAll & #APPLYTOALL_SESSION_ONLY)? "Apply to current session" : (ApplyToAll & #APPLYTOALL_USE_SESSION ? "Apply <a f(const(s_AlertFooterLink(DetectDanger))) onclick(iterate(bmask(ApplyToAll, #APPLYTOALL_SESSION)))>" + (ApplyToAll & #APPLYTOALL_SESSION ? "to current application session" : "always") + "</a>" : s_ApplyToAllByTaskType(TaskType)) )
+
+[AlertDialog_Body_Action]
+Rename.Name         = "Make trusted"
+Rename.Descr        = "Move application to the \"Trusted\" group"
+RenameChain.Name    = "Make trusted"
+RenameChain.Descr   = "Move application with such run sequence to the \"Trusted\" group"
+Allow.Name          = s_AllowActionByTask(TaskType)
+Allow.Descr         = if(!$IsGeoSecurity, s_AllowDescrByTaskType(TaskType))
+Restrict.Name       = "Restrict"
+Restrict.Descr      = "Allow program execution, block dangerous operations only"
+Deny.Name           = s_DenyActionByType(TaskType) + $Def
+Deny.Descr          = if(!$IsGeoSecurity, s_DenyDescrByTaskType(TaskType))
+Disinfect.Name      = ActionsMask & #ACTION_DISINFECT ? "Disinfect" + $Def : "Disinfection impossible"
+Disinfect.Descr     = ActionsMask & #ACTION_DISINFECT ? "A copy of infected file will be saved" + if(NonCuredReason==#NCREASON_WRITEPROTECT, $UnlockFileMsg + " disinfection.") : "Reason: " + s_NotDisinfetedReason(NonCuredReason,1, " disinfection.")
+Repare.Name         = "Yes, fix" + $Def
+Repare.Descr        = s_ActionObjectRestore(TaskType)
+Delete.Name         = ActionsMask & #ACTION_DELETE ? "Delete" + $Def : "Cannot be deleted"
+Delete.Descr        = ActionsMask & #ACTION_DELETE ? (s_ActionObjectByTaskTypeEx(TaskType) + if(NonCuredReason==#NCREASON_WRITEPROTECT, $UnlockFileMsg + "of deletion.")) : "Reason: " + s_NotDisinfetedReason(NonCuredReason, 1, " of deletion.")
+DeleteArch.Name     = "Delete archive" + $Def
+DeleteArch.Descr    = ActionsMask & #ACTION_DELETE_ARCHIVE ? ("Archive file will be deleted" + if(NonCuredReason==#NCREASON_WRITEPROTECT, $UnlockFileMsg + " archive deletion.")) : "Reason: " + s_NotDisinfetedReason(NonCuredReason, 1, " archive deletion.")
+Skip.Name           = "Skip" + $Def
+Skip.Descr          = if(Action == #PDM2_ACTION_ROLLBACK, "Do not roll back changes made by " + s_DetectGroupX(DetectType), "Do nothing")
+Ok.Name             = f_OkNameByTaskType(TaskType)  + $Def
+Ok.Descr            = f_OkDescrByTaskType(TaskType)
+TryAgain.Name       = "Repeat"  + $Def
+TryAgain.Descr      = "Try to perform action again"
+Cancel.Name         = f_CancelNameByTaskType(TaskType)  + $Def
+Cancel.Descr        = f_CancelDescrByTaskType(TaskType)
+Terminate.Name      = s_TerminateActionByTask(TaskType) + $Def
+Terminate.Descr     = s_TerminateDescrByTask(TaskType)
+Quarantine.Name     = ActionsMask & #ACTION_QUARANTINE ? "Delete" + $Def : "Cannot be deleted"
+Quarantine.Descr    = ActionsMask & #ACTION_QUARANTINE ? (s_ActionObjectByTaskTypeEx(TaskType) + if(NonCuredReason==#NCREASON_WRITEPROTECT, $UnlockFileMsg + " of deletion.")) : "Reason: " + s_NotDisinfetedReason(NonCuredReason, 1, " of deletion.")
+CreateRule.Name     = "Create a rule"
+CreateRule.Descr    = "Create a detailed rule"
+Rollback.Name       = "Yes, roll back" + $Def
+Rollback.Descr      = "Attempting to roll back system changes made by " + s_DetectGroupX(DetectType) + " (file, registry and system activity)."
+ToExclude.Name      = "Add to exclusions"
+ToExclude.Descr     = s_ToExcludeDescrByTaskType(TaskType)
+;AddURLExclude.Name	= "Добавить в исключения"
+;AddURLExclude.Descr = "Будет открыт список исключений Веб-фильтра"
+
+[s_DetectGroupX]
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE     = "malware"
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_URGENT      = "malware detected by Kaspersky Security Network"
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = if($IsExactDetect, "malware", "software that may cause harm")
+default             = "unknown software"
+
+[s_ToExcludeDescrByTaskType]
+SW2          = "Always allow such activity"
+def          = if(f_TaskTypeExcludable(TaskType), "Add to the list of exclusions", "Add application to the trusted zone")
+
+[s_TerminateActionByTask]
+hips
+hipstask
+hips_group  = if(Action == #evtProcessStart,"Block application","Terminate application") + " and make untrusted"
+SW2         
+def         = "Terminate"
+
+[s_TerminateDescrByTask]
+hips
+hipstask
+hips_group   = "Abort executing the application and move it to the \"Untrusted\" group"
+SW2          = "Terminate application execution"
+def          = "Terminate execution"
+
+[s_AllowActionByTask]
+$Def		= if(DefaultAction == ctl.parent.value, $AlertDefault)
+$HipsAllow  = if(s_HipsSelfAction(Action), if(ctl.ApplyToAll.value, "Allow", "Allow now"), "Yes, I trust it")
+hips
+hipstask
+hips_group
+firewall   = if(ObjectType == #eNetwork, "Allow" + $Def, $HipsAllow)
+httpscan   = if(ObjectType == #ObjectRegion, "Yes, allow request", "Allow")
+SW2	       = "Allow" + $Def
+def        = "Allow"
+
+[s_AllowDescrByTaskType]
+hips
+hips_group   
+hipstask
+firewall    = if(ObjectType == #eNetwork, f_FirewallAllowDescrByRule(), s_AllowDescrHips(Action))
+def         = s_AllowDescrByObjectType(ObjectType)
+
+[s_AllowDescrHips]
+#evtProcessStart = "Allow program execution"
+#evtAddAppToGr   = "All actions of this application will be allowed"
+#evtDrvStart     = if(appID, "Allow action once", "Add driver to the list of exclusions")
+def              = if(ctl.ApplyToAll.value, "Create allowing rule", "Allow action once")
+
+[s_AllowDescrByObjectType]
+default       = "Action will be allowed" + if(TaskType == "hipstask",(ctl.ApplyToAll.value? " and an allowing rule will be created":" only once"))
+
+[f_FirewallAllowDescrByRule]
+ret = "Access to the " + capitalize(f_ResGroupName(ObjectName), false) + " group will be allowed"
+
+[f_FirewallDenyDescrByRule]
+ret = "Access to the " + capitalize(f_ResGroupName(ObjectName), false) + " group will be blocked"
+
+[s_DenyActionByType]
+$HipsDeny  = if(s_HipsSelfAction(Action), if(ctl.ApplyToAll.value, "Block", "Block now"), "Block")
+$FwDeny    = "Block now"
+httpscan   = if(ObjectType == #ObjectRegion, "No, block request", "Block")
+hips
+hips_group 
+hipstask
+firewall   = if(ObjectType == #eNetwork, $FwDeny, $HipsDeny)
+def        = "Block"
+
+[s_DenyDescrByTaskType]
+hips
+hipstask
+hips_group
+firewall	  = if(ObjectType == #eNetwork, f_FirewallDenyDescrByRule(), s_DenyDescrHips(Action))
+default       = "Action will be blocked"
+
+[s_DenyDescrHips]
+#evtAddAppToGr   = "Application will be blocked and will not be run"
+def              = if(ctl.ApplyToAll.value, "Create blocking rule", "Block action once")
+
+[f_OkNameByTaskType]
+ret = if (nActionID == #AlertActionActiveDetect, "Yes, disinfect with reboot", s_OkNameByTaskType(@))
+
+[s_OkNameByTaskType]
+InstallKey = "Yes, activate" + $AlertDefault
+default = "OK"
+
+[f_OkDescrByTaskType]
+ret = if (nActionID == #AlertActionActiveDetect, "The most reliable disinfection method, after which the computer will be rebooted. We recommend you close all running applications and save your data.", s_OkDescrByTaskType(@))
+
+[s_OkDescrByTaskType]
+InstallKey = ""
+default = "Action will be performed"
+
+[f_CancelNameByTaskType]
+ret = if (nActionID == #AlertActionActiveDetect, "Do not run", s_CancelNameByTaskType(@))
+
+[s_CancelNameByTaskType]
+oas     = if(DetectType == #DETYPE_URGENT, "Skip", "Block")
+InstallKey = "No, postpone activation"
+default = "Ignore"
+
+[f_CancelDescrByTaskType]
+ret = if (nActionID == #AlertActionActiveDetect, "Object will be processed according to the selected action. The computer will not be rebooted.", s_CancelDescrByTaskType(@))
+
+[s_CancelDescrByTaskType]
+oas		= if(DetectType == #DETYPE_URGENT, "Do nothing", "The object will not be modified or deleted")
+SW2		= s_SW2_CancelDescrByAction(Action)
+InstallKey = ""
+default	= "Do nothing"
+
+[s_PDM2_CancelDescrByAction]
+#PDM2_ACTION_ROLLBACK = "Do not roll back system changes made by the process"
+default               = "Do nothing"
+
+[s_SW2_CancelDescrByAction]
+#PDM2_ACTION_ROLLBACK = "Do not roll back system changes made by the process"
+default               = "Do nothing"
+
+[s_ActionObjectByTaskType]
+hipstask        = $ObjectTypeText
+vul             = "File"
+antiphishing    = "Website"
+default         = "Object"
+
+[s_ActionObjectRestore]
+vul          = "Vulnerability will be eliminated"
+def          = s_ActionObjectByTaskType(TaskType) + " will be restored to initial state"
+
+[s_ActionObjectByTaskTypeEx]
+ods          = if($IsExactDetect, "Malware will be deleted", "Object will be deleted")
+def          = s_ActionObjectByTaskType(TaskType) + " will be deleted"
+
+[s_ApplyToAllByTaskType]
+firewall
+hipstask    = "Always apply for this application"
+httpscan    = s_WebAV_AlertApplyToAll(ObjectType)
+ods
+oas         = $IsSpecialRiskwareAlert ? "Apply to all applications of the specified type" : "Apply to all objects"
+default     = "Apply to all objects"
+
+[s_WebAV_AlertApplyToAll]
+#ObjectRegion = "Remember for this region"
+default       = "Apply to all objects"
+
+[s_WmufDescr]
+msn
+icq     = "Link to "  + s_DetectGroup(DetectType) + " detected."
+default = "Attempt to download "  + s_DetectGroup(DetectType) + "."
+
+[s_APhishingDescr]
+msn
+icq     = "Application contains a link to a web page that is used to steal passwords, credit card numbers, or other confidential data."
+default = "<b>" + if(appID,s_AppName(appID),$UnknownApp) + "</b> is trying to access a web page that is used to steal passwords, credit card numbers, and other confidential data."
+
+[s_WebAV_AlertDescr]
+#ObjectRegion   = "The requested web resource belongs to a region for which the user did not decide on allowing or blocking access"
+def             = "Detected attempt to open web page or file containing " + s_DetectGroupV(DetectType) + "."
+
+[s_ActionReg]
+#evtRead    = "read a protected registry key from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+#evtWrite   = "modify a protected registry key from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+#evtDelete  = "delete a protected registry key from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+#evtCreate  = "create a subkey / parameter in a protected registry key from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+
+[s_ActionFile]
+#evtRead    = "read a protected file from the group " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b>"
+#evtWrite   = "modify a protected file from the group " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b>"
+#evtDelete  = "delete a protected file from the group " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b>"
+#evtCreate  = "create a file in the group " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b>"
+
+[s_ActionDef]
+#evtRead    = "read a protected resource from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+#evtWrite   = "modify a protected resource from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+#evtDelete  = "delete a protected resource from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+#evtCreate  = "create " + $ObjectTypeTextLoCase + " on a protected resource from the " + "<b>" + ResGroupPath.f_formatGrpPath() + "</b> group"
+
+$AlertAppLink = (appID ? "<b><a onclick(dialog(\"AppRulesEdit\", p_appID(appID), p_pid(nPID), p_image(sImagePath)))>" + s_AppName(appID) + "</a></b>" : $UnknownApp)
+
+[s_ActionV]
+#evtRead
+#evtWrite
+#evtDelete
+#evtCreate              = @2 == #eRegKey ? s_ActionReg(@) : (@2 == #eFile ? s_ActionFile(@) : s_ActionDef(@, @1, @2))
+#evtRename              = "rename" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtProcessStart        = var l_imageInfo; l_imageInfo = $AlertAppInfoStruct; "execute the application <a onclick(dialog(\"AppRulesEdit\", p_pid(nDestPID), p_image(l_imageInfo.sImagePath), p_appID(moduleAppId(l_imageInfo.sImagePath))))>" + f_AppNameEx(l_imageInfo) + "</a>"
+#evtProcessStop         = var l_imageInfo; l_imageInfo = $AlertAppInfoStruct; "terminate the application <a onclick(dialog(\"AppRulesEdit\", p_pid(nDestPID), p_image(l_imageInfo.sImagePath), p_appID(moduleAppId(l_imageInfo.sImagePath))))>" + f_AppNameEx(l_imageInfo) + "</a> or get access to it with deletion privileges"
+#evtProcessStop         = "stop" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtImageLoad           = "download" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtImageUnload         = "unload" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtSend                = "send" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtReceive             = "receive" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtTerminate           = "stop" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtSetHook
+#evtCodeInject          = "inject " + (ObjectName ? "module " : "code " ) + (nDestPID ? "into the process" : "into all processes by setting up a global trap")
+#evtAttachThreadInput   = var l_imageInfo; l_imageInfo = $AlertAppInfoStruct; "hook incoming events" + (nDestPID ? " of the process <a onclick(dialog(\"AppRulesEdit\", p_pid(nDestPID), p_image(l_imageInfo.sImagePath), p_appID(moduleAppId(l_imageInfo.sImagePath))))>" + f_AppNameEx(l_imageInfo) + "</a>" : " of another process")
+#evtOlePortAccess       = "use " + (ObjectName ? "program interface " : "program interfaces") + ObjectName + " of another process"
+#evtCreateKnownDlls     = "change operating system modules (KnownDlls) which will be loaded by all processes"
+#evtWindowsShutDown     = "shut down the operating system or obtain shutdown privileges"
+#evtHiddenRegistry      = "create a hidden " + $ObjectTypeTextLoCase
+#evtKeyLogger           = "intercept keyboard input" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtSetHardLink         = "create link to " + $ObjectTypeTextLoCase + ". Link name: " + Data.ObjectName
+#evtSuspend             = "change operation of " + s_ObjectTypeHipsR(@2)
+#evtSchedulerStart      = "start scheduler" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtWMSend              = "send a Windows message" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtDrvStart            = "<b>perform hidden loading of driver.</b> This loading method is rarely used by legitimate applications. After a driver is installed in this way, " + $ProductName + " will not be able to control the activity of the application"
+#evtServiceStart        = "start service" + if(@1, " " + Data.ObjectName)
+#evtScreenShots         = "take screenshot"
+#evtSelfStart           = "start"
+#evtLLDiskAccess        = "obtain low-level disk access"
+#evtLLFSAccess          = "obtain low level file system access" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtClipBoardAcceess    = "get clipboard access"
+#evtCriticalCOMAccess   = "get access to critical system objects"
+#evtADSAccess           = "obtain access to file streams" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtDirectMemAccess     = "get direct memory access"
+#evtReadProcMem         = "read memory from another " + s_ObjectTypeHipsR(@2)
+#evtSetDbgPrivilege     = "set debug privileges"
+#evtChangeObjPrivilege  = "modify object rights" + if(@1, " " + $ObjectTypeTextLoCase)
+#evtUseBrowserCL        = "use the <a onclick(dialog(\"HipsInfo\", p_action(" + @ + ")))>browser command line</a>"
+#evtUseBrowserAPI       = "use <a onclick(dialog(\"HipsInfo\", p_action(" + @ + ")))>browser program interfaces</a>"
+#evtUseDNS              = "use <a onclick(dialog(\"HipsInfo\", p_action(" + @ + ")))>DNS request caching service</a>, possibly for hidden sending of data through the network"
+#evtUseBITS             = "use <a onclick(dialog(\"HipsInfo\", p_action(" + @ + ")))>system function</a> for hidden sending of data through the network"
+#evtRegistrySave        = "save " + $ObjectTypeTextLoCase + " to file " + Data.ObjectName
+#evtPrtStgAccess        = "get access to protected password storage"
+#evtAddAppToGr          = "place in group " + s_AppGroupName(ObjectName)
+#evtNetworkAccess       = "establish a connection with an address from the " + capitalize(s_NetSeverity(Data.Severity), false) + " group"
+#evtShellWindowsAcceess = "get access to internal browser data"
+#evtUserAccountAccess   = "get access to user account settings"
+#evtDuplicateHandle     = "duplicate an internal handle from another process"
+#evtSuspProcessInteraction	 = "perform a suspicious operation on another process"
+#evtWinspool            = "get access to manage printer drivers"
+#evtDeleteService       = "delete service" + if(@1, " " + Data.ObjectName)
+#evtStartService        = "start service" + if(@1, " " + Data.ObjectName)
+#evtControlService      = "get access to manage service" + if(@1, " " + Data.ObjectName)
+#evtChangeServiceConfig = "modify service" + if(@1, " " + Data.ObjectName) + " configuration"
+#evtOpenService         = "open service" + if(@1, " " + Data.ObjectName) + " to write"
+#evtReadOpenService     = "open service" + if(@1, " " + Data.ObjectName) + " to read"
+#evtCreateService       = "create service" + if(@1, " " + Data.ObjectName)
+#evtVMOperation         = var l_imageInfo; l_imageInfo = $AlertAppInfoStruct; "perform actions with address space of the process <a onclick(dialog(\"AppRulesEdit\", p_pid(nDestPID), p_image(l_imageInfo.sImagePath), p_appID(moduleAppId(l_imageInfo.sImagePath))))>" + f_AppNameEx(l_imageInfo) + "</a>"
+default                 = if(@, "unk: " + @)
+
+
+[f_AlertDialogQuestion]
+ret = if(Action == #PDM2_ACTION_ROLLBACK, "Do you want to roll back changes in the system?", s_AlertDialogQuestion(TaskType,Action))
+
+[s_AlertDialogQuestion]
+mc      = if(ActionsAll & #ACTION_DISINFECT,"How should the " + if($IsExactDetect, "infected ") + "email object be processed?","The email object cannot be disinfected. How should it be processed?")
+avs
+oas
+ods     = s_AlertDialogQuestionByActionID(nActionID, ActionsAll)
+httpscan = s_WebAV_AlertQuestion(ObjectType)
+vul      = "Do you want to fix this vulnerability?"
+SW2		= "How should the " + ($IsExactDetect ? "malicious " : "") + "application be processed?"
+InstallKey = "Do you want to activate the application manually?"
+default = s_AlertDialogQuestionByAction(@1)
+
+[s_WebAV_AlertQuestion]
+#ObjectRegion = "Allow access to website from the region " + s_ISO3166_1(TLD, RegionName) + "?"
+#ObjectURL    = if($IsExactDetect,"Allow access to the dangerous web page?","Allow access to the dangerous web page?")
+
+[s_AlertDialogQuestionByActionID]
+#AlertActionActiveDetect    = "Do you want to perform a special disinfection procedure?"
+
+[s_AlertDialogFiletypeByType]
+SW2              = if($IsExactDetect, "A copy of the infected file will be saved", "A copy of the possibly infected file will be saved")
+def              = if(Action == #evtDrvStart, "Delete driver file", "Delete file")
+
+[s_AlertDialogFiletypeByAction]
+#evtDrvStart     = "Move the driver file to Quarantine"
+def              = if($IsExactDetect, "A copy of the infected file will be saved", "A copy of the possibly infected file will be saved")
+ 
+[s_AlertDialogQuestionByAction]
+#evtDrvStart     = "Do you want to allow hidden driver loading?"
+#evtAddAppToGr   = "Do you trust this application?"
+#evtProcessStop  = "Do you want to allow closing the application?"
+
+[s_ObjectTypeHipsR]
+#eFile      = "file"
+#eRegKey    = "registry key"
+#eProcess   = "process"
+default     = "object"
+
+[s_AlertDialog_HipsObjectL]
+#evtSetHook
+#evtCodeInject  = (ObjectName ? "Module" : "Process"  + f_PIDValue(nDestPID) ) + ":"
+#evtAttachThreadInput  = ("Process"  + f_PIDValue(nDestPID) ) + ":"
+#evtSuspProcessInteraction
+#evtDuplicateHandle  = ("Process"  + f_PIDValue(nDestPID) ) + ":"
+#evtCreateKnownDlls  = "Intrusion module:"
+#evtDeleteService       
+#evtStartService        
+#evtControlService      
+#evtChangeServiceConfig 
+#evtOpenService         
+#evtReadOpenService     
+#evtCreateService = "Path to the executable file of the service:"
+#evtVMOperation = "Process " + f_PIDValue(nDestPID) + ":"
+#evtUseBrowserAPI = (ObjectName ? "Command" : "Process") + ":"
+default              = s_ObjectType2(ObjectType) + ":"
+
+[s_AlertDialog_AntiphishingObjectL]
+msn
+icq         = "Object"
+default     = "Website: "
+
+[s_AlertDialog_HipsDescr]
+#evtUseDNS          = "using program interfaces"
+#evtUseBITS         = "using file download service"
+#evtUseBrowserCL    = "using browser command line"
+#evtUseBrowserAPI   = "use browser program interfaces"
+#evtPrtStgAccess    = "access to protected password storage"
+
+;-------------------------------- MalwareInfo --------------------------------
+
+[MalwareInfo]
+@ = s_MalwareInfo_Title(p_TaskType)
+
+[MalwareInfo_Tab]
+Malware = "Result"
+File    = "File"
+
+[MalwareInfo_Tab_File]
+File.Name = "Path:"
+
+[MalwareInfo_Tab_File_Info]
+Size.Name       = "Size:"
+Created.Name    = "Created:"
+Modified.Name   = "Modified:"
+
+[MalwareInfo_Tab_Malware]
+Category.Name   = "Category:"
+Type.Name       = "Type:"
+
+[MalwareInfo_Tab_Malware_info]
+Text = "View full malware description at: "
+Link = "securelist.com"
+
+[s_MalwareInfo_Title]
+antiphishing    = "Threat description"
+default         = if($IsExactDetect, "Malware description", "Application description")
+
+[f_Alert2MalwareImage]
+ret = (EventType != #PDM2_EVENT_HIDDEN_OBJ ) ? ObjectName : "hidden object"
+
+;-------------------------------- HipsInfo --------------------------------
+
+[HipsInfo]
+@ = p_action ? "Information leakage methods description" : "Suspicious activity description"
+
+[HipsInfo_Link]
+Text = "Full description: "
+
+[s_HipsInfo]
+#evtPrtStgAccess    = "An attempt to access personal data or passwords saved in Microsoft Windows Protected Storage. That service provides for safekeeping of confidential data: local passwords, passwords for POP and SMTP accounts, Internet access passwords, passwords for automatic entry of closed sections of websites, information and passwords for automatic substitution into web forms, etc. The data is entered into corresponding fields of email clients and web browsers. As a rule, users can preserve the entered data by setting an appropriate flag. Microsoft Windows service preserves then the information in Protected Storage."
+#evtUseDNS          = "Windows DNS API functions can be used to initiate a recursive request to an Internet domain name server. Additional information appended to the sent DNS packet may contain confidential user data. Criminals controlling a domain name server that processes DNS requests will be able to retrieve the data from these specially generated packets."
+#evtUseBITS         = "BITS (Background Intelligent Transfer Service) is a smart file download service used by Windows Update and Windows Server Update Services. It allows patches and updates to be downloaded in the background, without using excessive bandwidth. It also automatically resumes downloads if the connection is lost."
+#evtUseBrowserCL    = "Attempt to launch browser with web page address specified as a command line option. If the requested page on the server side contains a script, the address string may be used to transmit parameters that contain confidential data (stolen, for example, by spyware)."
+#evtUseBrowserAPI   = "Attempt to use programming interfaces for browser control. This method includes sending messages to browser windows, using the DDE interface of a browser, and using a browser as an automation server (OLE automation mechanism). Malware can use these interfaces to perform its network activity \"on behalf\" of an Internet browser."
+
+[s_PdmInfo]
+#PDM2_EVENT_P2P_SC_RDL
+#PDM2_EVENT_P2P_SCN
+#PDM2_EVENT_SC_MULTIPLE
+#PDM2_EVENT_SCN                 = "Behavior specific to worms that propagate via public network folders and email."
+#PDM2_EVENT_SC_AR
+#PDM2_EVENT_SC_ARsrc
+#PDM2_EVENT_SC2STARTUP
+#PDM2_EVENT_TROJAN_GEN          = "This malware category includes Trojan programs designed to corrupt data and destabilize computer operation."
+#PDM2_EVENT_RDR                 = "RootShell"
+#PDM2_EVENT_NEGATIVE_PID
+#PDM2_EVENT_HIDDEN_OBJ          = "Reasons which can trigger the alarm:\n1. rootkit activity\n2. user action in specific programs\n3. activity of certain protection software."
+#PDM2_EVENT_INVADER
+#PDM2_EVENT_INVADER_LOADER      = "Behavior specific to Trojan programs injecting their malicious code into other processes."
+#PDM2_EVENT_DRIVER_INS          = "Some malware attempt to install in the target system their own drivers to receive low-level access to the operating system trying thus to hide their presence and hinder the procedure of their removal."
+#PDM2_EVENT_KEYLOGGER           = "This type of malware can also send information entered from the keyboard (logins, passwords, credit card numbers) to criminals. However, normal programs can also intercept keyboard input. This interception is often employed to invoke program features from another application using hotkeys."
+#PDM2_EVENT_IRP_TABLE_CHANGED   = "Some malware attempt to modify low-level logic of operating system functionality by \"redirecting\" calls from standard drivers to themselves."
+;#PDM2_EVENT_STRANGEKEY        = "Подозрительное значение реестра"
+;#PDM2_EVENT_SYSCHANGE         = "Подозрительное поведение"
+;#PDM2_EVENT_HIDDEN_INSTALL    = "Скрытая установка"
+;#PDM2_EVENT_BUFFEROVERRUN     = "Переполнение буфера"
+;#PDM2_EVENT_DEP               = "Data Execution"
+;#PDM2_EVENT_HOSTS             = "Модификация файлов hosts"
+;#PDM2_EVENT_DOWNLOADER        = "Загрузчик троянских программ"
+;#PDM2_EVENT_HIDDEN_SEND       = "Скрытая отправка данных"
+
+
+[s_HipsInfoVirusListLink]
+#evtPrtStgAccess    = $VirusListLink  + "&function=analysis&pubid=204007556"
+#evtUseBrowserCL
+#evtUseBrowserAPI
+#evtUseBITS
+#evtUseDNS          = $VirusListLink  + "&function=analysis&pubid=204007581"
+default             = $ViruslistLink
+
+;-------------------------------- RegAccessInfo --------------------------------
+
+[RegAccessInfo]
+$key    = "Key"
+$param  = "Parameter"
+$val    = "Value"
+$old    = "Old value"
+$new    = "New value"
+@       = "Registry access"
+
+;-------------------------------- ProtectStatus_Header.StatusMenu.menu --------------------------------
+
+[ProtectStatus_Header.StatusMenu.menu]
+StatusHide      = "Hide this message"
+StatusShowAll   = "Show all messages"
+
+[s_DetectObjectTypesEx]
+httpscan
+wmuf
+adblocker
+antiphishing
+parctl          = "Web page"
+sc              = "VB or Java script"
+default         = s_DetectObjectTypes(@1)
+
+[s_DetectObjectTypes]
+; by avs enObjectType
+#ObjectFile         = "File"
+#ObjectLogSector    = "Logical disk sector"
+#ObjectPhysSector   = "Physical disk sector"
+#ObjectMemory       = "Memory"
+#ObjectMail
+#ObjectMailMessage  = "Email message"
+#ObjectMailBody     = "Email body"
+#ObjectMailAttach   = "Email attachment"
+#ObjectRunProcess   = "Running process"
+#ObjectRunModule    = "Running module"
+#ObjectStartup      = "Startup object"
+#ObjectNetwork	    = "Network"
+#ObjectDevice       = "Device"
+#ObjectURL			= "URL"
+#ObjectPhoneNumber  = "Phone number"
+; by enObjType
+default             = s_ObjectType(@)
+
+[s_DetectType]
+#DETYPE_VIRWARE         = "virus"
+#DETYPE_TROJWARE        = "Trojan program"
+#DETYPE_MALWARE         = (ObjectType != #ObjectURL) ? if($IsExactDetect,"malware","software that may cause harm") : "malicious URL"
+#DETYPE_ADWARE          = "adware"
+#DETYPE_PORNWARE        = "auto-dialer"
+#DETYPE_RISKWARE        = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_PWD_ARCH        = if($IsExactDetect, "malware", "software that may cause harm")
+#DETYPE_XFILES
+#DETYPE_SOFTWARE        = "known software"
+#DETYPE_HIDDEN          = "hidden file"
+#DETYPE_UNDETECT        = "undefined"
+#DETYPE_ATTACK          = "network attack"
+#DETYPE_REGISTRY        = "registry access"
+#DETYPE_SUSPICACTION    = "suspicious action"
+#DETYPE_VULNERABILITY   = "vulnerability"
+#DETYPE_PHISHING        = "phishing URL"
+#DETYPE_ATTACHMENT		= "unwanted email attachment"
+#DETYPE_SUSPIC_URL		= if($IsExactDetect, "dangerous URL", "dangerous URL")
+#DETYPE_URGENT
+#DETYPE_BEHAVIORAL      = "other malware"
+default                 = "unknown threat"
+
+[s_FilterByDetectType]
+#DETYPE_VIRWARE         = "virus"
+#DETYPE_TROJWARE        = "Trojan program"
+#DETYPE_MALWARE         = "malware"
+#DETYPE_PWD_ARCH        = "software that may cause harm"
+#DETYPE_ADWARE          = "adware"
+#DETYPE_PORNWARE        = "auto-dialer"
+#DETYPE_RISKWARE        = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_ATTACK          = "network attack"
+#DETYPE_VULNERABILITY   = "vulnerability"
+#DETYPE_PHISHING        = "malicious URL"
+default                 = "unknown threat"
+
+[s_DetectTypeR]
+#DETYPE_VIRWARE         = "virus"
+#DETYPE_TROJWARE        = "Trojan program"
+#DETYPE_MALWARE         = (ObjectType != #ObjectURL) ? if($IsExactDetect,"malware","software that may cause harm") : "malicious URL"
+#DETYPE_ADWARE          = "adware"
+#DETYPE_PORNWARE        = "auto-dialer"
+#DETYPE_RISKWARE        = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_XFILES
+#DETYPE_SOFTWARE        = "known software"
+#DETYPE_UNDETECT        = "undefined"
+#DETYPE_ATTACK          = "network attack"
+#DETYPE_REGISTRY        = "registry access"
+#DETYPE_SUSPICACTION    = "suspicious action"
+#DETYPE_VULNERABILITY   = "vulnerability"
+#DETYPE_PHISHING        = "phishing URL"
+#DETYPE_ATTACHMENT		= "unwanted email attachment"
+#DETYPE_SUSPIC_URL		= "dangerous URL"
+#DETYPE_PWD_ARCH        = if($IsExactDetect, "malware", "software that may cause harm")
+default                 = "unknown threat"
+
+
+[s_VirwareCategoryByDetectType]
+#DETYPE_PHISHING        = if($IsExactDetect,"Dangerous web page: ","Dangerous web page: ")
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE
+#DETYPE_ATTACK
+#DETYPE_REGISTRY
+#DETYPE_SUSPICACTION
+#DETYPE_VULNERABILITY   = capitalize(s_DetectType(@)) + if(DetectType != #DETYPE_MALWARE && DetectType != #DETYPE_PHISHING, ": ")
+#DETYPE_SUSPIC_URL      = "Dangerous URL: "
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE         = if($IsExactDetect,capitalize(s_DetectType(@)),"Detected:")
+default                 = "Detected:"
+
+[s_DetectGroupAD]
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = capitalize( if(nActionID == #AlertActionActiveDetect, "Active ") + s_DetectGroup(@) + " detected")
+#DETYPE_URGENT      = "Detected " + if(nActionID == #AlertActionActiveDetect, "active ") + "malicious object by Kaspersky Security Network"
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = capitalize(s_DetectGroup(@)) + if($IsExactDetect, " detected", " detected")
+default             = capitalize( if(nActionID == #AlertActionActiveDetect, "Active ") + s_DetectGroup(@) + " detected")
+
+[s_DetectGroupDetR]
+#DETYPE_URGENT      = "malware detected by Kaspersky Security Network"
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = "detected " + s_DetectGroupR(@) 
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = if($IsExactDetect, "detected ","detected ") + s_DetectGroupR(@)
+default             = "detected " + s_DetectGroupR(@)
+
+[s_DetectGroup]
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE    = "malware"
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_URGENT      = "malicious object by Kaspersky Security Network"
+#DETYPE_SUSPIC_URL	= if($IsExactDetect, "dangerous web content", "dangerous web content")
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = if($IsExactDetect, "malware", "software that may cause harm")
+default             = "unknown software"
+
+[s_DetectGroupR]
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE    = "malware"
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_URGENT      = "malware detected by Kaspersky Security Network"
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = if($IsExactDetect, "malware", "software that may cause harm")
+default             = "unknown software"
+
+[s_DetectGroupD]
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE   = "malware"
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_URGENT      = "malware detected by Kaspersky Security Network"
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = if($IsExactDetect, "malware", "software that may cause harm")
+default             = "unknown software"
+
+[s_DetectGroupV]
+#DETYPE_VIRWARE
+#DETYPE_TROJWARE     = "malware"
+#DETYPE_ADWARE
+#DETYPE_PORNWARE
+#DETYPE_RISKWARE    = "legal software that can be used by criminals for damaging your computer or personal data"
+#DETYPE_URGENT      = "malware detected by Kaspersky Security Network"
+#DETYPE_SUSPIC_URL	= if($IsExactDetect, "dangerous content", "dangerous content")
+#DETYPE_PWD_ARCH
+#DETYPE_MALWARE     = if($IsExactDetect, "malware", "software that may cause harm")
+default             = "unknown software"
+
+[s_DetectDanger]
+#DETDANGER_HIGH             = "High"
+#DETDANGER_MEDIUM           = "Medium"
+#DETDANGER_LOW              = "Low"
+#DETDANGER_INFORMATIONAL    = "Information"
+default                     = if(@, "unk: " + @)
+
+[s_DetectSureTypeName]
+#DETYPE_VIRWARE = s_DetectType(DetectType) + " " + DetectName
+default         = s_DetectType(DetectType) + " " + DetectName + if(DetectType != #DETYPE_REGISTRY, " (modification)")
+
+[s_ThreatStatus]
+#Untreated      = "Detected; not processed"
+#Untreatable    = "Inactive"
+#NotFound       = "Not found"
+#Disinfected    = "Disinfected"
+#Deleted        = "Deleted"
+#Reboot         = "Will be processed after the computer reboot"
+#AddedByUser    = "Moved to Quarantine by the user"
+#Unknown        = "Undefined"
+#AddedToExclude = "Added to exclusions"
+#Terminated     = "Terminated"
+#Clear          = "Clean on Quarantine"
+#FalseAlarm     = "False positive"
+#RolledBack     = "Rolled back"
+default                             = "unk: " + ThreatStatus
+
+[s_NotDisinfetedReason]
+#NCREASON_NONCURABLE        = "cannot be disinfected."
+#NCREASON_LOCKED            = "is used by another application." + if(@1, " Unblock " + $ObjectTypeTextLoCase + " and select an action.")
+#NCREASON_NORIGHTS          = "write access is denied."
+#NCREASON_WRITEPROTECT      = "is write-protected" + if(@1, $UnlockFileMsg + @2)
+#NCREASON_POSTPONED         = "processing postponed by the user."
+#NCREASON_OUTOFSPACE        = "insufficient free disk space."
+#NCREASON_NONOVERWRITABLE
+#NCREASON_WRITENOTSUPPORTED = "write not supported."
+#NCREASON_REPONLY
+#NCREASON_CANCELLED         = "\"Ignore\" action is selected."
+#NCREASON_TASKSTOPPED       = "task interrupted."
+#NCREASON_DEVICENOTREADY    = "device is not ready."
+#NCREASON_OBJECTNOTFOUND    = "object not found."
+#NCREASON_WRITEERROR        = "write error."
+#NCREASON_READERROR         = "read error."
+#NCREASON_SYSTEMCRITICALOBJECT = "critical system object."
+default                     = "disinfection failed."
+
+[s_LicenseSubscrText1]
+#ssExpDateUnknown      = "Subscription status will be determined later."
+#ssHasExpDateActivated = "Subscription activated. Expiration date: " + date(LicInfo.LicenseExpirationDate) + "."
+#ssHasExpDateProlonged = "Subscription renewed. Expiration date: " + date(LicInfo.LicenseExpirationDate) + "."
+#ssHasExpDateCanceled  = "Subscription cancelled. Expiration date: " + date(LicInfo.LicenseExpirationDate) + "."
+#ssUnlimitedActivated  = "Subscription is activated."
+#ssUnlimitedProlonged  = "Subscription is renewed."
+#ssGracePeriod         = "Subscription expired " + date(LicInfo.LicenseExpirationDate) +"."
+#ssExpired             = "Subscription has expired." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Protection is disabled.")
+#ssNotYetSuspended     = "Subscription suspended from " + date(LicInfo.LicenseExpirationDate) + "."
+#ssSuspended           = "Subscription suspended from " + date(LicInfo.LicenseExpirationDate) + "." + ((LicInfo.KeyInfo.KeyType==#ektSubscriptionProtection)? " Protection and update are disabled." : " Update is disabled.")
+#ssUnlimitedResumed    = "Subscription is resumed."
+def = "text1: " + SubscriptionStatus
+
+[s_LicenseSubscrText2]
+#ssExpDateUnknown        = "To determine the subscription type, please update its status."
+#ssHasExpDateActivated   = s_LeftForm(f_numdeclension(LicInfo.DaysTillExpiration)) + " " + LicInfo.DaysTillExpiration + " " + s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration))
+#ssHasExpDateProlonged   = s_LeftForm(f_numdeclension(LicInfo.DaysTillExpiration)) + " " + LicInfo.DaysTillExpiration + " " + s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration))
+#ssHasExpDateCanceled    = s_LeftForm(f_numdeclension(LicInfo.DaysTillExpiration)) + " " + LicInfo.DaysTillExpiration + " " + s_daysRemaining(f_numdeclension(LicInfo.DaysTillExpiration))
+#ssUnlimitedActivated    = ""
+#ssUnlimitedProlonged    = ""
+#ssGracePeriod           = "You have " + s_remains(f_numdeclension(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration)) + " " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink? " left to renew your subscription. " : (LicInfo.KeyInfo.KeyType == #ektSubscription? " left until updates are disabled. " : " left until protection is disabled." ) ) + " To renew your subscription, please contact your service provider."
+#ssExpired               = $IsBestBuyLink? "Subscription renewal is not available." : "Your computer security is at risk. To renew your subscription, please contact your subscription provider."
+#ssNotYetSuspended       = ""
+#ssSuspended             = "To resume your subscription, please contact your subscription provider."
+#ssUnlimitedResumed      = ""
+def = "text2: " + SubscriptionStatus
+
+[s_LicenseNoKeyText]
+0 = s_LicenseTrialOver($IsActiveKeyTrial)
+default = "License has expired."
+
+[s_LicenseTrialOver]
+1       = "Trial version of the application has expired."
+default = "License is not found."
+
+[f_LicenseNoKeyHint]
+protectionLevel, updaterLevel, keyState
+ret = if(protectionLevel == #eProtectionLevelNoFeatures, "Protection is disabled. Please, " + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + " to enable protection.", if(updaterLevel == #eUpdaterLevelNotAllowed, "Update is unavailable. Please, " + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + if($IsNoLicenseInstalled, " or activate trial version of the application") + " to enable full functionality.", s_LicenseNoKeyHintByFF(keyState)))
+
+[s_LicenseNoKeyHintByFF]
+#eKeyExpired				= "Please " + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + if($IsNoLicenseInstalled, " or activate trial version of the application") + " to enable full functionality."
+default						= "You can update the databases only once. Please " + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + if($IsNoLicenseInstalled, " or activate trial version of the application") + " to enable full functionality."
+
+[PauseProtectionRequestDialog]
+@           = "Pause protection"
+
+[PauseProtectionRequestDialog_BodyEx]
+Info.Text   = "Protection will be paused"
+
+[PauseProtectionRequestDialog_TimeButton_Time]
+60      = "1 minute"
+180     = "3 minutes"
+300     = "5 minutes"
+900     = "15 minutes"
+1800    = "30 minutes"
+3600    = "1 hour"
+10800   = "3 hours"
+18000   = "5 hours"
+
+[Product_Threats_Report_Menu]
+Treat           = "Process"
+Scan            = "Scan"
+GotoToVulDesc   = "View description"
+ViewOnWeb       = "View on securelist.com"
+Restore         = "Restore"
+Discard         = "Delete"
+GotoFile        = "Open the original location folder"
+SendToKL        = "Send for analysis..."
+DiscardAll      = "Clear quarantine"
+
+[MainReport.Threats_Filters_Menu]
+ByTime         = "Group by time"
+AllItems       = "Do not group"
+ByDetectType   = "Group by threat type"
+ByObjectStatus = "Group by status"
+
+[MainReport.Threats_Descr]
+Object.Name = "Object: "
+Status.Name  = "Status: "
+Rollback = "<a onclick(dialog(\"ThreatRollback\"))>Application actions rolled back</a>"
+
+[s_PasswordConfirmReason]
+default = "To perform this operation, please enter the password."
+
+[CheckProductPassword]
+@ = "Password checking"
+
+[CheckProductPassword_Body_EditBlock]
+Pswd2CheckText  = "Password:"
+Pswd2Save       = "Save password for current session"
+
+[NewAppSniffer]
+@       = "New application started"
+
+[NewAppSniffer_Body]
+Info    = "Please wait while new or modified application is being analyzed..."
+
+[PauseProtectionRequestDialog_Actions]
+Time.Name      = "Pause for the specified time"
+Reboot.Name    = "Pause until reboot"
+Reboot.Descr   = "Protection will be resumed after computer or application restart"
+OnDemand.Name  = "Pause"
+OnDemand.Descr = "Protection will be resumed on user's demand"
+
+[Product_Threats_Navigator_Filter]
+Active      = "Active threats"
+Vulnerability = "Vulnerabilities"
+Quarantined = "Quarantine"
+Disinfected = "Neutralized"
+All         = "All detected malware"
+AllButVuln  = "All"
+
+[Product_Threats_Report]
+Detected    = "Detected"
+Path        = "Path"
+Object      = "File"
+Time        = "Time"
+Status      = "Status"
+row         = "Label"
+
+[Product_Threats_Report_Busy]
+Text       = "Loading data..."
+
+[Product_Threats_Quarantine_Actions]
+AddToQB = "Move to Quarantine"
+Scan    = "Scan"
+Restore = "Restore"
+Discard = "Delete"
+
+[Product_Threats_Backup_Actions]
+Restore    = "Restore"
+Discard    = "Delete"
+DiscardAll = "Clear quarantine"
+
+[Global]
+$EventVerdictText            = if(Verdict, " " + (Verdict == #eDELETED ? (CouldBeRestored ? "Deleted and backup copy has been created" : "Deleted") : f_VerdictDesc()) + ".")
+
+[s_ProductNotifyTextHips]
+#eHardwareAccess        = "Connecting device from group \"" + f_ResGroupName($ObjectText) + "\" has been blocked according to the rules."
+def                     = s_ProductNotifyTextHipsByAction(Action, @1)
+
+[s_ProductNotifyTextHipsByAction]
+#evtSelfStart            = "Running " + f_EventAppName(@1) + (Verdict == #eDENIED ? " is blocked " : " is allowed ") + " according to rules for applications."
+#evtCriticalCOMAccess
+#evtScreenShots          = f_EventAppName(@1) + if(Action, capitalize(s_Action(Action), false) + " ")  + "." + $EventVerdictText
+default                  = f_EventAppName(@1) + if(Action, capitalize(s_Action(Action), false) + " ")  + f_MakeLink(s_IsEventObjClickable(Action), "ObjName onclick(f_EventObjClick())", $EventObjText) + "." + $EventVerdictText
+
+[s_ProductNotifyTextByTaskID]
+#eTASK_SELFPROT         = $SelfProtection + ": " + f_EventAppName(@1) + s_Action(Action) + " of " + $ProductName + " process." + $EventVerdictText
+#eTASK_SCAN             = if($EventShow, "File " + $EventObjText + if(DetectType && DetectType != #eHidden, ": contains " + s_RepDetectTypeV(DetectType)) + if(DetectName && DetectType != #eHidden, " " + object(DetectName)) + if(DetectType == #eHidden, " is hidden") + "." + if(Verdict != #eDETECTED, $EventVerdictText))
+#eTASK_FAV              = if($EventShow, f_EventAppName(@1) + "Accessing a file " + $EventObjText + if(DetectType, ", which contains a " + s_RepDetectTypeV(DetectType)) + if(DetectName, " " + object(DetectName)) + "." + if(Verdict != #eDETECTED, $EventVerdictText))
+#eTASK_MAV              = if($EventShow, f_EventAppName(@1) + "Email message detected " + $EventObjText + if(DetectType, ", which contains a " + s_RepDetectTypeV(DetectType)) + if(DetectName, " " + object(DetectName)) + "." + if(Verdict != #eDETECTED, $EventVerdictText))
+#eTASK_HTTP             = s_ProductNotifyTextHTTP(Verdict, @1)
+#eTASK_PC               = $ParCtl + ".\n" + s_ProductNotify_ParCtlEx(Data.serid(), @1)
+#eTASK_AD               = if($EventShow, f_EventAppName(@1) + "Dialing the number " + $EventObjText + "." + $EventVerdictText)
+#eTASK_AP               = if($EventShow, "Application " + $EventAppNameNS + " contains link to a web page " + $EventObjText + " that is used to steal passwords, credit card numbers, or other confidential data." + $EventVerdictText)
+#eTASK_IDS              = if($EventShow, "Network attack " + object(DetectName) + ": " + $EventObjText + ". Blocked." + f_EventIdsBunReason(c_repser(ObjectID, objectdata(ObjectID))))
+#eTASK_FIREWALL
+#eTASK_HIPS             = if($EventShow || !Verdict, s_ProductNotifyTextHips(DetectType, @1))
+#eTASK_TRAFMON          = f_EventAppName(@1) + $EventVerdictText
+#eTASK_IM_CHECK         = if($EventShow, f_EventAppName(@1) + "Detected message " + $EventObjText + if(DetectType, ", which contains a " + s_RepDetectTypeV(DetectType)) + if(ObjectType != #eURL && DetectType != #ePhishing, if(DetectName, " " + object(DetectName))) + "." + if(Verdict != #eDETECTED, $EventVerdictText))
+#eTASK_COMMON_BLTASK    = s_ProductNotifyTextCommonTask(f_NOTIFICATION_ID(NotificationId))
+#eTASK_KLTBAR           = "Detected opening " + if(Verdict == #eDETECTED, "dangerous", "unknown") + " URL:" + URL
+#eTASK_SW2				= if ($IsRollbackEvent, $VerdictDescrText + ": rollback completed ", if(#eDELETED == Verdict, $ObjectText + ". Deleted.", $VerdictText))
+#eTASK_ROLLBACK			= if ($IsRollbackEvent, $VerdictDescrText + ": rolled back ", $VerdictText)
+
+[s_ProductNotifyTextHTTP]
+#eNOT_PROCESSED = if (ObjectType == #eURL && DetectType == #ePhishing && DecisionReason == #eKSN, s_PostponedPhishingDetect(Verdict, @1), s_GeneralHTTPDetect(Verdict))
+default			= s_GeneralHTTPDetect(Verdict, @1)
+
+[s_GeneralHTTPDetect]
+default = if($EventShow, f_EventAppName(@1) + "Downloading object " + $EventObjText + if(DetectType, ", which contains a " + s_RepDetectTypeV(DetectType)) + if(ObjectType != #eURL && DetectType != #ePhishing, if(DetectName, " " + object(DetectName))) + "." + $EventVerdictText)
+
+[s_PostponedPhishingDetect]
+default = "The application " + f_EventAppName(@1) + " accessed a phishing URL " + $EventObjText + ".\nYou are advised to not enter your private data and to close the application."
+
+
+[s_ProductNotifyTextCommonTask]
+#eNotifyStatisticsReportReady	= "Application report generated"
+#eNotifyNewsUnread = (Data && Data.Title ? (Data.Announcement ? "<b>" + Data.Title + "</b>\n" + Data.Announcement : Data.Title ) : s_UnreadNewsBalloonText(UnreadNewsCount))
+
+[s_UnreadNewsBalloonText]
+1 = "1 unread news"
+2
+3
+4 = @ + " unread news"
+def = @ + " unread news"
+
+[s_RepDetectTypeV]
+#eVirware               = "virus"
+#eTrojware              = "Trojan program"
+#eMalware               = (ObjectType != #eURL) ? if($IsExactDetect,"malware","software that may cause harm") : "malicious URL"
+#eAdware                = "adware"
+#ePornware              = "auto-dialer"
+#eRiskware              = "legal software that can be used by criminals for damaging your computer or personal data"
+#eXFiles
+#eSoftware              = "known software"
+#eVulnerability         = "vulnerability"
+#ePhishing              = "phishing URL"
+#eDialing               = "hidden dial attempt"
+#eAttack                = "network attack"
+#eBanner                = "banner"
+#eUnwantedWebContent    = "unwanted content"
+#eSpam                  = "spam"
+#eProbableSpam          = "probable spam"
+#eHam                   = "not spam"
+#eFileAccess            = "access to files"
+#eRegistryAccess        = "registry access"
+#eNetworkAccess         = "network access"
+#eHardwareAccess        = "hardware access"
+#eSecurityAccess        = "security settings access"
+#eSuspicionActivity     = "suspicious action"
+#eHidden                = "hidden object"
+#eSuspicURL             = if($IsExactDetect, "dangerous URL", "unknown URL")
+#eMaliciousURL          = "malicious URL"
+default                 = if(@, "unknown threat")
+
+[s_DetectBehaviour]
+100     = "Trojan-ArcBomb (\"bombs\" in archives)"
+101     = "Backdoor (remote administration)"
+102     = "Trojan"
+103     = "Trojan-AOL"
+104     = "Trojan-Clicker"
+105     = "Trojan-Downloader"
+106     = "Trojan-Dropper"
+107     = "Trojan-MSN"
+108     = "Trojan-Notifier"
+109     = "Trojan-Proxy"
+110     = "Trojan-PSW"
+111     = "Trojan-Spy"
+112     = "Trojan-DDoS"
+114     = "Trojan-IM"
+115     = "RootKit"
+116     = "Trojan-SMS"
+200     = "Email-Worm"
+201     = "Worms that spread through instant messengers"
+202     = "IRC-Worm"
+203     = "Net-Worm"
+204     = "P2P-Worm"
+205     = "Worms"
+206     = "Viruses"
+300     = "Constructor"
+301     = "DoS"
+302     = "Exploit"
+303     = "FileCryptor"
+304     = "Flooder"
+305     = "HackTool"
+306     = "not-virus:Hoax"
+307     = "not-virus:BadJoke"
+308     = "Nuker"
+309     = "PolyCryptor"
+310     = "PolyEngine"
+311     = "Sniffer"
+312     = "SpamTool"
+313     = "Spoofer"
+314     = "VirTool"
+315     = "Email-Flooder"
+316     = "IM-Flooder"
+317     = "SMS-Flooder"
+400     = "not-a-virus:AdWare"
+500     = "not-a-virus:Porn-Dialer"
+501     = "not-a-virus:Porn-Downloader"
+502     = "not-a-virus:Porn-Tool"
+600     = "not-a-virus:Tool"
+601     = "not-a-virus:Client-IRC"
+602     = "not-a-virus:Dialer"
+603     = "not-a-virus:Downloader"
+604     = "not-a-virus:Monitor"
+605     = "not-a-virus:PSWTool"
+606     = "not-a-virus:RemoteAdmin"
+607     = "not-a-virus:Server-FTP"
+608     = "not-a-virus:Server-Proxy	= 608"
+609     = "not-a-virus:Server-Telnet"
+610     = "not-a-virus:Server-Web"
+611     = "not-a-virus:RiskTool"
+612     = "not-a-virus:NetTool"
+613     = "not-a-virus:Client-P2P"
+614     = "not-a-virus:Client-SMTP"
+615     = "not-a-virus:AdTool"
+616     = "not-a-virus:FraudTool"
+700     = "X-Files"
+1000    = ""
+1001    = ""
+default = s_BehaviourByDetectName(DetectName)
+
+[s_BehaviourByDetectName]
+Keylogger               = "Keylogger"
+Hidden.Object           = s_DetectBehaviour(115)
+Heur.Trojan.Generic
+Heur.Backdoor.Generic
+Heur.Invader
+Heur.AntiAV
+Heur.Downloader
+Heur.KillFiles
+Heur.StartPage
+Heur.Worm.Generic
+Heur.Virus.Generic
+Heur.Infector           = "Suspicious behavior (heuristic detection)"
+Multi.Packed
+Suspicious.Packer		= "Application"
+default                 = @
+
+[s_BehaviourDetails]
+100     = "These Trojans are archived files which are intentionally malformed to prevent the decompressor from opening the file. The affected machine will slow down or crash when the Trojan bomb is triggered, or its disk will be filled with garbage data. ArcBombs are especially dangerous for file and email servers, particularly when incoming data is initially processed automatically: in such cases, an ArcBomb can crash the server."
+101     = "These Trojans are remote administration utilities that open affected machines to external control via networks. Their features closely resemble legal remote administration programs offered by legitimate software vendors."
+102     = "This class includes a wide variety of programs that perform hidden actions without the user's knowledge or consent, including: collecting data and sending it to a remote computer, destroying or altering data with malicious intent, causing the computer to malfunction, or using a machine's capabilities for malicious or criminal purposes."
+103     = "Currently there is no description available for Trojan-AOL."
+104     = "These Trojans redirect target computers to specified websites or other Internet resources without the user's authorization. Clickers either send the necessary commands to the browser or replace system files containing standard Internet URLs, such as the Hosts file."
+105     = "These Trojans download and install new malware, Trojans or adware to the target computer. The downloader then either launches the new malware, or registers it to start automatically when the local operating system restarts. All these steps are performed without the knowledge or consent of the user."
+106     = "These Trojans are used to install other malware on target computers without the user's knowledge. Droppers install their payload either without displaying any notification, or displaying a false message about an error in an archived file or incorrect version of an operating system. The new malware is stored in a specified location on local disk (such as the root of the C: drive, a temporary directory, or Windows directories) and then launched."
+107     = "Currently there is no description available for Trojan-MSN."
+108     = "These Trojans inform their 'master' about an infected computer. Notifiers confirm that a computer has been successfully infected, and send information including its IP address, open port numbers, and any email addresses. This information may be delivered by email, in a special request to the master's website, or in an ICQ message."
+109     = "These Trojans function as proxy servers providing anonymous access to the Internet from infected computers. These Trojans are typically used to spread spam."
+110     = "These Trojans are called PSW (Password-Stealing-Ware), because they steal passwords, usually system passwords and Internet access telephone numbers. When launched, PSW Trojans search for system files containing their target information, and send that information to email address(es) coded in the Trojan's body."
+111     = "These Trojan spies collect information about the users of infected computers, including keystrokes, screenshots, lists of active applications, and user actions, and forward the data to remote computers. Trojans of this type are often used to steal user identify information related to banking and other online payment systems."
+112     = "Currently there is no description available for Trojan-DDoS."
+114     = "Currently there is no description available for Trojan-IM."
+115     = "A Rootkit is a software program or method designed to hide certain objects within a computer system, including processes, files, registry keys, etc."
+116     = "This type of programs infects mobile phones."
+200     = "The category includes email worms that spread in infected messages. The worm may be in the form of an attachment, or the email may contain a link to an infected website which has been compromised or specifically designed by hackers."
+201     = "Worms of this type have a single propagation method. They spread using Instant Messaging (IM) applications, by sending links to infected websites to everyone on the local contact list. The method is practically identical to the distribution approach used by email worms."
+202     = "These worms spread by distributing links to infected websites which contain copies of the worm, or by sending infected files to network users. Sending infected files is less effective, since the recipient has to confirm receipt, save the file to disk, and open (launch) it before the worm can infect the target machine."
+203     = "These worms are similar in the method that they use to infect remote computers: for example, worms may be copied to network resources, penetrate target computers through security vulnerabilities in the operating system or applications, infect public network resources, or spread along with other malware."
+204     = "P2P worms copy themselves into a shared folder, usually located on the local machine. Once the worm has successfully created a copy of itself under a harmless name in a shared folder, the P2P network takes over: the network informs other users about the new resource and provides the infrastructure to download and execute the infected file."
+205     = "This category includes programs that propagate via LANs or the Internet with the following objectives: penetrating remote machines, launching copies on target computers, spreading further to other network machines."
+206     = "This malware class includes programs that spread multiple copies of themselves to a single computer, in order to launch this code when the user performs a designated action, and infect other resources within the target machine."
+300
+314     = "Virus authors use constructor utilities to create new malware and Trojans. There are known constructor tools designed to create viruses for DOS, Windows, and macro viruses. They can be used to generate virus source code, object modules and/or infected files."
+301     = "These programs make Denial of Service attacks on web servers by sending numerous requests to the specified server, often causing it to crash or slow down under the huge volume of requests, and deny service to other legitimate requests."
+302
+305     = "These utilities penetrate remote computers to use them as zombies (by using backdoor utilities) or to download other malware to victim machines."
+303
+309     = "These are hacker utilities used by virus authors to encrypt malware, to prevent them from being detected by antivirus software."
+304
+315
+316
+317     = "These hacker utilities are used to flood data channels (such as IRC, IM networks,and email) with useless messages and other garbage."
+306
+307     = "These programs do not cause any direct damage to computers. However, they display notifications informing that such damage has already happened or will occur under certain conditions, or they warn users about a non-existent danger. Hoaxes include, for example, programs that scare users with messages about drive formatting (although no actual formatting occurs in fact), detect viruses in clean files, display strange virus-like messages, and so on, depending on the sense of humor of their authors."
+308     = "Hackers use these utilities to crash attacked machines by sending specifically malformed requests. These network requests exploit vulnerabilities in applications and operating systems to cause fatal errors."
+310     = "Polymorphic generators are not viruses in the true sense of the word. They do not propagate by opening, closing or writing code into files, or by reading and writing sectors. The main purpose of these programs is to encrypt the virus body and generate a corresponding decryption routine."
+311     = "Currently there is no description available for Sniffer"
+312     = "Currently there is no description available for SpamTool"
+313     = "Currently there is no description available for Spoofer"
+314     = "Utilities designed to develop computer viruses and examine them for hacking purposes."
+400     = "Programs belonging to this class (Adware, Advware and Browser Hijackers) display advertising, usually in the form of graphic banners. They also redirect search requests to advertising websites."
+500
+501
+502     = "According to Kaspersky Lab experts, auto-dialers include programs which cause pornographic content to be displayed to the user."
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620     = "Programs that are legitimate in themselves (for example, some of them are offered for sale and are widely used for legal purposes) but have the potential to be misused by cyber criminals and to harm the user's confidential data."
+1000    = "This is fraud based on social engineering. A criminal creates an almost identical copy of a selected bank's website and uses spam techniques to send messages which look similar to the bank's own messages. Bank logos, names and last names of real bank managers are used."
+1001    = "Link to an object containing or causing automatic download of malware."
+default = s_BehaviourDetailsByDetectName(DetectName)
+
+[s_BehaviourDetailsByDetectName]
+Keylogger               = "A program which integrates its code with the keyboard driver and intercepts keyboard input. This type of malware can send information entered from the keyboard, such as logins, passwords, and credit card numbers, to criminals. However, normal programs can also intercept keyboard input. Such interception is often employed to invoke program features from other applications by using hotkeys."
+Hidden.Object           = s_BehaviourDetails(115)
+Heur.Trojan.Generic     = "Trojans-specific behavior."
+Heur.Backdoor.Generic   = "Backdoor utilities-specific behavior."
+Heur.Invader            = "Behavior specific to Trojan programs injecting their malicious code into other processes."
+Heur.AntiAV             = "Behavior specific to Trojan programs preventing the operation of anti-virus programs and firewalls."
+Heur.Downloader         = "Behavior specific to Trojan programs designed to download new versions of malware and install them on target computers."
+Heur.KillFiles          = "Behavior specific to Trojan programs that destroy user data and/or operating system files."
+Heur.StartPage          = "Behavior specific to Trojan programs that perform unauthorized modification of Internet browser settings."
+Heur.Worm.Generic       = "Behavior specific to network worms."
+Heur.Virus.Generic      = "Behavior specific to classical viruses."
+Heur.Infector           = "Behavior specific to classical viruses."
+Multi.Packed			= "File packed several times. Packing of files is widely used to decrease file size. However, multiple repacking of a single file using different packers is commonly used by malware authors to complicate the detection of malware by computer protection programs."
+Suspicious.Packer		= "File packed using a packer program. Packing of files is widely used to decrease file size. There are a large number of existing legitimate packer programs. However, some packer utilities are extremely rarely used for legitimate purposes and in most cases are employed by malware authors to complicate the detection of malware by computer protection tools."
+default                 = "Currently there is no description available for this set of programs."
+
+[s_QBOperationsError]
+1   = "System error. " + s_SystemError(ErrorCode) + "."
+2   = "Cannot complete operation. " + s_QBStorageError(ErrorCode) + "."
+3   = s_QBStorageError(ErrorCode)
+4   = "Cannot delete object " + objfile(ObjectName) + " from the Quarantine. " + s_QBStorageError(ErrorCode) + "."
+5   = "Cannot send email message. " + s_MailError(ErrorCode) + "."
+6   = "Cannot restore object to " + ObjectName + ". " + s_QBStorageError(ErrorCode) + "."
+7   = "Cannot send file more often than once a day."
+def = "Object " + objfile(ObjectName) + ". " + s_QBStorageError(ErrorCode) + "."
+
+[s_QBStorageError]
+0x81000001          = "Cannot delete source file " + objfile(ObjectName)
+0x800000D1          = "File with the name " + objfile(ObjectName) + " already exists"
+0x800000C5          = "Object " + objfile(ObjectName) + " not found"
+0x8000A001          = "Cannot delete source file " + objfile(ObjectName)
+0x8000A002          = "Unable to place an object in storage. Object " + objfile(ObjectName) + " is a folder"
+0x8000005C          = "Storage size exceeded"
+#warnACCESS_DENIED
+#errACCESS_DENIED   = "Required rights are not granted"
+def                 = s_SystemError(@)
+
+[s_MailError]
+0x80000043  = "To send an object to Kaspersky Lab you need a preinstalled email client that supports SimpleMAPI."
+0x800000D0  = "Cannot attach object to the email message."
+def         = s_SystemError(@)
+
+[MainWindow.Protection_CommonStatistics_Info]
+ActiveThreats.Name      = "Active threats:"
+QuarantinedObjects.Name = "Quarantined objects:"
+
+[MainWindow.Protection_CommonStatistics_Info2]
+NetworksConnected.Name      = "Connected networks:"
+ApplicationsFiltered.Name   = "Applications under control:"
+
+[AlertDialogT_Bottom]
+Text    = SubscriptionStatus==#ssExpired? "Subscription has expired." : $IsTrialKeyExpired? "Trial license has expired." : $IsKeyExpired? "Your license has expired." : $HasNoKeys? "The application you are using is not activated." : "You are using a trial version."
+BuyLink = SubscriptionStatus==#ssExpired? "You are advised to enter a new subscription." : $IsTrialKeyExpired? "You are advised to purchase a commercial version." : $IsKeyExpired? "You are advised to renew your license" : $HasNoKeys? "Please activate the application." : "You are advised to purchase a commercial version."
+
+[StatisticsReport]
+@ = "Reports"
+
+[MainWindow.Protection_CommonStatistics]
+AVBasesStatus.Name = "Databases status:"
+
+[Statistics_Switch_Time]
+Period    = "Period:"
+
+[Statistics_Switch_Time_Combo]
+All       = "Entire period"
+Year      = "Year"
+Month     = "Month"
+Week      = "Week"
+Day       = "Day"
+
+;[MainThreats_Tab_Statistics_Line]
+;PeriodText = "Статистика за:"
+
+;[MainThreats_Tab_Statistics_Line_Period]
+;All       = "Весь период"
+;Year      = "Год"
+;Month     = "Месяц"
+;Week      = "Неделя"
+;Day       = "День"
+
+[s_MainThreats_Tab_Statistics_TimePeriod]
+All       = "Entire period" + ", " + date(@1) + " - " + date(@2 - 1)
+Year      = "" + s_date(dategroup(@1)) + ", " + date(@1) + " - " + date(@2 - 1)
+Month     = "" + s_date( ( var tmp; tmp=dategroup(@1); if(tmp>-100,-99,tmp) ) ) + ", " + date(@1) + " - " + date(@2 - 1)
+Week      = "" + s_date( ( var tmp; tmp=dategroup(@1); if(tmp>-11, -10, tmp) ) ) + ", " + date(@1) + " - " + date(@2 - 1)
+Day       = "" + s_date(dategroup(@1)) + ", " + date(@1)
+
+[s_MainThreats_Tab_Statistics_TimePeriod_UpTo]
+All       = "For the entire period, " + date(@1) + " - " + date(@2 - 1)
+Week      = "For the week, "   + date(@1 - 60*60*24*7)    + " - " + date(@1)
+Month     = "For the month, "    + date(@1 - 60*60*24*30)   + " - " + date(@1)
+Year      = "For the year, "      + date(@1 - 60*60*24*365)  + " - " + date(@1)
+Day       = "Today, "     + date(@1)
+
+[ProductStatesWindow_Body]
+ShowSkipped = "Show hidden messages"
+
+[ProductStatesWindow_Body_StatusesList_rowedit]
+Enable = global.StateFilterMask[depend(val)-1] ? "Restore" : "Hide message"
+
+;------------- QB_Storage -----------
+
+[QB_Storage]
+@ = "Quarantine"
+
+[QB_Storage_Body]
+Header.Title = "Quarantine"
+Header.Description = "Quarantine contains backup copies of files that were modified during disinfection or deleted. These files are stored in a special format and are not dangerous for your system."
+
+;------------- AskQbPathDialog -----------
+
+[AskQbPathDialog]
+@ = "Backup copies storage"
+
+[AskQbPathDialog_Body]
+Info = "Please select a location to store backup copies of files that are created during disinfection and deletion"
+
+[s_FwSocketType]
+#fwstAll="any"
+#fwstNormal="normal"
+#fwstRaw="raw"
+
+[MainWindow_Body.AddSvc]
+Header = "Tools"
+Descr  = "Additional tools and services that provide enhanced protection for your computer and optimize your system."
+Extras = "Services:"
+
+;-------------------------
+
+[SchedulerView_SmallType]
+Days                = "Days"
+Weeks               = "Every week"
+Monthly             = "Every month"
+
+[MainThreats_Tab_Statistics_Total_Area]
+Label = "Scanned objects: "
+
+[MainWindow_Body.Protection]
+$UpdateInfoNormal   = "Databases are up to date"
+$ThreatInfoNormal   = "All threats have been neutralized"
+$ProductInfoNormal  = "Essential protection services are active"
+Header                         = "Protection Center"
+Descr                          = $ProductName + " protects your computer against malware and unauthorized access and provides secure access to your local network and to the Internet."
+
+[MainWindow_Body.Protection_General]
+DataSecurity.Caption           = "Files and Private Data Protection"
+DataSecurity.InfoLink.Text     = "How files and private data are protected"
+DataSecurity.Description       = "Protection of your documents, media and digital identity."
+DataSecurity.DescrLink         = "Settings..."
+SystemSecurity.Caption         = "System and Applications Protection"
+SystemSecurity.InfoLink.Text   = "How system and applications are protected"
+SystemSecurity.Description     = "Protection and control of your operating system, files \nand applications."
+SystemSecurity.DescrLink       = "Settings..."
+OnlineSecurity.Caption         = "Online Security"
+OnlineSecurity.InfoLink.Text   = "How online activity is protected"
+OnlineSecurity.Description     = "Protection for online activity, including website browsing, \nbanking, online shopping, emailing and instant messaging."
+OnlineSecurity.DescrLink       = "Network Monitor"
+
+[MainWindow_Body.Protection.KAVWarning]
+KAVWarn                        = "Some protection components are available in " + switch("kis", "ProductTitle") + " only. "
+KAVWarnLink                    = "Details..."
+
+[MainWindow.Protection_Radar]
+Processed = "Total scanned: " + (ctl.DataCounters.ScannedTotal.value)
+Detected  = "Threats detected:"
+Detected1  = "Virus:"
+Detected2  = "Trojans:"
+Detected3  = "Malicious tools:"
+Detected4  = "Adware:"
+Detected5  = "Other program:"
+
+
+[StatisticsNotificationSchedulerDlg]
+@ = "Notifications"
+Scheduler = "Notify about the report"
+
+[SettingChoiceAntiphishing_Body]
+Header      = "Anti-Phishing settings"
+Description = "Anti-Phishing tracks attempts to open phishing websites and blocks them.\nThe " + switch(env("ProductType"), "ProductTitleLong", "") + " databases list all websites currently known to be used for phishing.\nYou can configure Anti-Phishing settings for Web Anti-Virus" + if($IsKIS, ", Anti-Spam") + " and IM Anti-Virus."
+Prompt      = "Show Anti-Phishing settings for:"
+Web = "Web Anti-Virus"
+WebDesc = "Your computer is protected from phishing attacks via the HTTP and FTP protocols"
+Mail = "Mail Anti-Virus"
+MailDesc = "Your computer is protected from getting phishing URLs via mail protocols"
+IM = "IM Anti-Virus"
+IMDesc = "Your computer is protected from getting phishing URLs via IM protocols"
+
+[MainThreats_Tab_Statistics_Frame_AV]
+Header = "Malicious objects"
+
+[MainThreats_Tab_Statistics_Frame_OS]
+Header = "Applications"
+
+[MainThreats_Tab_Statistics_FrameLegend_OS]
+;Riskware.Name.Text = "Другая программа"
+
+[MainThreats_Tab_Statistics_Frame_CF]
+Header = "Internet"
+
+[ProtectionComponents]
+@ = $ProductNameLong + " protection components"
+
+[Components_caption]
+Text = "Components that protect your computer"
+KAVWarn                        = "Some protection components are available in " + switch("kis", "ProductTitle") + " only. "
+
+[component_caption]
+AlarmSep   = ": "
+Alarm      = "error!"
+
+[SettingChoiceAntiphishing]
+@ = "Anti-Phishing"
+
+[TrialSummaryDlg]
+@ = "Trial license has expired" 
+
+[TrialSummaryDlg_Body_Descr]
+Warning = "Attention! " + "Trial license for " + $ProductName + " has expired."
+Link    = "Details on operating statistics"
+
+[TrialSummaryDlg_Body_Action]
+Question           = "Do you want to purchase a license?"
+BuyLicense.Name    = "Yes, purchase"
+BuyLicense.Descr   = "Visit online store"
+BackToKav.Name     = "Return to the commercial version of Kaspersky Anti-Virus"
+BackToKav.Descr    = ""
+Skip.Name		   = "No"
+Skip.Descr		   = ""
+
+[f_TrialDuration]
+$TrialPeriodDuration = @ / (60*60*24)
+ret = "Trial period duration: " + $TrialPeriodDuration + " " + s_days($TrialPeriodDuration)
+
+[MainThreatsTrial]
+@ = "Trial period, " + date(LicInfo.LicenseActivationDate) + " - " + date(LicInfo.License.ExpirationDate)
+
+[MainReport.Protection_Events_Descr]
+Task.Name        = "Protection component: "
+App.Name         = "Application: "
+Object.Name      = "Object: "
+Event.Name       = "Event: "
+Reason.Name      = "Reason: "
+
+[Investigator]
+@ = if($IsDriverInstall, "Driver appearance log", "Application appearance log")
+
+[AppHistoryWindow]
+@ = "Application activity log"
+
+[ProcInfoArea]
+$ProgNameEx     = "<b>" + if(sDescription, sDescription, objfile(sImagePath)) + if(nPID, " (PID " + nPID + ")") + "</b>"
+ProgHistory = if($IsDriverInstall, "<b>Loaded driver</b>", $ProgNameEx) + \
+"\n Location:\t\t" + ObjectName + \
+if(tCreation != 0, "\n Creation time:\t\t" + datetime(tCreation)) + \
+if(ParentName,"\n Created by process:\t" + f_ProgramNameEx(ParentName,ParentPid)) + \
+if(CreatorName, if($IsDriverInstall,"\n Driver created by process:\t", "\n Created by process:\t") + f_ProgramNameEx(CreatorName,CreatorPid)) + \
+if(s_IsWebSource(Type), s_AppSource(Type) + Source) + \
+if(2 == Type && From, "\n URL received:\t\t" + From) + \
+if( tExecuted != 0,   "\n Run time:\t\t" + datetime(tExecuted)) + \
+if(nPID && !($IsDriverInstall), "\n<a onclick(dialog(\"AppHistoryWindow\", p_nPID(nPID)))>Application activity log</a>") + \
+"\n\n" + \
+if($IsDriverInstall, "\nRun sequence of the application that created the driver:",  "\nRun sequence of the application:") + \
+"\nRun by " + Parents.format("f_appParenItem()", " > ") + \
+"\n\n\n" + \
+vCreators.format("f_AppParentageFormat()","\n\n")
+
+[f_AppParentageFormat]
+ret = f_ProgramNameEx(sName, nPID) \
++ "\n Location:\t\t" + sName \
++ if(0 != tExecuted, "\n Run time:\t\t" + datetime(tExecuted)) \
++ if(0 != tCreation, "\n Creation time:\t\t" + datetime(tCreation)) \
++ if(CreatorName, "\n Created by process:\t\t" + f_ProgramNameEx(CreatorName, CreatorPID)) \
++ if(s_IsWebSource(nCreateType), s_AppSource(nCreateType) + Source) \
++ if(2 == nCreateType && From, "\n URL received:\t\t" + From) \
++ if(ParentOfDriver, "\n <a onclick(dialog(\"AppHistoryWindow\", p_nPID(nPID)))>Application activity log " + objfile(sName))
+
+[s_AppSource]
+2 = "\n Downloaded:\t\t"
+3 = "\n Received in mail:\t"
+
+[HistoryList]
+Action = "Actions"
+Path   = "Details"
+
+[HistoryFilter]
+Activities = "Filter:"
+
+[HistoryFilter_Combo]
+All              = "All events"
+FilterRegistry   = "Registry"
+FilterFile       = "Files"
+FilterProc       = "Applications"
+
+[s_InvEventType]
+#INV_EVENT_TYPE_FILE_OPEN				= if(@1 & #INV_FLAG_CREATE, "Creating", "Opening")
+#INV_EVENT_TYPE_FILE_CLOSE				= if(@1 & #INV_FLAG_CREATE, "Creation", if(@1 & #INV_FLAG_MODIFY, "Modification", "Shutdown"))
+#INV_EVENT_TYPE_FILE_DELETE				= "Deletion"
+#INV_EVENT_TYPE_FILE_RENAME				= "Renaming"
+#INV_EVENT_TYPE_PROCESS_CREATE			= "Start"
+#INV_EVENT_TYPE_PROCESS_EXIT			= "Shutdown"
+#INV_EVENT_TYPE_PROCESS_TERMINATE		= "Termination"
+#INV_EVENT_TYPE_REGYSTRY_KEY_CREATE		= "Creation"
+#INV_EVENT_TYPE_REGYSTRY_KEY_DELETE		= "Deletion"
+#INV_EVENT_TYPE_REGYSTRY_VALUE_SET		= "Modification"
+#INV_EVENT_TYPE_REGYSTRY_VALUE_DELETE	= "Delete"
+
+[f_KsnTrusted]
+ret = "<b>" + @ + "</b>% of users trust this application"
+
+[f_KsnLimited]
+ret = "<b>" + @ + "</b>% restrict"
+
+[f_KsnUntrusted]
+ret = "<b>" + @ + "</b>% block"
+
+[f_BecameFamous]
+ret = "This application appeared " + f_Period(@)
+
+[f_KsnUsers]
+ret = "It has been used by <b>" + f_Customers(@) + "</b> participants of " + $KSN + "."
+
+[ThreatRollback]
+@ = "Rollback of application actions"
+
+[RollbackList]
+Path   = "Path"
+Object = "Object"
+Action = "Action"
+Time   = "Time"
+
+[s_RollbackAction]
+#RegistryValue = "Registry value restored"
+#File          = s_FileRollbackAction(ActionType)
+#Process       = "Process shut down"
+
+[s_FileRollbackAction]
+#ActionDelete    = "File deleted"
+#ActionRename    = "Name and path restored"
+#ActionRestore   = "File restored"
+
+[DatabasesObsoleteAlert_Descr]
+Descr1 = "Databases are out of date."
+Descr2 = $IsUpdateActive ? "New threats can be missed during scanning. We strongly recommend to wait until the update is completed." : "New threats can be missed during scanning. We strongly recommend running an update before scanning."
+
+[DatabasesObsoleteAlert_Actions]
+Update.Name  = ($IsUpdateActive ? "Scan after the update " : "Run update before scan ") + $AlertDefault
+Update.Descr = $IsUpdateActive ? "Scan task will be run after the databases are updated" : "Databases will be updated, after which the scan task will be run automatically"
+Skip.Name	 = "Scan now"
+Skip.Descr	 = $IsUpdateActive ? "Scan task will be run before update is completed" : "Scan task will be run without updating the databases"
+
+[RegistrationPromptAlert]
+@.TaskName      = "Registration"
+
+[RegistrationPromptAlert_Body_Descr]
+Caption     = "Register the application"
+Descr		= "You are currently protected free for 30 days with " + $ProductName + ". Please register to take advantage of faster and easier access to technical support, convenient license management, and receive product announcements and special offers."
+
+[RegistrationPromptAlert_Body_Action]
+Register.Name = "Register"
+Postpone.Name = "Remind me later"

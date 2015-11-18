@@ -1,0 +1,26 @@
+﻿Description = 'Puede elegir las categorías de los objetos que desea detectar y agregar reglas de exclusión para resolver los problemas de compatibilidad.'
+
+ThreatsDescription = 'Está activada la detección de lo siguientes tipos de objetos:'
+
+Malware = '- virus, gusanos, troyanos;'
+MalwareMalicious = '- virus, gusanos, troyanos y herramientas maliciosas;'
+
+Other = '- otras amenazas;'
+Dialers = '- marcadores automáticos;'
+DialersOther = '- marcadores automáticos y otras amenazas;'
+Adware = ' - software publicitario (adware);'
+AdwareOther = '- software publicitario (adware) y otras amenazas;'
+AdwareDialers = '- software publicitario (adware) y marcadores automáticos;'
+AdwareDialersOther = '- software publicitario (adware), marcadores automáticos y otras amenazas;'
+
+PackagersMulti = '- archivos multicomprimidos;'
+PackagersUnknown = '- programas de compresión desconocidos;'
+PackagersUnknownMulti = '- programas de compresión desconocidos y archivos multicomprimidos;'
+
+Exclusions = 'Exclusiones'
+
+Rules = 'Reglas: ' + $EnabledRuleCount + ' (en total ' + $TotalRuleCount + ')'
+TrustedApplications = 'Aplicaciones de confianza: ' + $TrustedApplicationCount + ' (total ' + $TotalApplicationCount + ')'
+
+TreatsSettingsMore = 'C&onfiguración'
+ExlusionSettingsMore = 'C&onfiguración'

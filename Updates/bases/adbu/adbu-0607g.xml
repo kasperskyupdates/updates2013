@@ -1,0 +1,54 @@
+<UpdateFiles
+	UpdateDate="24102015 0802"
+	BlackDate="22102015 0708"
+	ObjectType="2=ADBU;3=BASE">
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%\Stat"
+		Filename="adbu.stt"
+		Body="MzE1NjE7MjAxNTEwMjQwODAyDQo=" />
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="adbu.set" />
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="adbu0001.dat" />
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="adbu0002.dat" />
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="adbu0003.dat" />
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="adbu0004.dat" />
+	<FileDescription
+		ComponentID="ADBU"
+		UpdateType="base"
+		LocalPath="%BaseFolder%"
+		Filename="adbu0005.dat" />
+	<Registry
+		ComponentID="ADBU"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAYMyHipAABgGdMCa5Ek7fYhvLjHbYnb4cyoXbkunP90h6dMLZUuiG3J43SljALVZlViUrO79AyDT0pK5kBlHmAC2c9Gskz8BAB4JigAAAAIAAigEAEFEQlUDAAIoBABCQVNFAQAACSdiXo0NCjs6MTBhRlV2bm9lR3AzeXpJbjlua1VEZXNSYXFjQ3I4T1NQbHVHRlBYQ2pJakxESmNTV1BQNW9mRDJId2d2OFNhOUYvV1QxSXc4dUY0OVFBRi94M0tCSVBPLyUl"
+		Filename="adbu-0607g.pbv" />
+	<Registry
+		ComponentID="ADBU"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwGKAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqBwABACAA54GDA8lbDUHqUv2khvTRjLvdPepsesjKetbLzHXRWwUgAHyeYwhz4NN7qcZ0dOJvlXSh0xoICSo3PIHapqFo9he9IAAPlECFHihZWhqsUhOuOAoSxy49Aw0djp08vYpfRXU4JSAAgyqfnREyhQBpamUR3H+kZ9mbtuDzMVn0EAkO6r6bKQMgAOUMsEppcrx8KM4aXr7AA9jTDFkE7m+kUH80xoquojHQIABuJka/eLfb3zz8JJO129nehXWFw+qDvuQ7kGL/VHtqPSAAF3xaAfJSeqbSEc+6IxDAeVB237HBpgnfiPr+2p5hWlYCAB4BAQAeCYoAAAABAAAJpD4TDQ0KOzoxMEsyQ1dwY2VlMS9aRnlaZG9qQTdkdDAxMTNvR1V4TUx0K0h1aXN3bm5ESWFEMW1ZOUtzUDBzZ0x3UUN5ZUJkbTZ6YUMyL1FEaDJZVi82bUQrU0k3Y3FkJSU="
+		Filename="adbu-0607g.krg" />
+</UpdateFiles>
+;:10K2Ro+yEhvDfqG7OQlNeGcC8hsW5cKdK5VRD6gFRIZc6yrdN4nMMKq2x+eWdXQtFgBNT01pgsaZ+t7MYLM9TmpW%%

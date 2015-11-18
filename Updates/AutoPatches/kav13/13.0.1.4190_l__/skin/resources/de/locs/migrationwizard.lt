@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migrations-Assistent'
+UpgradeCaption = 'Upgrade-Assistent'
+
+RebootPageCheckboxRebootText = 'Computer neu starten'
+OpenRemoveProgramsPanel = 'Systemsteuerung öffnen'
+
+WizardBeginDescriptionKis = 'Es erfolgt ein Umstieg auf Kaspersky Internet Security 2013.\n\nDer Rechtsinhaber gewährt Ihnen eine nicht-exklusive Lizenz für die Nutzung von Kaspersky Internet Security zu den Bedingungen, die Sie zuvor bei der Installation von Kaspersky Anti-Virus akzeptiert haben.\n\nBeim Umstieg werden notwendige Aktionen ausgeführt, die einen Neustart des Systems erforderlich machen können.'
+
+WizardBeginDescriptionKav = 'Es erfolgt ein Umstieg auf Kaspersky Anti-Virus 2013.\n\nDer Rechtsinhaber gewährt Ihnen eine nicht-exklusive Lizenz für die Nutzung von Kaspersky Anti-Virus zu den Bedingungen, die Sie zuvor bei der Installation von Kaspersky Internet Security akzeptiert haben.\n\nBeim Umstieg werden notwendige Aktionen ausgeführt, die einen Neustart des Systems erforderlich machen können.'
+
+WizardContinueDescriptionKis = 'Umstieg auf Kaspersky Internet Security 2013 fortsetzen.'
+WizardContinueDescriptionKav = 'Umstieg auf Kaspersky Anti-Virus 2013 fortsetzen.'
+
+MigrationNocomebackWarning = '\n\nAchtung! Die Lizenz für Kaspersky Anti-Virus läuft früher ab als die Lizenz für Kaspersky Anti-Virus. Wenn die Lizenz für Kaspersky Anti-Virus abläuft, ist eine Rückkehr zu Kaspersky Internet Security nicht mehr möglich.'
+
+PleaseWait = 'Bitte warten Sie'
+RemovalProgressDescription   = 'Inkompatible Software wird entfernt...'
+RemovalApplicationsDescription = 'Für den Umstieg werden folgende Programme entfernt:'
+ManualRemovalApplicationsDescription = 'Für den Umstieg müssen folgende Programme manuell entfernt werden:'
+SearchRemovalApplicationsDescription   = 'Es wird nach inkompatibler Software gesucht'
+RestartProductDescription = 'Das Programm wird neu gestartet, um den Umstieg abzuschließen.'
+RebootOsDescription = 'Der Computer muss neu gestartet werden, um den Umstieg fortzusetzen.\nDer Assistent wird nach dem Neustart fortgesetzt'
+
+MigrationProgressDescriptionKis = 'Die Programm-Module werden neu konfiguriert und es erfolgt ein Umstieg auf Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Die Programm-Module werden neu konfiguriert und es erfolgt ein Umstieg auf Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Die Programm-Module werden neu konfiguriert und es erfolgt ein Umstieg auf Kaspersky Anti-Virus'
+
+MigrationKis = 'Umsteigen auf Kaspersky Internet Security'
+MigrationKav = 'Umsteigen auf Kaspersky Anti-Virus'
+MigrationUnknown = 'Weiter '
+
+SearchRemovalApplicationsHeader = 'Upgrade auf Kaspersky Internet Security'
+RemovalProgressHeader = 'Inkompatible Programme löschen'
+RemovalApplicationsHeader = 'Inkompatible Programme gefunden'
+RebootOsHeader = 'Ein Neustart des Computers ist erforderlich'
+RestartProductHeader = 'Das Programm wird neu gestartet'
+
+MigrationAbortedHeader = $MigrationType + ' nicht möglich'
+MigrationAbortedDescription = $MigrationType + ' wurde erfolglos abgeschlossen. Versuchen Sie, die inkompatiblen Programm manuell zu entfernen und starten Sie den Assistenten danach neu.'
+
+BestBuyGiftInformation = 'Ein Upgrade von Kaspersky Anti-Virus zu Kaspersky Internet Security wird ausgeführt.\nSie können jetzt weitere Funktionen für den Computerschutz nutzen.'
+BestBuyGiftDescription = 'Vielen Dank, dass Sie sich für Kaspersky Lab entschieden haben. Wir hoffen, dass Ihnen der optimierte Schutz gefällt.'
+BestBuyUpgradeNotification = 'Im Verlauf des Upgrades wird nach inkompatibler Software gesucht, um die Stabilität der installierten Programme und des Betriebssystems zu gewährleisten.'
+BestBuyFreeUpgrade = 'Zu Kaspersky Internet Security wechseln'
+
+BestBuyTryAbortHeader = 'Upgrade im Hintergrundmodus'
+BestBuyTryAbortInformation = 'Das Upgrade wird im Hintergrund fortgesetzt'
+BestBuyTryAbortDescription = 'Da die inkompatible Software nicht entfernt wurde, wurden einige Funktionen von Kaspersky Internet Security deaktiviert, um die Stabilität der installierten Programme und des Betriebssystems zu gewährleisten.\n\nSie können die inkompatiblen Programme manuell entfernen und alle neuen Funktionen im Konfigurationsfenster von Kaspersky Internet Security aktivieren.'
+BackToSubcriptionUpgradeButtonText = 'Zurück zum Upgrade'
+Congratulation = 'Glückwunsch!'
+
+RunKisButtonText = 'Kaspersky Internet Security starten'
+
+ProductUpgraded = 'Der Wechsel von Kaspersky Anti-Virus zur Nutzung von Kaspersky Internet Security wurde ausgeführt.\nSie verfügen nun über zusätzliche Schutzfunktionen.'

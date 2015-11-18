@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "选择授权许可文件"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "程序的密钥由设备提供商提供。您要使用此密钥激活程序吗？\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "程序配置尚未完成，确定要退出配置向导吗?"
+ErrEmptyActivationCode.caption  = "未指定激活码"
+ErrEmptyActivationCode          = "请输入激活码。"
+ErrEmptyKeyPath.caption         = "未指定授权许可文件"
+ErrEmptyKeyPath                 = "请指定授权许可文件"
+$LicInfoKeyNumber               = "编号："
+$LicInfoKeyProductName          = "程序名称："
+$LicInfoKeyType                 = "授权许可类型："
+$LicInfoExpirationDate          = "到期时间："
+$LicErrReason                   = "原因："
+$ActiveKey                      = "活动密钥"
+$ReservedKey                    = "备用密钥"
+ConfirmFeedback                 = "您同意向<a KsnInfo onclick(dialog(\"KsnInfo\"))>卡巴斯基安全网络</a>体系提交信息吗?"
+$KsnTerms                       =  "卡巴斯基安全网络(KSN) - 是在线服务的基础，为文件、网页资源和软件的安全情况提供实时信息。使用卡巴斯基安全网络的数据可以加快对最新威胁的响应速度，增强保护组件的性能，降低误报率。\n您加入卡巴斯基安全网络后，将自动向卡巴斯基实验室发送有关病毒感染和其它问题信息，包括加载程序和可执行程序的扩展统计信息等，详见<a KsnInfo onclick(dialog(\"KsnInfo\"))>卡巴斯基安全网络数据收集声明</a>。\n\n<b>卡巴斯基安全网络不会收集和处理任何个人信息。</b>"
+
+$ToAcquireNewLicText            = "\n\n要获取新的授权许可，请联系您的经销商或<a Buy onclick(buy())>卡巴斯基实验室销售部</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\n请手动更新订购状态或联系技术支持" : "\n请使用激活码稍后激活程序（1-2 小时后）或联系技术支持") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url($KeyProviderLinkForText))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN +((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? "激活向导" : "配置向导")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "常规信息"
+InitBegin.Descr                       = "欢迎使用"+ $ProductName_GEN +"配置向导。"
+CheckHosts.Name                       = "正在检测卡巴斯基实验室服务器是否可用"
+CheckHosts.Descr                      = "检测到可疑的重定向连接"
+ResetArea.Name                        = "恢复设置"
+ResetArea.Descr                       = "以下列出的设置是由用户输入的或程序运行期间积累的。"
+ActivationBegin.Name                  = $IsSubscription ? "订阅管理" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "删除密钥" : "添加密钥") : "激活程序")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "管理授权许可" : "激活程序以继续。")
+ActivationProgress.Name               = "在线激活"
+ActivationProgress.Descr              = "正在激活，请稍候..."
+ActivationServerForm.Name             = "在线注册"
+ActivationServerForm.Descr            = "请填写此表。"
+ActivationChooseKey.Name              = "使用密钥文件激活"
+ActivationChooseKey.Descr             = "使用授权许可文件激活程序."
+ActivationEnd.Name                    = "激活程序"
+ActivationEnd.Descr                   = "完成激活。"
+MigrationKeyIsFound.Name         = "当前授权许可的密钥可用"
+MigrationKeyIsFound.Descr        = "您是否希望使用当前授权许可对应的程序？"
+MigrationBegin.Name              = "转换至" + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "将转换至" + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "搜索不兼容的软件"
+MigrationSearchProgress.Descr    = "正在搜索不兼容的软件，请稍候..."
+MigrationSafeRemoval.Name        = "发现不兼容的软件"
+MigrationSafeRemoval.Descr       = "需要删除不兼容的软件才能继续安装"
+MigrationSafeProgress.Name       = "删除不兼容的软件"
+MigrationSafeProgress.Descr      = "正在删除不兼容的软件，请稍候..."
+MigrationAddRemove.Name          = "发现不兼容的软件"
+MigrationAddRemove.Descr         = "请删除不兼容的软件"
+MigrationUnsafeRemoval.Name      = "发现不兼容的软件"
+MigrationUnsafeRemoval.Descr     = "需要删除不兼容的软件才能继续安装"
+MigrationUnsafeProgress.Name     = "删除不兼容的软件"
+MigrationUnsafeProgress.Descr    = "正在删除不兼容的软件，请稍候..."
+MigrationReboot.Name             = "重启操作系统"
+MigrationReboot.Descr            = "需要重启才能继续切换至新程序"
+MigrationProgress.Name           = "转换至" + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "正在切换至新程序，请稍候..."
+MigrationRebootApp.Name          = bMigrationDone ? "程序将重启": "切换至新程序时出错"
+MigrationRebootApp.Descr         = bMigrationDone ? "程序应重启": "切换至" + s_MUProductTitleLong(env("ProductType")) + "已失败"
+MigrationFinish.Name             = "切换" + s_ProductTitleLong(env("ProductType")) + "已完成"
+MigrationFinish.Descr            = "切换" + s_ProductTitleLong(env("ProductType")) + "已完成"
+DNS.Name                              = "高级设置"
+DNS.Descr                             = $ProductName_GEN + " 高级操作设置"
+EnumExe.Name                          = "分析系统"
+EnumExe.Descr                         = "正在分析系统信息，请稍候..."
+InitFinish.Name                       = "正在完成" + $ProductName + "配置"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "您必须重启计算机，以完成程序配置。" : "您可以立即启动" + $ProductName + "。"
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "检测到可疑的卡巴斯基实验室服务器地址重定向行为。这可能是由恶意软件活动引起的，这将导致更新和激活失败。可疑的 Hosts 文件条目:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "删除记录（建议）"
+Skip			= "忽略"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "上一步(&B)"
+Back.Descr      = "返回到程序激活方式选择步骤"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "添加密钥(&A)" : "激活(&A)"
+Activate.Descr  = "安装选中的授权许可文件"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "完成(&F)"
+Finish.Descr    = "关闭激活向导"
+Next.Name       = "下一步(&N)"
+Next.Descr      = "继续配置"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "您可以继续使用当前授权许可对应的程序。这会导致程序转换为" + s_MUProductTitleLong(env("ProductType")) + "。"
+Text3   = "您要继续使用当前授权许可对应的程序吗？"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "程序类型："
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "到期时间："
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + "（" + f_n_days_remaining(DaysTillExpiration) + "剩余）"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "是，并切换到" + s_MUProductTitleLong(env("ProductType")) + "。"
+NotUseFoundLicense = "否，继续使用" + switch(env("ProductType"), "ProductTitleLong", "") + "。"
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "您正将所用程序转换为" + s_MUProductTitleLong(env("ProductType")) + "。版权拥有者基于您先前安装" + s_ProductTitleLong(env("ProductType")) + "时接受的授权许可协议条款，为您提供了一个非专属授权来使用" + s_MUProductTitleLong(env("ProductType")) + "。"
+Text3   = "注意：转换操作可能需要重启计算机。"
+LicenseWarning  = "请注意！卡巴斯基反病毒软件的商业授权许可过期时间早于卡巴斯基安全部队的试用版授权许可过期时间。卡巴斯基反病毒软件的商业授权许可过期之后，您将无法从卡巴斯基安全部队试用版上使用卡巴斯基反病毒软件。您要继续切换至卡巴斯基安全部队吗？"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "正在搜索计算机上不兼容的软件，这可能会需要些时间，请稍候..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "系统将卸载以下软件以执行切换："
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "正在删除不兼容的软件，请稍候..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "应卸载以下软件以执行切换："
+OpenAddRemove = "打开“添加/删除程序”窗口"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "系统将卸载以下软件以执行切换："
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "正在删除不兼容的软件，请稍候..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "您应重启计算机以继续此切换，重启之后向导将继续。"
+Reboot   = "立即重启"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "正在重新配置程序，并转换到" + s_MUProductTitleLong(env("ProductType")) + "，请稍候..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "要完成切换至" + s_MUProductTitleLong(env("ProductType")) + "此程序需要重新启动。" : "切换至" + s_MUProductTitleLong(env("ProductType")) + "失败。"
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "现在，您可以评估" + s_ProductTitleLong("kis") + "的全部功能，如上网管理、反垃圾邮件、防火墙等。" : s_ProductTitleLong("kav") + "提供了基本的保护功能，确保您的计算机不被恶意软件侵害。"
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "您可以"+if($IsRefreshSubAvail,"更新订阅状态或")+"删除该密钥。" : (f_IsActiveKeyWorkingCommercial() ? "您可以删除您的活动密钥或添加密钥。" : "激活" + $ProductName + "以启用完整版的程序功能。"+ if($CorporateOnly, "您可以获取<a Activate onclick(url($ActivationLink))>商业版</a>或激活<a ActivateTrial onclick(url($ActivationTrialLink))>试用版</a>程序版本。"))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "稍后激活(&L)"
+Later.Descr                 = "跳过激活，配置程序"
+ChooseKey.Name              = "使用许可文件激活(&K)"
+ChooseKey.Descr             = "需要授权许可文件"
+ActivateBetaKAV.Name        = "激活卡巴斯基反病毒软件测试版本(&B)"
+ActivateBetaKAV.Descr       = "卡巴斯基反病毒软件测试版包含全部功能，但不是最终版。"
+ActivateBetaKIS.Name        = "激活卡巴斯基安全部队测试版(&B)"
+ActivateBetaKIS.Descr       = "卡巴斯基安全部队测试版包含全部功能，但不是最终版本。"
+ActivateTrial.Name          = "激活试用版(&T)"
+ActivateTrial.Descr         = "试用版的有效期已在最终用户授权许可协议中指明"
+ActivateCommercial.Name     = "在线激活(&A)"
+ActivateCommercial.Descr    = "需要您购买时获得的激活码"
+RemoveKey.Name              = $HasReserveKey ? "删除备用密钥(&D)" : "删除密钥(&D)"
+RemoveKey.Descr             = "若要替换密钥，请先删除激活的密钥"
+RefreshSubscription.Name    = "更新订阅服务状态(&R)"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "您可以手动更新订阅服务状态。" : "已终止订阅服务状态自动更新，您可以手动更新该状态。"
+ActivateTrialKIS            = "激活卡巴斯基安全部队试用版"
+ActivateTrialKIS_Desc       = "授权许可协议中规定了卡巴斯基安全部队试用版的有效期"
+RevertToCommercialKAV       = "返回卡巴斯基反病毒软件商业版"
+RevertToCommercialKAV_Desc  = "返回卡巴斯基反病毒软件商业版"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "更新订阅服务状态"
+ActivateCommercial      = "激活商用版本"
+ActivateCommercial_Desc = (LockActivationCode)? "输入激活码：" : "输入<a onclick(url(\"" + $ActCodeHint + "\"))>激活码</a>："
+ActivationCode_Desc     = (LockActivationCode)? "您的激活码已自动添加。请点击“下一步” 按钮。" : "如果您还没有激活码，您可以<a onclick(buy())>在线购买</a>"
+ActivateBetaKAV         = "激活卡巴斯基反病毒软件测试版(&B)"
+ActivateBetaKIS         = "激活卡巴斯基安全部队测试版(&V)"
+ActivateTrial           = "激活试用版本(&T)"
+ActivateTrial_Desc      = "购买之前试用程序的全部功能。"
+ActivateTrialKIS           = "激活卡巴斯基安全部队试用版"
+ActivateTrialKIS_Desc      = "购买之前试用卡巴斯基安全部队的全部功能。"
+RevertToCommercialKAV      = "返回卡巴斯基反病毒软件商业版"
+RevertToCommercialKAV_Desc = "停止使用卡巴斯基安全部队试用版，返回卡巴斯基反病毒软件商业版。"
+Later                   = "稍后激活(&A)"
+Later_Desc              = "激活之前，无法使用程序的全部功能。"
+RemoveKey               = "删除授权"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "密钥文件："
+KeyInfo         = "授权许可信息"
+ConnectingInfo.Name     = "激活错误："
+ConnectingInfo.Val      = "详细信息"
+TryAgain                = "激活"
+Descr1                  = "若要重新激活，请执行以下操作："
+Descr2                  = "检查网络连接设置并重新激活。"
+Descr3                  = "到<a onclick(url(\"" + $ActivationLink + "\"))> 在线激活中心</a> ，根据说明操作。\n在收到授权许可文件后，指定它的位置并点击“下一步”："
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "创建日期："
+InstallDate.Name    = "安装日期："
+ExpirationDate.Name = "到期时间："
+SubscrptnExpDate.Name = "订阅服务到期时间："
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection,"用于 " + p_KeyInfo.LicenseCount + " 台" + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount))) + " " + s_LicKeyType(p_KeyInfo.KeyType)
+
+[s_LicenseOperationsError]
+1       = "系统错误：" + s_SystemError(ErrorCode)
+2       = "无法添加\"" + KeyFile + "\"密钥：" + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "无法删除\"" + KeyFile + "\"：" + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "错误代码：" + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "该密钥已经被添加" + $LicErrHelpLink
+0x0947901d  = "您的授权许可已到期，数据库更新功能不可用" + $LicErrHelpLink
+0x89479002  = "授权许可文件丢失" + $LicErrHelpLink
+0x89479003  = "数字签名丢失或损坏" + $LicErrHelpLink
+0x89479004  = "数据损坏" + $LicErrHelpLink
+0x89479005  = "授权许可文件损坏" + $LicErrHelpLink
+0x89479006  = "授权许可已经到期" + $LicErrHelpLink
+0x89479007  = "未指定授权许可" + $LicErrHelpLink
+0x89479008  = "密钥文件无效" + $LicErrHelpLink
+0x89479009  = "保存数据失败" + $LicErrHelpLink
+0x8947900a  = "读取数据失败" + $LicErrHelpLink
+0x8947900b  = "I/O 错误" + $LicErrHelpLink
+0x8947900c  = "数据库丢失" + $LicErrHelpLink
+0x8947900d  = "现在激活的和备用的密钥均已添加" + $LicErrHelpLink
+0x8947900e  = "授权许可库没有初始化" + $LicErrHelpLink
+0x8947900f  = "数据库损坏或已经手动更新" + $LicErrHelpLink
+0x89479010  = "数据库已损坏" + $LicErrHelpLink
+0x89479011  = "无法注册过期的授权许可为备用授权许可" + $LicErrHelpLink
+0x89479012  = "系统错误" + $LicErrHelpLink
+0x89479013  = "密钥黑名单损坏" + $LicErrHelpLink
+0x89479014  = "数字签名与卡巴斯基实验室的数字签名不匹配" + $LicErrHelpLink
+0x89479015  = "无法使用 Beta 版授权许可激活商业版程序" + $LicErrHelpLink
+0x89479016  = "只能使用 Beta 版授权许可激活 Beta 版程序" + $LicErrHelpLink
+0x89479017  = "本授权许可对该程序不适用。其他程序的授权许可不能用于激活" + $ProductName + "。请检查您已安装的程序" + $LicErrHelpLink
+0x89479018  = "密钥已被阻止" + $LicErrHelpLink
+0x89479019  = "这台计算机已经使用过了试用授权许可，不能再次使用试用授权。" + $LicErrHelpLink
+0x8947901a  = "授权许可文件损坏" + $LicErrHelpLink
+0x8947901b  = "数字签名丢失或损坏，或与卡巴斯基实验室数字签名不匹配" + $LicErrHelpLink
+0x8947901c  = "不能为已过期商业版本的授权许可添加密钥" + $LicErrHelpLink
+0x8947901e  = "授权许可创建或激活日期无效。请检查您的系统日期设置" + $LicErrHelpLink
+0x8947901f  = "当使用试用版授权许可时，无法添加其他的试用版授权许可" + $LicErrHelpLink
+0x89479020  = "密钥黑名单丢失或损坏" + $LicErrHelpLink
+0x89479021  = "更新描述丢失或损坏" + $LicErrHelpLink
+0x89479022  = "此产品的内部数据无效" + $LicErrHelpLink
+0x89479023  = "不能使用不正确的激活码添加备用密钥" + $LicErrHelpLink
+0x89479024  = "完成用户表单数据错误" + $LicErrHelpLink
+0x89479025  = "发送激活服务器请求错误。\n可能原因：网络连接问题或激活服务器临时故障。\n请稍后再次尝试激活（1-2小时后）。\n如果问题仍然存在，请联系您的网络供应商" + $LicErrHelpLink
+0x89479026  = "请求包含错误的激活码" + $LicErrHelpLink
+0x89479027  = "无法获取响应状态" + $LicErrHelpLink
+0x89479028  = "保存临时文件错误" + $LicErrHelpLink
+0x89479029  = "激活码输入错误或系统日期错误。请检查系统日期设置。" + $LicErrHelpLink
+0x8947902a  = "激活码对该程序不适用或该密钥已过期。其他程序的授权许可不能用于激活" + $ProductName + "。请检查您已安装的程序或<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "接收授权许可失败，指定的激活码不正确。" + $LicErrHelpLink
+0x8947902c  = "激活服务器返回错误400。" + $OlaErrHelpLink
+0x8947902d  = "激活服务器返回错误401。" + $OlaErrHelpLink
+0x8947902e  = "激活服务器返回错误403。" + $OlaErrHelpLink
+0x8947902f  = "激活服务器上的所需资源不可用。\n激活服务器返回错误 404。\n请检查互联网连接设置" + $OlaErrHelpLink
+0x89479030  = "激活服务器返回错误 405 " + $OlaErrHelpLink
+0x89479031  = "激活服务器返回错误 406 " + $OlaErrHelpLink
+0x89479032  = "需要代理认证。请检查局域网设置。" + $LicErrHelpLink
+0x89479033  = "请求超时" + $LicErrHelpLink
+0x89479034  = "激活服务器返回错误 409 " + $OlaErrHelpLink
+0x89479035  = "激活服务器上的所需资源不可用。\n激活服务器返回错误 410。\n请检查互联网连接设置" + $OlaErrHelpLink
+0x89479036  = "激活服务器返回错误 411 " + $OlaErrHelpLink
+0x89479037  = "激活服务器返回错误 412 " + $OlaErrHelpLink
+0x89479038  = "激活服务器返回错误 413 " + $OlaErrHelpLink
+0x89479039  = "激活服务器返回错误 414 " + $OlaErrHelpLink
+0x8947903a  = "激活服务器返回错误 415 " + $OlaErrHelpLink
+0x8947903b  = "客户端发生未知错误" + $OlaErrHelpLink
+0x8947903c  = "服务器内部错误" + $LicErrHelpLink
+0x8947903d  = "不支持该功能" + $LicErrHelpLink
+0x8947903e  = "无效网关响应。请检查您的网络设置" + $LicErrHelpLink
+0x8947903f  = "资源暂时不可用" + $LicErrHelpLink
+0x89479040  = "等待请求超时。请检查您的网络设置" + $LicErrHelpLink
+0x89479041  = "服务器不支持该协议。" + $OlaErrHelpLink
+0x89479042  = "服务器出现未知错误。" + $OlaErrHelpLink
+0x89479043  = "未知HTTP错误。" + $OlaErrHelpLink
+0x89479044  = "无效的资源标识符。" + $LicErrHelpLink
+0x89479045  = "“授权许可”错误信息 " + $LicErrHelpLink
+0x89479046  = "错误的网址" + $LicErrHelpLink
+0x89479047  = "不正确的目标文件夹" + $LicErrHelpLink
+0x89479048  = "内存分配错误" + $LicErrHelpLink
+0x89479049  = "转换参数为ANSI字符串错误(网址、文件夹、代理)" + $LicErrHelpLink
+0x8947904a  = "创建工作线程错误" + $LicErrHelpLink
+0x8947904b  = "工作线程已运行" + $LicErrHelpLink
+0x8947904c  = "工作线程未运行" + $LicErrHelpLink
+0x8947904d  = "在激活服务器上没有发现密钥文件" + $LicErrHelpLink
+0x8947904e  = "密钥被禁用" + $LicErrHelpLink
+0x8947904f  = "激活服务器内部错误" + $LicErrHelpLink
+0x89479050  = "在激活请求中没有足够的数据" + $LicErrHelpLink
+0x89479051  = "不正确的用户 ID 或密码" + $LicErrHelpLink
+0x89479052  = "不正确的激活码" + $LicErrHelpLink
+0x89479053  = "选定密钥文件的授权许可过期日期早于当前授权许可的过期日期" + $LicErrHelpLink
+0x89479054  = "操作系统日期错误。请检查系统日期" + $LicErrHelpLink
+0x89479055  = "试用授权已经过期" + $LicErrHelpLink
+0x89479056  = "激活码已到期" + $LicErrHelpLink
+0x89479057  = "<b>输入的激活码已经超过了允许激活的最大数量</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "商业版授权许可有效时，不能将非商业版授权许可的密钥添加为备用密钥" + $LicErrHelpLink
+0x8947905c  = "需要激活码" + $LicErrHelpLink
+0x8947905d  = "客户ID或密码不正确" + $LicErrHelpLink
+0x8947905e  = "不正确的激活码" + $LicErrHelpLink
+0x89479062  = "无法连接到激活服务器" + $LicErrHelpLink
+0x89479064  = "<b>激活服务器不可用。</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "无法激活程序。配置程序并重启操作系统后，尝试重新激活。", "请检查网络连接设置后重新激活。") + $LicErrHelpLink
+0x89479065  = "您的授权许可已过期。请<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "不能使用已到期密钥替换当前密钥" + $LicErrHelpLink
+0x89479067  = "无法添加过期时间早于当前密钥的密钥作为备用" + $LicErrHelpLink
+0x89479068  = "不存在更新的订阅授权许可" + $LicErrHelpLink
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "激活程序因为系统错误而完成" + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "激活错误：" + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "激活错误：" + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "激活错误：服务器返回 HTTP代码 " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "激活失败" + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "内部激活服务器错误，请重试或联系技术支持服务"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "激活码和该程序不兼容，用于其他程序的激活码不能激活" + $ProductName + "，请检查已安装的程序。"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "密钥被禁用"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "客户ID或密码不正确"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "激活码错误"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "需要激活码"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "激活日期已过期"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "激活次数超过限制"
+#OLA_ERR_SRV_REGION_MISMATCH                = "激活码对该国家无效。"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "该激活码不适用于该本地化程序。"
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "该激活码仅适用于较新版本的程序。若要使用当前版本的程序，请点击以下链接以获取对应的激活码。"
+#OLA_ERR_SRV_SERVER_ERROR_643               = "激活服务器返回错误 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "激活服务器返回错误 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "激活服务器返回错误 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "激活服务器返回错误 646"
+default                                     = "激活过程返回错误" + #OLA_SERVER_ERROR + "：" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Microsoft IE 浏览器工作在脱机模式下"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "网络连接失败"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "激活服务器不可用"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "代理服务器不可用"
+#OLA_ERR_INTERNET_TIMEOUT                    = "响应时间超时"
+#OLA_ERR_INTERNET_INVALID_URL                = "激活服务器地址错误"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "协议错误"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "无法建立服务器连接"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "操作被取消"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "无法建立服务器连接"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "终止服务器连接"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "服务器连接被重置"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "服务器响应错误"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "服务器的SSL证书已过期，请检查本地计算机时间。"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "服务器的SSL证书和服务器不匹配"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "无法执行证书吊销检查。请在 Microsoft Internet Explorer 中关闭该项检查（Internet 选项->高级->检查服务器证书吊销）并尝试重新激活"
+#OLA_ERR_INTERNET_CERT_INVALID               = "无效的 SSL 证书"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL 证书已撤销"
+#OLA_ERR_INTERNET_INVALID_CA                 = "无效的证书中心"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "卡巴斯基实验室需要注册数据以通知您各种促销活动、销售和优惠。"
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "继续(&C)"
+Activate.Descr  = "发送数据到激活服务器"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "配置向导正在连接卡巴斯基实验室激活服务器。这可能需要一些时间，具体取决于您的互联网连接速度。 "
+ConnectingInfo.Name     = "正在连接到激活服务器..."
+ConnectingInfo.Val      = if(bConnected, "成功")
+SendingCodeInfo.Name    = "正在发送激活码..."
+SendingCodeInfo.Val     = if(bSentCode, "成功")
+RetrievingKeyInfo.Name  = "正在等待服务器响应..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "成功")
+Status                  = "您已经成功激活" + $ProductName + "副本"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "到期时间："
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + "（" + f_n_days_remaining(DaysTillExpiration) + "剩余）"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "激活成功完成。" : "该程序已在您的计算机上激活。"
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "下一步(&N)"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "开始激活程序": (((PiwFlags & #fPiwActivation) && !bSilent)?"授权许可信息":"请选择保护模式")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "该向导将帮助您正确地配置计算机安全。\n\n在配置过程中，向导会分析有关您的系统以及安装在您的计算机上的应用程序的相关信息，以更好地保护您的计算机。\n\n单击“下一步”开始配置" + $ProductName_GEN + "。"
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "安装即将完成..." : ((PiwFlags & #fPiwReset) ? ("修复完成！") : ("安装完成！"))
+ResetDescr          = "配置向导已成功完成对" + $ProductName + "设置的恢复。"
+Reboot              = "重启计算机(&R)"
+StartProduct        = "启动" + $ProductName + "(&S)"
+RebootPiwWarning    = $IsInstallNeedReboot ? ("感谢您安装" + $ProductName + "。若要完成安装，您必须重启计算机。请保存您的数据，关闭所有应用程序，点击“完成”按钮。") : "请注意，程序第一次启动时，需要完成产品的其它配置。可能会占用几分钟时间。"
+
+[ConfigureWizard.EnumExe]
+Info = "在系统分析期间，程序将为 Microsoft Windows 操作系统中受信任的应用程序创建一个列表。\n\n当前未包含在操作系统中的应用程序，在该计算机上首次启动时将被单独分析。"
+
+[s_LicKeyType]
+#ektBeta         = "Beta 密钥"
+#ektTrial        = "试用授权许可"
+#ektTest         = "测试密钥"
+#ektOEM          = "OEM 密钥"
+#ektCommercial   = "商用授权许可"
+#ektSubscription = "商用订阅授权"
+#ektSubscriptionProtection = "受保护的商用订阅许可"
+default          = "未知类型"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "未知错误"
+#ekirValid                      = "授权许可有效"
+#ekirExpired                    = "授权许可已经过期"
+#ekirCorrupted                  = "无效的授权许可"
+#ekirNotSigned                  = "数子签名丢失或损坏"
+#ekirWrongProduct               = "本授权许可对该程序不适用。其他程序的授权许可不能用来激活" + $ProductName + "，请检查您的产品。"
+#ekirBlackListed                = "密钥 "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" 被阻止"
+#ekirIllegalUpdate              = "数据库日期与授权许可有效期不匹配"
+#ekirInconsistentUpdate         = "数据库已损坏"
+#ekirKeyCreationDateInvalid     = "不正确的授权许可创建日期"
+#ekirTrialAlreadyInUse          = "当使用某个试用版授权许可的密钥时不能添加其他试用版授权许可的密钥"
+#ekirInvalidBlacklist           = "密钥黑名单损坏"
+#ekirCantBeUsedAsReserved       = "无法注册授权许可为备份的授权许可"
+#ekirKeyInstallDateInvalid      = "不正确的授权许可激活日期"
+#ekirTrialPeriodIsOver          = "试用授权许可已到期"
+#ekirConflictsWithCommercial    = "新密钥文件与当前商业版授权许可冲突"
+#ekirExpiredAsReserve           = "该授权许可的过期时间早于当前授权许可"
+#ekirGracePeriod                = "授权许可在宽限期内"
+#ekirSuspended                  = "订阅服务已暂停"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "程序需要重新安装"
+#ekirLicenseOnlyForMigration    = "切换至其他程序以激活商业版"
+default                         = "密钥文件不正确"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "稍后决定"
+#edtUnlimited = "已激活"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "从" + date(SubscriptionInfo.ExpDate)+ "暂停使用"
+
+[LicenseKeysDiscartedDetails]
+@ = "授权许可信息"
+
+[LicenseExpirationWindow]
+@ = $ProductName + "：授权许可通知"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "注意！"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "您正在使用的是" + $ProductName_GEN + "的试用版。"
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "授权许可黑名单丢失或损坏。请运行<a Update onclick(f_StartUpdater())>更新</a>继续操作。"
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "您的授权许可" + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + "。要保持最新的保护状态，请<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>。\n\n如果您已经有授权许可，请<a Activate onclick(f_Activate())>激活程序</a>。"
+1       = (SubscriptionStatus==#ssExpired)? (("订阅已过期。" + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, "保护已禁用。"))+($IsBestBuyLink ? "订阅续费不可用。" : "计算机面临风险。\n\n若要续费订阅，<a onclick(url($KeyProviderLinkForText))>请联系您的服务提供商</a>。")) :("您还有" + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? "剩余时间去续费订阅。" : (LicInfo.KeyInfo.KeyType == #ektSubscription ? "剩余时间，之后更新将被禁用。" : "在关闭保护前。" ) ) + "若要续费订阅，<a onclick(url($KeyProviderLinkForText))>请联系您的服务提供商</a>。")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>当前活动密钥被阻止。\n更新不可用，因此您的计算机面临着感染病毒的风险。</b>\n\n如果您已合法购买此程序，请联系技术支持或零售商。\n\n如果您使用的是盗版软件，请<a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>。\n\n如果您已经拥有授权许可，请<a Activate onclick(f_Activate())>激活程序</a>。\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "今天过期" : "过期于" + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "已到期"
+
+[s_LicenseRenewBuyText]
+0 = "获取授权许可"
+default = "更新授权许可"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "选择要恢复的设置："
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  "配置向导"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "常规信息"
+InitBegin.Descr                       = "欢迎使用"+ $ProductName_GEN +"配置向导。"
+CheckHosts.Name                       = "检查卡巴斯基实验室服务器的可用性"
+CheckHosts.Descr                      = "检测到可疑重定向"
+ResetArea.Name                        = "恢复设置"
+ResetArea.Descr                       = "以下列出的设置是由用户输入的或程序运行期间积累的。"
+EnumExe.Name                          = "分析系统"
+EnumExe.Descr                         = "正在分析系统信息，请稍候..."
+ResetFinish.Name                       = "正在完成" + $ProductName + "配置"
+ResetFinish.Descr                      = "准备启动" +  $ProductName + "。"
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "恢复完成。"
+ResetDescr          = "配置向导已成功完成对" + $ProductName + "设置的恢复。"
+
+[BestBuyUpgradeMessage]
+@ = "切换到另一个程序"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="开始使用卡巴斯基安全软件"
+RestartButton = "运行卡巴斯基安全软件"
+
+[BestBuyUpgradeMessagePage]
+Header = "恭喜！"
+Message = "您的卡巴斯基反病毒软件已成功升级到卡巴斯基安全软件。\n您已获得更多功能保护您的计算机。"
+Description = "感谢您选择卡巴斯基实验室程序\n请享受添加的保护。"
+
+[ForcedUpgradeMessagePage]
+Header = "几乎完成"
+Message = "感谢您选择卡巴斯基实验室程序！请享受添加的保护。"
+Description = "由于不兼容软件没有删除，一些卡巴斯基安全软件的新功能被禁用以便确保已安装应用程序和操作系统的正常运行。\n\n您可以手动删除不兼容软件并在卡巴斯基安全软件的设置窗口启用所有新功能。"
+Notification = "程序将重启以完成升级。"

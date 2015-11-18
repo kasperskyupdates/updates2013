@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'Safe Money'
+CustomActionDescription = 'You are strongly advised to use a protected browser <br>to perform banking operations and purchases in online stores.'
+SafeRunButtonText = 'Run'
+SkipButtonText = 'Skip'
+RememberChoiceText = 'Remember my choice for this website'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = 'The certificate obtained when establishing secure connection <br>does not match the original certificate.'
+CertificateInfoDescription = 'You are strongly advised against visiting this website to avoid problems <br>with security and storing your confidential data.'
+IgnoreInvalidCertificate = 'Ignore and open web page'
+CertificateInvalidReasonCodeText = 'error:'
+CertificateInvalidReason0 = 'Undefined error'
+CertificateInvalidReason1 = 'Revoked certificate'
+CertificateInvalidReason2 = 'Fake certificate'
+CertificateInvalidReason3 = 'Certificate chain is broken'
+CertificateInvalidReason4 = 'The domain specified in the certificate does not match the website to which connection is established'
+CertificateInvalidReason5 = 'Detected certificate usage violations'
+CertificateInvalidReason6 = 'Certificate time violation'
+CertificateInvalidReason7 = 'Certificate structure is broken'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = 'Critical system updates are not installed'
+VulnerabilityInfoDescription = 'Without the installed updates the protected browser <br>will not be able to provide complete protection of your data.'
+UpdaterDisabled = 'Downloading updates is disabled. You are strongly advised to enable updates download.'
+UpdatesNotAllowed = 'To install updates, contact the administrator of this computer.'
+UpdaterError = 'Failed to initialize system updates.'
+RunUpdater = 'Run update'
+IgnoreVulnerability = 'Ignore'
+NotifyAboutVulnerabilities = 'Notify me about the vulnerabilities'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = 'Web page opened in protected browser'
+SafeNavigateInfoDescription = 'The protected browser provides complete security <br>of all banking operations and safe online shopping.'
+SafeBankingGetMoreInfo = 'Learn more'
+SafeBankingShowSettings = 'Show settings'
+CancelSafeBrowserExecution = 'Open web page in the same window'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = 'You are now redirected to your browser.'
+CompletedScenarioInfoDescription = 'The work in protected browser mode has ended. <br>You can continue your operations in common browser.'
+SafeBankingGetMoreInfoText = 'More about Safe Money'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = 'Redirected to a new browser window'
+UnsafeNavigateInfoDescription = 'You can continue your payments there.'
+UnsafeNavigateInfoText = 'More about Safe Money'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = 'Run error'
+SafeBrowserLaunchErrorDescription = 'Failed to run the protected browser'
+SafeBrowserLaunchError0xA0010008 = 'Target browser is not found'
+SafeBrowserLaunchError0xA0010009 = 'Safe Money plugin is not installed or disabled'
+SafeBrowserLaunchError0xA001000A = 'Cannot create the process for protected browser'
+SafeBankingLearnMore = 'Learn more'

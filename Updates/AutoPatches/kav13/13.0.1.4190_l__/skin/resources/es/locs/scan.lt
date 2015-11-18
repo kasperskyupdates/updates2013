@@ -1,0 +1,9 @@
+﻿;
+; TaskManager buttons
+;
+TaskManager = 'Gestionar tareas'
+
+LicenseErrorMessageBoxTitle = 'Analizar'
+LicenseErrorMessageBoxText = 'Las restricciones de la licencia actual no permiten iniciar el análisis'
+LicenseErrorMessageBoxDescription = 'Vaya a la ventana del administrador de licencias para solucionar este problema'
+LicenseErrorMessageBoxLicenseManage = 'Administración de licencias'

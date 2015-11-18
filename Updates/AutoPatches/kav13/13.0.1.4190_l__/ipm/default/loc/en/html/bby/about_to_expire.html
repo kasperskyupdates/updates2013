@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/widgets.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/messagebox.css"/>
+  </head>
+  <body>
+    <div id="wrap">
+      <p class="warning">
+        <span class="title">Your Kaspersky Security Software is about to expire.</span><br>
+        <span class="description">There are only <span id="days-left"></span> days remaining on your coverage, and then your PC will be unprotected. Renew now by contacting the Geek Squad Subscription Software Team online at <a href="#" onclick="window.IpmCommandHandler.openUrl('http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;')">The Geek Squad Renewal Center</a>.</span>
+      </p>
+    </div>
+    <script src="../../../../js/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        var daysLeft = document.getElementById('days-left');
+        daysLeft.innerHTML = window.IpmCommandHandler.getTemplateSubstitutionText('$LicenseDaysToExpiry');
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Žymimas raktinis failas"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "Šios taikomosios programos kopijos rakto failą pateikė įrangos pardavėjas. Ar norite aktyvinti taikomąją programą naudodami šį raktą?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Taikomosios programos konfigūracija dar nebaigta. Ar tikrai norite uždaryti konfigūracijos vedlį?"
+ErrEmptyActivationCode.caption  = "Aktyvinimo kodas nenurodytas"
+ErrEmptyActivationCode          = "Įveskite aktyvinimo kodą"
+ErrEmptyKeyPath.caption         = "Rakto failas nenurodytas"
+ErrEmptyKeyPath                 = "Nurodykite rakto failą"
+$LicInfoKeyNumber               = "Numeris:"
+$LicInfoKeyProductName          = "Taikomosios programos pavadinimas:"
+$LicInfoKeyType                 = "Licencijos tipas:"
+$LicInfoExpirationDate          = "Galiojimo pabaigos data:"
+$LicErrReason                   = "Priežastis: "
+$ActiveKey                      = "Aktyvūs raktas"
+$ReservedKey                    = "Papildomas raktas"
+ConfirmFeedback                 = "Ar sutinkate pateikti informaciją <a KsnInfo onclick(dialog(\"KsnInfo\"))>„Kaspersky Security Network“</a>?"
+$KsnTerms                       =  "„Kaspersky Security Network“ (KSN) yra internetinių tarnybų infrastruktūra, teikianti naujausią informaciją apie failų, interneto išteklių ir programinės įrangos saugą. Naudojant KSN duomenis paspartinama reakcijas į naujausias grėsmes, pagerinamas kai kurių apsaugos komponentų našumas ir sumažinama klaidingų aptikimų rizika.\nKai dalyvaujate KSN, informacija apie užkrėtimus virusais ir kitas problemas, taip pat išplėstiniai statistiniai duomenys apie įkeltas arba įvykdytas taikomąsias programas (pagal sąrašą, nurodytą <a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN pareiškime apie duomenų rinkimą</a>), automatiškai siunčiami į „Kaspersky Lab“. \n\n<b>„Kaspersky Security Network“ nerenka ir neapdoroja jokios asmeninės vartotojų informacijos.</b>"
+
+$ToAcquireNewLicText            = "\n\nNorėdami įsigyti naują licenciją, kreipkitės į platintoją arba <a Buy onclick(buy())>„Kaspersky Lab“ pardavimo skyrius</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nBandykite atnaujinti prenumeratos būseną rankiniu būdu arba kreipkitės į techninę pagalbą" : "\nBandykite aktyvinti taikomąją programą naudodami aktyvinimo kodą vėliau (po 1-2 val. ) arba kreipkitės į techninę pagalbą") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Aktyvinimo vedlys" : " Kondifūravimo vedlys")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Bendroji informacija"
+InitBegin.Descr                       = "Sveiki, čia " + $ProductName_GEN + " konfigūracijos vedlys."
+CheckHosts.Name                       = "Tikrinamas „Kaspersky Lab“ serverių prieinamumas"
+CheckHosts.Descr                      = "Aptiktas įtartinas peradresavimas"
+ResetArea.Name                        = "Atkurti parametrus"
+ResetArea.Descr                       = "Toliau išvardytuose parametruose yra vartotojo įvestų arba taikomajai \nprogramai veikiant sukauptų duomenų."
+ActivationBegin.Name                  = $IsSubscription ? "Prenumeratos valdymas" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Naikinti raktą" : "Pridėti raktą") : "Aktyvinti taikomąją programą")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Licencijavimas" : "Kad tęsti aktyvinkite taikomąją programą.")
+ActivationProgress.Name               = "Aktyvinti internete"
+ActivationProgress.Descr              = "Vyksta aktyvinimas, palaukite..."
+ActivationServerForm.Name             = "Aktyvinti internete"
+ActivationServerForm.Descr            = "Užpildykite šią formą."
+ActivationChooseKey.Name              = "Aktyvinimas naudojant rakto failą"
+ActivationChooseKey.Descr             = "Aktyvinkite taikomąją programą naudodami rakto failą."
+ActivationEnd.Name                    = "Taikomosios programos aktyvinimas"
+ActivationEnd.Descr                   = "Aktyvinimas baigtas."
+MigrationKeyIsFound.Name         = "Licencijos raktas yra aktyvus"
+MigrationKeyIsFound.Descr        = "Ar norite naudoti programą, nurodytą dabartinėje licencijoje?"
+MigrationBegin.Name              = "Perjungti į " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "Būsite perjungti naudoti " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Nesuderinamos programinės įrangos ieška"
+MigrationSearchProgress.Descr    = "Palaukite, kol bus ieškoma nesuderinamos programinės įrangos..."
+MigrationSafeRemoval.Name        = "Rasta nesuderinamos programinės įrangos"
+MigrationSafeRemoval.Descr       = "Norint tęsti, būtina pašalinti nesuderinamą programinę įrangą"
+MigrationSafeProgress.Name       = "Šalinti nesuderinamą programinę įrangą"
+MigrationSafeProgress.Descr      = "Palaukite, kol bus pašalinta nesuderinama programinė įranga..."
+MigrationAddRemove.Name          = "Rasta nesuderinamos programinės įrangos"
+MigrationAddRemove.Descr         = "Pašalinkite nesuderinamą programinę įrangą"
+MigrationUnsafeRemoval.Name      = "Rasta nesuderinamos programinės įrangos"
+MigrationUnsafeRemoval.Descr     = "Norint tęsti, būtina pašalinti nesuderinamą programinę įrangą"
+MigrationUnsafeProgress.Name     = "Šalinti nesuderinamą programinę įrangą"
+MigrationUnsafeProgress.Descr    = "Palaukite, kol bus pašalinta nesuderinama programinė įranga..."
+MigrationReboot.Name             = "Būtina paleisti operacinę sistemą iš naujo"
+MigrationReboot.Descr            = "Norint tęsti perjungimą į naują taikomąją programą, būtina perkrauti"
+MigrationProgress.Name           = "Perjungti į " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Palaukite, kol bus perjungta į naują taikomąją programą..."
+MigrationRebootApp.Name          = bMigrationDone ? "Taikomoji programa bus paleista iš naujo" : "Klaida perjungiant į naują taikomąją programą"
+MigrationRebootApp.Descr         = bMigrationDone ? "Taikomoji programa turėtų būti paleista iš naujo" : "Perjungimas į " + s_MUProductTitleLong(env("ProductType")) + " nesėkmingas"
+MigrationFinish.Name             = "Perjungimas " + s_ProductTitleLong(env("ProductType")) + " atliktas"
+MigrationFinish.Descr            = "Perjungimas " + s_ProductTitleLong(env("ProductType")) + " atliktas"
+DNS.Name                              = "Išplėstiniai parametrai"
+DNS.Descr                             = $ProductName_GEN + " išplėstiniai naudojimo parametrai"
+EnumExe.Name                          = "Sistemos analizė"
+EnumExe.Descr                         = "Palaukite, kol bus surinkta informacija apie jūsų sistemą..."
+InitFinish.Name                       = "Baigiama konfigūruoti " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "Turite perkrauti savo kompiuterį, kad užbaigtumėte taikomosios programos konfigūravimą." : "Galite paleisti " + $ProductName + " dabar."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Aptiktas įtartinas peradresavimas į „Kaspersky Lab“ serverius. Galimos priežastys: kenkėjiškos programinės įrangos veikla, sukėlusi naujinimo ir aktyvinimo klaidą. Įtartini pagrindinio kompiuterio failo įrašai:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Naikinti įrašus (rekomenduojama)"
+Skip			= "Praleisti"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Atgal"
+Back.Descr      = "Grįžti į taikomosios programos aktyvinimo metodo pasirinkimą"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Pridėti raktą" : "&Aktyvinti"
+Activate.Descr  = "Pasirinkto rakto failo diegimas"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Baigti"
+Finish.Descr    = "Uždaryti aktyvinimo vedlį"
+Next.Name       = "Pirmy&n"
+Next.Descr      = "Pereiti prie konfigūravimo"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "Galite toliau naudoti programą, nurodytą dabartinėje licencijoje. Šiuo atveju programa pereis į " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Ar norite naudoti programą, nurodytą dabartinėje licencijoje?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Taikomosios programos tipas:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Galiojimo pabaigos data:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " liko)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Taip, ir perjungti į " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Ne ir uždaryti " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "Šiuo metu vykdomas perjungimas į " + s_MUProductTitleLong(env("ProductType")) + ". Autoriaus teisės turėtojas suteikia jums neišimtinę licenciją naudoti " + s_MUProductTitleLong(env("ProductType")) + " tokiomis pat sąlygomis, kaip tos, su kuriomis sutikote anksčiau diegdami " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Pastaba: šiam perjungimui būtini veiksmai, po kurių gali reikėti perkrauti."
+LicenseWarning  = "Dėmesio! Komercinė „Kaspersky Anti-Virus“ naudojimo licencija baigs galioti anksčiau nei bandomoji „Kaspersky Internet Security“ licencija. Komercinei „Kaspersky Anti-Virus“ licencijai baigus galioti bus neįmanoma vėl naudoti „Kaspersky Anti-Virus“, esančios bandomojoje „Kaspersky Internet Security“ versijoje. Ar norite tęsti perjungimą į „Kaspersky Internet Security“?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Nesuderinamos programinės įrangos ieška gali šiek tiek užtrukti. Palaukite..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "Norint atlikti perjungimą, bus pašalinta ši programinės įranga:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Palaukite, kol bus panaikinta nesuderinama programinė įranga..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "Norint atlikti perjungimą, turėtų būti pašalinta ši programinės įranga:"
+OpenAddRemove = "Atidaryti langą Įtraukti / šalinti programas"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "Norint atlikti perjungimą, bus pašalinta ši programinės įranga:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Palaukite, kol bus panaikinta nesuderinama programinė įranga..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "Norėdami tęsti perjungimą, turėtumėte perkrauti kompiuterį. Perkrovus vedlys tęs darbą."
+Reboot   = "Perkrauti dabar"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Palaukite, kol taikomoji programa bus perkonfigūruota ir būsite perjungti į " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "Norint baigti perjungimą į " + s_MUProductTitleLong(env("ProductType")) + " taikomoji programa bus paleista iš naujo." : "Perjungimas į " + s_MUProductTitleLong(env("ProductType")) + " nesėkmingas."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Dabar galite įvertinti tokias " + s_ProductTitleLong("kis") + " funkcijas kaip Tėvų kontrolė, „Anti-Spam“, Užkarda ir kt." : s_ProductTitleLong("kav") + " teikia pagrindinę kompiuterio apsaugą nuo kenkėjiškos programinės įrangos."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "Galite "+if($IsRefreshSubAvail,"atnaujinti prenumeratos būseną arba ")+"panaikinti raktą." : (f_IsActiveKeyWorkingCommercial() ? "Galite panaikinti aktyvų raktą arba pridėti raktą." : "Aktyvinkite savo " + $ProductName + " kopiją, kad gauti pilno funkcionalumo taikomąją programą."+ if($CorporateOnly, " Jūs galite įsigyti <a Activate onclick(url($ActivationLink))>komercine</a> arba suaktyvinti <a ActivateTrial onclick(url($ActivationTrialLink))>bandomąją</a> taikomosios programos versiją."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "Aktyvinti vė&liau"
+Later.Descr                 = "Praleisti aktyvinimą ir pereiti prie taikomosios programos konfigūravimo"
+ChooseKey.Name              = " A&ktyvinti naudojant rakto failą"
+ChooseKey.Descr             = "Būtinas rakto failas"
+ActivateBetaKAV.Name        = "Aktyvinti „Kaspersky Anti-Virus“ &beta versiją"
+ActivateBetaKAV.Descr       = "„Kaspersky Anti-Virus“ beta versijoje yra visos funkcijos, bet tai nebaigtas produktas."
+ActivateBetaKIS.Name        = "Aktyvinti „Kaspersky Internet Security“ &beta versiją"
+ActivateBetaKIS.Descr       = "„Kaspersky Internet Security“ beta versijoje yra visos funkcijos, bet tai nebaigtas produktas."
+ActivateTrial.Name          = "Ak&tyvinti bandomąją versiją"
+ActivateTrial.Descr         = "Bandomosios versijos galiojimo laikotarpis nurodytas licencinėje sutartyje"
+ActivateCommercial.Name     = "&Aktyvinti internete"
+ActivateCommercial.Descr    = "Būtinas aktyvinimo kodas, gautas perkant"
+RemoveKey.Name              = $HasReserveKey ? "&Naikinti papildomą raktą" : "&Naikinti raktą"
+RemoveKey.Descr             = "Norėdami pakeisti raktą, pirmiausia turėtumėte panaikinti aktyvų raktą"
+RefreshSubscription.Name    = "N&aujinti prenumeratos būseną"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "Galite atnaujinti prenumeratos būseną rankiniu būdu." : "Automatinis prenumeratos būsenos naujinimas nesėkmingas. Galite atnaujinti būseną rankiniu būdu."
+ActivateTrialKIS            = "Aktyvinti „Kaspersky Internet Security“ bandomąją versiją"
+ActivateTrialKIS_Desc       = "„Kaspersky Internet Security“ bandomosios versijos galiojimo laikotarpis nurodytas licencinėje sutartyje"
+RevertToCommercialKAV       = "Grįžti į komercinę „Kaspersky Anti-Virus“ versiją"
+RevertToCommercialKAV_Desc  = "Grįžti į komercinę „Kaspersky Anti-Virus“ versiją"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Naujinti prenumeratos būseną"
+ActivateCommercial      = "Aktyvinti &komercinę versiją"
+ActivateCommercial_Desc = (LockActivationCode)? "Įveskite aktyvinimo kodą: " : "Įveskite <a onclick(url(\"" + $ActCodeHint + "\"))>aktyvinimo kodą</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Jūsų aktyvinimo kodas buvo įtrauktas automatiškai. Spustelėkite mygtuką Pirmyn." : "Jei neturite aktyvinimo kodo, galite jį nusipirkti <a onclick(buy())>internete</a>"
+ActivateBetaKAV         = "Aktyvinti „Kaspersky Anti-Virus“ &beta versiją"
+ActivateBetaKIS         = "Aktyvinti „Kaspersky Internet Security“ beta &versiją"
+ActivateTrial           = "Ak&tyvinti bandomąją versiją"
+ActivateTrial_Desc      = "Įvertinkite visiškai funkcionalią taikomosios programos versiją prieš ją pirkdami."
+ActivateTrialKIS           = "Aktyvinti „Kaspersky Internet Security“ bandomąją versiją"
+ActivateTrialKIS_Desc      = "Įvertinkite visiškai funkcionalią „Kaspersky Internet Security“ versiją prieš ją pirkdami."
+RevertToCommercialKAV      = "Grįžti į komercinę „Kaspersky Anti-Virus“ versiją"
+RevertToCommercialKAV_Desc = "Baigti naudoti bandomąją „Kaspersky Internet Security“ versiją ir grįžti prie komercinės „Kaspersky Anti-Virus“ versijos."
+Later                   = "&Aktyvinti vėliau"
+Later_Desc              = "Visos taikomosios programos funkcijos nebus prieinamos, kol ji nebus suaktyvinta."
+RemoveKey               = "Naikinti rakto failą"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Rakto failas:"
+KeyInfo         = "Licencijos informacija"
+ConnectingInfo.Name     = "Aktyvinimo klaida: "
+ConnectingInfo.Val      = "išsami informacija"
+TryAgain                = "Aktyvinti"
+Descr1                  = "Norėdami bandyti aktyvinti dar kartą, atlikite šiuos veiksmus:"
+Descr2                  = "Patikrinkite interneto ryšio parametrus ir bandykite aktyvinti taikomąją programą dar kartą."
+Descr3                  = "Eikite į <a onclick(url(\"" + $ActivationLink + "\"))> Aktyvinimo internete centrą</a> ir vadovaukitės nurodymais.\nGavę rakto failą, nurodykite jo vietą ir spustelėkite Pirmyn:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Sukūrimo data:"
+InstallDate.Name    = "Aktyvinimo data:"
+ExpirationDate.Name = "Galiojimo pabaigos data:"
+SubscrptnExpDate.Name = "Prenumeratos galiojimo pabaigos data:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," skirta " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Sistemos klaida: " + s_SystemError(ErrorCode)
+2       = "Negalima įtraukti \"" + KeyFile + "\" rakto: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Negalima naikinti \"" + KeyFile + "\": " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Klaidos kodas" + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Šis raktas jau buvo pridėtas" + $LicErrHelpLink
+0x0947901d  = "Licencija baigėsi. Duomenų naujinimo funkcija neprieinama" + $LicErrHelpLink
+0x89479002  = "Licencija nerasta" + $LicErrHelpLink
+0x89479003  = "Skaitmeninio parašo nėra arba jis sugadintas" + $LicErrHelpLink
+0x89479004  = "Duomenys sugadinti" + $LicErrHelpLink
+0x89479005  = "Rakto failas sugadintas" + $LicErrHelpLink
+0x89479006  = "Licencija baigė galioti" + $LicErrHelpLink
+0x89479007  = "Nenurodytas joks rakto failas" + $LicErrHelpLink
+0x89479008  = "Rakto failas yra neleistinas" + $LicErrHelpLink
+0x89479009  = "Nepavyko įrašyti duomenų" + $LicErrHelpLink
+0x8947900a  = "Nepavyko nuskaityti duomenų" + $LicErrHelpLink
+0x8947900b  = "Į / i klaida" + $LicErrHelpLink
+0x8947900c  = "Duomenų bazių nėra" + $LicErrHelpLink
+0x8947900d  = "Aktyvūs ir papildomas raktai jau pridėti" + $LicErrHelpLink
+0x8947900e  = "Licencijavimo biblioteka neinicijuota" + $LicErrHelpLink
+0x8947900f  = "Duomenų bazės sugadintos arba atnaujintos rankiniu būdu" + $LicErrHelpLink
+0x89479010  = "Duomenų bazės sugadintos" + $LicErrHelpLink
+0x89479011  = "Nebegaliojančio rakto failo negalima registruoti kaip papildomo rakto: + $LicErrHelpLink
+0x89479012  = "Sistemos klaida" + $LicErrHelpLink
+0x89479013  = "Juodasis raktų sąrašas sugadintas" + $LicErrHelpLink
+0x89479014  = "Skaitmeninis sąrašas nesutampa su „Kaspersky Lab“ skaitmeniniu parašu" + $LicErrHelpLink
+0x89479015  = "Nepavyko suaktyvinti komercinės programos versijos pagal beta licenciją" + $LicErrHelpLink
+0x89479016  = "Beta versiją galima aktyvinti tik beta versijos licencija" + $LicErrHelpLink
+0x89479017  = "Licencija šiai programai netaikoma. Neįmanoma suaktyvinti  " + $ProductName + " su licencija kitai programai. Prašome patikrinti savo įdiegtą programą" + $LicErrHelpLink
+0x89479018  = "Raktas užblokuotas" + $LicErrHelpLink
+0x89479019  = "Ši bandomosios versijos licencija jau panaudota. Tos pačios bandomosios versijos licencijos negalima panaudoti du kartus" + $LicErrHelpLink
+0x8947901a  = "Rakto failas sugadintas" + $LicErrHelpLink
+0x8947901b  = "Skaitmeninio parašo nėra, jis sugadintas arba nesutampa su „Kaspersky Lab“ skaitmeniniu parašu" + $LicErrHelpLink
+0x8947901c  = "Negalima pridėti rakto failo, jei atitinkama nekomercinė licencija baigė galioti" + $LicErrHelpLink
+0x8947901e  = "Rakto failo kūrimo arba registravimo data yra neleistina. Patikrinkite sistemos datos parametrus" + $LicErrHelpLink
+0x8947901f  = "Negalima pridėti bandomosios versijos rakto, kol naudojamas kitas bandomosios versijos raktas" + $LicErrHelpLink
+0x89479020  = "Juodasis raktų sąrašas sugadintas arba jo nėra" + $LicErrHelpLink
+0x89479021  = "Naujinimo aprašo nėra arba jis sugadintas" + $LicErrHelpLink
+0x89479022  = "Vidiniai duomenys šios taikomosios programos duomenys yra neleistinis" + $LicErrHelpLink
+0x89479023  = "Negalima pridėti papildomą raktą naudojant neleistina aktyvinimo kodą" + $LicErrHelpLink
+0x89479024  = "Vartotojo formos duomenų užpildymo klaida" + $LicErrHelpLink
+0x89479025  = "Klaida siunčiant aktyvinimo serverio užklausą.\nGalimos priežastys: interneto ryšio problemos arba laikinos aktyvinimo serverio problemos.\nBandykite aktyvinti kodą vėliau (po 1–2 valandų).\nJei problema išliks, kreipkitės į savo interneto paslaugų teikėją" + $LicErrHelpLink
+0x89479026  = "Užklausoje yra klaidingas aktyvinimo kodas" + $LicErrHelpLink
+0x89479027  = "Negalima gauti atsakymo būsenos" + $LicErrHelpLink
+0x89479028  = "Klaida įrašant laikinąjį failą" + $LicErrHelpLink
+0x89479029  = "Aktyvinimo kodas įvestas klaidingai arba klaidinga sistemos data. Patikrinkite sistemos datos parametrus" + $LicErrHelpLink
+0x8947902a  = "Aktyvavimo kodas netinka šiai programai arba rakto galiojimas baigėsi. Neįmanoma suaktyvinti  " + $ProductName + " pagal kitos programos licenciją. Prašome patikrinti įdiegtą programą arba <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Nepavyko gauti rakto failo. Nurodytas klaidingas aktyvinimo kodas" + $LicErrHelpLink
+0x8947902c  = "Aktyvinimo serveris grąžino klaidą 400" + $OlaErrHelpLink
+0x8947902d  = "Aktyvinimo serveris grąžino klaidą 401" + $OlaErrHelpLink
+0x8947902e  = "Aktyvinimo serveris grąžino klaidą 403" + $OlaErrHelpLink
+0x8947902f  = "Reikiami ištekliai nepasiekiami aktyvinimo serveryje.\nAktyvinimo serveris grąžino klaidą 404.\nPatikrinkite interneto ryšio parametrus" + $OlaErrHelpLink
+0x89479030  = "Aktyvinimo serveris grąžino klaidą 405" + $OlaErrHelpLink
+0x89479031  = "Aktyvinimo serveris grąžino klaidą 406" + $OlaErrHelpLink
+0x89479032  = "Būtina autentifikuoti tarpinį serverį. Patikrinkite LAN parametrus" + $LicErrHelpLink
+0x89479033  = "Užklausos skirtasis laikas baigėsi" + $LicErrHelpLink
+0x89479034  = "Aktyvinimo serveris grąžino klaidą 409" + $OlaErrHelpLink
+0x89479035  = "Reikiami ištekliai nepasiekiami aktyvinimo serveryje.\nAktyvinimo serveris grąžino klaidą 410.\nPatikrinkite interneto ryšio parametrus" + $OlaErrHelpLink
+0x89479036  = "Aktyvinimo serveris grąžino klaidą 411" + $OlaErrHelpLink
+0x89479037  = "Aktyvinimo serveris grąžino klaidą 412" + $OlaErrHelpLink
+0x89479038  = "Aktyvinimo serveris grąžino klaidą 413" + $OlaErrHelpLink
+0x89479039  = "Aktyvinimo serveris grąžino klaidą 414" + $OlaErrHelpLink
+0x8947903a  = "Aktyvinimo serveris grąžino klaidą 415" + $OlaErrHelpLink
+0x8947903b  = "Nežinoma kliento klaida" + $OlaErrHelpLink
+0x8947903c  = "Vidinė serverio klaida" + $LicErrHelpLink
+0x8947903d  = "Funkcija nepalaikoma" + $LicErrHelpLink
+0x8947903e  = "Neleistinas šliuzo atsakymas. Patikrinkite savo tinklo parametrus" + $LicErrHelpLink
+0x8947903f  = "Ištekliai laikinai nepasiekiami" + $LicErrHelpLink
+0x89479040  = "Baigėsi užklausos laukimo skirtasis laikas. Patikrinkite savo tinklo parametrus" + $LicErrHelpLink
+0x89479041  = "Serveris nepalaiko protokolo" + $OlaErrHelpLink
+0x89479042  = "Nežinoma serverio klaida" + $OlaErrHelpLink
+0x89479043  = "Nežinoma HTTP klaida" + $OlaErrHelpLink
+0x89479044  = "Neleistinas išteklių identifikatorius" + $LicErrHelpLink
+0x89479045  = "Klaidinga informacija lauke Raktas" + $LicErrHelpLink
+0x89479046  = "Klaidingas URL" + $LicErrHelpLink
+0x89479047  = "Klaidingas paskirties aplankas" + $LicErrHelpLink
+0x89479048  = "Atminties paskirstymo klaida" + $LicErrHelpLink
+0x89479049  = "Klaida konvertuojant parametrus į ANSI eilutę (url, aplankas, agentas)" + $LicErrHelpLink
+0x8947904a  = "Klaida kuriant darbinę giją" + $LicErrHelpLink
+0x8947904b  = "Darbinė gija jau veikia" + $LicErrHelpLink
+0x8947904c  = "Darbinė gija neveikia" + $LicErrHelpLink
+0x8947904d  = "Rakto failas aktyvinimo serveryje nerastas" + $LicErrHelpLink
+0x8947904e  = "Raktas užblokuotas" + $LicErrHelpLink
+0x8947904f  = "Aktyvinimo serverio vidinė klaida" + $LicErrHelpLink
+0x89479050  = "Aktyvinimo užklausoje nepakanka duomenų" + $LicErrHelpLink
+0x89479051  = "Klaidingas vartotojo ID arba slaptažodis" + $LicErrHelpLink
+0x89479052  = "Klaidingas aktyvinimo kodas" + $LicErrHelpLink
+0x89479053  = "Pasirinkto rakto failo licencija baigia galioti anksčiau nei aktyvi licencija" + $LicErrHelpLink
+0x89479054  = "Klaidinga operacinės sistemos data. Patikrinkite sistemos datą" + $LicErrHelpLink
+0x89479055  = "Bandomosios versijos licencija baigė galioti" + $LicErrHelpLink
+0x89479056  = "Aktyvinimo laikotarpis baigė galioti" + $LicErrHelpLink
+0x89479057  = "<b>Įvestas aktyvinimo kodas viršijo leidžiamų aktyvinimų skaičių</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Nepavyko pridėti rakto nekomercinei licencijai kaip papildomo rakto, kol galioja komercinė licencija" + $LicErrHelpLink
+0x8947905c  = "Aktyvinimo kodas yra būtinas" + $LicErrHelpLink
+0x8947905d  = "Klaidingas vartotojo ID arba slaptažodis" + $LicErrHelpLink
+0x8947905e  = "Klaidingas aktyvinimo kodas" + $LicErrHelpLink
+0x89479062  = "Nepavyksta prisijungti prie aktyvinimo serverio" + $LicErrHelpLink
+0x89479064  = "<b>Aktyvinimo serveris nepasiekiamas.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Dabar negalima aktyvinti taikomosios programos. Bandykite aktyvinti sukonfigūravę taikomąją programą ir paleidę operacinę sistemą iš naujo.", "Patikrinkite interneto ryšio parametrus ir bandykite aktyvinti dar kartą.") + $LicErrHelpLink
+0x89479065  = "Jūsų licencija baigė galioti. Prašome <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Aktyvaus rakto negalima pakeisti pasibaigusiu raktu" + $LicErrHelpLink
+0x89479067  = "Negalima pridėti rakto, kurio galiojimas baigiasi anksčiau nei aktyvaus rakto, kaip papildomo rakto" + $LicErrHelpLink
+0x89479068  = "Nėra atnaujinto prenumeratos rakto" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Aktyvinimo procedūra atlikta, įvyko sistemos klaida " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Aktyvinimo klaida: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Aktyvinimo klaida: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Aktyvinimo klaida: serveris grąžino HTTP kodą " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Nepavyko suaktyvinti " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Vidinio aktyvinimo serverio klaida. Bandykite dar kartą arba kreipkitės į techninės priežiūros tarnybą"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "Aktyvinimo kodas nesuderinamas su šia taikomaja programa. Neįmanoma suaktyvinti " + $ProductName + " naudojant kitos taikomosios programos aktyvinimo kodą. Patikrinkita savo produktą"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Raktas užblokuotas"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Klaidingas vartotojo ID arba slaptažodis"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Neteisingas aktyvinimo kodas"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Aktyvinimo kodas yra būtinas"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Aktyvinimo laikotarpis baigė galioti"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Viršytas aktyvinimų, naudojančių šį kodą, skaičius"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Šio regiono aktyvinimo kodas yra neleistinas"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Šio aktyvinimo kodo negalima naudoti su šia taikomosios programos lokalizuota versija."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "Aktyvinimo kodas gali būti naudojamas su naujesne šios taikomosios programos versija. Norint naudoti esamą versiją, būtina įsigyti kitą kodą. Jei norite gauti išsamios informacijos, spustelėkite žemiau esantį saitą."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Aktyvinimo serveris grąžino klaidą 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Aktyvinimo serveris grąžino klaidą 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Aktyvinimo serveris grąžino klaidą 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Aktyvinimo serveris grąžino klaidą 646"
+default                                     = "Aktyvinimo procedūra grąžino klaidą " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "„Microsoft Internet Explorer" suaktyvinamas atjungtinis režimas"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Interneto ryšys nutrūko"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Aktyvinimo serveris nepasiekiamas"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Tarpinis serveris nepasiekiamas"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Atsakymo skirtasis laikas baigėsi"
+#OLA_ERR_INTERNET_INVALID_URL                = "Klaidingas aktyvinimo serverio adresas"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Klaidingas protokolas"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Negalima nustatyti serverio ryšio"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Operacija atšaukta"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Negalima nustatyti serverio ryšio"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Serverio ryšys nutrauktas"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Severio ryšys buvo paleistas naujai"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Klaidingas serverio atsakymas"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "Serverio SSL sertifikatas baigė galioti. Patikrinkite vietinį kompiuterio laiką"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "SSL sertifikato serverio pavadinimas neatitinka serverio"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Negalima atlikti sertifikato atšaukimo patikros. Išjunkite šią patikrą „Microsoft Internet Explorer“ (Įrankiai->Interneto parinktys->Išsamiai->Tikrinti serverio sertifikato atšaukimą) ir pakartokite bandymą aktyvinti"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Neleistinas SSL sertifikatas"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL sertifikatas buvo atšauktas"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Klaidingas sertifikavimo centras"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "„Kaspersky Lab“ reikalingi registracijos duomenys informuoti jus apie įvairius reklaminius renginius, akcijas ir specialius pasiūlymus."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Tęsti"
+Activate.Descr  = "Duomenys siunčiami į aktyvinimo serverį"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "Konfigūravimo vedlys jungiasi prie „Kaspersky Lab“ aktyvinimo serverio. Tai gali  šiek tiek užtrukti atsižvelgiant į jūsų interneto ryšio spartą."
+ConnectingInfo.Name     = "Jungiamasi prie aktyvinimo serverio..."
+ConnectingInfo.Val      = if(bConnected, "Gerai")
+SendingCodeInfo.Name    = "Siunčiamas aktyvinimo kodas..."
+SendingCodeInfo.Val     = if(bSentCode, "Gerai")
+RetrievingKeyInfo.Name  = "Laukiama atsakymo iš serverio..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "Gerai")
+Status                  = "Jūsų " + $ProductName + " kopija sėkmingai suaktyvinta"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Galiojimo pabaigos data:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " liko)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Aktyvinimas sėkmingai baigtas." : "Taikomoji programa jūsų kompiuteryje jau yra aktyvi ."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "Pirmy&n"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Pereiti prie taikomosios programos aktyvinimo": (((PiwFlags & #fPiwActivation) && !bSilent)?"Pereiti prie licencijos informacijos":"Pereiti prie apsaugos režimo pasirinkimo")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Šis vedlys padės jums tinkamai sukonfigūruoti kompiuterio saugą.\n\nKonfigūravimo metu vedlys rinks informaciją apie jūsų sistemą ir jūsų kompiuteryje įdiegtas taikomąsias programas. Ši informacija bus naudojama tik norint teikti optimalią kompiuterio apsaugą.\n\nNorėdami paleisti " + $ProductName_GEN + " konfigūravimo procesą, paspauskite Pirmyn."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "Diegimas beveik baigtas..." : ((PiwFlags & #fPiwReset) ? ("Taisymas baigtas.") : ("Diegimas baigtas."))
+ResetDescr          = "Konfigūravimo vedlys baigė " + $ProductName + " parametrų atkūrimą."
+Reboot              = "Pe&rkrauti kompiuterį"
+StartProduct        = "P&aleisti" + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Ačiū, kad įdiegėte " + $ProductName + ". Norėdami baigti diegimą turite perkrauti kompiuterį. Įrašykite savo duomenis, uždarykite visas taikomąsias programas ir spustelėkite mygtuką Baigti.") : "Atkreipkite dėmesį, kad papildoma konfigūracija atliekama paleidus taikomąją programą pirmą kartą. Tai gali užtrukti kelias minutes."
+
+[ConfigureWizard.EnumExe]
+Info = "Sistemos analizės metu taikomoji programa sudaro patikimų programų, įtrauktų į „Microsoft Windows“ operacinę sistemą, sąrašą. \n\nĮ operacinę sistemą neįtrauktos programos bus analizuojamos atskirai, kai bus pirmą kartą paleistos kompiuteryje."
+
+[s_LicKeyType]
+#ektBeta         = "Beta raktas"
+#ektTrial        = "Bandomoji versija"
+#ektTest         = "Bandomasis raktas"
+#ektOEM          = "OEM raktas"
+#ektCommercial   = "Komercinė"
+#ektSubscription = "Komercinė su prenumerata"
+#ektSubscriptionProtection = "Komercinė su apsaugos prenumerata"
+default          = "Nežinomas tipas"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Nežinoma klaida"
+#ekirValid                      = "Licencija yra leistina"
+#ekirExpired                    = "Licencija baigė galioti"
+#ekirCorrupted                  = "Licencija neleistina"
+#ekirNotSigned                  = "Skaitmeninio parašo nėra arba jis sugadintas"
+#ekirWrongProduct               = "Licencija netaikoma šiai programai. Neįmanoma suaktyvinti  " + $ProductName + " su licencija kitai programai. Patikrinkite savo įdiegtą programą."
+#ekirBlackListed                = "Raktas "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" užblokuotas"
+#ekirIllegalUpdate              = "Duomenų bazės data neatitinka licencijos galiojimo laikotarpio"
+#ekirInconsistentUpdate         = "Duomenų bazės sugadintos"
+#ekirKeyCreationDateInvalid     = "Klaidinga rakto sukūrimo data"
+#ekirTrialAlreadyInUse          = "Negalima pridėti bandomosios versijos licencijos rakto failo, kol naudojamas kitas bandomosios versijos licencijos raktas yra aktyvus"
+#ekirInvalidBlacklist           = "Juodasis raktų sąrašas sugadintas"
+#ekirCantBeUsedAsReserved       = "Negalima registruoti licencijos kaip papildomos"
+#ekirKeyInstallDateInvalid      = "Klaidinga aktyvinimo data"
+#ekirTrialPeriodIsOver          = "Bandomosios versijos licencija baigė galioti"
+#ekirConflictsWithCommercial    = "Naujas rakto failas konfliktuoja su anksčiau įdiegta komercine licencija"
+#ekirExpiredAsReserve           = "Ši licencija baigia galioti anksčiau negu aktyvi licencija"
+#ekirGracePeriod                = "Licencija per atidėjimo laikotarpį"
+#ekirSuspended                  = "Prenumerata sustabdyta"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Taikomoji programa turėtų būti įdiegta iš naujo"
+#ekirLicenseOnlyForMigration    = "Persijunkite į kitą taikomąją programą, kad galėtumėte suaktyvinkti komercinę versiją"
+default                         = "Rakto failas yra klaidingas"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Apibrėžtina vėliau"
+#edtUnlimited = "Aktyvu"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "sustabdyta nuo " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Licencijos informacija"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": licencijos pranešimas"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Dėmesio!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "Naudojate bandomąją " + $ProductName_GEN + " versiją."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Juodasis licencijų sąrašas sugadintas arba jo nėra. Paleiskite<a Update onclick(f_StartUpdater())>naujinim1</a>, kad tęstumėte naudojimą"
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Jūsų licencija " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Norėdami atnaujinti apsaugą <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJei jau įsigijote licenciją, <a Activate onclick(f_Activate())>suaktyvinkite taikomąją programą</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Prenumerata baigė galioti." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Apsauga išjungta."))+($IsBestBuyLink ? " Prenumeratos atnaujinimas negalimas." : " Kompiuterio saugai iškilo pavojus. \n\nNorėdami atnaujinti prenumeratą, <a onclick(url($KeyProviderLinkForText))>kreipkitės į paslaugų teikėją</a>.")) :("Turite " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " prenumeratai atnaujinti. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " , kol naujinimas bus išjungtas. " : " , kol apsauga bus išjungta." ) ) + " Norėdami atnaujinti prenumeratą, <a onclick(url($KeyProviderLinkForText))>kreipkitės į paslaugų teikėją</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>Raktas užblokuotas.\nNaujinimo funkcija išjungta, todėl jūsų kompiuteriui kyla užkrėtimo rizika.</b>\n\nJei pirkote legalią taikomąją programą, kreipkitės į techninės pagalbos tarnybą arba pardavėją.\n\nJei naudojate nelegalią kopiją, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nJei jau įsigijote licencija <a Activate onclick(f_Activate())>suaktyvinkite programą</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "baigia galioti šiandien" : "baigia galioti po " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "baigė galioti"
+
+[s_LicenseRenewBuyText]
+0 = "įsigyti licencija"
+default = "atnaujinti licencija"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Pasirinkite atkurtinus parametrus:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN +  " Konfigūravimo vedlys"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Bendroji informacija"
+InitBegin.Descr                       = "Sveiki, čia " + $ProductName_GEN + " konfigūracijos vedlys."
+CheckHosts.Name                       = "Tikrinamas „Kaspersky Lab“ serverių prieinamumas"
+CheckHosts.Descr                      = "Aptiktas įtartinas peradresavimas"
+ResetArea.Name                        = "Atkurti parametrus"
+ResetArea.Descr                       = "Toliau išvardytuose parametruose yra vartotojo įvestų arba taikomajai \nprogramai veikiant sukauptų duomenų."
+EnumExe.Name                          = "Sistemos analizė"
+EnumExe.Descr                         = "Palaukite, kol bus surinkta informacija apie jūsų sistemą..."
+ResetFinish.Name                       = "Baigiama konfigūruoti " + $ProductName
+ResetFinish.Descr                      = $ProductName + " parengtas paleisti."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Atkūrimas baigtas."
+ResetDescr          = "Konfigūravimo vedlys baigė " + $ProductName + " parametrų atkūrimą."
+
+[BestBuyUpgradeMessage]
+@ = "Pereiti prie kitos taikomosios programos"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Pradėk naudotis „Kaspersky Internet Security“"
+RestartButton = "Paleisti „Kaspersky Internet Security“"
+
+[BestBuyUpgradeMessagePage]
+Header = "Sveikiname!"
+Message = "Jūsų Kaspersky Anti-Virus sėkmingai atnaujintas į Kaspersky Internet Security.\nNuo šiol galite išbandyti dar daugiau kompiuterio apsaugos funkcijų."
+Description = "Dėkojame, kad pasirinkote „Kaspersky Lab“ programinę įrangą! Tikimės, kad liksite patenkinti papildoma apsauga."
+
+[ForcedUpgradeMessagePage]
+Header = "Beveik baigta"
+Message = "Dėkojame, kad pasirinkote „Kaspersky Lab“ programinę įrangą! Tikimės, kad liksite patenkinti papildoma apsauga."
+Description = "Kadangi nesuderinamos taikomos programos nebuvo pašalintos, kai kurios naujos „Kaspersky“ funkcijos yra išjungtos, siekiant užtikrinti tinkama veikimą įdiegtų programų ir operacinės sistemos.\n\nJūs galite pašalinti visas nesuderinamas programas rankiniu būdu ir įjungti visas naujas funkcijas „Kaspersky Internet Security“ nustatymų lange."
+Notification = "Taikomoji programa bus paleista iš naujo, kad būtų galima užbaigti perkėlimą."

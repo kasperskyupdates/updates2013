@@ -1,0 +1,177 @@
+﻿;
+; Shared keys
+;
+ScanNeverRun = 'Nunca foi executado'
+DurationSinceLastCompletedScanName = 'Concluído: '
+DurationSinceLastInterruptedScanName = 'Parado: '
+RemainingTimeName = 'Restante(s): '
+ScannedObjectCountName = 'Verificados: '
+ScannedObjectCountText = $ScannedObjectCountFmt + ' ' + {$ScannedObjectCount: 'ficheiro', 'ficheiros'}
+DurationSinceLastStopText = $DurationSinceLastStop
+DetectedThreatCountName = 'Ameaças: '
+NeutralizedThreatCountName = 'Neutralizado: '
+ObjectsAreAbsent = 'nenhum'
+FileKsnStatistics_UserCountLess10 = 'menos de 10 utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_UserCountLess100 = 'menos de 100 utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_UserCountLess1000 = 'menos de 1000 utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_UserCountMore1000 = 'mais de 1000 utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_UserCountMore10000 = 'mais de 10.000 utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_UserCountMore100000 = 'mais de 100.000 utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_UserCountMoreMillion = 'mais de um milhão de utilizadores da KSN utilizaram esta aplicação'
+FileKsnStatistics_Untrusted = 'aplicação não confiável'
+
+FileKsnStatistics_FirstRequestDate_Today        = 'O ficheiro tornou-se conhecido hoje'
+FileKsnStatistics_FirstRequestDate_Yesterday    = 'O ficheiro tornou-se conhecido ontem'
+FileKsnStatistics_FirstRequestDate_LessWeek     = 'O ficheiro tornou-se conhecido há menos de uma semana'
+FileKsnStatistics_FirstRequestDate_LessTwoWeek  = 'O ficheiro tornou-se conhecido há menos de duas semanas'
+FileKsnStatistics_FirstRequestDate_LessMonth    = 'O ficheiro tornou-se conhecido há menos de um mês'
+FileKsnStatistics_FirstRequestDate_MoreMonth    = 'O ficheiro tornou-se conhecido há mais de um mês'
+FileKsnStatistics_FirstRequestDate_MoreHalfYear = 'O ficheiro tornou-se conhecido há mais de meio ano'
+FileKsnStatistics_FirstRequestDate_MoreYear     = 'O ficheiro tornou-se conhecido há mais de um ano' 
+
+;
+; MessageBox buttons texts
+;
+YesButtonText = 'Sim'
+NoButtonText = 'Não'
+AcceptResumeButtonText = 'Retomar verificação'
+RejectResumeButtonText = 'Nova verificação'
+
+;
+; Full scan
+;
+FullScan_Title = 'Verificação Completa'
+FullScan_Description = 'Verifica todo o computador.\nRecomenda-se que execute uma Verificação Completa imediatamente após ter instalado a aplicação. Tenha em atenção que este procedimento pode demorar algum tempo.'
+
+FullScan_StopConfirmation = 'Deseja mesmo parar a Verificação Completa?'
+FullScan_ResumeConfirmation = 'A Verificação Completa anterior não foi concluída. Deseja retomar a verificação?'
+
+FullScan_ActionOnFinish = 'Quando a verificação for concluída: '
+
+;
+; Critical area scan
+;
+CriticalAreaScan_Title = 'Verificação de Áreas Críticas'
+CriticalAreaScan_Description = 'Uma verificação rápida de objectos que são carregados com o sistema operativo no arranque. Não necessita de muito tempo.'
+
+CriticalAreaScan_StopConfirmation = 'Deseja mesmo parar a Verificação de Áreas Críticas?'
+CriticalAreaScan_ResumeConfirmation = 'A Verificação de Áreas Críticas anterior não foi concluída. Deseja retomar a verificação?'
+
+;
+; Vulnerability scan
+;
+VulnerabilityScan_Title = 'Verificação de Vulnerabilidade'
+VulnerabilityScan_Description = 'Verifica vulnerabilidades no seu sistema e aplicações,\nque possam permitir ataques maliciosos.'
+
+VulnerabilityScan_NeverRun = 'Nunca foi executado'
+VulnerabilityScan_CountName = 'Vulnerabilidades: '
+VulnerabilityScan_ShowObjectListButtonText = 'Vulnerabilidades detectadas'
+VulnerabilityScan_StopConfirmation = 'Deseja mesmo parar a Verificação de Vulnerabilidade?'
+
+;
+; Custom area scan 
+;
+CustomAreaScan_Description = 'Para efectuar uma verificação personalizada de um objecto \n arraste-o para aqui ou <a href=\"SelectScanArea\"><font color ="#5495df">procure</font></a> o objecto.'
+
+;
+; TaskManager Titles
+; 
+TaskManager_CustomScan = 'Verificação Personalizada'
+TaskManager_FullScan = 'Verificação Completa'
+TaskManager_QScan = 'Verificação de processos ocultos'
+TaskManager_IdleScan = 'Verificação em Inactividade'
+TaskManager_ActiveThreatCure = 'Desinfecção Avançada'
+TaskManager_VulnerabilityScan = 'Verificação de Vulnerabilidade'
+TaskManager_CriticalAreaScan = 'Verificação de Áreas Críticas'
+
+;
+; TaskManager Captions
+;
+TaskManager_CaptionScan = 'A verificar:'
+TaskManager_CaptionObjects = 'Objectos:'
+TaskManager_CaptionObject = 'Objecto:'
+TaskManager_CaptionRemain = 'Restante(s):'
+TaskManager_CaptionComplete = 'Concluído:'
+TaskManager_CaptionStopped = 'Parado: '
+TaskManager_CaptionChacked = 'Verificados:'
+TaskManager_CaptionThreats = 'Ameaças:'
+TaskManager_CaptionStatistics = 'Informação da KSN:'
+TaskManager_CaptionDetails = 'Detalhes'
+TaskManager_CaptionOnComplete = 'Quando a verificação for concluída:'
+TaskManager_CaptionVulnerabilities = 'Vulnerabilidades:'
+TaskManager_CaptionVulnerabilitieList = 'Vulnerabilidades detectadas'
+TaskManager_Absend = 'nenhum' ;refers to threats. Treats: none
+
+;
+; TaskManager Message box
+;
+TaskManager_ConfirmationMessageFull = 'Deseja mesmo parar a Verificação Completa?'
+TaskManager_ConfirmationMessageCriticalArea = 'Deseja mesmo parar a Verificação de Áreas Críticas?'
+TaskManager_ConfirmationMessageCustomArea = 'Tem a certeza de que deseja parar a Verificação Personalizada?'
+TaskManager_ConfirmationMessageVulnerability = 'Deseja mesmo parar a Verificação de Vulnerabilidade?'
+TaskManager_ConfirmationMessageIdle = 'Tem a certeza de que deseja parar a Verificação em Inactividade?'
+TaskManager_ConfirmationMessageQScan = 'Tem a certeza de que pretende parar a Verificação de processos ocultos?'
+TaskManager_Confirm = 'Sim'
+TaskManager_Decline = 'Não'
+
+;
+; TaskManager Actions
+;
+Nothing = 'manter o computador ligado'
+Shutdown = 'encerrar o computador'
+Suspend = 'mudar o computador para o modo de espera'
+Sleep = 'mudar o computador para o modo de hibernação'
+Reboot = 'reiniciar o computador'
+
+TaskManager_SkipLink = 'Ignorar'
+
+;
+; Errors
+;
+
+SinceTaskFailDescription = 'Falha: '
+
+Error_NoError = 'Sem erros'
+Error_Unexpected = 'Erro indefinido'
+Error_NotEnoughtMemory = 'Memória insuficiente'
+Error_NotSupported = 'Não suportado'
+Error_NotImplemented = 'Não implementado'
+Error_AccessDenied = 'Acesso negado ou objecto não encontrado'
+Error_NotFound = 'Objecto não encontrado'
+Error_Locked = 'Objecto está bloqueado'
+Error_Canceled = 'Operação cancelada'
+Error_MediaError = 'Erro do dispositivo'
+Error_BadSignature = 'Assinatura inválida'
+Error_BadVersion = 'Versão inválida'
+Error_WriteProtect = 'Protecção contra escrita'
+Error_NoLicense = 'Protecção contra escrita'
+Error_OutOfSpace = 'Sem espaço'
+Error_NotReady = 'O dispositivo não está pronto'
+Error_ObjectIncompatible = 'Formato inválido'
+Error_ObjectReadOnly = 'Direitos insuficientes'
+Error_ObjectNotInitialized = 'Erro de inicialização'
+Error_ObjectBadInternalState = 'Estado do objecto incorrecto'
+Error_ObjectPasswordProtection = 'Objecto protegido por password'
+Error_ObjectRead = 'Erro de leitura'
+Error_ObjectWrite = 'Erro de escrita'
+Error_ObjectInvalid = 'Objecto inválido'
+Error_ObjectAlreadyExists = 'O objecto já existe'
+Error_ObjectIsLocked = 'O objecto está a ser utilizado por outra aplicação'
+Error_ObjectDataCorrupted = 'As bases de dados estão corrompidas'
+Error_ModuleIsBad = 'Módulo inválido'
+Error_ModuleNotFound = 'Módulo não encontrado'
+Error_ModuleNotVerified = 'Módulo não foi autenticado'
+Error_ModuleCannotBeLoaded = 'Componente não pode ser carregada'
+Error_SynchronizationFailed = 'Erro de sincronização'
+Error_SynchronizationTimeout = 'Tempo limite excedido'
+Error_ProxyStateInvalid = 'Erro de interacção das componentes'
+Error_TaskInterrupted = 'Foi interrompida uma tarefa'
+Error_CannotBeRunInSafeMode = 'Tarefa não pode ser iniciada em modo de segurança'
+Error_TaskDisabled = 'Tarefa desactivada'
+Error_WrongLogin = 'Nome de utilizador ou password incorrectos'
+Error_CannotBeRunInSafeModeFromAnotherAccount = 'Não é possível iniciar tarefa com outra conta de utilizador no modo de segurança'
+Error_DriverNotFound = 'Controlador não encontrado'
+Error_DatabaseLoading = 'Erro ao carregar bases de dados'
+Error_UndefinedError = 'Erro desconhecido'
+
+DefaultErrorDescription = 'Código de erro: ' + $DefaultErrorValue

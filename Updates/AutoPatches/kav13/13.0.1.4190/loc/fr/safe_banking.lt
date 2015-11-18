@@ -1,0 +1,63 @@
+﻿; Custom Action Page
+
+CustomActionTitle = 'Protection des transactions bancaires'
+CustomActionDescription = 'Pour exécuter des transactions bancaires et des achats <br>sur les boutiques en ligne, il est fortement conseillé <br>d\'utiliser le navigateur sécurisé.'
+SafeRunButtonText = 'Lancer'
+SkipButtonText = 'Ignorer'
+RememberChoiceText = 'Mémoriser le choix pour ce site Internet'
+
+; Invalid Certificate Page
+
+CertificateInfoTitle = 'Le certificat, reçu lors de l\'établissement de la connexion sécurisée, <br>ne correspond pas au certificat original'
+CertificateInfoDescription = 'Il est fortement déconseillé de visiter ce site afin d\'éviter les problèmes <br>de sécurité et de conservation des informations confidentielles.'
+IgnoreInvalidCertificate = 'Ignorer et ouvrir la page Internet'
+CertificateInvalidReasonCodeText = 'erreur :'
+CertificateInvalidReason0 = 'Erreur indéterminée'
+CertificateInvalidReason1 = 'Le certificat a été renvoyé'
+CertificateInvalidReason2 = 'Certificat falsifié'
+CertificateInvalidReason3 = 'La série des certificats est violée'
+CertificateInvalidReason4 = 'Le domaine, indiqué dans le certificat, ne correspond pas au site Internet avec lequel la connexion est établie'
+CertificateInvalidReason5 = 'Les violations d\'utilisation du certificat ont été détectées'
+CertificateInvalidReason6 = 'La violation du temps d\'action du certificat'
+CertificateInvalidReason7 = 'La structure du certificat a été violée'
+
+; Vulnerability Info Page
+
+VulnerabilityInfoTitle = 'Les mises à jour de <br>système critiquement importantes ne sont pas installées'
+VulnerabilityInfoDescription = 'Lors des mises à jour non installées, le navigateur sécurisé <br>ne peut pas assurer la protection intégrale de vos données.'
+UpdaterDisabled = 'L\'obtention des mises à jour est désactivée. Il est fortement conseillé d\'activer l\'obtention des mises à jour.'
+UpdatesNotAllowed = 'Pour installer les mises à jour, il faut contacter l\'administrateur de l\'ordinateur.'
+UpdaterError = 'L\'erreur d\'initialisation des mises à jour du système.'
+RunUpdater = 'Lancer la mise à jour'
+IgnoreVulnerability = 'Ignorer'
+NotifyAboutVulnerabilities = 'Me notifier sur les vulnérabilités'
+
+; Safe Navigate Page
+
+SafeNavigateInfoTitle = 'La page Internet a été ouverte dans le navigateur protégé'
+SafeNavigateInfoDescription = 'Toutes les transactions bancaires et les achats <br>sur les boutiques en lignes sont entièrement sécurisés dans la navigateur sécurisé.'
+SafeBankingGetMoreInfo = 'En savoir plus'
+SafeBankingShowSettings = 'Consulter les paramètres'
+CancelSafeBrowserExecution = 'Ouvrir la page Internet dans la même fenêtre'
+
+; Completed Scenario Page
+
+CompletedScenarioInfoTitle = 'La rédirection dans le navigateur normal est exécutée.'
+CompletedScenarioInfoDescription = 'Le travail en mode de navigation protégé est terminé. <br>Vous pouvez continuer le travail dans le navigateur normal.'
+SafeBankingGetMoreInfoText = 'En savoir plus sur la Protection des transactions bancaires'
+
+; Unsafe navigate Page
+
+UnsafeNavigateInfoTitle = 'La rédirection dans la nouvelle fenêtre du navigateur est exécutée'
+UnsafeNavigateInfoDescription = 'Vous pouvez y poursuivre les opérations de paiement.'
+UnsafeNavigateInfoText = 'En savoir plus sur la Protection des transactions bancaires'
+
+
+; Safe Browser Launch Error Page
+
+SafeBrowserLaunchErrorTitleText = 'Erreur de lancement'
+SafeBrowserLaunchErrorDescription = 'Impossible de lancer le navigateur protégé'
+SafeBrowserLaunchError0xA0010008 = 'Le navigateur nécessaire est introuvable'
+SafeBrowserLaunchError0xA0010009 = 'Le plug-in Protection des transactions bancaires n\'est pas installé ou il est désactivé'
+SafeBrowserLaunchError0xA001000A = 'Impossible de créer le processus du navigateur protégé'
+SafeBankingLearnMore = 'En savoir plus'

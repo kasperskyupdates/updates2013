@@ -1,0 +1,599 @@
+﻿[Global]
+CantOpenFolder = "Erro ao abrir página. Possivelmente, a pasta não existe."
+$OperationSystem = "Sistema Operativo"
+$AllProcess = "Todos os processos"
+ReportEmpty="Falha ao guardar lista de eventos em branco."
+
+[MainReport]
+@ = "Relatório detalhado"
+@.Footer.Link1 = "Guardar..."
+
+[ProfileReport_Body_Descr_Total]
+GroupName = "Grupo: " + s_GroupName(parent.ListBody.Group1.d.Report.groupId, parent.ListBody.Group1.d.Report.val)
+GroupSize = "Eventos: " + parent.ListBody.Group1.d.Report.count
+
+[s_ObjectType]
+#eFile              = "Ficheiro"
+#eDirectory         = "Pasta"
+#eRegKey            = "Chave de registo"
+#eRegValue          = "Valor da chave de registo"
+#eProcess           = "Processo"
+#eThread            = "Linha de execução"
+#eModule            = "Módulo"
+#eLogSector         = "Sector do Disco Lógico"
+#ePhysSector        = "Sector do Disco Físico"
+#eMemory            = "Memória"
+#eMailMessage       = "Mensagem de e-mail"
+#ePagerData			= "Mensagem Instantânea (MI)"
+#eMailAttach        = "Anexo de e-mail"
+#eURL               = "Página de Internet"
+#eScript            = "Script VB ou Java"
+#ePort              = "Porta de rede"
+#eConnection        = "Ligação de rede"
+#ePacket            = "Pacote de rede"
+#eDialStr           = "Número de telefone"
+#eDetectName        = "Nome da Ameaça"
+#eLogicalDisk       = "Unidade lógica"
+#eDevice            = "Dispositivo"
+#eVolume            = "Volume"
+#eString            = "Sequência"
+#eRegRoot           = "Registo"
+#eTask              = "Subsistema"
+#eNetwork           = "Rede"
+#eNetworkAddr       = "Linha de comandos de rede"
+#eFirewallLog       = "Relatório da Firewall"
+#eNetArpChangeInfo  = "Alteração dos endereços de rede"
+#eDriver            = "Ficheiro de controlador"
+#eUserName          = "Nome de utilizador"
+#eHipsAppGroup      = "Grupo de aplicações"
+#eComObj            = "Objecto COM"
+#ePriv              = "Privilégio"
+#eVMOperation       = "Operação"
+def                 = if(@, "unk: " + @)
+
+[s_ObjectType2]
+#eDriver            = "Ficheiro de controlador carregado"
+#eFile              = if(s_IsFileAccess(Action), "Ficheiro", "Objecto")
+def                 = s_ObjectType(@)
+
+[s_RepDetectType]
+#eVirware               = "Vírus"
+#eTrojware              = "Trojans"
+#eUrgent
+#eBSSDetect             = "Outro software malicioso"
+#eMalware               
+#ePasswordProtectedExe  = "Software que pode provocar danos"
+#eAdware                = "Adware"
+#ePornware              = "Auto-dialer"
+#eRiskware              = "Software que pode provocar danos"
+#eXFiles
+#eSoftware              = "Software conhecido"
+#eVulnerability         = "Vulnerabilidade"
+#ePhishing              = "URL de Phishing"
+#eDialing               = "Tentativa de ligação telefónica oculta"
+#eAttack                = "Ataque de rede"
+#eBanner                = "Banner"
+#eUnwantedWebContent    = "Conteúdo indesejado"
+#eSpam                  = "Spam"
+#eProbableSpam          = "Provável spam"
+#eHam                   = "Não-Spam"
+#eAttachment            = "Anexo de e-mail indesejado"
+#eFileAccess            = "Acesso a ficheiros"
+#eRegistryAccess        = "Acesso ao registo"
+#eNetworkAccess         = "Acesso à rede"
+#eHardwareAccess        = "Acesso a hardware"
+#eSecurityAccess        = "Acesso a configurações de segurança"
+#eSuspicionActivity     = "Acção suspeita"
+#eHidden                = "Objecto oculto"
+#eSuspicURL             = "URL perigoso"
+#eMaliciousURL          = "URL Malicioso"
+default                 = if(@, "Ameaça desconhecida")
+
+[s_StatisticsType]
+#eUrgent
+#eBSSDetect             = "Outros objectos maliciosos"
+#eMalware               
+#ePasswordProtectedExe  = "Objectos desconhecidos"
+default                 = s_RepDetectsType(@)
+
+[s_RepDetectsType]
+#eVirware               = "Vírus"
+#eTrojware              = "Programas Trojan"
+#eUrgent
+#eBSSDetect             = "Outro software malicioso"
+#eMalware               
+#ePasswordProtectedExe  = "Desconhecida"
+#eAdware                = "Adware"
+#ePornware              = "Auto-dialers"
+#eRiskware              = "Outros"
+#eXFiles
+#eSoftware              = "Conhecido"
+#eVulnerability         = "Vulnerável"
+#ePhishing              = "URLs de Phishing"
+#eDialing               = "Tentativas de ligação telefónica oculta"
+#eAttack                = "Ataques de rede"
+#eAttachment            = "Anexos de e-mail"
+#eSuspicURL             = "URLs perigosos"
+#eMaliciousURL          = "URLs maliciosos"
+#eBanner                = "Banners"
+#eSpam                  = "Spam"
+default                 = if(@, "Ameaças desconhecidas")
+
+[s_RepDetectTypeShort]
+#eTrojware  = "Trojan"
+#eUrgent
+#eBSSDetect = "Outro programa"
+#eMalware   = "Malicioso"
+#eAdware    = "Adware"
+#ePornware  = "Ligação telefónica automática"
+#eRiskware  = "Outras aplicações"
+default     = s_RepDetectType(@)
+
+[s_RepDetectedType]
+#eVirware               = "Vírus detectados: " + @1
+#eTrojware              = "Programas Trojan detectados: " + @1
+#eUrgent               
+#eBSSDetect             = "Detectados outros objectos maliciosos: " + @1
+#eMalware               
+#ePasswordProtectedExe  = "Detectados objectos que podem ser prejudiciais: " + @1
+#eAdware                = "Adware detectado: " + @1
+#ePornware              = "Auto-dialers detectados: " + @1
+#eRiskware              = "Outro software detectado: " + @1
+#eXFiles
+#eSoftware              = "Programas conhecidos detectados: " + @1
+#eVulnerability         = "Software vulnerável detectado: " + @1
+#ePhishing              = "Sites de Phishing bloqueados: " + @1
+#eDialing               = "Ligações telefónicas ocultas bloqueadas: " + @1
+#eAttack                = "Ataques de rede bloqueados: " + @1
+#eBanner                = "Banners bloqueados: " + @1
+#eUnwantedWebContent    = "Páginas de Internet bloqueadas: " + @1
+#eSpam                  = "Mensagens de Spam detectadas: " + @1
+#eAttachment            = "Bloqueados anexos de e-mail indesejados: " + @1
+#eHidden                = "Objectos ocultos detectados: " + @1
+#eSuspicURL             = "URLs perigosos e desconhecidos detectados:" + @1
+#eMaliciousURL          = "URLs maliciosos detectados:" + @1
+
+[s_ProductStateVerdict]
+#ProdStateHighRiskTasksNotRunning 	= "As componentes de protecção importantes não estão a funcionar"
+#ProdStateHighRiskTasksDisabled 	= "As componentes de protecção importantes estão desactivadas"
+default 							= s_ProdState(@)
+
+[f_ProductStateVerdictOrUnknown]
+ret = (@ >= #ePROTECTION && @ <= (#ePROTECTION + #ProdStateMax)) ? s_ProductStateVerdict(@ - #ePROTECTION) : if(@, "desconhecido: " + @)
+
+[s_Verdict]
+#eCLEAN                                     = "OK"
+#eDETECTED                                  = "Detectados"
+#eARCHIVED                                  = "Arquivo"
+#ePACKED                                    = "Comprimido"
+#eENCRYPTED                                 = "Encriptado"
+#eCORRUPTED                                 = "Corrompido"
+#eCURED
+#eDISINFECTED                               = "Desinfectados"
+#eNOT_DISINFECTED                           = "Não desinfectado"
+#eDELETED                                   = "Apagados"
+#eNOT_DELETED                               = "Não pode ser apagado"
+#eBACKUPED                                  = "Guardado em cópia de segurança"
+#eBACKUP_FAILED                             = "Não é possível criar cópia de segurança"
+#eQUARANTINED                               = "Movidos para a Quarentena"
+#eNOT_QUARANTINED                           = "Não pode ser colocado em Quarentena"
+#eNOT_PROCESSED                             = s_VerdictNotProcessedByDetectType(DetectType)
+#ePROCESSING_ERROR                          = "Erro de processamento"
+#ePASSWORD_PROTECTED                        = "Protecção por password"
+#eCANTCHANGEATTR                            = "Não é possível alterar os atributos"
+#eDELETED_ON_REBOOT                         = "Será apagado após a reinicialização do sistema"
+#eDISINFECTED_ON_REBOOT                     = "Será desinfectado após a reinicialização do sistema"
+#eDELETE_ON_REBOOT_FAILED                   = "Não foi possível apagar após a reinicialização do sistema"
+#eDISINFECT_ON_REBOOT_FAILED                = "Não foi possível desinfectar após a reinicialização do sistema"
+#eOVERWRITED                                = "Substituído por uma cópia previamente desinfectada"
+#eQUARANTINED_ON_REBOOT                     = "Será colocado em Quarentena após a reinicialização do sistema"
+#eRESTORED                                  = "Restaurado a partir da quarentena"
+#eDENIED                                    = s_VerdictDeniedByDetectType(DetectType)
+#eALLOWED                                   = "Permitido"
+#eRENAMED                                   = "Renomeado"
+#eNOT_RENAMED                               = "Não renomeado"
+#eTERMINATED                                = "Terminado"
+#eTERMINATE_FAILED                          = "Não terminado"
+#eDISABLED                                  = "Desactivado"
+#eCONNECTED                                 = "Ligação estabelecida"
+#eSSL_TRY_TO_DECODE                         = s_SslSessionDetails(ExtraInfoSub1)
+#eUPDATER_ERROR                             = $IsRepItem ? s_UpdaterError(Error) : "Mensagem"
+#eUPDATER_SOURCE_SELECTED
+#eUPDATER_ADMIN_KIT_SOURCE_SELECTED         = "A origem da actualização está seleccionada"
+#eUPDATER_PROXY_SERVER_SELECTED             = "O servidor de proxy está seleccionado"
+#eUPDATER_DOWNLOAD_FILE_STARTED             = "Transferência de ficheiros..."
+#eUPDATER_FILE_DOWNLOADED                   = "Ficheiro transferido"
+#eUPDATER_NEW_FILE_INSTALLED                = "Ficheiro instalado"
+#eUPDATER_FILE_UPDATED                      = "Ficheiro actualizado"
+#eUPDATER_FILE_ROLLED_BACK                  = "File revertido"
+#eUPDATER_StartInstallFilesForUpdate        = "Actualização de ficheiros..."
+#eUPDATER_StartInstallFilesForRetranslation = "Distribuição de actualizações..."
+#eUPDATER_StartCopyFilesForRollback         = "Reversão de ficheiros..."
+#eUPDATER_DNS_NAME_RESOLVED                 = "Nome DNS transformado"
+#eUPDATER_ComponentIsNotUpdated             = "Erro ao actualizar componente"
+#eUPDATER_GeneratingFileListToDownload      = "A criar a lista de ficheiros a transferir..."
+#eUPDATER_ComponentIsNotRetranslated        = "Erro ao copiar actualizações das componentes"
+#eUPDATER_CONNECTING_TO_HOST                = "A ligar ao anfitrião"
+#eURLFLT_SWITCHPROFILE                      = "Alterar perfil"
+#eURLFLT_HEURISTICSTATUS                    = "A análise heurística deste site não pode ser executada"
+#eANTISPAM_NOT_SPAM                         = "Não-Spam"
+#eANTISPAM_PROBABLE_SPAM                    = "Provável spam"
+#eANTISPAM_SPAM                             = "Spam"
+#eCOPIED									= "Copiado"
+#eNOT_COPIED								= "Não copiado"
+#eTASK_STARTED                  = "Tarefa iniciada"
+#eTASK_STOPPED                  = "Tarefa parada"
+#eTASK_COMPLETED                = "Tarefa concluída"
+#eTASK_FAILED                   = TaskGroup == #eTASK_GROUP_UPDATER ? "Tarefa falhou" : "Não é possível iniciar tarefas"
+#eROLLBACK_PROCESS_TERMINATED 	= "Encerramento do processo"
+#eROLLBACK_FILE_DELETED       	= "Ficheiro apagado"
+#eROLLBACK_FILE_RENAMED       	= "Nome e caminho restaurado"
+#eROLLBACK_FILE_RESTORED      	= "Ficheiro restaurado"
+#eROLLBACK_REGVALUE_DELETED   	= "Valor de registo restaurado"
+#eROLLBACK_REGVALUE_RESTORED  	= "Valor de registo restaurado"
+#eROLLBACK_DONE				    = "Reversão das acções da aplicação"
+#eTBOOT_GOOD                    = "A KSN confirmou que o Módulo de plataforma confiável foi verificado com êxito"
+default                         = f_ProductStateVerdictOrUnknown(@)
+
+[s_VerdictDeniedByDetectType]
+#eSuspicURL = if($IsExactDetect, "Bloqueado", "Pausado")
+default     = "Bloqueado"
+
+[s_VerdictNotProcessedByDetectType]
+#eGeoSecurityURL = "Bloqueados"
+default			 = "Não processado"
+
+[s_DecisionReason]
+#eUSER                                      = "Ignorado pelo utilizador"
+#eREPORTONLY                                = "Registado"
+#ePOSTPONED                                 = "Adiado"
+#eTASKSTOPPED                               = "Processamento parado"
+#eERROR                                     = $IsRepItem ? ($IsTaskStateEvent ? s_ProfileError(s_TaskId2TaskType(TaskID), ExtraInfoSub2) : s_DecisionReasonErrorByTaskID(TaskID, ExtraInfoSub2)) : "Erro"
+#eDECISION_BYUSER							= "Acção seleccionada pelo utilizador"
+#eDATABASE                                  = s_BaseType(DetectType)
+#eWHITE_LIST                                = "Lista permitida"
+#eUSER_BLACK_LIST                           = "Lista bloqueada de utilizadores"
+#eUSER_WHITE_LIST                           = "Lista permitida de utilizadores"
+#eEMULATOR                                  = "Emulador"
+#eBB                                        = "Análise de actividades"
+#eHEURISTIC                                 = "Análise heurística"
+#eBAYES                                     = "Análise de Conteúdos (iBayes)"
+#eGSG                                       = "Reconhecimento de imagem (Tecnologia GSG)"
+#ePDB                                       = "Análise de cabeçalhos (tecnologia PDB)"
+#eRECENTTERMS                               = "Análise de Expressões (RecentTerms)"
+#eSFDB                                      = "O objecto não foi alterado (iChecker 3)"
+#eISWIFT                                    = "O objecto não foi alterado (iSwift 3)"
+#eUNCHANGED                                 = "O objecto não foi alterado"
+#eKSN                                       = "Serviço KSN"
+#eALLOWED_SENDER                            = "Remetente permitido"
+#eBLOCKED_SENDER                            = "Remetente bloqueado"
+#eALLOWED_PHRASE                            = "Expressão permitida"
+#eBLOCKED_PHRASE                            = "Expressão bloqueada"
+#eDETECT_BYHASH                             = "Por hash"
+#eDETECT_INFORMATION                        = "Informação"
+#eSIZE                                      = "Por tamanho"
+#eTYPE                                      = "Por tipo"
+#eEXCLUDE                                   = "Por exclusões"
+#eTIME                                      = "Limite de tempo"
+#eNORIGHTS                                  = "Acesso recusado"
+#eNOTFOUND                                  = "Objecto não encontrado"
+#eLOCKED                                    = "O objecto está bloqueado"
+#eALREADYSCANED                             = "O objecto já foi enviado para verificação"
+#eNONCURABLE                                = "Desinfecção impossível"
+#eWRITEPROTECT                              = "Protegido contra gravação"
+#eNONOVERWRITABLE                           = "Não substituível"
+#eCOPYFAILED                                = "A cópia falhou"
+#eWRITEERROR                                = "Erro de escrita"
+#eOUTOFSPACE                                = "Não há espaço suficiente no disco"
+#eREADERROR                                 = "Erro de leitura"
+#eDEVICENOTREADY                            = "objecto não encontrado"
+#eWRITENOTSUPPORTED                         = "Não suporta escrita"
+#eCANNOTBACKUP                              = "Não é possível criar cópia de segurança"
+#eANTISPAM_Nothing							= "Spam não detectado"
+#eANTISPAM_AddedToWhiteRecipient            = "O endereço adicionado à lista permitida"
+#eANTISPAM_HasBeenTrained                   = "A mensagem já está na base de dados do Anti-Spam"
+#eANTISPAM_Training                         = "Treino"
+#eANTISPAM_NeedTraining                     = "É necessário treino"
+#eANTISPAM_WhiteAddress                     = "Remetente permitido"
+#eANTISPAM_BlackAddress                     = "Remetente bloqueado"
+#eANTISPAM_WhiteString                      = "Expressão permitida"
+#eANTISPAM_BlackString                      = "Expressão bloqueada"
+#eANTISPAM_AntiFishing                      = "E-mail de phishing"
+#eANTISPAM_WhiteAddress_NOTFOUND            = "O remetente não é permitido"
+#eANTISPAM_BlackAddress_NOTFOUND            = "O remetente não está bloqueado"
+#eANTISPAM_WhiteString_NOTFOUND             = "Expressões não localizadas na lista permitida"
+#eANTISPAM_BlackString_NOTFOUND             = "Expressões não localizadas na lista bloqueada"
+#eANTISPAM_AntiFishing_NOTFOUND             = "E-mail livre de phishing"
+#eANTISPAM_Eicar                            = "Mensagem de teste"
+#eANTISPAM_Banner                           = "Mensagem com um banner"
+#eANTISPAM_Banner_NOTFOUND                  = "Mensagem sem banner"
+#eANTISPAM_InvalidHTML                      = "HTML incorrecto"
+#eANTISPAM_InvalidHTML_NOTFOUND             = "HTML correcto"
+#eANTISPAM_ExternalObj                      = "Contêm ligações a imagens externas"
+#eANTISPAM_ExternalObj_NOTFOUND             = "Não contém ligações a imagens externas"
+#eANTISPAM_InternalObj                      = "Objecto incorporado sem texto"
+#eANTISPAM_InternalObj_NOTFOUND             = "Sem objectos incorporados incorrectos"
+#eANTISPAM_EmptyMessage                     = "Vazia"
+#eANTISPAM_EmptyMessage_NOTFOUND            = "Não vazia"
+#eANTISPAM_NotForMe                         = "Não endereçadas a mim"
+#eANTISPAM_NotForMe_NOTFOUND                = "Endereçada a mim"
+#eANTISPAM_NotEnglish                       = "Contém símbolos não-ANSI"
+#eANTISPAM_NotEnglish_NOTFOUND              = "Contém apenas símbolos ANSI"
+#eANTISPAM_RecipLimit                       = "Demasiados destinatários"
+#eANTISPAM_RecipLimit_NOTFOUND              = "Um destinatário"
+#eANTISPAM_InvalidHTML_UnknownDefsCount     = "HTML incorrecto: marcações HTML incorrectas"
+#eANTISPAM_InvalidHTML_SeemsColors          = "HTML incorrecto: texto da mesma cor que o fundo"
+#eANTISPAM_InvalidHTML_SmallText            = "HTML incorrecto: letras muito pequenas"
+#eANTISPAM_InvalidHTML_InvisibleCharCount   = "HTML incorrecto: caracteres invisíveis"
+#eANTISPAM_InvalidHTML_Scripts              = "HTML incorrecto: scripts"
+#eANTISPAM_InvalidHTML_HiddenElements       = "HTML incorrecto: elementos ocultos"
+#eANTISPAM_CannotBeSpam                     = "E-mail interno do Microsoft Exchange Server"
+#eANTISPAM_SPAMTEST                         = "Análise heurística"
+#eANTISPAM_WMUF								= "Mensagem de e-mail com URLs maliciosos"		
+#eANTISPAM_WMUF_DATABASE					= "E-mail com URLs maliciosos da base de dados do " + $ProductName_GEN + " "
+#eANTISPAM_WMUF_CLOUD						= "E-mail com URLs maliciosos da base de dados da Kaspersky Security Network"
+#eANTISPAM_WMUF_WHITELIST					= "O e-mail contém um URL da lista permitida"
+#eHIPS_BYSIGNATURE                          = "Assinado digitalmente por fabricantes confiáveis"
+#eHIPS_BYKLSRL                              = "Listado na base de dados de software conhecido"
+#eHIPS_BYEMILRATING                         = "Classificação de ameaça calculada de forma heurística"
+#eHIPS_BYSCAN								= $DetectNameText ? ("Detectado:" + $DetectNameText) : "Classificado como objecto malicioso (utilizando assinaturas da base de dados ou emulador)"
+#eHIPS_BYDETECTNAME                         = $DetectNameText
+#ePDM_BYDEFAULT								= "Acção predefinida seleccionada"
+#ePDM_BYUSER								= "Acção seleccionada pelo utilizador"
+#ePDM_BYSETTINGS							= "Acção seleccionada de acordo com as configurações"
+#ePDM_BYEXCLUDES							= "Acção seleccionada de acordo com as exclusões"
+#ePDM_BYPREVDECISION						= "Acção seleccionada de acordo com a acção anterior"
+#eSSL_INCORRECT_CERT                        = "Certificado incorrecto"
+default                                     = if(@, "unk: " + @)
+
+[s_DecisionReasonErrorByTaskID]
+#eTASK_PC   = s_ParCtlError(@1)
+def         = s_SystemError(@1)
+
+[s_Action]
+#evtOpen                = "Abrir"
+#evtCreate              = "Criar"
+#evtRead                = "Ler"
+#evtWrite               = "Modificar"
+#evtDelete              = "Apagar"
+#evtRename              = "Renomear"
+#evtProcessStart        = "Outro processo iniciado"
+#evtProcessStop         = "Processo parado"
+#evtImageLoad           = "Carregamento de imagem"
+#evtImageUnload         = "Descarregamento de imagem"
+#evtSend                = "Envio de dados de rede"
+#evtReceive             = "Recepção de dados de rede"
+#evtTerminate           = "Terminar"
+#evtSetHook             = "Instalação de ganchos"
+#evtCodeInject          = "Intrusão de código"
+#evtAttachThreadInput   = "A capturar as mensagens de entrada do fluxo"
+#evtOlePortAccess       = "Usar interfaces do programa de outras aplicações"
+#evtCreateKnownDlls     = "Alteração dos módulos do sistema (KnownDlls)"
+#evtWindowsShutDown     = "Encerramento de janelas"
+#evtHiddenRegistry      = "Criar uma chave de registo oculta"
+#evtKeyLogger           = "Actividade de registador de teclas digitadas"
+#evtSetHardLink         = "Criar ligação absoluta"
+#evtSuspend             = "Suspender outro processo"
+#evtSchedulerStart      = "Inicialização de Programador"
+#evtWMSend              = "Enviar mensagens do Windows para outro processo"
+#evtDrvStart            = "Iniciar controlador"
+#evtServiceStart        = "Iniciar serviço"
+#evtScreenShots         = "Tirar fotografia do ecrã"
+#evtSelfStart           = "Início"
+#evtLLDiskAccess        = "Nível baixo de acesso a disco"
+#evtLLFSAccess          = "Nível baixo de acesso aos ficheiros de sistema"
+#evtClipBoardAcceess    = "Acesso à área de transferência"
+#evtCriticalCOMAccess   = "Acesso a objectos críticos do sistema"
+#evtADSAccess           = "Acesso a fluxos de ficheiros"
+#evtDirectMemAccess     = "Acesso à memória global"
+#evtReadProcMem         = "Acesso à memória de outros processos"
+#evtSetDbgPrivilege     = "Configurar privilégios de depuração"
+#evtChangeObjPrivilege  = "Alterar direitos de acesso a objectos"
+#evtUseBrowserCL        = "Usar linha de comandos de navegador"
+#evtUseBrowserAPI       = "Usar interfaces do programa navegador"
+#evtUseDNS              = "Usar sistema de memória temporária de DNS para conversão"
+#evtUseBITS             = "Usar função de sistema para o envio oculto de dados através da rede"
+#evtAddAppToGr          = "Aplicação movida para o grupo"
+#evtRegistrySave        = "Guardar chave de registo em ficheiro"
+#evtPrtStgAccess        = "Acesso ao armazenamento protegido"
+#evtNetworkAccess       = "Acesso à rede"
+#evtShellWindowsAcceess = "Acesso a dados internos do navegador"
+#evtUserAccountAccess   = "Acesso às configurações de contas de utilizador"
+#evtDuplicateHandle     = "Duplicação de manipulador interno de processo"
+#evtSuspProcessInteraction = "Execução de operação suspeita com outro processo"
+#evtWinspool            = "A gerir controlador da impressora"
+#evtDeleteService       = "A eliminar serviço"
+#evtStartService        = "A iniciar o serviço"
+#evtControlService      = "A gerir serviço"
+#evtChangeServiceConfig = "A modificar a configuração da impressora"
+#evtOpenService         = "A iniciar serviço para escrita"
+#evtReadOpenService     = "A iniciar serviço para leitura"
+#evtCreateService       = "A criar serviço"
+#evtVMOperation         = "Acesso à memória de outros processos"
+default                 = if(@, "unk: " + @)
+
+[Product_Events_Report_Action_Filter]
+Process = "Controlo de processo"
+Data    = "Controlo de dados"
+System  = "Controlo de sistema"
+
+[s_Exact]
+#eExact     = "Exactamente"
+#ePartial   = "Parcialmente"
+#eProbably  = "Provavelmente"
+#eHeuristic = "Análise heurística"
+default     = if(@, "unk: " + @)
+
+[s_DetectDanger]
+#eDDHigh            = "Elevado"
+#eDDMedium          = "Médio"
+#eDDLow             = "Baixo"
+#eDDInformational   = "Informação"
+default             = if(@, "unk: " + @)
+
+[s_TaskTextProtection]
+#eNotifyLicensing           = "Licenciamento"
+#eNotifyBases
+#eNotifyUpdater
+#eNotifyUpdateNeedReboot    = $Updater
+def                         = $Protection
+
+[s_CounterGroup]
+1   = "Software malicioso"
+2   = "Adware e outros programas"
+3   = "Outros"
+
+[s_EventObjSerByType]
+#ePacket            = s_Protocols(@1.Proto) + " de " + ip(@1.AttackerIP) + " para porta local " + @1.LocalPort
+#eFirewallLog       = s_Protocols(@1.Proto) + ": endereço local: " + ip(@1.LocalIP) + ":" + @1.LocalPort + ", endereço remoto: " + ip(@1.RemoteIP) + ":" + @1.RemotePort
+#eNetArpChangeInfo  = "Endereço IP: " + ip(@1.IP)+ ","+ if(@1.OldMac.Len, " Alteração de MAC:") + " novo " + if(!@1.OldMac.Len, "MAC: ") + mac(@1.Mac) + if(@1.OldMac.Len, ", antigo " + mac(@1.OldMac) +", delta: "+ time(@1.OldMacTime))
+
+[f_EventIdsBunReason]
+ret = @.Banned ? " O computador atacante foi bloqueado." : if(@.ResponseFlags & 8, " O computador atacante não foi bloqueado: o seu endereço está provavelmente falsificado.")
+
+[Product_Events_ReportNavigator_Menu]
+SaveReport  = "Guardar relatório em ficheiro..."
+Save        = "Guardar vista actual..."
+Delete      = "Apagar vista actual"
+
+[Product_Events_Report_Save]
+@ = "Inserir nome da vista"
+
+[ProfileReport_List]
+Empty = "Nenhum evento no período especificado"
+
+[Product_Events_Report]
+Application = "Aplicação"
+Action      = "Acção"
+Path        = "Caminho"
+Object      = "Objecto"
+Event       = "Evento"
+Time        = "Hora"
+Task        = "Componente"
+Reason      = "Razão"
+
+[Product_Events_Report_Application]
+Path        = "Caminho"
+Name        = "Nome"
+PID         = "ID do Processo"
+CommandLine = "Parâmetros"
+
+[Product_Events_Report_Verdict]
+Descr           = "Descrição"
+DetectType      = "Tipo"
+DetectName      = "Nome"
+DetectDanger    = "Perigo"
+Exact           = "Precisão"
+
+[Product_Events_Report_Object]
+Type    = "Tipo"
+Path    = "Caminho"
+Name    = "Nome"
+
+[Product_Events_Report_OldObject]
+Type    = "Tipo"
+Path    = "Caminho"
+Name    = "Nome"
+
+[MainReport_Navigator_WorkArea_PageT_Body_ListArea_ActionsArea]
+LogNotImplWarn   = "Desactivado"
+GroupFilter.Cont = "Ver"
+
+[Product_Events_Report_Menu]
+MakeFilter      = "Filtrar por valor"
+MakeGroup       = "Agrupar por coluna"
+ClearGroup      = "Não agrupar"
+ClearFilters    = "Apagar filtros"
+Expand          = "Maximizar"
+Collapse        = "Minimizar"
+CollapseAll     = "Minimizar todos"
+SelectAll       = "Seleccionar todos"
+Copy            = "Copiar"
+GotoFile        = "Abrir a pasta de localização original"
+ASDetails       = "Detalhes..."
+ASMarkAsSpam    = "Marcar como Spam"
+ASMarkAsHam     = "Marcar como Não-Spam"
+ABAllow         = "Permitir"
+
+[Product_Events_Report_Verdict_Filter]
+Cure    = "Processamento"
+Task    = "Componentes"
+ProdState = "Estado"
+
+[Product_Scan_Statistics_List]
+Object      = "Objecto"
+Time        = "Hora"
+Scaned      = "Verificados"
+Detected    = "Detectados"
+
+[Product_Scan_Statistics_List_Scaned]
+Scaned          = "Verificados"
+Archived        = "Arquivos"
+Packed          = "Objectos comprimidos"
+PswProtected    = "Protecção por password"
+Corrupted       = "Corrompido"
+ScanErrors      = "Erros na Verificação"
+
+[Product_Statistics_List]
+Counter = "Ameaça"
+Blocked = "Bloqueados"
+Total   = "Verificados"
+
+[MainReport_Header]
+Save = "Gua&rdar"
+
+[MainReport_Body_Navigator]
+Components  = "Componentes"
+Other       = "Outro"
+Warn        = "Desactivado"
+;Scan_Objects.Descr.Text = ""
+
+[s_BaseType]
+#eMalware
+#ePhishing 	     = "URL encontrado na base de dados"
+#eSuspicURL	     = "URL detectado pelo Web Filter"
+#eGeoSecurityURL = "URL detectado na base de dados Filtro Geográfico"
+default		     = "Bases de dados"
+
+[s_DetectNameService]
+#eMalware	= " (análise através da base de dados de URLs maliciosos)"
+#ePhishing 	= " (análise através da base de dados de URLs de phishing)"
+#eSuspicURL	= " (análise utilizando Web Filter)"
+#eGeoSecurityURL = " (análise utilizando Filtro Geográfico)"
+
+[s_SslSessionDetails]
+;#eTrafMon_Ssl_Unaccess		= ""
+#eTrafMon_Ssl_SwitchTo		= "Ligação encriptada (SSL/TLS) detectada"
+#eTrafMon_Ssl_Disconnect	= "A ligação encriptada não será processada"
+#eTrafMon_Ssl_Break			= "Ligação encriptada (SSL/TLS) terminada"
+#eTrafMon_Ssl_NotSupported	= "Erro ao processar SSL/TLS. Ligação terminada.\nPode adicionar o servidor " + Message + " às exclusões de SSL do Antivírus de Internet ou pode desactivar a verificação de ligações encriptadas para este servidor/cliente/porta."
+default						= "Ligação encriptada (SSL/TLS) estabelecida"
+
+[f_ProductEventCaptionText]
+ret = $IsVerdictProductStatusId ? s_ProtState($Verdict2ProductStatusId) : ($IsTaskStateEvent ? $VerdictDescrText : ($IsRollbackEvent ? s_Verdict(#eROLLBACK_DONE) : s_ProductEventCaptionTextByTaskID(TaskID, @)))
+
+[s_ProductEventCaptionTextByTaskID]
+#eTASK_SELFPROT         = "Tentativa de acesso ao processo " + $ProductName_GEN + ""
+#eTASK_SCAN             = if(DetectType, "O ficheiro ") + if(!DetectType, $ObjectNameText) + if(DetectType && DetectType != #eHidden, " contém " + s_RepDetectTypeV(DetectType)) + if(DetectType == #eHidden, " oculto do utilizador")
+#eTASK_FAV              = "Pedido do ficheiro " + if(DetectType, ", que contém " + s_RepDetectTypeV(DetectType))
+#eTASK_MAV              = "Detectada mensagem" + if(DetectType, ", que contém " + s_RepDetectTypeV(DetectType))
+#eTASK_HTTP             = "Transferência de objecto" + if(DetectType, ", que contém " + s_RepDetectTypeV(DetectType))
+#eTASK_AD               = "Detectada marcação oculta de número"
+#eTASK_AP               = "Detectado URL perigoso"
+#eTASK_IDS              = "Ataque de rede bloqueado"
+#eTASK_FIREWALL
+#eTASK_HIPS             = s_ProductEventCaptionTextHips(DetectType, @1)
+#eTASK_TRAFMON          = $VerdictText
+#eTASK_IM_CHECK         = "Detectada mensagem" + if(DetectType, ", que contém " + s_RepDetectTypeV(DetectType))
+#eTASK_COMMON_BLTASK    = s_ProductNotifyTextCommonTask(f_NOTIFICATION_ID(NotificationId))
+#eTASK_KLTBAR           = "Transferência de objecto que contém um URL " + if(Verdict == #eDETECTED, "perigoso", "desconhecido") + " "
+#eTASK_SW2
+#eTASK_AS
+#eTASK_UPDATER
+#eTASK_ROLLBACK         = $VerdictText
+#eTASK_AB               = $DetectNameText
+#eTASK_TBOOT            = s_TaskID(@)
+
+[s_ProductEventCaptionTextHips]
+#eHardwareAccess        = "A ligação ao dispositivo a partir do grupo \"" + f_ResGroupName($ObjectText) + "\" foi bloqueada de acordo com as regras."
+def                     = Action == #evtSelfStart ? ("Execução de " + (Verdict == #eDENIED ? " bloqueada " : " permitida ") + " de acordo com as regras de aplicações" )  : (if(Action, s_Action(Action) + " ")  + $EventObjText)

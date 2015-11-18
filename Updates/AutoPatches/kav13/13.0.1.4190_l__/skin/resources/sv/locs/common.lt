@@ -1,0 +1,467 @@
+﻿ProductName     = 'Kaspersky Anti-Virus'
+ProductName_KAT = ProductName
+
+ProductGeneration = '2013'
+
+ProductName_KIS = 'Kaspersky Internet Security'
+ProductName_KIS_Full = 'Kaspersky Internet Security ' + ProductGeneration
+ProductName_KIS_Beta_Full = 'Teknisk förhandsvisning av Kaspersky Internet Security'
+ProductName_KIS_Short = 'KIS' + ProductGeneration
+
+ProductName_KAV = 'Kaspersky Anti-Virus'
+ProductName_KAV_Full = 'Kaspersky Anti-Virus ' + ProductGeneration
+ProductName_KAV_Beta_Full = 'Teknisk förhandsvisning av Kaspersky Anti-Virus'
+ProductName_KAV_Short = 'KAV' + ProductGeneration
+
+;strings in the following section refer to databases, for example, Databases: obsolete 
+Actual = 'uppdaterad' 
+Corrupted = 'skadad' 
+VeryOld = 'inaktuella' 
+Old = 'ej uppdaterade' 
+OldInGracePeriod = 'har inte uppdaterats på länge'
+UpdatedAndRebootNeeded = 'uppdaterad. Datorn måste startas om' 
+UpdatedAndProductRestartNeeded = 'uppdaterad. Programmet måste startas om' 
+SomeBasesNeedUpdate = 'uppdatering krävs för vissa skyddskomponenter'
+
+Schedule_Auto    = 'automatiskt' 
+Schedule_Manual  = 'manuellt' 
+Schedule_Fixed   = 'schemalagt' 
+
+Back = 'Bakåt' 
+StopTask = 'Stoppa'
+
+News = 'Nyheter'
+Reports = 'Rapporter'
+Settings = 'Inställningar'
+Help = '&Hjälp'
+OK = 'OK'
+Cancel = 'Avbryt'
+Retry = 'Försök igen'
+
+Unknown = 'okänd'
+
+ShortDateTimeWithSecondsFormat = '%m/%d/%Y %I:%M:%S %p'
+ShortDateTimeFormat = '%m/%d/%Y %I:%M %p'
+ShortDateFormat = '%m/%d/%Y'
+
+ShortDateTimeNewsFormat = '%m.%d.%Y, %H:%M'
+ShortDateTimeNewsTodayFormat = 'idag, %H:%M'
+ShortDateTimeNewsYesterdayFormat = 'igår, %H:%M'
+
+MonthName_1  = 'Januari'
+MonthName_2  = 'Februari'
+MonthName_3  = 'Mars'
+MonthName_4  = 'April'
+MonthName_5  = 'Maj'
+MonthName_6  = 'Juni'
+MonthName_7  = 'Juli'
+MonthName_8  = 'Augusti'
+MonthName_9  = 'September'
+MonthName_10 = 'Oktober'
+MonthName_11 = 'November'
+MonthName_12 = 'December'
+ 
+DateUnknown = 'okänd'
+
+After = 'inom'
+Remaining = 'återstående'
+Ago = 'sedan'
+
+Days_After = $DayCount + ' ' + {$DayCount : 'dag', 'dagar'}
+Hours_After = $HourCount + ' ' + {$HourCount : 'timme', 'timmar'}
+Minutes_After = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minuter'}
+LessMinute_After = '< 1 minut'
+
+Days_Remaining = $DayCount + ' ' + {$DayCount : 'dag', 'dagar'}
+Hours_Remaining = $HourCount + ' ' + {$HourCount : 'timme', 'timmar'}
+Minutes_Remaining = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minuter'}
+LessMinute_Remaining = '< 1 minut'
+
+Days_Ago = $DayCount + ' ' + {$DayCount : 'dag', 'dagar'}
+Hours_Ago = $HourCount + ' ' + {$HourCount : 'timme', 'timmar'}
+Minutes_Ago = $MinuteCount + ' ' + {$MinuteCount : 'minut', 'minuter'}
+LessMinute_Ago = '< 1 minut'
+
+Yesterday   = 'igår'
+Today       = 'idag' 
+LessWeek    = 'för mindre än en vecka sedan'
+LessTwoWeek = 'mindre än två veckor sedan'
+LessMonth   = 'för mindre än en månad sedan'
+MoreMonth   = 'för mer än en månad sedan'
+MoreHalfYear= 'mer än ett halvt år sedan'
+MoreYear    = 'mer än ett år sedan'
+
+Time_After     = After + ' ' + $TimePeriod
+Time_Remaining = $TimePeriod + ' ' + Remaining
+Time_Ago       = $TimePeriod + ' ' + Ago
+
+;Buttons
+ConfirmButton    = 'OK'
+CancelButton = 'Avbryt'
+ApplyButton = 'Verkställ'
+CloseButton = 'Stäng'
+NextButton = 'Nästa >'
+BackButton = '< Bakåt'
+FinishButton = 'Slutför'
+SaveButton = 'Spara'
+SkipButton = 'Hoppa över'
+Continue = 'Fortsätt'
+Yes = 'Ja'
+No = 'Nej'
+
+SettingsMore = 'In&ställningar...'
+
+DoNoyShowThisWindow = 'Visa inte'
+
+; general system error codes
+
+SystemError_0x80000040 = 'Odefinierat fel'
+SystemError_0x8000004B = 'Odefinierat fel'
+SystemError_0x80000041 = 'Inte tillräckligt med minne'
+SystemError_0x80000042 = 'Stöds inte'
+SystemError_0x80000043 = 'Inte implementerad'
+SystemError_0x80000045 = 'Åtkomst nekad eller objektet hittades inte'
+SystemError_0x8000004C = 'Objektet hittades inte'
+SystemError_0x800000C6 = 'Objektet hittades inte'
+SystemError_0x800000C5 = 'Objektet hittades inte'
+SystemError_0x8000004F = 'Objektet är låst'
+SystemError_0x80000051 = 'Åtgärd avbruten'
+SystemError_0x80000059 = 'Enhetsfel'
+SystemError_0x8000005A = 'Ogiltig signatur'
+SystemError_0x8000005B = 'Ogiltig version'
+SystemError_0x8000005F = 'Skrivskydd'
+SystemError_0x80000061 = 'Licens saknas'
+SystemError_0x80000062 = 'Slut på utrymme'
+SystemError_0x80000063 = 'Enheten är inte redo'
+SystemError_0x800000C0 = 'Ogiltigt format'
+SystemError_0x800000C1 = 'Otillräckliga rättigheter'
+SystemError_0x800000C2 = 'Initieringsfel'
+SystemError_0x800000C3 = 'Initieringsfel'
+SystemError_0x800000C7 = 'Ogiltig objektstatus'
+SystemError_0x800000C8 = 'Objektet är lösenordsskyddat'
+SystemError_0x800000CA = 'Fel vid läsning'
+SystemError_0x800000CC = 'Fel vid läsning'
+SystemError_0x800000CB = 'Fel vid skrivning'
+SystemError_0x800000CD = 'Fel vid skrivning'
+SystemError_0x800000D0 = 'Ogiltigt objekt'
+SystemError_0x800000D1 = 'Objektet finns redan'
+SystemError_0x800000D5 = 'Objektet används av ett annat program'
+SystemError_0x800000D8 = 'Databaserna är skadade'
+SystemError_0x800001C0 = 'Ogiltig modul'
+SystemError_0x800001C2 = 'Modulen har inte verifierats'
+SystemError_0x800001C1 = 'Modulen hittades inte'
+SystemError_0x800001C4 = 'Komponenten kan inte läsas in'
+SystemError_0x80000221 = 'Timeout'
+SystemError_0x80000240 = 'Komponenters interaktionsfel'
+SystemError_0x90005000 = 'Ogiltig digital signatur'
+SystemError_0x90005002 = 'Inte signerad digitalt'
+SystemError_0x80027006 = 'Uppgiften stoppades'
+SystemError_0x80027007 = 'Uppgiften stoppades'
+SystemError_0x80380fbb = 'Uppgiften stoppades'
+SystemError_0x80017007 = 'Uppgift kan inte startas i säkert läge'
+SystemError_0x80017005 = 'Uppgiften avaktiverad'
+SystemError_0x80017006 = 'Felaktigt användarnamn eller lösenord'
+SystemError_0x80017008 = 'Det är inte möjligt att köra uppgift för ett annat användarkonto i felsäkert läge'
+SystemError_0x80017009 = 'Drivrutin hittades inte'
+SystemError_0x80022005 = 'Fel vid laddning av databaser'
+SystemError_default    = 'Felkod: ' + $ErrorCode
+
+LicenseManager = '&Licensiering'
+SubscriptionManager = 'Prenumerationshantering'
+ProblemSolution = 'Gå till licenshanteringsfönstret för att lösa det här problemet'
+
+KBSuffix = 'KB'
+MBSuffix = 'MB'
+GBSuffix = 'GB'
+TBSuffix = 'TB'
+
+; updating bases status
+Idle = 'inaktiv' ;refers to connection
+Stopping = 'stoppar'
+ConnectingToServer = 'ansluter till server'
+CreatingUpdateList = 'behandlar filer'
+Downloading = 'nedladdning av filer'
+Installing = 'uppdaterar filer'
+RollbackRunning = 'återställer till föregående databaser'
+
+FunctionalityDisabledForExpiredSubscription = 'uppdatering är avaktivering'
+FunctionalityDisabledForExpiredSubscriptionProtection = 'ditt datorskydd är avaktiverat'
+SubscriptionRemainingDaysCount = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dag', 'dagar'} + ' återstår.'
+SubscriptionExpiresToday = 'går ut idag'
+SubscriptionActivated = 'aktiverad'
+CheckReserveCodeManuallyHeader = 'Det gick inte att aktivera programmet automatiskt med den nya aktiveringskoden' ; TODO
+CheckReserveCodeManuallyText = 'Försök att aktivera programmet manuellt med hjälp av den nya aktiveringskoden.' ; TODO
+
+; LicensingStatus short descriptions
+LicensingStatus_Ok_ShortDescription = ''
+LicensingStatus_Beta_ShortDescription = 'Beta-version av programmet är installerad'
+LicensingStatus_Trial_ShortDescription = 'Programmets testversion har installerats'
+LicensingStatus_OkSubscription_ShortDescription = 'Prenumeration: ' + $SubscriptionOkHeaderDescription
+LicensingStatus_WillBeExpired_ShortDescription = 'Licensen går snart ut'
+LicensingStatus_WillBeExpiredTrial_ShortDescription = 'Licensen går snart ut'
+LicensingStatus_InvalidKeyCreationDate_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_InvalidActivationDate_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_InvalidKey_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_Reinstall_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_BrokenBlacklist_ShortDescription = 'Svartlistan med nycklar är skadad'
+LicensingStatus_CorruptedBases_ShortDescription = 'Kan inte verifiera överensstämmelse mellan databaserna och licensavtalet'
+LicensingStatus_BasesDateMismatch_ShortDescription = 'Licensens giltighetsperiod tillåter inte att aktuella databaser används'
+LicensingStatus_Expired_ShortDescription = 'Licensen har gått ut'
+LicensingStatus_ExpiredSubscription_ShortDescription = 'Prenumerationen har löpt ut ' + $SubscriptionExpirationDate
+LicensingStatus_ExpiredBestBuySubscription_ShortDescription = LicensingStatus_ExpiredSubscription_ShortDescription
+LicensingStatus_ExpiredTrial_ShortDescription = 'Testlicensen har gått ut'
+LicensingStatus_ExpiredBeta_ShortDescription = 'Beta-versionen har gått ut'
+LicensingStatus_Blocked_ShortDescription = 'Licensen är blockerad'
+LicensingStatus_BlockedSubscription_ShortDescription = 'Prenumerationen är blockerad'
+LicensingStatus_LicenseViolated_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_LicenseViolatedWithReserve_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_SubscriptionViolated_ShortDescription = 'Licensproblem upptäckt'
+LicensingStatus_Grace_ShortDescription = 'Prenumerationen har löpt ut ' + $SubscriptionExpirationDate
+LicensingStatus_GraceBestBuy_ShortDescription = LicensingStatus_Grace_ShortDescription
+LicensingStatus_SubscriptionSuspended_ShortDescription = 'Prenumerationen avbruten från ' + $SubscriptionExpirationDate
+LicensingStatus_SubscriptionUpdateFailed_ShortDescription = 'Misslyckades med att uppdatera prenumerationsstatus automatiskt'
+LicensingStatus_NotActivated_ShortDescription = 'Programmet är inte aktiverat'
+LicensingStatus_WaitCodeActivation_ShortDescription = 'Programmet är inte aktiverat'
+LicensingStatus_PresintalledCodeAvailable_ShortDescription = 'Programmet är inte aktiverat'
+LicensingStatus_PreinstalledCodeActivationProblem_ShortDescription = 'Programmet är inte aktiverat'
+
+; ReserveCodeStatus short descriptions
+ReserveCodeStatus_NotProvided_ShortDescription = 'Ny aktiveringskod'
+ReserveCodeStatus_Ok_ShortDescription = 'Ny aktiveringskod'
+ReserveCodeStatus_OkButActiveProblems_ShortDescription = ReserveCodeStatus_Ok_ShortDescription
+ReserveCodeStatus_Invalid_ShortDescription = 'Ny aktiveringskod är ogiltig'
+ReserveCodeStatus_ActivationProblem_ShortDescription = 'Ny aktiveringskod aktiverades inte'
+ReserveCodeStatus_WaitActivation_ShortDescription = 'Automatisk aktivering är förväntad'
+
+; LicensingStatus cause descriptions
+LicensingStatus_Ok_Cause = ''
+LicensingStatus_Beta_Cause = 'Betaversionen av ' + $ProductNameFull + ' innehåller samtliga funktioner men är inte den slutliga versionen utan kan innehålla olika typer av fel, problem och brister. Rapportera problem du upptäcker i motsvarande del på vårt forum.'
+
+LicenseRemain    = $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dag', 'dagar'} + ' återstår. Vid slutet av den här perioden begränsas funktionerna betydligt.' 
+LicenseEndsToday = 'Detta är den sista dagen på din licens. Programmets funktioner kommer att begränsas om du inte förnyar den.' 
+LicensingStatus_Trial_Cause = $LicensingStatusTrialRemain
+
+LicensingStatus_OkSubscription_Cause = $StateOkSubscriptionText
+
+StateLimitedSubscriptionActivatedText = 'Prenumerationen aktiverad. Utgångsdatum: ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionProlongedText = 'Prenumerationen förnyad till ' + $SubscriptionExpirationDate + '.'
+StateLimitedSubscriptionCanceledText = 'Prenumerationen avbruten. Utgångsdatum: ' + $SubscriptionExpirationDate + '.'
+StateSubscriptionNotYetSuspendedText = 'Prenumerationen kommer att avbrytas från ' + $SubscriptionExpirationDate + '.'
+StateUnlimitedSubscriptionProlongedText = 'Prenumerationen har förnyats och går aldrig ut'
+StateUnlimitedSubscriptionResumedText = 'Prenumerationen har återupptagits'
+
+AutorenewBestBuyActivated = ''
+AutorenewBestBuyProlonged = ''
+
+RemainingDays = 'om ' + $LicenseRemainingDaysCount + ' ' + {$LicenseRemainingDaysCount: 'dag', 'dagar'}
+LicensingStatus_WillBeExpired_Cause = $LicenseDaysToExpiry + ' ' + {$LicenseDaysToExpiry: 'dag', 'dagar'} + ' återstår. Efter denna period kommer programmets funktionalitet att vara kraftigt begränsad.'
+LicensingStatus_ExpiresToday_Cause = 'Går ut idag. Programmets funktionalitet begränsas efter utgångsdatumet.'
+
+LicensingStatus_InvalidKeyCreationDate_Cause = 'Felaktigt skapandedatum för nyckel. Systemdatum på din dator har ändrats. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidActivationDate_Cause = 'Felaktigt aktiveringsdatum. Systemdatum på din dator kan ha ändrats. ' + $FunctionalityLevelDescription
+LicensingStatus_InvalidKey_Cause = $FunctionalityLevelDescription
+LicensingStatus_Reinstall_Cause = 'Programmets integritet har skadats. ' + $FunctionalityLevelDescription
+LicensingStatus_BrokenBlacklist_Cause = 'Det rekommenderas att ladda ned ny svart lista från server.'
+LicensingStatus_CorruptedBases_Cause = 'En möjlig orsak är en felaktig uppdatering. ' + $FunctionalityLevelDescription
+LicensingStatus_BasesDateMismatch_Cause = $FunctionalityLevelDescription
+LicensingStatus_Expired_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredSubscription_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBestBuySubscription_Cause = LicensingStatus_ExpiredSubscription_Cause
+LicensingStatus_ExpiredTrial_Cause = $FunctionalityLevelDescription
+LicensingStatus_ExpiredBeta_Cause = $FunctionalityLevelDescription
+LicensingStatus_Blocked_Cause = 'Du kan ha köpt en illegal kopia av programmet. Skyddet har pausats. Din dator riskerar att bli infekterad, skadad eller få data stulet.'
+LicensingStatus_BlockedSubscription_Cause = 'Du kan ha köpt en olaglig kopia av programmet. ' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolated_Cause = 'Du har överskridit det maximala antal datorer för vilket ' + $ProductName + ' kan installeras med din licenstyp.' + $FunctionalityLevelDescription
+LicensingStatus_SubscriptionViolated_Cause = 'Du har överskridit det maximala antal datorer för vilket ' + $ProductName + ' kan installeras med din licenstyp.' + $FunctionalityLevelDescription
+LicensingStatus_LicenseViolatedWithReserve_Cause = ' '
+LicensingStatus_Grace_Cause = $LicenseGraceDaysCount + ' ' + {$LicenseGraceDaysCount: 'dag', 'dagar'} + ' återstår tills ' + $FunctionalityDisabledAfterGrace + '. '
+LicensingStatus_GraceBestBuy_Cause = ''
+LicensingStatus_SubscriptionSuspended_Cause = $FunctionalityLevelDescription
+LicensingStatus_SubscriptionUpdateFailed_Cause = 'TDet kan ha gått för lång tid mellan anslutning tll aktiveringsservrarna. ' + $FunctionalityLevelDescription
+LicensingStatus_NotActivated_Cause = $FunctionalityLevelDescription
+LicensingStatus_WaitCodeActivation_Cause = 'Förinställd aktiveringskod finns. Programmet kommer att aktiveras så snart det finns en anslutning till Internet.'
+LicensingStatus_PreinstalledCodeAvailable_Cause = 'Förinställd aktiveringskod finns. Du kan aktivera programmet med hjälp av den här aktiveringskoden eller ta bort den förinställda aktiveringskoden.'
+LicensingStatus_PreinstalledCodeActivationProblem_Cause = 'Programmet aktiverades inte automatiskt med hjälp av den förinställda aktiveringskoden. Din hjälp behövs.'
+
+ReserveCodeStatus_NotProvided_Cause = 'Det går att ange en ny aktiveringskod. Programmet aktiveras med denna aktiveringskod när nuvarande licens går ut.'
+ReserveCodeStatus_Ok_Cause = 'En ny aktiveringskod finns på datorn. När den nuvarande licensen går ut kommer programmet automatiskt att aktiveras med den nya aktiveringskoden. Ingen avbrott drabbar ditt skydd.'
+ReserveCodeStatus_Invalid_Cause = 'När den nuvarande licensen går ut går det inte längre att uppdatera.'
+ReserveCodeStatus_ActivationProblem_Cause = 'Kunde inte aktivera programmet med hjälp av den nya aktiveringskoden ' + $ReserveCode + ' automatiskt. Din hjälp behövs.'
+ReserveCodeStatus_WaitActivation_Cause = 'Automatisk aktivering med hjälp av den nya aktiveringskoden ' + $ReserveCode + ' förväntas.'
+
+ResolveProblem_BuyCommercial         = 'Vi rekommenderar att du köper och aktiverar en kommersiell version av programmet.'
+ResolveProblem_CheckSystemTime		= 'Kontrollera så att systemdatum är korrekt.'
+ResolveProblem_ActivateAgain        = 'Försök att ta bort den aktiva nyckeln och aktivera programmet igen. Det går även att kontakta teknisk support eller programmets distributör.'
+ResolveProblem_CallSupport			= 'Vi rekommenderar att du tar kontakt med teknisk support för att få reda på skälet till blockeringen. För att återställa programmets funktioner, skaffa en ny licens.'
+ResolveProblem_ContactSupport		= 'Kontakta den tekniska supporten.'
+ResolveProblem_ActialLicense		= 'För att återuppta din dators skydd, ange en ny aktiveringskod.'
+ResolveProblem_UpdateAgain			= 'Vi rekommenderar att du uppdaterar databaserna igen.'
+ResolveProblem_BuyNewLicense		= 'För att återställa din dators skydd, skaffa en ny licens.'
+ResolveProblem_CallProvider			= 'För att återuppta prenumerationen, kontakta din tjänsteleverantör.'
+ResolveProblem_ProviderWebSite		= 'För att återuppta prenumerationen, kontakta din tjänsteleverantör.'
+ResolveProblem_RenewalNotAvailable	= 'Prenumerationen kan inte förnyas.'
+ResolveProblem_BuyLicense			= 'Innan du kan återuppta skyddet på datorn måste du köpa en kommersiell licens från Kaspersky Lab eller våra återförsäljare. Testversionen kan bara användas en gång.'
+ResolveProblem_Reinstall			= 'Installera om programmet.'
+ResolveProblem_RenewLicense			= 'För att aktivera fulla funktioner, förnya licensen.'
+ResolveProblem_RefreshSubscription	= 'Uppdatera prenumerationsstatus manuellt.'
+ResolveProblem_Activate				= 'Ange en aktiveringskod för att aktivera programmet.'
+ResolveProblem_ActivateReserveCode  = 'Försök att aktivera programmet manuellt med den nya aktiveringskoden.'
+ResolveProblem_ActivateCodeManual	= 'Aktivera programmet manuellt.'
+ResolveProblem_CheckConnectionAndActivateCodeManual = 'Kontrollera dina inställningar för Internet-anslutningen och vänta på automatisk aktivering eller aktivera programmet manuellt.'
+
+; LicensingStatus full descriptions
+LicensingStatus_Ok_FullDescription = ''
+LicensingStatus_Beta_FullDescription = LicensingStatus_Beta_Cause
+LicensingStatus_Trial_FullDescription = LicensingStatus_Trial_Cause + ' ' + ResolveProblem_BuyCommercial
+LicensingStatus_OkSubscription_FullDescription = LicensingStatus_OkSubscription_Cause
+LicensingStatus_WillBeExpired_FullDescription = LicensingStatus_WillBeExpired_Cause + ' En ny aktiveringskod måste anges. Programmet aktiveras med denna aktiveringskod när nuvarande licens går ut.'
+LicensingStatus_WillBeExpiredTrial_FullDescription = LicensingStatus_WillBeExpired_Cause + ' Du måste aktivera programmet med hjälp av en aktiveringskod innan testlicensen går ut.'
+LicensingStatus_InvalidKeyCreationDate_FullDescription = LicensingStatus_InvalidKeyCreationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidActivationDate_FullDescription = LicensingStatus_InvalidActivationDate_Cause + ResolveProblem_CheckSystemTime
+LicensingStatus_InvalidKey_FullDescription = LicensingStatus_InvalidKey_Cause + ResolveProblem_ActivateAgain
+LicensingStatus_Reinstall_FullDescription = LicensingStatus_Reinstall_Cause + ResolveProblem_Reinstall
+LicensingStatus_BrokenBlacklist_FullDescription = LicensingStatus_BrokenBlacklist_Cause
+LicensingStatus_CorruptedBases_FullDescription = LicensingStatus_CorruptedBases_Cause + ResolveProblem_UpdateAgain
+LicensingStatus_BasesDateMismatch_FullDescription = LicensingStatus_BasesDateMismatch_Cause + ResolveProblem_BuyNewLicense
+LicensingStatus_Expired_FullDescription = LicensingStatus_Expired_Cause + ResolveProblem_RenewLicense
+LicensingStatus_ExpiredSubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_CallProvider
+LicensingStatus_ExpiredBestBuySubscription_FullDescription = LicensingStatus_ExpiredSubscription_Cause + ResolveProblem_RenewalNotAvailable
+LicensingStatus_ExpiredTrial_FullDescription = LicensingStatus_ExpiredTrial_Cause + ResolveProblem_BuyLicense
+LicensingStatus_ExpiredBeta_FullDescription = 'För att återställa fulla funktioner hos programmet krävs det att du inhandlar en kommersiell licens från Kaspersky Lab eller våra återförsäljare.'
+LicensingStatus_Blocked_FullDescription = LicensingStatus_Blocked_Cause + ResolveProblem_CallSupport
+LicensingStatus_BlockedSubscription_FullDescription = LicensingStatus_BlockedSubscription_Cause + ResolveProblem_CallSupport
+LicensingStatus_LicenseViolated_FullDescription = LicensingStatus_LicenseViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_SubscriptionViolated_FullDescription = LicensingStatus_SubscriptionViolated_Cause + ResolveProblem_ActialLicense
+LicensingStatus_LicenseViolatedWithReserve_FullDescription = LicensingStatus_LicenseViolatedWithReserve_Cause + ResolveProblem_ActivateReserveCode
+LicensingStatus_Grace_FullDescription = LicensingStatus_Grace_Cause + ResolveProblem_CallProvider
+LicensingStatus_GraceBestBuy_FullDescription = LicensingStatus_GraceBestBuy_Cause + ResolveProblem_CallProvider + '\n' + LNCS_BBY_StatusUpdate
+LicensingStatus_SubscriptionSuspended_FullDescription = LicensingStatus_SubscriptionSuspended_Cause + ResolveProblem_ProviderWebSite
+LicensingStatus_SubscriptionUpdateFailed_FullDescription = LicensingStatus_SubscriptionUpdateFailed_Cause + ResolveProblem_RefreshSubscription
+LicensingStatus_NotActivated_FullDescription = LicensingStatus_NotActivated_Cause + ResolveProblem_Activate
+LicensingStatus_WaitCodeActivation_FullDescription = LicensingStatus_WaitCodeActivation_Cause
+LicensingStatus_PreinstalledCodeAvailable_FullDescription = LicensingStatus_PreinstalledCodeAvailable_Cause
+LicensingStatus_PreinstalledCodeActivationProblem_FullDescription = LicensingStatus_PreinstalledCodeActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+
+LicensingStatus_ExpiresTodayTrial_FullDescription = LicensingStatus_ExpiresToday_Cause + ' Du måste aktivera programmet med hjälp av en aktiveringskod innan testlicensen går ut.'
+LicensingStatus_ExpiresToday_FullDescription = LicensingStatus_ExpiresToday_Cause + ' En ny aktiveringskod måste anges. Programmet aktiveras med denna aktiveringskod när nuvarande licens går ut.'
+
+ReserveCodeStatus_NotProvided_FullDescription = ReserveCodeStatus_NotProvided_Cause
+ReserveCodeStatus_Ok_FullDescription = ReserveCodeStatus_Ok_Cause
+ReserveCodeStatus_OkButActiveProblems_FullDescription = ''
+ReserveCodeStatus_Invalid_FullDescription = ReserveCodeStatus_Invalid_Cause + ResolveProblem_ContactSupport
+ReserveCodeStatus_ActivationProblem_FullDescription = ReserveCodeStatus_ActivationProblem_Cause + ' ' + ResolveProblem_ActivateCodeManual
+ReserveCodeStatus_WaitActivation_FullDescription = ReserveCodeStatus_WaitActivation_Cause + ' ' + ResolveProblem_CheckConnectionAndActivateCodeManual
+
+; Protection level
+ProtectionLevelUnknownLong = 'Skyddsstatus är odefinierad. '
+ProtectionLevelNoFeaturesLong = 'Skydd har avaktiverats. '
+ProtectionLevelLimitedLong = 'Programmets funktioner har begränsats. '
+ProtectionLevelExpiredStateLong = ProtectionLevelLimitedLong
+
+; Updater level
+UpdaterLevelUnknownLong = 'Uppdateringsstatus är odefinierad. '
+UpdaterLevelNotAllowedLong = 'Uppdateringar är inte tillgängliga. '
+UpdaterLevelUpdateBlacklistOnlyLong = ''
+
+;SubscriptionState
+SubscriptionStateUndefined = 'odefinierad'
+SubscriptionStateActive = 'aktiv'
+SubscriptionStatePaused = 'avbröts'
+SubscriptionStateCancelledSoft = 'avbröts'
+SubscriptionStateCancelledHard = 'avbruten'
+
+;SubscriptionStatusReason
+SubscriptionStatusReasonUndefined = 'odefinierad'
+SubscriptionStatusReasonProviderInitiated = 'aktiverad av serviceleverantör'
+SubscriptionStatusReasonCreditCardAuthFailed = 'kreditkortet godkändes ej'
+SubscriptionStatusReasonCustomerInitiated = 'aktiverad av användaren'
+SubscriptionStatusReasonCreditCardAuthSuccess = 'kreditkortet godkändes'
+
+ProductStatusRelease = 'slutversion'
+ProductStatusBeta = 'betaversion'
+
+LegalStatusBlocked = 'licensen är blockerad'
+LegalStatusLimited = 'brott mot licenseavtal'
+LegalStatusValid = 'licensen gäller'
+
+; LNCS
+LNCS_TrialExpiresSoonBaloon = 'Det finns ett viktigt licensmeddelande.\n<a href="licensemanager">Detaljer...</a>.'
+LNCS_SubscriptionGrace_Balloon = 'Prenumerationen har gått ut. Kontakta din tjänsteleverantör om du vill förnya prenumerationen.'
+
+LicensingState_WarningIsAvailable = 'det finns en varning'
+ProtectionState_NotificationIsAvailable = 'Licensmeddelande'
+LicensingState_ProblemIsAvailable = 'det finns ett problem'
+
+; LNCS Geek Squad
+
+LNCS_BBY_WillExpire_Title =	'Din Kaspersky Security Software går ut om ' + $LicenseDaysToExpiry + ' dagar. Din dator kommer att bli oskyddad'
+LNCS_BBY_WillExpire_Description =	'Förnya online på Geek Squad Renewal Center för att behålla ditt skydd'
+
+LNCS_BBY_AboutToExpire_Title =	    'Din Kaspersky Security Software håller på att gå ut'
+LNCS_BBY_AboutToExpire_Description = 'Det återstår bara ' + $LicenseDaysToExpiry + ' dagar på ditt skydd. Därefter kommer din dator att vara oskyddad. Förnya nu genom att kontakta Geek Squad Subscription Software Team online på Geek Squad Renewal Center'
+
+LNCS_BBY_AboutToExpire_Today_Title = 'Din Kaspersky Security-programvara är på väg att löpa ut i dag, och kommer att lämna datorn oskyddad'
+LNCS_BBY_AboutToExpire_Today_Description = 'Förnya nu genom att kontakta Geek Squad Subscription Software Team online på Geek Squad Renewal Center'
+
+LNCS_BBY_LastDay_Title =	'Varning! Din Kaspersky Security Software går ut idag'
+LNCS_BBY_LastDay_Description =	'Låt inte din dator vara oskyddad. Förnya online på The Geek Squad Renewal Center'
+LNCS_BBY_LastDay_Balloon =	'Varning! Din Kaspersky Security Software går ut idag. Låt inte din dator vara oskyddad. Förnya online på <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_Grace_Title =			'Prenumerationen har löpt ut'
+LNCS_BBY_Grace_Description =	'Låt inte din dator vara oskyddad. Förnya online på The Geek Squad Renewal Center.'
+LNCS_BBY_Grace_Description_Full =	'Låt inte din dator vara oskyddad. Förnya online på The Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_Grace_Balloon =		'Varning! Din dator är oskyddad. Låt inte din dator vara oskyddad. Förnya online på <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_RenewFailure_Title =	    'Vi kunde inte förnya din Kaspersky Security Software'
+LNCS_BBY_RenewFailure_Description = 'Förnya online på Geek Squad Renewal Center'
+LNCS_BBY_RenewFailure_Description_Full = 'Förnya online på Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+LNCS_BBY_RenewFailure_Balloon = 'Vi kunde inte förnya din Kaspersky Security Software. Förnya online på <a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">The Geek Squad Renewal Center</a>.'
+
+LNCS_BBY_CCAboutToExpire_Title =	'Din Kaspersky skyddsplan riskerar att avbrytas eftersom ditt kreditkort på fil snart går ut'
+LNCS_BBY_CCAboutToExpire_Description =	'Förnya online på Geek Squad Renewal Center'
+LNCS_BBY_CCAboutToExpire_Description_Full =	'Förnya online på Geek Squad Renewal Center.<BR>' + LNCS_BBY_StatusUpdate
+
+LNCS_BBY_Expired_Title =		'Prenumerationen har löpt ut'
+LNCS_BBY_Expired_Description =	'Prenumerationen kan inte förnyas.'
+
+LNCS_BBY_InTermRenew_KAV_Discount5 = 'Dra nytta av att förnya Kaspersky Anti-Virus tidigt och spara $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount10 = 'Dra nytta av att förnya Kaspersky Anti-Virus tidigt och spara $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount15 = 'Dra nytta av att förnya Kaspersky Anti-Virus tidigt och spara $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KAV_Discount20 = 'Dra nytta av att förnya Kaspersky Anti-Virus tidigt och spara $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount5 = 'Dra nytta av att förnya Kaspersky Internet Security tidigt och spara $5.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount10 = 'Dra nytta av att förnya Kaspersky Internet Security tidigt och spara $10.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount15 = 'Dra nytta av att förnya Kaspersky Internet Security tidigt och spara $15.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_KIS_Discount20 = 'Dra nytta av att förnya Kaspersky Internet Security tidigt och spara $20.' + LNCS_BBY_InTermRenew_Link
+LNCS_BBY_InTermRenew_Link = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Förnya nu</a>'
+LNCS_BBY_RenewalGraceRenew_KAV_Discount5 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount10 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount15 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KAV_Discount20 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount5 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount10 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount15 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere
+LNCS_BBY_RenewalGraceRenew_KIS_Discount20 = 'Kaspersky Anti-Virus är på väg att löpa ut!' + LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere
+LNCS_BBY_RenewalGraceRenew_Discount5_ClickHere  = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klicka här</a> för att spara $5 på priset för din årliga förnyelsen.'
+LNCS_BBY_RenewalGraceRenew_Discount10_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klicka här</a> för att spara $10 på priset för din årliga förnyelsen.'
+LNCS_BBY_RenewalGraceRenew_Discount15_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klicka här</a> för att spara $15 på priset för din årliga förnyelsen.'
+LNCS_BBY_RenewalGraceRenew_Discount20_ClickHere = '<br><a href="http://redirect.kaspersky.com/BestBuy?campaign=ipm&amp;SN=&lt;AdditionalInfoStrings4&gt;&amp;ContractID=&lt;AdditionalInfoStrings3&gt;&amp;act-serial=&lt;KeySerialNumber&gt;&amp;lic-id=&lt;LicenseId&gt;&amp;ppcs-id=&lt;PpcsId&gt;&amp;act-pid=&lt;ApplicationType&gt;&amp;act-pv=&lt;ApplicationVersion&gt;&amp;act-local=&lt;Localization&gt;&amp;act-lic-type=&lt;LicenseType&gt;&amp;act-lic-status=&lt;LicenseStatusId&gt;&amp;act-lic-lifespan=&lt;LicenseTerm&gt;&amp;act-lic-daystillexpiration=&lt;LicenseDaysToExpiration&gt;&amp;act-lic-dayssinceinstall=&lt;LicenseDaysSinceActivation&gt;&amp;act-lic-dse=&lt;LicenseDaysAfterExpiration&gt;&amp;act-item=&lt;ActionUiControlName&gt;">Klicka här</a> för att spara $20 på priset för din årliga förnyelsen.'
+
+LNCS_BBY_StatusUpdate = 'Det kan ta upp till 24 timmar innan produktstatus ändras. Klicka på "Uppdatera prenumerationsstatus" några timmar efter avslutad förnyandeprocess på Geek Squad Renewal Center för att tvinga produkten att kontrollera med eventuella uppdateringar.'
+
+EndOfLicense_Header = 'Programprestandarapport'
+WelcomPageTitle = 'Välkommen till ' + $ProductName
+
+; incompatible
+ReinstallWarningTitle = 'Operativsystemets version har ändrats sedan installationen av ' + $ProductName
+ReinstallWarningDescription = 'Installera om ' + $ProductName
+
+IncompatibleOsVersionTitle = $ProductName + ' har pausats'
+IncompatibleOsVersionDescription = 'För att ' + $ProductName + ' ska fungera på rätt sätt efter att Microsoft Windows 8 har installerats bör du ominstallera vissa programkomponenter. Installationen kommer inte att ta mer än 2 minuter.'+ '\n\nUnder konfigurering av ' + $ProductName + ' med Microsoft Windows 8 kommer datorns skydd att begränsas.'
+
+ReinstallWarningOkButton = 'Detaljer'
+IncompatibleOsVersionOkButton = 'Installera och kör'
+
+BrowserWaitingMessage = 'Vänta...'
+
+OsUpgradedTitle = 'Uppdatering av operativsystem'
+OsUpgradedDescription = 'Operativsystemet uppdaterades.'

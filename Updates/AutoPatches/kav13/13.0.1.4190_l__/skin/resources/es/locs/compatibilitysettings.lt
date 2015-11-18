@@ -1,0 +1,14 @@
+﻿Description_kav = 'Puede configurar la compatibilidad de Kaspersky Anti-Virus con otras aplicaciones para evitar conflictos y pérdidas de rendimiento.'
+Description_kis = 'Puede configurar la compatibilidad de Kaspersky Internet Security con otras aplicaciones para evitar conflictos y pérdidas de rendimiento.'
+
+ApplySpecialTreatment = 'Activar tecnología de &desinfección avanzada'
+ApplySpecialTreatmentDescription = 'Esta función permite la realización de un procedimiento de desinfección especial y exhaustivo (tecnología de desinfección avanzada) del software malicioso activo que se haya detectado.'
+ApplySpecialTreatmentWarning = 'Atención. La desinfección avanzada requiere un número considerable de recursos del equipo, lo que puede ralentizar su rendimiento general.'
+
+EnableStartupDelay = 'Conceder recursos al &sistema operativo durante el inicio del equipo'
+EnableStartupDelayDescription = 'Si este parámetro está activado, se pospondrá el inicio automático de la aplicación, lo que podría provocar la disminución del nivel de seguridad en su equipo.'
+
+LetOthersTake = 'Fa&cilitar recursos a otras aplicaciones'
+LetOthersTakeDescription = 'Esta función pospone las tareas de análisis programados en caso de sobrecarga de la CPU y los subsistemas de disco.'
+
+

@@ -1,0 +1,24 @@
+<UpdateFiles
+	UpdateDate="28102015 1513"
+	BlackDate="28102015 0603"
+	ObjectType="2=UDS;3=BASE">
+	<FileDescription
+		ComponentID="UDS"
+		UpdateType="base"
+		OS="Win"
+		LocalPath="%BaseFolder%"
+		Filename="uds.dll" />
+	<Registry
+		ComponentID="UDS"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAWwZHipAACNsV6nqczG4SCWKQcBOEXj/ZSTgks9qnskfYFX13YCKHg2tICxd81c+Fpp5HJ79k0T1umZ1ueilvRAMP9xYSlkBAB4JwQAAAAIAAigDAFVEUwMAAigEAEJBU0UBAAAJm9URSw0KOzoxMDQ3Q0ZLSmtMWkVzQjl0NHgyWlFVV2NPc2MvSjFrUWJRRzRUK3JmZ1NvL3pvcDA4YXdrdENzejVBZXJQaGl0endON1V0VUlobmFieXRiMlNldmVXWmNKJSU="
+		Filename="uds-0607g.pbv" />
+	<Registry
+		ComponentID="UDS"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwHBAIBLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAQABACAA70jc4QlkG1QzNUGXr3O84YrN5m/jR0h9draCjK/f8roCAB4BAQAeCcEAAAABAAAJYyg6sQ0KOzoxMGFKalBMQzExWDJ0N2cxbE9EV1Vxc2R2UThVMUJxTUNaWWRIUDVNWlczMlc2TWVjL3hJYVNzQTRGQ1g0WTRxYm1aYUw0SitnOWhpVXlGcmhxMTlCNkpaJSU="
+		Filename="mod-uds-0607g.krg" />
+</UpdateFiles>
+;:10q5RX+md3VbfAzgVJuDwxZMQzVKtd4k0kz0cE3ZOJmbxmqo2Nio1kBitUZYevthpmF03n96oA5EfEnMTRHHtG8o%%

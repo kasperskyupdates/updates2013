@@ -1,0 +1,24 @@
+﻿Description = 'Esta función clasifica todas las aplicaciones y restringe su comportamiento en función del grupo.'
+
+UseApplicationControl = 'Acti&var el Control de aplicaciones'
+
+SettingsDescription = 'Configurar reglas de aplicaciones, proteger datos personales y otros recursos:'
+Applications = '&Aplicaciones'
+IdentityProtection = 'Protección de la i&dentidad'
+
+ApplicationsRestrictionSection = 'Restringir aplicaciones'
+LoadRulesFromKSN = 'Cargar reg&las para aplicaciones de Kaspersky Security Network (KSN)'
+UpdateRulesFromKSN = 'Act&ualizar reglas de aplicaciones anteriormente desconocidas desde KSN'
+TrustSignedApps = 'Con&fiar en aplicaciones con firma digital'
+ForUnknownApps = 'Para aplicaciones desconocidas:'
+UseHeuristicToDefineGroup = 'Utilizar el análisis &heurístico para determinar el grupo'
+SelectGroupAutomatically = 'Mover al &siguiente grupo automáticamente:'
+DefaultGroupLowRestrictions = 'Restricción mínima'
+DefaultGroupHighRestrictions = 'Restricción máxima'
+DefaultGroupUntrusted = 'No confiable'
+AnalyzeTimeout = 'Tiempo má&ximo para determinar el grupo de la aplicación:'
+Sec = 'seg.'
+
+AdditionalSection = 'Avanzado'
+DeleteRules = 'Eliminar reglas de aplicaciones que &no se hayan iniciado durante más de'
+Days = 'días'

@@ -1,0 +1,284 @@
+﻿[Global]
+$Scan_Title             = "Verificar"
+$Scan_Objects           = ($IsKAT ? "Verificação automática" : "Verificação Personalizada")
+$Scan_My_Computer       = "Verificação Completa"
+$Scan_Qscan             = "Verificação de processos ocultos"
+$Scan_Vulnerabilities   = "Verificação de Vulnerabilidade"
+$Scan_Startup           = "Verificação de Áreas Críticas"
+$Scan_IdleScan          = "Verificação em Inactividade"
+$QuickScan              = "Verificação Personalizada"
+$Active_Disinfect       = "Desinfectar Ameaças Activas"
+$NewAll                 = "todos" : "novos"
+$ScanQuarantine         = "Verificação da Quarentena"
+$Rollback_AVZ           = "Reversão"
+$Scan                   = "Verificar"
+AskUpdateBeforeFullScan = s_ProdState(#ProdStateBasesOld) + ". Pretende executar uma actualização agora?"
+DeleteItemsConfirm      = "Tem a certeza de que pretende apagar o(s) item(ns) seleccionados?"
+$BrowseSaveLink		    = "Guardar Como"
+
+[s_ScanObjectName]
+#OBJECT_TYPE_MEMORY                 = "Memória do Sistema"
+#OBJECT_TYPE_STARTUP                = "Objectos de Inicialização"
+#OBJECT_TYPE_HIDDEN_STARTUP         = "Objectos de Inicialização"
+#OBJECT_TYPE_MAIL                   = "Os Meus E-mails"
+#OBJECT_TYPE_ALL_DRIVES             = "Todos os Discos"
+#OBJECT_TYPE_ALL_REMOVABLE_DRIVES   = "Todos os Discos Removíveis"
+#OBJECT_TYPE_ALL_FIXED_DRIVES       = "Todos os Discos Rígidos"
+#OBJECT_TYPE_ALL_NETWORK_DRIVES     = "Todos os Discos de Rede"
+#OBJECT_TYPE_BOOT_SECTORS           = "Sectores de inicialização do disco"
+#OBJECT_TYPE_QUARANTINE             = "Objectos em quarentena"
+#OBJECT_TYPE_SYSTEM_RESTORE         = "Memória de cópias de segurança do sistema"
+#OBJECT_TYPE_VULN_PATHES            = "Aplicações instaladas"
+default                             = c_ScanObjects(hashMD5short(ScanObjects), getDisplayName(ObjectType == #OBJECT_TYPE_MY_COMPUTER ? "%mycomputer%" : ScanObjects))
+
+[ScanGroup_Body]
+Start.Name   = "Iniciar verificação"
+Stop.Name    = "Parar verificação"
+
+[ScanGroup_Body_Active]
+NowScanning.Name            = "Verificar:"
+OnDetection.Name            = "Com a detecção de ameaças:"
+ShutdownWhenFinished.Name   = "Quando a verificação for concluída:"
+ShutdownWhenFinished.Val    = EnableStopMode ? s_ODSStopModes(StopMode) : "Manter o computador ligado"
+
+[ScanGroup_Body_Active_NowScanning]
+Skip                        = "Ignorar"
+
+[ScanGroup_Body_Inactive]
+Level.Name          = "Nível de Segurança:"
+OnDetection.Name    = "Com a detecção de ameaças:"
+Scheduler.Name      = "Modo de execução: "
+LastStart           = "Última execução:"
+LastError           = "Última execução:"
+
+[ScanShutdownMenu]
+EnableStopMode = "Terminar sessão"
+
+[s_ODSStopModes]
+#stop_Shutdown  = "Encerrar o computador"
+#stop_Sleep     = "Mudar para modo de espera"
+#stop_Hibernate = "Mudar para modo de hibernação"
+#stop_Restart   = "Reiniciar o computador"
+
+[MainWindow.Scan_Filters_Menu]
+ByTime      = "Agrupar por hora"
+AllItems    = "Não agrupar"
+ByVerdict   = "Agrupar por resultado"
+
+[MainWindow_Body.Scan.DragDropArea]
+Description = "Para efectuar uma verificação personalizada de um objecto, arraste o mesmo para aqui ou <a ChooseObjects $LinkKLInText onclick(dialog(\"MainWindow_Body.Scan.DialogCheckedFile\"))>procure</a> o objecto."
+
+[ScanDialog_EventLog]
+Time    = "Hora"
+Object  = "Objecto"
+Status  = "Estado"
+Reason  = "Razão"
+
+[ScanSettings.Optimization_FileTypesGroup]
+CheckNew = "&Verificar apenas os ficheiros novos e modificados"
+
+[ScanSettings_Tab]
+Scope       = "Âmbito"
+Additional  = "Adicional"
+RunMode     = "Modo de execução"
+
+[ScanSettings_Tab_Scope]
+FileTypesGroup  = "Tipos de ficheiros"
+FileTypesGroup1 = "Optimização da verificação"
+
+[ScanSettings_Tab_Scope_FileTypesGroup]
+All         = "&Todos os ficheiros"
+Infectable  = "Ficheiros verificados p&or formato"
+Predefined  = "Ficheiros verificados por e&xtensão"
+
+[ScanSettings_Tab_Scope_FileTypesGroup1]
+CheckNew        = "Verificar apenas os &ficheiros novos e modificados"
+SkipTimeCheck   = "I&gnorar objectos cuja verificação demore \nmais de"
+SkipTimeLabel   = "seg"
+
+[ScanSettings_Tab_Additional]
+Methods     = "Métodos de verificação"
+Tecnologies = "Tecnologias de verificação"
+Feedback    = "Informação de retorno"
+
+[ScanSettings_Tab_Additional_Feedback]
+UseKLSRL    = "Aceito participar na Kaspersky Security Network"
+
+[ScanSettings_Tab_Additional_Methods]
+Sign            = "Análise de a&ssinaturas"
+Heur            = "Análise &heurística"
+Vulnerability   = "Verificação de assinaturas de &vulnerabilidades"
+Rootkit         = "Verificação de &processos ocultos"
+RootkitDeep     = "&Verificação detalhada "
+
+[ScanSettings_Tab_Additional_Tecnologies]
+Swift   = "Tecnologia iS&wift"
+Check   = "&Tecnologia iChecker"
+
+[ScanSettings_Tab_RunMode]
+Schedule = "Agendamento"
+
+[ScanSettings_Tab_RunMode_Schedule]
+Manual  = "&Manualmente"
+Fixed   = "&Planificadas"
+
+[MainReport.Scan_Objects]
+;@.Title = ""
+
+;------------- ScanProgressWindow -----------
+
+[ScanProgressWindow]
+Footer.Cancel = (name == "Scan_Objects" || origin == #poTemporary) && f_IsStateActive(state) ? "Parar" : "Fechar"
+
+[ScanProgressWindow_Footer]
+Reports = "Relatório detalhado"
+
+[ScanProgressWindow_Body_Status]
+Duration.Name   = "Duração: "
+ShutdownWhenFinished.Name   = "Quando a verificação for concluída, "
+ShutdownWhenFinished.Val    = EnableStopMode ? capitalize(s_ODSStopModes(StopMode), false) : "manter o computador ligado"
+Scanned    = "" + NumScaned + " objectos verificados, "
+Detected   = NumThreats ? "" + NumThreats + " detectado" : "não foram detectadas ameaças"
+
+[ScanProgressWindow_Body_ActiveInfo]
+Object.Name     = "Objecto: "
+SkipScanObject  = "Ignorar"
+
+;------------- Password request Dialog -----------
+
+[PasswordRequestDialog]
+@       = "Por favor, insira a password"
+
+[PasswordRequestDialog_Footer]
+SkipAll = "Ignorar todos"
+Skip    = "Ignorar"
+Ok      = "OK"
+
+[PasswordRequestDialog_Body]
+Archive.Name    = "Arquivo:"
+Password.Name   = "Password:"
+
+[AskResumeScan]
+@="Iniciar verificação"
+
+[AskResumeScan_Body]
+Info.Text       = "\"" + $ProfileName + "\" a tarefa foi interrompida"
+Resume.Name     = "Retomar verificação"
+Resume.Descr    = "A verificação será retomada no ponto onde estava quando foi parada"
+Restart.Name    = "Iniciar nova verificação"
+Restart.Descr   = "A verificação será novamente iniciada"
+
+[s_TaskTypeModification]
+privctrl
+default     = "\ (alteração)"
+
+;------------- AskScanSettingsDlg -------------
+
+[AskScanSettingsDlg]
+$AskScanSettingsDlgTaskName = "Verificação de vírus"
+@.ApplyToAll       = "Executar sempre nesses casos"
+
+[AskScanSettingsDlg_Body_Descr]
+Name  = "Disco removível ligado"
+Descr = "É recomendada uma verificação para detectar software malicioso"
+
+[AskScanSettingsDlg_Body_Action]
+Question            = "Deseja verificar o disco removível?"
+ProcessFull.Name    = "Verificação Completa"
+ProcessFull.Descr   = "Todos os ficheiros do disco removível serão verificados"
+ProcessQuick.Name   = "Verificação Rápida"
+ProcessQuick.Descr  = "Apenas ficheiros potencialmente infectados serão verificados"
+Skip.Name			= "Não verificar"
+Skip.Descr			= "O disco removível não será verificado"
+
+[s_DriveScanModes]
+#dsmSkip	= "&Não verificar"
+#dsmAskUser = "&Perguntar o que fazer"
+#dsmFull	= "Verificação Co&mpleta"
+#dsmQuick	= "Verificação &Rápida"
+
+[MainWindow_Body.Scan]
+Header      = "Verificação de vírus"
+Descr       = "Verifique o seu computador quanto à presença de vírus, Trojans, worms, e outras ameaças."
+Scan_Vulnerabilities.Name.Caption = f_IsStateActive(state) ? "A Verificação de Vulnerabilidade está a decorrer " + Completion + "%" : "Abrir janela de Verificação de Vulnerabilidade"
+Scan_Vulnerabilities.Descr = "Verificar a existência de vulnerabilidades no seu computador e em software de terceiros."
+
+[ScanTask_Status_Active]
+Remain = "Conclusão: "
+
+[ScanTask_Status_Active_Object]
+Object = ", objecto: "
+
+[VulnerabilityMonitor]
+@ = "Verificação de Vulnerabilidade"
+
+[VulnerabilityMonitor_Header]
+Name = "Verificação de Vulnerabilidades no Sistema em nas Aplicações de Terceiros"
+Desc = "Procura vulnerabilidades no seu sistema e aplicações, que possam permitir ataques maliciosos."
+
+[VulnerabilityMonitor_Body_Never]
+Text1 = "Verificação de Vulnerabilidade nunca foi iniciada"
+Text2 = "Clique no botão Iniciar para iniciar a verificação"
+
+[VulnerabilityMonitor_Body_Progress]
+Progress = "A Verificação de Vulnerabilidade está a decorrer: " + Completion + "%"
+
+[VulnerabilityMonitor_Body_Progress_Remain]
+Remain = "Conclusão: "
+
+[VulnerabilityMonitor_Body_Navigator]
+AVZ.Cont = "Vulnerabilidades do sistema"
+Vuln.Cont = "Aplicações vulneráveis"
+
+[VulnerabilityMonitor_List]
+rowedit.Do  = "Detalhes..."
+rowedit.Do2 = "Adicionar às exclusões..."
+
+[VulnerabilityMonitor_Body_Result_Info]
+ShowCured = "Mostrar vulnerabilidades corrigidas"
+
+[VulnerabilityMonitor_Body_Tab_AVZ]
+ShowAll   = "Mostrar ocultas"
+
+[VulnerabilityMonitor_ListRow]
+FileLabel = "Ficheiro:"
+
+[AvzVulnerabilityMonitor_List]
+rowedit.Do       = "Reparar"
+rowedit.Do2      = "Reverter"
+rowedit.Help     = "Detalhes"
+rowedit.Hide     = "Ocultar"
+
+[s_VulnerabilityDescr]
+#eProtStateCrit
+#eProtStateWarn     = "Correcção recomendada"
+def                 = "Não é necessário corrigir"
+
+;------------- Restore Object Dialog -----------
+
+[AskRestoreObjectDlg]
+@.TaskName      = $ScanQuarantine
+
+[AskRestoreObjectDlg_Body_Descr]
+Descr           = "O ficheiro em quarentena não está infectado. Recomenda-se que o restaure."
+ObjectL         = "Localização original:"
+
+[AskRestoreObjectDlg_Body_Action]
+SaveAs.Name     = "Restaurar..."
+SaveAs.Descr    = "Restaurar o ficheiro para a sua localização original"
+Skip.Name		= "Cancelar"
+Skip.Descr		= "Não restaurar"
+
+;------------- QB Size Exceeded Dialog -----------
+
+[AskQBSizeExceededDlg]
+@.TaskName     = "Quarentena e Cópia de Segurança"
+
+[AskQBSizeExceededDlg_Body_Descr]
+Descr          = "Foi excedido o tamanho máximo da Quarentena e Cópia de Segurança. Por favor, limpe a Quarentena e Cópia de Segurança para continuar."
+
+[AskQBSizeExceededDlg_Body_Action]
+Clean.Name     = "Limpar"
+Clean.Descr    = "Limpar a Quarentena e Cópia de Segurança até ao tamanho desejado"
+Cancel.Name	   = "Cancelar"
+Cancel.Descr   = "Não limpar a Quarentena e Cópia de Segurança até ao tamanho desejado"

@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "Licentiebestand selecteren"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "De sleutel voor deze kopie van het programma is verstrekt door een hardwareleverancier. Wilt u het programma activeren met deze sleutel?\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "Configuratie van het programma is nog niet voltooid. Weet u zeker dat u de Configuratiewizard wilt stoppen?"
+ErrEmptyActivationCode.caption  = "Geen activatiecode opgegeven"
+ErrEmptyActivationCode          = "Voer de activatiecode in"
+ErrEmptyKeyPath.caption         = "Licentiebestand niet opgegeven"
+ErrEmptyKeyPath                 = "Geef het licentiebestand op"
+$LicInfoKeyNumber               = "Nummer:"
+$LicInfoKeyProductName          = "Programmanaam:"
+$LicInfoKeyType                 = "Licentietype:"
+$LicInfoExpirationDate          = "Verloopdatum:"
+$LicErrReason                   = "Reden:"
+$ActiveKey                      = "Actieve licentiesleutel"
+$ReservedKey                    = "Extra licentiesleutel"
+ConfirmFeedback                 = "Gaat u akkoord met het versturen van informatie naar het <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a>?"
+$KsnTerms                       =  "Kaspersky Security Network (KSN) is een infrastructuur van online services die up-to-date informatie over de beveiliging van bestanden, webbronnen en software leveren. Het gebruik van gegevens uit het KSN zorgt niet alleen voor een hogere responstijd bij recente dreigingen, maar verbetert ook de prestaties van sommige beschermingsonderdelen en herleidt het risico op valse positieven.\nWanneer u deelneemt aan KSN, worden informatie over virusinfecties en andere problemen, alsook uitgebreide statistieken over geladen of uitgevoerde programma\'s (volgens de lijst gespecificeerd in de <a KsnInfo onclick(dialog(\"KsnInfo\"))>Verklaring voor gegevensverzameling door KSN</a>), automatisch verzonden naar Kaspersky Lab. \n\n<b>Kaspersky Security Network verzamelt en verwerkt geen persoonlijke gebruikersinformatie.</b>"
+
+$ToAcquireNewLicText            = "\n\nAls u een nieuwe licentie wilt verkrijgen, neemt u contact op met uw distributeur of <a Buy onclick(buy())>de verkoopafdeling van Kaspersky</a>"
+$LicErrHelpLink                 = "\n\n<a Support onclick(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a Support onclick(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nProbeer de status van het abonnement handmatig bij te werken of neem contact op met de Technische Support" : "\nProbeer het programma te activeren door de activatiecode later te gebruiken (binnen 1–2 uur) of neem contact op met de Technische Support") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a Support onclick(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " Activatiewizard" : " Configuratiewizard")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "Algemene informatie"
+InitBegin.Descr                       = "Welkom bij de Configuratiewizard van " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Beschikbaarheid van Kaspersky Lab-servers controleren"
+CheckHosts.Descr                      = "Verdachte herverwijzing gedetecteerd"
+ResetArea.Name                        = "Instellingen herstellen"
+ResetArea.Descr                       = "De instellingen hieronder bevatten gegevens die door de gebruiker zijn \ningevoerd of verzameld tijdens het gebruik van het programma."
+ActivationBegin.Name                  = $IsSubscription ? "Beheer van abonnement" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "Licentiesleutel verwijderen" : "Licentiesleutel toevoegen") : "Activeer het programma")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "Bezig met licenseren" : "Activeer het programma om door te gaan.")
+ActivationProgress.Name               = "Online activeren"
+ActivationProgress.Descr              = "Bezig met activeren. Even geduld..."
+ActivationServerForm.Name             = "Online activeren"
+ActivationServerForm.Descr            = "Vul dit formulier in."
+ActivationChooseKey.Name              = "Activeren via licentiebestand"
+ActivationChooseKey.Descr             = "Activeer het programma met het licentiebestand."
+ActivationEnd.Name                    = "Activatie van programma"
+ActivationEnd.Descr                   = "Activatie voltooid."
+MigrationKeyIsFound.Name         = "Er is een sleutel voor de huidige licentie beschikbaar"
+MigrationKeyIsFound.Descr        = "Wilt u het door de huidige licentie vastgelegde programma gebruiken?"
+MigrationBegin.Name              = "Schakel over naar " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "U schakelt over naar het gebruik van " + s_MUProductTitleLong(env("ProductType"))
+MigrationSearchProgress.Name     = "Zoeken naar incompatibele software"
+MigrationSearchProgress.Descr    = "Even geduld. Bezig met zoeken naar incompatibele software..."
+MigrationSafeRemoval.Name        = "Incompatibele software gevonden"
+MigrationSafeRemoval.Descr       = "De incompatibele software moet worden verwijderd om door te gaan"
+MigrationSafeProgress.Name       = "Incompatibele software verwijderen"
+MigrationSafeProgress.Descr      = "Even geduld. Bezig met verwijderen van incompatibele software..."
+MigrationAddRemove.Name          = "Incompatibele software gevonden"
+MigrationAddRemove.Descr         = "Verwijder de incompatibele software"
+MigrationUnsafeRemoval.Name      = "Incompatibele software gevonden"
+MigrationUnsafeRemoval.Descr     = "De incompatibele software moet worden verwijderd om door te gaan"
+MigrationUnsafeProgress.Name     = "Incompatibele software verwijderen"
+MigrationUnsafeProgress.Descr    = "Even geduld. Bezig met verwijderen van incompatibele software..."
+MigrationReboot.Name             = "Herstart van besturingssysteem vereist"
+MigrationReboot.Descr            = "Herstart is vereist om over te schakelen naar het nieuwe programma"
+MigrationProgress.Name           = "Schakel over naar " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "Even geduld. Bezig met overschakelen naar het nieuwe programma..."
+MigrationRebootApp.Name          = bMigrationDone ? "Programma wordt herstart" : "Fout tijdens overschakeling naar nieuw programma"
+MigrationRebootApp.Descr         = bMigrationDone ? "Programma moet worden herstart" : "Overschakeling naar " + s_MUProductTitleLong(env("ProductType")) + " mislukt"
+MigrationFinish.Name             = "Overschakeling naar " + s_ProductTitleLong(env("ProductType")) + " voltooid"
+MigrationFinish.Descr            = "Overschakeling naar " + s_ProductTitleLong(env("ProductType")) + " voltooid"
+DNS.Name                              = "Geavanceerde instellingen"
+DNS.Descr                             = "Geavanceerde instellingen voor werking van " + $ProductName_GEN
+EnumExe.Name                          = "Systeemanalyse"
+EnumExe.Descr                         = "Even geduld. Bezig met verzamelen van informatie over uw systeem..."
+InitFinish.Name                       = "Configuratie van " + $ProductName + " voltooien"
+InitFinish.Descr                      = $IsInstallNeedReboot ? "U moet u computer herstarten om de programmaconfiguratie te voltooien." : "U kunt " + $ProductName + " nu starten."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "Verdachte herverwijzing van Kaspersky Lab-servers gedetecteerd. Dit wordt mogelijk veroorzaakt door malware-activiteit en kan ertoe leiden dat updates en activaties mislukken. Verdachte records in het hosts-bestand:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "Records verwijderen (aanbevolen)"
+Skip			= "Overslaan"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&Terug"
+Back.Descr      = "Ga terug naar keuze van methode voor programma-activatie"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "&Sleutel toevoegen" : "&Activeren"
+Activate.Descr  = "Installatie van geselecteerde licentiebestand"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&Voltooien"
+Finish.Descr    = "Activatiewizard sluiten"
+Next.Name       = "&Volgende"
+Next.Descr      = "Ga door naar de configuratie"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "U kunt het door deze licentie vastgelegde programma blijven gebruiken. In dit geval schakelt het programma over naar " + s_MUProductTitleLong(env("ProductType")) + "."
+Text3   = "Wilt u het programma dat is vastgelegd door de huidige licentie blijven gebruiken?"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "Programmatype:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Verloopdatum:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " remaining)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "Ja en schakel over naar " + s_MUProductTitleLong(env("ProductType")) + "."
+NotUseFoundLicense = "Nee en verlaat " + switch(env("ProductType"), "ProductTitleLong", "") + "."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "U bent bezig met de overschakeling naar " + s_MUProductTitleLong(env("ProductType")) + ". De copyrighthouder verleent u een niet-exclusieve licentie voor het gebruik van " + s_MUProductTitleLong(env("ProductType")) + " aan dezelfde voorwaarden die u eerder heeft aanvaard tijdens de installatie van " + s_ProductTitleLong(env("ProductType"))
+Text3   = "Opmerking: deze overschakeling vereist acties waarbij u de computer mogelijk opnieuw moet opstarten."
+LicenseWarning  = "Attentie! De commerciële licentie voor het gebruik van Kaspersky Anti-Virus verloopt vóór de proeflicentie voor het gebruik van Kaspersky Internet Security. Nadat de commerciële licentie voor het gebruik van Kaspersky Anti-Virus verloopt, kunt u niet langer teruggaan naar Kaspersky Anti-Virus vanuit de proefversie van Kaspersky Internet Security. Wilt u overschakelen naar Kaspersky Internet Security?"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "Bezig met zoeken naar incompatibele software op uw computer. Dit kan even duren. Even geduld."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "De volgende software wordt verwijderd om de overschakeling uit te voeren:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "Even geduld terwijl de incompatibele software wordt verwijderd..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "De volgende software moet worden verwijderd om de overschakeling uit te voeren:"
+OpenAddRemove = "Open het venster programma's toevoegen/verwijderen"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "De volgende software wordt verwijderd om de overschakeling uit te voeren:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "Even geduld terwijl de incompatibele software wordt verwijderd..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "U moet de computer herstarten om door te gaan met de overschakeling. De wizard gaat verder na de herstart."
+Reboot   = "Nu opnieuw opstarten"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "Even geduld tijdens de herconfiguratie van het programma. U schakelt dan over naar " + s_MUProductTitleLong(env("ProductType")) + "..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "De overschakeling naar " + s_MUProductTitleLong(env("ProductType")) + " wordt voltooid met de herstart van het programma." : "Overschakeling naar " + s_MUProductTitleLong(env("ProductType")) + " mislukt."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "Nu kunt u functies van " + s_ProductTitleLong("kis") + " zoals Ouderlijk Toezicht, Anti-Spam, Firewall, enz. evalueren." : s_ProductTitleLong("kav") + " biedt basisbescherming voor uw computer tegen malware."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "U kunt "+if($IsRefreshSubAvail,"de abonnementstatus updaten of ")+"de sleutel verwijderen." : (f_IsActiveKeyWorkingCommercial() ? "U kunt uw actieve sleutel verwijderen of een sleutel toevoegen." : "Activeer " + $ProductName + " om de volledige functionaliteit van het programma in te schakelen."+ if($CorporateOnly, " U kunt een <a Activate onclick(url($ActivationLink))>commerciële versie</a> aanschaffen of een <a ActivateTrial onclick(url($ActivationTrialLink))>proefversie</a> van het programma activeren."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "&Later activeren"
+Later.Descr                 = "Sla de activatie over en ga verder met de configuratie van het programma"
+ChooseKey.Name              = "Activeren met een &licentiebestand"
+ChooseKey.Descr             = "Een licentiebestand is vereist"
+ActivateBetaKAV.Name        = "Activeer &bètaversie van Kaspersky Anti-Virus"
+ActivateBetaKAV.Descr       = "De bètaversie van Kaspersky Anti-Virus beschikt over de volledige functionaliteit, maar is geen afgewerkt product."
+ActivateBetaKIS.Name        = "Activeer &bètaversie van Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "De bètaversie van Kaspersky Internet Security beschikt over de volledige functionaliteit, maar is geen afgewerkt product."
+ActivateTrial.Name          = "Proefversie ac&tiveren"
+ActivateTrial.Descr         = "Geldigheidsduur van de proefversie is in de Gebruiksrechtovereenkomst opgegeven"
+ActivateCommercial.Name     = "Online &activeren"
+ActivateCommercial.Descr    = "U hebt de activatiecode nodig die u bij de aankoop hebt ontvangen"
+RemoveKey.Name              = $HasReserveKey ? "&Extra licentiesleutel verwijderen" : "&Licentiesleutel verwijderen"
+RemoveKey.Descr             = "Als u de licentiesleutel wilt vervangen, moet u eerst de actieve sleutel verwijderen"
+RefreshSubscription.Name    = "Abonnementstatus &updaten"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "U kunt de abonnementsstatus handmatig updaten." :  "Automatisch updaten van de abonnementstatus is beëindigd. U kunt de status handmatig updaten."
+ActivateTrialKIS            = "Activeer proefversie van Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "Geldigheidsperiode voor de proefversie van Kaspersky Internet Security is in de licentieovereenkomst gespecificeerd"
+RevertToCommercialKAV       = "Ga terug naar de commerciële versie van Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "Ga terug naar de commerciële versie van Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "Abonnementstatus updaten"
+ActivateCommercial      = "&Commerciële versie activeren"
+ActivateCommercial_Desc = (LockActivationCode)? "Voer de activatiecode in: " : "Voer de <a onclick(url(\"" + $ActCodeHint + "\"))>activatiecode in</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "Uw activatiecode werd automatisch toegevoegd. Klik op de knop \"Volgende\"." : "Als u geen activatiecode heeft, kunt u er <a onclick(buy())>online</a> één aanschaffen."
+ActivateBetaKAV         = "Activeer &bètaversie van Kaspersky Anti-Virus"
+ActivateBetaKIS         = "Activeer &bètaversie van Kaspersky Internet Security"
+ActivateTrial           = "Proefversie ac&tiveren"
+ActivateTrial_Desc      = "Evalueer een volledig functionele versie van het programma voordat u het aanschaft."
+ActivateTrialKIS           = "Activeer proefversie van Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "Evalueer een geheel functionele versie van Kaspersky Internet Security vóór de aanschaf."
+RevertToCommercialKAV      = "Ga terug naar de commerciële versie van Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "Gebruik niet langer de proefversie van Kaspersky Internet Security en keer terug naar de commerciële versie van Kaspersky Anti-Virus."
+Later                   = "&Later activeren"
+Later_Desc              = "Volledige functionaliteit is pas beschikbaar wanneer het programma is geactiveerd."
+RemoveKey               = "Licentiebestand verwijderen"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "Licentiebestand:"
+KeyInfo         = "Licentie-informatie"
+ConnectingInfo.Name     = "Fout tijdens activatie: "
+ConnectingInfo.Val      = "details"
+TryAgain                = "Activeren"
+Descr1                  = "Voer de volgende acties uit om de activatie opnieuw te proberen:"
+Descr2                  = "Controleer de instellingen van de internetverbinding en probeer het programma opnieuw te activeren."
+Descr3                  = "Ga naar het <a onclick(url(\"" + $ActivationLink + "\"))> Online activatiecentrum</a> en volg de instructies.\nNa ontvangst van het licentiebestand geeft u de locatie ervan op en klikt u op Volgende:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "Aanmaakdatum:"
+InstallDate.Name    = "Activatiedatum:"
+ExpirationDate.Name = "Verloopdatum:"
+SubscrptnExpDate.Name = "Verloopdatum vam abonnement:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," voor " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "Systeemfout: " + s_SystemError(ErrorCode)
+2       = "Kan sleutel \"" + KeyFile + "\" niet toevoegen: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "Kan \"" + KeyFile + "\"niet verwijderen: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "Foutcode: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "Deze sleutel is al toegevoegd" + $LicErrHelpLink
+0x0947901d  = "Uw licentie is verlopen. De database update optie is niet beschikbaar" + $LicErrHelpLink
+0x89479002  = "Licentie niet gevonden" + $LicErrHelpLink
+0x89479003  = "Digitale handtekening ontbreekt of is beschadigd" + $LicErrHelpLink
+0x89479004  = "Gegevens zijn beschadigd" + $LicErrHelpLink
+0x89479005  = "Licentiebestand is beschadigd" + $LicErrHelpLink
+0x89479006  = "Licentie is verlopen" + $LicErrHelpLink
+0x89479007  = "Geen licentiebestand opgegeven" + $LicErrHelpLink
+0x89479008  = "Licentiebestand is ongeldig" + $LicErrHelpLink
+0x89479009  = "Opslaan van gegevens is mislukt" + $LicErrHelpLink
+0x8947900a  = "Lezen van gegevens is mislukt" + $LicErrHelpLink
+0x8947900b  = "I/O-fout" + $LicErrHelpLink
+0x8947900c  = "Databases ontbreken" + $LicErrHelpLink
+0x8947900d  = "Er zijn al actieve en extra sleutels toegevoegd" + $LicErrHelpLink
+0x8947900e  = "Licentiebibliotheek is niet geïnitialiseerd" + $LicErrHelpLink
+0x8947900f  = "Databases zijn beschadigd of zijn handmatig bijgewerkt" + $LicErrHelpLink
+0x89479010  = "Databases zijn beschadigd" + $LicErrHelpLink
+0x89479011  = "Verlopen licentiebestand kan niet als reservelicentie geregistreerd worden" + $LicErrHelpLink
+0x89479012  = "Systeemfout" + $LicErrHelpLink
+0x89479013  = "Blacklist met licentiesleutels is beschadigd" + $LicErrHelpLink
+0x89479014  = "Digitale handtekening komt niet overeen met de digitale handtekening van Kaspersky Lab" + $LicErrHelpLink
+0x89479015  = "Commerciële versie van het programma kan niet met een bètalicentie worden geactiveerd" + $LicErrHelpLink
+0x89479016  = "Bètaversie van het programma kan alleen met een bètalicentie worden geactiveerd" + $LicErrHelpLink
+0x89479017  = "De licentie is niet geldig voor dit programma. U kunt " + $ProductName + " niet activeren met de licentie voor een ander programma. Controleer het geïnstalleerde programma." + $LicErrHelpLink
+0x89479018  = "Sleutel is geblokkeerd" + $LicErrHelpLink
+0x89479019  = "Deze proeflicentie is al in gebruik. Het is niet mogelijk dezelfde proeflicentie 2 keer te gebruiken" + $LicErrHelpLink
+0x8947901a  = "Licentiebestand is beschadigd" + $LicErrHelpLink
+0x8947901b  = "Digitale handtekening komt niet overeen met de digitale handtekening van Kaspersky Lab" + $LicErrHelpLink
+0x8947901c  = "Sleutel kan niet voor een niet-commerciële licentie worden toegevoegd als deze is verlopen" + $LicErrHelpLink
+0x8947901e  = "Aanmaken van activatiedatum of licentiebestand is ongeldig. Controleer de instellingen van uw systeemdatum" + $LicErrHelpLink
+0x8947901f  = "Licentiesleutel voor een proeflicentie kan niet worden toegevoegd wanneer een andere sleutel voor een proeflicentie actief is" + $LicErrHelpLink
+0x89479020  = "Blacklist met licentiesleutels ontbreekt of is beschadigd" + $LicErrHelpLink
+0x89479021  = "Updatebeschrijving ontbreekt of is beschadigd" + $LicErrHelpLink
+0x89479022  = "Interne gegevens zijn ongeldig voor dit programma" + $LicErrHelpLink
+0x89479023  = "Extra sleutel kan niet met een onjuiste activatiecode worden toegevoegd" + $LicErrHelpLink
+0x89479024  = "Fout bij voltooien van formulier met gebruikersgegevens" + $LicErrHelpLink
+0x89479025  = "Fout bij verzenden van verzoek naar activatieserver.\nMogelijke oorzaak: problemen met uw internetverbinding of tijdelijke problemen met de activatieserver.\nProbeer de code later opnieuw te activeren (over 1-2 uur).\nNeem contact op met uw internetaanbieder als het probleem aanhoudt" + $LicErrHelpLink
+0x89479026  = "Verzoek bevat een onjuiste activatiecode" + $LicErrHelpLink
+0x89479027  = "Kan geen reactiestatus verkrijgen" + $LicErrHelpLink
+0x89479028  = "Fout bij opslaan van tijdelijk bestand" + $LicErrHelpLink
+0x89479029  = "Activatiecode is onjuist ingevoerd of de systeemdatum is onjuist. Controleer de instellingen van uw systeemdatum" + $LicErrHelpLink
+0x8947902a  = "De activatiecode is niet geschikt voor dit programma of de sleutel is verlopen. " + $ProductName + " kan niet met de licentie voor een ander programma worden geactiveerd. Controleer het geïnstalleerde programma of <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x8947902b  = "Ontvangst van licentiebestand is mislukt. Onjuiste activatiecode opgegeven" + $LicErrHelpLink
+0x8947902c  = "Activatieserver geeft fout 400" + $OlaErrHelpLink
+0x8947902d  = "Activatieserver geeft fout 401" + $OlaErrHelpLink
+0x8947902e  = "Activatieserver geeft fout 403" + $OlaErrHelpLink
+0x8947902f  = "Noodzakelijke bron is niet beschikbaar op de activatieserver.\nActivatieserver geeft fout 404.\nControleer de instellingen van uw internetverbinding" + $OlaErrHelpLink
+0x89479030  = "Activatieserver geeft fout 405" + $OlaErrHelpLink
+0x89479031  = "Activatieserver geeft fout 406" + $OlaErrHelpLink
+0x89479032  = "Proxyauthenticatie vereist. Controleer de LAN-instellingen" + $LicErrHelpLink
+0x89479033  = "Verzoek vertoonde time-out" + $LicErrHelpLink
+0x89479034  = "Activatieserver geeft fout 409" + $OlaErrHelpLink
+0x89479035  = "Noodzakelijke bron is niet beschikbaar op de activatieserver.\nActivatieserver geeft fout 410.\nControleer de instellingen van uw internetverbinding" + $OlaErrHelpLink
+0x89479036  = "Activatieserver geeft fout 411" + $OlaErrHelpLink
+0x89479037  = "Activatieserver geeft fout 412" + $OlaErrHelpLink
+0x89479038  = "Activatieserver geeft fout 413" + $OlaErrHelpLink
+0x89479039  = "Activatieserver geeft fout 414" + $OlaErrHelpLink
+0x8947903a  = "Activatieserver geeft fout 415" + $OlaErrHelpLink
+0x8947903b  = "Onbekende fout op de client" + $OlaErrHelpLink
+0x8947903c  = "Interne serverfout" + $LicErrHelpLink
+0x8947903d  = "Functionaliteit wordt niet ondersteund" + $LicErrHelpLink
+0x8947903e  = "Ongeldige gatewayreactie. Controleer uw netwerkinstellingen" + $LicErrHelpLink
+0x8947903f  = "Bron tijdelijk niet beschikbaar" + $LicErrHelpLink
+0x89479040  = "Wachtverzoek vertoonde time-out. Controleer uw netwerkinstellingen" + $LicErrHelpLink
+0x89479041  = "Het protocol wordt niet ondersteund door de server" + $OlaErrHelpLink
+0x89479042  = "Onbekende fout op de server" + $OlaErrHelpLink
+0x89479043  = "Onbekende http-fout" + $OlaErrHelpLink
+0x89479044  = "Ongeldig bron-id" + $LicErrHelpLink
+0x89479045  = "Onjuiste info in veld \"licentiesleutel\"" + $LicErrHelpLink
+0x89479046  = "Onjuiste URL" + $LicErrHelpLink
+0x89479047  = "Onjuiste doelmap" + $LicErrHelpLink
+0x89479048  = "Fout bij geheugentoewijzing" + $LicErrHelpLink
+0x89479049  = "Fout bij omzetten van parameters naar ANSI-tekenreeks (url, map, agent)" + $LicErrHelpLink
+0x8947904a  = "Fout bij het maken van de working thread" + $LicErrHelpLink
+0x8947904b  = "Working thread is al gestart" + $LicErrHelpLink
+0x8947904c  = "Working thread is niet gestart" + $LicErrHelpLink
+0x8947904d  = "Licentiebestand is niet gevonden op activatieserver" + $LicErrHelpLink
+0x8947904e  = "Sleutel is geblokkeerd" + $LicErrHelpLink
+0x8947904f  = "Interne fout bij activatieserver" + $LicErrHelpLink
+0x89479050  = "Onvoldoende info in activatieverzoek" + $LicErrHelpLink
+0x89479051  = "Onjuiste gebruikers-id of onjuist wachtwoord" + $LicErrHelpLink
+0x89479052  = "Onjuiste activatiecode" + $LicErrHelpLink
+0x89479053  = "De licentie van het geselecteerde licentiebestand verloopt eerder dan de actieve licentie" + $LicErrHelpLink
+0x89479054  = "Onjuiste datum van het besturingssysteem. Controleer de systeemdatum" + $LicErrHelpLink
+0x89479055  = "Proeflicentie is verlopen" + $LicErrHelpLink
+0x89479056  = "Activatieperiode is verlopen" + $LicErrHelpLink
+0x89479057  = "<b>De gegeven code heeft de toegestane hoeveelheid activaties overschreden!</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "Sleutel voor een niet-commerciële licentie kan niet als extra sleutel worden toegevoegd terwijl een commerciële licentie van kracht is" + $LicErrHelpLink
+0x8947905c  = "Activatiecode vereist" + $LicErrHelpLink
+0x8947905d  = "Onjuiste klant-ID of onjuist wachtwoord" + $LicErrHelpLink
+0x8947905e  = "Onjuiste activatiecode" + $LicErrHelpLink
+0x89479062  = "Kan gen verbinding maken met de activatieserver" + $LicErrHelpLink
+0x89479064  = "<b>Activatieserver is niet beschikbaar.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init, "Kan het programma nu niet activeren. Probeer de activatie opnieuw na de configuratie van het programma en de herstart van het besturingssysteem.", "Controleer de instellingen van uw internetverbinding en probeer nogmaals te activeren.") + $LicErrHelpLink
+0x89479065  = "Uw licentie is verlopen. <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink
+0x89479066  = "Actieve sleutel kan niet worden vervangen door een verlopen sleutel" + $LicErrHelpLink
+0x89479067  = "Een sleutel die eerder verloopt dan de actieve sleutel kan niet als een extra sleutel worden toegevoegd" + $LicErrHelpLink
+0x89479068  = "De bijgewerkte abonnementslicentie ontbreekt" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "Activatieprocedure voltooid met systeemfout " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "Activatiefout: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "Activatiefout: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "Activatiefout: server geeft HTTP-code " + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "Activatie mislukt " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "Interne fout bij activatieserver. Probeer het opnieuw of neem contact op met de Technische Support"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "De activatiecode is niet geschikt voor deze toepassing. Het is niet mogelijk " + $ProductName + " met de activatiecode van een andere toepassing te activeren. Controleer uw product"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "Sleutel is geblokkeerd"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "Onjuiste klant-ID of onjuist wachtwoord"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "Verkeerde activatiecode"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "Activatiecode is vereist"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "Activatieperiode is verstreken"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "Aantal activaties met deze code overschreden"
+#OLA_ERR_SRV_REGION_MISMATCH                = "Activatiecode is ongeldig in deze regio"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "Deze activatiecode kan niet worden gebruikt voor deze lokalisatie van het programma."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "De activatiecode is geldig voor een nieuwere versie van dit programma. Als u de huidige versie wilt gebruiken, moet u een andere code verkrijgen. Klik op de onderstaande koppeling voor informatie."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "Activatieserver geeft fout 643"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "Activatieserver geeft fout 644"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "Activatieserver geeft fout 645"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "Activatieserver geeft fout 646"
+default                                     = "Activatieprocedure geeft een fout " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "Offline modus is geactiveerd in Microsoft Internet Explorer"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "Internetverbinding mislukt"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "Activatieserver is niet beschikbaar"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "Proxyserver is niet beschikbaar"
+#OLA_ERR_INTERNET_TIMEOUT                    = "Time-out voor reactie is verlopen"
+#OLA_ERR_INTERNET_INVALID_URL                = "Onjuist adres van activatieserver"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "Onjuist protocol"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "Kan serververbinding niet configureren"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "Bewerking geannuleerd"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "Kan serververbinding niet configureren"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "Serververbinding werd beëindigd"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "Serververbinding werd opnieuw ingesteld"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "Onjuiste serverreactie"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "SSL-certificaat van de server is verlopen. Controleer de lokale computer tijd"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "Servernaam van SSL-certificaat komt niet overeen met de server"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "Kan de certificaatherroepingscontrole niet uitvoeren. Schakel deze controle in Microsoft Internet Explorer uit (Extra->Internetopties->Geadvanceerd->Controleren of de uitgever het certificaat heeft ingetrokken) en herhaal de activatiepoging"
+#OLA_ERR_INTERNET_CERT_INVALID               = "Ongeldig SSL-certificaat"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "SSL-certificaat is ingetrokken"
+#OLA_ERR_INTERNET_INVALID_CA                 = "Onjuist certificatiecentrum"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "Kaspersky Lab heeft uw registratiegegevens nodig om u op de hoogte te brengen over diverse promoties, verkoopsprijzen en speciale aanbiedingen."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&Doorgaan"
+Activate.Descr  = "Gegevens naar de activatieserver verzenden"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "De Configuratiewizard maakt verbinding met de activatieserver van Kaspersky Lab. Dit kan even duren en is afhankelijk van de snelheid van uw internetverbinding."
+ConnectingInfo.Name     = "Verbinding maken met de activatieserver..."
+ConnectingInfo.Val      = if(bConnected, "OK")
+SendingCodeInfo.Name    = "Activatiecode verzenden..."
+SendingCodeInfo.Val     = if(bSentCode, "OK")
+RetrievingKeyInfo.Name  = "Wachten op reactie van de server..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "OK")
+Status                  = "Uw product " + $ProductName + " is succesvol geactiveerd"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "Verloopdatum:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " remaining)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "Activatie succesvol." : "Het programma is al geactiveerd op uw computer."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&Volgende"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "Ga door naar de activatie van het programma": (((PiwFlags & #fPiwActivation) && !bSilent)?"Ga door naar de licentie-informatie":"Ga door naar de keuze van de beschermingsmodus")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "Deze wizard helpt u de bescherming van uw computer snel en goed te configureren.\n\nTijdens de configuratie zal de wizard informatie over het systeem en de geïnstalleerde programma's verzamelen. Deze informatie zal alleen worden gebruikt om uw computer optimaal te beschermen.\n\nKlik op Volgende om de configuratie van " + $ProductName_GEN + " te starten."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "De installatie is bijna voltooid..." : ((PiwFlags & #fPiwReset) ? ("Het herstel is voltooid.") : ("De installatie is voltooid."))
+ResetDescr          = "De Configuratiewizard heeft de instellingen van " + $ProductName + " succesvol hersteld."
+Reboot              = "&Start de computer opnieuw op"
+StartProduct        = $ProductName + " &starten"
+RebootPiwWarning    = $IsInstallNeedReboot ? ("Dank u voor de installatie van " + $ProductName + ". Als u de installatie wilt voltooien, moet u de computer herstarten. Sla uw gegevens op, sluit alle programma's en klik op de knop 'Voltooien'.") : "Merk op dat de configuratie wordt voltooid wanneer het programma voor het eerst start. Dit kan enkele minuten duren."
+
+[ConfigureWizard.EnumExe]
+Info = "Tijdens de systeemanalyse wordt een lijst met vertrouwde programma's aangemaakt op die zijn inbegrepen bij het Microsoft Windows Besturingssysteem.\n\nProgramma's die niet zijn inbegrepen bij het besturingssysteem worden afzonderlijk geanalyseerd wanneer ze voor het eerst worden gestart op de computer."
+
+[s_LicKeyType]
+#ektBeta         = "Licentiesleutel voor bètaversie"
+#ektTrial        = "Proefversie"
+#ektTest         = "Licentiesleutel voor testversie"
+#ektOEM          = "Licentiesleutel voor OEM-versie"
+#ektCommercial   = "Commerciële versie"
+#ektSubscription = "Commerciële versie met abonnement"
+#ektSubscriptionProtection = "Commerciële versie met beschermingsabonnement"
+default          = "Onbekend type"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "Onbekende fout"
+#ekirValid                      = "Licentie is geldig"
+#ekirExpired                    = "Licentie is verlopen"
+#ekirCorrupted                  = "Licentie is niet geldig"
+#ekirNotSigned                  = "Digitale handtekening ontbreekt of is beschadigd"
+#ekirWrongProduct               = "De licentie is niet geldig voor dit programma. U kunt " + $ProductName + " niet activeren met de licentie voor een ander programma. Controleer het geïnstalleerde programma."
+#ekirBlackListed                = "De sleutel "+f_KeySerNum(KeyInfo.ID.KeySerNum)+" is geblokkeerd"
+#ekirIllegalUpdate              = "De datum van de database komt niet overeen met de geldigheidsduur van de licentie"
+#ekirInconsistentUpdate         = "Databases zijn beschadigd"
+#ekirKeyCreationDateInvalid     = "Onjuiste aanmaakdatum van de licentiesleutel"
+#ekirTrialAlreadyInUse          = "Licentiesleutel voor een proeflicentie kan niet worden toegevoegd wanneer een andere sleutel voor een proeflicentie actief is"
+#ekirInvalidBlacklist           = "Blacklist met licentiesleutels is beschadigd"
+#ekirCantBeUsedAsReserved       = "Kan licentie niet registreren als een extra licentie"
+#ekirKeyInstallDateInvalid      = "Onjuiste activatiedatum"
+#ekirTrialPeriodIsOver          = "Proeflicentie is verlopen"
+#ekirConflictsWithCommercial    = "Nieuw licentiebestand is niet compatibel met de huidige commerciële licentie"
+#ekirExpiredAsReserve           = "Deze licentie verloopt eerder dan de huidige licentie"
+#ekirGracePeriod                = "Licentie in respijtperiode"
+#ekirSuspended                  = "Abonnement is opgeschort"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "Het programma moet opnieuw worden geïnstalleerd"
+#ekirLicenseOnlyForMigration    = "Schakel over naar het andere programma om de commerciële versie te activeren"
+default                         = "Licentiebestand is niet juist"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "Later te bepalen"
+#edtUnlimited = "Actief"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "Opgeschort vanaf " + date(SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "Licentie-informatie"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": licentiebericht"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "Attentie!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "U gebruikt een proefversie van " + $ProductName_GEN + "."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "Black list met licenties ontbreekt of is beschadigd. Voer de <a Update onclick(f_StartUpdater())>update</a> uit om verder te gaan met de bewerking."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "Uw licentie " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". Als u uw bescherming up-to-date wilt houden, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nAls u de licentie al hebt aangeschaft, <a Activate onclick(f_Activate())>activeert u het programma</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("Abonnement verlopen." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink, " Bescherming is uitgeschakeld."))+($IsBestBuyLink ? " Verlenging van abonnement niet beschikbaar." : " Computerbeveiliging loopt gevaar. \n\nAls u het abonnement wilt verlengen, <a onclick(url($KeyProviderLinkForText))>neemt u contact op met uw serviceaanbieder</a>.")) :("U hebt nog " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " resterend om uw abonnement te verlengen. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " totdat updates worden uitgeschakeld. " : " totdat de bescherming wordt uitgeschakeld." ) ) + " Als u het abonnement wilt verlengen, <a onclick(url($KeyProviderLinkForText))>neemt u contact op met uw serviceaanbieder</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>De actieve sleutel is geblokkeerd.\nDe updatefunctie is uitgeschakeld waardoor uw computer mogelijk wordt blootgesteld aan infecties.</b>\n\nAls u een legitieme versie van het programma hebt aangeschaft, neemt u contact op met de Technische Support of een wederverkoper.\n\nAls u geen legitieme versie gebruikt, <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nAls u al een licentie hebt aangeschaft, <a Activate onclick(f_Activate())>activeert u het programma</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "verloopt vandaag" : "verloopt binnen " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "is verlopen"
+
+[s_LicenseRenewBuyText]
+0 = "licentie aanschaffen"
+default = "verleng licentie"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "Selecteer te herstellen instellingen:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = "Configuratiewizard van " + $ProductName_GEN
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "Algemene informatie"
+InitBegin.Descr                       = "Welkom bij de Configuratiewizard van " + $ProductName_GEN + "."
+CheckHosts.Name                       = "Beschikbaarheid van Kaspersky Lab-servers controleren"
+CheckHosts.Descr                      = "Verdachte herverwijzing gedetecteerd"
+ResetArea.Name                        = "Instellingen herstellen"
+ResetArea.Descr                       = "De instellingen hieronder bevatten gegevens die door de gebruiker zijn \ningevoerd of verzameld tijdens het gebruik van het programma."
+EnumExe.Name                          = "Systeemanalyse"
+EnumExe.Descr                         = "Even geduld. Bezig met verzamelen van informatie over uw systeem..."
+ResetFinish.Name                       = "Configuratie van " + $ProductName + " voltooien"
+ResetFinish.Descr                      = $ProductName + " is gereed om te worden gestart."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "Herstel voltooid."
+ResetDescr          = "De Configuratiewizard heeft de instellingen van " + $ProductName + " succesvol hersteld."
+
+[BestBuyUpgradeMessage]
+@ = "Schakel over naar een ander programma"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="Aan de slag met Kaspersky Internet Security"
+RestartButton = "Kaspersky Internet Security starten"
+
+[BestBuyUpgradeMessagePage]
+Header = "Gefeliciteerd!"
+Message = "Uw Kaspersky Anti-Virus is succesvol geüpgraded naar Kaspersky Internet Security.\nNu beschikt u over nog meer functies om uw computer te beschermen."
+Description = "Hartelijk bedankt dat u Kaspersky Lab-software hebt gekozen! Veel plezier met de extra bescherming."
+
+[ForcedUpgradeMessagePage]
+Header = "Bijna klaar"
+Message = "Hartelijk bedankt dat u Kaspersky Lab-software hebt gekozen! Veel plezier met de extra bescherming."
+Description = "Aangezien de incompatibele software niet is verwijderd, zijn bepaalde nieuwe functies van Kaspersky Internet Security uitgeschakeld om een juiste werking van geïnstalleerde programma's en het besturingssysteem te verzekeren.\n\nU kunt de incompatibele software handmatig verwijderen en alle nieuwe functies in het venster met de instellingen van Kaspersky Internet Security inschakelen."
+Notification = "Het programma wordt herstart om de upgrade te voltooien."

@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Geçiş sihirbazı'
+UpgradeCaption = 'Yükselt'
+
+RebootPageCheckboxRebootText = 'Bilgisayarı yeniden başlatın'
+OpenRemoveProgramsPanel = 'Araç çubuğunu aç'
+
+WizardBeginDescriptionKis = 'Kaspersky Internet Security 2013\'e geçiş yapacaksınız.\n\nTelif hakkı sahibi, Kaspersky Internet Security ürününü kullanmanız için size, Kaspersky Anti-Virus ürününü kurarken kabul ettiğiniz şartlarla, münhasır olmayan bir lisansı vermektedir.\n\nNot: Bu geçiş yeniden başlatmayla sonuçlanabilir.'
+
+WizardBeginDescriptionKav = 'Kaspersky Anti-Virus 2013\'e geçiş yapacaksınız.\n\nTelif hakkı sahibi, Kaspersky Internet Security ürününü kullanmanız için size,  Kaspersky Anti-Virus ürününü kurarken kabul ettiğiniz şartlarla, münhasır olmayan bir lisans vermektedir.\n\nNot: Bu geçiş yeniden başlatmayla sonuçlanabilir.'
+
+WizardContinueDescriptionKis = 'Kaspersky Internet Security 2013\'ye geçiş işlemine devam et.'
+WizardContinueDescriptionKav = 'Kaspersky Anti-Virus 2013\'ye geçiş işlemine devam et.'
+
+MigrationNocomebackWarning = '\n\nDikkat! Kaspersky Anti-Virus uygulamasının lisans süresi Kaspersky Internet Security uygulamasından önce sona ermektedir. Kaspersky Anti-Virus lisans süresi sona erdiğinde, Kaspersky Anti-Virus uygulamasına geri dönmek mümkün olmayacaktır.'
+
+PleaseWait = 'Lütfen bekleyin'
+RemovalProgressDescription   = 'Uyumsuz yazılımlar siliniyor'
+RemovalApplicationsDescription = 'Geçişi yapabilmek için aşağıdaki yazılımlar kaldırılacak:'
+ManualRemovalApplicationsDescription = 'Geçişi yapabilmek için aşağıdaki uyumsuz yazılımları elle kaldırmanız gerekir:'
+SearchRemovalApplicationsDescription   = 'Uyumsuz yazılımlar aranıyor'
+RestartProductDescription = 'Geçiş işlemini tamamlamak için uygulama yeniden başlatılacak.'
+RebootOsDescription = 'Geçişe devam edebilmek için bilgisayarı yeniden başlatmanız gerekiyor.\nSihirbaz yeniden başlatıldıktan sonra devam edecek.'
+
+MigrationProgressDescriptionKis = 'Uygulamayı yeniden yapılandırma ve Kaspersky Internet Security uygulamasına geçiş'
+UpgradeProgressDescriptionKis   = 'Uygulamayı yeniden yapılandırma ve Kaspersky Internet Security uygulamasına geçiş'
+MigrationProgressDescriptionKav = 'Uygulamayı yeniden yapılandırma ve Kaspersky Anti-Virus uygulamasına geçiş'
+
+MigrationKis = 'Kaspersky Internet Security\'ye geç'
+MigrationKav = 'Kaspersky Anti-Virus\'e geç'
+MigrationUnknown = 'Geç '
+
+SearchRemovalApplicationsHeader = 'Kaspersky Internet Security\'ye yükseltiliyor'
+RemovalProgressHeader = 'Uyumsuz yazılımlar siliniyor'
+RemovalApplicationsHeader = 'Uyumsuz yazılımlar bulundu'
+RebootOsHeader = 'Bilgisayarın yeniden başlatılması gerekiyor'
+RestartProductHeader = 'Uygulama yeniden başlatılacak'
+
+MigrationAbortedHeader = $MigrationType + ' mümkün değil'
+MigrationAbortedDescription = $MigrationType + ' başarısız oldu. Uyumsuz yazılımı elle kaldırmayı deneyin ardından sihirbazı yeniden başlatın.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus ürününüz  Kaspersky Internet Security olanağına yükseltilecek.\nArtık bilgisayarınızı korumaya yönelik daha da fazla özelliğe sahip olacaksınız.'
+BestBuyGiftDescription = 'Kaspersky Lab yazılımını tercih ettiğiniz için teşekkür ederiz! Artan korumanızın keyfini çıkarın.'
+BestBuyUpgradeNotification = 'Güncelleme sırasında, yüklü uygulamaların ve işletim sisteminin doğru şekilde çalışmasını sağlamak için sisteminiz uyumsuz yazılımlar için analiz edecek.'
+BestBuyFreeUpgrade = 'Kaspersky Internet Security\'ye geç'
+
+BestBuyTryAbortHeader = 'Yükseltme arkaplanda devam ediyor'
+BestBuyTryAbortInformation = 'Yükseltme arkaplanda devam edecek'
+BestBuyTryAbortDescription = 'Uyumsuz yazılım kaldırılmadığı için, yüklü uygulamaların ve işletim sisteminin doğru şekilde çalışmasını sağlamak amacıyla Kaspersky Internet Security yazılımının bazı yeni özellikleri devre dışı bırakıldı.\n\nUyumsuz yazılımı elle kaldırabilir ve Kaspersky Internet Security ayarları penceresinden tüm yeni özellikleri etkinleştirebilirsiniz.'
+BackToSubcriptionUpgradeButtonText = 'Yükseltmeye geri dön'
+Congratulation = 'Tebrikler!'
+
+RunKisButtonText = 'Kaspersky Internet Security yazılımını başlat'
+
+ProductUpgraded = 'Kaspersky Anti-Virus yazılımınız başarıyla Kaspersky Internet Security yazılımına yükseltildi.\nArtık bilgisayarınızı korumaya yönelik daha da fazla özellikten faydalanabilirsiniz.'

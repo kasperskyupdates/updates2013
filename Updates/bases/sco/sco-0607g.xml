@@ -1,0 +1,34 @@
+<UpdateFiles
+	UpdateDate="16092015 0716"
+	BlackDate="16092015 0602"
+	ObjectType="2=SCO;3=BASE">
+	<FileDescription
+		ComponentID="SCO"
+		UpdateType="base"
+		Arch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="sys_critical_obj.dll" />
+	<FileDescription
+		ComponentID="SCO"
+		UpdateType="base"
+		Arch="i386"
+		OS="Win"
+		ServerFolder="i386/win"
+		LocalPath="%BaseFolder%"
+		Filename="sys_critical_obj.esm" />
+	<Registry
+		ComponentID="SCO"
+		UpdateType="KLKEY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwH6/39LTHN3AACtrQEAAAD8AwAAAwAAFgEBAAAJAaEiHipAAD/hRTbTzrq8yku8u3k6OfVPhChIVU4erUMQIGHhyInXL864+Gv4lAsGdy5SwB4q82mx7MHuyHWSrJcei2lrH94BAB4JvAAAAAIAAigDAFNDTwMAAigEAEJBU0UBAAAJhy9vdg0KOzoxMDQwR1VFUitzdWRpTlluRG9VVmRTb1V6bW9DeC94SE9MYnFFaVRKSTBhbUpxc0NrR2M2ekcwbDlYeVV5VUJxM0NWTHhGLzVPa2ZMT0RBYkxraW9VMldXJSU="
+		Filename="sco-0607g.pbv" />
+	<Registry
+		ComponentID="SCO"
+		UpdateType="REGISTRY"
+		LocalPath="%DSKM%"
+		Body="S0xyZwG8AABLTHN3AACtrQEAAAD8AwAAAQAAAAEAABRqAgABACAADl9IHT4pD5AKOop44k+CX5tltG5iptkmIdDiQ54Hz2wgAPnzXIjf12Yj5oMM6WEaj4uWlCpOGXdwl/t/CEa7DnbYAQAeCbwAAAABAAAJeTBRAw0KOzoxMGFBYzV3R3dLUVFJRDcrbXh3bTJOVzJSbHhndDFISjllREtnekY4TitjZ1dvMlJPMnhzTWszeTlxb2x6cFhUekZLMUlrcjJjTHE3emlNRDcyZzRiMGprJSU="
+		Filename="sco-0607g.krg" />
+</UpdateFiles>
+;:10KSKXaRAr+L+bgSeoED3C9XkLD3Y9ia3eJOgaaNox2hJSoWPjZqWGcRHxfggxnAmurs591732Qu/G1e/+XTEW6r%%

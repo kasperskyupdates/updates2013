@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Migrazione guidata'
+UpgradeCaption = 'Upgrade'
+
+RebootPageCheckboxRebootText = 'Riavviare il computer'
+OpenRemoveProgramsPanel = 'Apri barra degli strumenti'
+
+WizardBeginDescriptionKis = 'Verrà eseguito il passaggio a Kaspersky Internet Security 2013.\n\nIl titolare del copyright concede all\'utente una licenza non esclusiva per l\'utilizzo di Kaspersky Internet Security in base alle stesse condizioni accettate dall\'utente durante l\'installazione di Kaspersky Anti-Virus.\n\nNota: il passaggio può richiedere il riavvio del sistema.'
+
+WizardBeginDescriptionKav = 'Verrà eseguito il passaggio a Kaspersky Anti-Virus 2013.\n\nIl titolare del copyright concede all\'utente una licenza non esclusiva per l\'utilizzo di Kaspersky Anti-Virus in base alle stesse condizioni accettate dall\'utente durante l\'installazione di Kaspersky Internet Security.\n\nNota: il passaggio può richiedere il riavvio del sistema.'
+
+WizardContinueDescriptionKis = 'Continua il passaggio a Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Continua il passaggio a Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nAttenzione! La licenza corrente per Kaspersky Anti-Virus scade prima della licenza per Kaspersky Internet Security. Dopo la scadenza della licenza per Kaspersky Anti-Virus, non sarà possibile ritornare a Kaspersky Anti-Virus.'
+
+PleaseWait = 'Attendere'
+RemovalProgressDescription   = 'Eliminazione del software incompatibile in corso'
+RemovalApplicationsDescription = 'Il seguente software verrà rimosso per l\'esecuzione del passaggio:'
+ManualRemovalApplicationsDescription = 'È necessario rimuovere manualmente il seguente software incompatibile per l\'esecuzione del passaggio:'
+SearchRemovalApplicationsDescription   = 'Ricerca del software incompatibile in corso'
+RestartProductDescription = 'L\'applicazione verrà riavviata per completare il passaggio.'
+RebootOsDescription = 'È necessario riavviare il computer per continuare il passaggio.\nLa procedura guidata proseguirà dopo il riavvio.'
+
+MigrationProgressDescriptionKis = 'Riconfigurazione dell\'applicazione e passaggio a Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Riconfigurazione dell\'applicazione e passaggio a Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Riconfigurazione dell\'applicazione e passaggio a Kaspersky Anti-Virus'
+
+MigrationKis = 'Passa a Kaspersky Internet Security'
+MigrationKav = 'Passa a Kaspersky Anti-Virus'
+MigrationUnknown = 'Passa '
+
+SearchRemovalApplicationsHeader = 'Upgrade a Kaspersky Internet Security in corso'
+RemovalProgressHeader = 'Eliminazione del software incompatibile in corso'
+RemovalApplicationsHeader = 'Rilevato software incompatibile'
+RebootOsHeader = 'È necessario riavviare il computer'
+RestartProductHeader = 'L\'applicazione verrà riavviata'
+
+MigrationAbortedHeader = $MigrationType + ' impossibile'
+MigrationAbortedDescription = $MigrationType + ' non riuscito. Provare a rimuovere manualmente il software incompatibile e avviare nuovamente la procedura guidata.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus verrà aggiornato a Kaspersky Internet Security.\nSaranno disponibili ancora più funzionalità per la protezione del computer.'
+BestBuyGiftDescription = 'Grazie per aver scelto il software Kaspersky Lab per usufruire di ancora più funzionalità di protezione.'
+BestBuyUpgradeNotification = 'Durante l\'upgrade, il sistema verrà analizzato per rilevare la presenza di software incompatibile e garantire il corretto funzionamento delle applicazioni installate e del sistema operativo.'
+BestBuyFreeUpgrade = 'Passa a Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Upgrade in background'
+BestBuyTryAbortInformation = 'L\'upgrade proseguirà in background'
+BestBuyTryAbortDescription = 'Poiché il software incompatibile non è stato rimosso, alcune nuove funzionalità di Kaspersky Internet Security sono state disabilitate per garantire il corretto funzionamento delle applicazioni installate e del sistema operativo.\n\nÈ possibile rimuovere manualmente il software incompatibile e abilitare tutte le nuove funzionalità nella finestra delle impostazioni di Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Torna all\'upgrade'
+Congratulation = 'Congratulazioni!'
+
+RunKisButtonText = 'Avvia Kaspersky Internet Security'
+
+ProductUpgraded = 'L\'aggiornamento di Kaspersky Anti-Virus a Kaspersky Internet Security è stato completato.\nOra sono disponibili altre funzionalità per la protezione del computer.'

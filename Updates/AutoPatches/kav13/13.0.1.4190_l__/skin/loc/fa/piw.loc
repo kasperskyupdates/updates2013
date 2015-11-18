@@ -1,0 +1,540 @@
+﻿;------------- ConfigureWizard -------------
+
+[Global]
+$BrowseForKey                   = "انتخاب فایل کلید"
+LicOperationError               = s_LicenseOperationsError(OperationCode)
+LicOperationErrorEx             = s_LicenseOperationsError(OperationCode) + if(OperationCode==5, $LicErrHelpLink)
+LicenseAutoKeyInstall           = "کلید برای این نسخه از برنامه توسط ارائه دهنده تجهیزات تأمین شده است. آیا می خواهید برنامه را با این کلید فعال کنید؟\n\n" + $LicInfoKeyNumber + "\t\t\t\t" + f_KeySerNum(LicInfo.KeyInfo.ID.KeySerNum) + "\n" + $LicInfoKeyType + "\t\t\t" + s_LicKeyType(LicInfo.KeyInfo.KeyType) + "\n" + $LicInfoExpirationDate + "\t" + datetime(LicInfo.LicenseExpirationDate)
+CancelWizardWarning             = "پیکربندی برنامه هنوز کامل نیست. آیا واقعاً می خواهید از راهنمای گام به گام پیکربندی خارج شوید؟"
+ErrEmptyActivationCode.caption  = "کد فعال سازی هنوز مشخص نشده است"
+ErrEmptyActivationCode          = "لطفاً کد فعال سازی را وارد کنید"
+ErrEmptyKeyPath.caption         = "فایل کلید مشخص نشده است"
+ErrEmptyKeyPath                 = "لطفاً فایل کلید را مشخص کنید"
+$LicInfoKeyNumber               = "شماره:"
+$LicInfoKeyProductName          = "نام برنامه:"
+$LicInfoKeyType                 = "نوع لایسنس:"
+$LicInfoExpirationDate          = "تاریخ انقضا:"
+$LicErrReason                   = "دلیل:"
+$ActiveKey                      = "کلید فعال"
+$ReservedKey                    = "کلید اضافی"
+ConfirmFeedback                 = "آیا موافقید اطلاعات به <a KsnInfo onclick(dialog(\"KsnInfo\"))>Kaspersky Security Network</a> ارسال شود؟"
+$KsnTerms                       =  "‎Kaspersky Security Network (KSN)‎ زیرساخت خدمات آنلاین است که اطلاعاتی به روز درباره امنیت فایل ها، منابع وب و نرم افزارها ارائه می دهد. استفاده از داده هایی از KSN عکس العمل به تهدیدات اخیر را تسریع می کند، کارایی برخی مولفه های محافظت را بهبود می دهد و خطر شناسایی های مثبت کاذب را کاهش می دهد.\nوقتی در KSN شرکت می کنید، اطلاعاتی درباره آلودگیهای ویروسی و سایر مشکلات، و نیز آمار گسترده ای درباره برنامه های بارگذاری شده یا اجرا شده (طبق لیست مشخص شده در <a KsnInfo onclick(dialog(\"KsnInfo\"))>KSN Data Collection Statement</a>) به طور خودکار به Kaspersky Lab ارسال می شود.\n\n<b>Kaspersky Security Network هیچ گونه اطلاعات شخصی کاربر را جمع آوری یا پردازش نمی کند.</b>"
+
+$ToAcquireNewLicText            = "\n\nبرای اخذ لایسنس جدید، لطفاً با توزیع کننده خود یا <a Buy onclick(buy())> اداره فروش Kaspersky Lab</a> تماس بگیرید"
+$LicErrHelpLink                 = "\n\n<a پشتیبانی با یک کلیک(url(\"" + $Activation_Error_url + "\"))>" + $Click_msg + "</a>"
+$LicErrHelpLink2                = "\n\n<a پشتیبانی با یک کلیک(url(\"" + $Activation_Error_url2 + "\"))>" + $Click_msg + "</a>"
+$OlaErrHelpLink                 = ($IsSubscription ? "\nلطفاً تلاش کنید وضعیت اشتراک را به صورت دستی به روزرسانی کنید یا با پشتیبانی فنی تماس بگیرید" : "\nلطفاً تلاش کنید بعداً برنامه را با استفاده از کد فعال سازی فعال کنید (در 1 تا 2 ساعت آینده) یا با پشتیبانی فنی تماس بگیرید") + $LicErrHelpLink
+$LicErrHelpLinkSubscr           = "\n\n<a پشتیبانی با یک کلیک(url(\"" + $KeyProviderLinkForText + "\"))>" + $Click_msg + "</a>"
+
+[ConfigureWizard]
+@ = $ProductName_GEN + ((PiwFlags & (#fPiwActivation|#fPiwSettings)) == #fPiwActivation ? " راهنمای گام به گام فعال سازی" : " راهنمای گام به گام پیکربندی")
+
+[ConfigureWizardPages]
+InitBegin.Name                        = "اطلاعات کلی"
+InitBegin.Descr                       = "به راهنمای گام به گام پیکربندی " + $ProductName_GEN + " خوش آمدید."
+CheckHosts.Name                       = "کنترل در دسترس بودن سرورهای Kaspersky Lab"
+CheckHosts.Descr                      = "تعیین مسیر مشکوک شناسایی شد"
+ResetArea.Name                        = "بازیابی تنظیمات"
+ResetArea.Descr                       = "تنظیمات لیست شده در زیر دارای داده وارد شده توسط کاربر یا جمع آوری شده \nدر حال عملیات برنامه هستند."
+ActivationBegin.Name                  = $IsSubscription ? "مدیریت اشتراک" : (f_IsActiveKeyWorkingCommercial() ? ($HasReserveKey ? "حذف کلید" : "افزودن کلید") : "فعال سازی برنامه")
+ActivationBegin.Descr                 = $IsSubscription ? "" : (f_IsActiveKeyWorkingCommercial() ? "لایسنسدهی" : "برای ادامه، برنامه را فعال کنید.")
+ActivationProgress.Name               = "فعال سازی آنلاین"
+ActivationProgress.Descr              = "فعال سازی در حال انجام، لطفاً منتظر بمانید..."
+ActivationServerForm.Name             = "فعال سازی آنلاین"
+ActivationServerForm.Descr            = "لطفاً این فرم را پر کنید."
+ActivationChooseKey.Name              = "فعالسازی با استفاده از فایل کلید"
+ActivationChooseKey.Descr             = "برنامه را با یک فایل کلید فعال کنید."
+ActivationEnd.Name                    = "فعال سازی برنامه"
+ActivationEnd.Descr                   = "فعال سازی کامل شد."
+MigrationKeyIsFound.Name         = "کلیدی برای لایسنس فعلی موجود است"
+MigrationKeyIsFound.Descr        = "آیا می خواهید از برنامه تحت لایسنس لایسنس فعلی استفاده کنید؟"
+MigrationBegin.Name              = "Switch to " + s_MUProductTitleLong(env("ProductType"))
+MigrationBegin.Descr             = "شما به استفاده از " + s_MUProductTitleLong(env("ProductType")) منتقل می شوید
+MigrationSearchProgress.Name     = "جستجوی نرم افزار ناسازگار"
+MigrationSearchProgress.Descr    = "لطفاً تا جستجوی نرم افزار ناسازگار صبر کنید..."
+MigrationSafeRemoval.Name        = "نرم افزار ناسازگار یافت شد"
+MigrationSafeRemoval.Descr       = "برای ادامه باید نرم افزار ناسازگار حذف شود"
+MigrationSafeProgress.Name       = "حذف نرم افزار ناسازگار"
+MigrationSafeProgress.Descr      = "لطفاً تا حذف شدن نرم افزار ناسازگار صبر کنید..."
+MigrationAddRemove.Name          = "نرم افزار ناسازگار یافت شد"
+MigrationAddRemove.Descr         = "لطفاً نرم افزار ناسازگار را حذف کنید"
+MigrationUnsafeRemoval.Name      = "نرم افزار ناسازگار یافت شد"
+MigrationUnsafeRemoval.Descr     = "برای ادامه باید نرم افزار ناسازگار حذف شود"
+MigrationUnsafeProgress.Name     = "حذف نرم افزار ناسازگار"
+MigrationUnsafeProgress.Descr    = "لطفاً تا حذف شدن نرم افزار ناسازگار صبر کنید..."
+MigrationReboot.Name             = "سیستم عامل باید مجددا شروع شود"
+MigrationReboot.Descr            = "برای ادامه تغییر به برنامه جدید راه اندازی مجدد لازم است"
+MigrationProgress.Name           = "Switch to " + s_MUProductTitleLong(env("ProductType"))
+MigrationProgress.Descr          = "لطفاً تا تغییر به برنامه جدید صبر کنید..."
+MigrationRebootApp.Name          = bMigrationDone ? "برنامه مجددا شروع خواهد شد" : "خطا حین تغییر به برنامه جدید"
+MigrationRebootApp.Descr         = bMigrationDone ? "برنامه باید دوباره راه اندازی شود" : "تغییر به " + s_MUProductTitleLong(env("ProductType")) + " انجام نشد"
+MigrationFinish.Name             = "تغییر " + s_ProductTitleLong(env("ProductType")) + " انجام شد"
+MigrationFinish.Descr            = "تغییر " + s_ProductTitleLong(env("ProductType")) + " انجام شد"
+DNS.Name                              = "تنظیمات پیشرفته"
+DNS.Descr                             = $ProductName_GEN + " تنظیمات عملیات پیشرفته"
+EnumExe.Name                          = "تحلیل سیستم"
+EnumExe.Descr                         = "لطفاً منتظر بمانید تا اطلاعاتی درباره سیستم شما جمع آوری شود..."
+InitFinish.Name                       = "تکمیل پیکربندی " + $ProductName
+InitFinish.Descr                      = $IsInstallNeedReboot ? "برای تکمیل پیکربندی برنامه باید کامپیوتر خود را دوباره راه اندازی کنید." : "اکنون می توانید " + $ProductName + " را شروع کنید."
+
+[ConfigureWizard.CheckHosts_Info]
+Note			= "مسیر سرورهای Kaspersky Lab به طور مشکوکی تغییر یافته است. این کار ممکن است از اقدامات یک بدافزار باشد که موجب عدم موفقیت در به روزرسانی و فعال سازی می شود. مدخلهای مشکوک در فایل hosts:"
+
+[ConfigureWizard.CheckHosts_Info_Action]
+Delete			= "حذف رکوردها (توصیه می شود)"
+Skip			= "رد شدن"
+
+[ConfigureWizard.ActivationChooseKey]
+Back.Name       = "&بازگشت"
+Back.Descr      = "بازگشت به انتخاب روش فعال سازی برنامه"
+Activate.Name   = f_IsActiveKeyWorkingCommercial() ? "ا&فزودن کلید" : "ف&عالسازی"
+Activate.Descr  = "نصب فایل کلید انتخاب شده"
+
+[ConfigureWizard.ActivationEnd]
+Finish.Name     = "&پایان"
+Finish.Descr    = "بستن راهنمای گام به گام فعال سازی"
+Next.Name       = "&بعدی"
+Next.Descr      = "اقدام به پیکربندی"
+
+[ConfigureWizard.MigrationKeyIsFound_Info]
+Text2   = "شما می توانید با استفاده از برنامه ای که تحت گواهی فعلی فراهم شده است ادامه دهید. در این شرایط برنامه به " + s_MUProductTitleLong(env("ProductType")) + " تغییر خواهد نمود."
+Text3   = "شما می خواهید با استفاده از برنامه ارائه شده تحت این گواهی ادامه دهید؟"
+
+[ConfigureWizard.MigrationKeyIsFound_KeyInfo]
+ProductType.Name        = "نوع برنامه:"
+ProductType.Val         = s_MUProductTitle(env("ProductType"))
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "تاریخ انقضا:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " باقی مانده)"
+
+[ConfigureWizard.MigrationKeyIsFound_Info_Ctrls]
+UseFoundLicense    = "بله، و به " + s_MUProductTitleLong(env("ProductType")) + " تغییر یابد."
+NotUseFoundLicense = "خیر، و " + switch(env("ProductType"), "ProductTitleLong", "") + " باقی بماند."
+
+[ConfigureWizard.MigrationBegin_Info]
+Text2   = "شما در حال تغییر به " + s_MUProductTitleLong(env("ProductType")) + " هستید. دارنده کپی رایت به شما لایسنس غیرانحصاری برای استفاده از " + s_MUProductTitleLong(env("ProductType")) + " بر مبنای همان شرایطی را می دهد که قبلاً هنگام نصب " + s_ProductTitleLong(env("ProductType")) پذیرفته اید
+Text3   = "توجه: این تغییر نیازمند اقداماتی است که ممکن است منجر به راه اندازی مجدد شود."
+LicenseWarning  = "توجه! لایسنس تجاری برای استفاده از Kaspersky Anti-Virus قبل از لایسنس آزمایشی استفاده از Kaspersky Internet Security منقضی می شود. پس از انقضای لایسنس تجاری استفاده از Kaspersky Anti-Virus، بازگشت به Kaspersky Anti-Virus از نسخه آزمایشی Kaspersky Internet Security ممکن نخواهد بود. آیا همچنان می خواهید به Kaspersky Internet Security تغییر دهید؟"
+
+[ConfigureWizard.MigrationSearchProgress_Info]
+Text2    = "در حال جستجو برای نرم افزار ناسازگار در کامپیوتر شما. این کار ممکن است قدری طول بکشد. لطفاً صبر کنید..."
+
+[ConfigureWizard.MigrationSafeRemoval_Info]
+Text2   = "نرم افزار زیر برای انجام انتقال حذف خواهد شد:"
+
+[ConfigureWizard.MigrationSafeProgress_Info]
+Text2   = "لطفاً تا حذف شدن نرم افزار ناسازگار صبر کنید..."
+
+[ConfigureWizard.MigrationAddRemove_Info]
+Text2         = "نرم افزار زیر باید برای انجام انتقال حذف شود:"
+OpenAddRemove = "پنجره Add/Remove Programs را باز کنید"      
+
+[ConfigureWizard.MigrationUnsafeRemoval_Info]
+Text2   = "نرم افزار زیر برای انجام انتقال حذف خواهد شد:"
+
+[ConfigureWizard.MigrationUnsafeProgress_Info]
+Text2   = "لطفاً تا حذف شدن نرم افزار ناسازگار صبر کنید..."
+
+[ConfigureWizard.MigrationReboot_Info]
+Text2    = "برای ادامه انتقال باید کامپیوتر را دوباره راه اندازی کنید. راهنمای گام به گام پس از راه اندازی مجدد ادامه خواهد یافت."
+Reboot   = "اکنون راه اندازی مجدد کنید"      
+
+[ConfigureWizard.MigrationProgress_Info]
+Text2   = "لطفاً تا پیکربندی مجدد برنامه و انتقال به " + s_MUProductTitleLong(env("ProductType")) + ". صبر کنید..."
+
+[ConfigureWizard.MigrationRebootApp_Info]
+Text2   = bMigrationDone ? "برای تکمیل انتقال به " + s_MUProductTitleLong(env("ProductType")) + " برنامه مجددا شروع خواهد شد." : "انتقال به " + s_MUProductTitleLong(env("ProductType")) + " موفق نبود."
+
+[ConfigureWizard.MigrationFinish_Info]
+Text2   = $IsKIS ? "اکنون می توانید ویژگیهای " + s_ProductTitleLong("kis") + " مانند کنترل والدین، ضد هرزنامه، دیواره آتش، و غیره را ارزیابی کنید." : s_ProductTitleLong("kav") + " محافظت اولیه از کامپیوتر شما را در برابر بدافزار تأمین می کند."
+
+[ConfigureWizard.ActivationBegin_Info]
+ActivationUrlsInfo = $IsSubscription ? "شما می توانید "+if($IsRefreshSubAvail,"وضعیت اشتراک خود را به روزرسانی کنید یا ")+"کلید را حذف کنید." : (f_IsActiveKeyWorkingCommercial() ? "شما می توانید کلید فعال را حذف یا اضافه کنید." : "فعالسازی " + $ProductName + " برای فعال کردن قابلیت های کامل برنامه."+ if($CorporateOnly, " می توانید یک نسخه <a Activate onclick(url($ActivationLink))>تجاری دریافت کنید</a> یا یک نسخه آزمایشی <a ActivateTrial onclick(url($ActivationTrialLink))>برنامه</a> را فعال کنید."))
+
+[ConfigureWizard.ActivationBegin]
+Later.Name                  = "فعال سازی &بعداً"
+Later.Descr                 = "صرف نظر از فعال سازی و اقدام به پیکربندی برنامه"
+ChooseKey.Name              = "فعال سازی با استفاده از &فایل کلید"
+ChooseKey.Descr             = "فایل کلید ضروری است"
+ActivateBetaKAV.Name        = "فعال سازی نسخه &بتای Kaspersky Anti-Virus "
+ActivateBetaKAV.Descr       = "نسخه بتای Kaspersky Anti-Virus دارای عملکرد کامل آن است، ولی محصول نهایی نیست."
+ActivateBetaKIS.Name        = "فعال کردن &نسخه بتای Kaspersky Internet Security"
+ActivateBetaKIS.Descr       = "نسخه بتای Kaspersky Internet Security شامل عملکرد کامل آن است، ولی محصول نهایی نیست."
+ActivateTrial.Name          = "فعال سازی &نسخه آزمایشی"
+ActivateTrial.Descr         = "دوره اعتبار نسخه آزمایشی در توافقنامه لایسنس نهایی کاربر مشخص شده است"
+ActivateCommercial.Name     = "&فعال سازی آنلاین"
+ActivateCommercial.Descr    = "کد فعال سازی دریافت شده در هنگام خرید ضروری است"
+RemoveKey.Name              = $HasReserveKey ? "&حذف کلید اضافی" : "ح&ذف کلید"
+RemoveKey.Descr             = "برای تعویض کلید ابتدا باید کلید فعال را حذف کنید"
+RefreshSubscription.Name    = "&به روزرسانی وضعیت اشتراک"
+RefreshSubscription.Descr   = $IsSubAutoRefreshing ? "می توانید وضعیت اشتراک را به صورت دستی به روزرسانی کنید." : "به روزرسانی خودکار وضعیت اشتراک خاتمه یافت. می توانید وضعیت را به صورت دستی به روزرسانی کنید."
+ActivateTrialKIS            = "فعال سازی نسخه آزمایشی Kaspersky Internet Security"
+ActivateTrialKIS_Desc       = "دوره اعتبار نسخه آزمایشی Kaspersky Internet Security در توافقنامه لایسنس مشخص شده است"
+RevertToCommercialKAV       = "بازگشت به نسخه تجاری Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc  = "بازگشت به نسخه تجاری Kaspersky Anti-Virus"
+
+[ConfigureWizard.ActivationBegin_Ctrls]
+RefreshSubscription     = "به روزرسانی وضعیت اشتراک"
+ActivateCommercial      = "فعال سازی &نسخه تجاری"
+ActivateCommercial_Desc = (LockActivationCode)? "وارد کردن کد فعال سازی: " : "کد فعال سازی <a onclick(url(\"" + $ActCodeHint + "\"))>را وارد کنید</a>:"
+ActivationCode_Desc     = (LockActivationCode)? "کد فعال سازی شما به طور خودکار اضافه شد. لطفاً روی دکمه \"بعدی\" کلیک کنید." : "اگر کد فعال سازی ندارید می توانید به صورت آنلاین <a onclick(buy())>آن را خریداری کنید</a>"
+ActivateBetaKAV         = "فعال سازی نسخه &بتای Kaspersky Anti-Virus "
+ActivateBetaKIS         = "فعال سازی &نسخه بتای Kaspersky Internet Security"
+ActivateTrial           = "فعال سازی &نسخه آزمایشی"
+ActivateTrial_Desc      = "قبل از خرید برنامه یک نسخه با کارایی کامل را ارزیابی کنید."
+ActivateTrialKIS           = "فعال سازی نسخه آزمایشی Kaspersky Internet Security"
+ActivateTrialKIS_Desc      = "یک نسخه با کارایی کامل Kaspersky Internet Security را قبل از خرید آن ارزیابی کنید."
+RevertToCommercialKAV      = "بازگشت به نسخه تجاری Kaspersky Anti-Virus"
+RevertToCommercialKAV_Desc = "توقف استفاده از نسخه آزمایشی Kaspersky Internet Security و بازگشت به نسخه تجاری Kaspersky Anti-Virus."
+Later                   = "&بعداً فعال سازی شود"
+Later_Desc              = "کارایی کامل برنامه تا زمانی که فعال نشده باشد موجود نخواهد بود."
+RemoveKey               = "حذف فایل کلید"
+
+[ConfigureWizard.ActivationChooseKey_Info]
+KeyPathLabel    = "فایل کلید:"
+KeyInfo         = "اطلاعات لایسنس"
+ConnectingInfo.Name     = "خطای فعال سازی"
+ConnectingInfo.Val      = "جزئیات"
+TryAgain                = "فعال سازی"
+Descr1                  = "برای تلاش مجدد جهت فعال سازی، اقدامات زیر را انجام دهید:"
+Descr2                  = "تنظیمات ارتباط اینترنت را کنترل کنید و دوباره برای فعال سازی برنامه تلاش کنید."
+Descr3                  = "به <a onclick(url(\"" + $ActivationLink + "\"))> مرکز فعال سازی آنلاین</a> بروید و از دستورالعمل ها پیروی کنید.\nپس از دریافت یک فایل کلید، محل آن را مشخص کنید و روی «بعدی» کلیک کنید:"
+
+
+[ConfigureWizard.ActivationChooseKey_Info_KeyInfo]
+Number.Name         = $LicInfoKeyNumber
+Type.Name           = $LicInfoKeyType
+CreationDate.Name   = "تاریخ ایجاد:"
+InstallDate.Name    = "تاریخ فعال سازی:"
+ExpirationDate.Name = "تاریخ انقضا:"
+SubscrptnExpDate.Name = "تاریخ انقضای اشتراک:"
+
+[f_KeyTypeDescription]
+p_KeyInfo
+ret         = s_LicKeyType(p_KeyInfo.KeyType) + if(p_KeyInfo.KeyType!=#ektSubscription&&p_KeyInfo.KeyType!=#ektSubscriptionProtection," برای " + p_KeyInfo.LicenseCount + " " + s_ComputersForm(f_numdeclension(p_KeyInfo.LicenseCount)))
+
+[s_LicenseOperationsError]
+1       = "خطای سیستم: " + s_SystemError(ErrorCode)
+2       = "نمی تواند کلید \"" + KeyFile + "\" را اضافه کند: " + capitalize(s_LicenseError(ErrorCode),0) + $ToAcquireNewLicText
+3       = "نمی تواند \"" + KeyFile + "\"را حذف کند: " + capitalize(s_LicenseError(ErrorCode),0)
+4       = s_LicenseError(ErrorCode)
+5       = s_KeyInvalidReason(PiwLicInfo.InvalidReason) + $LicErrHelpLink + $ToAcquireNewLicText
+default = "کد خطا: " + ErrorCode
+
+; Online activation error codes
+
+[s_LicenseError]
+0x09479001  = "این کلید قبلا اضافه شده است" + $LicErrHelpLink
+0x0947901d  = "لایسنس منقضی شد. به روزرسانی پایگاه داده قابل انجام نیست" + $LicErrHelpLink
+0x89479002  = "لایسنس یافت نشد" + $LicErrHelpLink
+0x89479003  = "امضای دیجیتال موجود نیست یا آسیب دیده است" + $LicErrHelpLink
+0x89479004  = "داده آسیب دیده است" + $LicErrHelpLink
+0x89479005  = "فایل کلید آسیب دیده است" + $LicErrHelpLink
+0x89479006  = "لایسنس منقضی شده است" + $LicErrHelpLink
+0x89479007  = "هیچ فایل کلیدی مشخص نشده است" + $LicErrHelpLink
+0x89479008  = "فایل کلید نامعتبر است" + $LicErrHelpLink
+0x89479009  = "ذخیره داده ناموفق بود" + $LicErrHelpLink
+0x8947900a  = "خواندن داده ناموفق بود" + $LicErrHelpLink
+0x8947900b  = "خطای I/O" + $LicErrHelpLink
+0x8947900c  = "پایگاه های داده وجود ندارد" + $LicErrHelpLink
+0x8947900d  = "کلیدهای فعال و اضافی از قبل اضافه شده اند" + $LicErrHelpLink
+0x8947900e  = "کتابخانه لایسنس راه اندازی نشده است" + $LicErrHelpLink
+0x8947900f  = "پایگاه های داده آسیب دیده اند یا به صورت دستی به روزرسانی شده اند" + $LicErrHelpLink
+0x89479010  = "پایگاه های داده آسیب دیده است" + $LicErrHelpLink
+0x89479011  = "فایل کلید منقضی شده را نمی توان به عنوان کلید اضافه ثبت کرد" + $LicErrHelpLink
+0x89479012  = "خطای سیستم" + $LicErrHelpLink
+0x89479013  = "لیست سیاه کلیدها آسیب دیده است" + $LicErrHelpLink
+0x89479014  = "امضای دیجیتال با امضای دیجیتال Kaspersky Lab مطابقت ندارد" + $LicErrHelpLink
+0x89479015  = "نسخه تجاری برنامه تحت لایسنس بتا را نمی توان فعال نمود" + $LicErrHelpLink
+0x89479016  = "نسخه بتای برنامه را تنها تحت لایسنس بتا می توان فعال نمود" + $LicErrHelpLink
+0x89479017  = "این لایسنس برای این برنامه کاربرد ندارد. فعالسازی " + $ProductName + " تحت این لایسنس برای برنامه دیگر ممکن نیست. لطفاً برنامه نصب شده خود را کنترل کنید" + $LicErrHelpLink
+0x89479018  = "کلید مسدود شده است" + $LicErrHelpLink
+0x89479019  = "لایسنس آزمایشی قبلاً استفاده شده است. استفاده مجدد از یک لایسنس آزمایشی ممکن نیست" + $LicErrHelpLink
+0x8947901a  = "فایل کلید آسیب دیده است" + $LicErrHelpLink
+0x8947901b  = "امضای دیجیتال موجود نیست، آسیب دیده است، یا با امضای دیجیتال Kaspersky Lab مطابقت ندارد" + $LicErrHelpLink
+0x8947901c  = "کلید اگر منقضی شده است برای یک لایسنس غیر تجاری نمی توان اضافه نمود" + $LicErrHelpLink
+0x8947901e  = "تاریخ ایجاد فایل کلید یا تاریخ ثبت آن نامعتبر است. تنظیمات تاریخ سیستم را وارسی کنید " + $LicErrHelpLink
+0x8947901f  = "هنگامی که یک کلید دیگر برای یک لایسنس آزمایشی فعال است، نمی توان برای لایسنس آزمایشی یک کلید اضافه کرد" + $LicErrHelpLink
+0x89479020  = "لیست سیاه کلیدها گم شده یا آسیب دیده است" + $LicErrHelpLink
+0x89479021  = "شرح به روزرسانی موجود نیست یا آسیب دیده است" + $LicErrHelpLink
+0x89479022  = "داده داخلی برای این برنامه نامعتبر است" + $LicErrHelpLink
+0x89479023  = "کلید اضافی را با استفاده از کد فعالسازی اشتباه نمی توان اضافه نمود" + $LicErrHelpLink
+0x89479024  = "خطای تکمیل داده فرم کاربر" + $LicErrHelpLink
+0x89479025  = "خطا در ارسال درخواست سرور فعال سازی.\nدلایل احتمالی: مشکلات اتصال اینترنت یا مشکلات موقت سرور فعال سازی.\nسعی کنید کد را بعداً فعال سازی کنید (ظرف 1 تا 2 ساعت).\nاگر مشکل ادامه یافت، با ارائه دهنده اینترنت خود تماس بگیرید" + $LicErrHelpLink
+0x89479026  = "درخواست دارای کد فعال سازی اشتباه است" + $LicErrHelpLink
+0x89479027  = "به دست آوردن وضعیت پاسخ ممکن نیست" + $LicErrHelpLink
+0x89479028  = "خطا در ذخیره فایل موقت" + $LicErrHelpLink
+0x89479029  = "کد فعال سازی وارد شده اشتباه است یا تاریخ سیستم اشتباه است. تنظیمات تاریخ سیستم را وارسی کنید" + $LicErrHelpLink
+0x8947902a  = "کد فعالسازی برای این برنامه مناسب نیست یا کلید منقضی شده است. فعالسازی " + $ProductName + " تحت این لایسنس برای برنامه دیگر ممکن نیست. لطفاً برنامه نصب شده خود را کنترل کنید یا <a onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink خریداری کنید
+0x8947902b  = "دریافت فایل کلید ناموفق بود. کد فعال سازی اشتباه مشخص شده است" + $LicErrHelpLink
+0x8947902c  = "سرور فعال سازی خطای 400 را نشان داد" + $OlaErrHelpLink
+0x8947902d  = "سرور فعال سازی خطای 401 را نشان داد" + $OlaErrHelpLink
+0x8947902e  = "سرور فعال سازی خطای 403 را نشان داد" + $OlaErrHelpLink
+0x8947902f  = "منبع لازم در سرور فعال سازی موجود نیست.\nسرور فعال سازی خطای 404 را نشان داد.\nلطفاً تنظیمات اتصال اینترنت را کنترل کنید" + $OlaErrHelpLink
+0x89479030  = "سرور فعال سازی خطای 405 را نشان داد" + $OlaErrHelpLink
+0x89479031  = "سرور فعال سازی خطای 406 را نشان داد" + $OlaErrHelpLink
+0x89479032  = "تأیید اعتبار پروکسی ضروری است. لطفاً تنظیمات LAN را وارسی کنید" + $LicErrHelpLink
+0x89479033  = "زمان درخواست به پایان رسید" + $LicErrHelpLink
+0x89479034  = "سرور فعال سازی خطای 409 را نشان داد" + $OlaErrHelpLink
+0x89479035  = "منبع لازم در سرور فعال سازی موجود نیست.\nسرور فعال سازی خطای 410 را نشان داد.\nلطفاً تنظیمات اتصال اینترنت را کنترل کنید" + $OlaErrHelpLink
+0x89479036  = "سرور فعال سازی خطای 411 را نشان داد" + $OlaErrHelpLink
+0x89479037  = "سرور فعال سازی خطای 412 را نشان داد" + $OlaErrHelpLink
+0x89479038  = "سرور فعال سازی خطای 413 را نشان داد" + $OlaErrHelpLink
+0x89479039  = "سرور فعال سازی خطای 414 را نشان داد" + $OlaErrHelpLink
+0x8947903a  = "سرور فعال سازی خطای 415 را نشان داد" + $OlaErrHelpLink
+0x8947903b  = "خطای نامشخص در سرویس گیرنده" + $OlaErrHelpLink
+0x8947903c  = "خطای داخلی سرور" + $LicErrHelpLink
+0x8947903d  = "عملکرد پشتیبانی نمی شود" + $LicErrHelpLink
+0x8947903e  = "پاسخ دروازه نامعتبر. تنظیمات شبکه خود را وارسی کنید" + $LicErrHelpLink
+0x8947903f  = "منبع موقتاً موجود نیست" + $LicErrHelpLink
+0x89479040  = "زمان انتظار درخواست به پایان رسید. تنظیمات شبکه خود را کنترل کنید" + $LicErrHelpLink
+0x89479041  = "پروتکل توسط سرور پشتیبانی نمی شود" + $OlaErrHelpLink
+0x89479042  = "خطای نامشخص در سرور" + $OlaErrHelpLink
+0x89479043  = "خطای نامشخص http" + $OlaErrHelpLink
+0x89479044  = "شناسه گر منبع نامعتبر" + $LicErrHelpLink
+0x89479045  = "اطلاعات اشتباه در قسمت \"key\"" + $LicErrHelpLink
+0x89479046  = "URL اشتباه" + $LicErrHelpLink
+0x89479047  = "پوشه مقصد اشتباه" + $LicErrHelpLink
+0x89479048  = "خطای تخصیص حافظه" + $LicErrHelpLink
+0x89479049  = "خطا در تبدیل پارامترها به رشته ANSI (url، پوشه، عامل)" + $LicErrHelpLink
+0x8947904a  = "خطا در ایجاد رشته کاری" + $LicErrHelpLink
+0x8947904b  = "رشته کاری هم اکنون در حال اجراست" + $LicErrHelpLink
+0x8947904c  = "رشته کاری در حال اجرا نیست" + $LicErrHelpLink
+0x8947904d  = "فایل کلید در سرور فعال سازی یافت نشد" + $LicErrHelpLink
+0x8947904e  = "کلید مسدود شده است" + $LicErrHelpLink
+0x8947904f  = "خطای داخلی سرور فعال سازی" + $LicErrHelpLink
+0x89479050  = "داده کافی در درخواست فعال سازی نیست" + $LicErrHelpLink
+0x89479051  = "شناسه کاربری یا رمز عبور اشتباه" + $LicErrHelpLink
+0x89479052  = "کد فعال سازی اشتباه" + $LicErrHelpLink
+0x89479053  = "لایسنس فایل کلید انتخاب شده زودتر از لایسنس فعال منقضی می شود" + $LicErrHelpLink
+0x89479054  = "تاریخ اشتباه سیستم عامل. لطفاً تاریخ سیستم را کنترل کنید" + $LicErrHelpLink
+0x89479055  = "لایسنس آزمایشی منقضی شده است" + $LicErrHelpLink
+0x89479056  = "دوره فعال سازی منقضی شده است" + $LicErrHelpLink
+0x89479057  = "<b>کد فعالسازی وارد شده از تعداد فعالسازیهای مجاز فراتر رفته است</b>" + $LicErrHelpLink
+0x89479058  = s_OnlineActError(OnlineActSrvError) + "." + $LicErrHelpLink2
+0x89479059  = "کلید را به عنوان یک کلید اضافی نمی توان برای یک لایسنس غیر تجاری اضافه نمود، در حالیکه لایسنس تجاری مؤثر است" + $LicErrHelpLink
+0x8947905c  = "کد فعال سازی ضروری است" + $LicErrHelpLink
+0x8947905d  = "شناسه مشتری یا رمز عبور اشتباه" + $LicErrHelpLink
+0x8947905e  = "کد فعال سازی اشتباه" + $LicErrHelpLink
+0x89479062  = "اتصال به سرور فعال سازی ممکن نیست" + $LicErrHelpLink
+0x89479064  = "<b>سرور فعال سازی موجود نیست.</b>\n\n" + if(settings.Ins_InitMode & #eInitMode_Init، "نمی توان برنامه را اکنون فعال کرد. پس از پیکربندی برنامه دوباره برای فعال سازی تلاش کنید و سیستم عامل را مجددا شروع کنید.", "لطفاً تنظیمات اتصال اینترنت را وارسی کنید و دوباره برای فعال سازی تلاش کنید..") + $LicErrHelpLink
+0x89479065  = "لایسنس شما منقضی شده است. لطفاً <a onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>" + $LicErrHelpLink را خریداری کنید
+0x89479066  = "کلید فعال نمی تواند جایگزین کلید منقضی" + $LicErrHelpLink شود
+0x89479067  = "نمی توان کلیدی را که قبل از کلید فعال منقضی شده است به عنوان کلید اضافی اضافه نمود " + $LicErrHelpLink
+0x89479068  = "کلید اشتراک به روز شده موجود نیست" + $LicErrHelpLinkSubscr
+default     = s_SystemError(@)
+
+[s_OnlineActError]
+#OLA_SYSTEM_ERROR   = "روال فعال سازی با خطای سیستم انجام شد " + OnlineActSrvErrorSpecific
+#OLA_LOGICAL_ERROR = "خطای فعال سازی: " + s_LogicalErrCodes(OnlineActSrvErrorSpecific)
+#OLA_INTERNET_ERROR = "خطای فعال سازی: " + s_InternetErrCodes(OnlineActSrvErrorSpecific)
+#OLA_HTTP_ERROR     = "خطای فعال سازی: سرور کد HTTP را نشان داد" + OnlineActSrvErrorSpecific
+#OLA_SERVER_ERROR   = s_ServerErrCodes(OnlineActSrvErrorSpecific)
+default             = "عدم موفقیت در فعال سازی " + OnlineActSrvError + ":" + OnlineActSrvErrorSpecific
+
+[s_ServerErrCodes]
+#OLA_ERR_SRV_INTERNAL_SERVER_ERROR          = "خطای داخلی سرور فعال سازی. لطفاً دوباره تلاش کنید یا با پشتیبانی فنی تماس بگیرید"
+#OLA_ERR_SRV_KEY_NOT_FOUND
+#OLA_ERR_SRV_USE_MOBILE_ACTIVATION
+#OLA_ERR_SRV_WRONG_APPLICATION_ID           = "کد فعال سازی با این برنامه مطابقت ندارد. فعال سازی " + $ProductName + " با استفاده از کد فعال سازی برای یک برنامه دیگر ممکن نیست. لطفاً، برنامه نصب شده را کنترل کنید"
+#OLA_ERR_SRV_KEY_OR_ACTIVATION_CODE_BLOCKED = "کلید مسدود شده است"
+#OLA_ERR_SRV_WRONG_CUSTOMER_ID_OR_PASSWORD  = "شناسه مشتری یا رمز عبور اشتباه"
+#OLA_ERR_SRV_WRONG_ACTIVATION_CODE          = "کد فعالسازی اشتباه است"
+#OLA_ERR_SRV_ACTIVATION_CODE_REQUIRED       = "کد فعال سازی ضروری است"
+#OLA_ERR_SRV_ACTIVATION_PERIOD_EXPIRED      = "دوره فعال سازی منقضی شده است"
+#OLA_ERR_SRV_ACTIVATION_ATTEMPTS_EXHAUSTED  = "تعداد فعال سازیها با استفاده از این کد از حد مجاز بیشتر شده است"
+#OLA_ERR_SRV_REGION_MISMATCH                = "کد فعال سازی برای این منطقه نامعتبر است"
+#OLA_ERR_SRV_LOCALIZATION_MISMATCH          = "این کد فعال سازی را نمی توان برای این محلی کردن برنامه به کار برد."
+#OLA_ERR_SRV_ACTIVATION_CODE_NEEDS_CONVERSION= "کد فعال سازی برای یک نسخه جدیدتر از این برنامه معتبر است. برای استفاده از نسخه فعلی لازم است کد دیگری به دست بیاورید. برای جزئیات روی پیوند زیر کلیک کنید."
+#OLA_ERR_SRV_SERVER_ERROR_643               = "سرور فعال سازی خطای 643 را نشان داد"
+#OLA_ERR_SRV_SERVER_ERROR_644               = "سرور فعال سازی خطای 644 را نشان داد"
+#OLA_ERR_SRV_SERVER_ERROR_645               = "سرور فعال سازی خطای 645 را نشان داد"
+#OLA_ERR_SRV_SERVER_ERROR_646               = "سرور فعال سازی خطای 646 را نشان داد"
+default                                     = "روال فعال سازی با خطا مواجه شد " + #OLA_SERVER_ERROR + ":" + @
+
+[s_LogicalErrCodes]
+#OLA_ERR_LOGICAL_OFFLINE_MODE               = "حالت آفلاین در Microsoft Internet Explorer فعال شد"
+default             						= @
+
+[s_InternetErrCodes]
+#OLA_ERR_INTERNET_DISCONNECTED               = "اتصال اینترنت ناموفق بود"
+#OLA_ERR_INTERNET_SERVER_UNREACHABLE         = "سرور فعال سازی موجود نیست"
+#OLA_ERR_INTERNET_PROXY_SERVER_UNREACHABLE   = "سرور پروکسی موجود نیست"
+#OLA_ERR_INTERNET_TIMEOUT                    = "زمان پاسخ به پایان رسید"
+#OLA_ERR_INTERNET_INVALID_URL                = "نشانی سرور فعال سازی اشتباه"
+#OLA_ERR_INTERNET_UNRECOGNIZED_SCHEME        = "پروتکل اشتباه"
+#OLA_ERR_INTERNET_NAME_NOT_RESOLVED          = "تنظیم اتصال سرور ممکن نیست"
+#OLA_ERR_INTERNET_OPERATION_ABORTED          = "عملیات لغو شد"
+#OLA_ERR_INTERNET_CANNOT_CONNECT             = "تنظیم اتصال سرور ممکن نیست"
+#OLA_ERR_INTERNET_CONNECTION_ABORTED         = "اتصال سرور خاتمه یافت"
+#OLA_ERR_INTERNET_CONNECTION_RESET           = "اتصال به سرور بازنشانی شد"
+#OLA_ERR_HTTP_INVALID_SERVER_RESPONSE        = "پاسخ اشتباه سرور"
+#OLA_ERR_INTERNET_CERT_DATE_INVALID          = "گواهی نامه SSL سرور منقضی شده است. لطفاً زمان کامپیوتر محلی را کنترل کنید"
+#OLA_ERR_INTERNET_CERT_CN_INVALID            = "نام سرور گواهی نامه SSL با سرور مطابقت ندارد"
+#OLA_ERR_INTERNET_CERT_REV_FAILED            = "کنترل لغو گواهی نامه قابل انجام نیست. این کنترل را در Microsoft Internet Explorer غیرفعال کنید (Tools->Internet Options->Advanced->Check for Server certificate revocation) و دوباره برای فعال سازی تلاش کنید"
+#OLA_ERR_INTERNET_CERT_INVALID               = "گواهی نامه SSL نامعتبر"
+#OLA_ERR_INTERNET_CERT_REVOKED               = "گواهی نامه SSL لغو شد"
+#OLA_ERR_INTERNET_INVALID_CA                 = "مرکز گواهی نامه نامعتبر"
+default                                      = @
+
+[ConfigureWizard.ActivationServerForm_Info]
+Hint = "برای اینکه Kaspersky Lab بتواند در مورد رویدادهای تبلیغاتی، فروشها و فروشهای ویژه به شما اطلاع رسانی کند، اطلاعات ثبت نام مورد نیاز است."
+
+[ConfigureWizard.ActivationServerForm]
+Activate.Name   = "&ادامه"
+Activate.Descr  = "ارسال داده به سرور فعال سازی"
+
+[ConfigureWizard.ActivationProgress_Info]
+Info                    = "راهنمای گام به گام در حال اتصال به سرور Kaspersky Lab است. این با توجه به سرعت اتصال اینترنت شما ممکن است قدری طول بکشد."
+ConnectingInfo.Name     = "در حال اتصال به سرور فعال سازی..."
+ConnectingInfo.Val      = if(bConnected, "تأیید")
+SendingCodeInfo.Name    = "در حال ارسال کد فعال سازی..."
+SendingCodeInfo.Val     = if(bSentCode, "تأیید")
+RetrievingKeyInfo.Name  = "در انتظار پاسخ از سرور..."
+RetrievingKeyInfo.Val   = if(bRetrievedKey, "تأیید")
+Status                  = "نسخه " + $ProductName + " شما با موفقیت فعال شده است"
+
+[ConfigureWizard.ActivationProgress_KeyInfo]
+Type.Name               = $LicInfoKeyType
+ExpirationDate.Name     = "تاریخ انقضا:"
+ExpirationDate.Val      = datetime(LicenseExpirationDate) + " (" + f_n_days_remaining(DaysTillExpiration) + " باقی مانده)"
+
+[ConfigureWizard.ActivationEnd_Info]
+Text2   = bActivationNeeded ? "فعالسازی با موفقیت انجام شد." : "این برنامه قبلا بر روی کامپیوتر شما فعال شده است."
+
+[ConfigureWizard.InitBegin]
+Next.Name   = "&بعدی"
+Next.Descr  = ((PiwFlags & #fPiwActivation) && !bSilent && bActivationNeeded)? "ادامه فعال سازی برنامه": (((PiwFlags & #fPiwActivation) && !bSilent)?"ادامه اطلاعات لایسنس":"ادامه انتخاب حالت محافظت")
+
+[ConfigureWizard.InitBegin_Info]
+Descr = "این راهنمای گام به گام به پیکربندی درست امنیت کامپیوتر شما کمک می کند.\n\nدر حال پیکربندی، راهنمای گام به گام اطلاعاتی درباره سیستم شما و برنامه های نصب شده در کامپیوتر شما جمع آوری می کند. این اطلاعات فقط با هدف ارائه محافظت بهینه برای کامپیوتر شما به کار خواهد رفت.\n\nبرای شروع فرایند پیکربندی " + $ProductName_GEN + " بعدی را فشار دهید."
+
+[ConfigureWizard.InitFinish_Info_Inner]
+FinishDescr         = $IsInstallNeedReboot ? "صب تقریباً کامل است..." : ((PiwFlags & #fPiwReset) ? ("تعمیر کامل اس.") : ("نصب کامل است."))
+ResetDescr          = "راهنمای پیکربندی، با موفقیت تنظیمات " + $ProductName + " را بازیابی کرد."
+Reboot              = "کامپیوتر را دوباره راه اندازی &کنید"
+StartProduct        = "راه &اندازی " + $ProductName
+RebootPiwWarning    = $IsInstallNeedReboot ? ("از نصب " + $ProductName + " متشکریم. برای تکمیل نصب باید کامپیوتر را دوباره راه اندازی کنید. لطفاً داده های خود را ذخیره کنید، همه برنامه ها را ببندید و روی دکمه «پایان» کلیک کنید.") : "لطفاً توجه کنید که پیکربندی جانبی محصول اولین بار که برنامه شروع شود کامل می شود. این کار ممکن است چند دقیقه طول بکشد."
+
+[ConfigureWizard.EnumExe]
+Info = "هنگام تحلیل سیستم، فهرستی از برنامه های مورد اطمینان گنجانده شده در سیستم عامل Microsoft Windows تهیه شد. \n\nبرنامه هایی که در سیستم عامل گنجانده نشده اند به طور مجزا وقتی برای اولین بار در کامپیوتر اجرا شوند، تحلیل می شوند."
+
+[s_LicKeyType]
+#ektBeta         = "کلید بتا"
+#ektTrial        = "آزمایشی"
+#ektTest         = "کلید آزمایشی"
+#ektOEM          = "کلید OEM"
+#ektCommercial   = "تجاری"
+#ektSubscription = "تجاری با اشتراک"
+#ektSubscriptionProtection = "تجاری با اشتراک محافظت"
+default          = "نوع نامشخص"
+
+[s_KeyInvalidReason]
+#ekirUnknown                    = "خطای نامشخص"
+#ekirValid                      = "لایسنس معتبر است"
+#ekirExpired                    = "لایسنس منقضی شده است"
+#ekirCorrupted                  = "لایسنس معتبر نیست"
+#ekirNotSigned                  = "امضای دیجیتال موجود نیست یا آسیب دیده است"
+#ekirWrongProduct               = "این لایسنس برای این برنامه کاربرد ندارد. فعالسازی " + $ProductName + " تحت این لایسنس برای برنامه دیگر ممکن نیست. لطفاً برنامه نصب شده خود را کنترل کنید."
+#ekirBlackListed                = " کلید"+f_KeySerNum(KeyInfo.ID.KeySerNum)+" مسدود شده است"
+#ekirIllegalUpdate              = "تاریخ پایگاه داده با دوره اعتبار لایسنس مطابقت ندارد"
+#ekirInconsistentUpdate         = "پایگاه های داده آسیب دیده است"
+#ekirKeyCreationDateInvalid     = "تاریخ اشتباه ایجاد کلید"
+#ekirTrialAlreadyInUse          = "هنگامی که یک کلید دیگر برای یک لایسنس آزمایشی فعال است، نمی توان برای لایسنس آزمایشی یک کلید اضافه کرد"
+#ekirInvalidBlacklist           = "لیست سیاه کلیدها آسیب دیده است"
+#ekirCantBeUsedAsReserved       = "نمی توان لایسنس را به عنوان اضافی ثبت کرد"
+#ekirKeyInstallDateInvalid      = "تاریخ فعال سازی اشتباه"
+#ekirTrialPeriodIsOver          = "لایسنس آزمایشی منقضی شده است"
+#ekirConflictsWithCommercial    = "فایل کلید فعلی با لایسنس تجاری فعلی تداخل دارد"
+#ekirExpiredAsReserve           = "این لایسنس، قبل از لایسنس فعلی منقضی می شود"
+#ekirGracePeriod                = "لایسنس در دوره مهلت"
+#ekirSuspended                  = "اشتراک تعلیق شد"
+#ekirLicenseCountLimitExceeded  = switch("Text1", "KeyLimitExceeded")
+#ekirReinstallProduct			= "برنامه باید دوباره نصب شود"
+#ekirLicenseOnlyForMigration    = "تغییر به برنامه دیگر جهت فعالسازی نسخه تجاری"
+default                         = "فایل کلید اشتباه است"
+
+[s_SubscrptnExpDate]
+#edtUndefined = "بعدا تعیین می شود"
+#edtUnlimited = "فعال"
+#edtLimited   = date(SubscriptionInfo.ExpDate)
+#edtSuspended = "تعلیق از " تاریخ + (SubscriptionInfo.ExpDate)
+
+[LicenseKeysDiscartedDetails]
+@ = "اطلاعات لایسنس"
+
+[LicenseExpirationWindow]
+@ = $ProductName + ": اعلان لایسنس"
+
+[LicenseExpirationWindow_Header]
+CaptionText = "توجه!"
+
+[LicenseExpirationWindow_Body]
+TrialWarning = "شما در حال استفاده از یک نسخه آزمایشی " + $ProductName_GEN + هستید"."
+
+[s_LicenseExpiration_BlacklistInvalid]
+1       = "لیست سیاه لایسنسها موجود نیست یا آسیب دیده است. لطفاً برای ادامه عملیات <a به روزرسانی با یک کلیک(f_StartUpdater())>به روزرسانی</a> را اجرا کنید."
+default = s_LicenseExpiration_KeyBlocked($IsActiveKeyBlocked)
+
+[s_LicenseExpiration_NonExpSubscription]
+0       = "لایسنس شما " + s_LicenseExpiredText(global.KeyState & (#eKeyExpired|#eKeyTrialExpired)) + ". برای به روز نکه داشتن محافظت، لطفاً <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a> را خریداری کنید.\n\nn\nاگر از قبل لایسنس را دریافت نموده اید، لطفاً <a Activate onclick(f_Activate())>برنامه را فعال کنید</a>."
+1       = (SubscriptionStatus==#ssExpired)? (("اشتراک منقضی شد." + if(LicInfo.KeyInfo.KeyType == #ektSubscriptionProtection && !$IsBestBuyLink، " محافظت غیرفعال شد."))+($IsBestBuyLink ? " تمدید اشتراک موجود نیست." : " امنیت کامپیوتر در معرض خطر است. \n\nبرای تمدید اشتراک، <a onclick(url($KeyProviderLinkForText))>با ارائه دهنده خدمات خود تماس بگیرید</a>.")) :("شما " + f_n_days_remaining(LicInfo.SubscriptionCheckInfo.DaysTillGraceExpiration) + ($IsBestBuyLink ? " روز برای تمدید اشتراک فرصت دارید. " : (LicInfo.KeyInfo.KeyType == #ektSubscription ? " روز تا غیرفعال شدن به روزرسانی فرصت دارید. " : " روز تا غیرفعال شدن محافظت فرصت دارید." ) ) + " برای تمدید اشتراک، <a onclick(url($KeyProviderLinkForText))>با ارائه دهنده خدمات خود تماس بگیرید</a>.")
+
+[s_LicenseExpiration_KeyBlocked]
+default = "<b>کلید فعال مسدود است.\nویژگی به روز رسانی غیرفعال است، از این رو رایانه شما ممکن است در معرض آلودگی باشد.</b>\n\nاگر برنامه را بصورت قانونی خریداری کرده اید، با بخش پشتیبانی فنی یا نماینده فروش تماس بگیرید.\n\nاگر از یک نسخه غیرقانونی استفاده می کنید، لطفاً <a Buy onclick(buy())>" + s_LicenseRenewBuyText(global.LicenseRenewAvailable) + "</a>.\n\nاگر از قبل یک لایسنس دریافت کرده اید، لطفاً <a Activate onclick(f_Activate())>برنامه را فعال کنید</a>.\n\n"
+
+[s_LicenseExpiredText]
+0       = global.LicInfo.DaysTillExpiration == 0 ? "امروز منقضی می شود" : "منقضی می شود در " + f_n_days_past(global.LicInfo.DaysTillExpiration)
+default = "منقضی شده است"
+
+[s_LicenseRenewBuyText]
+0 = "دریافت لایسنس"
+default = "تمدید لایسنس"
+
+[ConfigureWizard.ResetArea_Info]
+Descr = "انتخاب تنظیمات برای بازیابی:"
+
+[s_MUProductTitleLong]
+kav   = switch("kis", "ProductTitleLong", "")
+kis   = switch("kav", "ProductTitleLong", "")
+
+[s_MUProductTitle]
+kav   = switch("kis", "ProductTitle", "")
+kis   = switch("kav", "ProductTitle", "")
+
+[SettingsResetWizard]
+@ = $ProductName_GEN + " راهنمای گام به گام پیکربندی"
+
+[SettingsResetWizardPages]
+InitBegin.Name                        = "اطلاعات کلی"
+InitBegin.Descr                       = "به راهنمای گام به گام پیکربندی " + $ProductName_GEN + " خوش آمدید."
+CheckHosts.Name                       = "کنترل در دسترس بودن سرورهای Kaspersky Lab"
+CheckHosts.Descr                      = "تعیین مسیر مشکوک شناسایی شد"
+ResetArea.Name                        = "بازیابی تنظیمات"
+ResetArea.Descr                       = "تنظیمات لیست شده در زیر دارای داده وارد شده توسط کاربر یا جمع آوری شده \nدر حال عملیات برنامه هستند."
+EnumExe.Name                          = "تحلیل سیستم"
+EnumExe.Descr                         = "لطفاً منتظر بمانید تا اطلاعاتی درباره سیستم شما جمع آوری شود..."
+ResetFinish.Name                       = "تکمیل پیکربندی " + $ProductName
+ResetFinish.Descr                      = $ProductName + " برای شروع آماده است."
+
+[SettingsResetWizard.ResetFinish_Info_Inner]
+FinishDescr         = "بازیابی انجام شد."
+ResetDescr          = "راهنمای پیکربندی، با موفقیت تنظیمات " + $ProductName + " را بازیابی کرد."
+
+[BestBuyUpgradeMessage]
+@ = "جابجایی به یک برنامه دیگر"
+
+[BestBuyUpgradeMessageFooter]
+CloseButton="استفاده از Kaspersky Internet Security را شروع کنید"
+RestartButton = "اجرای Kaspersky Internet Security"
+
+[BestBuyUpgradeMessagePage]
+Header = "تبریک می گوییم!"
+Message = "Kaspersky Anti-Virus شما به Kaspersky Internet Security ارتقا یافت.\nاکنون ویژگی های بیشتری برای محافظت از رایانه تان در اختیار دارید."
+Description = "از اینکه نرم افزار محصول Kaspersky Lab را انتخاب کردید سپاسگزاریم!\nاز ویژگی های افزوده شده برای محافظت لذت ببرید."
+
+[ForcedUpgradeMessagePage]
+Header = "تقریباً تمام است"
+Message = "از اینکه نرم افزار محصول Kaspersky Lab را انتخاب کردید سپاسگزاریم! از ویژگی های افزوده شده برای محافظت لذت ببرید."
+Description = "به دلیل اینکه نرم افزار ناسازگار حذف نشده است، بعضی از مولفه های Kaspersky Internet Security غیر فعال شده اند تا از عملکرد ثابت برنامه های نصب شده و سیستم عامل اطمینان حاصل شود.\n\nنرم افزار ناسازگار را می توانید به صورت دستی حذف کنید و تمام ویژگی های جدید را در پنجره تنظیمات Kaspersky Internet Security فعال کنید."
+Notification = "برنامه دوباره راه اندازی می شود تا ارتقا تکمیل شود."

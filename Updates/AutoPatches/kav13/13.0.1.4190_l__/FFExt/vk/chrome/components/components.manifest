@@ -1,0 +1,216 @@
+interfaces virtual_keyboard_xpcom_gecko35/dom_element.xpt appversion<35.*
+interfaces virtual_keyboard_xpcom_gecko35/secure_input_listener.xpt appversion<35.*
+interfaces virtual_keyboard_xpcom_gecko35/settings_changing_listener.xpt appversion<35.*
+interfaces virtual_keyboard_xpcom_gecko35/tsf_editor_events_sink.xpt appversion<35.*
+interfaces virtual_keyboard_xpcom_gecko35/tsf_listener.xpt appversion<35.*
+interfaces virtual_keyboard_xpcom_gecko35/virtual_keyboard.xpt appversion<35.*
+binary-component virtual_keyboard_xpcom_gecko35/virtual_keyboard_xpcom.dll appversion<35.*
+
+interfaces virtual_keyboard_xpcom_gecko34/dom_element.xpt appversion<34.*
+interfaces virtual_keyboard_xpcom_gecko34/secure_input_listener.xpt appversion<34.*
+interfaces virtual_keyboard_xpcom_gecko34/settings_changing_listener.xpt appversion<34.*
+interfaces virtual_keyboard_xpcom_gecko34/tsf_editor_events_sink.xpt appversion<34.*
+interfaces virtual_keyboard_xpcom_gecko34/tsf_listener.xpt appversion<34.*
+interfaces virtual_keyboard_xpcom_gecko34/virtual_keyboard.xpt appversion<34.*
+binary-component virtual_keyboard_xpcom_gecko34/virtual_keyboard_xpcom.dll appversion<34.*
+
+interfaces virtual_keyboard_xpcom_gecko33/dom_element.xpt appversion<33.*
+interfaces virtual_keyboard_xpcom_gecko33/secure_input_listener.xpt appversion<33.*
+interfaces virtual_keyboard_xpcom_gecko33/settings_changing_listener.xpt appversion<33.*
+interfaces virtual_keyboard_xpcom_gecko33/tsf_editor_events_sink.xpt appversion<33.*
+interfaces virtual_keyboard_xpcom_gecko33/tsf_listener.xpt appversion<33.*
+interfaces virtual_keyboard_xpcom_gecko33/virtual_keyboard.xpt appversion<33.*
+binary-component virtual_keyboard_xpcom_gecko33/virtual_keyboard_xpcom.dll appversion<33.*
+
+interfaces virtual_keyboard_xpcom_gecko32/dom_element.xpt appversion<32.*
+interfaces virtual_keyboard_xpcom_gecko32/secure_input_listener.xpt appversion<32.*
+interfaces virtual_keyboard_xpcom_gecko32/settings_changing_listener.xpt appversion<32.*
+interfaces virtual_keyboard_xpcom_gecko32/tsf_editor_events_sink.xpt appversion<32.*
+interfaces virtual_keyboard_xpcom_gecko32/tsf_listener.xpt appversion<32.*
+interfaces virtual_keyboard_xpcom_gecko32/virtual_keyboard.xpt appversion<32.*
+binary-component virtual_keyboard_xpcom_gecko32/virtual_keyboard_xpcom.dll appversion<32.*
+
+interfaces virtual_keyboard_xpcom_gecko31/dom_element.xpt appversion<31.*
+interfaces virtual_keyboard_xpcom_gecko31/secure_input_listener.xpt appversion<31.*
+interfaces virtual_keyboard_xpcom_gecko31/settings_changing_listener.xpt appversion<31.*
+interfaces virtual_keyboard_xpcom_gecko31/tsf_editor_events_sink.xpt appversion<31.*
+interfaces virtual_keyboard_xpcom_gecko31/tsf_listener.xpt appversion<31.*
+interfaces virtual_keyboard_xpcom_gecko31/virtual_keyboard.xpt appversion<31.*
+binary-component virtual_keyboard_xpcom_gecko31/virtual_keyboard_xpcom.dll appversion<31.*
+
+interfaces virtual_keyboard_xpcom_gecko30/dom_element.xpt appversion<30.*
+interfaces virtual_keyboard_xpcom_gecko30/secure_input_listener.xpt appversion<30.*
+interfaces virtual_keyboard_xpcom_gecko30/settings_changing_listener.xpt appversion<30.*
+interfaces virtual_keyboard_xpcom_gecko30/tsf_editor_events_sink.xpt appversion<30.*
+interfaces virtual_keyboard_xpcom_gecko30/tsf_listener.xpt appversion<30.*
+interfaces virtual_keyboard_xpcom_gecko30/virtual_keyboard.xpt appversion<30.*
+binary-component virtual_keyboard_xpcom_gecko30/virtual_keyboard_xpcom.dll appversion<30.*
+
+interfaces virtual_keyboard_xpcom_gecko29/dom_element.xpt appversion<29.*
+interfaces virtual_keyboard_xpcom_gecko29/secure_input_listener.xpt appversion<29.*
+interfaces virtual_keyboard_xpcom_gecko29/settings_changing_listener.xpt appversion<29.*
+interfaces virtual_keyboard_xpcom_gecko29/tsf_editor_events_sink.xpt appversion<29.*
+interfaces virtual_keyboard_xpcom_gecko29/tsf_listener.xpt appversion<29.*
+interfaces virtual_keyboard_xpcom_gecko29/virtual_keyboard.xpt appversion<29.*
+binary-component virtual_keyboard_xpcom_gecko29/virtual_keyboard_xpcom.dll appversion<29.*
+
+interfaces virtual_keyboard_xpcom_gecko28/dom_element.xpt appversion<28.*
+interfaces virtual_keyboard_xpcom_gecko28/secure_input_listener.xpt appversion<28.*
+interfaces virtual_keyboard_xpcom_gecko28/settings_changing_listener.xpt appversion<28.*
+interfaces virtual_keyboard_xpcom_gecko28/tsf_editor_events_sink.xpt appversion<28.*
+interfaces virtual_keyboard_xpcom_gecko28/tsf_listener.xpt appversion<28.*
+interfaces virtual_keyboard_xpcom_gecko28/virtual_keyboard.xpt appversion<28.*
+binary-component virtual_keyboard_xpcom_gecko28/virtual_keyboard_xpcom.dll appversion<28.*
+
+interfaces virtual_keyboard_xpcom_gecko27/dom_element.xpt appversion<27.*
+interfaces virtual_keyboard_xpcom_gecko27/secure_input_listener.xpt appversion<27.*
+interfaces virtual_keyboard_xpcom_gecko27/settings_changing_listener.xpt appversion<27.*
+interfaces virtual_keyboard_xpcom_gecko27/tsf_editor_events_sink.xpt appversion<27.*
+interfaces virtual_keyboard_xpcom_gecko27/tsf_listener.xpt appversion<27.*
+interfaces virtual_keyboard_xpcom_gecko27/virtual_keyboard.xpt appversion<27.*
+binary-component virtual_keyboard_xpcom_gecko27/virtual_keyboard_xpcom.dll appversion<27.*
+
+interfaces virtual_keyboard_xpcom_gecko26/dom_element.xpt appversion<26.*
+interfaces virtual_keyboard_xpcom_gecko26/secure_input_listener.xpt appversion<26.*
+interfaces virtual_keyboard_xpcom_gecko26/settings_changing_listener.xpt appversion<26.*
+interfaces virtual_keyboard_xpcom_gecko26/tsf_editor_events_sink.xpt appversion<26.*
+interfaces virtual_keyboard_xpcom_gecko26/tsf_listener.xpt appversion<26.*
+interfaces virtual_keyboard_xpcom_gecko26/virtual_keyboard.xpt appversion<26.*
+binary-component virtual_keyboard_xpcom_gecko26/virtual_keyboard_xpcom.dll appversion<26.*
+
+interfaces virtual_keyboard_xpcom_gecko25/dom_element.xpt appversion<25.*
+interfaces virtual_keyboard_xpcom_gecko25/secure_input_listener.xpt appversion<25.*
+interfaces virtual_keyboard_xpcom_gecko25/settings_changing_listener.xpt appversion<25.*
+interfaces virtual_keyboard_xpcom_gecko25/tsf_editor_events_sink.xpt appversion<25.*
+interfaces virtual_keyboard_xpcom_gecko25/tsf_listener.xpt appversion<25.*
+interfaces virtual_keyboard_xpcom_gecko25/virtual_keyboard.xpt appversion<25.*
+binary-component virtual_keyboard_xpcom_gecko25/virtual_keyboard_xpcom.dll appversion<25.*
+
+interfaces virtual_keyboard_xpcom_gecko24/dom_element.xpt appversion<24.*
+interfaces virtual_keyboard_xpcom_gecko24/secure_input_listener.xpt appversion<24.*
+interfaces virtual_keyboard_xpcom_gecko24/settings_changing_listener.xpt appversion<24.*
+interfaces virtual_keyboard_xpcom_gecko24/tsf_editor_events_sink.xpt appversion<24.*
+interfaces virtual_keyboard_xpcom_gecko24/tsf_listener.xpt appversion<24.*
+interfaces virtual_keyboard_xpcom_gecko24/virtual_keyboard.xpt appversion<24.*
+binary-component virtual_keyboard_xpcom_gecko24/virtual_keyboard_xpcom.dll appversion<24.*
+
+interfaces virtual_keyboard_xpcom_gecko23/dom_element.xpt appversion<23.*
+interfaces virtual_keyboard_xpcom_gecko23/secure_input_listener.xpt appversion<23.*
+interfaces virtual_keyboard_xpcom_gecko23/settings_changing_listener.xpt appversion<23.*
+interfaces virtual_keyboard_xpcom_gecko23/tsf_editor_events_sink.xpt appversion<23.*
+interfaces virtual_keyboard_xpcom_gecko23/tsf_listener.xpt appversion<23.*
+interfaces virtual_keyboard_xpcom_gecko23/virtual_keyboard.xpt appversion<23.*
+binary-component virtual_keyboard_xpcom_gecko23/virtual_keyboard_xpcom.dll appversion<23.*
+
+interfaces virtual_keyboard_xpcom_gecko22/dom_element.xpt appversion<22.*
+interfaces virtual_keyboard_xpcom_gecko22/secure_input_listener.xpt appversion<22.*
+interfaces virtual_keyboard_xpcom_gecko22/settings_changing_listener.xpt appversion<22.*
+interfaces virtual_keyboard_xpcom_gecko22/tsf_editor_events_sink.xpt appversion<22.*
+interfaces virtual_keyboard_xpcom_gecko22/tsf_listener.xpt appversion<22.*
+interfaces virtual_keyboard_xpcom_gecko22/virtual_keyboard.xpt appversion<22.*
+binary-component virtual_keyboard_xpcom_gecko22/virtual_keyboard_xpcom.dll appversion<22.*
+
+interfaces virtual_keyboard_xpcom_gecko21/dom_element.xpt appversion<21.*
+interfaces virtual_keyboard_xpcom_gecko21/secure_input_listener.xpt appversion<21.*
+interfaces virtual_keyboard_xpcom_gecko21/settings_changing_listener.xpt appversion<21.*
+interfaces virtual_keyboard_xpcom_gecko21/tsf_editor_events_sink.xpt appversion<21.*
+interfaces virtual_keyboard_xpcom_gecko21/tsf_listener.xpt appversion<21.*
+interfaces virtual_keyboard_xpcom_gecko21/virtual_keyboard.xpt appversion<21.*
+binary-component virtual_keyboard_xpcom_gecko21/virtual_keyboard_xpcom.dll appversion<21.*
+
+interfaces virtual_keyboard_xpcom_gecko20/dom_element.xpt appversion<20.*
+interfaces virtual_keyboard_xpcom_gecko20/secure_input_listener.xpt appversion<20.*
+interfaces virtual_keyboard_xpcom_gecko20/settings_changing_listener.xpt appversion<20.*
+interfaces virtual_keyboard_xpcom_gecko20/tsf_editor_events_sink.xpt appversion<20.*
+interfaces virtual_keyboard_xpcom_gecko20/tsf_listener.xpt appversion<20.*
+interfaces virtual_keyboard_xpcom_gecko20/virtual_keyboard.xpt appversion<20.*
+binary-component virtual_keyboard_xpcom_gecko20/virtual_keyboard_xpcom.dll appversion<20.*
+
+interfaces virtual_keyboard_xpcom_gecko19/dom_element.xpt appversion<19.*
+interfaces virtual_keyboard_xpcom_gecko19/secure_input_listener.xpt appversion<19.*
+interfaces virtual_keyboard_xpcom_gecko19/settings_changing_listener.xpt appversion<19.*
+interfaces virtual_keyboard_xpcom_gecko19/tsf_editor_events_sink.xpt appversion<19.*
+interfaces virtual_keyboard_xpcom_gecko19/tsf_listener.xpt appversion<19.*
+interfaces virtual_keyboard_xpcom_gecko19/virtual_keyboard.xpt appversion<19.*
+binary-component virtual_keyboard_xpcom_gecko19/virtual_keyboard_xpcom.dll appversion<19.*
+
+interfaces virtual_keyboard_xpcom_gecko18/dom_element.xpt appversion<18.*
+interfaces virtual_keyboard_xpcom_gecko18/secure_input_listener.xpt appversion<18.*
+interfaces virtual_keyboard_xpcom_gecko18/settings_changing_listener.xpt appversion<18.*
+interfaces virtual_keyboard_xpcom_gecko18/tsf_editor_events_sink.xpt appversion<18.*
+interfaces virtual_keyboard_xpcom_gecko18/tsf_listener.xpt appversion<18.*
+interfaces virtual_keyboard_xpcom_gecko18/virtual_keyboard.xpt appversion<18.*
+binary-component virtual_keyboard_xpcom_gecko18/virtual_keyboard_xpcom.dll appversion<18.*
+
+interfaces virtual_keyboard_xpcom_gecko17/dom_element.xpt appversion<17.*
+interfaces virtual_keyboard_xpcom_gecko17/secure_input_listener.xpt appversion<17.*
+interfaces virtual_keyboard_xpcom_gecko17/settings_changing_listener.xpt appversion<17.*
+interfaces virtual_keyboard_xpcom_gecko17/tsf_editor_events_sink.xpt appversion<17.*
+interfaces virtual_keyboard_xpcom_gecko17/tsf_listener.xpt appversion<17.*
+interfaces virtual_keyboard_xpcom_gecko17/virtual_keyboard.xpt appversion<17.*
+binary-component virtual_keyboard_xpcom_gecko17/virtual_keyboard_xpcom.dll appversion<17.*
+
+interfaces virtual_keyboard_xpcom_gecko16/dom_element.xpt appversion<16.*
+interfaces virtual_keyboard_xpcom_gecko16/secure_input_listener.xpt appversion<16.*
+interfaces virtual_keyboard_xpcom_gecko16/settings_changing_listener.xpt appversion<16.*
+interfaces virtual_keyboard_xpcom_gecko16/tsf_editor_events_sink.xpt appversion<16.*
+interfaces virtual_keyboard_xpcom_gecko16/tsf_listener.xpt appversion<16.*
+interfaces virtual_keyboard_xpcom_gecko16/virtual_keyboard.xpt appversion<16.*
+binary-component virtual_keyboard_xpcom_gecko16/virtual_keyboard_xpcom.dll appversion<16.*
+
+interfaces virtual_keyboard_xpcom_gecko15/dom_element.xpt appversion<15.*
+interfaces virtual_keyboard_xpcom_gecko15/secure_input_listener.xpt appversion<15.*
+interfaces virtual_keyboard_xpcom_gecko15/settings_changing_listener.xpt appversion<15.*
+interfaces virtual_keyboard_xpcom_gecko15/tsf_editor_events_sink.xpt appversion<15.*
+interfaces virtual_keyboard_xpcom_gecko15/tsf_listener.xpt appversion<15.*
+interfaces virtual_keyboard_xpcom_gecko15/virtual_keyboard.xpt appversion<15.*
+binary-component virtual_keyboard_xpcom_gecko15/virtual_keyboard_xpcom.dll appversion<15.*
+
+interfaces virtual_keyboard_xpcom_gecko14/dom_element.xpt appversion<14.*
+interfaces virtual_keyboard_xpcom_gecko14/secure_input_listener.xpt appversion<14.*
+interfaces virtual_keyboard_xpcom_gecko14/settings_changing_listener.xpt appversion<14.*
+interfaces virtual_keyboard_xpcom_gecko14/tsf_editor_events_sink.xpt appversion<14.*
+interfaces virtual_keyboard_xpcom_gecko14/tsf_listener.xpt appversion<14.*
+interfaces virtual_keyboard_xpcom_gecko14/virtual_keyboard.xpt appversion<14.*
+binary-component virtual_keyboard_xpcom_gecko14/virtual_keyboard_xpcom.dll appversion<14.*
+
+interfaces virtual_keyboard_xpcom_gecko13/dom_element.xpt appversion<13.*
+interfaces virtual_keyboard_xpcom_gecko13/secure_input_listener.xpt appversion<13.*
+interfaces virtual_keyboard_xpcom_gecko13/settings_changing_listener.xpt appversion<13.*
+interfaces virtual_keyboard_xpcom_gecko13/tsf_editor_events_sink.xpt appversion<13.*
+interfaces virtual_keyboard_xpcom_gecko13/tsf_listener.xpt appversion<13.*
+interfaces virtual_keyboard_xpcom_gecko13/virtual_keyboard.xpt appversion<13.*
+binary-component virtual_keyboard_xpcom_gecko13/virtual_keyboard_xpcom.dll appversion<13.*
+
+interfaces virtual_keyboard_xpcom_gecko12/dom_element.xpt appversion<12.*
+interfaces virtual_keyboard_xpcom_gecko12/secure_input_listener.xpt appversion<12.*
+interfaces virtual_keyboard_xpcom_gecko12/settings_changing_listener.xpt appversion<12.*
+interfaces virtual_keyboard_xpcom_gecko12/tsf_editor_events_sink.xpt appversion<12.*
+interfaces virtual_keyboard_xpcom_gecko12/tsf_listener.xpt appversion<12.*
+interfaces virtual_keyboard_xpcom_gecko12/virtual_keyboard.xpt appversion<12.*
+binary-component virtual_keyboard_xpcom_gecko12/virtual_keyboard_xpcom.dll appversion<12.*
+
+interfaces virtual_keyboard_xpcom_gecko11/dom_element.xpt appversion<11.*
+interfaces virtual_keyboard_xpcom_gecko11/secure_input_listener.xpt appversion<11.*
+interfaces virtual_keyboard_xpcom_gecko11/settings_changing_listener.xpt appversion<11.*
+interfaces virtual_keyboard_xpcom_gecko11/tsf_editor_events_sink.xpt appversion<11.*
+interfaces virtual_keyboard_xpcom_gecko11/tsf_listener.xpt appversion<11.*
+interfaces virtual_keyboard_xpcom_gecko11/virtual_keyboard.xpt appversion<11.*
+binary-component virtual_keyboard_xpcom_gecko11/virtual_keyboard_xpcom.dll appversion<11.*
+
+interfaces virtual_keyboard_xpcom_gecko10/dom_element.xpt appversion<10.*
+interfaces virtual_keyboard_xpcom_gecko10/secure_input_listener.xpt appversion<10.*
+interfaces virtual_keyboard_xpcom_gecko10/settings_changing_listener.xpt appversion<10.*
+interfaces virtual_keyboard_xpcom_gecko10/tsf_editor_events_sink.xpt appversion<10.*
+interfaces virtual_keyboard_xpcom_gecko10/tsf_listener.xpt appversion<10.*
+interfaces virtual_keyboard_xpcom_gecko10/virtual_keyboard.xpt appversion<10.*
+binary-component virtual_keyboard_xpcom_gecko10/virtual_keyboard_xpcom.dll appversion<10.*
+
+interfaces virtual_keyboard_xpcom_gecko9/dom_element.xpt appversion<9.*
+interfaces virtual_keyboard_xpcom_gecko9/secure_input_listener.xpt appversion<9.*
+interfaces virtual_keyboard_xpcom_gecko9/settings_changing_listener.xpt appversion<9.*
+interfaces virtual_keyboard_xpcom_gecko9/tsf_editor_events_sink.xpt appversion<9.*
+interfaces virtual_keyboard_xpcom_gecko9/tsf_listener.xpt appversion<9.*
+interfaces virtual_keyboard_xpcom_gecko9/virtual_keyboard.xpt appversion<9.*
+binary-component virtual_keyboard_xpcom_gecko9/virtual_keyboard_xpcom.dll appversion<9.*
+

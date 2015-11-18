@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Trình hướng dẫn chuyển đổi'
+UpgradeCaption = 'Nâng cấp'
+
+RebootPageCheckboxRebootText = 'Khởi động lại máy tính'
+OpenRemoveProgramsPanel = 'Mở thanh công cụ'
+
+WizardBeginDescriptionKis = 'Bạn sẽ chuyển đến Kaspersky Internet Security 2013.\n\nNhững thỏa thuận trong quá trình sử dụng bản quyền Kaspersky Internet Security có thông tin tương tự như khi bạn cài đặt Kaspersky Anti-Virus lần đầu.\n\nLưu ý: Chuyển đổi này có thể máy tính sẽ khởi động lại.'
+
+WizardBeginDescriptionKav = 'Bạn sẽ chuyển đến Kaspersky Anti-Virus 2013.\n\nNhững thỏa thuận trong quá trình sử dụng bản quyền Kaspersky Anti-Virus có thông tin tương tự như khi bạn cài đặt Kaspersky Internet Security lần đầu.\n\nLưu ý: Chuyển đổi này có thể máy tính sẽ khởi động lại.'
+
+WizardContinueDescriptionKis = 'Tiếp tục chuyển đến Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Tiếp tục chuyển đến Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nChú ý! Bản quyền hiện tại của Kaspersky Anti-Virus hết hạn trước bản quyền của Kaspersky Internet Security. Sau khi bản quyền Kaspersky Anti-Virus hết hạn, chương trình sẽ không thể quay lại Kaspersky Anti-Virus.'
+
+PleaseWait = 'Vui lòng chờ'
+RemovalProgressDescription   = 'Xóa các chương trình không tương thích'
+RemovalApplicationsDescription = 'Các phần mềm không tương thích sau đây sẽ được gỡ bỏ để thực hiện chuyển đổi:'
+ManualRemovalApplicationsDescription = 'Bạn nên gở bỏ những chương trình không tương thích bên dưới theo cách thủ công để chuyển đổi:'
+SearchRemovalApplicationsDescription   = 'Tìm kiếm phần mềm không tương thích'
+RestartProductDescription = 'Ứng dụng sẽ khởi động lại để hoàn tất quá trình chuyển đổi.'
+RebootOsDescription = 'Bạn nên khởi động lại máy tính để tiếp tục chuyển đổi.\nTrình hướng dẫn sẽ tiếp tục sau khi khởi động lại.'
+
+MigrationProgressDescriptionKis = 'Cấu hình lại ứng dụng và chuyển đổi đến Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Cấu hình lại ứng dụng và chuyển đổi đến Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Cấu hình lại ứng dụng và chuyển đổi đến Kaspersky Anti-Virus'
+
+MigrationKis = 'Chuyển đến Kaspersky Internet Security'
+MigrationKav = 'Chuyển đến Kaspersky Anti-Virus'
+MigrationUnknown = 'Chuyển đổi '
+
+SearchRemovalApplicationsHeader = 'Nâng cấp lên Kaspersky Internet Security'
+RemovalProgressHeader = 'Xóa các phần mềm không tương thích'
+RemovalApplicationsHeader = 'Phần mềm không tương thích đã tìm'
+RebootOsHeader = 'Yêu cầu khởi động lại máy tính'
+RestartProductHeader = 'Ứng dụng sẽ khởi động lại'
+
+MigrationAbortedHeader = $MigrationType + ' không thể'
+MigrationAbortedDescription = $MigrationType + ' lỗi. Thử lại bằng cách gở bỏ những chương trình không tương thích bằng cách thủ công và sau đó khởi động lại trình hướng dẫn'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus của bạn sẽ được nâng cấp lên Kaspersky Internet Security.\nNgay bây giờ bạn sẽ có nhiều tính năng hơn để bảo vệ máy tính của bạn.'
+BestBuyGiftDescription = 'Cảm ơn bạn đã chọn phần mềm Kaspersky Lab! Hãy tận hưởng bảo vệ bổ sung.'
+BestBuyUpgradeNotification = 'Trong khi nâng cấp, hệ thống của bạn sẽ được phân tích để tìm ra phần mềm không tương thích nhằm đảm bảo cho các ứng dụng được cài đặt và hệ điều hành hoạt động tốt hơn.'
+BestBuyFreeUpgrade = 'Chuyển đến Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Chạy nâng cấp ẩn'
+BestBuyTryAbortInformation = 'Nâng cấp sẽ tiếp tục trong chế độ nền'
+BestBuyTryAbortDescription = 'Vì những phần mềm không tương thích chưa được loại bỏ, một vài tính năng mới của Kaspersky Internet Security đã được vô hiệu hóa nhằm đảm bảo thực hiện đúng chức năng của các ứng dụng được cài đặt và hệ điều hành.\n\nBạn có thể tháo gỡ những phần mềm không tương thích bằng cách thủ công và bật tất cả tính năng mới trong cửa sổ cài đặt của Kaspersky Internet Seciruty.'
+BackToSubcriptionUpgradeButtonText = 'Quay trở lại nâng cấp'
+Congratulation = 'Xin chúc mừng!'
+
+RunKisButtonText = 'Khởi động Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus của bạn đã được nâng cấp thành công lên Kaspersky Internet Security.\nNgay bây giờ bạn có nhiều tính năng hơn để bảo vệ máy tính của bạn.'

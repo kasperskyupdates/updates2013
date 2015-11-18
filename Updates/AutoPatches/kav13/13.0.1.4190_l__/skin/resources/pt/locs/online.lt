@@ -1,0 +1,50 @@
+﻿KsnNoInternet    = 'Verifique as configurações de ligação à Internet.'
+KsnNoLicense     = 'Não é possível utilizar esta função devido ao estado da licença actual.'
+KsnNoAgreement   = 'Para estabelecer ligação ao serviço, é necessário aceitar os termos do contrato da KSN.'
+
+KsnNotConnected   = 'O acesso à KSN está desactivado.'
+
+Ksn_LastInfo = 'Durante as últimas 24 horas: '
+Ksn_UsersProtected = 'Participantes da KSN protegidos: '
+Ksn_ThreatsDetected = 'Ameaças neutralizadas: '
+
+ThreatSafe    = 'Dados seguros:'
+ThreatMalware = 'Dados perigosos:'
+ThreatPending = 'Processamento'
+
+CloudProtection    = 'Tecnologia de Protecção em Cloud'
+CloudProtectionBig = 'Protecção em Cloud'
+CloudHeader1 = 'Experimente a protecção em cloud avançada'
+CloudHeader2 = 'com o Kaspersky Security Network'
+
+OnlineServices = 'O Kaspersky Security Network é:'
+AboutWorldNetwork   =  'Rede de segurança, ligando utilizadores em todo o mundo'
+AboutProtectionLevel =  'Nível adicional de protecção'
+AboutSoftInfo        =  'Informação actualizada sobre a reputação de aplicações e sites da Internet'
+AboutWebInfo         =  'Prevenção permanente'
+AboutReaction        =  'Reacção imediata a novas ameaças'
+
+LicenseManagerAction = 'Informação sobre a licença'
+KsnAgreementAction = 'Participar no Kaspersky Security Network'
+
+StatisticsHeader = 'Estatísticas actuais da KSN'
+
+LastConnectedText = 'Sincronizado: '
+
+WaitPlease = 'Por favor, aguarde'
+RequestProcessing = 'A enviar pedido ao servidor...'
+
+ReadMore = 'Aprender mais'
+
+AboutCloudProtection = 'Acerca da Protecção em Cloud'
+
+KsnAboutMain	= 'A Kaspersky Security Network (KSN) é um serviço de informações direccionado para ameaças globais, que liga milhões de utilizadores da Kaspersky participantes em todo o mundo. Quando o software detecta dados suspeitos ou não verificados no PC de um participante na KSN, esses dados são automaticamente enviados para a nossa equipa de analistas. Os laboratórios trabalham permanentemente para analisar estas potenciais ameaças e emitir actualizações de protecção em tempo real para todos os utilizadores.'
+KsnAboutDetails = 'Ao aderir à KSN, irá beneficiar de um nível de protecção adicional, em que as ameaças potenciais no seu PC são enviadas directamente para o laboratório para análise imediata. Quanto maior for o número de participantes na KSN, mais robusta será a protecção em cloud para todos os utilizadores. Para obter informações mais detalhadas, <a href="more info"><font color =\"#5495DF\">clique aqui</font></a> para visitar o nosso site.'
+KsnAboutNote	= '*A Kaspersky Lab não efectua qualquer recolha, processamento ou armazenamento de dados pessoais enviados pelos utilizadores. Os dados descritos acima são fornecidos de forma voluntária e o utilizador pode activar/desactivar a sua participação na KSN em qualquer altura.'
+
+ThreatSafeCount    = ' ' + {$SafeThreatsCount: 'objecto', 'objectos'}
+ThreatMalwareCount = ' ' + {$MalwareThreatsCount: 'objecto', 'objectos'}
+ThreatPendingCount = ' ' + {$PendingThreatsCount: 'objecto', 'objectos'}
+
+Connected    = 'LIGADO'
+Disconnected = 'DESLIGADO'

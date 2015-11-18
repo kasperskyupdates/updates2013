@@ -1,0 +1,66 @@
+[Version] 
+Signature = "$Windows NT$" 
+Class     = System
+Provider  = %KL%
+CatalogFile=kneps.cat
+DriverVer=12/10/2014,5.2.0.82
+DriverPackageType=KernelService
+
+[Manufacturer]
+%KLName%=knepsModelSection,ntamd64
+
+[knepsModelSection]
+%knepsName%=DefaultInstall,kneps
+
+[knepsModelSection.ntamd64]
+%knepsName%=DefaultInstall,kneps
+
+[SourceDisksNames]
+1 = %Floppy_Description%,,,
+
+[SourceDisksFiles]
+kneps.sys = 1
+
+[DefaultInstall]
+CopyFiles = Copy.Sys
+
+[DefaultInstall.ntamd64]
+CopyFiles = Copy.Sys
+
+[DefaultInstall.Services]
+AddService=kneps,,kneps.install
+
+[DefaultInstall.ntamd64.Services]
+AddService=kneps,,kneps.install
+
+[DefaultUninstall]
+DelFiles   = Copy.sys
+
+[DefaultUninstall.ntamd64]
+DelFiles   = Copy.sys
+
+[DefaultUninstall.Services]
+DelService = kneps
+
+[DefaultUninstall.ntamd64.Services]
+DelService = kneps
+
+[kneps.install]
+DisplayName = %kneps%
+ServiceType = 1;
+StartType   = 1;
+Errorcontrol= 1;
+ServiceBinary = %12%\kneps.sys
+
+[Copy.Sys]
+kneps.sys,,,2
+
+[DestinationDirs]
+Copy.sys = 12
+
+[Strings] 
+KL = "Kaspersky Lab"
+KLName = "KL"
+knepsName = "kneps"
+kneps = "kneps"
+Floppy_Description = "Kaspersky Lab Installation"

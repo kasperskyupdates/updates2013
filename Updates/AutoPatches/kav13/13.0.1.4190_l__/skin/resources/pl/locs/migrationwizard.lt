@@ -1,0 +1,54 @@
+﻿MigrationMasterWizardCaption = 'Kreator migracji'
+UpgradeCaption = 'Zwiększ bezpieczeństwo'
+
+RebootPageCheckboxRebootText = 'Uruchom komputer ponownie'
+OpenRemoveProgramsPanel = 'Otwórz pasek narzędzi'
+
+WizardBeginDescriptionKis = 'Nastąpi zmiana produktu na Kaspersky Internet Security 2013.\n\nWłaściciel praw autorskich udziela niewyłącznej licencji na korzystanie z Kaspersky Internet Security na tych samych zasadach, które zostały zaakceptowane wcześniej podczas instalacji programu Kaspersky Anti-Virus.\n\nUwaga: Zmiana produktu wymaga działań, które mogą odnieść skutek dopiero po ponownym uruchomieniu komputera.'
+
+WizardBeginDescriptionKav = 'Nastąpi zmiana produktu na Kaspersky Anti-Virus 2013.\n\nWłaściciel praw autorskich udziela niewyłącznej licencji na korzystanie z Kaspersky Anti-Virus na tych samych zasadach, które zostały zaakceptowane wcześniej podczas instalacji programu Kaspersky Internet Security.\n\nUwaga: Zmiana produktu wymaga działań, które mogą odnieść skutek dopiero po ponownym uruchomieniu komputera.'
+
+WizardContinueDescriptionKis = 'Kontynuowanie przełączania na Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Kontynuowanie przełączania na Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nUwaga! Aktywna licencja na Kaspersky Anti-Virus utraci ważność wcześniej niż na Kaspersky Internet Security. Po wygaśnięciu licencji na Kaspersky Anti-Virus, powrót do Kaspersky Anti-Virus będzie niemożliwy.'
+
+PleaseWait = 'Proszę czekać'
+RemovalProgressDescription   = 'Usuwanie niekompatybilnego oprogramowania'
+RemovalApplicationsDescription = 'W celu wykonania przełączenia zostanie odinstalowane następujące oprogramowanie:'
+ManualRemovalApplicationsDescription = 'W celu wykonania przełączenia należy usunąć ręcznie następujące niekompatybilne oprogramowanie:'
+SearchRemovalApplicationsDescription   = 'Wyszukiwanie niekompatybilnego oprogramowania'
+RestartProductDescription = 'W celu zakończenia przełączenia aplikacja zostanie uruchomiona ponownie.'
+RebootOsDescription = 'W celu zakończenia przełączenia wymagane jest ponowne uruchomienie komputera.\nKreator dokończy przełączenie po ponownym uruchomieniu.'
+
+MigrationProgressDescriptionKis = 'Trwa rekonfiguracja aplikacji i przełączanie na Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Trwa rekonfiguracja aplikacji i przełączanie na Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Trwa rekonfiguracja aplikacji i przełączanie na Kaspersky Anti-Virus'
+
+MigrationKis = 'Przełączanie na Kaspersky Internet Security'
+MigrationKav = 'Przełączanie na Kaspersky Anti-Virus'
+MigrationUnknown = 'Przełącz '
+
+SearchRemovalApplicationsHeader = 'Aktualizacja do Kaspersky Internet Security'
+RemovalProgressHeader = 'Usuwanie niekompatybilnego oprogramowania'
+RemovalApplicationsHeader = 'Znaleziono niekompatybilne oprogramowanie'
+RebootOsHeader = 'Wymagane jest ponowne uruchomienie komputera'
+RestartProductHeader = 'Aplikacja zostanie uruchomiona ponownie'
+
+MigrationAbortedHeader = $MigrationType + ' jest niemożliwe'
+MigrationAbortedDescription = $MigrationType + ' nie powiodło się. Spróbuj ręcznie odinstalować niekompatybilne oprogramowanie, a następnie ponownie uruchomić kreatora.'
+
+BestBuyGiftInformation = 'Kaspersky Anti-Virus zostanie zaktualizowany do Kaspersky Internet Security.\nDzięki temu uzyskasz znacznie więcej funkcji chroniących Twój komputer.'
+BestBuyGiftDescription = 'Dziękujemy za wybrania oprogramowania Kaspersky Lab! Możesz cieszyć się nowymi funkcjami ochrony.'
+BestBuyUpgradeNotification = 'Podczas aktualizacji, Twój system zostanie przeanalizowany pod kątem obecności niekompatybilnego oprogramowania w celu zapewnienia stabilnego działania zainstalowanych aplikacji oraz systemu operacyjnego.'
+BestBuyFreeUpgrade = 'Przełączanie na Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Aktualizacja w tle'
+BestBuyTryAbortInformation = 'Aktualizacja będzie kontynuowana w tle'
+BestBuyTryAbortDescription = 'Dopóki niekompatybilne oprogramowanie nie zostanie usunięte, niektóre z nowych funkcji Kaspersky Internet Security zostaną wyłączone, aby zapewnić stabilne działanie zainstalowanych aplikacji oraz systemu operacyjnego.\n\nMożesz usunąć niekompatybilne oprogramowanie ręcznie, a następnie w oknie ustawień włączyć wszystkie nowe funkcje Kaspersky Internet Security.'
+BackToSubcriptionUpgradeButtonText = 'Powrót do aktualizacji'
+Congratulation = 'Gratulacje!'
+
+RunKisButtonText = 'Uruchom Kaspersky Internet Security'
+
+ProductUpgraded = 'Kaspersky Anti-Virus został pomyślnie zaktualizowany do Kaspersky Internet Security.\nMożesz teraz cieszyć się znacznie większą ilością funkcji chroniących Twój komputer.'

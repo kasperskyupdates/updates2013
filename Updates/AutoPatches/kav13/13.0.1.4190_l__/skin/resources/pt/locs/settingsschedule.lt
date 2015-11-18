@@ -1,0 +1,26 @@
+﻿Manually = 'Manualmente'
+Automatically = 'Automaticamente'
+UnknownMode = 'Modo desconhecido'
+
+Minutely = 'A cada ' + $MinutesCount + ' ' + {$MinutesCount: 'minuto', 'minutos'}
+Hourly = 'A cada ' + $HoursCount + ' ' + {$HoursCount: 'hora', 'horas'}
+Weekly = $WeekDays + 'às ' + $Time
+ExactTime = 'Uma vez'
+ExactTimeWithTime = 'Uma vez às ' + $DateTime
+Monthly = 'Ao ' + $Day + ' dia de cada mês às ' + $Time
+OnStartup = 'Com a inicialização da aplicação'
+AfterUpdate = 'Após cada actualização das bases de dados'
+Undefined = 'Indefinido'
+
+EveryDays = 'A cada' + ' ' + $Day + ' ' + {$Day: 'dia', 'dias'} + ' às ' + $Time
+EveryWeekday = 'Nos dias de semana às ' + $Time
+EveryHoliday = 'No fim-de-semana às ' + $Time
+
+Monday = 'Seg'
+Tuesday = 'Ter'
+Wednesday = 'Qua'
+Thursday = 'Qui'
+Friday = 'Sex'
+Saturday = 'Sáb'
+Sunday = 'Dom'
+	

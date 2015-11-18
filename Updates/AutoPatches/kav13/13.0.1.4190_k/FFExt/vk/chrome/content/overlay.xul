@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://virtual_keyboard/skin/overlay.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://virtual_keyboard/locale/ffvkbd.dtd">
+<overlay id="virtual_keyboard-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script src="keypress_emulator.js"/>
+	<script src="keypress_emulator_firefox.js"/>
+  <script src="element_screen_position.js"/>
+  <script src="tsf_editor.js"/>
+  <script src="tsf_composition_view.js"/>
+  <script src="tracer.js"/>
+  <script src="protectable_element_detector.js"/>
+	<script src="tooltip.js"/>
+	<script src="once_timed_tooltip.js"/>
+	<script src="resources.js"/>
+	<script src="virtual_keyboard_extension.js"/>
+	<script src="secure_input_listener.js"/>
+	<script src="tsf_listener.js"/>
+	<script src="progress_listener.js"/>
+	<script src="get_browser_access.js"/>
+	<script src="icon_injector.js"/>
+	<script src="main.js"/>
+
+    <toolbar id="nav-bar">
+		<toolbarbutton
+			id="toolbar_virtual_keyboard_icon"
+			insertbefore="search-container"
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+			orient="horizontal"
+			image="chrome://virtual_keyboard/skin/virtual_keyboard_toolbar_icon.png"
+			oncommand="KasperskyLabVirtualKeyboard.ShowVirtualKeyboardWidget()"
+			tooltiptext="&ffvkbdToolbar.tooltip.VirtualKeyboard;">
+		</toolbarbutton>
+
+		<!-- it's fake item allow unfreeze virtual keyboard button on navigation toolbar -->
+		<toolbaritem/>
+
+    </toolbar>
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="virtual_keyboard_strings" src="chrome://virtual_keyboard/locale/strings.properties"/>
+	</stringbundleset>
+	
+</overlay>

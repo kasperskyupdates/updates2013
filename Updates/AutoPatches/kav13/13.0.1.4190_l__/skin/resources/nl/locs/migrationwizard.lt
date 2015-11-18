@@ -1,0 +1,52 @@
+﻿MigrationMasterWizardCaption = 'Migratiewizard'
+UpgradeCaption = 'Upgrade'
+
+RebootPageCheckboxRebootText = 'Computer opnieuw opstarten'
+OpenRemoveProgramsPanel = 'Werkbalk openen'
+
+WizardBeginDescriptionKis = 'U schakelt over naar Kaspersky Internet Security 2013.\n\nDe Copyright-eigenaar verleent u een niet-exclusieve licentie om Kaspersky Internet Security te gebruiken aan dezelfde voorwaarden die u hebt geaccepteerd bij de oorspronkelijke installatie van Kaspersky Anti-Virus.\n\nOpmerking: bij deze overschakeling moet u mogelijk opnieuw opstarten.'
+
+WizardBeginDescriptionKav = 'U schakelt over naar Kaspersky Anti-Virus 2013.\n\nDe Copyright-eigenaar verleent u een niet-exclusieve licentie om Kaspersky Anti-Virus te gebruiken aan dezelfde voorwaarden die u hebt geaccepteerd bij de oorspronkelijke installatie van Kaspersky Internet Security.\n\nOpmerking: bij deze overschakeling moet u mogelijk opnieuw opstarten.'
+
+WizardContinueDescriptionKis = 'Ga door met de overschakeling naar Kaspersky Internet Security 2013.'
+WizardContinueDescriptionKav = 'Ga door met de overschakeling naar Kaspersky Anti-Virus 2013.'
+
+MigrationNocomebackWarning = '\n\nAttentie! De huidige licentie voor Kaspersky Anti-Virus verloopt vóór de licentie voor Kaspersky Internet Security. Nadat de licentie van Kaspersky Anti-Virus verloopt, kunt u niet meer terugkeren naar Kaspersky Anti-Virus.'
+
+PleaseWait = 'Even geduld'
+RemovalProgressDescription   = 'Incompatibele software verwijderen'
+RemovalApplicationsDescription = 'De volgende software wordt verwijderd om de overschakeling uit te voeren:'
+ManualRemovalApplicationsDescription = 'U moet de volgende incompatibele software handmatig verwijderen om de overschakeling uit te voeren:'
+SearchRemovalApplicationsDescription   = 'Incompatibele software zoeken'
+RestartProductDescription = 'Het programma wordt herstart om de overschakeling te voltooien.'
+RebootOsDescription = 'U moet de computer herstarten om door te gaan met de overschakeling.\nDe wizard gaat verder na de herstart.'
+
+MigrationProgressDescriptionKis = 'Bezig met herconfigureren van de toepassing en het overschakelen naar Kaspersky Internet Security'
+UpgradeProgressDescriptionKis   = 'Bezig met herconfigureren van de toepassing en het overschakelen naar Kaspersky Internet Security'
+MigrationProgressDescriptionKav = 'Bezig met herconfigureren van de toepassing en het overschakelen naar Kaspersky Anti-Virus'
+
+MigrationKis = 'Overschakelen naar Kaspersky Internet Security'
+MigrationKav = 'Overschakelen naar Kaspersky Anti-Virus'
+MigrationUnknown = 'Overschakelen '
+
+SearchRemovalApplicationsHeader = 'Upgrade naar Kaspersky Internet Security'
+RemovalProgressHeader = 'Incompatibele software verwijderen'
+RemovalApplicationsHeader = 'Incompatibele software gevonden'
+RebootOsHeader = 'Computer moet opnieuw worden opgestart'
+RestartProductHeader = 'Programma wordt herstart'
+
+MigrationAbortedHeader = $MigrationType + ' is onmogelijk'
+MigrationAbortedDescription = $MigrationType + ' mislukt. Probeer de incompatibele software handmatig te verwijderen en start vervolgens de wizard opnieuw.'
+
+BestBuyGiftInformation = 'Uw Kaspersky Anti-Virus wordt geüpgraded naar Kaspersky Internet Security.\nNu zult u zelfs nog meer middelen hebben om uw computer te beschermen.'
+BestBuyGiftDescription = 'Hartelijk bedankt dat u Kaspersky Lab-software hebt gekozen! Veel plezier met de extra bescherming.'
+BestBuyUpgradeNotification = 'Tijdens het upgraden wordt uw systeem gecontroleerd op incompatibele software om de juiste werking van geïnstalleerde programma\'s en het besturingssysteem te verzekeren.'
+BestBuyFreeUpgrade = 'Overschakelen naar Kaspersky Internet Security'
+
+BestBuyTryAbortHeader = 'Upgrade op achtergrond'
+BestBuyTryAbortInformation = 'De upgrade gaat door op de achtergrond'
+BestBuyTryAbortDescription = 'Aangezien de incompatibele software niet is verwijderd, zijn bepaalde nieuwe functies van Kaspersky Internet Security uitgeschakeld om een juiste werking van geïnstalleerde programma\'s en het besturingssysteem te verzekeren.\n\nU kunt de incompatibele software handmatig verwijderen en alle nieuwe functies in het venster met de instellingen van Kaspersky Internet Security inschakelen.'
+BackToSubcriptionUpgradeButtonText = 'Terug naar upgrade'
+Congratulation = 'Gefeliciteerd!'
+
+ProductUpgraded = 'Uw Kaspersky Anti-Virus is succesvol geüpgraded naar Kaspersky Internet Security.\nNu beschikt u over nog meer functies om uw computer te beschermen.'

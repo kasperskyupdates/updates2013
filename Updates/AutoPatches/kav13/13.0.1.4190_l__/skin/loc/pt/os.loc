@@ -1,0 +1,56 @@
+﻿[Global]
+$OnlineSecurity                     = "Controlo de Privacidade"
+$ids                                = "Bloqueio de Ataques de Rede"
+$TrafMon                            = "Monitor de tráfego de rede"
+ErrNoPhone.caption                  = "Número de telefone inválido"
+ErrNoPhone                          = "Especifique um número de telefone válido."
+$TipText_ids_AttacksDetected        = "Ataques de rede: "
+$TipText_antiphishing_nURLsDetected = "URLs de Phishing: "
+$TipText_antiphishing_nURLsChecked  = "Sites de phishing: "
+$KavDescr_os                        = "O " + switch("kis", "ProductTitleLong", "") + " também inclui o componente \"" + $ids + "\", que permite o controlo total das aplicações."
+VKBD_ProductNotStarted             	= "Para utilizar o Teclado virtual, inicie o " + $ProductNameLong_GEN +" primeiro."
+VKBD_InputFailed		    		= "É impossível uma entrada segura neste campo."
+
+[MainWindow.OnlineSecurity.ids.Body]
+BlockedHosts.Name   = "Computadores bloqueados:"
+BlockedHosts.Val    = "Total " + size(BannedHosts)
+
+[IDSSettings_Body_Settings]
+BanLabel    = "minutos"
+
+[IDSSettings_Body_Settings_BanArea]
+Ban         = "&Adicionar computador atacante à lista bloqueada durante"
+
+[VirtualKeyboard]
+@ = "Teclado virtual"
+
+[s_OnlineSecurityHeaderText]
+#ChartMode_DetectedObjects  = "Objectos detectados"
+def                         = "Objectos verificados"
+
+[MainWindow.OnlineSecurity_WorkArea_SysPerf_Legend_Checked]
+;Legend2.Text = "Анти-Фишинг"
+Legend3.Text = "Anti-Dialer"
+
+[MainWindow.OnlineSecurity_WorkArea_SysPerf_Legend_Detected]
+ids_AttacksDetected.Text        = "Bloqueio de Ataques de Rede"
+
+[MainWindow.OnlineSecurity_WorkArea_SysPerf]
+Detected.Name = "Objectos detectados/seg"
+Checked.Name = "Verificados, objectos/seg"
+
+[MainWindow.OnlineSecurity_WorkArea]
+Home.Group2.Header = s_OnlineSecurityHeaderText(Gui.OnlineSecurityChartMode)
+
+[BannedHosts]
+@ = "Computadores bloqueados"
+
+[BannedHosts_Body_List]
+IP      = "Endereço"
+Time    = "Tempo"
+
+[BannedHosts_Body_List_footer]
+Unban = "Desbloquear"
+
+;[VirtualKeyboard]
+;Caption = "Виртуальная клавиатура"
